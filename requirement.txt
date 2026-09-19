@@ -1,2 +1,5 @@
-neuprint-python 
+neuprint-python
 pandas
+numpy
+pyarrow
+pyyaml

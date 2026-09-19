@@ -1,0 +1,242 @@
+{
+  "dataset": "MaleCNS v1.0",
+  "identification_method": {
+    "descending_neurons": "superclass == 'descending_neuron'",
+    "visual_types": "type column exact match",
+    "named_dns": "type column exact match"
+  },
+  "visual_types": [
+    "LC4",
+    "LPLC2"
+  ],
+  "named_descending_types": [
+    "DNp01",
+    "DNp04",
+    "DNp06"
+  ],
+  "population_counts": {
+    "LC4": 126,
+    "LPLC2": 185,
+    "DNp01": 2,
+    "DNp04": 2,
+    "DNp06": 2
+  },
+  "descending_neuron_count": 1314,
+  "related_descending": {
+    "descending_neuron_tbc": 2,
+    "sensory_descending": 12,
+    "efferent_descending": 4
+  },
+  "visual_edge_rows_after_aggregation": 270629,
+  "shared_target_count": 2443,
+  "shared_target_type_distribution": {
+    "UNKNOWN": 573,
+    "LPLC2": 135,
+    "LC4": 126,
+    "LPLC1": 78,
+    "MeLo13": 70,
+    "LC9": 58,
+    "MeLo8": 40,
+    "LPLC4": 40,
+    "LC14a-1": 30,
+    "Tm24": 29,
+    "LC10a": 28,
+    "LC12": 27,
+    "LLPC2": 26,
+    "LC11": 25,
+    "LC31a": 24,
+    "TmY19b": 23,
+    "Li17": 21,
+    "LLPC1": 21,
+    "MeLo10": 21,
+    "TmY18": 21
+  },
+  "direct_descending_candidate_count": 63,
+  "descending_receiving_both_visual": 37,
+  "named_descending_comparison": [
+    {
+      "descending_type": "DNp04",
+      "neuron_count": 2,
+      "LC4": 11597.0,
+      "LPLC2": 3398.0,
+      "total_visual_input": 14995.0
+    },
+    {
+      "descending_type": "DNp01",
+      "neuron_count": 2,
+      "LC4": 6362.0,
+      "LPLC2": 4862.0,
+      "total_visual_input": 11224.0
+    },
+    {
+      "descending_type": "DNp06",
+      "neuron_count": 2,
+      "LC4": 1152.0,
+      "LPLC2": 1719.0,
+      "total_visual_input": 2871.0
+    }
+  ],
+  "top_descending_candidates": [
+    {
+      "body_post": 531898,
+      "descending_type": "DNp04",
+      "LC4": 6811.0,
+      "LPLC2": 1957.0,
+      "total_visual_weight": 8768.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10010,
+      "descending_type": "DNp01",
+      "LC4": 3782.0,
+      "LPLC2": 2642.0,
+      "total_visual_weight": 6424.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 11137,
+      "descending_type": "DNp04",
+      "LC4": 4786.0,
+      "LPLC2": 1441.0,
+      "total_visual_weight": 6227.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10001,
+      "descending_type": "DNp01",
+      "LC4": 2580.0,
+      "LPLC2": 2220.0,
+      "total_visual_weight": 4800.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10283,
+      "descending_type": "DNp103",
+      "LC4": 183.0,
+      "LPLC2": 2867.0,
+      "total_visual_weight": 3050.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10417,
+      "descending_type": "DNp103",
+      "LC4": 152.0,
+      "LPLC2": 2198.0,
+      "total_visual_weight": 2350.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10197,
+      "descending_type": "DNp02",
+      "LC4": 2279.0,
+      "LPLC2": 0.0,
+      "total_visual_weight": 2279.0,
+      "receives_both": false
+    },
+    {
+      "body_post": 10923,
+      "descending_type": "DNg40",
+      "LC4": 446.0,
+      "LPLC2": 1826.0,
+      "total_visual_weight": 2272.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10259,
+      "descending_type": "DNp11",
+      "LC4": 2022.0,
+      "LPLC2": 56.0,
+      "total_visual_weight": 2078.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10117,
+      "descending_type": "DNp02",
+      "LC4": 1930.0,
+      "LPLC2": 5.0,
+      "total_visual_weight": 1935.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10752,
+      "descending_type": "DNp03",
+      "LC4": 1827.0,
+      "LPLC2": 1.0,
+      "total_visual_weight": 1828.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10361,
+      "descending_type": "DNg40",
+      "LC4": 534.0,
+      "LPLC2": 1172.0,
+      "total_visual_weight": 1706.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10106,
+      "descending_type": "DNp11",
+      "LC4": 1644.0,
+      "LPLC2": 15.0,
+      "total_visual_weight": 1659.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10228,
+      "descending_type": "DNp06",
+      "LC4": 705.0,
+      "LPLC2": 886.0,
+      "total_visual_weight": 1591.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10584,
+      "descending_type": "DNp06",
+      "LC4": 447.0,
+      "LPLC2": 833.0,
+      "total_visual_weight": 1280.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10223,
+      "descending_type": "DNpe056",
+      "LC4": 2.0,
+      "LPLC2": 874.0,
+      "total_visual_weight": 876.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 519771,
+      "descending_type": "DNp71",
+      "LC4": 2.0,
+      "LPLC2": 797.0,
+      "total_visual_weight": 799.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10732,
+      "descending_type": "DNpe056",
+      "LC4": 5.0,
+      "LPLC2": 745.0,
+      "total_visual_weight": 750.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 524001,
+      "descending_type": "DNp05",
+      "LC4": 702.0,
+      "LPLC2": 15.0,
+      "total_visual_weight": 717.0,
+      "receives_both": true
+    },
+    {
+      "body_post": 10558,
+      "descending_type": "DNp35",
+      "LC4": 213.0,
+      "LPLC2": 481.0,
+      "total_visual_weight": 694.0,
+      "receives_both": true
+    }
+  ],
+  "two_step_path_count": 61959
+}

@@ -1,5 +1,8 @@
-# Environments
+# Environments and Secrets
 .env
+.env.*
+*.pem
+*.key
 .venv
 env/
 venv/
@@ -12,10 +15,24 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+.pytest_cache/
+.coverage
+htmlcov/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# OS
+# OS and Editors
 .DS_Store
 **/.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+*.log
+
+# Large Raw Datasets (MaleCNS v1.0 feather files)
+*.feather
+connectome/data/male_cns_v1/annotations/
+connectome/data/male_cns_v1/connectivity/
+connectome/data/male_cns_v1/neurotransmitters/
