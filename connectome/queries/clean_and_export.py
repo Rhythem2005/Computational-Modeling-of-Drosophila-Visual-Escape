@@ -1,10 +1,40 @@
+"""
+clean_and_export.py — Phase 1 Edge Processing & Matrix Construction
+
+Reads raw_edges.csv and nodes.csv, applies:
+  1. Weight threshold filtering
+  2. Duplicate (pre, post) pair aggregation (sum of weights)
+  3. Raw structural weight matrix construction: W[post, pre]
+  4. Max-normalization to produce a separate normalized matrix
+
+Structural synapse counts are NEVER modified by neurotransmitter sign.
+Sign metadata (predictedNt) is preserved separately in matrix_index.json.
+
+Artifacts produced:
+  - processed_edges.csv       (aggregated, thresholded edges)
+  - weight_matrix.npy         (raw aggregated structural weights)
+  - weight_matrix_normalized.npy  (max-normalized weights)
+  - matrix_index.json         (positional index → neuron metadata)
+"""
+
 from pathlib import Path
 import json
 import numpy as np
 import pandas as pd
+import yaml
 
-# 1. Paths
-BASE_DIR = Path(__file__).resolve().parent.parent
+# ── 1. Load configuration ──────────────────────────────────────────
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent   # project root
+CONFIG_PATH = ROOT_DIR / "config.yaml"
+
+with open(CONFIG_PATH, "r") as f:
+    cfg = yaml.safe_load(f)
+
+WEIGHT_THRESHOLD = cfg["processing"]["weight_threshold"]
+NORM_METHOD      = cfg["normalization"]["method"]
+
+# ── 2. Paths ────────────────────────────────────────────────────────
+BASE_DIR = Path(__file__).resolve().parent.parent          # connectome/
 DATA_DIR = BASE_DIR / "data"
 
 NODES_PATH = DATA_DIR / "nodes.csv"
@@ -13,87 +43,158 @@ EDGES_PATH = DATA_DIR / "raw_edges.csv"
 if not NODES_PATH.exists() or not EDGES_PATH.exists():
     raise FileNotFoundError("Missing nodes.csv or raw_edges.csv. Run earlier steps first.")
 
-# 2. Load data
+# ── 3. Load data ────────────────────────────────────────────────────
 nodes_df = pd.read_csv(NODES_PATH)
 edges_df = pd.read_csv(EDGES_PATH)
 
 print(f"Loaded {len(nodes_df)} nodes and {len(edges_df)} raw edges.")
 
-# 3. Noise filtering (Threshold: weight >= 3)
-WEIGHT_THRESHOLD = 3
+# ── 4. Noise filtering (weight >= threshold) ────────────────────────
 filtered_edges = edges_df[edges_df["weight"] >= WEIGHT_THRESHOLD].copy()
 pruned_count = len(edges_df) - len(filtered_edges)
-print(f"Filtered out {pruned_count} edges with weight < {WEIGHT_THRESHOLD}. Remaining: {len(filtered_edges)}")
+print(f"Filtered out {pruned_count} edges with weight < {WEIGHT_THRESHOLD}. "
+      f"Remaining: {len(filtered_edges)}")
 
-# 4. Neurotransmitter sign assignment
-# Acetylcholine -> +1 (Excitatory); GABA / Glutamate -> -1 (Inhibitory)
-def resolve_sign(row):
-    nt = str(row.get("predictedNt", "")).lower()
-    if "gaba" in nt or "glutamate" in nt:
-        return -1
-    # LC4 and LPLC2 are primarily cholinergic projection neurons
-    return 1
+# ── 5. Aggregate duplicate (pre, post) pairs ────────────────────────
+# Multiple rows can exist for the same directed pair. Sum their weights.
+pre_agg_count = len(filtered_edges)
+pre_agg_pairs = filtered_edges.groupby(["bodyId_pre", "bodyId_post"]).ngroups
 
-nodes_df["sign"] = nodes_df.apply(resolve_sign, axis=1)
-sign_map = nodes_df.set_index("bodyId")["sign"].to_dict()
-
-filtered_edges["pre_sign"] = filtered_edges["bodyId_pre"].map(sign_map).fillna(1).astype(int)
-filtered_edges["signed_weight"] = filtered_edges["pre_sign"] * filtered_edges["weight"]
-
-# 5. Hemispheric innervation check onto DNp06
-print("\n" + "="*50)
-print("HEMISPHERIC INNERVATION ONTO DNp06 (Synapse Sums)")
-print("="*50)
-dnp06_inputs = filtered_edges[filtered_edges["post_type"] == "DNp06"]
-innervation_table = dnp06_inputs.pivot_table(
-    index=["pre_type", "pre_side"],
-    columns=["post_side"],
-    values="weight",
-    aggfunc="sum",
-    fill_value=0
+aggregated = (
+    filtered_edges
+    .groupby(["bodyId_pre", "bodyId_post"], as_index=False)
+    .agg(
+        weight=("weight", "sum"),
+        # Preserve type/side metadata from first occurrence
+        pre_type=("pre_type", "first"),
+        pre_side=("pre_side", "first"),
+        post_type=("post_type", "first"),
+        post_side=("post_side", "first"),
+    )
 )
-print(innervation_table)
 
-# 6. Construct N x N Signed Adjacency Matrix
-# W[i, j] = connection from j (col) to i (row)
+dup_pairs = pre_agg_count - len(aggregated)
+print(f"Aggregated {dup_pairs} duplicate rows across {pre_agg_pairs} unique pairs → "
+      f"{len(aggregated)} edges after aggregation.")
+
+# ── 6. Hemispheric innervation check onto DNp06 ─────────────────────
+print("\n" + "=" * 50)
+print("HEMISPHERIC INNERVATION ONTO DNp06 (Synapse Sums)")
+print("=" * 50)
+dnp06_inputs = aggregated[aggregated["post_type"] == "DNp06"]
+if not dnp06_inputs.empty:
+    innervation_table = dnp06_inputs.pivot_table(
+        index=["pre_type", "pre_side"],
+        columns=["post_side"],
+        values="weight",
+        aggfunc="sum",
+        fill_value=0,
+    )
+    print(innervation_table)
+else:
+    print("  No inputs to DNp06 found in filtered edges.")
+
+# ── 7. Build N × N structural weight matrix ─────────────────────────
+# Convention:  W[post_idx, pre_idx] = aggregated synapse count
+#
+# NOTE: Structural weights are UNSIGNED. Neurotransmitter sign is stored
+# separately as metadata. All 315 neurons in this dataset are predicted
+# acetylcholine; we do not fabricate inhibitory signs.
+
 node_ids = nodes_df["bodyId"].tolist()
 n_nodes = len(node_ids)
 id_to_idx = {body_id: idx for idx, body_id in enumerate(node_ids)}
 
-weight_matrix = np.zeros((n_nodes, n_nodes), dtype=np.float32)
+W = np.zeros((n_nodes, n_nodes), dtype=np.float32)
 
-for _, row in filtered_edges.iterrows():
-    pre_idx = id_to_idx.get(row["bodyId_pre"])
+for _, row in aggregated.iterrows():
+    pre_idx  = id_to_idx.get(row["bodyId_pre"])
     post_idx = id_to_idx.get(row["bodyId_post"])
     if pre_idx is not None and post_idx is not None:
-        # matrix entry: target (post) row, source (pre) column
-        weight_matrix[post_idx, pre_idx] = row["signed_weight"]
+        W[post_idx, pre_idx] = row["weight"]
 
-# 7. Save outputs
+# ── 8. Self-consistency check: matrix vs aggregated edges ────────────
+print("\n" + "=" * 50)
+print("SELF-CONSISTENCY CHECK")
+print("=" * 50)
+
+mismatches = 0
+for _, row in aggregated.iterrows():
+    pre_idx  = id_to_idx.get(row["bodyId_pre"])
+    post_idx = id_to_idx.get(row["bodyId_post"])
+    if pre_idx is not None and post_idx is not None:
+        matrix_val = W[post_idx, pre_idx]
+        edge_val = row["weight"]
+        if matrix_val != edge_val:
+            mismatches += 1
+            print(f"  MISMATCH: W[{post_idx},{pre_idx}] = {matrix_val}, "
+                  f"expected {edge_val} (pre={row['bodyId_pre']}, post={row['bodyId_post']})")
+
+assert mismatches == 0, f"{mismatches} matrix entries do not match aggregated edge weights!"
+print(f"  ✓ All {len(aggregated)} matrix entries match aggregated edge weights.")
+
+nonzero_matrix = np.count_nonzero(W)
+edges_in_matrix = aggregated[
+    aggregated["bodyId_pre"].isin(id_to_idx) & aggregated["bodyId_post"].isin(id_to_idx)
+].shape[0]
+assert nonzero_matrix == edges_in_matrix, (
+    f"Nonzero matrix entries ({nonzero_matrix}) != edges in matrix ({edges_in_matrix})"
+)
+print(f"  ✓ Nonzero matrix entries ({nonzero_matrix}) == mapped edge count.")
+
+# ── 9. Normalization ────────────────────────────────────────────────
+w_max = W.max()
+assert w_max > 0, "Maximum weight is zero — matrix is empty."
+
+if NORM_METHOD == "max":
+    W_norm = W / w_max
+else:
+    raise ValueError(f"Unknown normalization method: {NORM_METHOD}")
+
+print(f"\n  Normalization: method={NORM_METHOD}, max_weight={w_max}")
+print(f"  Normalized matrix range: [{W_norm.min():.6f}, {W_norm.max():.6f}]")
+
+# ── 10. Save outputs ────────────────────────────────────────────────
 processed_edges_path = DATA_DIR / "processed_edges.csv"
-matrix_path = DATA_DIR / "weight_matrix.npy"
-index_map_path = DATA_DIR / "matrix_index.json"
+matrix_raw_path      = DATA_DIR / "weight_matrix.npy"
+matrix_norm_path     = DATA_DIR / "weight_matrix_normalized.npy"
+index_map_path       = DATA_DIR / "matrix_index.json"
 
-filtered_edges.to_csv(processed_edges_path, index=False)
-np.save(matrix_path, weight_matrix)
+# Reorder columns for clarity
+aggregated = aggregated[[
+    "bodyId_pre", "pre_type", "pre_side",
+    "bodyId_post", "post_type", "post_side",
+    "weight",
+]].sort_values(by="weight", ascending=False)
 
-# Metadata mapping each matrix row/column index
-index_manifest = {
-    idx: {
+aggregated.to_csv(processed_edges_path, index=False)
+np.save(matrix_raw_path, W)
+np.save(matrix_norm_path, W_norm)
+
+# Matrix index: positional index → neuron metadata
+# Sign is stored as metadata (predictedNt), NOT applied to weights.
+index_manifest = {}
+for pos_idx, (_, row) in enumerate(nodes_df.iterrows()):
+    index_manifest[pos_idx] = {
         "bodyId": int(row["bodyId"]),
         "type": row["type"],
         "side": row["side"],
-        "sign": int(row["sign"])
+        "predictedNt": row.get("predictedNt", "unknown"),
     }
-    for idx, row in nodes_df.iterrows()
-}
 
 with open(index_map_path, "w") as f:
     json.dump(index_manifest, f, indent=2)
 
-print("\n" + "="*50)
+# ── 11. Summary ─────────────────────────────────────────────────────
+print("\n" + "=" * 50)
 print("PHASE 1 ARTIFACTS EXPORTED")
-print("="*50)
-print(f"1. Processed edges:  {processed_edges_path.relative_to(BASE_DIR.parent)}")
-print(f"2. Weight matrix:    {matrix_path.relative_to(BASE_DIR.parent)} (shape {weight_matrix.shape})")
-print(f"3. Matrix index map: {index_map_path.relative_to(BASE_DIR.parent)}")
+print("=" * 50)
+print(f"1. Processed edges:      {processed_edges_path.relative_to(BASE_DIR.parent)}")
+print(f"   Unique directed pairs: {len(aggregated)}")
+print(f"   Total aggregated weight: {aggregated['weight'].sum()}")
+print(f"2. Raw weight matrix:    {matrix_raw_path.relative_to(BASE_DIR.parent)} "
+      f"(shape {W.shape})")
+print(f"3. Normalized matrix:    {matrix_norm_path.relative_to(BASE_DIR.parent)} "
+      f"(shape {W_norm.shape})")
+print(f"4. Matrix index map:     {index_map_path.relative_to(BASE_DIR.parent)}")
+print(f"5. Normalization method: {NORM_METHOD} (divisor = {w_max})")

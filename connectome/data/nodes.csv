@@ -1,4 +1,6 @@
 bodyId,type,instance,side,predictedNt,status
+10010,DNp01,DNp01(GF)_L,left,acetylcholine,Traced
+10001,DNp01,DNp01(GF)_R,right,acetylcholine,Traced
 10228,DNp06,DNp06_L,left,acetylcholine,Traced
 10584,DNp06,DNp06_R,right,acetylcholine,Traced
 12032,LC4,LC4_L,left,acetylcholine,Traced

@@ -1,0 +1,33 @@
+# ==========================================================
+# Phase 1 Configuration — Drosophila MaleCNS v1.0 Connectome
+# ==========================================================
+# All parameters used by the extraction and processing pipeline.
+# Do NOT hardcode these values in scripts; load from this file.
+
+dataset:
+  server: "https://neuprint.janelia.org"
+  name: "male-cns:v1.0"
+
+neuron_types:
+  - LC4
+  - LPLC2
+  - DNp01
+  - DNp06
+
+processing:
+  weight_threshold: 3   # minimum raw synapse count to retain an edge
+
+normalization:
+  method: "max"          # divide all entries by the global maximum weight
+  description: >
+    Each entry W[i,j] is divided by the maximum weight in the raw
+    aggregated matrix. This preserves relative connection strengths
+    and maps all values to [0, 1]. Simple and reproducible.
+
+paths:
+  nodes: "connectome/data/nodes.csv"
+  raw_edges: "connectome/data/raw_edges.csv"
+  processed_edges: "connectome/data/processed_edges.csv"
+  weight_matrix_raw: "connectome/data/weight_matrix.npy"
+  weight_matrix_normalized: "connectome/data/weight_matrix_normalized.npy"
+  matrix_index: "connectome/data/matrix_index.json"
