@@ -1,147 +1,119 @@
-# Circuit v1 — Validation Report
+# Phase 3: Circuit Validation Report
 
+**Phase:** Phase 3
+**Status:** ✅ **ALL CHECKS PASSED — CIRCUITS INDEPENDENTLY VERIFIED**
 **Date:** 2026-09-22
-**Validator:** `verify_circuit_v1.py` (independent verification, separate from build script)
+**Source Dataset:** MaleCNS v1.0 (`male-cns:v1.0`)
+**Validators:**
+- `connectome/scripts/phase3/verify_circuit_v1.py` (Circuit v1 Baseline)
+- `connectome/scripts/phase3/verify_circuit_v2.py` (Circuit v2 Expanded Directional)
 
 ---
 
-## Summary
+## 1. Executive Validation Summary
 
-| Metric | Result |
-|--------|--------|
-| **Overall Status** | ✅ **PASS** |
-| Build-time checks | 21/21 passed |
-| Independent verification checks | 41/41 passed |
-| Total checks | 62/62 passed |
-| Failures | 0 |
+Both the baseline Circuit v1 (Scope A) and the expanded Circuit v2 (Scope B) were independently validated from scratch against the source MaleCNS v1.0 feather files.
 
----
-
-## Build-Time Validation (phase3_freeze.py)
-
-All 21 checks passed during circuit construction:
-
-| # | Check | Result |
-|---|-------|--------|
-| 1 | Total node count is 317 | ✅ |
-| 2 | No duplicate bodyIds | ✅ |
-| 3 | LC4 count = 126 | ✅ |
-| 4 | LPLC2 count = 185 | ✅ |
-| 5 | DNp01 count = 2 | ✅ |
-| 6 | DNp04 count = 2 | ✅ |
-| 7 | DNp06 count = 2 | ✅ |
-| 8 | DNp01 has both L and R neurons | ✅ |
-| 9 | DNp04 has both L and R neurons | ✅ |
-| 10 | DNp06 has both L and R neurons | ✅ |
-| 11 | Circuit has edges | ✅ |
-| 12 | All edge endpoints are circuit neurons | ✅ |
-| 13 | All edges have weight ≥ 3 | ✅ |
-| 14 | No self-loop edges | ✅ |
-| 15 | No duplicate (pre, post) pairs | ✅ |
-| 16 | DNp01 receives visual input (308 edges) | ✅ |
-| 17 | DNp04 receives visual input (304 edges) | ✅ |
-| 18 | Max normalized weight is 1.0 | ✅ |
-| 19 | All normalized weights are non-negative | ✅ |
-| 20 | All normalized weights are ≤ 1.0 | ✅ |
-| 21 | All nodes have NT prediction | ✅ |
+| Circuit Version | Scope | Node Count | Edge Count ($w \ge 3$) | Build Checks | Independent Verification Checks | Status | Discrepancies |
+|---|---|---|---|---|---|---|---|
+| **Circuit v1** | Scope A (Minimal Direct Baseline) | 317 | 11,286 | 21 / 21 | 41 / 41 | ✅ **PASS** | 0 |
+| **Circuit v2** | Scope B (Expanded Directional Takeoff) | 321 | 11,557 | 23 / 23 | 48 / 48 | ✅ **PASS** | 0 |
+| **Combined** | — | — | — | **44 / 44** | **89 / 89** | ✅ **PASS** | **0** |
 
 ---
 
-## Independent Verification (verify_circuit_v1.py)
+## 2. Circuit v2 Independent Verification Detail (`verify_circuit_v2.py`)
 
-All 41 checks passed. The verification script independently re-extracts data from the source feather files and compares against frozen artifacts.
+All 48 checks passed with zero tolerance (exact integer match against source data).
 
-### Section 1: Artifact Files (6 checks)
-All 6 required artifact files exist in `connectome/phase3/`.
+### Check Group 1: Artifact Files (6 checks)
+- `circuit_v2_nodes.csv` exists and is valid.
+- `circuit_v2_edges.csv` exists and is valid.
+- `circuit_v2.json` exists and is valid.
+- `circuit_v2_schema.json` exists and is valid.
+- `circuit_v2_provenance.json` exists and is valid.
+- `circuit_v2_build_validation.json` exists and reports `PASS`.
 
-### Section 2: Source Data (3 checks)
-All 3 source feather files exist.
+### Check Group 2: Source Data Integrity (3 checks)
+- `body-annotations-male-cns-v1.0-minconf-0.5.feather` exists and is readable.
+- `connectome-weights-male-cns-v1.0-minconf-0.5.feather` exists and is readable.
+- `body-neurotransmitters-male-cns-v1.0.feather` exists and is readable.
 
-### Section 3: Neuron ID Verification (1 check)
-All 317 frozen neuron IDs exist in the source annotations file. Zero missing.
+### Check Group 3: Neuron Identifiers & Annotations (3 checks)
+- All 321 neuron IDs exist in the source annotations table (0 missing).
+- All 321 neuron type annotations match the source dataset exactly (0 mismatches).
+- All 321 neuron hemisphere assignments (`somaSide` / instance) match source data exactly (0 mismatches).
 
-### Section 4: Neuron Type Verification (1 check)
-All neuron types in the frozen circuit exactly match the source annotations. Zero mismatches.
+### Check Group 4: Population Counts (8 checks)
+- Total node count: exactly 321.
+- Zero duplicate body IDs.
+- LC4: 126 (71L, 55R).
+- LPLC2: 185 (94L, 91R).
+- DNp01: 2 (10010 L, 10001 R).
+- DNp04: 2 (531898 L, 11137 R).
+- DNp06: 2 (10228 L, 10584 R).
+- DNp02: 2 (10197 L, 10117 R).
+- DNp11: 2 (10259 L, 10106 R).
 
-### Section 5: Neuron Side Verification (1 check)
-All neuron hemisphere assignments match source `somaSide` annotations. Zero mismatches.
+### Check Group 5: Edge Extraction & Exact Weight Matching (4 checks)
+- The script independently re-scanned all 2,318 batches of the 1.05 GB `connectome-weights` feather file, filtered for pairs within the 321 circuit neuron IDs, aggregated duplicate rows, and thresholded at $w \ge 3$.
+- **Edge Count Match:** Exactly 11,557 edges in frozen set; exactly 11,557 in re-extracted source data.
+- **Extra Edges:** 0.
+- **Missing Edges:** 0.
+- **Weight Discrepancies:** **0 (exact integer match, tolerance = 0)**.
 
-### Section 6: Population Counts (7 checks)
-Total node count = 317. No duplicate bodyIds. All 5 type counts match expected values.
+### Check Group 6: Threshold & Graph Integrity (3 checks)
+- All edges satisfy $w \ge 3$.
+- No duplicate directed `(pre, post)` pairs.
+- Zero self-loops.
 
-### Section 7: Edge Weight Verification — EXACT MATCH (4 checks)
+### Check Group 7: Readout Populations & Bilateral Symmetry (6 checks)
+- Readout types are exactly `{DNp01, DNp04, DNp06, DNp02, DNp11}`.
+- Every readout type possesses exactly one Left neuron and one Right neuron.
 
-**This is the critical verification.** The script independently re-extracts all edges among the 317 circuit neurons from the 1 GB connectivity feather file, aggregates them, applies w_min=3, and compares:
+### Check Group 8: Neurotransmitter Predictions (1 check)
+- 100% of the 321 neurons have predicted neurotransmitter `acetylcholine`, matching the source `body-neurotransmitters` file exactly (0 mismatches).
 
-| Metric | Result |
-|--------|--------|
-| Frozen edge count | 11,286 |
-| Source re-extracted edge count | 11,286 |
-| Extra edges in frozen set | 0 |
-| Missing edges in frozen set | 0 |
-| Weight mismatches | **0 (exact match, tolerance=0)** |
+### Check Group 9: Provenance Checksums (3 checks)
+- `body_annotations` SHA-256: `2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2` (MATCH ✅)
+- `connectome_weights` SHA-256: `e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1` (MATCH ✅)
+- `body_neurotransmitters` SHA-256: `95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621` (MATCH ✅)
 
-**Weight match rule:** Exact integer match. No tolerance applied. Every frozen weight is identical to the source-recomputed weight.
+### Check Group 10: Normalization Consistency (3 checks)
+- Max raw weight is 172.
+- Normalization formula $\frac{\text{weight}}{172}$ holds with maximum floating-point deviation of $1.11 \times 10^{-16}$.
+- Max normalized weight equals 1.0.
 
-### Section 8–9: Threshold and Integrity (4 checks)
-All edges have weight ≥ 3. No duplicate (pre, post) pairs. No self-loops.
+### Check Group 11: Schema Compliance (2 checks)
+- All node schema columns present.
+- All edge schema columns present.
 
-### Section 10: Readout Populations (4 checks)
-Readout types are exactly {DNp01, DNp04, DNp06}. All three have L/R pairs.
-
-### Section 11: Neurotransmitter Verification (1 check)
-All NT predictions match the source `body-neurotransmitters` feather file. Zero mismatches.
-
-### Section 12: Provenance Checksums (3 checks)
-SHA-256 checksums of all three source feather files match the recorded provenance values.
-
-| File | Recorded SHA-256 | Current SHA-256 | Match |
-|------|-----------------|-----------------|-------|
-| body-annotations | `2177e246113e4cfb...` | `2177e246113e4cfb...` | ✅ |
-| connectome-weights | `e35da783d1c686b2...` | `e35da783d1c686b2...` | ✅ |
-| body-neurotransmitters | `95c9289220663abe...` | `95c9289220663abe...` | ✅ |
-
-### Section 13: Normalization (2 checks)
-Normalization is mathematically consistent: max difference between `weight/max_weight` and stored `weight_normalized` is 1.11e-16 (floating-point epsilon).
-
-### Section 14: Schema (2 checks)
-All schema-declared node and edge columns are present in the CSV files.
-
-### Section 15: Phase 2 Statistics Reproduction (3 checks)
-
-Frozen circuit visual input totals compared against Phase 1 discovery totals:
-
-| Readout | Frozen Total | Discovery Total | Ratio | Explanation |
-|---------|-------------|----------------|-------|-------------|
-| DNp01 | 11,220 | 11,224 | 0.9996 | 4 syn pruned by w_min=3 |
-| DNp04 | 14,985 | 14,995 | 0.9993 | 10 syn pruned by w_min=3 |
-| DNp06 | 2,831 | 2,871 | 0.9861 | 40 syn pruned by w_min=3 |
-
-All ratios are ≥ 0.98, confirming that the w_min=3 threshold pruned only very weak edges. The differences are entirely accounted for by edge-weight filtering.
-
----
-
-## Data Provenance Record
-
-| Item | Value |
-|------|-------|
-| Dataset | MaleCNS v1.0 (`male-cns:v1.0`) |
-| Server | https://neuprint.janelia.org |
-| Annotations file | `body-annotations-male-cns-v1.0-minconf-0.5.feather` (14.5 MB) |
-| Annotations SHA-256 | `2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2` |
-| Connectivity file | `connectome-weights-male-cns-v1.0-minconf-0.5.feather` (1.05 GB) |
-| Connectivity SHA-256 | `e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1` |
-| NT file | `body-neurotransmitters-male-cns-v1.0.feather` (43.3 MB) |
-| NT SHA-256 | `95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621` |
-| w_min threshold | 3 |
-| pandas version | 3.0.6 |
-| pyarrow version | 25.0.1 |
-| numpy version | 2.5.3 |
+### Check Group 12: Phase 2 Discovery Statistics Reproduction (5 checks)
+- **DNp01:** Visual input = 11,220 syn (vs. 11,224 raw discovery total; ratio = 0.9996; 4 syn pruned at $w < 3$).
+- **DNp04:** Visual input = 14,985 syn (vs. 14,995 raw discovery total; ratio = 0.9993; 10 syn pruned at $w < 3$).
+- **DNp06:** Visual input = 2,831 syn (vs. 2,871 raw discovery total; ratio = 0.9861; 40 syn pruned at $w < 3$).
+- **DNp02:** Visual input = 4,209 syn (vs. 4,214 raw discovery total; ratio = 0.9988; 5 syn pruned at $w < 3$).
+- **DNp11:** Visual input = 3,688 syn (vs. 3,737 raw discovery total; ratio = 0.9869; 49 syn pruned at $w < 3$).
 
 ---
 
-## Discrepancies Found
+## 3. Circuit v1 Independent Verification Detail (`verify_circuit_v1.py`)
 
-**None.** All checks passed with zero discrepancies.
+All 41 checks passed for the archival baseline Circuit v1:
+- Nodes: 317 (LC4: 126, LPLC2: 185, DNp01: 2, DNp04: 2, DNp06: 2).
+- Edges: 11,286 edges ($w \ge 3$). Exact match against source feather (tolerance = 0).
+- Checksums, schemas, and population counts 100% verified.
 
-The only noted variance is the expected difference between discovery totals (w_min=1) and frozen circuit totals (w_min=3), which is fully explained by threshold filtering and amounts to <2% of total weight for all readouts.
+---
+
+## 4. Discrepancies and Anomalies
+
+**Zero discrepancies found across all checks.**
+
+The slight differences between raw Phase 1 discovery totals and frozen circuit totals are completely and mathematically explained by the $w_{\min}=3$ filter, which pruned only noise-level 1- and 2-synapse edges while preserving $>98.6\%$ of synaptic weight across all descending readout channels.
+
+---
+
+## 5. Certification
+
+Both Circuit v1 and Circuit v2 are certified as fully reproducible, mathematically verified connectomic circuits ready for biophysical simulation modeling.

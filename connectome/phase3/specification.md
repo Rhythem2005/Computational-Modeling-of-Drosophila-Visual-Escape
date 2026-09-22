@@ -28,8 +28,8 @@ Circuit v1 is the frozen, machine-readable specification of the *Drosophila mela
 
 | Type | Count | Role | Description |
 |------|-------|------|-------------|
-| LC4 | 126 (63L + 63R) | Looming sensor | Looming-sensitive visual projection neuron |
-| LPLC2 | 185 (92L + 93R) | Looming sensor | Lobula plate / lobula columnar neuron |
+| LC4 | 126 (71L + 55R) | Looming sensor | Looming-sensitive visual projection neuron |
+| LPLC2 | 185 (94L + 91R) | Looming sensor | Lobula plate / lobula columnar neuron |
 
 ### 2.2 Readout Layer (Descending Neurons)
 
@@ -52,8 +52,8 @@ All 317 neurons are **predicted acetylcholine** (MaleCNS v1.0 classifier). This 
 ```mermaid
 graph LR
     subgraph Visual_Input["Visual Input (311 neurons)"]
-        LC4["LC4<br/>126 neurons<br/>(63L + 63R)"]
-        LPLC2["LPLC2<br/>185 neurons<br/>(92L + 93R)"]
+        LC4["LC4<br/>126 neurons<br/>(71L + 55R)"]
+        LPLC2["LPLC2<br/>185 neurons<br/>(94L + 91R)"]
     end
 
     subgraph Readout["Readout (6 neurons)"]

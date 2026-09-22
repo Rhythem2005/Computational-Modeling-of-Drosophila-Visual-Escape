@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Circuit v2 Schema \u2014 Drosophila Visual Escape Circuit",
+  "description": "Schema definition for Circuit v2 nodes, edges, and metadata.",
+  "circuit_id": "circuit_v2",
+  "version": "2.0.0",
+  "nodes": {
+    "format": "CSV and JSON",
+    "columns": {
+      "bodyId": "int64 \u2014 unique identifier in MaleCNS v1.0",
+      "type": "string \u2014 neuron type annotation",
+      "side": "string \u2014 soma hemisphere (left, right)",
+      "population": "string \u2014 visual_input or readout",
+      "role": "string \u2014 sensory/readout function",
+      "predicted_nt": "string \u2014 classifier-predicted neurotransmitter",
+      "predicted_nt_confidence": "float \u2014 classifier probability",
+      "consensus_nt": "string \u2014 consensus neurotransmitter",
+      "nt_evidence": "string \u2014 evidence status (predicted)"
+    }
+  },
+  "edges": {
+    "format": "CSV and JSON",
+    "columns": {
+      "bodyId_pre": "int64 \u2014 presynaptic neuron ID",
+      "pre_type": "string \u2014 presynaptic neuron type",
+      "pre_side": "string \u2014 presynaptic hemisphere",
+      "pre_nt": "string \u2014 presynaptic neurotransmitter",
+      "bodyId_post": "int64 \u2014 postsynaptic neuron ID",
+      "post_type": "string \u2014 postsynaptic neuron type",
+      "post_side": "string \u2014 postsynaptic hemisphere",
+      "weight": "int64 \u2014 synapse count (w >= 3)",
+      "weight_normalized": "float \u2014 weight / max_weight (max=172)",
+      "edge_class": "string \u2014 visual_to_readout, intra_population, cross_visual, inter_readout, readout_to_visual"
+    }
+  }
+}

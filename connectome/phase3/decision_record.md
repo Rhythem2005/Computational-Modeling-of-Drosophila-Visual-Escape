@@ -10,8 +10,8 @@ These are direct observations from the MaleCNS v1.0 dataset. They are not decisi
 
 | Fact | Source | Verification |
 |------|--------|-------------|
-| LC4 has 126 neurons (63L + 63R) | body-annotations, type="LC4" | verify_circuit_v1.py check 6 |
-| LPLC2 has 185 neurons (92L + 93R) | body-annotations, type="LPLC2" | verify_circuit_v1.py check 6 |
+| LC4 has 126 neurons (71L + 55R) | body-annotations, type="LC4" | verify_circuit_v1.py check 6 |
+| LPLC2 has 185 neurons (94L + 91R) | body-annotations, type="LPLC2" | verify_circuit_v1.py check 6 |
 | DNp01 has 2 neurons (1L + 1R) | body-annotations, type="DNp01" | verify_circuit_v1.py check 6 |
 | DNp04 has 2 neurons (1L + 1R) | body-annotations, type="DNp04" | verify_circuit_v1.py check 6 |
 | DNp06 has 2 neurons (1L + 1R) | body-annotations, type="DNp06" | verify_circuit_v1.py check 6 |
