@@ -152,7 +152,7 @@ There are 8 edges between readout neurons (total weight 88). The strongest is DN
 Before starting Phase 4 work, run:
 
 ```bash
-python connectome/queries/verify_circuit_v1.py
+python connectome/scripts/phase3/verify_circuit_v1.py
 ```
 
 This re-verifies all frozen artifacts against source data. All 41 checks must pass. If any check fails (e.g., due to source data updates), **stop and investigate before proceeding.**

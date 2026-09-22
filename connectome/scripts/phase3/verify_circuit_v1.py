@@ -48,8 +48,8 @@ import pyarrow.ipc as ipc
 # ═══════════════════════════════════════════════════════════════════
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = SCRIPT_DIR.parent
-DATA_ROOT = BASE_DIR / "data" / "male_cns_v1"
+BASE_DIR = SCRIPT_DIR.parent.parent
+DATA_ROOT = BASE_DIR / "data" / "raw"
 PHASE3_DIR = BASE_DIR / "phase3"
 
 ANNOTATIONS_PATH = (

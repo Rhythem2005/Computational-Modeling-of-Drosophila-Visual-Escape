@@ -15,9 +15,9 @@ from dotenv import load_dotenv
 from neuprint import Client, fetch_neurons, NeuronCriteria as NC
 
 # 1. Setup paths and load environment variables
-BASE_DIR = Path(__file__).resolve().parent.parent          # connectome/
+BASE_DIR = Path(__file__).resolve().parent.parent.parent   # connectome/
 ROOT_DIR = BASE_DIR.parent                                 # project root
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = BASE_DIR / "data" / "phase1"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 ENV_PATH = ROOT_DIR / ".env"

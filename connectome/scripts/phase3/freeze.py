@@ -65,8 +65,8 @@ CIRCUIT_ID = "circuit_v1"
 # ═══════════════════════════════════════════════════════════════════
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = SCRIPT_DIR.parent                    # connectome/
-DATA_ROOT = BASE_DIR / "data" / "male_cns_v1"
+BASE_DIR = SCRIPT_DIR.parent.parent              # connectome/
+DATA_ROOT = BASE_DIR / "data" / "raw"
 
 ANNOTATIONS_PATH = (
     DATA_ROOT / "annotations"

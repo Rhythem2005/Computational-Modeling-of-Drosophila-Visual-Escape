@@ -1,6 +1,6 @@
 # Environments and Secrets
 .env
-.env.*
+!.env.example
 *.pem
 *.key
 .venv
@@ -33,6 +33,6 @@ htmlcov/
 
 # Large Raw Datasets (MaleCNS v1.0 feather files)
 *.feather
-connectome/data/male_cns_v1/annotations/
-connectome/data/male_cns_v1/connectivity/
-connectome/data/male_cns_v1/neurotransmitters/
+connectome/data/raw/annotations/
+connectome/data/raw/connectivity/
+connectome/data/raw/neurotransmitters/

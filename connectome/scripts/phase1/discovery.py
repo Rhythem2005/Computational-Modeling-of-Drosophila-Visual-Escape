@@ -911,7 +911,7 @@ def main():
     parser.add_argument(
         "--root",
         type=Path,
-        default=Path("data/male_cns_v1"),
+        default=Path("data/raw"),
     )
 
     parser.add_argument(
@@ -934,7 +934,7 @@ def main():
         / "body-annotations-male-cns-v1.0-minconf-0.5.feather"
     )
 
-    output_dir = args.root / "discovery"
+    output_dir = args.root.parent / "discovery"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if not connectivity_path.exists():

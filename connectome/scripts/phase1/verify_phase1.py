@@ -32,9 +32,9 @@ import yaml
 
 
 def main():
-    ROOT_DIR = Path(__file__).resolve().parent.parent.parent   # project root
-    BASE_DIR = Path(__file__).resolve().parent.parent           # connectome/
-    DATA_DIR = BASE_DIR / "data"
+    ROOT_DIR = Path(__file__).resolve().parent.parent.parent.parent   # project root
+    BASE_DIR = Path(__file__).resolve().parent.parent.parent           # connectome/
+    DATA_DIR = BASE_DIR / "data" / "phase1"
 
     passed = 0
     total  = 0

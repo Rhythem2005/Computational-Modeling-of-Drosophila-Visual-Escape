@@ -25,9 +25,9 @@ normalization:
     and maps all values to [0, 1]. Simple and reproducible.
 
 paths:
-  nodes: "connectome/data/nodes.csv"
-  raw_edges: "connectome/data/raw_edges.csv"
-  processed_edges: "connectome/data/processed_edges.csv"
-  weight_matrix_raw: "connectome/data/weight_matrix.npy"
-  weight_matrix_normalized: "connectome/data/weight_matrix_normalized.npy"
-  matrix_index: "connectome/data/matrix_index.json"
+  nodes: "connectome/data/phase1/nodes.csv"
+  raw_edges: "connectome/data/phase1/raw_edges.csv"
+  processed_edges: "connectome/data/phase1/processed_edges.csv"
+  weight_matrix_raw: "connectome/data/phase1/weight_matrix.npy"
+  weight_matrix_normalized: "connectome/data/phase1/weight_matrix_normalized.npy"
+  matrix_index: "connectome/data/phase1/matrix_index.json"

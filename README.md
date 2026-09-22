@@ -46,7 +46,7 @@ Phase 3 is complete, producing the frozen **Circuit v1**.
 2. Run the independent verification script:
 
 ```bash
-python connectome/queries/verify_circuit_v1.py
+python connectome/scripts/phase3/verify_circuit_v1.py
 ```
 *(Runs 41 validation checks against the original feather source files)*
 

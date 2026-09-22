@@ -103,7 +103,7 @@ No interneurons are included in Circuit v1. See the Interneuron Inclusion Rule i
 | AVLP429 | 874 | 16 | Interneuron; not promoted in Phase 2 |
 | SAD023 | 863 | 33 | Interneuron; not promoted in Phase 2 |
 
-> **Note:** The full two-step pathway data (61,959 paths through hundreds of intermediate types) is preserved in `connectome/data/male_cns_v1/discovery/two_step_visual_descending_paths.csv` and `two_step_visual_descending_by_type.csv` for future reference.
+> **Note:** The full two-step pathway data (61,959 paths through hundreds of intermediate types) is preserved in `connectome/data/discovery/two_step_visual_descending_paths.csv` and `two_step_visual_descending_by_type.csv` for future reference.
 
 ---
 

@@ -24,7 +24,7 @@ import pandas as pd
 import yaml
 
 # ── 1. Load configuration ──────────────────────────────────────────
-ROOT_DIR = Path(__file__).resolve().parent.parent.parent   # project root
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent.parent   # project root
 CONFIG_PATH = ROOT_DIR / "config.yaml"
 
 with open(CONFIG_PATH, "r") as f:
@@ -34,8 +34,8 @@ WEIGHT_THRESHOLD = cfg["processing"]["weight_threshold"]
 NORM_METHOD      = cfg["normalization"]["method"]
 
 # ── 2. Paths ────────────────────────────────────────────────────────
-BASE_DIR = Path(__file__).resolve().parent.parent          # connectome/
-DATA_DIR = BASE_DIR / "data"
+BASE_DIR = Path(__file__).resolve().parent.parent.parent   # connectome/
+DATA_DIR = BASE_DIR / "data" / "phase1"
 
 NODES_PATH = DATA_DIR / "nodes.csv"
 EDGES_PATH = DATA_DIR / "raw_edges.csv"
