@@ -1,56 +1,57 @@
-# Computational Modeling of Drosophila Visual Escape — Phase 1
+# Computational Modeling of Drosophila Visual Escape — Phases 1–3
 
-This repository extracts and validates the synaptic connectome for the Drosophila melanogaster visual escape circuit, using the **MaleCNS v1.0** (male-cns:v1.0) dataset via the neuPrint API.
+This repository extracts, verifies, and freezes the synaptic connectome for the Drosophila melanogaster visual escape circuit, using the **MaleCNS v1.0** (male-cns:v1.0) dataset.
 
-## Neuron Types
+Phase 3 is complete, producing the frozen **Circuit v1**.
+
+## Circuit v1 Neuron Types
 
 | Type  | Role | Count |
 |-------|------|-------|
-| LC4   | Looming-sensitive visual projection neuron | 126 |
-| LPLC2 | Lobula plate / lobula columnar neuron      | 185 |
-| DNp01 | Descending neuron (Giant Fiber)            | 2 (L/R) |
-| DNp06 | Descending neuron                          | 2 (L/R) |
+| LC4   | Looming-sensitive visual projection neuron | 126 (63L + 63R) |
+| LPLC2 | Lobula plate / lobula columnar neuron      | 185 (92L + 93R) |
+| DNp01 | Descending neuron (Giant Fiber) (Primary)  | 2 (L/R) |
+| DNp04 | Descending neuron (Secondary)              | 2 (L/R) |
+| DNp06 | Descending neuron (Secondary)              | 2 (L/R) |
+**Total Neurons:** 317
 
 ## Dataset
 
-**male-cns:v1.0** — 2026 Drosophila Male Central Nervous System connectome, queried via `neuprint.janelia.org`. All biological claims in this repository derive solely from this dataset.
+**male-cns:v1.0** — 2026 Drosophila Male Central Nervous System connectome. Phase 3 artifacts were built directly from the version-pinned feather data files.
 
-## Phase 1 Artifacts
+## Phase 3 Frozen Artifacts
 
 | File | Description |
 |------|-------------|
-| `connectome/data/nodes.csv` | Neuron metadata (bodyId, type, side, predictedNt) |
-| `connectome/data/raw_edges.csv` | Unfiltered synaptic edges from neuPrint |
-| `connectome/data/processed_edges.csv` | Thresholded and aggregated edges (weight ≥ 3, duplicate pre/post pairs summed) |
-| `connectome/data/weight_matrix.npy` | Raw structural weight matrix, W[post, pre] |
-| `connectome/data/weight_matrix_normalized.npy` | Max-normalized weight matrix (values in [0, 1]) |
-| `connectome/data/matrix_index.json` | Positional index → neuron metadata mapping |
-| `config.yaml` | All pipeline parameters (dataset, thresholds, normalization) |
+| `connectome/phase3/circuit_v1.json` | Complete machine-readable circuit |
+| `connectome/phase3/circuit_v1_nodes.csv` | Frozen 317 neurons |
+| `connectome/phase3/circuit_v1_edges.csv` | Frozen 11,286 edges (w ≥ 3) |
+| `connectome/phase3/specification.md` | Human-readable circuit specification |
+| `connectome/phase3/decision_record.md` | Decision and assumption hierarchy |
+| `connectome/phase3/excluded_candidates.md`| Excluded descending and interneurons |
+| `connectome/phase3/phase4_handoff.md` | Usage contract for Phase 4 simulation |
+| `connectome/phase3/validation_report.md` | Verification and checksums |
 
 ## Normalization
 
-**Method:** max-normalization — each entry is divided by the global maximum weight. Simple, reproducible, preserves relative connection strengths. Parameters are documented in `config.yaml`.
+**Method:** max-normalization — each weight is divided by the global maximum weight (172).
 
 ## Retinotopy Status
 
-The MaleCNS v1.0 dataset does not populate retinotopic metadata (`assignedOlHex1`, `assignedOlHex2`) for LC4/LPLC2 neurons. ROI data contains lobula column identifiers that could serve as proxies, but this has not been extracted. **Status: PENDING.**
+**NOT AVAILABLE**. MaleCNS v1.0 does not populate retinotopic metadata for LC4/LPLC2 neurons. Phase 4 must model spatial representation explicitly if required.
 
-## How to Run
+## How to Verify Circuit v1
 
-1. Configure your `NEUPRINT_TOKEN` in the root `.env` file.
-2. Activate the virtual environment: `source venv/bin/activate`
-3. Run the pipeline:
+1. Activate the virtual environment: `source venv/bin/activate`
+2. Run the independent verification script:
 
 ```bash
-python connectome/queries/fetch_nodes.py       # Extract neuron metadata
-python connectome/queries/fetch_edges.py        # Extract synaptic edges
-python connectome/queries/clean_and_export.py   # Process, aggregate, export matrix
-python connectome/queries/verify_circuit.py     # Full verification (33 assertions)
+python connectome/queries/verify_circuit_v1.py
 ```
+*(Runs 41 validation checks against the original feather source files)*
 
 ## Assumptions and Limitations
 
-- Requires a valid neuPrint authorization token.
-- Phase 1 covers connectivity extraction and validation only — no simulation, vision modeling, or ML.
-- Structural synapse counts are unsigned; neurotransmitter sign is stored as metadata, not applied to weights.
-- All 315 neurons in this dataset are predicted acetylcholine.
+- Structural synapse counts are unsigned; neurotransmitter sign is stored as metadata.
+- All 317 neurons are predicted acetylcholine (excitatory). Phase 4 decides simulation sign convention.
+- Phase 3 freezes the biological circuit. Phase 4 will handle simulation, vision modeling, and ML.

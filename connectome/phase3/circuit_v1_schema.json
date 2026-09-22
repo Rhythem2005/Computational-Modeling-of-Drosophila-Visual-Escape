@@ -1,0 +1,129 @@
+{
+  "schema_id": "circuit_v1_schema",
+  "schema_version": "1.0.0",
+  "description": "Schema for the frozen Circuit v1 machine-readable artifacts. Phase 4 must consume data according to this schema.",
+  "nodes": {
+    "file": "circuit_v1_nodes.csv",
+    "format": "CSV (UTF-8, comma-separated)",
+    "columns": {
+      "bodyId": {
+        "type": "int64",
+        "description": "MaleCNS v1.0 body ID (unique neuron identifier)",
+        "unit": "dimensionless"
+      },
+      "type": {
+        "type": "string",
+        "description": "Neuron type from MaleCNS v1.0 annotations",
+        "allowed_values": [
+          "LC4",
+          "LPLC2",
+          "DNp01",
+          "DNp04",
+          "DNp06"
+        ]
+      },
+      "side": {
+        "type": "string",
+        "description": "Hemisphere (from somaSide annotation)",
+        "allowed_values": [
+          "left",
+          "right"
+        ]
+      },
+      "population": {
+        "type": "string",
+        "description": "Functional population category",
+        "allowed_values": [
+          "visual_input",
+          "readout"
+        ]
+      },
+      "role": {
+        "type": "string",
+        "description": "Specific functional role in escape circuit",
+        "allowed_values": [
+          "looming_sensor",
+          "primary",
+          "secondary"
+        ]
+      },
+      "predicted_nt": {
+        "type": "string",
+        "description": "Predicted neurotransmitter from MaleCNS v1.0 classifier"
+      },
+      "predicted_nt_confidence": {
+        "type": "float64",
+        "description": "Confidence score of NT prediction [0, 1]",
+        "unit": "dimensionless"
+      },
+      "consensus_nt": {
+        "type": "string",
+        "description": "Cell-type-level consensus neurotransmitter"
+      },
+      "nt_evidence": {
+        "type": "string",
+        "description": "Evidence level: 'predicted' (classifier) or 'experimental' (functional assay)",
+        "allowed_values": [
+          "predicted",
+          "experimental"
+        ]
+      }
+    }
+  },
+  "edges": {
+    "file": "circuit_v1_edges.csv",
+    "format": "CSV (UTF-8, comma-separated)",
+    "columns": {
+      "bodyId_pre": {
+        "type": "int64",
+        "description": "Presynaptic neuron body ID"
+      },
+      "pre_type": {
+        "type": "string",
+        "description": "Type of presynaptic neuron"
+      },
+      "pre_side": {
+        "type": "string",
+        "description": "Hemisphere of presynaptic neuron"
+      },
+      "pre_nt": {
+        "type": "string",
+        "description": "Predicted neurotransmitter of presynaptic neuron (determines putative synaptic sign)"
+      },
+      "bodyId_post": {
+        "type": "int64",
+        "description": "Postsynaptic neuron body ID"
+      },
+      "post_type": {
+        "type": "string",
+        "description": "Type of postsynaptic neuron"
+      },
+      "post_side": {
+        "type": "string",
+        "description": "Hemisphere of postsynaptic neuron"
+      },
+      "weight": {
+        "type": "int64",
+        "description": "Aggregated structural synapse count (unsigned). Sum of all synaptic connections from pre to post, filtered at w_min=3.",
+        "unit": "synapse_count"
+      },
+      "weight_normalized": {
+        "type": "float64",
+        "description": "Max-normalized weight: weight / max_weight. Range [0, 1].",
+        "unit": "dimensionless"
+      },
+      "edge_class": {
+        "type": "string",
+        "description": "Functional classification of the edge",
+        "allowed_values": [
+          "visual_to_readout",
+          "intra_population",
+          "cross_visual",
+          "inter_readout",
+          "readout_to_visual",
+          "other"
+        ]
+      }
+    }
+  }
+}
