@@ -1,28 +1,4 @@
-"""
-phase3_freeze.py — Phase 3: Freeze and Formalize Circuit v1
-
-Constructs the frozen Circuit v1 from MaleCNS v1.0 source data (feather files).
-
-Circuit v1 contains exactly 5 neuron types established in Phases 0–2:
-  - LC4   (126 neurons) — looming-sensitive visual projection neurons
-  - LPLC2 (185 neurons) — lobula plate / lobula columnar neurons
-  - DNp01 (2 neurons)   — primary escape readout (Giant Fiber)
-  - DNp04 (2 neurons)   — secondary escape readout
-  - DNp06 (2 neurons)   — secondary escape readout
-
-Processing:
-  1. Extract all neurons of circuit types from body-annotations feather
-  2. Extract neurotransmitter predictions from body-neurotransmitters feather
-  3. Extract ALL edges among circuit neurons from connectome-weights feather
-  4. Aggregate duplicate (pre, post) pairs by summing weights
-  5. Apply w_min=3 threshold (established in Phase 1 config.yaml)
-  6. Max-normalize weights
-  7. Produce frozen artifacts
-
-All biological/scientific decisions were made in Phase 2.
-This script formalizes those decisions into machine-readable artifacts.
-No biological decisions are made here.
-"""
+"""Construct the frozen Circuit v1 artifacts from MaleCNS v1.0 source data."""
 
 from __future__ import annotations
 
@@ -38,11 +14,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.ipc as ipc
 
-
-# ═══════════════════════════════════════════════════════════════════
-# CONFIGURATION — Phase 2 decisions, frozen here
-# ═══════════════════════════════════════════════════════════════════
-
+# Configuration
 CIRCUIT_TYPES = ["LC4", "LPLC2", "DNp01", "DNp04", "DNp06"]
 
 READOUT_NEURONS = {
@@ -54,18 +26,15 @@ READOUT_NEURONS = {
 VISUAL_TYPES = {"LC4", "LPLC2"}
 DN_TYPES = {"DNp01", "DNp04", "DNp06"}
 
-W_MIN = 3              # Minimum weight threshold (Phase 1, config.yaml)
-NORMALIZATION = "max"   # Normalization method (Phase 1, config.yaml)
+W_MIN = 3
+NORMALIZATION = "max"
 
 CIRCUIT_VERSION = "1.0.0"
 CIRCUIT_ID = "circuit_v1"
 
-# ═══════════════════════════════════════════════════════════════════
-# PATHS
-# ═══════════════════════════════════════════════════════════════════
-
+# Paths
 SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = SCRIPT_DIR.parent.parent              # connectome/
+BASE_DIR = SCRIPT_DIR.parent.parent
 DATA_ROOT = BASE_DIR / "data" / "raw"
 
 ANNOTATIONS_PATH = (
@@ -83,10 +52,6 @@ NT_PATH = (
 
 OUTPUT_DIR = BASE_DIR / "phase3"
 
-
-# ═══════════════════════════════════════════════════════════════════
-# UTILITY FUNCTIONS
-# ═══════════════════════════════════════════════════════════════════
 
 def compute_sha256(path: Path) -> str:
     """Compute SHA-256 hash of a file."""
@@ -151,10 +116,6 @@ def classify_edge(pre_type: str, post_type: str) -> str:
 
     return "other"
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 1: EXTRACT CIRCUIT NEURONS
-# ═══════════════════════════════════════════════════════════════════
 
 def extract_neurons() -> pd.DataFrame:
     """Extract all circuit neurons from the annotations feather file."""
@@ -225,10 +186,6 @@ def extract_neurons() -> pd.DataFrame:
     return nodes
 
 
-# ═══════════════════════════════════════════════════════════════════
-# STEP 2: EXTRACT NEUROTRANSMITTER PREDICTIONS
-# ═══════════════════════════════════════════════════════════════════
-
 def extract_neurotransmitters(body_ids: set[int]) -> pd.DataFrame:
     """Extract neurotransmitter predictions for circuit neurons."""
     print("\nStep 2: Extracting neurotransmitter predictions...")
@@ -264,10 +221,6 @@ def extract_neurotransmitters(body_ids: set[int]) -> pd.DataFrame:
 
     return result
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 3: EXTRACT ALL CIRCUIT EDGES
-# ═══════════════════════════════════════════════════════════════════
 
 def extract_edges(body_ids: set[int]) -> pd.DataFrame:
     """
@@ -333,10 +286,6 @@ def extract_edges(body_ids: set[int]) -> pd.DataFrame:
     return filtered.sort_values("weight", ascending=False).reset_index(drop=True)
 
 
-# ═══════════════════════════════════════════════════════════════════
-# STEP 4: BUILD FROZEN CIRCUIT
-# ═══════════════════════════════════════════════════════════════════
-
 def build_frozen_circuit(
     nodes: pd.DataFrame,
     nt_data: pd.DataFrame,
@@ -349,7 +298,7 @@ def build_frozen_circuit(
     """
     print("\nStep 4: Building frozen Circuit v1...")
 
-    # ── Merge NT data into nodes ──────────────────────────────────
+    # Merge NT data into nodes
     frozen_nodes = nodes.merge(
         nt_data[["bodyId", "predicted_nt", "predicted_nt_confidence", "consensus_nt"]],
         on="bodyId",
@@ -408,7 +357,7 @@ def build_frozen_circuit(
         "weight", ascending=False
     ).reset_index(drop=True)
 
-    # ── Summary statistics ────────────────────────────────────────
+    # Summary statistics
     edge_class_counts = frozen_edges["edge_class"].value_counts().to_dict()
 
     print(f"  Frozen nodes: {len(frozen_nodes)}")
@@ -418,7 +367,7 @@ def build_frozen_circuit(
     for cls, count in sorted(edge_class_counts.items()):
         print(f"    {cls}: {count}")
 
-    # ── Build readout summary ─────────────────────────────────────
+    # Build readout summary
     readout_summary = {}
     for dn_type, role in READOUT_NEURONS.items():
         dn_nodes = frozen_nodes[frozen_nodes["type"] == dn_type]
@@ -439,7 +388,7 @@ def build_frozen_circuit(
             "input_by_visual_type": per_visual,
         }
 
-    # ── Build circuit JSON ────────────────────────────────────────
+    # Build circuit JSON
     circuit_json = {
         "circuit_id": CIRCUIT_ID,
         "version": CIRCUIT_VERSION,
@@ -527,10 +476,6 @@ def build_frozen_circuit(
     return frozen_nodes, frozen_edges, circuit_json
 
 
-# ═══════════════════════════════════════════════════════════════════
-# STEP 5: COMPUTE DATA PROVENANCE
-# ═══════════════════════════════════════════════════════════════════
-
 def compute_provenance() -> dict:
     """Compute checksums and provenance for all source data files."""
     print("\nStep 5: Computing data provenance...")
@@ -606,10 +551,6 @@ def compute_provenance() -> dict:
 
     return provenance
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 6: BUILD-TIME VALIDATION
-# ═══════════════════════════════════════════════════════════════════
 
 def validate_circuit(
     nodes: pd.DataFrame,
@@ -737,10 +678,6 @@ def validate_circuit(
 
     return failures
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 7: WRITE ARTIFACTS
-# ═══════════════════════════════════════════════════════════════════
 
 def write_schema() -> dict:
     """Define and return the Circuit v1 schema."""
@@ -894,31 +831,30 @@ def write_artifacts(
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # ── Nodes CSV ─────────────────────────────────────────────────
+    # Nodes CSV
     nodes_path = OUTPUT_DIR / "circuit_v1_nodes.csv"
     frozen_nodes.to_csv(nodes_path, index=False)
     print(f"  Wrote {nodes_path.name} ({len(frozen_nodes)} rows)")
 
-    # ── Edges CSV ─────────────────────────────────────────────────
+    # Edges CSV
     edges_path = OUTPUT_DIR / "circuit_v1_edges.csv"
     frozen_edges.to_csv(edges_path, index=False)
     print(f"  Wrote {edges_path.name} ({len(frozen_edges)} rows)")
 
-    # ── Schema JSON ───────────────────────────────────────────────
+    # Schema JSON
     schema = write_schema()
     schema_path = OUTPUT_DIR / "circuit_v1_schema.json"
     with open(schema_path, "w") as f:
         json.dump(schema, f, indent=2, default=str)
     print(f"  Wrote {schema_path.name}")
 
-    # ── Provenance JSON ───────────────────────────────────────────
+    # Provenance JSON
     provenance_path = OUTPUT_DIR / "provenance.json"
     with open(provenance_path, "w") as f:
         json.dump(provenance, f, indent=2, default=str)
     print(f"  Wrote {provenance_path.name}")
 
-    # ── Circuit JSON (complete machine-readable circuit) ──────────
-    # Add provenance to circuit JSON
+    # Circuit JSON
     circuit_json["provenance"] = provenance
     circuit_json["schema"] = schema
 
@@ -927,7 +863,7 @@ def write_artifacts(
         json.dump(circuit_json, f, indent=2, default=str)
     print(f"  Wrote {circuit_path.name}")
 
-    # ── Validation summary ────────────────────────────────────────
+    # Validation summary
     validation = {
         "status": "PASS" if not validation_failures else "FAIL",
         "failures": validation_failures,
@@ -938,10 +874,6 @@ def write_artifacts(
         json.dump(validation, f, indent=2)
     print(f"  Wrote {validation_path.name}")
 
-
-# ═══════════════════════════════════════════════════════════════════
-# MAIN
-# ═══════════════════════════════════════════════════════════════════
 
 def main():
     print("=" * 60)

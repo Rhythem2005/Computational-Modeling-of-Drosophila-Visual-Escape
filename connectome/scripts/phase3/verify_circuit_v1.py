@@ -1,33 +1,4 @@
-"""
-verify_circuit_v1.py — Independent Verification of Frozen Circuit v1
-
-Loads the frozen Circuit v1 artifacts and verifies every component
-against the original MaleCNS v1.0 source data.
-
-This script is independent from phase3_freeze.py — it reads the frozen
-artifacts and re-checks them from scratch against the source feather
-files.
-
-Checks performed:
-  1.  All frozen artifact files exist
-  2.  All 317 neuron IDs exist in source annotations
-  3.  Neuron types match source annotations
-  4.  Neuron sides match source annotations (somaSide)
-  5.  Population counts are correct
-  6.  All frozen edges exist in source connectivity
-  7.  Frozen edge weights EXACTLY match source (after aggregation)
-  8.  No edges below w_min threshold
-  9.  No unintended edges (no edges in frozen set that aren't in source)
-  10. No duplicate or inconsistent nodes
-  11. No duplicate edges
-  12. Readout populations are correct
-  13. NT predictions match source
-  14. Provenance checksums match current files
-  15. Schema is valid
-  16. Reproducibility: re-extract edges and compare
-
-Any check failure is a HARD STOP — the circuit cannot be considered frozen.
-"""
+"""Independent verification of frozen Circuit v1 artifacts against MaleCNS v1.0 source data."""
 
 from __future__ import annotations
 
@@ -42,11 +13,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.ipc as ipc
 
-
-# ═══════════════════════════════════════════════════════════════════
-# PATHS
-# ═══════════════════════════════════════════════════════════════════
-
+# Paths
 SCRIPT_DIR = Path(__file__).resolve().parent
 BASE_DIR = SCRIPT_DIR.parent.parent
 DATA_ROOT = BASE_DIR / "data" / "raw"
@@ -69,10 +36,6 @@ W_MIN = 3
 CIRCUIT_TYPES = ["LC4", "LPLC2", "DNp01", "DNp04", "DNp06"]
 EXPECTED_COUNTS = {"LC4": 126, "LPLC2": 185, "DNp01": 2, "DNp04": 2, "DNp06": 2}
 
-
-# ═══════════════════════════════════════════════════════════════════
-# UTILITIES
-# ═══════════════════════════════════════════════════════════════════
 
 def compute_sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -108,10 +71,6 @@ def normalize_side(soma_side, instance) -> str:
     return "unknown"
 
 
-# ═══════════════════════════════════════════════════════════════════
-# MAIN VERIFICATION
-# ═══════════════════════════════════════════════════════════════════
-
 def main():
     print("=" * 60)
     print("CIRCUIT v1 — INDEPENDENT VERIFICATION")
@@ -131,9 +90,7 @@ def main():
             failures.append(label)
             print(f"  ✗ FAIL: {label}")
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 1: ARTIFACT FILES EXIST
-    # ══════════════════════════════════════════════════════════════
+    # Check 1: Artifact files exist
     print("\n1. ARTIFACT FILES")
 
     required_files = [
@@ -165,9 +122,7 @@ def main():
     with open(PHASE3_DIR / "circuit_v1_schema.json") as f:
         schema = json.load(f)
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 2: SOURCE DATA EXISTS
-    # ══════════════════════════════════════════════════════════════
+    # Check 2: Source data files
     print("\n2. SOURCE DATA FILES")
 
     for label, path in [
@@ -181,9 +136,7 @@ def main():
         print("\nFATAL: Missing source data. Cannot verify.")
         sys.exit(1)
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 3: ALL NEURON IDs EXIST IN SOURCE
-    # ══════════════════════════════════════════════════════════════
+    # Check 3: Neuron ID verification
     print("\n3. NEURON ID VERIFICATION")
 
     ann = pd.read_feather(
@@ -207,9 +160,7 @@ def main():
     if missing:
         print(f"    Missing IDs: {missing}")
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 4: NEURON TYPES MATCH SOURCE
-    # ══════════════════════════════════════════════════════════════
+    # Check 4: Neuron type verification
     print("\n4. NEURON TYPE VERIFICATION")
 
     source_type_map = {}
@@ -233,9 +184,7 @@ def main():
         f"All neuron types match source ({type_mismatches} mismatches)",
     )
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 5: NEURON SIDES MATCH SOURCE
-    # ══════════════════════════════════════════════════════════════
+    # Check 5: Neuron side verification
     print("\n5. NEURON SIDE VERIFICATION")
 
     source_side_map = {}
@@ -260,9 +209,7 @@ def main():
         f"All neuron sides match source ({side_mismatches} mismatches)",
     )
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 6: POPULATION COUNTS
-    # ══════════════════════════════════════════════════════════════
+    # Check 6: Population counts
     print("\n6. POPULATION COUNTS")
 
     check(len(frozen_nodes) == 317, f"Total nodes = 317 (got {len(frozen_nodes)})")
@@ -272,9 +219,7 @@ def main():
         actual = len(frozen_nodes[frozen_nodes["type"] == ntype])
         check(actual == expected, f"{ntype} = {expected} (got {actual})")
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 7: EDGE VERIFICATION AGAINST SOURCE
-    # ══════════════════════════════════════════════════════════════
+    # Check 7: Edge weight verification against source
     print("\n7. EDGE WEIGHT VERIFICATION (exact match against source)")
 
     # Re-extract edges from feather to build ground truth
@@ -352,9 +297,7 @@ def main():
             f"({weight_mismatches} mismatches, tolerance=0)",
         )
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 8: THRESHOLD ENFORCEMENT
-    # ══════════════════════════════════════════════════════════════
+    # Check 8: Threshold enforcement
     print("\n8. THRESHOLD ENFORCEMENT")
 
     check(
@@ -362,9 +305,7 @@ def main():
         f"All edges have weight >= {W_MIN}",
     )
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 9: NO DUPLICATES OR SELF-LOOPS
-    # ══════════════════════════════════════════════════════════════
+    # Check 9: Edge integrity
     print("\n9. EDGE INTEGRITY")
 
     dup_edges = frozen_edges.groupby(["bodyId_pre", "bodyId_post"]).size()
@@ -378,9 +319,7 @@ def main():
     ]
     check(len(self_loops) == 0, f"No self-loops ({len(self_loops)} found)")
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 10: READOUT POPULATIONS
-    # ══════════════════════════════════════════════════════════════
+    # Check 10: Readout populations
     print("\n10. READOUT POPULATIONS")
 
     readout_nodes = frozen_nodes[frozen_nodes["population"] == "readout"]
@@ -398,9 +337,7 @@ def main():
             f"{dn} has L/R pair (got {sides})",
         )
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 11: NT PREDICTIONS MATCH SOURCE
-    # ══════════════════════════════════════════════════════════════
+    # Check 11: NT verification
     print("\n11. NEUROTRANSMITTER VERIFICATION")
 
     nt = pd.read_feather(NT_PATH)
@@ -426,9 +363,7 @@ def main():
         f"All NT predictions match source ({nt_mismatches} mismatches)",
     )
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 12: PROVENANCE CHECKSUMS
-    # ══════════════════════════════════════════════════════════════
+    # Check 12: Provenance checksums
     print("\n12. PROVENANCE CHECKSUMS")
 
     file_map = {
@@ -452,9 +387,7 @@ def main():
             print(f"    Recorded: {recorded_sha}")
             print(f"    Current:  {current_sha}")
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 13: NORMALIZATION CONSISTENCY
-    # ══════════════════════════════════════════════════════════════
+    # Check 13: Normalization
     print("\n13. NORMALIZATION")
 
     w_max = frozen_edges["weight"].max()
@@ -471,9 +404,7 @@ def main():
         "Max normalized weight = 1.0",
     )
 
-    # ══════════════════════════════════════════════════════════════
-    # CHECK 14: SCHEMA VALIDITY
-    # ══════════════════════════════════════════════════════════════
+    # Check 14: Schema
     print("\n14. SCHEMA")
 
     node_cols = set(frozen_nodes.columns)
@@ -490,9 +421,7 @@ def main():
         f"All schema edge columns present in CSV",
     )
 
-    # ══════════════════════════════════════════════════════════════
-    # PHASE 2 STATISTICS REPRODUCTION
-    # ══════════════════════════════════════════════════════════════
+    # Phase 2 statistics reproduction
     print("\n15. PHASE 2 STATISTICS REPRODUCTION")
 
     # Reproduce key Phase 1/2 discovery statistics
@@ -524,9 +453,7 @@ def main():
         print(f"    {dn_type}: frozen={total}, discovery={expected_total}, "
               f"ratio={ratio:.4f}")
 
-    # ══════════════════════════════════════════════════════════════
-    # FINAL SUMMARY
-    # ══════════════════════════════════════════════════════════════
+    # Final summary
     total = passed + failed
     print("\n" + "=" * 60)
     print(f"VERIFICATION COMPLETE: {passed}/{total} checks passed")

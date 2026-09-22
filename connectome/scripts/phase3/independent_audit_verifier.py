@@ -1,19 +1,4 @@
-"""
-independent_audit_verifier.py — Fresh Independent Verifier for Phase 3 Audit
-
-Written completely fresh for the final independent audit.
-Reads DIRECTLY from raw Feather files without importing or calling any existing
-freeze or verification scripts.
-
-Verifies:
-  - Exact raw annotations for LC4, LPLC2, DNp01, DNp04, DNp06, DNp02, DNp11
-  - Exact hemisphere distributions (L vs R)
-  - Full raw extraction of edges at w >= 3 for Circuit v1 and Circuit v2
-  - Exact match (tolerance = 0) against stored CSV artifacts
-  - Set delta between v1 and v2
-  - Recomputation of all edge classes and synaptic weight sums
-  - Source file SHA-256 provenance checksums
-"""
+"""Independent verification of Circuit v1 and v2 against raw connectome feather files."""
 
 from __future__ import annotations
 

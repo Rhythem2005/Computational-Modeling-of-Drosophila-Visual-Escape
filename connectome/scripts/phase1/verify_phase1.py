@@ -1,26 +1,4 @@
-"""
-verify_circuit.py — Comprehensive Phase 1 Verification
-
-Validates ALL Phase 1 connectome artifacts for internal consistency,
-correctness, and completeness.  Fails loudly (AssertionError) on any
-invariant violation.
-
-Checks performed:
-  1.  Dataset configuration matches male-cns:v1.0
-  2.  Expected neuron populations exist (LC4, LPLC2, DNp01, DNp06)
-  3.  DNp01 left and right exist
-  4.  No duplicate body IDs
-  5.  Node count == matrix dimension
-  6.  Matrix index consistency (bijective mapping)
-  7.  No NaN / Inf in matrix
-  8.  W[post, pre] orientation verified against processed edges
-  9.  Every nonzero matrix entry == aggregated edge weight
-  10. DNp01 incoming connection summary (left/right, top cell types)
-  11. Hemispheric symmetry (informational)
-  12. Normalization artifact exists and is valid
-  13. Retinotopy status report
-  14. Spectral radius (informational)
-"""
+"""Verify Phase 1 connectome artifacts for internal consistency and completeness."""
 
 import json
 import sys
@@ -32,8 +10,8 @@ import yaml
 
 
 def main():
-    ROOT_DIR = Path(__file__).resolve().parent.parent.parent.parent   # project root
-    BASE_DIR = Path(__file__).resolve().parent.parent.parent           # connectome/
+    ROOT_DIR = Path(__file__).resolve().parent.parent.parent.parent
+    BASE_DIR = Path(__file__).resolve().parent.parent.parent
     DATA_DIR = BASE_DIR / "data" / "phase1"
 
     passed = 0
@@ -47,13 +25,13 @@ def main():
         passed += 1
         print(f"  ✓ {label}")
 
-    # ── Load config ─────────────────────────────────────────────────
+    # Load config
     config_path = ROOT_DIR / "config.yaml"
     check(config_path.exists(), "config.yaml exists")
     with open(config_path, "r") as f:
         cfg = yaml.safe_load(f)
 
-    # ── Load all artifacts ──────────────────────────────────────────
+    # Load artifacts
     nodes_path  = DATA_DIR / "nodes.csv"
     edges_path  = DATA_DIR / "processed_edges.csv"
     matrix_path = DATA_DIR / "weight_matrix.npy"
@@ -73,18 +51,14 @@ def main():
     print("CIRCUIT TOPOLOGY VERIFICATION")
     print("=" * 60)
 
-    # ════════════════════════════════════════════════════════════════
-    # 1. DATASET CONFIGURATION
-    # ════════════════════════════════════════════════════════════════
+    # 1. Dataset configuration
     print("\n1. DATASET CONFIGURATION")
     check(
         cfg["dataset"]["name"] == "male-cns:v1.0",
         f"Dataset is male-cns:v1.0 (got: {cfg['dataset']['name']})"
     )
 
-    # ════════════════════════════════════════════════════════════════
-    # 2. NEURON POPULATIONS
-    # ════════════════════════════════════════════════════════════════
+    # 2. Neuron populations
     print("\n2. NEURON POPULATIONS")
     types_present = set(nodes_df["type"].unique())
     for t in ["LC4", "LPLC2", "DNp01", "DNp06"]:
@@ -94,36 +68,28 @@ def main():
     for t in ["LC4", "LPLC2", "DNp01", "DNp06"]:
         print(f"     {t}: {type_counts.get(t, 0)} neurons")
 
-    # ════════════════════════════════════════════════════════════════
-    # 3. DNp01 LEFT / RIGHT
-    # ════════════════════════════════════════════════════════════════
+    # 3. DNp01 validation
     print("\n3. DNp01 VALIDATION")
     dnp01 = nodes_df[nodes_df["type"] == "DNp01"]
     dnp01_sides = set(dnp01["side"].unique())
     check("left" in dnp01_sides,  "DNp01 left hemisphere neuron exists")
     check("right" in dnp01_sides, "DNp01 right hemisphere neuron exists")
 
-    # ════════════════════════════════════════════════════════════════
-    # 4. NO DUPLICATE BODY IDs
-    # ════════════════════════════════════════════════════════════════
+    # 4. Duplicate body ID check
     print("\n4. DUPLICATE BODY ID CHECK")
     check(
         nodes_df["bodyId"].is_unique,
         f"No duplicate bodyIds in nodes.csv ({len(nodes_df)} unique out of {len(nodes_df)})"
     )
 
-    # ════════════════════════════════════════════════════════════════
-    # 5. NODE COUNT == MATRIX DIMENSIONS
-    # ════════════════════════════════════════════════════════════════
+    # 5. Dimension consistency
     print("\n5. DIMENSION CONSISTENCY")
     n_nodes = len(nodes_df)
     check(W.ndim == 2,               f"Matrix is 2-dimensional (ndim={W.ndim})")
     check(W.shape[0] == W.shape[1],  f"Matrix is square ({W.shape})")
     check(W.shape[0] == n_nodes,     f"Matrix dim ({W.shape[0]}) == node count ({n_nodes})")
 
-    # ════════════════════════════════════════════════════════════════
-    # 6. MATRIX INDEX CONSISTENCY
-    # ════════════════════════════════════════════════════════════════
+    # 6. Matrix index consistency
     print("\n6. MATRIX INDEX CONSISTENCY")
     check(
         len(node_map) == n_nodes,
@@ -154,21 +120,17 @@ def main():
         )
     check(True, "matrix_index ordering matches nodes.csv row order")
 
-    # ════════════════════════════════════════════════════════════════
-    # 7. MATRIX SANITY
-    # ════════════════════════════════════════════════════════════════
+    # 7. Matrix sanity
     print("\n7. MATRIX SANITY")
     check(not np.isnan(W).any(), "No NaN values in weight matrix")
     check(not np.isinf(W).any(), "No Inf values in weight matrix")
     check((W >= 0).all(),        "All matrix entries are non-negative (unsigned structural weights)")
 
-    # ════════════════════════════════════════════════════════════════
-    # 8. W[post, pre] ORIENTATION SPOT-CHECK
-    # ════════════════════════════════════════════════════════════════
+    # 8. W[post, pre] orientation spot-check
     print("\n8. W[post, pre] ORIENTATION")
     id_to_idx = {bid: i for i, bid in enumerate(node_ids_ordered)}
 
-    # Pick up to 5 edges and verify orientation
+    # Check up to 5 edges
     sample_edges = edges_df.head(min(5, len(edges_df)))
     orientation_ok = True
     for _, row in sample_edges.iterrows():
@@ -181,12 +143,10 @@ def main():
             print(f"  ✗ W[{post_idx},{pre_idx}] = {actual}, expected {expected}")
     check(orientation_ok, "W[post, pre] orientation verified on sample edges")
 
-    # ════════════════════════════════════════════════════════════════
-    # 9. EVERY MATRIX ENTRY == AGGREGATED EDGE WEIGHT
-    # ════════════════════════════════════════════════════════════════
+    # 9. Full matrix <-> edge agreement
     print("\n9. FULL MATRIX ↔ EDGE AGREEMENT")
 
-    # Build a reference matrix from processed edges
+    # Reference matrix from processed edges
     W_ref = np.zeros_like(W)
     for _, row in edges_df.iterrows():
         pre_idx  = id_to_idx.get(row["bodyId_pre"])
@@ -200,7 +160,7 @@ def main():
         f"(nonzero: {np.count_nonzero(W)})"
     )
 
-    # Also verify no duplicate (pre,post) pairs in processed_edges
+    # Check for duplicate (pre, post) pairs
     dup_check = edges_df.groupby(["bodyId_pre", "bodyId_post"]).size()
     check(
         (dup_check == 1).all(),
@@ -208,9 +168,7 @@ def main():
         f"({len(dup_check)} unique pairs)"
     )
 
-    # ════════════════════════════════════════════════════════════════
-    # 10. DNp01 INCOMING CONNECTIONS
-    # ════════════════════════════════════════════════════════════════
+    # 10. DNp01 incoming connections
     print("\n10. DNp01 INCOMING CONNECTION SUMMARY")
 
     for side in ["left", "right"]:
@@ -225,7 +183,6 @@ def main():
         print(f"\n   DNp01 {side} (bodyId={dnp01_body}):")
         print(f"     Total incoming synaptic weight: {total_incoming:.0f}")
 
-        # Connections exist
         check(
             total_incoming > 0,
             f"DNp01 {side} has incoming connections (weight={total_incoming:.0f})"
@@ -244,9 +201,7 @@ def main():
             for cell_type, w in top_types.items():
                 print(f"       {cell_type}: {w} synapses")
 
-    # ════════════════════════════════════════════════════════════════
-    # 11. HEMISPHERIC SYMMETRY (informational)
-    # ════════════════════════════════════════════════════════════════
+    # 11. Hemispheric symmetry
     print("\n11. HEMISPHERIC SYMMETRY (Inputs to DNs)")
 
     # Build node metadata DataFrame from matrix index
@@ -272,9 +227,7 @@ def main():
         print(f"      <- Left Hemisphere Synapses:  {left_sum:.0f}")
         print(f"      <- Right Hemisphere Synapses: {right_sum:.0f}")
 
-    # ════════════════════════════════════════════════════════════════
-    # 12. NORMALIZATION
-    # ════════════════════════════════════════════════════════════════
+    # 12. Normalization
     print("\n12. NORMALIZATION")
     check(norm_path.exists(), "weight_matrix_normalized.npy exists")
     W_norm = np.load(norm_path)
@@ -293,9 +246,7 @@ def main():
         print(f"     Mean:  {W_norm.mean():.6f}")
         print(f"     Std:   {W_norm.std():.6f}")
 
-    # ════════════════════════════════════════════════════════════════
-    # 13. RETINOTOPY STATUS
-    # ════════════════════════════════════════════════════════════════
+    # 13. Retinotopy status
     print("\n13. RETINOTOPY / VISUAL METADATA STATUS")
     print("   The MaleCNS v1.0 dataset does NOT populate retinotopic")
     print("   metadata (assignedOlHex1, assignedOlHex2) for LC4/LPLC2")
@@ -305,9 +256,7 @@ def main():
     print("   but interpreting these requires additional analysis.")
     print("   STATUS: PENDING — no fabricated data included.")
 
-    # ════════════════════════════════════════════════════════════════
-    # 14. NETWORK FLOW & SPECTRAL RADIUS (informational)
-    # ════════════════════════════════════════════════════════════════
+    # 14. Network flow & spectral radius
     print("\n14. NETWORK FLOW")
     W_sensory     = W[np.ix_(sensory_indices, sensory_indices)]
     W_feedforward = W[np.ix_(motor_indices, sensory_indices)]
@@ -328,14 +277,12 @@ def main():
     print("   is deferred to Phase 4, where leaky-integrator time")
     print("   constants, gain, and activation bounds will be defined.")
 
-    # ════════════════════════════════════════════════════════════════
-    # FINAL SUMMARY
-    # ════════════════════════════════════════════════════════════════
+    # Final summary
     print("\n" + "=" * 60)
     print(f"VERIFICATION COMPLETE: {passed}/{total} checks passed")
     print("=" * 60)
 
-    # ── Acceptance test summary ─────────────────────────────────────
+    # Acceptance test summary
     print(f"\n  1.  Node count:               {n_nodes}")
     print(f"  2.  Matrix shape:             {W.shape}")
     print(f"  3.  Unique directed edges:    {len(edges_df)}")

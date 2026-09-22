@@ -1,20 +1,7 @@
-"""
-clean_and_export.py — Phase 1 Edge Processing & Matrix Construction
+"""Phase 1 edge processing and matrix construction.
 
-Reads raw_edges.csv and nodes.csv, applies:
-  1. Weight threshold filtering
-  2. Duplicate (pre, post) pair aggregation (sum of weights)
-  3. Raw structural weight matrix construction: W[post, pre]
-  4. Max-normalization to produce a separate normalized matrix
-
-Structural synapse counts are NEVER modified by neurotransmitter sign.
-Sign metadata (predictedNt) is preserved separately in matrix_index.json.
-
-Artifacts produced:
-  - processed_edges.csv       (aggregated, thresholded edges)
-  - weight_matrix.npy         (raw aggregated structural weights)
-  - weight_matrix_normalized.npy  (max-normalized weights)
-  - matrix_index.json         (positional index → neuron metadata)
+Filters raw edges by weight threshold, aggregates duplicate directed pairs,
+and exports raw and normalized weight matrices.
 """
 
 from pathlib import Path
@@ -23,7 +10,6 @@ import numpy as np
 import pandas as pd
 import yaml
 
-# ── 1. Load configuration ──────────────────────────────────────────
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent.parent   # project root
 CONFIG_PATH = ROOT_DIR / "config.yaml"
 
@@ -33,7 +19,6 @@ with open(CONFIG_PATH, "r") as f:
 WEIGHT_THRESHOLD = cfg["processing"]["weight_threshold"]
 NORM_METHOD      = cfg["normalization"]["method"]
 
-# ── 2. Paths ────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent.parent.parent   # connectome/
 DATA_DIR = BASE_DIR / "data" / "phase1"
 
@@ -43,20 +28,18 @@ EDGES_PATH = DATA_DIR / "raw_edges.csv"
 if not NODES_PATH.exists() or not EDGES_PATH.exists():
     raise FileNotFoundError("Missing nodes.csv or raw_edges.csv. Run earlier steps first.")
 
-# ── 3. Load data ────────────────────────────────────────────────────
 nodes_df = pd.read_csv(NODES_PATH)
 edges_df = pd.read_csv(EDGES_PATH)
 
 print(f"Loaded {len(nodes_df)} nodes and {len(edges_df)} raw edges.")
 
-# ── 4. Noise filtering (weight >= threshold) ────────────────────────
+# Filter edges below threshold
 filtered_edges = edges_df[edges_df["weight"] >= WEIGHT_THRESHOLD].copy()
 pruned_count = len(edges_df) - len(filtered_edges)
 print(f"Filtered out {pruned_count} edges with weight < {WEIGHT_THRESHOLD}. "
       f"Remaining: {len(filtered_edges)}")
 
-# ── 5. Aggregate duplicate (pre, post) pairs ────────────────────────
-# Multiple rows can exist for the same directed pair. Sum their weights.
+# Sum weights across duplicate directed pairs
 pre_agg_count = len(filtered_edges)
 pre_agg_pairs = filtered_edges.groupby(["bodyId_pre", "bodyId_post"]).ngroups
 
@@ -77,7 +60,6 @@ dup_pairs = pre_agg_count - len(aggregated)
 print(f"Aggregated {dup_pairs} duplicate rows across {pre_agg_pairs} unique pairs → "
       f"{len(aggregated)} edges after aggregation.")
 
-# ── 6. Hemispheric innervation check onto DNp06 ─────────────────────
 print("\n" + "=" * 50)
 print("HEMISPHERIC INNERVATION ONTO DNp06 (Synapse Sums)")
 print("=" * 50)
@@ -94,13 +76,8 @@ if not dnp06_inputs.empty:
 else:
     print("  No inputs to DNp06 found in filtered edges.")
 
-# ── 7. Build N × N structural weight matrix ─────────────────────────
-# Convention:  W[post_idx, pre_idx] = aggregated synapse count
-#
-# NOTE: Structural weights are UNSIGNED. Neurotransmitter sign is stored
-# separately as metadata. All 315 neurons in this dataset are predicted
-# acetylcholine; we do not fabricate inhibitory signs.
-
+# Build N x N matrix: W[post_idx, pre_idx] = aggregated synapse count
+# Structural weights are unsigned counts; neurotransmitter sign is stored as metadata.
 node_ids = nodes_df["bodyId"].tolist()
 n_nodes = len(node_ids)
 id_to_idx = {body_id: idx for idx, body_id in enumerate(node_ids)}
@@ -113,7 +90,6 @@ for _, row in aggregated.iterrows():
     if pre_idx is not None and post_idx is not None:
         W[post_idx, pre_idx] = row["weight"]
 
-# ── 8. Self-consistency check: matrix vs aggregated edges ────────────
 print("\n" + "=" * 50)
 print("SELF-CONSISTENCY CHECK")
 print("=" * 50)
@@ -142,7 +118,6 @@ assert nonzero_matrix == edges_in_matrix, (
 )
 print(f"  ✓ Nonzero matrix entries ({nonzero_matrix}) == mapped edge count.")
 
-# ── 9. Normalization ────────────────────────────────────────────────
 w_max = W.max()
 assert w_max > 0, "Maximum weight is zero — matrix is empty."
 
@@ -154,13 +129,11 @@ else:
 print(f"\n  Normalization: method={NORM_METHOD}, max_weight={w_max}")
 print(f"  Normalized matrix range: [{W_norm.min():.6f}, {W_norm.max():.6f}]")
 
-# ── 10. Save outputs ────────────────────────────────────────────────
 processed_edges_path = DATA_DIR / "processed_edges.csv"
 matrix_raw_path      = DATA_DIR / "weight_matrix.npy"
 matrix_norm_path     = DATA_DIR / "weight_matrix_normalized.npy"
 index_map_path       = DATA_DIR / "matrix_index.json"
 
-# Reorder columns for clarity
 aggregated = aggregated[[
     "bodyId_pre", "pre_type", "pre_side",
     "bodyId_post", "post_type", "post_side",
@@ -171,8 +144,7 @@ aggregated.to_csv(processed_edges_path, index=False)
 np.save(matrix_raw_path, W)
 np.save(matrix_norm_path, W_norm)
 
-# Matrix index: positional index → neuron metadata
-# Sign is stored as metadata (predictedNt), NOT applied to weights.
+# Positional index to neuron metadata; predictedNt preserved as metadata
 index_manifest = {}
 for pos_idx, (_, row) in enumerate(nodes_df.iterrows()):
     index_manifest[pos_idx] = {
@@ -185,7 +157,6 @@ for pos_idx, (_, row) in enumerate(nodes_df.iterrows()):
 with open(index_map_path, "w") as f:
     json.dump(index_manifest, f, indent=2)
 
-# ── 11. Summary ─────────────────────────────────────────────────────
 print("\n" + "=" * 50)
 print("PHASE 1 ARTIFACTS EXPORTED")
 print("=" * 50)

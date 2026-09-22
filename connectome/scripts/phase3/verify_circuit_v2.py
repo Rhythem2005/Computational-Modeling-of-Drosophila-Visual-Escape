@@ -1,34 +1,4 @@
-"""
-verify_circuit_v2.py — Independent Verification of Frozen Circuit v2
-
-Loads the frozen Circuit v2 artifacts and verifies every component
-against the original MaleCNS v1.0 source data.
-
-This script is independent from freeze_circuit_v2.py — it reads the frozen
-artifacts and re-checks them from scratch against the source feather
-files.
-
-Checks performed:
-  1.  All frozen artifact files exist
-  2.  All 321 neuron IDs exist in source annotations
-  3.  Neuron types match source annotations
-  4.  Neuron sides match source annotations (somaSide)
-  5.  Population counts are correct (LC4=126, LPLC2=185, DNp01=2, DNp04=2, DNp06=2, DNp02=2, DNp11=2)
-  6.  All frozen edges exist in source connectivity
-  7.  Frozen edge weights EXACTLY match source (after aggregation, tolerance=0)
-  8.  No edges below w_min threshold (w >= 3)
-  9.  No unintended edges (no edges in frozen set that aren't in source)
-  10. No duplicate or inconsistent nodes
-  11. No duplicate edges
-  12. Readout populations are correct ({DNp01, DNp04, DNp06, DNp02, DNp11})
-  13. NT predictions match source
-  14. Provenance checksums match current files
-  15. Schema is valid
-  16. Reproducibility: re-extract edges and compare with tolerance=0
-  17. Phase 2 visual input reproduction across all 5 readout types
-
-Any check failure is a HARD STOP.
-"""
+"""Independent verification of frozen Circuit v2 artifacts against MaleCNS v1.0 source data."""
 
 from __future__ import annotations
 
@@ -43,11 +13,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.ipc as ipc
 
-
-# ═══════════════════════════════════════════════════════════════════
-# PATHS
-# ═══════════════════════════════════════════════════════════════════
-
+# Paths
 SCRIPT_DIR = Path(__file__).resolve().parent
 BASE_DIR = SCRIPT_DIR.parent.parent
 DATA_ROOT = BASE_DIR / "data" / "raw"
@@ -78,10 +44,6 @@ EXPECTED_COUNTS = {
     "DNp11": 2,
 }
 
-
-# ═══════════════════════════════════════════════════════════════════
-# UTILITIES
-# ═══════════════════════════════════════════════════════════════════
 
 def compute_sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -117,10 +79,6 @@ def normalize_side(soma_side, instance) -> str:
     return "unknown"
 
 
-# ═══════════════════════════════════════════════════════════════════
-# MAIN VERIFICATION
-# ═══════════════════════════════════════════════════════════════════
-
 def main():
     print("=" * 60)
     print("CIRCUIT v2 — INDEPENDENT VERIFICATION")
@@ -140,7 +98,7 @@ def main():
             failures.append(label)
             print(f"  ✗ FAIL: {label}")
 
-    # 1. ARTIFACT FILES EXIST
+    # 1. Artifact files exist
     print("\n1. ARTIFACT FILES")
     required_files = [
         "circuit_v2_nodes.csv",

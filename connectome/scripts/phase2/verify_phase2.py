@@ -1,18 +1,4 @@
-"""
-verify_phase2.py — Automated verification suite for FLY Phase 2 artifacts.
-
-Validates:
-1. Presence of all 17 required Phase 2 deliverables.
-2. File integrity and non-emptiness.
-3. Checksums of pinned raw source datasets.
-4. Candidate DN counts (exactly 63 direct visual DNs at w1, 49 at w3, 33 at w10).
-5. Direct visual edges count (exactly 3,611 aggregated edges, 0 unexpected duplicates).
-6. Edge weight sums and aggregation consistency.
-7. Visual share mathematical boundaries (0 <= visual_share <= 1).
-8. Neurotransmitter data completeness for all visual and candidate DN neurons.
-9. Retinotopy proxy status consistency (retinotopic_column_available == False).
-10. Immutability of Phase 3 artifacts (zero modifications to connectome/phase3/*).
-"""
+"""Verification suite for Phase 2 deliverables, checksums, and metrics."""
 
 from __future__ import annotations
 
@@ -121,7 +107,7 @@ def check_direct_edges():
     edges = pd.read_csv(PHASE2_DIR / "direct_visual_dn_edges.csv")
     assert len(edges) == 3611, f"Expected 3611 direct edges, got {len(edges)}"
 
-    # Verify no duplicate (pre_bodyId, post_bodyId) pairs
+    # Check for duplicate pairs
     dups = edges.duplicated(subset=["pre_bodyId", "post_bodyId"]).sum()
     assert dups == 0, f"Found {dups} duplicate edge pairs in direct_visual_dn_edges.csv"
 
@@ -129,7 +115,7 @@ def check_direct_edges():
     total_synapses = edges["weight"].sum()
     assert total_synapses == 57709, f"Expected 57,709 total visual synapses, got {total_synapses}"
 
-    # Verify threshold counts
+    # Threshold counts
     surv_w3 = edges["survives_w3"].sum()
     surv_w10 = edges["survives_w10"].sum()
     assert surv_w3 == 2741, f"Expected 2741 edges surviving w3, got {surv_w3}"
@@ -149,13 +135,12 @@ def check_visual_share():
     assert (df["visual_share_w10"] >= 0.0).all()
     assert (df["visual_share_w10"] <= 1.0).all()
 
-    # Verify DNp04 values
+    # Check reference DN values
     dnp04_rows = df[df["type"] == "DNp04"]
     assert len(dnp04_rows) == 2, "Expected 2 DNp04 neurons"
     for _, r in dnp04_rows.iterrows():
         assert 0.65 <= r["visual_share_w1"] <= 0.72, f"DNp04 visual share out of expected range: {r['visual_share_w1']}"
 
-    # Verify DNp01 values
     dnp01_rows = df[df["type"] == "DNp01"]
     assert len(dnp01_rows) == 2, "Expected 2 DNp01 neurons"
     for _, r in dnp01_rows.iterrows():

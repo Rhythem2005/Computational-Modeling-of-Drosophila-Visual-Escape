@@ -1,13 +1,4 @@
-"""
-analyze.py — Phase 2: Candidate Circuit Analysis & Biological Validation
-
-Deterministic, reproducible analysis script for Drosophila MaleCNS v1.0.
-Recomputes candidate descending neuron metrics, threshold robustness (w_min in {1, 3, 10}),
-visual input specificity (visual share), intermediate two-step pathways, retinotopy proxies,
-and neurotransmitter annotations directly from pinned raw datasets.
-
-Outputs are written to connectome/phase2/.
-"""
+"""Compute candidate descending neuron metrics, robustness, and pathways from MaleCNS v1.0."""
 
 from __future__ import annotations
 
@@ -26,7 +17,6 @@ import pyarrow.compute as pc
 import pyarrow.feather as feather
 import pyarrow.ipc as ipc
 
-# Paths
 REPO_ROOT = Path(__file__).resolve().parents[3]
 RAW_DATA_DIR = REPO_ROOT / "connectome" / "data" / "raw"
 DISCOVERY_DIR = REPO_ROOT / "connectome" / "data" / "discovery"
@@ -175,7 +165,7 @@ def scan_direct_visual_edges(meta):
     source.close()
 
     raw_edges = pd.concat(matching_batches, ignore_index=True)
-    # Aggregate duplicate (body_pre, body_post) pairs if any
+    # Aggregate duplicate (body_pre, body_post) pairs if present
     agg_edges = (
         raw_edges.groupby(["body_pre", "body_post"], as_index=False)["weight"]
         .sum()
@@ -192,7 +182,6 @@ def scan_direct_visual_edges(meta):
     agg_edges["survives_w3"] = agg_edges["weight"] >= 3
     agg_edges["survives_w10"] = agg_edges["weight"] >= 10
 
-    # Rename columns for clarity
     agg_edges = agg_edges.rename(
         columns={
             "body_pre": "pre_bodyId",
@@ -321,9 +310,8 @@ def build_candidate_summaries(edges, meta, nt_map):
     df_w3 = compute_dn_metrics_at_threshold(edges, all_candidate_ids, total_in_dict, 3, meta)
     df_w10 = compute_dn_metrics_at_threshold(edges, all_candidate_ids, total_in_dict, 10, meta)
 
-    # Save per-threshold CSVs with canonical column names
+    # Save per-threshold summaries
     for w_min, df_w in [(1, df_w1), (3, df_w3), (10, df_w10)]:
-        # Strip suffix for the individual table for clean presentation
         clean_df = df_w.copy()
         clean_cols = {}
         for c in clean_df.columns:
@@ -335,7 +323,7 @@ def build_candidate_summaries(edges, meta, nt_map):
         clean_df.to_csv(path, index=False)
         print(f"Saved {len(clean_df)} candidate rows to {path.name}")
 
-    # Build master unified summary table
+    # Master summary table
     master_df = df_w1.copy()
     for col in [c for c in df_w3.columns if f"_w3" in c]:
         master_df[col] = df_w3[col]
@@ -441,21 +429,19 @@ def analyze_two_step_pathways(meta, candidate_dn_ids, nt_map):
     two_step_df["survives_w3"] = (two_step_df["visual_to_intermediate_weight"] >= 3) & (two_step_df["intermediate_to_descending_weight"] >= 3)
     two_step_df["survives_w10"] = (two_step_df["visual_to_intermediate_weight"] >= 10) & (two_step_df["intermediate_to_descending_weight"] >= 10)
 
-    # Filter paths to candidate DNs (63 direct visual DNs)
+    # Filter paths to candidate DNs
     two_step_cand_df = two_step_df[two_step_df["descending_body"].isin(candidate_dn_ids)].copy()
 
-    # Save detailed two-step paths for candidate DNs (sorted by product weight)
     two_step_cand_sorted = two_step_cand_df.sort_values("path_product_weight", ascending=False)
     paths_out = PHASE2_DIR / "two_step_paths.csv"
     two_step_cand_sorted.to_csv(paths_out, index=False)
     print(f"Saved {len(two_step_cand_sorted)} two-step paths to candidate DNs to {paths_out.name}")
 
-    # Intermediate candidate aggregation
-    # Group by intermediate body
+    # Aggregate by intermediate body
     grouped = two_step_cand_df.groupby("intermediate_body")
     inter_records = []
 
-    # Get top 200 intermediates by total path weight to compute total incoming inputs
+    # Scan incoming inputs for top intermediates by path weight
     top_inter_bodies = (
         two_step_cand_df.groupby("intermediate_body")["intermediate_to_descending_weight"]
         .sum()

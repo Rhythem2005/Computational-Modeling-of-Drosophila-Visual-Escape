@@ -1,29 +1,4 @@
-"""
-freeze_circuit_v2.py — Phase 3: Freeze and Formalize Circuit v2
-
-Constructs the frozen Circuit v2 from MaleCNS v1.0 source data (feather files).
-
-Circuit v2 expands provisional Circuit v1 to include the complete verified
-escape steering and takeoff motor channels identified in Phase 2:
-  - LC4   (126 neurons) — looming-sensitive visual projection neurons
-  - LPLC2 (185 neurons) — lobula plate / lobula columnar neurons
-  - DNp01 (2 neurons)   — primary escape readout (Giant Fiber: unsteered emergency jump)
-  - DNp04 (2 neurons)   — directional escape readout (backward takeoff partner)
-  - DNp02 (2 neurons)   — directional escape readout (obligate backward takeoff co-factor)
-  - DNp11 (2 neurons)   — directional escape readout (forward jump takeoff)
-  - DNp06 (2 neurons)   — flight evasive steering readout (threat-induced flight saccades)
-
-Total neurons: 321 (311 visual + 10 descending)
-
-Processing:
-  1. Extract all neurons of circuit types from body-annotations feather
-  2. Extract neurotransmitter predictions from body-neurotransmitters feather
-  3. Extract ALL edges among circuit neurons from connectome-weights feather
-  4. Aggregate duplicate (pre, post) pairs by summing weights
-  5. Apply w_min=3 threshold (established in Phase 1 config.yaml)
-  6. Max-normalize weights (dividing by max weight = 172)
-  7. Produce frozen artifacts in connectome/phase3/
-"""
+"""Construct the frozen Circuit v2 artifacts from MaleCNS v1.0 source data."""
 
 from __future__ import annotations
 
@@ -39,11 +14,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.ipc as ipc
 
-
-# ═══════════════════════════════════════════════════════════════════
-# CONFIGURATION — Phase 2/3 decisions, frozen for Circuit v2
-# ═══════════════════════════════════════════════════════════════════
-
+# Configuration
 CIRCUIT_TYPES = ["LC4", "LPLC2", "DNp01", "DNp04", "DNp06", "DNp02", "DNp11"]
 
 READOUT_NEURONS = {
@@ -57,8 +28,8 @@ READOUT_NEURONS = {
 VISUAL_TYPES = {"LC4", "LPLC2"}
 DN_TYPES = {"DNp01", "DNp04", "DNp06", "DNp02", "DNp11"}
 
-W_MIN = 3              # Minimum weight threshold
-NORMALIZATION = "max"   # Normalization method
+W_MIN = 3
+NORMALIZATION = "max"
 
 CIRCUIT_VERSION = "2.0.0"
 CIRCUIT_ID = "circuit_v2"
@@ -73,12 +44,9 @@ EXPECTED_COUNTS = {
     "DNp11": 2,
 }
 
-# ═══════════════════════════════════════════════════════════════════
-# PATHS
-# ═══════════════════════════════════════════════════════════════════
-
+# Paths
 SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = SCRIPT_DIR.parent.parent              # connectome/
+BASE_DIR = SCRIPT_DIR.parent.parent
 DATA_ROOT = BASE_DIR / "data" / "raw"
 
 ANNOTATIONS_PATH = (
@@ -96,10 +64,6 @@ NT_PATH = (
 
 OUTPUT_DIR = BASE_DIR / "phase3"
 
-
-# ═══════════════════════════════════════════════════════════════════
-# UTILITIES
-# ═══════════════════════════════════════════════════════════════════
 
 def compute_sha256(path: Path) -> str:
     """Compute SHA-256 hash of a file."""
@@ -161,10 +125,6 @@ def classify_edge(pre_type: str, post_type: str) -> str:
     return "other"
 
 
-# ═══════════════════════════════════════════════════════════════════
-# STEP 1: EXTRACT CIRCUIT NEURONS
-# ═══════════════════════════════════════════════════════════════════
-
 def extract_neurons() -> pd.DataFrame:
     """Extract all circuit neurons from the annotations feather file."""
     print("Step 1: Extracting circuit neurons from annotations...")
@@ -223,10 +183,6 @@ def extract_neurons() -> pd.DataFrame:
     return nodes
 
 
-# ═══════════════════════════════════════════════════════════════════
-# STEP 2: EXTRACT NEUROTRANSMITTER PREDICTIONS
-# ═══════════════════════════════════════════════════════════════════
-
 def extract_neurotransmitters(body_ids: set[int]) -> pd.DataFrame:
     """Extract neurotransmitter predictions for circuit neurons."""
     print("\nStep 2: Extracting neurotransmitter predictions...")
@@ -260,10 +216,6 @@ def extract_neurotransmitters(body_ids: set[int]) -> pd.DataFrame:
 
     return result
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 3: EXTRACT ALL CIRCUIT EDGES
-# ═══════════════════════════════════════════════════════════════════
 
 def extract_edges(body_ids: set[int]) -> pd.DataFrame:
     """Extract all edges where BOTH pre and post are circuit neurons."""
@@ -320,10 +272,6 @@ def extract_edges(body_ids: set[int]) -> pd.DataFrame:
 
     return filtered.sort_values("weight", ascending=False).reset_index(drop=True)
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 4: BUILD FROZEN CIRCUIT
-# ═══════════════════════════════════════════════════════════════════
 
 def build_frozen_circuit(
     nodes: pd.DataFrame,
@@ -484,10 +432,6 @@ def build_frozen_circuit(
     return frozen_nodes, frozen_edges, circuit_json
 
 
-# ═══════════════════════════════════════════════════════════════════
-# STEP 5: COMPUTE DATA PROVENANCE
-# ═══════════════════════════════════════════════════════════════════
-
 def compute_provenance() -> dict:
     """Compute checksums and provenance for all source data files."""
     print("\nStep 5: Computing data provenance...")
@@ -560,10 +504,6 @@ def compute_provenance() -> dict:
 
     return provenance
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 6: BUILD-TIME VALIDATION
-# ═══════════════════════════════════════════════════════════════════
 
 def validate_circuit(
     nodes: pd.DataFrame,
@@ -648,10 +588,6 @@ def validate_circuit(
     print(f"\n  Build validation: {checks_passed} checks passed, {len(failures)} failed")
     return failures
 
-
-# ═══════════════════════════════════════════════════════════════════
-# STEP 7: SAVE ARTIFACTS
-# ═══════════════════════════════════════════════════════════════════
 
 def save_artifacts(
     nodes: pd.DataFrame,

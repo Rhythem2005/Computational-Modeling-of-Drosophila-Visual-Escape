@@ -1,22 +1,8 @@
-"""
-phase1_discovery.py — Phase 1: Full-Connectome Circuit Discovery
+"""Full-connectome circuit discovery for visual escape pathways.
 
-Queries the local MaleCNS v1.0 dataset (feather files) to identify:
-  1. LC4 and LPLC2 populations
-  2. DNp01, DNp04, DNp06 populations
-  3. The complete descending-neuron population
-  4. All major downstream targets of LC4 and LPLC2
-  5. Convergence neurons receiving both LC4 and LPLC2 input
-  6. Descending neurons receiving direct visual input
-  7. Quantitative comparison of named DN candidates
-  8. Upstream structure of candidate DNs
-  9. Two-step pathways: visual → intermediate → DN
- 10. Direct versus indirect comparison
- 11. Evidence summary
-
-Descending neurons are identified via:
-    superclass == 'descending_neuron'
-in the MaleCNS v1.0 body-annotations file.
+Queries the local MaleCNS v1.0 dataset to identify visual projection neurons,
+candidate descending neurons, common downstream targets, and two-step pathways.
+Descending neurons are identified via superclass == 'descending_neuron'.
 """
 
 from __future__ import annotations
@@ -943,7 +929,7 @@ def main():
     if not annotation_path.exists():
         raise FileNotFoundError(annotation_path)
 
-    # ── Load annotations ─────────────────────────────────────────
+    # Load annotations
     print("Loading annotations...")
 
     (
@@ -967,7 +953,7 @@ def main():
     for label, ids in related_descending.items():
         print(f"  {label}: {len(ids):,}")
 
-    # ── Step 1: Population inventory ─────────────────────────────
+    # Population inventory
     print("\n[Step 1] Saving population inventory...")
     population_inventory(
         populations,
@@ -987,7 +973,7 @@ def main():
         output_dir / "descending_neurons.csv",
     )
 
-    # ── Steps 2-3: Direct visual outputs ─────────────────────────
+    # Direct visual outputs
     print("\n[Steps 2-3] Extracting direct visual outputs...")
     visual_edges = direct_visual_outputs(
         connectivity_path,
@@ -996,7 +982,7 @@ def main():
         output_dir,
     )
 
-    # ── Step 4: Common targets ───────────────────────────────────
+    # Common visual targets
     print("\n[Step 4] Analyzing common visual targets...")
     common = common_targets(
         visual_edges,
@@ -1004,7 +990,7 @@ def main():
         output_dir,
     )
 
-    # ── Steps 5+7: Descending targets ────────────────────────────
+    # Descending targets
     print("\n[Steps 5+7] Identifying descending targets...")
     descending_ranked = descending_targets(
         visual_edges,
@@ -1013,7 +999,7 @@ def main():
         output_dir,
     )
 
-    # ── Step 6: Named DN comparison ──────────────────────────────
+    # Candidate comparison
     print("\n[Step 6] Comparing DNp01/DNp04/DNp06...")
     named = named_dn_comparison(
         visual_edges,
@@ -1021,7 +1007,7 @@ def main():
         output_dir,
     )
 
-    # ── Step 8: Upstream analysis ────────────────────────────────
+    # Upstream analysis
     print("\n[Step 8] Analyzing upstream structure...")
     upstream_analysis(
         connectivity_path,
@@ -1032,7 +1018,7 @@ def main():
         args.top_k_upstream,
     )
 
-    # ── Steps 9-10: Two-step paths ───────────────────────────────
+    # Two-step pathways
     print("\n[Steps 9-10] Searching two-step pathways...")
     visual_ids = set().union(
         *(populations[name] for name in VISUAL_TYPES)
@@ -1047,7 +1033,7 @@ def main():
         output_dir,
     )
 
-    # ── Step 11: Direct vs indirect comparison ───────────────────
+    # Direct vs. indirect comparison
     print("\n[Step 11] Comparing direct vs indirect pathways...")
     direct_vs_indirect_comparison(
         descending_ranked,
@@ -1056,7 +1042,7 @@ def main():
         output_dir,
     )
 
-    # ── Step 12: Research queue ──────────────────────────────────
+    # Research queue
     print("\n[Step 12] Writing research queue...")
     write_research_queue(
         descending_ranked,
@@ -1064,7 +1050,7 @@ def main():
         output_dir,
     )
 
-    # ── Step 13: Summary ─────────────────────────────────────────
+    # Summary metrics
     print("\n[Step 13] Writing discovery summary...")
 
     # Top descending candidates
