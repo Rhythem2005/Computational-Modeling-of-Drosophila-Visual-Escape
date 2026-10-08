@@ -1,0 +1,1352 @@
+{
+  "run_date": "2026-10-08T14:15:12.804253+00:00",
+  "circuit_version": "2.0.0",
+  "total_tests": 128,
+  "passed": 128,
+  "failed": 0,
+  "spectral_radius": 0.6958315414466647,
+  "max_real_eigenvalue": 0.6958315414466647,
+  "gain": 0.5,
+  "dt": 1.0,
+  "pre_hashes": {
+    "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+    "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+    "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+    "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+    "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+    "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+  },
+  "test_details": [
+    {
+      "test_id": "1.LOAD",
+      "name": "n_neurons",
+      "status": "PASS",
+      "detail": "got 321"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "n_edges",
+      "status": "PASS",
+      "detail": "got 11557"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "total_synapses",
+      "status": "PASS",
+      "detail": "got 91023"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "max_raw_weight",
+      "status": "PASS",
+      "detail": "got 172"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "matrix_shape",
+      "status": "PASS",
+      "detail": "got (321, 321)"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "nonzero_count",
+      "status": "PASS",
+      "detail": "got 11557"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "no_self_loops",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "unique_body_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "LC4_count",
+      "status": "PASS",
+      "detail": "got 126"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "LPLC2_count",
+      "status": "PASS",
+      "detail": "got 185"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp01_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp04_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp06_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp02_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp11_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp01_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10010, got 10010"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp01_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10001, got 10001"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp04_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 531898, got 531898"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp04_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 11137, got 11137"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp06_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10228, got 10228"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp06_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10584, got 10584"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp02_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10197, got 10197"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp02_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10117, got 10117"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp11_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10259, got 10259"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "DNp11_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10106, got 10106"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "edge_Max weight edge LC4->DNp04",
+      "status": "PASS",
+      "detail": "{'pre': 81112, 'post': 531898, 'expected_raw': 172, 'description': 'Max weight edge LC4->DNp04', 'actual_raw': 172.0, 'actual_norm': 1.0, 'expected_norm': 1.0, 'status': 'PASS'}"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "edge_LC4->DNp04 second heaviest",
+      "status": "PASS",
+      "detail": "{'pre': 12349, 'post': 531898, 'expected_raw': 160, 'description': 'LC4->DNp04 second heaviest', 'actual_raw': 160.0, 'actual_norm': 0.9302325581395348, 'expected_norm': 0.9302325581395349, 'status': 'PASS'}"
+    },
+    {
+      "test_id": "1.LOAD",
+      "name": "edge_LC4_R->DNp04_R",
+      "status": "PASS",
+      "detail": "{'pre': 17054, 'post': 11137, 'expected_raw': 154, 'description': 'LC4_R->DNp04_R', 'actual_raw': 154.0, 'actual_norm': 0.8953488372093024, 'expected_norm': 0.8953488372093024, 'status': 'PASS'}"
+    },
+    {
+      "test_id": "2.SIGN",
+      "name": "nt_acetylcholine_in_sign_map",
+      "status": "PASS",
+      "detail": "NT: acetylcholine"
+    },
+    {
+      "test_id": "2.SIGN",
+      "name": "sign_all_neurons",
+      "status": "PASS",
+      "detail": "All signs correctly applied"
+    },
+    {
+      "test_id": "2.SIGN",
+      "name": "raw_to_norm",
+      "status": "PASS",
+      "detail": "raw=172.0, norm=1.0, expected=1.0"
+    },
+    {
+      "test_id": "2.SIGN",
+      "name": "norm_to_signed",
+      "status": "PASS",
+      "detail": "norm=1.0, signed=1.0, sign=1.0"
+    },
+    {
+      "test_id": "3.STAB",
+      "name": "spectral_radius_computed",
+      "status": "PASS",
+      "detail": "spectral_radius = 0.695832"
+    },
+    {
+      "test_id": "3.STAB",
+      "name": "max_real_eigenvalue_computed",
+      "status": "PASS",
+      "detail": "max_real_eigenvalue = 0.695832"
+    },
+    {
+      "test_id": "3.STAB",
+      "name": "euler_stability_criterion",
+      "status": "PASS",
+      "detail": "dt/min_tau * max_real_ev = 0.069583 (must be < 1)"
+    },
+    {
+      "test_id": "A1",
+      "name": "zero_state_zero_input",
+      "status": "PASS",
+      "detail": "max|state|=0.0"
+    },
+    {
+      "test_id": "A2",
+      "name": "small_state_decays",
+      "status": "PASS",
+      "detail": "max|final_state|=5.89e-15 (threshold=1e-06)"
+    },
+    {
+      "test_id": "A2",
+      "name": "A2_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "A2",
+      "name": "A2_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "A2",
+      "name": "A2_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 0.1344"
+    },
+    {
+      "test_id": "B",
+      "name": "B_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "B",
+      "name": "B_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "B",
+      "name": "B_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 32.8111"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp01_left",
+      "status": "PASS",
+      "detail": "max=22.3157, peak_t=500.0ms, auc=10511.3396"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp01_right",
+      "status": "PASS",
+      "detail": "max=11.2825, peak_t=500.0ms, auc=5362.0856"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp04_left",
+      "status": "PASS",
+      "detail": "max=32.8111, peak_t=500.0ms, auc=15546.5704"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp04_right",
+      "status": "PASS",
+      "detail": "max=21.1156, peak_t=500.0ms, auc=10035.0424"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp02_left",
+      "status": "PASS",
+      "detail": "max=12.6977, peak_t=500.0ms, auc=5998.3637"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp02_right",
+      "status": "PASS",
+      "detail": "max=9.2055, peak_t=500.0ms, auc=4368.3479"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp11_left",
+      "status": "PASS",
+      "detail": "max=9.9350, peak_t=500.0ms, auc=4703.6611"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp11_right",
+      "status": "PASS",
+      "detail": "max=13.3374, peak_t=500.0ms, auc=6252.2604"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp06_left",
+      "status": "PASS",
+      "detail": "max=5.7484, peak_t=500.0ms, auc=2699.2072"
+    },
+    {
+      "test_id": "B",
+      "name": "LC4_only_DNp06_right",
+      "status": "PASS",
+      "detail": "max=4.1976, peak_t=500.0ms, auc=1972.4625"
+    },
+    {
+      "test_id": "C",
+      "name": "C_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "C",
+      "name": "C_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "C",
+      "name": "C_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 29.8344"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp01_left",
+      "status": "PASS",
+      "detail": "max=29.8344, peak_t=500.0ms, auc=13559.5009"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp01_right",
+      "status": "PASS",
+      "detail": "max=17.8556, peak_t=500.0ms, auc=8280.6200"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp04_left",
+      "status": "PASS",
+      "detail": "max=22.4226, peak_t=500.0ms, auc=10196.1860"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp04_right",
+      "status": "PASS",
+      "detail": "max=13.5304, peak_t=500.0ms, auc=6248.0302"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp02_left",
+      "status": "PASS",
+      "detail": "max=2.8433, peak_t=500.0ms, auc=1259.1818"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp02_right",
+      "status": "PASS",
+      "detail": "max=2.0421, peak_t=500.0ms, auc=921.7910"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp11_left",
+      "status": "PASS",
+      "detail": "max=1.9605, peak_t=500.0ms, auc=871.1010"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp11_right",
+      "status": "PASS",
+      "detail": "max=9.0964, peak_t=500.0ms, auc=4050.2661"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp06_left",
+      "status": "PASS",
+      "detail": "max=9.1531, peak_t=500.0ms, auc=4174.7179"
+    },
+    {
+      "test_id": "C",
+      "name": "LPLC2_only_DNp06_right",
+      "status": "PASS",
+      "detail": "max=7.4552, peak_t=500.0ms, auc=3447.8841"
+    },
+    {
+      "test_id": "D",
+      "name": "D_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "D",
+      "name": "D_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "D",
+      "name": "D_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 50.0000"
+    },
+    {
+      "test_id": "D",
+      "name": "convergence",
+      "status": "PASS",
+      "detail": "max_late_change=0.000000"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp01_left",
+      "status": "PASS",
+      "detail": "max=50.0000, peak_t=387.0ms, auc=23284.0968"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp01_right",
+      "status": "PASS",
+      "detail": "max=29.1276, peak_t=500.0ms, auc=13639.1197"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp04_left",
+      "status": "PASS",
+      "detail": "max=50.0000, peak_t=362.0ms, auc=23638.5721"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp04_right",
+      "status": "PASS",
+      "detail": "max=34.6425, peak_t=500.0ms, auc=16281.8843"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp02_left",
+      "status": "PASS",
+      "detail": "max=15.2589, peak_t=500.0ms, auc=7147.6377"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp02_right",
+      "status": "PASS",
+      "detail": "max=11.2467, peak_t=500.0ms, auc=5289.8282"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp11_left",
+      "status": "PASS",
+      "detail": "max=11.8241, peak_t=500.0ms, auc=5549.5325"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp11_right",
+      "status": "PASS",
+      "detail": "max=21.8633, peak_t=500.0ms, auc=10099.4693"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp06_left",
+      "status": "PASS",
+      "detail": "max=14.5281, peak_t=500.0ms, auc=6728.4452"
+    },
+    {
+      "test_id": "D",
+      "name": "both_DNp06_right",
+      "status": "PASS",
+      "detail": "max=11.6520, peak_t=500.0ms, auc=5420.0798"
+    },
+    {
+      "test_id": "D",
+      "name": "LR_diff_DNp01",
+      "status": "PASS",
+      "detail": "L-R max difference = 20.872359"
+    },
+    {
+      "test_id": "D",
+      "name": "LR_diff_DNp04",
+      "status": "PASS",
+      "detail": "L-R max difference = 15.357548"
+    },
+    {
+      "test_id": "D",
+      "name": "LR_diff_DNp02",
+      "status": "PASS",
+      "detail": "L-R max difference = 4.012235"
+    },
+    {
+      "test_id": "D",
+      "name": "LR_diff_DNp11",
+      "status": "PASS",
+      "detail": "L-R max difference = -10.039200"
+    },
+    {
+      "test_id": "D",
+      "name": "LR_diff_DNp06",
+      "status": "PASS",
+      "detail": "L-R max difference = 2.876086"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 32.7520"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 21.0809"
+    },
+    {
+      "test_id": "E",
+      "name": "left_LC4_DNp01",
+      "status": "PASS",
+      "detail": "DN_L_max=19.8359, DN_R_max=0.1012, diff=19.7348"
+    },
+    {
+      "test_id": "E",
+      "name": "left_LC4_DNp04",
+      "status": "PASS",
+      "detail": "DN_L_max=32.7520, DN_R_max=0.0347, diff=32.7174"
+    },
+    {
+      "test_id": "E",
+      "name": "left_LC4_DNp02",
+      "status": "PASS",
+      "detail": "DN_L_max=12.6829, DN_R_max=0.0091, diff=12.6738"
+    },
+    {
+      "test_id": "E",
+      "name": "left_LC4_DNp11",
+      "status": "PASS",
+      "detail": "DN_L_max=9.7148, DN_R_max=5.5218, diff=4.1929"
+    },
+    {
+      "test_id": "E",
+      "name": "left_LC4_DNp06",
+      "status": "PASS",
+      "detail": "DN_L_max=5.7173, DN_R_max=0.0079, diff=5.7094"
+    },
+    {
+      "test_id": "E",
+      "name": "right_LC4_DNp01",
+      "status": "PASS",
+      "detail": "DN_L_max=2.4797, DN_R_max=11.1813, diff=-8.7016"
+    },
+    {
+      "test_id": "E",
+      "name": "right_LC4_DNp04",
+      "status": "PASS",
+      "detail": "DN_L_max=0.0591, DN_R_max=21.0809, diff=-21.0218"
+    },
+    {
+      "test_id": "E",
+      "name": "right_LC4_DNp02",
+      "status": "PASS",
+      "detail": "DN_L_max=0.0148, DN_R_max=9.1964, diff=-9.1816"
+    },
+    {
+      "test_id": "E",
+      "name": "right_LC4_DNp11",
+      "status": "PASS",
+      "detail": "DN_L_max=0.2202, DN_R_max=7.8156, diff=-7.5954"
+    },
+    {
+      "test_id": "E",
+      "name": "right_LC4_DNp06",
+      "status": "PASS",
+      "detail": "DN_L_max=0.0310, DN_R_max=4.1897, diff=-4.1587"
+    },
+    {
+      "test_id": "F",
+      "name": "pulse_reproducible",
+      "status": "PASS",
+      "detail": "Two pulse runs are bitwise identical"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 49.9710"
+    },
+    {
+      "test_id": "F",
+      "name": "pulse_DNp01_temporal",
+      "status": "PASS",
+      "detail": "at_onset=0.0000, at_offset=49.5253, at_end=0.4822, peak=49.5727"
+    },
+    {
+      "test_id": "F",
+      "name": "pulse_DNp04_temporal",
+      "status": "PASS",
+      "detail": "at_onset=0.0000, at_offset=49.9642, at_end=0.3627, peak=49.9710"
+    },
+    {
+      "test_id": "F",
+      "name": "pulse_DNp02_temporal",
+      "status": "PASS",
+      "detail": "at_onset=0.0000, at_offset=14.9875, at_end=0.0747, peak=14.9983"
+    },
+    {
+      "test_id": "F",
+      "name": "pulse_DNp11_temporal",
+      "status": "PASS",
+      "detail": "at_onset=0.0000, at_offset=11.6138, at_end=0.0491, peak=11.6234"
+    },
+    {
+      "test_id": "F",
+      "name": "pulse_DNp06_temporal",
+      "status": "PASS",
+      "detail": "at_onset=0.0000, at_offset=14.0215, at_end=0.1368, peak=14.0390"
+    },
+    {
+      "test_id": "STAB",
+      "name": "input_zero",
+      "status": "PASS",
+      "detail": "max|state|=0.0000, NaN=False, Inf=False"
+    },
+    {
+      "test_id": "STAB",
+      "name": "input_small",
+      "status": "PASS",
+      "detail": "max|state|=5.5234, NaN=False, Inf=False"
+    },
+    {
+      "test_id": "STAB",
+      "name": "input_moderate",
+      "status": "PASS",
+      "detail": "max|state|=50.0000, NaN=False, Inf=False"
+    },
+    {
+      "test_id": "STAB",
+      "name": "input_max",
+      "status": "PASS",
+      "detail": "max|state|=50.0000, NaN=False, Inf=False"
+    },
+    {
+      "test_id": "DT",
+      "name": "dt=0.5ms",
+      "status": "PASS",
+      "detail": "DNp01_L peak=50.0000, auc=23273.2296, max|state|=50.0000"
+    },
+    {
+      "test_id": "DT",
+      "name": "dt=1.0ms",
+      "status": "PASS",
+      "detail": "DNp01_L peak=50.0000, auc=23284.0968, max|state|=50.0000"
+    },
+    {
+      "test_id": "DT",
+      "name": "dt=2.0ms",
+      "status": "PASS",
+      "detail": "DNp01_L peak=50.0000, auc=23305.7960, max|state|=50.0000"
+    },
+    {
+      "test_id": "DT",
+      "name": "peak_sensitivity_0.5v1.0",
+      "status": "PASS",
+      "detail": "relative_diff=0.0000 (tol=0.1)"
+    },
+    {
+      "test_id": "DT",
+      "name": "auc_sensitivity_0.5v1.0",
+      "status": "PASS",
+      "detail": "relative_diff=0.0005 (tol=0.15)"
+    },
+    {
+      "test_id": "DET",
+      "name": "bitwise_determinism",
+      "status": "PASS",
+      "detail": "Two identical runs produce identical states"
+    },
+    {
+      "test_id": "DET",
+      "name": "no_nan_run1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "DET",
+      "name": "no_inf_run1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_nodes.csv",
+      "status": "PASS",
+      "detail": "pre=6c39db7b41cceff0... post=6c39db7b41cceff0..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_edges.csv",
+      "status": "PASS",
+      "detail": "pre=d333731d3c2ddca9... post=d333731d3c2ddca9..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2.json",
+      "status": "PASS",
+      "detail": "pre=27327c030a09222d... post=27327c030a09222d..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_provenance.json",
+      "status": "PASS",
+      "detail": "pre=a7b11299df76a4ca... post=a7b11299df76a4ca..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_schema.json",
+      "status": "PASS",
+      "detail": "pre=c369e3c11ab8abf8... post=c369e3c11ab8abf8..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_build_validation.json",
+      "status": "PASS",
+      "detail": "pre=9d3d45a1e4452fc9... post=9d3d45a1e4452fc9..."
+    }
+  ],
+  "dt_sensitivity": {
+    "0.5": {
+      "peak": 49.99999999999993,
+      "auc": 23273.229558389554,
+      "max_state": 49.99999999999993
+    },
+    "1.0": {
+      "peak": 49.99999999999997,
+      "auc": 23284.096823620785,
+      "max_state": 49.99999999999997
+    },
+    "2.0": {
+      "peak": 49.999999999999986,
+      "auc": 23305.796017024346,
+      "max_state": 49.999999999999986
+    }
+  },
+  "readout_B_LC4": {
+    "dn_neurons": {
+      "DNp01": {
+        "left": {
+          "body_id": 10010,
+          "mean": 21.002989,
+          "max": 22.315683,
+          "peak_time_ms": 500.0,
+          "auc": 10511.3396
+        },
+        "right": {
+          "body_id": 10001,
+          "mean": 10.714026,
+          "max": 11.282499,
+          "peak_time_ms": 500.0,
+          "auc": 5362.0856
+        }
+      },
+      "DNp04": {
+        "left": {
+          "body_id": 531898,
+          "mean": 31.063824,
+          "max": 32.811128,
+          "peak_time_ms": 500.0,
+          "auc": 15546.5704
+        },
+        "right": {
+          "body_id": 11137,
+          "mean": 20.051098,
+          "max": 21.11561,
+          "peak_time_ms": 500.0,
+          "auc": 10035.0424
+        }
+      },
+      "DNp02": {
+        "left": {
+          "body_id": 10197,
+          "mean": 11.985454,
+          "max": 12.697722,
+          "peak_time_ms": 500.0,
+          "auc": 5998.3637
+        },
+        "right": {
+          "body_id": 10117,
+          "mean": 8.728444,
+          "max": 9.205547,
+          "peak_time_ms": 500.0,
+          "auc": 4368.3479
+        }
+      },
+      "DNp11": {
+        "left": {
+          "body_id": 10259,
+          "mean": 9.39846,
+          "max": 9.934978,
+          "peak_time_ms": 500.0,
+          "auc": 4703.6611
+        },
+        "right": {
+          "body_id": 10106,
+          "mean": 12.492873,
+          "max": 13.337432,
+          "peak_time_ms": 500.0,
+          "auc": 6252.2604
+        }
+      },
+      "DNp06": {
+        "left": {
+          "body_id": 10228,
+          "mean": 5.393376,
+          "max": 5.74835,
+          "peak_time_ms": 500.0,
+          "auc": 2699.2072
+        },
+        "right": {
+          "body_id": 10584,
+          "mean": 3.94124,
+          "max": 4.197616,
+          "peak_time_ms": 500.0,
+          "auc": 1972.4625
+        }
+      }
+    },
+    "lr_differences": {
+      "DNp01": 11.033183779722897,
+      "DNp04": 11.695517506286816,
+      "DNp02": 3.4921749781679026,
+      "DNp11": -3.4024535779107463,
+      "DNp06": 1.5507340181772902
+    }
+  },
+  "readout_C_LPLC2": {
+    "dn_neurons": {
+      "DNp01": {
+        "left": {
+          "body_id": 10010,
+          "mean": 27.094647,
+          "max": 29.834386,
+          "peak_time_ms": 500.0,
+          "auc": 13559.5009
+        },
+        "right": {
+          "body_id": 10001,
+          "mean": 16.546004,
+          "max": 17.855594,
+          "peak_time_ms": 500.0,
+          "auc": 8280.62
+        }
+      },
+      "DNp04": {
+        "left": {
+          "body_id": 531898,
+          "mean": 20.374047,
+          "max": 22.422553,
+          "peak_time_ms": 500.0,
+          "auc": 10196.186
+        },
+        "right": {
+          "body_id": 11137,
+          "mean": 12.484622,
+          "max": 13.530424,
+          "peak_time_ms": 500.0,
+          "auc": 6248.0302
+        }
+      },
+      "DNp02": {
+        "left": {
+          "body_id": 10197,
+          "mean": 2.516175,
+          "max": 2.843277,
+          "peak_time_ms": 500.0,
+          "auc": 1259.1818
+        },
+        "right": {
+          "body_id": 10117,
+          "mean": 1.84194,
+          "max": 2.0421,
+          "peak_time_ms": 500.0,
+          "auc": 921.791
+        }
+      },
+      "DNp11": {
+        "left": {
+          "body_id": 10259,
+          "mean": 1.740681,
+          "max": 1.960545,
+          "peak_time_ms": 500.0,
+          "auc": 871.101
+        },
+        "right": {
+          "body_id": 10106,
+          "mean": 8.093442,
+          "max": 9.096438,
+          "peak_time_ms": 500.0,
+          "auc": 4050.2661
+        }
+      },
+      "DNp06": {
+        "left": {
+          "body_id": 10228,
+          "mean": 8.341905,
+          "max": 9.153124,
+          "peak_time_ms": 500.0,
+          "auc": 4174.7179
+        },
+        "right": {
+          "body_id": 10584,
+          "mean": 6.889445,
+          "max": 7.455167,
+          "peak_time_ms": 500.0,
+          "auc": 3447.8841
+        }
+      }
+    },
+    "lr_differences": {
+      "DNp01": 11.978792762704483,
+      "DNp04": 8.89212957213511,
+      "DNp02": 0.8011761289225183,
+      "DNp11": -7.135892983114319,
+      "DNp06": 1.6979570425181754
+    }
+  },
+  "readout_D_both": {
+    "dn_neurons": {
+      "DNp01": {
+        "left": {
+          "body_id": 10010,
+          "mean": 46.525143,
+          "max": 50.0,
+          "peak_time_ms": 387.0,
+          "auc": 23284.0968
+        },
+        "right": {
+          "body_id": 10001,
+          "mean": 27.252861,
+          "max": 29.127641,
+          "peak_time_ms": 500.0,
+          "auc": 13639.1197
+        }
+      },
+      "DNp04": {
+        "left": {
+          "body_id": 531898,
+          "mean": 47.232679,
+          "max": 50.0,
+          "peak_time_ms": 362.0,
+          "auc": 23638.5721
+        },
+        "right": {
+          "body_id": 11137,
+          "mean": 32.533344,
+          "max": 34.642452,
+          "peak_time_ms": 500.0,
+          "auc": 16281.8843
+        }
+      },
+      "DNp02": {
+        "left": {
+          "body_id": 10197,
+          "mean": 14.28197,
+          "max": 15.25894,
+          "peak_time_ms": 500.0,
+          "auc": 7147.6377
+        },
+        "right": {
+          "body_id": 10117,
+          "mean": 10.569764,
+          "max": 11.246705,
+          "peak_time_ms": 500.0,
+          "auc": 5289.8282
+        }
+      },
+      "DNp11": {
+        "left": {
+          "body_id": 10259,
+          "mean": 11.088712,
+          "max": 11.824115,
+          "peak_time_ms": 500.0,
+          "auc": 5549.5325
+        },
+        "right": {
+          "body_id": 10106,
+          "mean": 20.180441,
+          "max": 21.863316,
+          "peak_time_ms": 500.0,
+          "auc": 10099.4693
+        }
+      },
+      "DNp06": {
+        "left": {
+          "body_id": 10228,
+          "mean": 13.444529,
+          "max": 14.528054,
+          "peak_time_ms": 500.0,
+          "auc": 6728.4452
+        },
+        "right": {
+          "body_id": 10584,
+          "mean": 10.830151,
+          "max": 11.651969,
+          "peak_time_ms": 500.0,
+          "auc": 5420.0798
+        }
+      }
+    },
+    "lr_differences": {
+      "DNp01": 20.872359497277614,
+      "DNp04": 15.357548316525374,
+      "DNp02": 4.012234977171927,
+      "DNp11": -10.03920042548702,
+      "DNp06": 2.8760857198071257
+    }
+  },
+  "readout_E_left": {
+    "dn_neurons": {
+      "DNp01": {
+        "left": {
+          "body_id": 10010,
+          "mean": 18.707122,
+          "max": 19.835935,
+          "peak_time_ms": 500.0,
+          "auc": 9362.3499
+        },
+        "right": {
+          "body_id": 10001,
+          "mean": 0.090784,
+          "max": 0.101158,
+          "peak_time_ms": 500.0,
+          "auc": 45.432
+        }
+      },
+      "DNp04": {
+        "left": {
+          "body_id": 531898,
+          "mean": 31.011528,
+          "max": 32.752031,
+          "peak_time_ms": 500.0,
+          "auc": 15520.3995
+        },
+        "right": {
+          "body_id": 11137,
+          "mean": 0.030328,
+          "max": 0.034668,
+          "peak_time_ms": 500.0,
+          "auc": 15.1768
+        }
+      },
+      "DNp02": {
+        "left": {
+          "body_id": 10197,
+          "mean": 11.972547,
+          "max": 12.682895,
+          "peak_time_ms": 500.0,
+          "auc": 5991.9046
+        },
+        "right": {
+          "body_id": 10117,
+          "mean": 0.007944,
+          "max": 0.009129,
+          "peak_time_ms": 500.0,
+          "auc": 3.9753
+        }
+      },
+      "DNp11": {
+        "left": {
+          "body_id": 10259,
+          "mean": 9.196539,
+          "max": 9.714765,
+          "peak_time_ms": 500.0,
+          "auc": 4602.6089
+        },
+        "right": {
+          "body_id": 10106,
+          "mean": 5.096796,
+          "max": 5.521841,
+          "peak_time_ms": 500.0,
+          "auc": 2550.7337
+        }
+      },
+      "DNp06": {
+        "left": {
+          "body_id": 10228,
+          "mean": 5.365572,
+          "max": 5.717303,
+          "peak_time_ms": 500.0,
+          "auc": 2685.2929
+        },
+        "right": {
+          "body_id": 10584,
+          "mean": 0.006831,
+          "max": 0.007885,
+          "peak_time_ms": 500.0,
+          "auc": 3.4185
+        }
+      }
+    },
+    "lr_differences": {
+      "DNp01": 19.734776522245067,
+      "DNp04": 32.7173638112656,
+      "DNp02": 12.673766560259915,
+      "DNp11": 4.192923334010002,
+      "DNp06": 5.709417498685457
+    }
+  },
+  "readout_E_right": {
+    "dn_neurons": {
+      "DNp01": {
+        "left": {
+          "body_id": 10010,
+          "mean": 2.295867,
+          "max": 2.479748,
+          "peak_time_ms": 500.0,
+          "auc": 1148.9896
+        },
+        "right": {
+          "body_id": 10001,
+          "mean": 10.623242,
+          "max": 11.181341,
+          "peak_time_ms": 500.0,
+          "auc": 5316.6537
+        }
+      },
+      "DNp04": {
+        "left": {
+          "body_id": 531898,
+          "mean": 0.052296,
+          "max": 0.059096,
+          "peak_time_ms": 500.0,
+          "auc": 26.1709
+        },
+        "right": {
+          "body_id": 11137,
+          "mean": 20.020771,
+          "max": 21.080942,
+          "peak_time_ms": 500.0,
+          "auc": 10019.8656
+        }
+      },
+      "DNp02": {
+        "left": {
+          "body_id": 10197,
+          "mean": 0.012907,
+          "max": 0.014827,
+          "peak_time_ms": 500.0,
+          "auc": 6.4591
+        },
+        "right": {
+          "body_id": 10117,
+          "mean": 8.720501,
+          "max": 9.196419,
+          "peak_time_ms": 500.0,
+          "auc": 4364.3726
+        }
+      },
+      "DNp11": {
+        "left": {
+          "body_id": 10259,
+          "mean": 0.201921,
+          "max": 0.220214,
+          "peak_time_ms": 500.0,
+          "auc": 101.0523
+        },
+        "right": {
+          "body_id": 10106,
+          "mean": 7.396077,
+          "max": 7.815591,
+          "peak_time_ms": 500.0,
+          "auc": 3701.5267
+        }
+      },
+      "DNp06": {
+        "left": {
+          "body_id": 10228,
+          "mean": 0.027804,
+          "max": 0.031048,
+          "peak_time_ms": 500.0,
+          "auc": 13.9143
+        },
+        "right": {
+          "body_id": 10584,
+          "mean": 3.934409,
+          "max": 4.189731,
+          "peak_time_ms": 500.0,
+          "auc": 1969.044
+        }
+      }
+    },
+    "lr_differences": {
+      "DNp01": -8.701592742522179,
+      "DNp04": -21.02184630497878,
+      "DNp02": -9.181591582092013,
+      "DNp11": -7.59537691192075,
+      "DNp06": -4.158683480508166
+    }
+  },
+  "readout_F_pulse": {
+    "dn_neurons": {
+      "DNp01": {
+        "left": {
+          "body_id": 10010,
+          "mean": 17.267314,
+          "max": 49.57273,
+          "peak_time_ms": 151.0,
+          "auc": 5197.2204
+        },
+        "right": {
+          "body_id": 10001,
+          "mean": 9.673514,
+          "max": 28.523874,
+          "peak_time_ms": 151.0,
+          "auc": 2911.6858
+        }
+      },
+      "DNp04": {
+        "left": {
+          "body_id": 531898,
+          "mean": 17.956479,
+          "max": 49.971041,
+          "peak_time_ms": 152.0,
+          "auc": 5404.7188
+        },
+        "right": {
+          "body_id": 11137,
+          "mean": 11.504283,
+          "max": 34.077507,
+          "peak_time_ms": 151.0,
+          "auc": 3462.7521
+        }
+      },
+      "DNp02": {
+        "left": {
+          "body_id": 10197,
+          "mean": 5.136887,
+          "max": 14.998251,
+          "peak_time_ms": 151.0,
+          "auc": 1546.1655
+        },
+        "right": {
+          "body_id": 10117,
+          "mean": 3.735191,
+          "max": 11.090594,
+          "peak_time_ms": 151.0,
+          "auc": 1124.2829
+        }
+      },
+      "DNp11": {
+        "left": {
+          "body_id": 10259,
+          "mean": 3.94654,
+          "max": 11.623409,
+          "peak_time_ms": 151.0,
+          "auc": 1187.884
+        },
+        "right": {
+          "body_id": 10106,
+          "mean": 7.430308,
+          "max": 21.368384,
+          "peak_time_ms": 151.0,
+          "auc": 2236.423
+        }
+      },
+      "DNp06": {
+        "left": {
+          "body_id": 10228,
+          "mean": 4.912426,
+          "max": 14.039027,
+          "peak_time_ms": 151.0,
+          "auc": 1478.5719
+        },
+        "right": {
+          "body_id": 10584,
+          "mean": 3.868309,
+          "max": 11.367376,
+          "peak_time_ms": 151.0,
+          "auc": 1164.3421
+        }
+      }
+    },
+    "lr_differences": {
+      "DNp01": 21.048856786342604,
+      "DNp04": 15.893533769133676,
+      "DNp02": 3.907657633851409,
+      "DNp11": -9.74497441081904,
+      "DNp06": 2.6716512961331667
+    }
+  }
+}
