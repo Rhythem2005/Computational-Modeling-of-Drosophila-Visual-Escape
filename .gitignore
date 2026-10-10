@@ -36,3 +36,8 @@ htmlcov/
 connectome/data/raw/annotations/
 connectome/data/raw/connectivity/
 connectome/data/raw/neurotransmitters/
+
+# Generated Phase 4 Text Logs & Data
+connectome/phase4/results/*.txt
+connectome/phase4/results/analysis_data.json
+connectome/phase4/results/validation_manifest.json

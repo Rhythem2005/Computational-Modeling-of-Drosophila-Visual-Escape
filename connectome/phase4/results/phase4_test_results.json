@@ -1,0 +1,2394 @@
+{
+  "schema_version": "2.0",
+  "run_date": "2026-10-10T10:19:06.863796+00:00",
+  "circuit_version": "2.0.0",
+  "status": "PASS",
+  "assertions": {
+    "total": 159,
+    "passed": 159,
+    "failed": 0
+  },
+  "informational_records": 11,
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "platform": "macOS-26.1-arm64-arm-64bit-Mach-O"
+  },
+  "config_sha256": "f90084711ab77ba723bf1c62b3fbdc8c48eba1102431d07fcff958ba36590ad3",
+  "phase3_hashes": {
+    "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+    "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+    "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+    "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+    "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+    "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+  },
+  "spectral_radius_gain_times_W": 0.6958315414466647,
+  "max_real_eigenvalue_gain_times_W": 0.6958315414466647,
+  "test_details": [
+    {
+      "test_id": "LOAD",
+      "name": "n_neurons",
+      "status": "PASS",
+      "detail": "got 321"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "n_edges",
+      "status": "PASS",
+      "detail": "got 11557"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "total_synapses",
+      "status": "PASS",
+      "detail": "got 91023"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "max_raw_weight",
+      "status": "PASS",
+      "detail": "got 172"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "matrix_shape",
+      "status": "PASS",
+      "detail": "got (321, 321)"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "nonzero_count",
+      "status": "PASS",
+      "detail": "got 11557"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "no_self_loops",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "LOAD",
+      "name": "unique_body_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "LOAD",
+      "name": "LC4_count",
+      "status": "PASS",
+      "detail": "got 126"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "LPLC2_count",
+      "status": "PASS",
+      "detail": "got 185"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp01_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp04_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp06_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp02_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp11_count",
+      "status": "PASS",
+      "detail": "got 2"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp01_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10010, got 10010"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp01_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10001, got 10001"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp04_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 531898, got 531898"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp04_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 11137, got 11137"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp06_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10228, got 10228"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp06_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10584, got 10584"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp02_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10197, got 10197"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp02_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10117, got 10117"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp11_left_bodyId",
+      "status": "PASS",
+      "detail": "expected 10259, got 10259"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "DNp11_right_bodyId",
+      "status": "PASS",
+      "detail": "expected 10106, got 10106"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "edge_Max weight edge LC4->DNp04",
+      "status": "PASS",
+      "detail": "{'pre': 81112, 'post': 531898, 'expected_raw': 172, 'description': 'Max weight edge LC4->DNp04', 'actual_raw': 172.0, 'actual_norm': 1.0, 'expected_norm': 1.0, 'status': 'PASS'}"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "edge_LC4->DNp04 second heaviest",
+      "status": "PASS",
+      "detail": "{'pre': 12349, 'post': 531898, 'expected_raw': 160, 'description': 'LC4->DNp04 second heaviest', 'actual_raw': 160.0, 'actual_norm': 0.9302325581395348, 'expected_norm': 0.9302325581395349, 'status': 'PASS'}"
+    },
+    {
+      "test_id": "LOAD",
+      "name": "edge_LC4_R->DNp04_R",
+      "status": "PASS",
+      "detail": "{'pre': 17054, 'post': 11137, 'expected_raw': 154, 'description': 'LC4_R->DNp04_R', 'actual_raw': 154.0, 'actual_norm': 0.8953488372093024, 'expected_norm': 0.8953488372093024, 'status': 'PASS'}"
+    },
+    {
+      "test_id": "SIGN",
+      "name": "nt_acetylcholine_in_sign_map",
+      "status": "PASS",
+      "detail": "NT: acetylcholine"
+    },
+    {
+      "test_id": "SIGN",
+      "name": "sign_all_neurons",
+      "status": "PASS",
+      "detail": "All signs correctly applied"
+    },
+    {
+      "test_id": "SIGN",
+      "name": "raw_to_norm",
+      "status": "PASS",
+      "detail": "raw=172.0, norm=1.0, expected=1.0"
+    },
+    {
+      "test_id": "SIGN",
+      "name": "norm_to_signed",
+      "status": "PASS",
+      "detail": "norm=1.0, signed=1.0, sign=1.0"
+    },
+    {
+      "test_id": "MATH",
+      "name": "spectral_radius_computed",
+      "status": "PASS",
+      "detail": "spectral_radius = 0.695832"
+    },
+    {
+      "test_id": "MATH",
+      "name": "max_real_eigenvalue_computed",
+      "status": "PASS",
+      "detail": "max_real_eigenvalue = 0.695832"
+    },
+    {
+      "test_id": "MATH",
+      "name": "continuous_time_stability",
+      "status": "PASS",
+      "detail": "max Re(eig(A))=-0.030416846 1/ms (must be < 0)"
+    },
+    {
+      "test_id": "MATH",
+      "name": "euler_stability_criterion",
+      "status": "PASS",
+      "detail": "max |1+(dt/tau)(mu-1)| for dt=0.5,1.0,2.0: {0.5: 0.984791577072333, 1.0: 0.9695831541446661, 2.0: 0.9391663082893321} (all must be < 1.0)"
+    },
+    {
+      "test_id": "A1",
+      "name": "zero_fixed_point",
+      "status": "PASS",
+      "detail": "max_abs=0.000e+00"
+    },
+    {
+      "test_id": "A2",
+      "name": "perturbation_decays_below_1e-6",
+      "status": "PASS",
+      "detail": "decay_time_ms=387.0; final_max_abs=5.892e-15"
+    },
+    {
+      "test_id": "A2",
+      "name": "A2_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "A2",
+      "name": "A2_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "A2",
+      "name": "A2_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 0.1344"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "B_LC4_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "B_LC4_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "B_LC4_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 13.1245"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "B_LC4_no_clip_saturation",
+      "status": "PASS",
+      "detail": "max_val=13.1245, clip_max=50.0"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "B_LC4_no_flat_saturation",
+      "status": "PASS",
+      "detail": "Checked for >=50 ms flat traces at clip_max"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp01_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=8.926273, steady=8.926273, t90_ms=57.0, auc=4204.5358"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp01_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=4.513000, steady=4.513000, t90_ms=49.0, auc=2144.8342"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp04_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=13.124451, steady=13.124451, t90_ms=52.0, auc=6218.6282"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp04_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=8.446244, steady=8.446244, t90_ms=49.0, auc=4014.0170"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp02_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=5.079089, steady=5.079089, t90_ms=54.0, auc=2399.3455"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp02_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=3.682219, steady=3.682219, t90_ms=50.0, auc=1747.3391"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp11_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=3.973991, steady=3.973991, t90_ms=52.0, auc=1881.4645"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp11_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=5.334973, steady=5.334973, t90_ms=60.0, auc=2500.9042"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp06_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=2.299340, steady=2.299340, t90_ms=58.0, auc=1079.6829"
+    },
+    {
+      "test_id": "B_LC4",
+      "name": "DNp06_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=1.679047, steady=1.679047, t90_ms=57.0, auc=788.9850"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "C_LPLC2_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "C_LPLC2_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "C_LPLC2_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 11.9338"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "C_LPLC2_no_clip_saturation",
+      "status": "PASS",
+      "detail": "max_val=11.9338, clip_max=50.0"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "C_LPLC2_no_flat_saturation",
+      "status": "PASS",
+      "detail": "Checked for >=50 ms flat traces at clip_max"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp01_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=11.933755, steady=11.933755, t90_ms=92.0, auc=5423.8004"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp01_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=7.142237, steady=7.142237, t90_ms=73.0, auc=3312.2480"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp04_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=8.969021, steady=8.969021, t90_ms=92.0, auc=4078.4744"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp04_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=5.412169, steady=5.412169, t90_ms=76.0, auc=2499.2121"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp02_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=1.137311, steady=1.137311, t90_ms=106.0, auc=503.6727"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp02_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=0.816840, steady=0.816840, t90_ms=89.0, auc=368.7164"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp11_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=0.784218, steady=0.784218, t90_ms=105.0, auc=348.4404"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp11_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=3.638575, steady=3.638575, t90_ms=102.0, auc=1620.1064"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp06_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=3.661250, steady=3.661250, t90_ms=89.0, auc=1669.8872"
+    },
+    {
+      "test_id": "C_LPLC2",
+      "name": "DNp06_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=2.982067, steady=2.982067, t90_ms=75.0, auc=1379.1536"
+    },
+    {
+      "test_id": "D_both",
+      "name": "D_both_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "D_both",
+      "name": "D_both_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "D_both",
+      "name": "D_both_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 22.0935"
+    },
+    {
+      "test_id": "D_both",
+      "name": "D_both_no_clip_saturation",
+      "status": "PASS",
+      "detail": "max_val=22.0935, clip_max=50.0"
+    },
+    {
+      "test_id": "D_both",
+      "name": "D_both_no_flat_saturation",
+      "status": "PASS",
+      "detail": "Checked for >=50 ms flat traces at clip_max"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp01_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=20.860028, steady=20.860028, t90_ms=78.0, auc=9628.3362"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp01_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=11.655237, steady=11.655237, t90_ms=64.0, auc=5457.0823"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp04_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=22.093472, steady=22.093472, t90_ms=69.0, auc=10297.1026"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp04_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=13.858413, steady=13.858413, t90_ms=60.0, auc=6513.2290"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp02_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=6.216400, steady=6.216400, t90_ms=66.0, auc=2903.0182"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp02_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=4.499059, steady=4.499059, t90_ms=59.0, auc=2116.0556"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp11_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=4.758209, steady=4.758209, t90_ms=63.0, auc=2229.9049"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp11_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=8.973548, steady=8.973548, t90_ms=80.0, auc=4121.0106"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp06_left_sustained_response",
+      "status": "PASS",
+      "detail": "max=5.960590, steady=5.960590, t90_ms=78.0, auc=2749.5701"
+    },
+    {
+      "test_id": "D_both",
+      "name": "DNp06_right_sustained_response",
+      "status": "PASS",
+      "detail": "max=4.661113, steady=4.661113, t90_ms=68.0, auc=2168.1386"
+    },
+    {
+      "test_id": "D_both",
+      "name": "converged_over_final_50ms",
+      "status": "PASS",
+      "detail": "max_step_change=0.000000547; tolerance=0.001"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 13.1008"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_clip_saturation",
+      "status": "PASS",
+      "detail": "max_val=13.1008, clip_max=50.0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_left_no_flat_saturation",
+      "status": "PASS",
+      "detail": "Checked for >=50 ms flat traces at clip_max"
+    },
+    {
+      "test_id": "E",
+      "name": "left_input_DNp01_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=7.934374, right_max=0.040463, difference=7.893911"
+    },
+    {
+      "test_id": "E",
+      "name": "left_input_DNp04_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=13.100813, right_max=0.013867, difference=13.086946"
+    },
+    {
+      "test_id": "E",
+      "name": "left_input_DNp02_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=5.073158, right_max=0.003651, difference=5.069507"
+    },
+    {
+      "test_id": "E",
+      "name": "left_input_DNp11_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=3.885906, right_max=2.208737, difference=1.677169"
+    },
+    {
+      "test_id": "E",
+      "name": "left_input_DNp06_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=2.286921, right_max=0.003154, difference=2.283767"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 8.4324"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_clip_saturation",
+      "status": "PASS",
+      "detail": "max_val=8.4324, clip_max=50.0"
+    },
+    {
+      "test_id": "E",
+      "name": "E_right_no_flat_saturation",
+      "status": "PASS",
+      "detail": "Checked for >=50 ms flat traces at clip_max"
+    },
+    {
+      "test_id": "E",
+      "name": "right_input_DNp01_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=0.991899, right_max=4.472536, difference=-3.480637"
+    },
+    {
+      "test_id": "E",
+      "name": "right_input_DNp04_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=0.023638, right_max=8.432377, difference=-8.408739"
+    },
+    {
+      "test_id": "E",
+      "name": "right_input_DNp02_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=0.005931, right_max=3.678568, difference=-3.672637"
+    },
+    {
+      "test_id": "E",
+      "name": "right_input_DNp11_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=0.088085, right_max=3.126236, difference=-3.038151"
+    },
+    {
+      "test_id": "E",
+      "name": "right_input_DNp06_lr_observation",
+      "status": "INFO",
+      "detail": "left_max=0.012419, right_max=1.675892, difference=-1.663473"
+    },
+    {
+      "test_id": "E",
+      "name": "hemisphere_inputs_produce_distinct_dn_vectors",
+      "status": "PASS",
+      "detail": "max_abs_vector_difference=13.077174"
+    },
+    {
+      "test_id": "F",
+      "name": "bitwise_reproducible",
+      "status": "PASS",
+      "detail": "two pulse simulations are bitwise identical"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_nan",
+      "status": "PASS",
+      "detail": "NaN count: 0"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_inf",
+      "status": "PASS",
+      "detail": "Inf count: 0"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_extreme_values",
+      "status": "PASS",
+      "detail": "max |state| = 21.3611"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_clip_saturation",
+      "status": "PASS",
+      "detail": "max_val=21.3611, clip_max=50.0"
+    },
+    {
+      "test_id": "F",
+      "name": "F_no_flat_saturation",
+      "status": "PASS",
+      "detail": "Checked for >=50 ms flat traces at clip_max"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp01_left_pulse_response",
+      "status": "PASS",
+      "detail": "peak=19.893627 at 151.0ms; end=0.192865; residual_fraction=0.009695; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp01_right_pulse_response",
+      "status": "PASS",
+      "detail": "peak=11.409563 at 151.0ms; end=0.033402; residual_fraction=0.002928; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp04_left_pulse_response",
+      "status": "PASS",
+      "detail": "peak=21.361057 at 151.0ms; end=0.145096; residual_fraction=0.006793; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp04_right_pulse_response",
+      "status": "PASS",
+      "detail": "peak=13.631004 at 151.0ms; end=0.029607; residual_fraction=0.002172; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp02_left_pulse_response",
+      "status": "PASS",
+      "detail": "peak=6.054855 at 151.0ms; end=0.029869; residual_fraction=0.004933; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp02_right_pulse_response",
+      "status": "PASS",
+      "detail": "peak=4.436238 at 151.0ms; end=0.007764; residual_fraction=0.001750; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp11_left_pulse_response",
+      "status": "PASS",
+      "detail": "peak=4.650048 at 151.0ms; end=0.019639; residual_fraction=0.004223; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp11_right_pulse_response",
+      "status": "PASS",
+      "detail": "peak=8.551417 at 151.0ms; end=0.079856; residual_fraction=0.009338; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp06_left_pulse_response",
+      "status": "PASS",
+      "detail": "peak=5.688253 at 151.0ms; end=0.054712; residual_fraction=0.009618; t90=undefined"
+    },
+    {
+      "test_id": "F",
+      "name": "DNp06_right_pulse_response",
+      "status": "PASS",
+      "detail": "peak=4.546951 at 151.0ms; end=0.015038; residual_fraction=0.003307; t90=undefined"
+    },
+    {
+      "test_id": "STRESS",
+      "name": "high_input_unclipped_is_finite",
+      "status": "PASS",
+      "detail": "max_activity=220.934723"
+    },
+    {
+      "test_id": "STRESS",
+      "name": "configured_clip_bounds_high_input",
+      "status": "PASS",
+      "detail": "max_activity=50.000000; clip_max=50.0"
+    },
+    {
+      "test_id": "STRESS",
+      "name": "high_input_reaches_configured_clip",
+      "status": "INFO",
+      "detail": "clip is active outside the normal operating range: True"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_dt_0.5ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=13.124451"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_dt_0.5ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=11.933754"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_dt_0.5ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=22.093472"
+    },
+    {
+      "test_id": "DT",
+      "name": "F_pulse_dt_0.5ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=21.326647"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_dt_1ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=13.124451"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_dt_1ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=11.933755"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_dt_1ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=22.093472"
+    },
+    {
+      "test_id": "DT",
+      "name": "F_pulse_dt_1ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=21.361057"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_dt_2ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=13.124451"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_dt_2ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=11.933755"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_dt_2ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=22.093473"
+    },
+    {
+      "test_id": "DT",
+      "name": "F_pulse_dt_2ms_finite",
+      "status": "PASS",
+      "detail": "max_activity=21.426458"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_0.5ms_response_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000000; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_0.5ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000533; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_0.5ms_t90_quantization",
+      "status": "PASS",
+      "detail": "worst_absolute_error_ms=1.000; tolerance=1.500"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_0.5ms_response_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000000; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_0.5ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000565; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_0.5ms_t90_quantization",
+      "status": "PASS",
+      "detail": "worst_absolute_error_ms=1.000; tolerance=1.500"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_0.5ms_response_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000000; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_0.5ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000544; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_0.5ms_t90_quantization",
+      "status": "PASS",
+      "detail": "worst_absolute_error_ms=1.000; tolerance=1.500"
+    },
+    {
+      "test_id": "DT",
+      "name": "F_pulse_0.5ms_peak_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.002189; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "F_pulse_0.5ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000132; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_2ms_response_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000000; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_2ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.001067; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "B_LC4_2ms_t90_quantization",
+      "status": "PASS",
+      "detail": "worst_absolute_error_ms=2.000; tolerance=3.000"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_2ms_response_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000000; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_2ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.001129; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "C_LPLC2_2ms_t90_quantization",
+      "status": "PASS",
+      "detail": "worst_absolute_error_ms=2.000; tolerance=3.000"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_2ms_response_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000000; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_2ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.001089; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "D_both_2ms_t90_quantization",
+      "status": "PASS",
+      "detail": "worst_absolute_error_ms=2.000; tolerance=3.000"
+    },
+    {
+      "test_id": "DT",
+      "name": "F_pulse_2ms_peak_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.004613; tolerance=0.02"
+    },
+    {
+      "test_id": "DT",
+      "name": "F_pulse_2ms_auc_sensitivity",
+      "status": "PASS",
+      "detail": "worst_relative_error=0.000254; tolerance=0.02"
+    },
+    {
+      "test_id": "DET",
+      "name": "bitwise_determinism",
+      "status": "PASS",
+      "detail": "Two identical runs produce identical states"
+    },
+    {
+      "test_id": "DET",
+      "name": "no_nan_run1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "DET",
+      "name": "no_inf_run1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_nodes.csv",
+      "status": "PASS",
+      "detail": "pre=6c39db7b41cceff0... post=6c39db7b41cceff0..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_edges.csv",
+      "status": "PASS",
+      "detail": "pre=d333731d3c2ddca9... post=d333731d3c2ddca9..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2.json",
+      "status": "PASS",
+      "detail": "pre=27327c030a09222d... post=27327c030a09222d..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_provenance.json",
+      "status": "PASS",
+      "detail": "pre=a7b11299df76a4ca... post=a7b11299df76a4ca..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_schema.json",
+      "status": "PASS",
+      "detail": "pre=c369e3c11ab8abf8... post=c369e3c11ab8abf8..."
+    },
+    {
+      "test_id": "IMMUT",
+      "name": "immutability_circuit_v2_build_validation.json",
+      "status": "PASS",
+      "detail": "pre=9d3d45a1e4452fc9... post=9d3d45a1e4452fc9..."
+    }
+  ],
+  "dt_sensitivity": {
+    "0.5": {
+      "B_LC4": {
+        "DNp01_left": {
+          "steady_state": 8.926273155235714,
+          "auc": 4202.3042676315,
+          "t90_ms": 57.5
+        },
+        "DNp01_right": {
+          "steady_state": 4.512999643716494,
+          "auc": 2143.7059999590333,
+          "t90_ms": 49.0
+        },
+        "DNp04_left": {
+          "steady_state": 13.124451034791704,
+          "auc": 6215.347062292079,
+          "t90_ms": 52.0
+        },
+        "DNp04_right": {
+          "steady_state": 8.446244032557205,
+          "auc": 4011.9054033153016,
+          "t90_ms": 49.0
+        },
+        "DNp02_left": {
+          "steady_state": 5.079088976759079,
+          "auc": 2398.0757109646847,
+          "t90_ms": 54.5
+        },
+        "DNp02_right": {
+          "steady_state": 3.6822189855476877,
+          "auc": 1746.4185945936783,
+          "t90_ms": 50.0
+        },
+        "DNp11_left": {
+          "steady_state": 3.9739913856851277,
+          "auc": 1880.4709542137552,
+          "t90_ms": 53.0
+        },
+        "DNp11_right": {
+          "steady_state": 5.334972816736018,
+          "auc": 2499.5704318558774,
+          "t90_ms": 60.5
+        },
+        "DNp06_left": {
+          "steady_state": 2.2993401302579093,
+          "auc": 1079.1080615399612,
+          "t90_ms": 58.5
+        },
+        "DNp06_right": {
+          "steady_state": 1.6790465230918887,
+          "auc": 788.5652402297264,
+          "t90_ms": 57.0
+        }
+      },
+      "C_LPLC2": {
+        "DNp01_left": {
+          "steady_state": 11.93375408170629,
+          "auc": 5420.816942705735,
+          "t90_ms": 92.5
+        },
+        "DNp01_right": {
+          "steady_state": 7.142237465719044,
+          "auc": 3310.4624468235374,
+          "t90_ms": 73.0
+        },
+        "DNp04_left": {
+          "steady_state": 8.969020913604105,
+          "auc": 4076.2321769417904,
+          "t90_ms": 92.0
+        },
+        "DNp04_right": {
+          "steady_state": 5.412169456812807,
+          "auc": 2497.859028481591,
+          "t90_ms": 76.5
+        },
+        "DNp02_left": {
+          "steady_state": 1.1373105449901266,
+          "auc": 503.38841446335454,
+          "t90_ms": 106.5
+        },
+        "DNp02_right": {
+          "steady_state": 0.8168401674342736,
+          "auc": 368.5122008384075,
+          "t90_ms": 89.0
+        },
+        "DNp11_left": {
+          "steady_state": 0.7842177662203091,
+          "auc": 348.24436342781814,
+          "t90_ms": 105.5
+        },
+        "DNp11_right": {
+          "steady_state": 3.6385748134074385,
+          "auc": 1619.1968011184915,
+          "t90_ms": 102.5
+        },
+        "DNp06_left": {
+          "steady_state": 3.6612495384776502,
+          "auc": 1668.9718535088282,
+          "t90_ms": 90.0
+        },
+        "DNp06_right": {
+          "steady_state": 2.982066862005107,
+          "auc": 1378.408128742302,
+          "t90_ms": 75.0
+        }
+      },
+      "D_both": {
+        "DNp01_left": {
+          "steady_state": 20.860027236942003,
+          "auc": 9623.121210337235,
+          "t90_ms": 78.5
+        },
+        "DNp01_right": {
+          "steady_state": 11.655237109435538,
+          "auc": 5454.168446782571,
+          "t90_ms": 64.5
+        },
+        "DNp04_left": {
+          "steady_state": 22.093471948395802,
+          "auc": 10291.57923923387,
+          "t90_ms": 70.0
+        },
+        "DNp04_right": {
+          "steady_state": 13.858413489370012,
+          "auc": 6509.764431796892,
+          "t90_ms": 60.5
+        },
+        "DNp02_left": {
+          "steady_state": 6.216399521749206,
+          "auc": 2901.46412542804,
+          "t90_ms": 66.5
+        },
+        "DNp02_right": {
+          "steady_state": 4.499059152981961,
+          "auc": 2114.9307954320857,
+          "t90_ms": 59.5
+        },
+        "DNp11_left": {
+          "steady_state": 4.758209151905437,
+          "auc": 2228.715317641573,
+          "t90_ms": 63.5
+        },
+        "DNp11_right": {
+          "steady_state": 8.973547630143456,
+          "auc": 4118.767232974369,
+          "t90_ms": 80.5
+        },
+        "DNp06_left": {
+          "steady_state": 5.96058966873556,
+          "auc": 2748.079915048789,
+          "t90_ms": 78.5
+        },
+        "DNp06_right": {
+          "steady_state": 4.6611133850969955,
+          "auc": 2166.9733689720288,
+          "t90_ms": 68.5
+        }
+      },
+      "F_pulse": {
+        "DNp01_left": {
+          "peak": 19.85008291600809,
+          "auc": 2079.554474684539,
+          "end": 0.20006861817673116
+        },
+        "DNp01_right": {
+          "peak": 11.393463069091961,
+          "auc": 1164.6196705228858,
+          "end": 0.03544936087465839
+        },
+        "DNp04_left": {
+          "peak": 21.326647360362166,
+          "auc": 2204.4886980604097,
+          "end": 0.1505259141716755
+        },
+        "DNp04_right": {
+          "peak": 13.615035884710306,
+          "auc": 1385.0488812649255,
+          "end": 0.03148938891223516
+        },
+        "DNp02_left": {
+          "peak": 6.046117132961024,
+          "auc": 620.6507828320497,
+          "end": 0.031069895824549016
+        },
+        "DNp02_right": {
+          "peak": 4.431451199569026,
+          "auc": 449.69934275526487,
+          "end": 0.008277522657399252
+        },
+        "DNp11_left": {
+          "peak": 4.644065673494841,
+          "auc": 475.17467609748655,
+          "end": 0.02044697798123549
+        },
+        "DNp11_right": {
+          "peak": 8.533430097299886,
+          "auc": 894.726574334293,
+          "end": 0.08304240925318586
+        },
+        "DNp06_left": {
+          "peak": 5.675970179742224,
+          "auc": 594.223531378396,
+          "end": 0.0567321066242564
+        },
+        "DNp06_right": {
+          "peak": 4.539222569594954,
+          "auc": 465.70995871707134,
+          "end": 0.01599037899720914
+        }
+      }
+    },
+    "1.0": {
+      "B_LC4": {
+        "DNp01_left": {
+          "steady_state": 8.926273155620976,
+          "auc": 4204.535835907867,
+          "t90_ms": 57.0
+        },
+        "DNp01_right": {
+          "steady_state": 4.5129996437318205,
+          "auc": 2144.8342498695483,
+          "t90_ms": 49.0
+        },
+        "DNp04_left": {
+          "steady_state": 13.124451035084086,
+          "auc": 6218.628175041332,
+          "t90_ms": 52.0
+        },
+        "DNp04_right": {
+          "steady_state": 8.446244032569357,
+          "auc": 4014.0169643231216,
+          "t90_ms": 49.0
+        },
+        "DNp02_left": {
+          "steady_state": 5.079088976818054,
+          "auc": 2399.3454832069756,
+          "t90_ms": 54.0
+        },
+        "DNp02_right": {
+          "steady_state": 3.6822189855508936,
+          "auc": 1747.3391493399808,
+          "t90_ms": 50.0
+        },
+        "DNp11_left": {
+          "steady_state": 3.973991385723038,
+          "auc": 1881.4644520589572,
+          "t90_ms": 52.0
+        },
+        "DNp11_right": {
+          "steady_state": 5.334972816887336,
+          "auc": 2500.904175055193,
+          "t90_ms": 60.0
+        },
+        "DNp06_left": {
+          "steady_state": 2.299340130368523,
+          "auc": 1079.682896568951,
+          "t90_ms": 58.0
+        },
+        "DNp06_right": {
+          "steady_state": 1.6790465230976066,
+          "auc": 788.9850018603524,
+          "t90_ms": 57.0
+        }
+      },
+      "C_LPLC2": {
+        "DNp01_left": {
+          "steady_state": 11.933754582218576,
+          "auc": 5423.80036502497,
+          "t90_ms": 92.0
+        },
+        "DNp01_right": {
+          "steady_state": 7.1422374771367805,
+          "auc": 3312.2480058615693,
+          "t90_ms": 73.0
+        },
+        "DNp04_left": {
+          "steady_state": 8.96902129375171,
+          "auc": 4078.4744198626413,
+          "t90_ms": 92.0
+        },
+        "DNp04_right": {
+          "steady_state": 5.412169464897667,
+          "auc": 2499.2120706211763,
+          "t90_ms": 76.0
+        },
+        "DNp02_left": {
+          "steady_state": 1.1373106211784745,
+          "auc": 503.67273963299726,
+          "t90_ms": 106.0
+        },
+        "DNp02_right": {
+          "steady_state": 0.8168401696094671,
+          "auc": 368.71641081930863,
+          "t90_ms": 89.0
+        },
+        "DNp11_left": {
+          "steady_state": 0.7842178150274768,
+          "auc": 348.4404162898229,
+          "t90_ms": 105.0
+        },
+        "DNp11_right": {
+          "steady_state": 3.6385750082732047,
+          "auc": 1620.1064385195168,
+          "t90_ms": 102.0
+        },
+        "DNp06_left": {
+          "steady_state": 3.661249682448008,
+          "auc": 1669.8871612323069,
+          "t90_ms": 89.0
+        },
+        "DNp06_right": {
+          "steady_state": 2.982066865440738,
+          "auc": 1379.1536453659317,
+          "t90_ms": 75.0
+        }
+      },
+      "D_both": {
+        "DNp01_left": {
+          "steady_state": 20.860027737839545,
+          "auc": 9628.336200932838,
+          "t90_ms": 78.0
+        },
+        "DNp01_right": {
+          "steady_state": 11.655237120868598,
+          "auc": 5457.082255731117,
+          "t90_ms": 64.0
+        },
+        "DNp04_left": {
+          "steady_state": 22.093472328835798,
+          "auc": 10297.102594903972,
+          "t90_ms": 69.0
+        },
+        "DNp04_right": {
+          "steady_state": 13.858413497467025,
+          "auc": 6513.229034944297,
+          "t90_ms": 60.0
+        },
+        "DNp02_left": {
+          "steady_state": 6.216399597996529,
+          "auc": 2903.0182228399735,
+          "t90_ms": 66.0
+        },
+        "DNp02_right": {
+          "steady_state": 4.499059155160359,
+          "auc": 2116.0555601592896,
+          "t90_ms": 59.0
+        },
+        "DNp11_left": {
+          "steady_state": 4.758209200750515,
+          "auc": 2229.90486834878,
+          "t90_ms": 63.0
+        },
+        "DNp11_right": {
+          "steady_state": 8.97354782516054,
+          "auc": 4121.010613574709,
+          "t90_ms": 80.0
+        },
+        "DNp06_left": {
+          "steady_state": 5.960589812816531,
+          "auc": 2749.570057801258,
+          "t90_ms": 78.0
+        },
+        "DNp06_right": {
+          "steady_state": 4.661113388538344,
+          "auc": 2168.1386472262843,
+          "t90_ms": 68.0
+        }
+      },
+      "F_pulse": {
+        "DNp01_left": {
+          "peak": 19.89362724804989,
+          "auc": 2079.829530612318,
+          "end": 0.19286519265457763
+        },
+        "DNp01_right": {
+          "peak": 11.409562942968462,
+          "auc": 1164.679349468323,
+          "end": 0.03340203834251563
+        },
+        "DNp04_left": {
+          "peak": 21.36105722543219,
+          "auc": 2204.6955146005066,
+          "end": 0.1450961587971849
+        },
+        "DNp04_right": {
+          "peak": 13.631004061588143,
+          "auc": 1385.102566491856,
+          "end": 0.029606771298421868
+        },
+        "DNp02_left": {
+          "peak": 6.054854760199702,
+          "auc": 620.694341786722,
+          "end": 0.029868970935099423
+        },
+        "DNp02_right": {
+          "peak": 4.436237825524379,
+          "auc": 449.7136176128182,
+          "end": 0.007763943817380384
+        },
+        "DNp11_left": {
+          "peak": 4.650047707480011,
+          "auc": 475.2035783056616,
+          "end": 0.019638759625603863
+        },
+        "DNp11_right": {
+          "peak": 8.551417232180338,
+          "auc": 894.8432451832973,
+          "end": 0.07985578239094118
+        },
+        "DNp06_left": {
+          "peak": 5.688252837712187,
+          "auc": 594.3011998407021,
+          "end": 0.05471202808241941
+        },
+        "DNp06_right": {
+          "peak": 4.54695066272982,
+          "auc": 465.73722190715944,
+          "end": 0.015038488733402088
+        }
+      }
+    },
+    "2.0": {
+      "B_LC4": {
+        "DNp01_left": {
+          "steady_state": 8.926273156283472,
+          "auc": 4208.9989724645975,
+          "t90_ms": 56.0
+        },
+        "DNp01_right": {
+          "steady_state": 4.512999643756157,
+          "auc": 2147.0907496907626,
+          "t90_ms": 48.0
+        },
+        "DNp04_left": {
+          "steady_state": 13.124451035586878,
+          "auc": 6225.19040054287,
+          "t90_ms": 50.0
+        },
+        "DNp04_right": {
+          "steady_state": 8.446244032588407,
+          "auc": 4018.240086338911,
+          "t90_ms": 48.0
+        },
+        "DNp02_left": {
+          "steady_state": 5.079088976919231,
+          "auc": 2401.885027692171,
+          "t90_ms": 52.0
+        },
+        "DNp02_right": {
+          "steady_state": 3.6822189855559206,
+          "auc": 1749.180258832625,
+          "t90_ms": 48.0
+        },
+        "DNp11_left": {
+          "steady_state": 3.973991385788024,
+          "auc": 1883.4514477497569,
+          "t90_ms": 52.0
+        },
+        "DNp11_right": {
+          "steady_state": 5.334972817146972,
+          "auc": 2503.5716614553985,
+          "t90_ms": 60.0
+        },
+        "DNp06_left": {
+          "steady_state": 2.2993401305588144,
+          "auc": 1080.8325666280762,
+          "t90_ms": 58.0
+        },
+        "DNp06_right": {
+          "steady_state": 1.6790465231064882,
+          "auc": 789.8245251216766,
+          "t90_ms": 56.0
+        }
+      },
+      "C_LPLC2": {
+        "DNp01_left": {
+          "steady_state": 11.933755444339624,
+          "auc": 5429.767214840278,
+          "t90_ms": 92.0
+        },
+        "DNp01_right": {
+          "steady_state": 7.142237495775544,
+          "auc": 3315.819124069413,
+          "t90_ms": 72.0
+        },
+        "DNp04_left": {
+          "steady_state": 8.969021948608994,
+          "auc": 4082.9589096354184,
+          "t90_ms": 90.0
+        },
+        "DNp04_right": {
+          "steady_state": 5.412169477898034,
+          "auc": 2501.9181549962923,
+          "t90_ms": 76.0
+        },
+        "DNp02_left": {
+          "steady_state": 1.1373107524223665,
+          "auc": 504.2413907601558,
+          "t90_ms": 106.0
+        },
+        "DNp02_right": {
+          "steady_state": 0.8168401731202625,
+          "auc": 369.12483080674997,
+          "t90_ms": 88.0
+        },
+        "DNp11_left": {
+          "steady_state": 0.7842178990892502,
+          "auc": 348.8325225187486,
+          "t90_ms": 104.0
+        },
+        "DNp11_right": {
+          "steady_state": 3.6385753437921546,
+          "auc": 1621.9257153388482,
+          "t90_ms": 100.0
+        },
+        "DNp06_left": {
+          "steady_state": 3.6612499304569575,
+          "auc": 1671.7177781680516,
+          "t90_ms": 88.0
+        },
+        "DNp06_right": {
+          "steady_state": 2.982066870875867,
+          "auc": 1380.6446786551512,
+          "t90_ms": 74.0
+        }
+      },
+      "D_both": {
+        "DNp01_left": {
+          "steady_state": 20.860028600623096,
+          "auc": 9638.766187304876,
+          "t90_ms": 78.0
+        },
+        "DNp01_right": {
+          "steady_state": 11.655237139531701,
+          "auc": 5462.909873760176,
+          "t90_ms": 64.0
+        },
+        "DNp04_left": {
+          "steady_state": 22.093472984195873,
+          "auc": 10308.149310178287,
+          "t90_ms": 68.0
+        },
+        "DNp04_right": {
+          "steady_state": 13.858413510486441,
+          "auc": 6520.158241335204,
+          "t90_ms": 60.0
+        },
+        "DNp02_left": {
+          "steady_state": 6.216399729341598,
+          "auc": 2906.1264184523266,
+          "t90_ms": 64.0
+        },
+        "DNp02_right": {
+          "steady_state": 4.499059158676183,
+          "auc": 2118.305089639375,
+          "t90_ms": 58.0
+        },
+        "DNp11_left": {
+          "steady_state": 4.758209284877274,
+          "auc": 2232.2839702685055,
+          "t90_ms": 62.0
+        },
+        "DNp11_right": {
+          "steady_state": 8.973548160939126,
+          "auc": 4125.4973767942465,
+          "t90_ms": 78.0
+        },
+        "DNp06_left": {
+          "steady_state": 5.960590061015772,
+          "auc": 2752.550344796128,
+          "t90_ms": 76.0
+        },
+        "DNp06_right": {
+          "steady_state": 4.6611133939823555,
+          "auc": 2170.4692037768277,
+          "t90_ms": 68.0
+        }
+      },
+      "F_pulse": {
+        "DNp01_left": {
+          "peak": 19.97711530404677,
+          "auc": 2080.358139116419,
+          "end": 0.17885074114182636
+        },
+        "DNp01_right": {
+          "peak": 11.43977925042296,
+          "auc": 1164.7906810047793,
+          "end": 0.029520022057219215
+        },
+        "DNp04_left": {
+          "peak": 21.426457780361527,
+          "auc": 2205.0927717077248,
+          "end": 0.13455242783245686
+        },
+        "DNp04_right": {
+          "peak": 13.66068502095523,
+          "auc": 1385.2023390990535,
+          "end": 0.026056488966998508
+        },
+        "DNp02_left": {
+          "peak": 6.07123935577685,
+          "auc": 620.7775151119208,
+          "end": 0.0275608894605506
+        },
+        "DNp02_right": {
+          "peak": 4.445044976351337,
+          "auc": 449.7400166784968,
+          "end": 0.0068027998999263435
+        },
+        "DNp11_left": {
+          "peak": 4.661246482565231,
+          "auc": 475.2586815427282,
+          "end": 0.018088020449064702
+        },
+        "DNp11_right": {
+          "peak": 8.590868056517628,
+          "auc": 895.066457643317,
+          "end": 0.07369427018194155
+        },
+        "DNp06_left": {
+          "peak": 5.7117615952790395,
+          "auc": 594.4505547557881,
+          "end": 0.050780633431782594
+        },
+        "DNp06_right": {
+          "peak": 4.561430938801694,
+          "auc": 465.7879431001163,
+          "end": 0.013239202116641601
+        }
+      }
+    }
+  },
+  "dt_comparisons": {
+    "0.5": {
+      "B_LC4": {
+        "worst_response_relative_error": 4.810673241793295e-11,
+        "worst_auc_relative_error": 0.0005333043995122345,
+        "worst_t90_absolute_error_ms": 1.0
+      },
+      "C_LPLC2": {
+        "worst_response_relative_error": 6.698992028570767e-08,
+        "worst_auc_relative_error": 0.0005645037884120982,
+        "worst_t90_absolute_error_ms": 1.0
+      },
+      "D_both": {
+        "worst_response_relative_error": 2.417226745650595e-08,
+        "worst_auc_relative_error": 0.0005443763219027659,
+        "worst_t90_absolute_error_ms": 1.0
+      },
+      "F_pulse": {
+        "worst_peak_relative_error": 0.0021888583463865762,
+        "worst_auc_relative_error": 0.00013224926549546126
+      }
+    },
+    "2.0": {
+      "B_LC4": {
+        "worst_response_relative_error": 8.275910802802084e-11,
+        "worst_auc_relative_error": 0.001066608799654157,
+        "worst_t90_absolute_error_ms": 2.0
+      },
+      "C_LPLC2": {
+        "worst_response_relative_error": 1.1539845802240168e-07,
+        "worst_auc_relative_error": 0.0011290091410801693,
+        "worst_t90_absolute_error_ms": 2.0
+      },
+      "D_both": {
+        "worst_response_relative_error": 4.1640047127857485e-08,
+        "worst_auc_relative_error": 0.0010887531336992544,
+        "worst_t90_absolute_error_ms": 2.0
+      },
+      "F_pulse": {
+        "worst_peak_relative_error": 0.004613366798292886,
+        "worst_auc_relative_error": 0.0002541595339042408
+      }
+    }
+  },
+  "readouts": {
+    "B_LC4": {
+      "dn_neurons": {
+        "DNp01": {
+          "left": {
+            "body_id": 10010,
+            "mean": 8.401196,
+            "max": 8.926273,
+            "peak_time_ms": 500.0,
+            "steady_state": 8.926273,
+            "t90_ms": 57.0,
+            "auc": 4204.5358
+          },
+          "right": {
+            "body_id": 10001,
+            "mean": 4.28561,
+            "max": 4.513,
+            "peak_time_ms": 500.0,
+            "steady_state": 4.513,
+            "t90_ms": 49.0,
+            "auc": 2144.8342
+          }
+        },
+        "DNp04": {
+          "left": {
+            "body_id": 531898,
+            "mean": 12.42553,
+            "max": 13.124451,
+            "peak_time_ms": 500.0,
+            "steady_state": 13.124451,
+            "t90_ms": 52.0,
+            "auc": 6218.6282
+          },
+          "right": {
+            "body_id": 11137,
+            "mean": 8.020439,
+            "max": 8.446244,
+            "peak_time_ms": 500.0,
+            "steady_state": 8.446244,
+            "t90_ms": 49.0,
+            "auc": 4014.017
+          }
+        },
+        "DNp02": {
+          "left": {
+            "body_id": 10197,
+            "mean": 4.794182,
+            "max": 5.079089,
+            "peak_time_ms": 500.0,
+            "steady_state": 5.079089,
+            "t90_ms": 54.0,
+            "auc": 2399.3455
+          },
+          "right": {
+            "body_id": 10117,
+            "mean": 3.491378,
+            "max": 3.682219,
+            "peak_time_ms": 500.0,
+            "steady_state": 3.682219,
+            "t90_ms": 50.0,
+            "auc": 1747.3391
+          }
+        },
+        "DNp11": {
+          "left": {
+            "body_id": 10259,
+            "mean": 3.759384,
+            "max": 3.973991,
+            "peak_time_ms": 500.0,
+            "steady_state": 3.973991,
+            "t90_ms": 52.0,
+            "auc": 1881.4645
+          },
+          "right": {
+            "body_id": 10106,
+            "mean": 4.997149,
+            "max": 5.334973,
+            "peak_time_ms": 500.0,
+            "steady_state": 5.334973,
+            "t90_ms": 60.0,
+            "auc": 2500.9042
+          }
+        },
+        "DNp06": {
+          "left": {
+            "body_id": 10228,
+            "mean": 2.15735,
+            "max": 2.29934,
+            "peak_time_ms": 500.0,
+            "steady_state": 2.29934,
+            "t90_ms": 58.0,
+            "auc": 1079.6829
+          },
+          "right": {
+            "body_id": 10584,
+            "mean": 1.576496,
+            "max": 1.679047,
+            "peak_time_ms": 500.0,
+            "steady_state": 1.679047,
+            "t90_ms": 57.0,
+            "auc": 788.985
+          }
+        }
+      },
+      "lr_differences": {
+        "DNp01": 4.413273511889155,
+        "DNp04": 4.678207002514728,
+        "DNp02": 1.39686999126716,
+        "DNp11": -1.3609814311642983,
+        "DNp06": 0.6202936072709164
+      }
+    },
+    "C_LPLC2": {
+      "dn_neurons": {
+        "DNp01": {
+          "left": {
+            "body_id": 10010,
+            "mean": 10.837859,
+            "max": 11.933755,
+            "peak_time_ms": 500.0,
+            "steady_state": 11.933755,
+            "t90_ms": 92.0,
+            "auc": 5423.8004
+          },
+          "right": {
+            "body_id": 10001,
+            "mean": 6.618401,
+            "max": 7.142237,
+            "peak_time_ms": 500.0,
+            "steady_state": 7.142237,
+            "t90_ms": 73.0,
+            "auc": 3312.248
+          }
+        },
+        "DNp04": {
+          "left": {
+            "body_id": 531898,
+            "mean": 8.149619,
+            "max": 8.969021,
+            "peak_time_ms": 500.0,
+            "steady_state": 8.969021,
+            "t90_ms": 92.0,
+            "auc": 4078.4744
+          },
+          "right": {
+            "body_id": 11137,
+            "mean": 4.993849,
+            "max": 5.412169,
+            "peak_time_ms": 500.0,
+            "steady_state": 5.412169,
+            "t90_ms": 76.0,
+            "auc": 2499.2121
+          }
+        },
+        "DNp02": {
+          "left": {
+            "body_id": 10197,
+            "mean": 1.00647,
+            "max": 1.137311,
+            "peak_time_ms": 500.0,
+            "steady_state": 1.137311,
+            "t90_ms": 106.0,
+            "auc": 503.6727
+          },
+          "right": {
+            "body_id": 10117,
+            "mean": 0.736776,
+            "max": 0.81684,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.81684,
+            "t90_ms": 89.0,
+            "auc": 368.7164
+          }
+        },
+        "DNp11": {
+          "left": {
+            "body_id": 10259,
+            "mean": 0.696273,
+            "max": 0.784218,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.784218,
+            "t90_ms": 105.0,
+            "auc": 348.4404
+          },
+          "right": {
+            "body_id": 10106,
+            "mean": 3.237377,
+            "max": 3.638575,
+            "peak_time_ms": 500.0,
+            "steady_state": 3.638575,
+            "t90_ms": 102.0,
+            "auc": 1620.1064
+          }
+        },
+        "DNp06": {
+          "left": {
+            "body_id": 10228,
+            "mean": 3.336762,
+            "max": 3.66125,
+            "peak_time_ms": 500.0,
+            "steady_state": 3.66125,
+            "t90_ms": 89.0,
+            "auc": 1669.8872
+          },
+          "right": {
+            "body_id": 10584,
+            "mean": 2.755778,
+            "max": 2.982067,
+            "peak_time_ms": 500.0,
+            "steady_state": 2.982067,
+            "t90_ms": 75.0,
+            "auc": 1379.1536
+          }
+        }
+      },
+      "lr_differences": {
+        "DNp01": 4.7915171050817955,
+        "DNp04": 3.556851828854044,
+        "DNp02": 0.32047045156900733,
+        "DNp11": -2.854357193245728,
+        "DNp06": 0.6791828170072702
+      }
+    },
+    "D_both": {
+      "dn_neurons": {
+        "DNp01": {
+          "left": {
+            "body_id": 10010,
+            "mean": 19.239054,
+            "max": 20.860028,
+            "peak_time_ms": 500.0,
+            "steady_state": 20.860028,
+            "t90_ms": 78.0,
+            "auc": 9628.3362
+          },
+          "right": {
+            "body_id": 10001,
+            "mean": 10.904012,
+            "max": 11.655237,
+            "peak_time_ms": 500.0,
+            "steady_state": 11.655237,
+            "t90_ms": 64.0,
+            "auc": 5457.0823
+          }
+        },
+        "DNp04": {
+          "left": {
+            "body_id": 531898,
+            "mean": 20.575148,
+            "max": 22.093472,
+            "peak_time_ms": 500.0,
+            "steady_state": 22.093472,
+            "t90_ms": 69.0,
+            "auc": 10297.1026
+          },
+          "right": {
+            "body_id": 11137,
+            "mean": 13.014288,
+            "max": 13.858413,
+            "peak_time_ms": 500.0,
+            "steady_state": 13.858413,
+            "t90_ms": 60.0,
+            "auc": 6513.229
+          }
+        },
+        "DNp02": {
+          "left": {
+            "body_id": 10197,
+            "mean": 5.800652,
+            "max": 6.2164,
+            "peak_time_ms": 500.0,
+            "steady_state": 6.2164,
+            "t90_ms": 66.0,
+            "auc": 2903.0182
+          },
+          "right": {
+            "body_id": 10117,
+            "mean": 4.228154,
+            "max": 4.499059,
+            "peak_time_ms": 500.0,
+            "steady_state": 4.499059,
+            "t90_ms": 59.0,
+            "auc": 2116.0556
+          }
+        },
+        "DNp11": {
+          "left": {
+            "body_id": 10259,
+            "mean": 4.455657,
+            "max": 4.758209,
+            "peak_time_ms": 500.0,
+            "steady_state": 4.758209,
+            "t90_ms": 63.0,
+            "auc": 2229.9049
+          },
+          "right": {
+            "body_id": 10106,
+            "mean": 8.234526,
+            "max": 8.973548,
+            "peak_time_ms": 500.0,
+            "steady_state": 8.973548,
+            "t90_ms": 80.0,
+            "auc": 4121.0106
+          }
+        },
+        "DNp06": {
+          "left": {
+            "body_id": 10228,
+            "mean": 5.494112,
+            "max": 5.96059,
+            "peak_time_ms": 500.0,
+            "steady_state": 5.96059,
+            "t90_ms": 78.0,
+            "auc": 2749.5701
+          },
+          "right": {
+            "body_id": 10584,
+            "mean": 4.332274,
+            "max": 4.661113,
+            "peak_time_ms": 500.0,
+            "steady_state": 4.661113,
+            "t90_ms": 68.0,
+            "auc": 2168.1386
+          }
+        }
+      },
+      "lr_differences": {
+        "DNp01": 9.204790616970946,
+        "DNp04": 8.235058831368773,
+        "DNp02": 1.7173404428361696,
+        "DNp11": -4.215338624410026,
+        "DNp06": 1.299476424278187
+      }
+    },
+    "E_left": {
+      "dn_neurons": {
+        "DNp01": {
+          "left": {
+            "body_id": 10010,
+            "mean": 7.482849,
+            "max": 7.934374,
+            "peak_time_ms": 500.0,
+            "steady_state": 7.934374,
+            "t90_ms": 55.0,
+            "auc": 3744.94
+          },
+          "right": {
+            "body_id": 10001,
+            "mean": 0.036313,
+            "max": 0.040463,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.040463,
+            "t90_ms": null,
+            "auc": 18.1728
+          }
+        },
+        "DNp04": {
+          "left": {
+            "body_id": 531898,
+            "mean": 12.404611,
+            "max": 13.100813,
+            "peak_time_ms": 500.0,
+            "steady_state": 13.100813,
+            "t90_ms": 51.0,
+            "auc": 6208.1598
+          },
+          "right": {
+            "body_id": 11137,
+            "mean": 0.012131,
+            "max": 0.013867,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.013867,
+            "t90_ms": null,
+            "auc": 6.0707
+          }
+        },
+        "DNp02": {
+          "left": {
+            "body_id": 10197,
+            "mean": 4.789019,
+            "max": 5.073158,
+            "peak_time_ms": 500.0,
+            "steady_state": 5.073158,
+            "t90_ms": 54.0,
+            "auc": 2396.7619
+          },
+          "right": {
+            "body_id": 10117,
+            "mean": 0.003178,
+            "max": 0.003651,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.003651,
+            "t90_ms": null,
+            "auc": 1.5901
+          }
+        },
+        "DNp11": {
+          "left": {
+            "body_id": 10259,
+            "mean": 3.678616,
+            "max": 3.885906,
+            "peak_time_ms": 500.0,
+            "steady_state": 3.885906,
+            "t90_ms": 52.0,
+            "auc": 1841.0435
+          },
+          "right": {
+            "body_id": 10106,
+            "mean": 2.038718,
+            "max": 2.208737,
+            "peak_time_ms": 500.0,
+            "steady_state": 2.208737,
+            "t90_ms": 68.0,
+            "auc": 1020.2935
+          }
+        },
+        "DNp06": {
+          "left": {
+            "body_id": 10228,
+            "mean": 2.146229,
+            "max": 2.286921,
+            "peak_time_ms": 500.0,
+            "steady_state": 2.286921,
+            "t90_ms": 58.0,
+            "auc": 1074.1172
+          },
+          "right": {
+            "body_id": 10584,
+            "mean": 0.002732,
+            "max": 0.003154,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.003154,
+            "t90_ms": null,
+            "auc": 1.3674
+          }
+        }
+      },
+      "lr_differences": {
+        "DNp01": 7.89391060889803,
+        "DNp04": 13.086945524506241,
+        "DNp02": 5.069506624103965,
+        "DNp11": 1.6771693336040006,
+        "DNp06": 2.283766999474183
+      }
+    },
+    "E_right": {
+      "dn_neurons": {
+        "DNp01": {
+          "left": {
+            "body_id": 10010,
+            "mean": 0.918347,
+            "max": 0.991899,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.991899,
+            "t90_ms": 66.0,
+            "auc": 459.5959
+          },
+          "right": {
+            "body_id": 10001,
+            "mean": 4.249297,
+            "max": 4.472536,
+            "peak_time_ms": 500.0,
+            "steady_state": 4.472536,
+            "t90_ms": 48.0,
+            "auc": 2126.6615
+          }
+        },
+        "DNp04": {
+          "left": {
+            "body_id": 531898,
+            "mean": 0.020919,
+            "max": 0.023638,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.023638,
+            "t90_ms": null,
+            "auc": 10.4684
+          },
+          "right": {
+            "body_id": 11137,
+            "mean": 8.008308,
+            "max": 8.432377,
+            "peak_time_ms": 500.0,
+            "steady_state": 8.432377,
+            "t90_ms": 48.0,
+            "auc": 4007.9462
+          }
+        },
+        "DNp02": {
+          "left": {
+            "body_id": 10197,
+            "mean": 0.005163,
+            "max": 0.005931,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.005931,
+            "t90_ms": null,
+            "auc": 2.5836
+          },
+          "right": {
+            "body_id": 10117,
+            "mean": 3.4882,
+            "max": 3.678568,
+            "peak_time_ms": 500.0,
+            "steady_state": 3.678568,
+            "t90_ms": 50.0,
+            "auc": 1745.749
+          }
+        },
+        "DNp11": {
+          "left": {
+            "body_id": 10259,
+            "mean": 0.080768,
+            "max": 0.088085,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.088085,
+            "t90_ms": 73.0,
+            "auc": 40.4209
+          },
+          "right": {
+            "body_id": 10106,
+            "mean": 2.958431,
+            "max": 3.126236,
+            "peak_time_ms": 500.0,
+            "steady_state": 3.126236,
+            "t90_ms": 52.0,
+            "auc": 1480.6107
+          }
+        },
+        "DNp06": {
+          "left": {
+            "body_id": 10228,
+            "mean": 0.011122,
+            "max": 0.012419,
+            "peak_time_ms": 500.0,
+            "steady_state": 0.012419,
+            "t90_ms": null,
+            "auc": 5.5657
+          },
+          "right": {
+            "body_id": 10584,
+            "mean": 1.573764,
+            "max": 1.675892,
+            "peak_time_ms": 500.0,
+            "steady_state": 1.675892,
+            "t90_ms": 57.0,
+            "auc": 787.6176
+          }
+        }
+      },
+      "lr_differences": {
+        "DNp01": -3.4806370970088714,
+        "DNp04": -8.408738521991513,
+        "DNp02": -3.672636632836805,
+        "DNp11": -3.0381507647683006,
+        "DNp06": -1.663473392203266
+      }
+    },
+    "F_pulse": {
+      "dn_neurons": {
+        "DNp01": {
+          "left": {
+            "body_id": 10010,
+            "mean": 6.910053,
+            "max": 19.893627,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.192865,
+            "t90_ms": null,
+            "auc": 2079.8295
+          },
+          "right": {
+            "body_id": 10001,
+            "mean": 3.869422,
+            "max": 11.409563,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.033402,
+            "t90_ms": null,
+            "auc": 1164.6793
+          }
+        },
+        "DNp04": {
+          "left": {
+            "body_id": 531898,
+            "mean": 7.324811,
+            "max": 21.361057,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.145096,
+            "t90_ms": null,
+            "auc": 2204.6955
+          },
+          "right": {
+            "body_id": 11137,
+            "mean": 4.601719,
+            "max": 13.631004,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.029607,
+            "t90_ms": null,
+            "auc": 1385.1026
+          }
+        },
+        "DNp02": {
+          "left": {
+            "body_id": 10197,
+            "mean": 2.062157,
+            "max": 6.054855,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.029869,
+            "t90_ms": null,
+            "auc": 620.6943
+          },
+          "right": {
+            "body_id": 10117,
+            "mean": 1.494078,
+            "max": 4.436238,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.007764,
+            "t90_ms": null,
+            "auc": 449.7136
+          }
+        },
+        "DNp11": {
+          "left": {
+            "body_id": 10259,
+            "mean": 1.578782,
+            "max": 4.650048,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.019639,
+            "t90_ms": null,
+            "auc": 475.2036
+          },
+          "right": {
+            "body_id": 10106,
+            "mean": 2.973034,
+            "max": 8.551417,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.079856,
+            "t90_ms": null,
+            "auc": 894.8432
+          }
+        },
+        "DNp06": {
+          "left": {
+            "body_id": 10228,
+            "mean": 1.974513,
+            "max": 5.688253,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.054712,
+            "t90_ms": null,
+            "auc": 594.3012
+          },
+          "right": {
+            "body_id": 10584,
+            "mean": 1.547325,
+            "max": 4.546951,
+            "peak_time_ms": 151.0,
+            "steady_state": 0.015038,
+            "t90_ms": null,
+            "auc": 465.7372
+          }
+        }
+      },
+      "lr_differences": {
+        "DNp01": 8.484064305081427,
+        "DNp04": 7.7300531638440475,
+        "DNp02": 1.6186169346753232,
+        "DNp11": -3.9013695247003266,
+        "DNp06": 1.1413021749823669
+      }
+    }
+  }
+}
