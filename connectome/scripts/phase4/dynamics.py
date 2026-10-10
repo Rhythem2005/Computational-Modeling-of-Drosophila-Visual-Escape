@@ -14,6 +14,49 @@ from __future__ import annotations
 import numpy as np
 
 
+def _validate_simulation_arguments(
+    W_signed: np.ndarray,
+    tau: np.ndarray,
+    gain: float,
+    dt: float,
+    duration: float,
+    b: np.ndarray,
+    x0: np.ndarray,
+    noise_std: float,
+    rng: np.random.Generator | None,
+) -> int:
+    """Validate numerical inputs and return the exact number of steps."""
+    if W_signed.ndim != 2 or W_signed.shape[0] != W_signed.shape[1]:
+        raise ValueError("W_signed must be a square two-dimensional matrix")
+    W_signed = np.asarray(W_signed, dtype=np.float64)
+    if W_signed.ndim != 2 or W_signed.shape[0] != W_signed.shape[1]:
+        raise ValueError("W_signed must be a square two-dimensional matrix")
+    n = W_signed.shape[0]
+    for name, value in (("W_signed", W_signed), ("tau", tau), ("b", b), ("x0", x0)):
+        if not np.all(np.isfinite(value)):
+            raise ValueError(f"{name} contains NaN or Inf")
+    if tau.shape != (n,) or b.shape != (n,) or x0.shape != (n,):
+        raise ValueError("tau, b, and x0 must be vectors matching W_signed")
+    if np.any(tau <= 0):
+        raise ValueError("all time constants must be positive")
+    for name, value in (("gain", gain), ("dt", dt), ("duration", duration), ("noise_std", noise_std)):
+        if not np.isfinite(value):
+            raise ValueError(f"{name} must be finite")
+    if gain < 0:
+        raise ValueError("gain must be non-negative")
+    if dt <= 0 or duration <= 0:
+        raise ValueError("dt and duration must be positive")
+    if noise_std < 0:
+        raise ValueError("noise_std must be non-negative")
+    if noise_std > 0 and rng is None:
+        raise ValueError("rng is required when noise_std > 0")
+    steps_exact = duration / dt
+    n_steps = int(round(steps_exact))
+    if not np.isclose(steps_exact, n_steps, rtol=0.0, atol=1e-12):
+        raise ValueError("duration must be an integer multiple of dt")
+    return n_steps
+
+
 def phi_relu(z: np.ndarray, clip_max: float | None = None) -> np.ndarray:
     """Activation function: ReLU with optional clip.
 
@@ -107,12 +150,18 @@ def simulate(
             states: 2D array [n_steps + 1, n_neurons] of state trajectories.
     """
     n = W_signed.shape[0]
-    n_steps = int(duration / dt)
 
     if b is None:
         b = np.zeros(n, dtype=np.float64)
     if x0 is None:
         x0 = np.zeros(n, dtype=np.float64)
+
+    tau = np.asarray(tau, dtype=np.float64)
+    b = np.asarray(b, dtype=np.float64)
+    x0 = np.asarray(x0, dtype=np.float64)
+    n_steps = _validate_simulation_arguments(
+        W_signed, tau, gain, dt, duration, b, x0, noise_std, rng
+    )
 
     times = np.arange(0, n_steps + 1, dtype=np.float64) * dt
     states = np.zeros((n_steps + 1, n), dtype=np.float64)
@@ -120,9 +169,13 @@ def simulate(
 
     for step in range(n_steps):
         t = times[step]
-        u = u_func(t, n)
+        u = np.asarray(u_func(t, n), dtype=np.float64)
+        if u.shape != (n,):
+            raise ValueError(f"input function returned shape {u.shape}; expected {(n,)}")
+        if not np.all(np.isfinite(u)):
+            raise ValueError("input function returned NaN or Inf")
 
-        if noise_std > 0.0 and rng is not None:
+        if noise_std > 0.0:
             noise = rng.normal(0.0, noise_std, size=n)
             u = u + noise
 

@@ -13,7 +13,8 @@
 #   spectral_radius(W_signed) = 1.3917 at gain=1
 #   At gain=0.5: spectral_radius(gain * W_signed) = 0.6958 < 1.0
 #   This ensures the zero fixed point is asymptotically stable under zero input.
-#   Euler stability criterion: dt/min_tau * gain * max_real_ev = 0.0696 << 1.0
+#   Stability is verified from the continuous-time Jacobian
+#   A = diag(1/tau) @ (-I + gain*W_signed) and each tested Euler operator I+dt*A.
 #   Gain was NOT tuned to produce any particular DN response.
 
 # Circuit reference (read-only — do not modify)
@@ -69,9 +70,14 @@ sign_map:
 # Scale 0.4 yields max ~22.1 < 25.0.
 input_scale: 0.4
 
-# dt sensitivity tolerances (SIMULATION PARAMETER)
-dt_peak_tolerance: 0.10
-dt_auc_tolerance: 0.15
+# Validation criteria (SIMULATION PARAMETERS, chosen before execution)
+response_floor: 1.0e-8
+convergence_step_tolerance: 1.0e-3
+pulse_residual_fraction_tolerance: 0.05
+dt_response_tolerance: 0.02
+dt_auc_tolerance: 0.02
+dt_values_ms: [0.5, 1.0, 2.0]
+gain_sensitivity_values: [0.3, 0.5, 0.6]
 
 # Random seed for deterministic noise (if noise_std > 0)
 seed: 42

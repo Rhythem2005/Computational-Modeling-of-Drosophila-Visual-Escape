@@ -174,6 +174,21 @@ def load_circuit(phase3_dir: Path | None = None) -> CircuitData:
     # --- Validation checks ---
     errors: list[str] = []
 
+    required_node_columns = {"bodyId", "type", "side", "population", "predicted_nt"}
+    required_edge_columns = {
+        "bodyId_pre", "bodyId_post", "weight", "weight_normalized", "pre_nt", "edge_class"
+    }
+    missing_node_columns = sorted(required_node_columns - set(nodes_df.columns))
+    missing_edge_columns = sorted(required_edge_columns - set(edges_df.columns))
+    if missing_node_columns:
+        errors.append(f"Missing node columns: {missing_node_columns}")
+    if missing_edge_columns:
+        errors.append(f"Missing edge columns: {missing_edge_columns}")
+    if errors:
+        raise ValueError(
+            "Circuit v2 schema validation failed:\n" + "\n".join(f"  - {e}" for e in errors)
+        )
+
     # Node count
     if len(nodes_df) != CONTRACT["n_neurons"]:
         errors.append(f"Expected {CONTRACT['n_neurons']} neurons, got {len(nodes_df)}")
@@ -242,6 +257,29 @@ def load_circuit(phase3_dir: Path | None = None) -> CircuitData:
     if "pre_nt" not in edges_df.columns:
         errors.append("Missing pre_nt column in edges — STOP")
 
+    node_ids = set(nodes_df["bodyId"].astype(int))
+    missing_pre = set(edges_df["bodyId_pre"].astype(int)) - node_ids
+    missing_post = set(edges_df["bodyId_post"].astype(int)) - node_ids
+    if missing_pre:
+        errors.append(f"{len(missing_pre)} presynaptic bodyIds are absent from nodes")
+    if missing_post:
+        errors.append(f"{len(missing_post)} postsynaptic bodyIds are absent from nodes")
+
+    expected_norm = edges_df["weight"].to_numpy(dtype=float) / CONTRACT["max_raw_weight"]
+    actual_norm = edges_df["weight_normalized"].to_numpy(dtype=float)
+    if not np.all(np.isfinite(actual_norm)):
+        errors.append("weight_normalized contains NaN or Inf")
+    elif not np.allclose(actual_norm, expected_norm, rtol=0.0, atol=1e-12):
+        max_diff = float(np.max(np.abs(actual_norm - expected_norm)))
+        errors.append(f"weight_normalized is inconsistent with weight/172 (max diff {max_diff})")
+
+    if not missing_pre and "pre_nt" in edges_df.columns and "predicted_nt" in nodes_df.columns:
+        node_nt = nodes_df.set_index("bodyId")["predicted_nt"]
+        expected_pre_nt = edges_df["bodyId_pre"].map(node_nt)
+        nt_mismatch = expected_pre_nt.astype(str) != edges_df["pre_nt"].astype(str)
+        if nt_mismatch.any():
+            errors.append(f"{int(nt_mismatch.sum())} edge pre_nt values disagree with node metadata")
+
     if errors:
         raise ValueError(
             "Circuit v2 validation failed:\n" + "\n".join(f"  - {e}" for e in errors)
@@ -268,12 +306,13 @@ def load_circuit(phase3_dir: Path | None = None) -> CircuitData:
         W_raw[row_post, col_pre] = edge["weight"]
         W_norm[row_post, col_pre] = edge["weight_normalized"]
 
-    # Verify matrix properties
-    assert W_raw.shape == (n_nodes, n_nodes), f"W shape {W_raw.shape} != ({n_nodes}, {n_nodes})"
-    assert np.count_nonzero(W_raw) == len(edges_df), (
-        f"Nonzero count {np.count_nonzero(W_raw)} != edge count {len(edges_df)}"
-    )
-    assert W_raw.max() == CONTRACT["max_raw_weight"]
+    # Verify matrix properties with explicit exceptions (assertions can be disabled).
+    if W_raw.shape != (n_nodes, n_nodes):
+        raise ValueError(f"W shape {W_raw.shape} != ({n_nodes}, {n_nodes})")
+    if np.count_nonzero(W_raw) != len(edges_df):
+        raise ValueError(f"Nonzero count {np.count_nonzero(W_raw)} != edge count {len(edges_df)}")
+    if W_raw.max() != CONTRACT["max_raw_weight"]:
+        raise ValueError(f"Matrix max weight {W_raw.max()} != {CONTRACT['max_raw_weight']}")
 
     return CircuitData(
         nodes_df=nodes_df,

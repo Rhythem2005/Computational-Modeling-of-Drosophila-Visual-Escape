@@ -1,0 +1,29 @@
+# Phase 5 Stimulus Configuration
+
+stimulus_id: "test_looming_1"
+stimulus_type: "looming"
+
+width: 256
+height: 256
+fps: 60
+duration_ms: 1000.0
+
+background_intensity: 0
+object_intensity: 255
+shape: "circle"
+
+initial_position: [128.0, 128.0]
+initial_radius: 10.0
+
+start_time_ms: 0.0
+random_seed: 42
+
+expansion_params:
+  f_R: 100.0
+  Z0: 50.0
+  v: 40.0
+  t_onset_ms: 200.0
+
+# Tolerances (SIMULATION PARAMETER)
+rendering_translation_tolerance: 1.0 # px
+rendering_radius_tolerance: 1.0 # px

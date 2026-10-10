@@ -1,25 +1,18 @@
-"""Phase 4 integration tests: Tests A-F, stability, determinism, validation.
+"""Reproducible Phase 4 integration and validation suite.
 
-Run from project root:
+Run from the project root:
     ./venv/bin/python connectome/scripts/phase4/run_phase4_tests.py
 
-Tests:
-    A. Zero input: from zero and small nonzero state (must decay)
-    B. LC4 only input
-    C. LPLC2 only input
-    D. Both LC4 + LPLC2 (convergence, amplitude, timing, L/R)
-    E. Left-only and right-only LC4 (report hemisphere pattern)
-    F. Finite pulse: reproducible temporal response
-    Stability: multiple input levels, dt sensitivity
-    Determinism: bitwise identical repeat runs
-    Validation: circuit loading, edge verification, immutability
+The suite writes machine-readable evidence to
+``connectome/phase4/results/phase4_test_results.json`` and never modifies
+Phase 3 artifacts.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
-import os
+import platform
 import sys
 import time
 from datetime import datetime, timezone
@@ -27,407 +20,334 @@ from pathlib import Path
 
 import numpy as np
 
-# Ensure project root is in path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from connectome.scripts.phase4 import dynamics, inputs, loader, readouts, simulator, validation
 
-# Output directories
 PHASE4_DIR = PROJECT_ROOT / "connectome" / "phase4"
 RESULTS_DIR = PHASE4_DIR / "results"
-REPORTS_DIR = PHASE4_DIR / "reports"
-
-# ============== Pass criteria (defined BEFORE running) ==============
-# These are set a priori — no fitting.
-
-# Test A: zero input must decay to zero
-DECAY_THRESHOLD = 1e-6  # max |state| after 200ms from small initial state
-
-# Test D: both inputs convergence
-CONVERGENCE_THRESHOLD = 1e-3  # state change per step at end of 500ms
-
-# dt sensitivity: peak and AUC tolerances between dt=0.5 and dt=1.0
-DT_PEAK_TOLERANCE = 0.10  # 10% relative difference
-DT_AUC_TOLERANCE = 0.15   # 15% relative difference
-
-# Stability: max |state| under various input levels
-STABILITY_MAX_STATE = 1e5  # threshold for divergence
 
 
-def main():
-    print("=" * 70)
-    print("PHASE 4 — RATE-MODEL SIMULATION TESTS")
-    print(f"Run date: {datetime.now(timezone.utc).isoformat()}")
-    print("=" * 70)
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(65536), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _relative_error(value: float, reference: float, floor: float = 1e-12) -> float:
+    return abs(value - reference) / max(abs(reference), floor)
+
+
+def main() -> int:
+    run_time = datetime.now(timezone.utc).isoformat()
+    print("=" * 72)
+    print("PHASE 4 — RATE-MODEL INTEGRATION AND VALIDATION")
+    print(f"Run date: {run_time}")
+    print("=" * 72)
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-
-    all_results = {}
     passed = 0
     failed = 0
-    test_details = []
+    test_details: list[dict] = []
 
-    def record(test_id: str, name: str, ok: bool, detail: str = ""):
+    def record(test_id: str, name: str, ok: bool | None, detail: str = "") -> None:
         nonlocal passed, failed
-        status = "PASS" if ok else "FAIL"
-        if ok:
+        if ok is None:
+            status, icon = "INFO", "i"
+        elif bool(ok):
+            status, icon = "PASS", "✓"
             passed += 1
         else:
+            status, icon = "FAIL", "✗"
             failed += 1
         test_details.append({"test_id": test_id, "name": name, "status": status, "detail": detail})
-        print(f"  {'✓' if ok else '✗'} [{test_id}] {name}: {detail[:120]}")
+        print(f"  {icon} [{test_id}] {name}: {detail[:180]}")
 
-    # ================================================================
-    # 0. Load circuit and record pre-hashes
-    # ================================================================
-    print("\n--- 0. LOADING CIRCUIT & RECORDING HASHES ---")
-    start_load = time.time()
+    print("\n--- 0. LOAD FROZEN CIRCUIT AND CONFIGURATION ---")
+    start = time.perf_counter()
     circuit = loader.load_circuit()
-    load_time = time.time() - start_load
-    print(f"  Circuit loaded in {load_time:.2f}s: {circuit.n_neurons} neurons, "
-          f"{len(circuit.edges_df)} edges")
-    pre_hashes = circuit.file_hashes.copy()
-
-    # Load config
     config = simulator.load_config()
-    print(f"  Config: gain={config['gain']}, dt={config['dt']}, "
-          f"duration={config['duration']}, tau_default={config['tau']['default']}")
-
-    # Build signed weight matrix for analysis
+    load_seconds = time.perf_counter() - start
+    pre_hashes = circuit.file_hashes.copy()
     W_signed = loader.build_signed_weight_matrix(circuit, config["sign_map"])
-
-    # Edge type breakdown
-    edge_types = circuit.describe_edge_types()
-    print("\n  Edge type breakdown:")
-    for et, counts in sorted(edge_types.items()):
-        print(f"    {et}: {counts['count']} edges, {counts['total_synapses']} synapses")
-
-    # ================================================================
-    # 1. Circuit loading validation
-    # ================================================================
-    print("\n--- 1. CIRCUIT LOADING VALIDATION ---")
-    loading_results = validation.validate_circuit_loading(circuit)
-    for r in loading_results:
-        record("1.LOAD", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # ================================================================
-    # 2. Sign convention validation
-    # ================================================================
-    print("\n--- 2. SIGN CONVENTION VALIDATION ---")
-    sign_results = validation.validate_sign_convention(circuit, config["sign_map"], W_signed)
-    for r in sign_results:
-        record("2.SIGN", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # ================================================================
-    # 3. Spectral radius and stability
-    # ================================================================
-    print("\n--- 3. SPECTRAL RADIUS & STABILITY ---")
     tau = simulator.build_tau_vector(circuit, config)
-    stab_results = validation.validate_numerical_stability(
+    print(
+        f"  Loaded {circuit.n_neurons} neurons and {len(circuit.edges_df)} edges "
+        f"in {load_seconds:.3f}s"
+    )
+
+    print("\n--- 1. CIRCUIT CONTRACT ---")
+    for result in validation.validate_circuit_loading(circuit):
+        record("LOAD", result["check"], result["status"] == "PASS", result.get("detail", ""))
+
+    print("\n--- 2. SYNAPTIC SIGN CONVENTION ---")
+    for result in validation.validate_sign_convention(circuit, config["sign_map"], W_signed):
+        record("SIGN", result["check"], result["status"] == "PASS", result.get("detail", ""))
+
+    print("\n--- 3. MATHEMATICAL STABILITY ---")
+    stability_results = validation.validate_numerical_stability(
         W_signed, tau, config["gain"], config["dt"]
     )
-    for r in stab_results:
-        record("3.STAB", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
+    for result in stability_results:
+        record("MATH", result["check"], result["status"] == "PASS", result.get("detail", ""))
     spectral_radius = dynamics.compute_spectral_radius(W_signed, config["gain"])
-    max_real_ev = dynamics.compute_max_real_eigenvalue(W_signed, config["gain"])
-    all_results["spectral_radius"] = spectral_radius
-    all_results["max_real_eigenvalue"] = max_real_ev
+    max_real_eigenvalue = dynamics.compute_max_real_eigenvalue(W_signed, config["gain"])
 
-    # ================================================================
-    # Test A: Zero input
-    # ================================================================
-    print("\n--- TEST A: ZERO INPUT ---")
+    response_floor = float(config["response_floor"])
+    convergence_tolerance = float(config["convergence_step_tolerance"])
 
-    # A1: Zero state, zero input — should remain at zero
-    u_zero = inputs.make_zero_input()
-    times_a1, states_a1, ro_a1 = simulator.run_simulation(circuit, config, u_zero)
-    max_state_a1 = float(np.max(np.abs(states_a1)))
-    record("A1", "zero_state_zero_input", max_state_a1 == 0.0,
-           f"max|state|={max_state_a1}")
+    print("\n--- A. ZERO INPUT ---")
+    zero_input = inputs.make_zero_input()
+    _, zero_states, _ = simulator.run_simulation(circuit, config, zero_input)
+    record("A1", "zero_fixed_point", np.array_equal(zero_states, np.zeros_like(zero_states)),
+           f"max_abs={np.max(np.abs(zero_states)):.3e}")
 
-    # A2: Small nonzero state, zero input — must decay to zero
-    # Slowest decay mode: (1 - dt/tau + dt/tau * gain * lambda_max) per step
-    # = (0.9 + 0.1*0.696) = 0.9696. Need ~700 steps for 0.01 -> 1e-6.
-    x0_small = np.full(circuit.n_neurons, 0.01, dtype=np.float64)
-    decay_config = {**config, "duration": 1000}
-    times_a2, states_a2, ro_a2 = simulator.run_simulation(
-        circuit, decay_config, u_zero, x0=x0_small
+    decay_config = {**config, "duration": 1000.0}
+    initial_state = np.full(circuit.n_neurons, 0.01, dtype=np.float64)
+    decay_times, decay_states, _ = simulator.run_simulation(
+        circuit, decay_config, zero_input, x0=initial_state
     )
-    max_final_a2 = float(np.max(np.abs(states_a2[-1])))
-    record("A2", "small_state_decays", max_final_a2 < DECAY_THRESHOLD,
-           f"max|final_state|={max_final_a2:.2e} (threshold={DECAY_THRESHOLD})")
-    blowup_a2 = validation.validate_no_blowup(states_a2, "A2")
-    for r in blowup_a2:
-        record("A2", r["check"], r["status"] == "PASS", r.get("detail", ""))
+    below = np.flatnonzero(np.max(np.abs(decay_states), axis=1) < 1e-6)
+    decay_time = float(decay_times[below[0]]) if below.size else None
+    record("A2", "perturbation_decays_below_1e-6", decay_time is not None,
+           f"decay_time_ms={decay_time}; final_max_abs={np.max(np.abs(decay_states[-1])):.3e}")
+    for result in validation.validate_no_blowup(decay_states, "A2"):
+        record("A2", result["check"], result["status"] == "PASS", result.get("detail", ""))
 
-    # ================================================================
-    # Test B: LC4 only
-    # ================================================================
-    print("\n--- TEST B: LC4 ONLY ---")
-    u_lc4 = inputs.make_population_input(circuit, {"LC4": 1.0})
-    times_b, states_b, ro_b = simulator.run_simulation(circuit, config, u_lc4)
-    blowup_b = validation.validate_no_blowup(states_b, "B")
-    for r in blowup_b:
-        record("B", r["check"], r["status"] == "PASS", r.get("detail", ""))
-    sat_b = validation.validate_no_saturation(states_b, config.get("clip_max"), "B")
-    for r in sat_b:
-        record("B", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # Report DN responses
-    for dn in readouts.DN_TYPES:
-        for side in ["left", "right"]:
-            nr = ro_b.dn_readouts[dn][side]
-            record("B", f"LC4_only_{dn}_{side}",
-                   nr.max_val >= 0,
-                   f"max={nr.max_val:.4f}, peak_t={nr.peak_time:.1f}ms, auc={nr.auc:.4f}")
-
-    # ================================================================
-    # Test C: LPLC2 only
-    # ================================================================
-    print("\n--- TEST C: LPLC2 ONLY ---")
-    u_lplc2 = inputs.make_population_input(circuit, {"LPLC2": 1.0})
-    times_c, states_c, ro_c = simulator.run_simulation(circuit, config, u_lplc2)
-    blowup_c = validation.validate_no_blowup(states_c, "C")
-    for r in blowup_c:
-        record("C", r["check"], r["status"] == "PASS", r.get("detail", ""))
-    sat_c = validation.validate_no_saturation(states_c, config.get("clip_max"), "C")
-    for r in sat_c:
-        record("C", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    for dn in readouts.DN_TYPES:
-        for side in ["left", "right"]:
-            nr = ro_c.dn_readouts[dn][side]
-            record("C", f"LPLC2_only_{dn}_{side}",
-                   nr.max_val >= 0,
-                   f"max={nr.max_val:.4f}, peak_t={nr.peak_time:.1f}ms, auc={nr.auc:.4f}")
-
-    # ================================================================
-    # Test D: Both LC4 + LPLC2
-    # ================================================================
-    print("\n--- TEST D: BOTH LC4 + LPLC2 ---")
-    u_both = inputs.make_population_input(circuit, {"LC4": 1.0, "LPLC2": 1.0})
-    times_d, states_d, ro_d = simulator.run_simulation(circuit, config, u_both)
-    blowup_d = validation.validate_no_blowup(states_d, "D")
-    for r in blowup_d:
-        record("D", r["check"], r["status"] == "PASS", r.get("detail", ""))
-    sat_d = validation.validate_no_saturation(states_d, config.get("clip_max"), "D")
-    for r in sat_d:
-        record("D", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # Check convergence: last 50ms state change
-    late_changes = np.max(np.abs(np.diff(states_d[-50:], axis=0)), axis=1)
-    max_late_change = float(np.max(late_changes))
-    record("D", "convergence", max_late_change < CONVERGENCE_THRESHOLD,
-           f"max_late_change={max_late_change:.6f}")
-
-    for dn in readouts.DN_TYPES:
-        for side in ["left", "right"]:
-            nr = ro_d.dn_readouts[dn][side]
-            record("D", f"both_{dn}_{side}",
-                   nr.max_val >= 0,
-                   f"max={nr.max_val:.4f}, peak_t={nr.peak_time:.1f}ms, auc={nr.auc:.4f}")
-
-    # L-R differences
-    for dn in readouts.DN_TYPES:
-        diff = ro_d.lr_differences[dn]
-        record("D", f"LR_diff_{dn}", True,
-               f"L-R max difference = {diff:.6f}")
-
-    # ================================================================
-    # Test E: Left-only and right-only LC4
-    # ================================================================
-    print("\n--- TEST E: HEMISPHERE-SPECIFIC LC4 ---")
-
-    # Left LC4 only
-    u_lc4_left = inputs.make_population_input(circuit, {"LC4": 1.0}, side="left")
-    times_el, states_el, ro_el = simulator.run_simulation(circuit, config, u_lc4_left)
-    blowup_el = validation.validate_no_blowup(states_el, "E_left")
-    for r in blowup_el:
-        record("E", r["check"], r["status"] == "PASS", r.get("detail", ""))
-    sat_el = validation.validate_no_saturation(states_el, config.get("clip_max"), "E_left")
-    for r in sat_el:
-        record("E", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # Right LC4 only
-    u_lc4_right = inputs.make_population_input(circuit, {"LC4": 1.0}, side="right")
-    times_er, states_er, ro_er = simulator.run_simulation(circuit, config, u_lc4_right)
-    blowup_er = validation.validate_no_blowup(states_er, "E_right")
-    for r in blowup_er:
-        record("E", r["check"], r["status"] == "PASS", r.get("detail", ""))
-    sat_er = validation.validate_no_saturation(states_er, config.get("clip_max"), "E_right")
-    for r in sat_er:
-        record("E", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # Report hemisphere pattern — do NOT assume it, just observe
-    print("  Observed hemisphere pattern (LC4 left-only input):")
-    for dn in readouts.DN_TYPES:
-        l_max = ro_el.dn_readouts[dn]["left"].max_val
-        r_max = ro_el.dn_readouts[dn]["right"].max_val
-        record("E", f"left_LC4_{dn}", True,
-               f"DN_L_max={l_max:.4f}, DN_R_max={r_max:.4f}, diff={l_max - r_max:.4f}")
-
-    print("  Observed hemisphere pattern (LC4 right-only input):")
-    for dn in readouts.DN_TYPES:
-        l_max = ro_er.dn_readouts[dn]["left"].max_val
-        r_max = ro_er.dn_readouts[dn]["right"].max_val
-        record("E", f"right_LC4_{dn}", True,
-               f"DN_L_max={l_max:.4f}, DN_R_max={r_max:.4f}, diff={l_max - r_max:.4f}")
-
-    # ================================================================
-    # Test F: Finite pulse
-    # ================================================================
-    print("\n--- TEST F: FINITE PULSE ---")
-    pulse_config = {**config, "duration": 300}
-    u_pulse = inputs.make_pulse_input(
-        circuit, {"LC4": 1.0, "LPLC2": 1.0},
-        onset=50.0, offset=150.0
-    )
-    times_f1, states_f1, ro_f1 = simulator.run_simulation(circuit, pulse_config, u_pulse)
-    times_f2, states_f2, ro_f2 = simulator.run_simulation(circuit, pulse_config, u_pulse)
-
-    record("F", "pulse_reproducible",
-           np.array_equal(states_f1, states_f2),
-           "Two pulse runs are bitwise identical")
-
-    blowup_f = validation.validate_no_blowup(states_f1, "F")
-    for r in blowup_f:
-        record("F", r["check"], r["status"] == "PASS", r.get("detail", ""))
-    sat_f = validation.validate_no_saturation(states_f1, config.get("clip_max"), "F")
-    for r in sat_f:
-        record("F", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # Check response rises during pulse and decays after
-    for dn in readouts.DN_TYPES:
-        nr = ro_f1.dn_readouts[dn]["left"]
-        # Activity at pulse onset (t=50), peak, and end (t=300)
-        idx_onset = int(50 / config["dt"])
-        idx_offset = int(150 / config["dt"])
-        idx_end = min(int(300 / config["dt"]), len(nr.time_series) - 1)
-        val_onset = nr.time_series[idx_onset]
-        val_offset = nr.time_series[idx_offset]
-        val_end = nr.time_series[idx_end]
-        record("F", f"pulse_{dn}_temporal", True,
-               f"at_onset={val_onset:.4f}, at_offset={val_offset:.4f}, "
-               f"at_end={val_end:.4f}, peak={nr.max_val:.4f}")
-
-    # ================================================================
-    # Stability: multiple input levels
-    # ================================================================
-    print("\n--- STABILITY: INPUT LEVELS ---")
-    for level_name, level_val in [("zero", 0.0), ("small", 0.1), ("moderate", 1.0), ("max", 10.0)]:
-        u_level = inputs.make_population_input(circuit, {"LC4": level_val, "LPLC2": level_val})
-        _, states_level, _ = simulator.run_simulation(circuit, config, u_level)
-        max_state = float(np.max(np.abs(states_level)))
-        has_nan = np.any(np.isnan(states_level))
-        has_inf = np.any(np.isinf(states_level))
-        ok = max_state < STABILITY_MAX_STATE and not has_nan and not has_inf
-        record("STAB", f"input_{level_name}",
-               ok,
-               f"max|state|={max_state:.4f}, NaN={has_nan}, Inf={has_inf}")
-
-    # ================================================================
-    # Stability: dt sensitivity
-    # ================================================================
-    print("\n--- STABILITY: dt SENSITIVITY ---")
-    dt_results = {}
-    for dt_val in [0.5, 1.0, 2.0]:
-        dt_config = {**config, "dt": dt_val, "duration": 500}
-        u_dt = inputs.make_population_input(circuit, {"LC4": 1.0, "LPLC2": 1.0})
-        times_dt, states_dt, ro_dt = simulator.run_simulation(circuit, dt_config, u_dt)
-        max_state = float(np.max(np.abs(states_dt)))
-        has_nan = np.any(np.isnan(states_dt))
-        has_inf = np.any(np.isinf(states_dt))
-
-        dn01_l = ro_dt.dn_readouts["DNp01"]["left"]
-        dt_results[dt_val] = {
-            "peak": dn01_l.max_val,
-            "auc": dn01_l.auc,
-            "max_state": max_state,
-        }
-
-        record("DT", f"dt={dt_val}ms",
-               not has_nan and not has_inf and max_state < STABILITY_MAX_STATE,
-               f"DNp01_L peak={dn01_l.max_val:.4f}, auc={dn01_l.auc:.4f}, max|state|={max_state:.4f}")
-
-    # dt sensitivity comparison (0.5 vs 1.0)
-    if 0.5 in dt_results and 1.0 in dt_results:
-        ref_peak = dt_results[1.0]["peak"]
-        ref_auc = dt_results[1.0]["auc"]
-        if ref_peak > 0:
-            peak_diff = abs(dt_results[0.5]["peak"] - ref_peak) / ref_peak
-            record("DT", "peak_sensitivity_0.5v1.0",
-                   peak_diff < DT_PEAK_TOLERANCE,
-                   f"relative_diff={peak_diff:.4f} (tol={DT_PEAK_TOLERANCE})")
-        if ref_auc > 0:
-            auc_diff = abs(dt_results[0.5]["auc"] - ref_auc) / ref_auc
-            record("DT", "auc_sensitivity_0.5v1.0",
-                   auc_diff < DT_AUC_TOLERANCE,
-                   f"relative_diff={auc_diff:.4f} (tol={DT_AUC_TOLERANCE})")
-
-    # ================================================================
-    # Determinism
-    # ================================================================
-    print("\n--- DETERMINISM ---")
-    det_results = validation.validate_determinism(circuit, config)
-    for r in det_results:
-        record("DET", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # ================================================================
-    # File immutability
-    # ================================================================
-    print("\n--- FILE IMMUTABILITY ---")
-    immut_results = validation.validate_file_immutability(pre_hashes)
-    for r in immut_results:
-        record("IMMUT", r["check"], r["status"] == "PASS", r.get("detail", ""))
-
-    # ================================================================
-    # Save results
-    # ================================================================
-    print("\n--- SAVING RESULTS ---")
-
-    # Summary
-    summary = {
-        "run_date": datetime.now(timezone.utc).isoformat(),
-        "circuit_version": "2.0.0",
-        "total_tests": passed + failed,
-        "passed": passed,
-        "failed": failed,
-        "spectral_radius": all_results.get("spectral_radius"),
-        "max_real_eigenvalue": all_results.get("max_real_eigenvalue"),
-        "gain": config["gain"],
-        "dt": config["dt"],
-        "pre_hashes": pre_hashes,
-        "test_details": test_details,
-        "dt_sensitivity": {str(k): v for k, v in dt_results.items()},
+    scenario_outputs: dict[str, tuple[np.ndarray, np.ndarray, readouts.SimulationReadout]] = {}
+    scenarios = {
+        "B_LC4": inputs.make_population_input(circuit, {"LC4": 1.0}),
+        "C_LPLC2": inputs.make_population_input(circuit, {"LPLC2": 1.0}),
+        "D_both": inputs.make_population_input(circuit, {"LC4": 1.0, "LPLC2": 1.0}),
     }
+    for scenario, input_function in scenarios.items():
+        print(f"\n--- {scenario} ---")
+        times, states, simulation_readout = simulator.run_simulation(circuit, config, input_function)
+        scenario_outputs[scenario] = (times, states, simulation_readout)
+        for result in validation.validate_no_blowup(states, scenario):
+            record(scenario, result["check"], result["status"] == "PASS", result.get("detail", ""))
+        for result in validation.validate_no_saturation(
+            states, config.get("clip_max"), scenario, dt=config["dt"]
+        ):
+            record(scenario, result["check"], result["status"] == "PASS", result.get("detail", ""))
+        for dn_type in readouts.DN_TYPES:
+            for side in readouts.SIDES:
+                neuron = simulation_readout.dn_readouts[dn_type][side]
+                ok = neuron.max_val > response_floor and np.isfinite(neuron.t90)
+                record(
+                    scenario,
+                    f"{dn_type}_{side}_sustained_response",
+                    ok,
+                    f"max={neuron.max_val:.6f}, steady={neuron.steady_state:.6f}, "
+                    f"t90_ms={neuron.t90:.1f}, auc={neuron.auc:.4f}",
+                )
 
-    # Save DN readout summaries for each test
-    for test_name, ro_obj in [("B_LC4", ro_b), ("C_LPLC2", ro_c), ("D_both", ro_d),
-                               ("E_left", ro_el), ("E_right", ro_er), ("F_pulse", ro_f1)]:
-        summary[f"readout_{test_name}"] = readouts.readout_summary_dict(ro_obj)
+    both_states = scenario_outputs["D_both"][1]
+    late_window_steps = max(2, int(round(50.0 / config["dt"])))
+    max_late_change = float(np.max(np.abs(np.diff(both_states[-late_window_steps:], axis=0))))
+    record("D_both", "converged_over_final_50ms", max_late_change < convergence_tolerance,
+           f"max_step_change={max_late_change:.9f}; tolerance={convergence_tolerance}")
 
+    print("\n--- E. HEMISPHERE-SPECIFIC LC4 ---")
+    hemisphere_outputs = {}
+    for side in readouts.SIDES:
+        side_input = inputs.make_population_input(circuit, {"LC4": 1.0}, side=side)
+        times, states, simulation_readout = simulator.run_simulation(circuit, config, side_input)
+        hemisphere_outputs[side] = (times, states, simulation_readout)
+        for result in validation.validate_no_blowup(states, f"E_{side}"):
+            record("E", result["check"], result["status"] == "PASS", result.get("detail", ""))
+        for result in validation.validate_no_saturation(
+            states, config.get("clip_max"), f"E_{side}", dt=config["dt"]
+        ):
+            record("E", result["check"], result["status"] == "PASS", result.get("detail", ""))
+        for dn_type in readouts.DN_TYPES:
+            left_max = simulation_readout.dn_readouts[dn_type]["left"].max_val
+            right_max = simulation_readout.dn_readouts[dn_type]["right"].max_val
+            record("E", f"{side}_input_{dn_type}_lr_observation", None,
+                   f"left_max={left_max:.6f}, right_max={right_max:.6f}, difference={left_max-right_max:.6f}")
+    left_dn = np.asarray([
+        hemisphere_outputs["left"][2].dn_readouts[dn][side].max_val
+        for dn in readouts.DN_TYPES for side in readouts.SIDES
+    ])
+    right_dn = np.asarray([
+        hemisphere_outputs["right"][2].dn_readouts[dn][side].max_val
+        for dn in readouts.DN_TYPES for side in readouts.SIDES
+    ])
+    record("E", "hemisphere_inputs_produce_distinct_dn_vectors",
+           not np.allclose(left_dn, right_dn, rtol=1e-10, atol=1e-12),
+           f"max_abs_vector_difference={np.max(np.abs(left_dn-right_dn)):.6f}")
+
+    print("\n--- F. FINITE PULSE ---")
+    pulse_config = {**config, "duration": 300.0}
+    pulse_input = inputs.make_pulse_input(
+        circuit, {"LC4": 1.0, "LPLC2": 1.0}, onset=50.0, offset=150.0
+    )
+    pulse_times, pulse_states, pulse_readout = simulator.run_simulation(
+        circuit, pulse_config, pulse_input
+    )
+    _, repeated_states, _ = simulator.run_simulation(circuit, pulse_config, pulse_input)
+    record("F", "bitwise_reproducible", np.array_equal(pulse_states, repeated_states),
+           "two pulse simulations are bitwise identical")
+    for result in validation.validate_no_blowup(pulse_states, "F"):
+        record("F", result["check"], result["status"] == "PASS", result.get("detail", ""))
+    for result in validation.validate_no_saturation(
+        pulse_states, config.get("clip_max"), "F", dt=config["dt"]
+    ):
+        record("F", result["check"], result["status"] == "PASS", result.get("detail", ""))
+    residual_tolerance = float(config["pulse_residual_fraction_tolerance"])
+    for dn_type in readouts.DN_TYPES:
+        for side in readouts.SIDES:
+            neuron = pulse_readout.dn_readouts[dn_type][side]
+            residual_fraction = neuron.steady_state / max(neuron.max_val, 1e-12)
+            peak_in_window = 50.0 < neuron.peak_time <= 175.0
+            ok = (
+                neuron.max_val > response_floor
+                and peak_in_window
+                and residual_fraction < residual_tolerance
+                and np.isnan(neuron.t90)
+            )
+            record("F", f"{dn_type}_{side}_pulse_response", ok,
+                   f"peak={neuron.max_val:.6f} at {neuron.peak_time:.1f}ms; "
+                   f"end={neuron.steady_state:.6f}; residual_fraction={residual_fraction:.6f}; t90=undefined")
+
+    print("\n--- STRESS AND CLIPPING BEHAVIOR ---")
+    stress_input = inputs.make_population_input(circuit, {"LC4": 10.0, "LPLC2": 10.0})
+    unclipped_config = {**config, "clip_max": None}
+    _, stress_states, _ = simulator.run_simulation(circuit, unclipped_config, stress_input)
+    stress_max = float(np.max(stress_states))
+    record("STRESS", "high_input_unclipped_is_finite",
+           np.all(np.isfinite(stress_states)) and stress_max < 1e5,
+           f"max_activity={stress_max:.6f}")
+    _, clipped_states, _ = simulator.run_simulation(circuit, config, stress_input)
+    clipped_max = float(np.max(clipped_states))
+    record("STRESS", "configured_clip_bounds_high_input", clipped_max <= config["clip_max"] + 1e-12,
+           f"max_activity={clipped_max:.6f}; clip_max={config['clip_max']}")
+    record("STRESS", "high_input_reaches_configured_clip", None,
+           f"clip is active outside the normal operating range: {np.isclose(clipped_max, config['clip_max'])}")
+
+    print("\n--- TIMESTEP SENSITIVITY ---")
+    dt_values = [float(value) for value in config["dt_values_ms"]]
+    if 1.0 not in dt_values:
+        raise ValueError("dt_values_ms must include the 1.0 ms reference")
+    dt_results: dict[str, dict] = {}
+    for dt_value in dt_values:
+        dt_config = {**config, "dt": dt_value}
+        dt_results[str(dt_value)] = {}
+        for scenario, input_function in scenarios.items():
+            _, states, ro = simulator.run_simulation(circuit, dt_config, input_function)
+            dt_results[str(dt_value)][scenario] = {
+                f"{dn}_{side}": {
+                    "steady_state": ro.dn_readouts[dn][side].steady_state,
+                    "auc": ro.dn_readouts[dn][side].auc,
+                    "t90_ms": ro.dn_readouts[dn][side].t90,
+                }
+                for dn in readouts.DN_TYPES for side in readouts.SIDES
+            }
+            record("DT", f"{scenario}_dt_{dt_value:g}ms_finite", np.all(np.isfinite(states)),
+                   f"max_activity={np.max(states):.6f}")
+        dt_pulse_config = {**dt_config, "duration": 300.0}
+        _, states, ro = simulator.run_simulation(circuit, dt_pulse_config, pulse_input)
+        dt_results[str(dt_value)]["F_pulse"] = {
+            f"{dn}_{side}": {
+                "peak": ro.dn_readouts[dn][side].max_val,
+                "auc": ro.dn_readouts[dn][side].auc,
+                "end": ro.dn_readouts[dn][side].steady_state,
+            }
+            for dn in readouts.DN_TYPES for side in readouts.SIDES
+        }
+        record("DT", f"F_pulse_dt_{dt_value:g}ms_finite", np.all(np.isfinite(states)),
+               f"max_activity={np.max(states):.6f}")
+
+    response_tolerance = float(config["dt_response_tolerance"])
+    auc_tolerance = float(config["dt_auc_tolerance"])
+    reference = dt_results["1.0"]
+    dt_comparisons = {}
+    for dt_value in dt_values:
+        if dt_value == 1.0:
+            continue
+        current = dt_results[str(dt_value)]
+        dt_comparisons[str(dt_value)] = {}
+        for scenario in scenarios:
+            response_errors, auc_errors, t90_errors = [], [], []
+            for neuron_name, metrics in current[scenario].items():
+                reference_metrics = reference[scenario][neuron_name]
+                response_errors.append(_relative_error(metrics["steady_state"], reference_metrics["steady_state"]))
+                auc_errors.append(_relative_error(metrics["auc"], reference_metrics["auc"]))
+                t90_errors.append(abs(metrics["t90_ms"] - reference_metrics["t90_ms"]))
+            worst_response, worst_auc, worst_t90 = max(response_errors), max(auc_errors), max(t90_errors)
+            dt_comparisons[str(dt_value)][scenario] = {
+                "worst_response_relative_error": worst_response,
+                "worst_auc_relative_error": worst_auc,
+                "worst_t90_absolute_error_ms": worst_t90,
+            }
+            record("DT", f"{scenario}_{dt_value:g}ms_response_sensitivity",
+                   worst_response <= response_tolerance,
+                   f"worst_relative_error={worst_response:.6f}; tolerance={response_tolerance}")
+            record("DT", f"{scenario}_{dt_value:g}ms_auc_sensitivity", worst_auc <= auc_tolerance,
+                   f"worst_relative_error={worst_auc:.6f}; tolerance={auc_tolerance}")
+            record("DT", f"{scenario}_{dt_value:g}ms_t90_quantization", worst_t90 <= dt_value + 1.0,
+                   f"worst_absolute_error_ms={worst_t90:.3f}; tolerance={dt_value + 1.0:.3f}")
+        peak_errors, auc_errors = [], []
+        for neuron_name, metrics in current["F_pulse"].items():
+            reference_metrics = reference["F_pulse"][neuron_name]
+            peak_errors.append(_relative_error(metrics["peak"], reference_metrics["peak"]))
+            auc_errors.append(_relative_error(metrics["auc"], reference_metrics["auc"]))
+        worst_peak, worst_auc = max(peak_errors), max(auc_errors)
+        dt_comparisons[str(dt_value)]["F_pulse"] = {
+            "worst_peak_relative_error": worst_peak,
+            "worst_auc_relative_error": worst_auc,
+        }
+        record("DT", f"F_pulse_{dt_value:g}ms_peak_sensitivity", worst_peak <= response_tolerance,
+               f"worst_relative_error={worst_peak:.6f}; tolerance={response_tolerance}")
+        record("DT", f"F_pulse_{dt_value:g}ms_auc_sensitivity", worst_auc <= auc_tolerance,
+               f"worst_relative_error={worst_auc:.6f}; tolerance={auc_tolerance}")
+
+    print("\n--- DETERMINISM AND PHASE 3 IMMUTABILITY ---")
+    for result in validation.validate_determinism(circuit, config):
+        record("DET", result["check"], result["status"] == "PASS", result.get("detail", ""))
+    for result in validation.validate_file_immutability(pre_hashes):
+        record("IMMUT", result["check"], result["status"] == "PASS", result.get("detail", ""))
+
+    scenario_summaries = {
+        scenario: readouts.readout_summary_dict(output[2])
+        for scenario, output in scenario_outputs.items()
+    }
+    scenario_summaries["E_left"] = readouts.readout_summary_dict(hemisphere_outputs["left"][2])
+    scenario_summaries["E_right"] = readouts.readout_summary_dict(hemisphere_outputs["right"][2])
+    scenario_summaries["F_pulse"] = readouts.readout_summary_dict(pulse_readout)
+
+    summary = {
+        "schema_version": "2.0",
+        "run_date": run_time,
+        "circuit_version": "2.0.0",
+        "status": "PASS" if failed == 0 else "FAIL",
+        "assertions": {"total": passed + failed, "passed": passed, "failed": failed},
+        "informational_records": sum(item["status"] == "INFO" for item in test_details),
+        "environment": {
+            "python": platform.python_version(),
+            "numpy": np.__version__,
+            "platform": platform.platform(),
+        },
+        "config_sha256": _sha256(PHASE4_DIR / "simulation_config.yaml"),
+        "phase3_hashes": pre_hashes,
+        "spectral_radius_gain_times_W": spectral_radius,
+        "max_real_eigenvalue_gain_times_W": max_real_eigenvalue,
+        "test_details": test_details,
+        "dt_sensitivity": dt_results,
+        "dt_comparisons": dt_comparisons,
+        "readouts": scenario_summaries,
+    }
     results_path = RESULTS_DIR / "phase4_test_results.json"
-    with open(results_path, "w") as f:
-        json.dump(summary, f, indent=2, default=str)
-    print(f"  Results saved to {results_path}")
+    with results_path.open("w") as handle:
+        json.dump(summary, handle, indent=2, allow_nan=False)
 
-    # ================================================================
-    # Final summary
-    # ================================================================
-    print("\n" + "=" * 70)
-    print(f"PHASE 4 TESTS: {passed}/{passed + failed} passed")
-    if failed == 0:
-        print("ALL TESTS PASSED")
-    else:
-        print(f"FAILED: {failed} tests")
-        for td in test_details:
-            if td["status"] == "FAIL":
-                print(f"  ✗ [{td['test_id']}] {td['name']}: {td['detail'][:100]}")
-    print("=" * 70)
-
+    print("\n" + "=" * 72)
+    print(f"PHASE 4 ASSERTIONS: {passed}/{passed + failed} passed; {failed} failed")
+    print(f"Machine-readable evidence: {results_path}")
+    print("=" * 72)
     return 0 if failed == 0 else 1
 
 

@@ -17,6 +17,16 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from connectome.scripts.phase4 import dynamics, inputs, loader, readouts, simulator, validation
 
 
+@pytest.fixture(scope="module")
+def circuit():
+    return loader.load_circuit()
+
+
+@pytest.fixture(scope="module")
+def sign_map():
+    return {"acetylcholine": 1.0, "GABA": -1.0, "glutamate": -1.0}
+
+
 # ============================================================
 # Loader tests
 # ============================================================
@@ -24,10 +34,6 @@ from connectome.scripts.phase4 import dynamics, inputs, loader, readouts, simula
 
 class TestLoader:
     """Test circuit loading and validation."""
-
-    @pytest.fixture(scope="class")
-    def circuit(self):
-        return loader.load_circuit()
 
     def test_neuron_count(self, circuit):
         assert circuit.n_neurons == 321
@@ -113,14 +119,6 @@ class TestLoader:
 class TestSignedWeights:
     """Test signed weight matrix construction."""
 
-    @pytest.fixture(scope="class")
-    def circuit(self):
-        return loader.load_circuit()
-
-    @pytest.fixture(scope="class")
-    def sign_map(self):
-        return {"acetylcholine": 1.0, "GABA": -1.0, "glutamate": -1.0}
-
     def test_signed_shape(self, circuit, sign_map):
         W_signed = loader.build_signed_weight_matrix(circuit, sign_map)
         assert W_signed.shape == (321, 321)
@@ -130,11 +128,41 @@ class TestSignedWeights:
         W_signed = loader.build_signed_weight_matrix(circuit, sign_map)
         assert np.allclose(W_signed, circuit.W_norm, atol=1e-15)
 
+
     def test_negative_sign_hypothetical(self, circuit):
         """If we set ACh to -1, all weights should be negated."""
         sign_map_neg = {"acetylcholine": -1.0, "GABA": -1.0, "glutamate": -1.0}
         W_signed = loader.build_signed_weight_matrix(circuit, sign_map_neg)
         assert np.allclose(W_signed, -circuit.W_norm, atol=1e-15)
+
+    def test_sign_path_synthetic(self, circuit):
+        """Test sign convention on a synthetic circuit with multiple NTs."""
+        import copy
+        syn_circuit = copy.deepcopy(circuit)
+        # Assign 4 neurons with different NTs
+        syn_circuit.nt_map[circuit.body_ids[0]] = "acetylcholine"
+        syn_circuit.nt_map[circuit.body_ids[1]] = "GABA"
+        syn_circuit.nt_map[circuit.body_ids[2]] = "glutamate"
+        syn_circuit.nt_map[circuit.body_ids[3]] = "unknown_nt"
+
+        # Test unknown NT raises error
+        sign_map = {"acetylcholine": 1.0, "GABA": -1.0, "glutamate": -1.0}
+        with pytest.raises(ValueError, match="not in sign_map"):
+            loader.build_signed_weight_matrix(syn_circuit, sign_map)
+
+        # Test signs are applied correctly
+        syn_circuit.nt_map[circuit.body_ids[3]] = "acetylcholine"  # Fix the unknown NT
+        # Fake weights
+        syn_circuit.W_norm = np.zeros_like(syn_circuit.W_norm)
+        syn_circuit.W_norm[5, 0] = 1.0 # ACh
+        syn_circuit.W_norm[5, 1] = 1.0 # GABA
+        syn_circuit.W_norm[5, 2] = 1.0 # Glu
+
+        W_signed = loader.build_signed_weight_matrix(syn_circuit, sign_map)
+        assert W_signed[5, 0] == 1.0
+        assert W_signed[5, 1] == -1.0
+        assert W_signed[5, 2] == -1.0
+
 
 
 # ============================================================
@@ -199,6 +227,34 @@ class TestDynamics:
         sr = dynamics.compute_spectral_radius(W, 2.0)
         assert abs(sr - 2.0) < 1e-10
 
+    @pytest.mark.parametrize(
+        "kwargs,match",
+        [
+            ({"dt": 0.0}, "dt and duration"),
+            ({"duration": 10.5}, "integer multiple"),
+            ({"tau": np.array([10.0, 0.0])}, "time constants"),
+        ],
+    )
+    def test_simulate_rejects_invalid_numerics(self, kwargs, match):
+        params = {
+            "W_signed": np.zeros((2, 2)),
+            "tau": np.full(2, 10.0),
+            "gain": 0.5,
+            "dt": 1.0,
+            "duration": 10.0,
+            "u_func": lambda t, n: np.zeros(n),
+        }
+        params.update(kwargs)
+        with pytest.raises(ValueError, match=match):
+            dynamics.simulate(**params)
+
+    def test_simulate_rejects_bad_input_shape(self):
+        with pytest.raises(ValueError, match="input function returned shape"):
+            dynamics.simulate(
+                np.zeros((2, 2)), np.full(2, 10.0), 0.5, 1.0, 10.0,
+                lambda t, n: np.zeros(n + 1),
+            )
+
 
 # ============================================================
 # Inputs tests
@@ -207,10 +263,6 @@ class TestDynamics:
 
 class TestInputs:
     """Test input generation functions."""
-
-    @pytest.fixture(scope="class")
-    def circuit(self):
-        return loader.load_circuit()
 
     def test_zero_input(self, circuit):
         u_func = inputs.make_zero_input()
@@ -253,6 +305,19 @@ class TestInputs:
         with pytest.raises(ValueError, match="not LC4/LPLC2"):
             inputs.make_static_input(circuit, {10010: 1.0})
 
+    def test_invalid_side_rejected(self, circuit):
+        with pytest.raises(ValueError, match="side must be"):
+            inputs.make_population_input(circuit, {"LC4": 1.0}, side="centre")
+
+    def test_invalid_pulse_window_rejected(self, circuit):
+        with pytest.raises(ValueError, match="onset/offset"):
+            inputs.make_pulse_input(circuit, {"LC4": 1.0}, onset=20.0, offset=10.0)
+
+    def test_time_varying_input_rejects_nonvisual_bodyid(self, circuit):
+        u_func = inputs.make_time_varying_input(circuit, lambda t: {10010: 1.0})
+        with pytest.raises(ValueError, match="restricted to visual"):
+            u_func(0.0, circuit.n_neurons)
+
 
 # ============================================================
 # Readouts tests
@@ -261,10 +326,6 @@ class TestInputs:
 
 class TestReadouts:
     """Test readout extraction."""
-
-    @pytest.fixture(scope="class")
-    def circuit(self):
-        return loader.load_circuit()
 
     def test_extract_readouts(self, circuit):
         n = circuit.n_neurons
@@ -283,6 +344,37 @@ class TestReadouts:
         # Check L-R differences computed
         assert len(ro.lr_differences) == 5
 
+
+    def test_t90_nan_logic(self):
+        # Silent neuron: max < 0.01 * global_max
+        times = np.array([0.0, 1.0, 2.0])
+        ts_silent = np.array([0.0, 0.05, 0.05])
+        nr = readouts.NeuronReadout(body_id=1, neuron_type="DNp01", side="left", time_series=ts_silent)
+        nr.compute_stats(times, 1.0, global_max=10.0)
+        assert np.isnan(nr.t90)
+
+        # Pulse: ss < 0.95 * max
+        ts_pulse = np.array([0.0, 10.0, 0.1])
+        nr = readouts.NeuronReadout(body_id=1, neuron_type="DNp01", side="left", time_series=ts_pulse)
+        nr.compute_stats(times, 1.0, global_max=10.0)
+        assert np.isnan(nr.t90)
+
+        # Steady: ss >= 0.95 * max
+        ts_steady = np.array([0.0, 8.0, 10.0])
+        nr = readouts.NeuronReadout(body_id=1, neuron_type="DNp01", side="left", time_series=ts_steady)
+        nr.compute_stats(times, 1.0, global_max=10.0)
+        assert not np.isnan(nr.t90)
+        assert nr.t90 == 2.0
+
+    def test_pulse_reports_peak_but_not_t90(self):
+        times = np.array([0.0, 1.0, 2.0])
+        trace = np.array([0.0, 10.0, 0.1])
+        nr = readouts.NeuronReadout(1, "DNp01", "left", trace)
+        nr.compute_stats(times, 1.0, global_max=10.0)
+        assert nr.peak_time == 1.0
+        assert nr.steady_state == 0.1
+        assert np.isnan(nr.t90)
+
     def test_readout_summary(self, circuit):
         n = circuit.n_neurons
         times = np.arange(0, 11, dtype=np.float64)
@@ -291,6 +383,27 @@ class TestReadouts:
         summary = readouts.readout_summary_dict(ro)
         assert "dn_neurons" in summary
         assert "lr_differences" in summary
+        for dn in summary["dn_neurons"].values():
+            for neuron in dn.values():
+                assert neuron["t90_ms"] is None
+
+
+class TestConfiguration:
+    def test_repository_config_is_valid(self):
+        config = simulator.load_config()
+        simulator.validate_config(config)
+
+    def test_unknown_tau_population_rejected(self, circuit):
+        config = simulator.load_config()
+        config["tau"] = {**config["tau"], "not_a_population": 10.0}
+        with pytest.raises(ValueError, match="unknown population"):
+            simulator.build_tau_vector(circuit, config)
+
+    def test_unsupported_activation_rejected(self):
+        config = simulator.load_config()
+        config["phi"] = "sigmoid"
+        with pytest.raises(ValueError, match="Only the documented"):
+            simulator.validate_config(config)
 
 
 if __name__ == "__main__":

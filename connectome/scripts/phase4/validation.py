@@ -134,7 +134,14 @@ def validate_numerical_stability(
     def check(label: str, ok: bool, detail: str = ""):
         results.append({"check": label, "status": "PASS" if ok else "FAIL", "detail": detail})
 
-    # Spectral radius
+    if W_signed.shape[0] != W_signed.shape[1] or tau.shape != (W_signed.shape[0],):
+        check("stability_input_shapes", False, "W_signed must be square and tau must match")
+        return results
+    if np.any(tau <= 0) or not np.all(np.isfinite(tau)):
+        check("positive_finite_tau", False, "all tau values must be finite and positive")
+        return results
+
+    # Spectral summaries of the recurrent term.
     spectral_radius = dynamics.compute_spectral_radius(W_signed, gain)
     max_real_ev = dynamics.compute_max_real_eigenvalue(W_signed, gain)
 
@@ -143,13 +150,31 @@ def validate_numerical_stability(
     check("max_real_eigenvalue_computed", True,
           f"max_real_eigenvalue = {max_real_ev:.6f}")
 
-    # For Euler stability with tau, need dt/tau * max_real_ev < 1
-    # (linearized stability near zero fixed point)
-    min_tau = float(np.min(tau))
-    effective_gain = dt / min_tau * max_real_ev
-    check("euler_stability_criterion",
-          effective_gain < 1.0,
-          f"dt/min_tau * max_real_ev = {effective_gain:.6f} (must be < 1)")
+    # General continuous-time Jacobian, valid even if population taus differ:
+    # A = diag(1/tau) @ (-I + gain * W_signed).
+    n = W_signed.shape[0]
+    jacobian = (gain * W_signed - np.eye(n)) / tau[:, None]
+    jacobian_eigs = np.linalg.eigvals(jacobian)
+    continuous_abscissa = float(np.max(np.real(jacobian_eigs)))
+    check(
+        "continuous_time_stability",
+        continuous_abscissa < 0.0,
+        f"max Re(eig(A))={continuous_abscissa:.9f} 1/ms (must be < 0)",
+    )
+
+    # Explicit Euler update operator is I + dt*A. Check the configured dt and
+    # the full sensitivity grid used by the integration tests.
+    max_euler_eigs = {}
+    is_stable_euler = True
+    for test_dt in sorted({0.5, float(dt), 1.0, 2.0}):
+        op_eigs = np.abs(1.0 + test_dt * jacobian_eigs)
+        max_eig = float(np.max(op_eigs))
+        max_euler_eigs[test_dt] = max_eig
+        if max_eig >= 1.0:
+            is_stable_euler = False
+
+    check("euler_stability_criterion", is_stable_euler,
+          f"max |1+(dt/tau)(mu-1)| for dt=0.5,1.0,2.0: {max_euler_eigs} (all must be < 1.0)")
 
     return results
 
@@ -227,7 +252,12 @@ def validate_no_blowup(states: np.ndarray, label: str = "") -> list[dict[str, An
 
     return results
 
-def validate_no_saturation(states: np.ndarray, clip_max: float | None, label: str = "") -> list[dict[str, Any]]:
+def validate_no_saturation(
+    states: np.ndarray,
+    clip_max: float | None,
+    label: str = "",
+    dt: float = 1.0,
+) -> list[dict[str, Any]]:
     """Check that no neuron hits the clip_max and no trace is flat for >50ms."""
     results = []
     prefix = f"{label}_" if label else ""
@@ -241,13 +271,14 @@ def validate_no_saturation(states: np.ndarray, clip_max: float | None, label: st
     is_saturated = max_val >= clip_max * 0.999
     check("no_clip_saturation", not is_saturated, f"max_val={max_val:.4f}, clip_max={clip_max}")
 
-    # A trace is flatly saturated if it stays exactly constant for >50ms at a value > 1e-3, 
+    # A trace is flatly saturated if it stays exactly constant for >50ms at a value > 1e-3,
     # and we specifically worry if it's at the clip_max or if it artificially flatlines.
     flat_saturation = False
-    if len(states) >= 50:
-        for i in range(len(states) - 50):
-            # Check if any neuron is exactly identical for 50 steps at a value near clip_max
-            window = states[i:i+50, :]
+    window_steps = max(2, int(np.ceil(50.0 / dt)))
+    if len(states) >= window_steps:
+        for i in range(len(states) - window_steps + 1):
+            # Check if any neuron is exactly identical for at least 50 ms near clip_max.
+            window = states[i:i + window_steps, :]
             # std over time for each neuron
             std_over_time = np.std(window, axis=0)
             mean_over_time = np.mean(window, axis=0)
@@ -256,6 +287,6 @@ def validate_no_saturation(states: np.ndarray, clip_max: float | None, label: st
             if np.any(flat_and_high):
                 flat_saturation = True
                 break
-    
-    check("no_flat_saturation", not flat_saturation, "Checked for 50ms flat traces at clip_max")
+
+    check("no_flat_saturation", not flat_saturation, "Checked for >=50 ms flat traces at clip_max")
     return results

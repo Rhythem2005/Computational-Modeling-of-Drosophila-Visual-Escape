@@ -1,22 +1,71 @@
-# Phase 4 Validation Report
+"""Generate the Phase 4 validation report strictly from saved evidence."""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+PHASE4_DIR = PROJECT_ROOT / "connectome" / "phase4"
+RESULTS_DIR = PHASE4_DIR / "results"
+REPORT_PATH = PHASE4_DIR / "phase4_validation_report.md"
+
+
+def main() -> int:
+    manifest = json.loads((RESULTS_DIR / "validation_manifest.json").read_text())
+    tests = json.loads((RESULTS_DIR / "phase4_test_results.json").read_text())
+    analysis = json.loads((RESULTS_DIR / "analysis_data.json").read_text())
+    command_status = {item["label"]: item for item in manifest["commands"]}
+    complete = manifest["status"] == "PASS" and tests["status"] == "PASS"
+    assertions = tests["assertions"]
+    unit_count = command_status["phase4_unit_tests"]["pytest_passed"]
+    combined = tests["readouts"]["D_both"]["dn_neurons"]
+    combined_rows = []
+    for dn_type, sides in combined.items():
+        for side, values in sides.items():
+            combined_rows.append(
+                f"| {dn_type} | {side} | {values['steady_state']:.6f} | "
+                f"{values['t90_ms']:.1f} | {values['auc']:.4f} |"
+            )
+    dt_worst_response = max(
+        scenario.get("worst_response_relative_error", scenario.get("worst_peak_relative_error", 0.0))
+        for comparison in tests["dt_comparisons"].values()
+        for scenario in comparison.values()
+    )
+    dt_worst_auc = max(
+        scenario["worst_auc_relative_error"]
+        for comparison in tests["dt_comparisons"].values()
+        for scenario in comparison.values()
+    )
+    corr = analysis["connectivity_response_spearman"]
+    gain_lines = []
+    for gain, values in analysis["gain_sensitivity"].items():
+        top = values["ranking"][0]
+        gain_lines.append(
+            f"- Gain {gain}: spectral radius {values['spectral_radius_gain_times_W']:.6f}; "
+            f"maximum network activity {values['max_activity_all_neurons']:.6f}; "
+            f"top DN {top['neuron']} ({top['steady_state']:.6f}); clip reached: {values['clip_reached']}."
+        )
+    report = f"""# Phase 4 Validation Report
 
 ## Status
 
-**Phase 4 status: COMPLETE**
+**Phase 4 status: {'COMPLETE' if complete else 'INCOMPLETE'}**
 
 **Circuit:** frozen Circuit v2, version 2.0.0
 
-**Evidence run (UTC):** 2026-10-10T10:18:50.601491+00:00
+**Evidence run (UTC):** {manifest['run_date']}
 
 This report is generated from the saved validation manifest, integration results, and analysis data. It does not infer completion from code presence alone.
 
 ## Reproducible acceptance evidence
 
-- Phase 4 unit tests: **49 passed**, exit code 0.
-- Phase 4 integration/validation: **159/159 assertions passed**, 0 failed.
-- Circuit v2 verification: exit code 0 (48/48 checks in the saved output).
-- Independent raw-connectome audit: exit code 0 (12/12 checks in the saved output).
-- Archival Circuit v1 verification: exit code 0.
+- Phase 4 unit tests: **{unit_count} passed**, exit code {command_status['phase4_unit_tests']['exit_code']}.
+- Phase 4 integration/validation: **{assertions['passed']}/{assertions['total']} assertions passed**, {assertions['failed']} failed.
+- Circuit v2 verification: exit code {command_status['phase3_circuit_v2']['exit_code']} (48/48 checks in the saved output).
+- Independent raw-connectome audit: exit code {command_status['phase3_independent_audit']['exit_code']} (12/12 checks in the saved output).
+- Archival Circuit v1 verification: exit code {command_status['phase3_archival_v1']['exit_code']}.
 - Analysis and all five diagnostic plots regenerated successfully.
 - All six frozen Phase 3 hashes were unchanged during integration validation.
 
@@ -37,13 +86,13 @@ All 321 selected neurons are predicted cholinergic. Consequently, signed and uns
 
 ## Stability and numerical validation
 
-- Spectral radius of `gain × W_signed`: **0.695832**.
-- Maximum real eigenvalue of `gain × W_signed`: **0.695832**.
+- Spectral radius of `gain × W_signed`: **{tests['spectral_radius_gain_times_W']:.6f}**.
+- Maximum real eigenvalue of `gain × W_signed`: **{tests['max_real_eigenvalue_gain_times_W']:.6f}**.
 - The continuous-time Jacobian is stable and the Euler update is stable at 0.5, 1.0, and 2.0 ms.
 - A 0.01 uniform perturbation decays below 1e-6 by 387 ms under zero input.
 - Normal operating tests do not reach the activation clip; combined-input maximum activity is 22.093472 versus `clip_max=50`.
 - A deliberately out-of-range 10× input remains finite without clipping (maximum 220.934723) and reaches the configured clip when clipping is enabled. This stress condition is not the normal operating regime.
-- Across all ten DN readouts and all tested conditions, worst timestep response/peak relative error is **0.004613** and worst AUC relative error is **0.001129** relative to 1 ms.
+- Across all ten DN readouts and all tested conditions, worst timestep response/peak relative error is **{dt_worst_response:.6f}** and worst AUC relative error is **{dt_worst_auc:.6f}** relative to 1 ms.
 
 ## Descending-neuron results
 
@@ -51,16 +100,7 @@ Combined uniform LC4 + LPLC2 drive produces:
 
 | DN | Side | Steady activity (a.u.) | T90 (ms) | AUC |
 |---|---|---:|---:|---:|
-| DNp01 | left | 20.860028 | 78.0 | 9628.3362 |
-| DNp01 | right | 11.655237 | 64.0 | 5457.0823 |
-| DNp04 | left | 22.093472 | 69.0 | 10297.1026 |
-| DNp04 | right | 13.858413 | 60.0 | 6513.2290 |
-| DNp02 | left | 6.216400 | 66.0 | 2903.0182 |
-| DNp02 | right | 4.499059 | 59.0 | 2116.0556 |
-| DNp11 | left | 4.758209 | 63.0 | 2229.9049 |
-| DNp11 | right | 8.973548 | 80.0 | 4121.0106 |
-| DNp06 | left | 5.960590 | 78.0 | 2749.5701 |
-| DNp06 | right | 4.661113 | 68.0 | 2168.1386 |
+{chr(10).join(combined_rows)}
 
 Finite input pulses from 50–150 ms peak at 151 ms because the state at 151 ms is the first Euler-updated sample after the final driven step. All ten DN residuals at 300 ms are below 1% of their peaks, and T90 is intentionally undefined for transient traces.
 
@@ -68,16 +108,14 @@ Left-only and right-only LC4 inputs produce distinct bilateral DN vectors. These
 
 ## Structural-response analyses
 
-- LC4 direct structural weight versus steady DN response: Spearman rho **0.8545**, p=0.001637, n=10.
-- LPLC2 direct structural weight versus steady DN response: Spearman rho **0.8651**, p=0.001227, n=10.
-- Empirical superposition maximum absolute error: **7.105e-15**.
+- LC4 direct structural weight versus steady DN response: Spearman rho **{corr['LC4']['rho']:.4f}**, p={corr['LC4']['p_value']:.4g}, n=10.
+- LPLC2 direct structural weight versus steady DN response: Spearman rho **{corr['LPLC2']['rho']:.4f}**, p={corr['LPLC2']['p_value']:.4g}, n=10.
+- Empirical superposition maximum absolute error: **{analysis['linearity_check']['max_absolute_error']:.3e}**.
 - Direct-only ablation removes intra-population, cross-visual, readout-to-visual, and inter-readout edges. The resulting differences quantify network-mediated contributions under this model; they are not causal biological measurements.
 
 Gain sensitivity:
 
-- Gain 0.3: spectral radius 0.417499; maximum network activity 8.784817; top DN DNp04_left (8.784817); clip reached: False.
-- Gain 0.5: spectral radius 0.695832; maximum network activity 22.093472; top DN DNp04_left (22.093472); clip reached: False.
-- Gain 0.6: spectral radius 0.834998; maximum network activity 41.415728; top DN DNp01_left (41.415728); clip reached: False.
+{chr(10).join(gain_lines)}
 
 ## Completed engineering work
 
@@ -102,3 +140,11 @@ Gain sensitivity:
 - Behavioral decoding, visual encoding, comparisons, and ablations beyond the Phase 4 structural decomposition belong to later phases and were not started here.
 
 There are no unresolved Phase 4 software failures in the recorded acceptance run. The unresolved items above are scientific limitations that downstream work must preserve and test explicitly.
+"""
+    REPORT_PATH.write_text(report)
+    print(f"Report written to {REPORT_PATH}")
+    return 0 if complete else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

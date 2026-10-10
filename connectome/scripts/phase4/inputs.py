@@ -14,6 +14,16 @@ import numpy as np
 from . import loader
 
 
+def _validate_side(side: str | None) -> None:
+    if side not in (None, "left", "right"):
+        raise ValueError("side must be None, 'left', or 'right'")
+
+
+def _validate_drive(value: float, label: str) -> None:
+    if not np.isscalar(value) or not np.isfinite(value):
+        raise ValueError(f"drive for {label} must be a finite scalar")
+
+
 def make_zero_input() -> Callable[[float, int], np.ndarray]:
     """Return a zero input function."""
     def u_func(t: float, n: int) -> np.ndarray:
@@ -42,6 +52,7 @@ def make_static_input(
                 f"bodyId {bid} is type '{ntype}', not LC4/LPLC2. "
                 "Test stimulation restricted to visual input neurons."
             )
+        _validate_drive(drive_map[bid], f"bodyId {bid}")
 
     n = circuit.n_neurons
     u_vec = np.zeros(n, dtype=np.float64)
@@ -71,9 +82,11 @@ def make_population_input(
     Returns:
         Input function u(t, n) -> array.
     """
+    _validate_side(side)
     for pop_name in populations:
         if pop_name not in ("LC4", "LPLC2"):
             raise ValueError(f"Population '{pop_name}' not LC4/LPLC2.")
+        _validate_drive(populations[pop_name], pop_name)
 
     n = circuit.n_neurons
     u_vec = np.zeros(n, dtype=np.float64)
@@ -107,9 +120,13 @@ def make_pulse_input(
     Returns:
         Input function u(t, n) -> array.
     """
+    _validate_side(side)
+    if not np.isfinite(onset) or not np.isfinite(offset) or onset < 0 or offset <= onset:
+        raise ValueError("pulse onset/offset must be finite with 0 <= onset < offset")
     for pop_name in populations:
         if pop_name not in ("LC4", "LPLC2"):
             raise ValueError(f"Population '{pop_name}' not LC4/LPLC2.")
+        _validate_drive(populations[pop_name], pop_name)
 
     n = circuit.n_neurons
     u_on = np.zeros(n, dtype=np.float64)
@@ -149,9 +166,17 @@ def make_time_varying_input(
     def u_func(t: float, n: int) -> np.ndarray:
         u = np.zeros(n, dtype=np.float64)
         drive_map = drive_schedule(t)
+        if not isinstance(drive_map, dict):
+            raise ValueError("drive_schedule must return a bodyId-to-drive dictionary")
         for bid, val in drive_map.items():
-            if bid in circuit.id_to_idx:
-                u[circuit.id_to_idx[bid]] = val
+            ntype = circuit.type_map.get(bid)
+            if ntype not in ("LC4", "LPLC2"):
+                raise ValueError(
+                    f"bodyId {bid} is type '{ntype}', not LC4/LPLC2; "
+                    "time-varying stimulation is restricted to visual input neurons"
+                )
+            _validate_drive(val, f"bodyId {bid}")
+            u[circuit.id_to_idx[bid]] = val
         return u
 
     return u_func

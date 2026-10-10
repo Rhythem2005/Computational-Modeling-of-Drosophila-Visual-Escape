@@ -1,6 +1,6 @@
 # Phase 4: Deterministic Rate-Model Simulator for Circuit v2
 
-This directory contains the Phase 4 biophysical simulation and behavioral modeling environment for the frozen `circuit_v2`.
+This directory contains the completed Phase 4 deterministic rate-model simulator for frozen `circuit_v2`.
 
 ## What this is
 A deterministic rate-model simulator to compute network dynamics of the *Drosophila* visual escape circuit based *strictly* on the frozen Phase 3 connectome.
@@ -12,7 +12,7 @@ A deterministic rate-model simulator to compute network dynamics of the *Drosoph
 - NOT stochastic (no random noise unless explicitly seeded for testing).
 
 ## Model Equation (SIMULATION PARAMETER)
-The core dynamics are governed by a leaky integrate-and-fire rate model:
+The core dynamics are governed by a continuous-valued leaky rate model (not a spiking leaky integrate-and-fire model):
 
 $$ \tau_i \frac{dx_i}{dt} = -x_i + \phi\left( \text{gain} \cdot \sum_j W_{\text{signed}}[i,j] x_j + b_i + u_i \right) $$
 
@@ -40,17 +40,31 @@ State is maintained strictly by `bodyId` (no merging of left/right).
 Readouts are extracted for the DNs:
 - **Primary:** `DNp01`
 - **Secondary:** `DNp04`, `DNp02`, `DNp11`, `DNp06`
-Metrics reported per neuron, hemisphere, and population: mean, max, peak time, AUC, and Left-Right difference.
+Metrics reported per neuron, hemisphere, and population include mean, maximum,
+peak time, terminal/steady activity, AUC, sustained-response T90, and left-right
+difference. T90 is undefined (`null` in JSON) for silent or transient traces.
 
 ## Tests & Validation
-The environment includes comprehensive unit tests and rigorous integration tests (Tests A-F). All stability criteria and validation checks are defined a priori.
-The simulation validates the exact integers of the loaded frozen circuit against the Phase 3 contract and ensures no mutations are possible.
+The environment includes unit, integration, stability, timestep-sensitivity,
+pulse, stress, determinism, and immutability checks. The general stability test
+uses the continuous-time Jacobian `diag(1/tau) @ (-I + gain*W_signed)` and the
+explicit-Euler update operator at each tested timestep.
+
+The authoritative evidence is in `results/validation_manifest.json`,
+`results/phase4_test_results.json`, `results/analysis_data.json`, and
+`phase4_validation_report.md`.
 
 ## How to Run
 ```bash
-# Run the complete test suite and validations
-./venv/bin/python connectome/scripts/phase4/run_phase4_tests.py
+# Run the complete acceptance pipeline (unit tests, Phase 3 invariant checks,
+# integration validation, analysis, and plots)
+./venv/bin/python connectome/scripts/phase4/validate_phase4.py
 
-# Generate diagnostic plots
+# Regenerate the evidence-derived report
+./venv/bin/python connectome/scripts/phase4/generate_report.py
+
+# Individual components remain runnable
+./venv/bin/python connectome/scripts/phase4/run_phase4_tests.py
+./venv/bin/python connectome/scripts/phase4/analyze_phase4.py
 ./venv/bin/python connectome/scripts/phase4/generate_plots.py
 ```

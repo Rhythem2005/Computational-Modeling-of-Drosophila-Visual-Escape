@@ -1,0 +1,11 @@
+============================================================
+STIMULUS DIAGNOSTICS
+============================================================
+
+Generated PNG files:
+  looming_speed_comparison.png - modified: Fri Oct  9 14:19:10 2026
+  looming_montage.png - modified: Fri Oct  9 14:19:10 2026
+  translation_montage.png - modified: Fri Oct  9 14:19:10 2026
+  looming_vs_static.png - modified: Fri Oct  9 14:19:11 2026
+  looming_radius.png - modified: Fri Oct  9 14:19:10 2026
+  static_control.png - modified: Fri Oct  9 14:19:10 2026
