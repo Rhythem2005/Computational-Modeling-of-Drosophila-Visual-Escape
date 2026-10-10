@@ -1,0 +1,87 @@
+# Phase 4 Simulation Configuration — Circuit v2 Rate Model
+# =========================================================
+#
+# All parameters below are SIMULATION PARAMETERS, NOT measured physiology.
+# They define the numerical model; they are NOT calibrated to biological recordings.
+#
+# MODEL EQUATION:
+#   tau_i * dx_i/dt = -x_i + phi(gain * sum_j W_signed[i,j] * x_j + b_i + u_i)
+#   phi(z) = max(0, z), clipped at clip_max if set
+#   Integration: explicit Euler, dt ms steps
+#
+# GAIN JUSTIFICATION (chosen by stability criterion, NOT by DN output):
+#   spectral_radius(W_signed) = 1.3917 at gain=1
+#   At gain=0.5: spectral_radius(gain * W_signed) = 0.6958 < 1.0
+#   This ensures the zero fixed point is asymptotically stable under zero input.
+#   Stability is verified from the continuous-time Jacobian
+#   A = diag(1/tau) @ (-I + gain*W_signed) and each tested Euler operator I+dt*A.
+#   Gain was NOT tuned to produce any particular DN response.
+
+# Circuit reference (read-only — do not modify)
+circuit:
+  version: "2.0.0"
+  nodes_file: "connectome/phase3/circuit_v2_nodes.csv"
+  edges_file: "connectome/phase3/circuit_v2_edges.csv"
+
+# Time integration (SIMULATION PARAMETER)
+dt: 1.0           # ms — Euler step size
+duration: 500.0    # ms — default simulation length
+
+# Global gain (SIMULATION PARAMETER — chosen by spectral radius criterion)
+gain: 0.5
+
+# Activation function (SIMULATION PARAMETER)
+phi: "relu"        # max(0, z)
+clip_max: 50.0     # upper bound to prevent runaway; NOT a biological saturation
+
+# Time constants per population (SIMULATION PARAMETER, NOT measured physiology)
+# Justification: 10 ms is a generic neural time constant in the ~5-50 ms range
+# commonly used in computational neuroscience rate models (e.g., Dayan & Abbott 2001).
+# All populations use the same default; no differential tuning to match behavior.
+tau:
+  default: 10.0    # ms
+  LC4: 10.0        # ms
+  LPLC2: 10.0      # ms
+  DNp01: 10.0      # ms
+  DNp04: 10.0      # ms
+  DNp06: 10.0      # ms
+  DNp02: 10.0      # ms
+  DNp11: 10.0      # ms
+
+# Bias per population (SIMULATION PARAMETER)
+# Default zero: no spontaneous activity assumed.
+bias:
+  default: 0.0
+
+# Sign map (MODEL ASSUMPTION — predicted neurotransmitter to synaptic sign)
+# Convention: ACh = excitatory (+1), GABA = inhibitory (-1), Glu = inhibitory (-1)
+# All 321 neurons are predicted ACh, so all signs are +1 in this circuit.
+# This is a MODELING ASSUMPTION based on neurotransmitter prediction, not
+# experimentally established synaptic polarity.
+sign_map:
+  acetylcholine: 1.0
+  GABA: -1.0
+  glutamate: -1.0
+
+# Input scaling (SIMULATION PARAMETER)
+# Rule: Set input scale such that the maximum activity of any neuron across all tests
+# is below 50% of the clip_max (i.e. < 25.0) to strictly avoid saturation artifacts
+# and operate in the linear regime. True max without clip at scale 1.0 is ~55.2.
+# Scale 0.4 yields max ~22.1 < 25.0.
+input_scale: 0.4
+
+# Validation criteria (SIMULATION PARAMETERS, chosen before execution)
+response_floor: 1.0e-8
+convergence_step_tolerance: 1.0e-3
+pulse_residual_fraction_tolerance: 0.05
+dt_response_tolerance: 0.02
+dt_auc_tolerance: 0.02
+dt_values_ms: [0.5, 1.0, 2.0]
+gain_sensitivity_values: [0.3, 0.5, 0.6]
+
+# Random seed for deterministic noise (if noise_std > 0)
+seed: 42
+
+# Noise standard deviation (SIMULATION PARAMETER)
+# Default 0 = fully deterministic simulation
+noise_std: 0.0
