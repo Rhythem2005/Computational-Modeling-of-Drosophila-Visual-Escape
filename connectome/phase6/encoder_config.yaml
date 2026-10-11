@@ -1,0 +1,9 @@
+encoder_version: '1.0.0'
+schema_version: '1.0'
+min_contrast_uint8: 4
+growth_window_s: 0.1
+min_area_growth_px: 12
+min_relative_radius_growth: 0.02
+normalization_quantile: 0.995
+output_clip: 1.0
+mapping: uniform_population

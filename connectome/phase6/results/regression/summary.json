@@ -1,0 +1,16 @@
+{
+  "unit_tests": {
+    "phase4": 49,
+    "phase5": 114,
+    "phase5_5": 44
+  },
+  "unit_failures": 0,
+  "phase4_integration": {
+    "total": 159,
+    "passed": 159,
+    "failed": 0
+  },
+  "expected_phase4_assertions": 159,
+  "expected_phase5_tests": 114,
+  "count_discrepancy": false
+}
