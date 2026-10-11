@@ -1,0 +1,1035 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-10-11T10:37:42.370914+00:00",
+  "status": "PASS",
+  "gates": [
+    {
+      "gate": "output_contract",
+      "cohort": "all",
+      "channel": "both",
+      "value": 0,
+      "threshold": "0 invalid episodes",
+      "status": "PASS"
+    },
+    {
+      "gate": "radius_geometry",
+      "cohort": "all",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 frames within 1 pixel",
+      "status": "PASS"
+    },
+    {
+      "gate": "speed_geometry_median",
+      "cohort": "all",
+      "channel": "both",
+      "value": 0.02177071958506487,
+      "threshold": "<=0.20 relative error",
+      "status": "PASS"
+    },
+    {
+      "gate": "speed_geometry_p95",
+      "cohort": "all",
+      "channel": "both",
+      "value": 0.13326381383205277,
+      "threshold": "<=0.50 relative error",
+      "status": "PASS"
+    },
+    {
+      "gate": "pre_onset",
+      "cohort": "all",
+      "channel": "both",
+      "value": 0,
+      "threshold": "0 nonzero samples",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_id",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_id",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_-1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_-1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_-1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_id",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_id",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_-1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_id",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_id",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_1",
+      "cohort": "test_id",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_ood_contrast",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.9 fraction with peak>0.005",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_ood_contrast",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.9 fraction with peak>0.005",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_-1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_-1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_-1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_ood_contrast",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.9 fraction with peak>0.005",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_ood_contrast",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.9 fraction with peak>0.005",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_-1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_ood_contrast",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.9 fraction with peak>0.005",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_ood_contrast",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.9 fraction with peak>0.005",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_1",
+      "cohort": "test_ood_contrast",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_ood_growth",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_ood_growth",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_-1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_-1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_-1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_ood_growth",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_ood_growth",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_-1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_ood_growth",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_ood_growth",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_1",
+      "cohort": "test_ood_growth",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_ood_size",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "test_ood_size",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_-1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_-1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_-1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_ood_size",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "test_ood_size",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_-1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_ood_size",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "test_ood_size",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_1",
+      "cohort": "test_ood_size",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "train",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "train",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency",
+      "cohort": "train",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_-1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_-1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_-1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "train",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "train",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_-1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "train",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "train",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_1",
+      "cohort": "train",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "validation",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response",
+      "cohort": "validation",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_-1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_-1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_-1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "validation",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_-1",
+      "cohort": "validation",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_-1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_initial_polarity_1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "static_terminal_polarity_1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "translating_initial_polarity_1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 0.0,
+      "threshold": "<=0.01 peak",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "validation",
+      "channel": "LC4_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "loom_response_polarity_1",
+      "cohort": "validation",
+      "channel": "LPLC2_like",
+      "value": 1.0,
+      "threshold": ">=0.95 fraction with peak>0.01",
+      "status": "PASS"
+    },
+    {
+      "gate": "onset_latency_polarity_1",
+      "cohort": "validation",
+      "channel": "both",
+      "value": 1.0,
+      "threshold": ">=0.95 begin in [0.2,0.38] s",
+      "status": "PASS"
+    },
+    {
+      "gate": "zero_contrast",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "matched_polarity",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "reproducibility",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "future_frame_causality",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "prefix_causality",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "metadata_argument_rejection",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "clipping_border",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "clipping_offscreen",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "clipping_fullfield",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "fractional_timestamps",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "causal_availability",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "seconds_ms_availability",
+      "value": 0.0,
+      "threshold": "exactly 0",
+      "status": "PASS"
+    },
+    {
+      "gate": "dataset_integrity",
+      "value": 0,
+      "threshold": "0 collisions; 1024 records, 256 families",
+      "status": "PASS"
+    },
+    {
+      "gate": "phase6_tests",
+      "value": 0,
+      "threshold": "0 failures/errors",
+      "status": "PASS"
+    }
+  ],
+  "tests": {
+    "tests": 52,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+  "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+  "dataset": {
+    "records": 1024,
+    "families": 256,
+    "duplicate_movies": 0,
+    "cross_split_families": 0
+  },
+  "encoded_episodes": 1024,
+  "evaluation_stage": "post_freeze",
+  "saved_loader_check": "PASS",
+  "protected_files": 143,
+  "protected_files_unchanged": true,
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  },
+  "regression": {
+    "unit_tests": {
+      "phase4": 49,
+      "phase5": 114,
+      "phase5_5": 44
+    },
+    "unit_failures": 0,
+    "phase4_integration": {
+      "total": 159,
+      "passed": 159,
+      "failed": 0
+    },
+    "expected_phase4_assertions": 159,
+    "expected_phase5_tests": 114,
+    "count_discrepancy": false
+  }
+}
