@@ -1,75 +1,60 @@
+"""Deterministic circular stimuli in pixel coordinates; no neural encoding."""
 import numpy as np
+from .config import validate_config, frame_count
 
-def render_frame(width: int, height: int, bg_intensity: int, 
-                 obj_intensity: int, cx: float, cy: float, r: float) -> np.ndarray:
-    """
-    Render a single grayscale frame.
-    Coordinate system: (0,0) top-left, +x right, +y down.
-    Rasterization: hard-edged Euclidean distance threshold.
-    """
-    frame = np.full((height, width), bg_intensity, dtype=np.uint8)
-    if r <= 0:
-        return frame
-        
-    Y, X = np.ogrid[:height, :width]
-    dist_sq = (X - cx)**2 + (Y - cy)**2
-    mask = dist_sq <= r**2
-    frame[mask] = obj_intensity
-    
-    return frame
 
 def compute_timestamps(duration_ms: float, fps: float) -> np.ndarray:
-    """
-    Compute timestamps for frames.
-    Frames are positioned at i / fps.
-    """
-    duration_s = duration_ms / 1000.0
-    n_frames = int(np.floor(duration_s * fps))
-    return np.arange(n_frames) / fps
+    return np.arange(frame_count(duration_ms, fps), dtype=np.float64) / fps
+
+
+def _trajectory(c, timestamps):
+    centers = np.tile(np.asarray(c["initial_position"], dtype=np.float64), (len(timestamps), 1))
+    radii = np.full(len(timestamps), c["initial_radius"], dtype=np.float64)
+    stype = c["stimulus_type"]
+    if stype == "control_background":
+        radii.fill(0)
+    if stype in {"translating", "control_translating"}:
+        dt = np.maximum(0, timestamps - c["start_time_ms"] / 1000)
+        theta = np.deg2rad(c["motion_direction_deg"] % 360)
+        centers[:, 0] += np.cos(theta) * c["speed_px_per_s"] * dt
+        centers[:, 1] -= np.sin(theta) * c["speed_px_per_s"] * dt
+    if stype == "looming":
+        ep = c["expansion_params"]
+        z = ep["Z0"] - ep["v"] * np.maximum(0, timestamps - ep["t_onset_ms"] / 1000)
+        radii = ep["f_R"] / z
+    return centers, radii
+
+
+def compute_trajectory(config):
+    """Return analytic centers [T,2] and radii [T], both in pixels."""
+    c = validate_config(config)
+    return _trajectory(c, compute_timestamps(c["duration_ms"], c["fps"]))
+
+
+def _render(width, height, bg, obj, cx, cy, radius, grid=None):
+    frame = np.full((height, width), bg, dtype=np.uint8)
+    if radius == 0:
+        return frame
+    y, x = np.ogrid[:height, :width] if grid is None else grid
+    frame[(x - cx)**2 + (y - cy)**2 <= radius**2] = obj
+    return frame
+
+
+def render_frame(width, height, bg_intensity, obj_intensity, cx, cy, r):
+    c = validate_config(dict(stimulus_id="frame", stimulus_type="static", width=width,
+        height=height, background_intensity=bg_intensity, object_intensity=obj_intensity,
+        initial_position=[cx, cy], initial_radius=r, shape="circle", fps=1,
+        duration_ms=1000, start_time_ms=0, random_seed=0))
+    return _render(c["width"], c["height"], bg_intensity, obj_intensity, cx, cy, r)
+
 
 def generate_stimulus(config: dict) -> tuple[np.ndarray, np.ndarray]:
-    """Generate frames and timestamps from config."""
-    timestamps = compute_timestamps(config["duration_ms"], config["fps"])
-    n_frames = len(timestamps)
-    
-    W = config["width"]
-    H = config["height"]
-    bg = config["background_intensity"]
-    obj = config["object_intensity"]
-    cx, cy = config["initial_position"]
-    r0 = config["initial_radius"]
-    stype = config["stimulus_type"]
-    
-    frames = np.empty((n_frames, H, W), dtype=np.uint8)
-    
-    if stype == "control_background":
-        # Background only, no object
-        r0 = 0.0
-        
-    for i, t in enumerate(timestamps):
-        curr_cx, curr_cy, curr_r = cx, cy, r0
-        
-        # Apply start time logic (if before start_time_ms, object might not exist or starts moving)
-        # But for simplicity, we assume the object exists. We apply motion/expansion after start time/onset.
-        if stype in ["translating", "control_translating"]:
-            if t >= config["start_time_ms"] / 1000.0:
-                dt = t - config["start_time_ms"] / 1000.0
-                theta = np.radians(config["motion_direction_deg"])
-                speed = config["speed_px_per_s"]
-                curr_cx += np.cos(theta) * speed * dt
-                curr_cy -= np.sin(theta) * speed * dt # -sin because +y is down
-                
-        if stype == "looming":
-            ep = config["expansion_params"]
-            t_onset = ep["t_onset_ms"] / 1000.0
-            if t > t_onset:
-                Z_t = ep["Z0"] - ep["v"] * (t - t_onset)
-                # Geometric model: r(t) = f*R / Z(t)
-                curr_r = ep["f_R"] / Z_t
-            else:
-                curr_r = ep["f_R"] / ep["Z0"]
-                
-        # Clipping: if the object exceeds the frame entirely, it gets naturally clipped by the mask.
-        frames[i] = render_frame(W, H, bg, obj, curr_cx, curr_cy, curr_r)
-        
+    c = validate_config(config)
+    timestamps = compute_timestamps(c["duration_ms"], c["fps"])
+    centers, radii = _trajectory(c, timestamps)
+    frames = np.empty((len(timestamps), c["height"], c["width"]), dtype=np.uint8)
+    grid = np.ogrid[:c["height"], :c["width"]]
+    for i, ((cx, cy), r) in enumerate(zip(centers, radii)):
+        frames[i] = _render(c["width"], c["height"], c["background_intensity"],
+                            c["object_intensity"], cx, cy, r, grid)
     return frames, timestamps

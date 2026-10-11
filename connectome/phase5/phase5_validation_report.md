@@ -1,51 +1,29 @@
-# Phase 5 Validation Report
+# Phase 5 validation report
 
-## 1. Summary
-**Phase 5 Status:** COMPLETE
-**Date:** 2026-10-09
-**Phase 6 Status:** NOT STARTED
+Validated at 2026-10-11T09:12:57.141256+00:00. Automated acceptance checks passed.
 
-Phase 4 self-reported COMPLETE; independent audit status: Verified intact, tests passed (165/165).
+## Changes and justification / regression coverage
 
-## 2. Immutability
-All 6 frozen Phase 3 v2 artifacts were hashed. No pre-Phase-5 baseline exists (Phase 4 results were rewritten this session). 
-- `circuit_v2_nodes.csv`: 6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d
-- `circuit_v2_edges.csv`: d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950
-- `circuit_v2.json`: 27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a
-- `circuit_v2_provenance.json`: a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934
+| Change | Concrete gap addressed / tests |
+| --- | --- |
+| Validate generation, config, rendering and saves | Prevent invalid types, NaN/Inf, intensity wrapping, empty runs, memory exhaustion and unsafe IDs; `test_invalid_config`, `test_entry_points`, `test_memory_budget`, `test_defaults`. |
+| Share analytic trajectories | Correct onset clamping and collision validation; `test_directions`, `test_delayed_motion`, `test_looming_exact`, `test_looming_constraints`. |
+| Version metadata and verify hashes/snapshots | Detect inconsistent arrays, metadata or files; `test_metadata_contract`, `test_tampering`, `test_legacy`, `test_save_checks`. |
+| CLI and saved examples | Provide reproducible outputs beyond plots; `test_cli`, `test_diagnostics`. |
+| Valid fast looming and Agg plotting; retain unrelated PNGs | Old diagnostic crossed collision and default backend crashed; `test_diagnostics`, `test_old_fast_invalid`. |
+| Evidence-derived report and UTC timestamps | Remove hard-coded completion claims and deprecated timestamp API; this validation runner and `test_metadata_contract`. |
 
-## 3. Files Created and Modified
-- `connectome/scripts/phase5/config.py`
-- `connectome/scripts/phase5/generator.py`
-- `connectome/scripts/phase5/stimulus_io.py`
-- `connectome/scripts/phase5/loader.py`
-- `connectome/scripts/phase5/diagnostics.py`
-- `connectome/phase5/tests/test_phase5.py`
-- `connectome/phase5/stimulus_config.yaml`
-- `connectome/phase5/README.md`
-- `connectome/phase5/specification.md`
-- `connectome/phase5/phase5_validation_report.md`
+## Execution evidence
 
-## 4. Dependencies
-No new dependencies added. Relying on `numpy`, `pyyaml`, `pytest`, `matplotlib`.
+- `./venv/bin/python -m pytest connectome/phase5/tests/ -q --junitxml=connectome/phase5/results/unit_tests.xml`: 114 passed, 0 failures, 0 errors, 0 skipped.
+- `./venv/bin/python -m connectome.scripts.phase5.validate_phase5`: tests plus 7 saved samples verified by exact loader round trip, 7 diagnostic plots generated. Looming radii are nondecreasing and within 1 px of analytic radius; translating centroid errors are below 1 px. See `results/sample_verification.json` for measurements.
+- 66 Phase 3/4 files matched their pre-validation hashes. The baseline is saved in `results/protected_file_hashes.json`.
+- `./venv/bin/python -m connectome.scripts.phase5.generate_report`: produces this report from saved evidence; it rejects recorded failures.
 
-## 5. Rendering & Validation Results
-- **Z Margin Rule:** `Z(t)` is enforced to be `> 1.0` at all times. Config validation rejects trajectories ending in `Z <= 1.0`.
-- **Exceeding Frame:** Pixels exceeding boundaries are natively clipped by numpy's boolean mask within the `[0, W-1] x [0, H-1]` grid array bounds without wrapping.
-- **Timestamp Convention:** Frame `i` represents time `i / fps`. Total frames = `floor(duration_s * fps)`.
-- **Rasterization Method:** Deterministic hard-edged Euclidean distance threshold (`dist_sq <= r**2`).
-- **Metadata Fields:** `stimulus_id`, `stimulus_type`, `dimensions`, `fps`, `n_frames`, `duration_s`, `geometry`, `intensities`, `random_seed`, `coordinate_convention`, `rendering_method`, `config_snapshot`, `config_hash`, `library_versions`, `run_date`, plus optional `motion_params`/`expansion_params`.
-- **Loader Returns:** `frames` (`ndarray uint8`), `timestamps_s` (`ndarray float64`), `metadata` (`dict`), `config` (`dict`).
+## Assumptions and limitations
 
-## 6. Pytest Execution
-- 11/11 tests passed.
-- 16 executed standard assertions, 5 `pytest.raises` assertions. Total = 21.
+One circle per run; instantaneous hard-edged grayscale frames with clipping at image boundaries. Frame count is floor(duration_s * fps), timestamps are i/fps, and zero-frame runs are invalid. Looming is a physically motivated pinhole projection using abstract distances; no calibrated fly visual angles or retinotopy. No motion blur, anti-aliasing or stochastic rendering. The seed records provenance. Visibility/clipping can prevent area-equivalent radius or centroid from representing the full analytic object. Metadata generation date varies, while frame/timestamp hashes and config hashes are reproducible. Frame arrays are limited to 256 MiB.
 
-## 7. Diagnostics
-Diagnostic plots generated in `connectome/phase5/reports/`:
-- looming_speed_comparison.png (modified: Fri Oct  9 14:19:10 2026)
-- looming_montage.png (modified: Fri Oct  9 14:19:10 2026)
-- translation_montage.png (modified: Fri Oct  9 14:19:10 2026)
-- looming_vs_static.png (modified: Fri Oct  9 14:19:11 2026)
-- looming_radius.png (modified: Fri Oct  9 14:19:10 2026)
-- static_control.png (modified: Fri Oct  9 14:19:10 2026)
+## Unresolved
+
+Automated checks have no unresolved failures. Plot visual inspection and session-wide Git/hash checks are recorded separately in `results/session_inspection.md`; this report alone does not certify visual inspection. Legacy unversioned files lack frame integrity hashes and trigger a loader warning. No Phase 6 implementation or biological calibration is claimed.

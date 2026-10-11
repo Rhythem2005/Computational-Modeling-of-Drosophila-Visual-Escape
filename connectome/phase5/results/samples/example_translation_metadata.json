@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "stimulus_id": "example_translation",
+  "stimulus_type": "translating",
+  "frame_layout": "THW",
+  "frame_dtype": "uint8",
+  "dimensions": {
+    "width": 256,
+    "height": 192
+  },
+  "fps": 30,
+  "n_frames": 30,
+  "duration_s": 1.0,
+  "timestamps_s": [
+    0.0,
+    0.03333333333333333,
+    0.06666666666666667,
+    0.1,
+    0.13333333333333333,
+    0.16666666666666666,
+    0.2,
+    0.23333333333333334,
+    0.26666666666666666,
+    0.3,
+    0.3333333333333333,
+    0.36666666666666664,
+    0.4,
+    0.43333333333333335,
+    0.4666666666666667,
+    0.5,
+    0.5333333333333333,
+    0.5666666666666667,
+    0.6,
+    0.6333333333333333,
+    0.6666666666666666,
+    0.7,
+    0.7333333333333333,
+    0.7666666666666667,
+    0.8,
+    0.8333333333333334,
+    0.8666666666666667,
+    0.9,
+    0.9333333333333333,
+    0.9666666666666667
+  ],
+  "timestamp_origin": "run start at 0 s",
+  "timestamp_semantics": "instantaneous frame at i/fps; requested interval [0,duration_s)",
+  "geometry": "circle",
+  "center_xy_px": [
+    [
+      50.0,
+      96.0
+    ],
+    [
+      50.0,
+      96.0
+    ],
+    [
+      50.0,
+      96.0
+    ],
+    [
+      50.0,
+      96.0
+    ],
+    [
+      54.0,
+      96.0
+    ],
+    [
+      58.0,
+      96.0
+    ],
+    [
+      62.0,
+      96.0
+    ],
+    [
+      66.0,
+      96.0
+    ],
+    [
+      70.0,
+      96.0
+    ],
+    [
+      74.0,
+      96.0
+    ],
+    [
+      78.0,
+      96.0
+    ],
+    [
+      82.0,
+      96.0
+    ],
+    [
+      86.0,
+      96.0
+    ],
+    [
+      90.0,
+      96.0
+    ],
+    [
+      94.0,
+      96.0
+    ],
+    [
+      98.0,
+      96.0
+    ],
+    [
+      102.0,
+      96.0
+    ],
+    [
+      106.0,
+      96.0
+    ],
+    [
+      110.0,
+      96.0
+    ],
+    [
+      114.0,
+      96.0
+    ],
+    [
+      118.0,
+      96.0
+    ],
+    [
+      122.0,
+      96.0
+    ],
+    [
+      126.0,
+      96.0
+    ],
+    [
+      130.0,
+      96.0
+    ],
+    [
+      134.0,
+      96.0
+    ],
+    [
+      138.0,
+      96.0
+    ],
+    [
+      142.0,
+      96.0
+    ],
+    [
+      146.0,
+      96.0
+    ],
+    [
+      150.0,
+      96.0
+    ],
+    [
+      154.0,
+      96.0
+    ]
+  ],
+  "radius_px": [
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0
+  ],
+  "intensities": {
+    "background": 220,
+    "object": 30
+  },
+  "random_seed": 42,
+  "randomness": "none; random_seed is provenance only",
+  "coordinate_convention": "origin top-left, +x right, +y down; integer pixel centers",
+  "direction_convention": "0 degrees right, 90 degrees up, counterclockwise",
+  "rendering_method": "hard-edged Euclidean distance threshold; radius=0 hides object",
+  "units": {
+    "position": "px",
+    "radius": "px",
+    "time": "s",
+    "speed": "px/s",
+    "direction": "image-plane degrees",
+    "Z0": "abstract distance",
+    "v": "abstract distance/s",
+    "f_R": "px * abstract distance"
+  },
+  "model": "synthetic geometric stimulus",
+  "config_snapshot": {
+    "stimulus_id": "example_translation",
+    "stimulus_type": "translating",
+    "width": 256,
+    "height": 192,
+    "fps": 30,
+    "duration_ms": 1000,
+    "background_intensity": 220,
+    "object_intensity": 30,
+    "initial_position": [
+      50,
+      96
+    ],
+    "initial_radius": 15,
+    "shape": "circle",
+    "start_time_ms": 100,
+    "random_seed": 42,
+    "motion_direction_deg": 0,
+    "speed_px_per_s": 120
+  },
+  "config_hash": "45cc3554f7f3f9dd1cb8f7d95b86797e8dede447724847f7bf72566c925b539e",
+  "frames_sha256": "54ee76fdc5b4d085c5f622b70e6f418f67a102663c9a5f2a8b40f1e29dd7a94a",
+  "timestamps_sha256": "632fd86b146b5a1fd2e9ca4bfae2d598758068d8c3a738cf6b234fafba131a62",
+  "library_versions": {
+    "numpy": "2.5.3",
+    "pyyaml": "6.0.3",
+    "python": "3.14.6"
+  },
+  "run_date": "2026-10-11T09:10:56.264611+00:00",
+  "motion_params": {
+    "direction_deg": 0,
+    "speed_px_per_s": 120
+  }
+}

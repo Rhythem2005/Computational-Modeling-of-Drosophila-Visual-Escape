@@ -13,7 +13,7 @@ object_intensity: 255
 shape: "circle"
 
 initial_position: [128.0, 128.0]
-initial_radius: 10.0
+initial_radius: 2.0 # px; looming uses f_R / Z0 = 2 at onset
 
 start_time_ms: 0.0
 random_seed: 42
@@ -23,6 +23,7 @@ expansion_params:
   Z0: 50.0
   v: 40.0
   t_onset_ms: 200.0
+  min_distance: 1.0 # abstract distance; safety margin, not a biological constant
 
 # Tolerances (SIMULATION PARAMETER)
 rendering_translation_tolerance: 1.0 # px

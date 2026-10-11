@@ -1,0 +1,15 @@
+background_intensity: 30
+duration_ms: 1000
+fps: 30
+height: 256
+initial_position:
+- 128
+- 128
+initial_radius: 20
+object_intensity: 220
+random_seed: 42
+shape: circle
+start_time_ms: 0
+stimulus_id: example_static
+stimulus_type: static
+width: 256

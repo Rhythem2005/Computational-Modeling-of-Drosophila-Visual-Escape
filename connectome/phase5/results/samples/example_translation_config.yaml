@@ -1,0 +1,17 @@
+background_intensity: 220
+duration_ms: 1000
+fps: 30
+height: 192
+initial_position:
+- 50
+- 96
+initial_radius: 15
+motion_direction_deg: 0
+object_intensity: 30
+random_seed: 42
+shape: circle
+speed_px_per_s: 120
+start_time_ms: 100
+stimulus_id: example_translation
+stimulus_type: translating
+width: 256
