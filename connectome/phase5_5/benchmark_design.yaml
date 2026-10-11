@@ -1,0 +1,85 @@
+# Local research protocol v1.0. Values are experiment choices, not fly calibration.
+protocol_version: '1.0'
+protocol_id: fly_open_loop_v1
+seed: 55001
+primary_task: open_loop_looming_response
+input_allowlist: [frames, timestamps_s]
+frame_schema_version: '1.0'
+rendering:
+  width: 256
+  height: 256
+  fps: 60
+  duration_ms: 1000.0
+  onset_ms: 200.0
+  Z0: 50.0
+  min_distance: 1.0
+  background_intensity: 128
+  center_min_px: 64.0
+  center_max_px: 192.0
+  translation_speed_range_px_s: [15.0, 40.0]
+  translation_directions_deg: [0, 90, 180, 270]
+family_roles: [looming, static_initial, static_terminal, translating_initial]
+cohorts:
+  train:
+    split: train
+    groups: 64
+    radius_range_px: [8.0, 16.0]
+    growth_fraction_range: [0.25, 0.55]
+    contrast_range: [48, 96]
+  validation:
+    split: validation
+    groups: 32
+    radius_range_px: [8.0, 16.0]
+    growth_fraction_range: [0.25, 0.55]
+    contrast_range: [48, 96]
+  test_id:
+    split: test
+    groups: 64
+    radius_range_px: [8.0, 16.0]
+    growth_fraction_range: [0.25, 0.55]
+    contrast_range: [48, 96]
+  test_ood_size:
+    split: test
+    groups: 32
+    radius_range_px: [18.0, 24.0]
+    growth_fraction_range: [0.25, 0.55]
+    contrast_range: [48, 96]
+  test_ood_growth:
+    split: test
+    groups: 32
+    radius_range_px: [8.0, 16.0]
+    growth_fraction_range: [0.65, 0.75]
+    contrast_range: [48, 96]
+  test_ood_contrast:
+    split: test
+    groups: 32
+    radius_range_px: [8.0, 16.0]
+    growth_fraction_range: [0.25, 0.55]
+    contrast_range: [12, 32]
+evaluation:
+  observation_window_s: [0.2, 1.0]
+  sustained_threshold_ms: 20.0
+  threshold_candidate_limit: 32
+  validation_fpr_target: 0.05
+  practical_test_tpr_target: 0.80
+  practical_test_fpr_limit: 0.10
+  meaningful_balanced_accuracy_difference: 0.03
+  bootstrap_resamples: 2000
+  bootstrap_seed: 55002
+  primary_comparison_ci_level: 0.975
+  hypothesis_h1_ci_level: 0.95
+  shuffled_networks_per_control: 30
+  input_mapping_seeds: [55010, 55011, 55012, 55013, 55014]
+  primary_mapping: uniform_population
+  secondary_mapping: synthetic_fields_within_type_and_side
+  fixed_gain: 0.5
+  fixed_tau_ms: 10.0
+  fixed_input_scale: 0.4
+  secondary_spectral_radius_target: 0.6958315414466647
+  clipping_fraction_limit: 0.01
+  practical_generalization_gap_limit: 0.10
+  nn_hidden_units: 16
+  nn_learning_rates: [0.0003, 0.001]
+  nn_training_seeds: [55100, 55101, 55102, 55103, 55104, 55105, 55106, 55107, 55108, 55109]
+  nn_max_epochs: 200
+  nn_early_stopping_patience: 20
