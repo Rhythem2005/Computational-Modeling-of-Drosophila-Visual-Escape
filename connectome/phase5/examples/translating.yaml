@@ -1,0 +1,15 @@
+stimulus_id: example_translation
+stimulus_type: translating
+width: 256
+height: 192
+fps: 30
+duration_ms: 1000
+background_intensity: 220
+object_intensity: 30
+initial_position: [50, 96]
+initial_radius: 15
+shape: circle
+start_time_ms: 100
+random_seed: 42
+motion_direction_deg: 0
+speed_px_per_s: 120

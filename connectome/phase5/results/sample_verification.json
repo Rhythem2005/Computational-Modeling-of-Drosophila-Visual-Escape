@@ -1,0 +1,136 @@
+{
+  "samples": [
+    {
+      "stimulus_id": "diag_looming",
+      "stimulus_type": "looming",
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "first_timestamp_s": 0.0,
+      "last_timestamp_s": 0.9833333333333333,
+      "first_radius_px": 12.0,
+      "last_radius_px": 32.14285714285713,
+      "frames_sha256": "f9f8a2e12944f977a2a1cb6d0ab2ccef6148fa36a9bff469e9f48473984f5b4c",
+      "config_hash": "de9f3172eeb0913bc1c1ea0434858013a171a8c6976f94efe5fdb33164ce8bef",
+      "exact_round_trip": true,
+      "max_radius_error_px": 0.1591973229710213
+    },
+    {
+      "stimulus_id": "diag_fast",
+      "stimulus_type": "looming",
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "first_timestamp_s": 0.0,
+      "last_timestamp_s": 0.9833333333333333,
+      "first_radius_px": 12.0,
+      "last_radius_px": 86.74698795180717,
+      "frames_sha256": "d6ac46a65bf76999edcb21beb8272e906d8d33932eb41cbfa77772012d0a2252",
+      "config_hash": "f91944f6faf22ffacea879a62d4e6a2da7b9197b8996dce6d6a415ff716dfbcc",
+      "exact_round_trip": true,
+      "max_radius_error_px": 0.1591973229710213
+    },
+    {
+      "stimulus_id": "diag_static",
+      "stimulus_type": "static",
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "first_timestamp_s": 0.0,
+      "last_timestamp_s": 0.9833333333333333,
+      "first_radius_px": 12.0,
+      "last_radius_px": 12.0,
+      "frames_sha256": "ddf7d4831ee00633ba5708da316f4f1ef06011a342a2300ff792343091fae481",
+      "config_hash": "b86fb9dd2b6a52c7655ac52297ed2fcea8f05c15953f2dd78bf203ce0ef352c2",
+      "exact_round_trip": true
+    },
+    {
+      "stimulus_id": "diag_control_static",
+      "stimulus_type": "control_static",
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "first_timestamp_s": 0.0,
+      "last_timestamp_s": 0.9833333333333333,
+      "first_radius_px": 12.0,
+      "last_radius_px": 12.0,
+      "frames_sha256": "ddf7d4831ee00633ba5708da316f4f1ef06011a342a2300ff792343091fae481",
+      "config_hash": "a136ea6e864d72e7cc2f5b9da249d1efc99193ec45810a39726fe424d64d6126",
+      "exact_round_trip": true
+    },
+    {
+      "stimulus_id": "diag_translation",
+      "stimulus_type": "translating",
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "first_timestamp_s": 0.0,
+      "last_timestamp_s": 0.9833333333333333,
+      "first_radius_px": 15.0,
+      "last_radius_px": 15.0,
+      "frames_sha256": "707ddbfcf24d53ab6c8c3e5888eb3da73595c586852b1c3c019c171acbb5f27f",
+      "config_hash": "0750e419247e57f2a10a28465ceb8099cec4c53dc16d094890cf9bf2ed2fed0a",
+      "exact_round_trip": true,
+      "max_centroid_error_px": 0.07635470375345221
+    },
+    {
+      "stimulus_id": "diag_control_translation",
+      "stimulus_type": "control_translating",
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "first_timestamp_s": 0.0,
+      "last_timestamp_s": 0.9833333333333333,
+      "first_radius_px": 15.0,
+      "last_radius_px": 15.0,
+      "frames_sha256": "707ddbfcf24d53ab6c8c3e5888eb3da73595c586852b1c3c019c171acbb5f27f",
+      "config_hash": "fc7921227e05d82640cc7d21df5c69716a338ca6b2f349035fcc5c4bb758425b",
+      "exact_round_trip": true,
+      "max_centroid_error_px": 0.07635470375345221
+    },
+    {
+      "stimulus_id": "diag_background",
+      "stimulus_type": "control_background",
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "dtype": "uint8",
+      "first_timestamp_s": 0.0,
+      "last_timestamp_s": 0.9833333333333333,
+      "first_radius_px": 0.0,
+      "last_radius_px": 0.0,
+      "frames_sha256": "9af8275830f1496e82873fd2944a1619944f6fec9a380e7ad8fe3dd039010340",
+      "config_hash": "a73c0d84813e3e7ae02d026e1d48c3b45b98757272fa14e0e544572b1ccc05dd",
+      "exact_round_trip": true
+    }
+  ],
+  "plots": [
+    "looming_radius.png",
+    "looming_montage.png",
+    "translation_montage.png",
+    "static_control.png",
+    "looming_speed_comparison.png",
+    "looming_vs_static.png",
+    "translation_trajectory.png"
+  ]
+}

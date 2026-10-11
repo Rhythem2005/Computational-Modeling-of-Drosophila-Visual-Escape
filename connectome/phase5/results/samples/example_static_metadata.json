@@ -1,0 +1,250 @@
+{
+  "schema_version": "1.0",
+  "stimulus_id": "example_static",
+  "stimulus_type": "static",
+  "frame_layout": "THW",
+  "frame_dtype": "uint8",
+  "dimensions": {
+    "width": 256,
+    "height": 256
+  },
+  "fps": 30,
+  "n_frames": 30,
+  "duration_s": 1.0,
+  "timestamps_s": [
+    0.0,
+    0.03333333333333333,
+    0.06666666666666667,
+    0.1,
+    0.13333333333333333,
+    0.16666666666666666,
+    0.2,
+    0.23333333333333334,
+    0.26666666666666666,
+    0.3,
+    0.3333333333333333,
+    0.36666666666666664,
+    0.4,
+    0.43333333333333335,
+    0.4666666666666667,
+    0.5,
+    0.5333333333333333,
+    0.5666666666666667,
+    0.6,
+    0.6333333333333333,
+    0.6666666666666666,
+    0.7,
+    0.7333333333333333,
+    0.7666666666666667,
+    0.8,
+    0.8333333333333334,
+    0.8666666666666667,
+    0.9,
+    0.9333333333333333,
+    0.9666666666666667
+  ],
+  "timestamp_origin": "run start at 0 s",
+  "timestamp_semantics": "instantaneous frame at i/fps; requested interval [0,duration_s)",
+  "geometry": "circle",
+  "center_xy_px": [
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ],
+    [
+      128.0,
+      128.0
+    ]
+  ],
+  "radius_px": [
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0,
+    20.0
+  ],
+  "intensities": {
+    "background": 30,
+    "object": 220
+  },
+  "random_seed": 42,
+  "randomness": "none; random_seed is provenance only",
+  "coordinate_convention": "origin top-left, +x right, +y down; integer pixel centers",
+  "direction_convention": "0 degrees right, 90 degrees up, counterclockwise",
+  "rendering_method": "hard-edged Euclidean distance threshold; radius=0 hides object",
+  "units": {
+    "position": "px",
+    "radius": "px",
+    "time": "s",
+    "speed": "px/s",
+    "direction": "image-plane degrees",
+    "Z0": "abstract distance",
+    "v": "abstract distance/s",
+    "f_R": "px * abstract distance"
+  },
+  "model": "synthetic geometric stimulus",
+  "config_snapshot": {
+    "stimulus_id": "example_static",
+    "stimulus_type": "static",
+    "fps": 30,
+    "duration_ms": 1000,
+    "background_intensity": 30,
+    "object_intensity": 220,
+    "initial_position": [
+      128,
+      128
+    ],
+    "initial_radius": 20,
+    "shape": "circle",
+    "start_time_ms": 0,
+    "random_seed": 42,
+    "width": 256,
+    "height": 256
+  },
+  "config_hash": "06195b0b5e4875b17fe0bf998b066f2fc36ae3e6f9c1dbe7aeb39a65a99e062b",
+  "frames_sha256": "ee436115f3440905f23c52dd86538be672d305b97c9384a6f665a99c6b9a8f03",
+  "timestamps_sha256": "632fd86b146b5a1fd2e9ca4bfae2d598758068d8c3a738cf6b234fafba131a62",
+  "library_versions": {
+    "numpy": "2.5.3",
+    "pyyaml": "6.0.3",
+    "python": "3.14.6"
+  },
+  "run_date": "2026-10-11T09:10:56.131966+00:00"
+}

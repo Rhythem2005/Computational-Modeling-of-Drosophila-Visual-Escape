@@ -1,0 +1,15 @@
+{
+  "validated_at": "2026-10-11T09:12:57.141256+00:00",
+  "test_command": "./venv/bin/python -m pytest connectome/phase5/tests/ -q --junitxml=connectome/phase5/results/unit_tests.xml",
+  "test_exit_code": 0,
+  "test_counts": {
+    "tests": 114,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "protected_file_count": 66,
+  "protected_files_unchanged": true,
+  "sample_count": 7,
+  "plot_count": 7
+}
