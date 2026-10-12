@@ -1,0 +1,38 @@
+{
+  "sources_sha256": {
+    "connectome/phase7/README.md": "07c41c7c8ce3dfb06f851466d112df4f2c744eeb20d35555e7ac50ec46ea5483",
+    "connectome/phase7/pipeline_config.yaml": "ebbf5ecbd8ea2e8bdcf40357f756a6fb08cf7add55e73cdfb573d091f5279ef1",
+    "connectome/phase7/specification.md": "2ca01a7b8398f782cc516d1b3c84f4adca31f39a48460303a721c8d756d7fd56",
+    "connectome/phase7/tests/test_pipeline.py": "ad74e4597438fed5c13bab31bb530a52c0d7f21cba389c867edee08141be367a",
+    "connectome/scripts/phase7/evidence.py": "b5c05a92a8255755aab4808ea6390a303d34a82418438d11224a80c862896b2d",
+    "connectome/scripts/phase7/pipeline.py": "6b7243bed8380ae8ab21d2362e407520e4de5eb7178f955218dd8cc6803084c1",
+    "connectome/scripts/phase7/regression.py": "6d61a4d9175b373141b0c1a594f61cd59c23e39b52c2e70fa1f1841df4ea8681",
+    "connectome/scripts/phase7/run_pipeline.py": "177c6386316424a8187300591a42164d77d1fa8849dec965ff805ac405eea853",
+    "connectome/scripts/phase7/validate_phase7.py": "2a1f3d1772a3f942d2d8cc3d37854f182bfc434dd7b355052e730fe23e0d9979"
+  },
+  "phase6": {
+    "status": "PASS",
+    "checked_locked_files": 152,
+    "encoded_files_checked": 1024,
+    "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+    "scales": [
+      8.632185525889524,
+      8.417362938348457
+    ],
+    "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+    "manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002"
+  },
+  "input_ids": [
+    "train_f0000_looming",
+    "train_f0000_static_initial",
+    "train_f0000_static_terminal",
+    "train_f0000_translating_initial",
+    "train_f0001_looming",
+    "train_f0001_static_initial",
+    "train_f0001_static_terminal",
+    "train_f0001_translating_initial"
+  ],
+  "fitting_trials": 0,
+  "held_out_neural_simulations": 0,
+  "configuration_saved_before_sample_activity": true
+}

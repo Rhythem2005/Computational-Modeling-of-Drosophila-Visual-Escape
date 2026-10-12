@@ -1,0 +1,306 @@
+[
+  {
+    "scenario_id": "train_f0000_looming",
+    "group_id": "train_f0000",
+    "role": "looming",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 256.0,
+      "first_event_s": 0.256,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0000_looming.npz": "610f9a36165382f63d416e9889fb4aa8d9113505de049b2e9697d75b9d18d126",
+      "connectome/phase8/results/decoded/train_f0000_looming_action.json": "1633ed2e93619bb7441b5d56b85e022faa524b0668bf7fae7df9747de89ef229",
+      "connectome/phase8/results/decoded/train_f0000_looming_metadata.json": "c739bfe3b58b4464dc9aca0ca1a84aa285eb1a7b4d0f85078e5799f8e0428731"
+    }
+  },
+  {
+    "scenario_id": "train_f0000_static_initial",
+    "group_id": "train_f0000",
+    "role": "static_initial",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": false,
+      "first_event_ms": null,
+      "first_event_s": null,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0000_static_initial.npz": "a20d02e7fe3ca81005ff920bf7bd5eee42d40de55f1f18cc2c778eec1a75dceb",
+      "connectome/phase8/results/decoded/train_f0000_static_initial_action.json": "eac1911350c42b3bb6b14ff27703ae88f7ad3032471c2ef0bdd64bd411975add",
+      "connectome/phase8/results/decoded/train_f0000_static_initial_metadata.json": "8e24576e0b11d3e60fe042e57d3087e79fd544f304b41ea0acf49e8bed2d3691"
+    }
+  },
+  {
+    "scenario_id": "train_f0000_static_terminal",
+    "group_id": "train_f0000",
+    "role": "static_terminal",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": false,
+      "first_event_ms": null,
+      "first_event_s": null,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0000_static_terminal.npz": "a20d02e7fe3ca81005ff920bf7bd5eee42d40de55f1f18cc2c778eec1a75dceb",
+      "connectome/phase8/results/decoded/train_f0000_static_terminal_action.json": "eac1911350c42b3bb6b14ff27703ae88f7ad3032471c2ef0bdd64bd411975add",
+      "connectome/phase8/results/decoded/train_f0000_static_terminal_metadata.json": "9e1850d05982f260c4513ad47003cf3d9890850029adaa5d6e2ede6d1a7f1280"
+    }
+  },
+  {
+    "scenario_id": "train_f0000_translating_initial",
+    "group_id": "train_f0000",
+    "role": "translating_initial",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": false,
+      "first_event_ms": null,
+      "first_event_s": null,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0000_translating_initial.npz": "a20d02e7fe3ca81005ff920bf7bd5eee42d40de55f1f18cc2c778eec1a75dceb",
+      "connectome/phase8/results/decoded/train_f0000_translating_initial_action.json": "eac1911350c42b3bb6b14ff27703ae88f7ad3032471c2ef0bdd64bd411975add",
+      "connectome/phase8/results/decoded/train_f0000_translating_initial_metadata.json": "f3b334a9776a293543d60198775ea6872a8d31f8f88365a06a796980f91aa601"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_looming",
+    "group_id": "train_f0001",
+    "role": "looming",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 272.0,
+      "first_event_s": 0.272,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0001_looming.npz": "efef210e69c458dd79455a335c4da861ea284822ee8ce956855ab32c7dfb8b4c",
+      "connectome/phase8/results/decoded/train_f0001_looming_action.json": "f880910df3eab3b0e36e0468b033bd0a0cb416783841fccbfc05988ec496d4d2",
+      "connectome/phase8/results/decoded/train_f0001_looming_metadata.json": "96f270d92eeda782867e6e332a0f3be1c7fc264fd1651a36e6b843ca570c412b"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_static_initial",
+    "group_id": "train_f0001",
+    "role": "static_initial",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": false,
+      "first_event_ms": null,
+      "first_event_s": null,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0001_static_initial.npz": "a20d02e7fe3ca81005ff920bf7bd5eee42d40de55f1f18cc2c778eec1a75dceb",
+      "connectome/phase8/results/decoded/train_f0001_static_initial_action.json": "eac1911350c42b3bb6b14ff27703ae88f7ad3032471c2ef0bdd64bd411975add",
+      "connectome/phase8/results/decoded/train_f0001_static_initial_metadata.json": "1fe8ec3304474ef157b754879b3e19a33b47e4b0dae660a9f6eab6695c8b409b"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_static_terminal",
+    "group_id": "train_f0001",
+    "role": "static_terminal",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": false,
+      "first_event_ms": null,
+      "first_event_s": null,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0001_static_terminal.npz": "a20d02e7fe3ca81005ff920bf7bd5eee42d40de55f1f18cc2c778eec1a75dceb",
+      "connectome/phase8/results/decoded/train_f0001_static_terminal_action.json": "eac1911350c42b3bb6b14ff27703ae88f7ad3032471c2ef0bdd64bd411975add",
+      "connectome/phase8/results/decoded/train_f0001_static_terminal_metadata.json": "cebfb58e7464b30eac0879fd853565914f5442bb9c5e536b42592e4e20914bfb"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_translating_initial",
+    "group_id": "train_f0001",
+    "role": "translating_initial",
+    "action": {
+      "action_type": "escape_initiation_requested",
+      "requested": false,
+      "first_event_ms": null,
+      "first_event_s": null,
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "threshold_status": "provisional_not_validation_selected",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "original_raw_quantile_audit_action": {
+      "action_type": "escape_initiation_requested",
+      "requested": true,
+      "first_event_ms": 20.0,
+      "first_event_s": 0.02,
+      "threshold": {
+        "kind": "finite",
+        "value": 0.0
+      },
+      "threshold_status": "original_rule_audit",
+      "steering": null,
+      "steering_status": "unavailable_no_spatial_mapping",
+      "semantics": "abstract request; no physical movement or success outcome"
+    },
+    "artifacts": {
+      "connectome/phase8/results/decoded/train_f0001_translating_initial.npz": "a20d02e7fe3ca81005ff920bf7bd5eee42d40de55f1f18cc2c778eec1a75dceb",
+      "connectome/phase8/results/decoded/train_f0001_translating_initial_action.json": "eac1911350c42b3bb6b14ff27703ae88f7ad3032471c2ef0bdd64bd411975add",
+      "connectome/phase8/results/decoded/train_f0001_translating_initial_metadata.json": "a1c45c4715879caa22bfb203e10b275989ef9d9e8911240ad80bc9e65a308750"
+    }
+  }
+]

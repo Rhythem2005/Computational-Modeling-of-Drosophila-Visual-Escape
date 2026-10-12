@@ -1,0 +1,32 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "-m",
+        "pytest",
+        "connectome/scripts/phase4/tests/",
+        "connectome/phase5/tests/",
+        "connectome/phase5_5/tests/",
+        "connectome/phase6/tests/",
+        "-q",
+        "--junitxml=/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/phase7/results/regression/after/tests.xml"
+      ],
+      "exit_code": 0,
+      "log": "connectome/phase7/results/regression/after/command_0.log"
+    }
+  ],
+  "unit_test_counts": {
+    "phase4": 49,
+    "phase5": 114,
+    "phase5_5": 44,
+    "phase6": 52
+  },
+  "phase4_assertions": {
+    "total": 159,
+    "passed": 159,
+    "failed": 0
+  },
+  "phase4_integration_exit_code": 0,
+  "status": "PASS"
+}

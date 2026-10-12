@@ -1,0 +1,29 @@
+# Phase 8 completion amendment v1.2
+
+This local completion condition responds to the user's explicit request to fully complete Phase 8. The parent v1.0 protocol, approved v1.1 threshold amendment and earlier Phase 8 checkpoint are preserved byte-for-byte. Completion code, tests, configs and evidence live in separate `completion/` directories. Freeze the completion definition before validation responses or synthetic steering activity are materialized. No test-ID/OOD circuit response, world, behavioral experiment or shuffled/NN baseline work is authorized here.
+
+## Close the calibration gate
+
+Integrate the two prerequisites required by the Phase 6 handoff. Both consume the same 321-neuron encoded vectors as the circuit. The feature-only score is the mean of the uniformly broadcast LC4/LPLC2 channel means, scaled by 0.4. The linear temporal control applies causal Euler filtering (tau=10 ms, dt=1 ms, zero initial state, scale=0.4) then a trained two-coefficient nonnegative linear readout; bias is fixed zero. Shared within-population coefficients are exactly a linear readout of all 321 inputs, with two learned parameters. Descending input is zero in every model.
+
+Train linear coefficients on all 256 training clips only. Targets are episode labels, features are the per-channel maximum filtered activity in `[200,1000)` ms, and fitting is exact two-variable nonnegative ridge least squares with fixed penalty 1e-6 and no hyperparameter search. No new dependency is required. This small control is a prerequisite implementation, not the later comprehensive controls/experiments phase. Report its limitations and do not infer a circuit advantage from it.
+
+After both controls are integrated and tested, derive each model's negative-only candidates using the unchanged approved v1.1 next-float rule. Select on all 128 validation clips using the specified first-event timely TPR/full-episode negative FPR rule and tie-breaking. Save every candidate assessment, full traces, failures, identities and hashes. Freeze all three thresholds and the linear weights before any later test use. No test cohort is used. Validation metrics are calibration evidence, not held-out research results.
+
+## Document the synthetic location-to-neuron mapping independently
+
+Uniform drive contains no spatial information. The primary calibrated condition therefore has a deliberate neutral steering command (zero), explicitly unsteered. Do not attach a directional interpretation to its DN side differences.
+
+A separate synthetic condition makes the protocol's allowed independent mapping concrete. For each of the five predeclared seeds, assign each LC4/LPLC2 neuron's receptive-field center from a uniform normalized image domain: left-side cells x∈[-1,0], right-side cells x∈[0,1], y∈[-1,1]. Draw centers in fixed type/side and sorted-body-ID order. Use a fixed Gaussian width 0.35; all assignments use only identities/type/side and the seed, never edges, DN weights, outcomes, or fitted preferences. The image-to-hemisphere convention is an engineering assumption, not anatomical evidence. Save every assignment and mapping hash before activity.
+
+Compute foreground centroid from each current frame using the unchanged encoder's segmentation threshold. Multiply the frozen global channel broadcast by the neuron's Gaussian field response at that centroid. Global equations, normalization and DN-zero-input constraints remain unchanged; this spatial weighting is a separately versioned secondary representation. It does not replace or refreeze the primary encoder. Invalid frames have zero drive. Apply the same causal hold and unchanged simulator defaults. No evaluator geometry enters feature computation.
+
+## DN-to-turn command
+
+In the synthetic condition only, use DNp06 body IDs 10228 (left) and 10584 (right). Before spatial outcomes, save two gain normalizers: each side's mean peak activity over the 64 uniform-input training positives. These train-only activity scales reduce fixed amplitude asymmetry; they are not fitted directional preferences or receptive fields. Reject missing/nonpositive scales. At the first initiation request, divide the two DN activities by their respective scales and latch `turn=(normalized_left-normalized_right)/(normalized_left+normalized_right)`, with zero when both are silent. Positive is a normalized rightward turn request; negative is leftward. The convention is an engineered motor rule, not a physiological mapping. Command lies in [-1,1]. Before initiation turn is zero; once latched it does not follow future samples. Save command traces, both DN values and first-event time. No yaw angle, actuator rate, speed, collision plant or successful-escape claim is defined.
+
+Use all five seeds and both predeclared left/right looming fixtures. Test software mappings, causality, bounds and synthetic mirror identities. Report actual circuit signs for all ten fixtures rather than tuning a seed, field width or motor rule when they are unfavorable. Actual directional fidelity and useful behavior remain questions for later experimental phases. The spatial condition's initiation threshold is an explicitly uncalibrated integration-fixture value equal to the frozen primary threshold; it is not a separately confirmed spatial model.
+
+## Completion definition
+
+Phase 8 software is complete when primary initiation is validation-calibrated and frozen with the prerequisite controls integrated, the primary neutral steering contract works, and the separately named spatial mapping/steering pipeline is implemented, documented, reproducible and tested for every predefined seed. This closes the engineering deliverables; biological retinotopy, physiological motor validation and useful behavioral outcomes are not completion requirements for this modeled system and are not claimed. Old v1.1 reports remain accurate historical partial checkpoints.

@@ -1,0 +1,82 @@
+{
+  "decoder_config": {
+    "decoder_version": "1.1.0",
+    "base_protocol_id": "fly_open_loop_v1",
+    "threshold_amendment_id": "fly_decoder_thresholds_v1_1",
+    "score": "bilateral_DNp01_mean",
+    "dn_body_ids": [
+      10010,
+      10001
+    ],
+    "dt_ms": 1.0,
+    "persistence_ms": 20.0,
+    "comparison": "greater_or_equal",
+    "persistence_window": "closed_inclusive",
+    "episode_interval": "half_open",
+    "observation_window_s": [
+      0.2,
+      1.0
+    ],
+    "action": "escape_initiation_requested",
+    "event_policy": "first_event_latched",
+    "steering": "unavailable_no_spatial_mapping",
+    "threshold_candidate_limit": 32,
+    "threshold_policy": "next_float_above_training_negative_quantile",
+    "demo_candidate": "highest_training_negative_quantile",
+    "demo_status": "provisional_not_validation_selected",
+    "final_calibration_requires": [
+      "feature_only_control",
+      "linear_temporal_control"
+    ]
+  },
+  "decoder_config_sha256": "b999c95af8b3685dafe5684a0259c2e9245887ce3d38ca8d6abae683b2fa9277",
+  "sources_sha256": {
+    "connectome/phase8/README.md": "cbe4e81cc2d5b0b4c8abead5ebdde5a7fd3ca31e0f9ccbc4f4fbc10f2aeec58f",
+    "connectome/phase8/decoder_config.yaml": "05ca680b7aecc077108068eaaedae3e4d4047c0161656a4b11d5ac773fbd19c4",
+    "connectome/phase8/protocol_amendment.md": "b1573dc30a76cb74353c35078efd8b38329c11039abdd32ad9205c3daf622219",
+    "connectome/phase8/specification.md": "6bab8ebfe35dbc26ffcc341cfe9d0526825a2741bb55f866e9ffaa32d4928c11",
+    "connectome/phase8/tests/test_decoder.py": "6fe5eea8526ea3d944d04d95b58c88b5cc2e3b1f26e926bfb92c8305f8061c8f",
+    "connectome/scripts/phase8/activity_io.py": "4c49aa26135bc7dbd191f47c9cef7c880dd83e64f3d290c8fd0f2baea0b87017",
+    "connectome/scripts/phase8/candidates.py": "a3e2058ac8fce6faba70b3e4c414b395ee78c7ef48d8d1efeb4f5c3b250f1a74",
+    "connectome/scripts/phase8/decoder.py": "68ceab585025b409f3c9a1ca943c5249e6e28697217d53009b6ac815b7032c65",
+    "connectome/scripts/phase8/evidence.py": "da612f5d195bc3cc2ce0e460cc06106628fe4d7179ec425acf0a6da5bb7dafa2",
+    "connectome/scripts/phase8/regression.py": "65cd388d48305b6667c43256098b126af1e05116cc18898b3185ed2bc0279998",
+    "connectome/scripts/phase8/run_decoder.py": "4c38f849ba5a0a807f0c4b507f2996c90211361ba44934311d06a5d6cc14b603",
+    "connectome/scripts/phase8/validate_phase8.py": "89dcb0efd6a6221d4643d81685c0244e01b500f977c048123ae5fed09d1fefd0"
+  },
+  "parent_evidence": {
+    "status": "PASS",
+    "phase6": {
+      "status": "PASS",
+      "checked_locked_files": 152,
+      "encoded_files_checked": 1024,
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "scales": [
+        8.632185525889524,
+        8.417362938348457
+      ],
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002"
+    },
+    "phase7_source_files": 9,
+    "phase7_saved_episodes": 8,
+    "phase7_validation_sha256": "ca9360474b80e1b095a9bbbdd86966348beca6721e1baafb104a7f51245f9e75"
+  },
+  "amendment_approval": "Explicit human reply: Add the versioned improvement, 2026-10-11",
+  "threshold_status": "provisional_not_validation_selected",
+  "validation_neural_runs": 0,
+  "test_neural_runs": 0,
+  "training_negative_scenarios": 192,
+  "sample_ids": [
+    "train_f0000_looming",
+    "train_f0000_static_initial",
+    "train_f0000_static_terminal",
+    "train_f0000_translating_initial",
+    "train_f0001_looming",
+    "train_f0001_static_initial",
+    "train_f0001_static_terminal",
+    "train_f0001_translating_initial"
+  ],
+  "candidate_generation_saved_before_training_activity": true,
+  "final_calibration_status": "pending_required_controls_and_validation_selection"
+}

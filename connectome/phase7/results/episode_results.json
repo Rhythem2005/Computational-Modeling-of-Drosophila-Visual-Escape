@@ -1,0 +1,562 @@
+[
+  {
+    "scenario_id": "train_f0000_looming",
+    "group_id": "train_f0000",
+    "role": "looming",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.01799454100546427,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 13.152955668077515,
+      "peak_preclip_activation": 13.275358218623996,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.7570074710307332,
+      "input_scaled_max": 0.3028029884122933,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "06690f7e9e089c153c303c2329d038a9e5fc2ae6113c0c27e43fc6fd9e8c1c2d",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0000_looming",
+        "schema_version": "1.0",
+        "config_sha256": "1997b21ec505e86452f286f92718baf1cfa7cbaffd5dbe6a44d6475f7c1bb345",
+        "npz_sha256": "d05c309bce8dae5e62c09a1ca628f98fafafc28cf98372d5abd984799825dc20"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0000_looming.npz": "13c50dc81b6bead74d1b2f33ade89f97be699ec3e8df8ffb2a316278f4f6138e",
+      "connectome/phase7/results/activity/train_f0000_looming_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0000_looming_metadata.json": "f123eb15aa82ac15976ac4cc724b0d7826b4cb40b5a5fafc781c54e574d584b3"
+    }
+  },
+  {
+    "scenario_id": "train_f0000_static_initial",
+    "group_id": "train_f0000",
+    "role": "static_initial",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.017544707996421494,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 0.0,
+      "peak_preclip_activation": 0.0,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.0,
+      "input_scaled_max": 0.0,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "4a0f155a1b10a292a3a17530c79be3479200f9356515594d977ccfbf601c7c3f",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0000_static_initial",
+        "schema_version": "1.0",
+        "config_sha256": "6bdcbc58da90ff39775fe3bdbef047f24ec1698bfcbfe62f76535a2456997c9e",
+        "npz_sha256": "2df27c7f77976ce718ea822016d221f8cc738b5cd8351675e9698a2c1c841eec"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0000_static_initial.npz": "3f0814bf613b25f5edfe3c70893107198733941c1cc104b003498156614a9e1a",
+      "connectome/phase7/results/activity/train_f0000_static_initial_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0000_static_initial_metadata.json": "8210ab00eb69b32a4a275ed7de95a9f81f80006ed7f046f5e305daa34bd78af2"
+    }
+  },
+  {
+    "scenario_id": "train_f0000_static_terminal",
+    "group_id": "train_f0000",
+    "role": "static_terminal",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.017603499996766914,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 0.0,
+      "peak_preclip_activation": 0.0,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.0,
+      "input_scaled_max": 0.0,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "2c158f58250860fbc327fe5d0ff82f36d2711af61567857d854fd8f63407408f",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0000_static_terminal",
+        "schema_version": "1.0",
+        "config_sha256": "9512177122358199ab61d155f92a324485aa8991a39629183423f521a021d7fd",
+        "npz_sha256": "819a6089c4c4df8aa31e5d93ac088b08dc0b4e1ac4c01c431f49d427b5436e12"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0000_static_terminal.npz": "3f0814bf613b25f5edfe3c70893107198733941c1cc104b003498156614a9e1a",
+      "connectome/phase7/results/activity/train_f0000_static_terminal_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0000_static_terminal_metadata.json": "ec8bb4d99741ac64a0716c6812959e173ca491a025a6543387dd5037aa2ed6ef"
+    }
+  },
+  {
+    "scenario_id": "train_f0000_translating_initial",
+    "group_id": "train_f0000",
+    "role": "translating_initial",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.01710720799746923,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 0.0,
+      "peak_preclip_activation": 0.0,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.0,
+      "input_scaled_max": 0.0,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "594c7be6f605ea43c756b0149280b326011aa4195b3472879961156fc41753e8",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0000_translating_initial",
+        "schema_version": "1.0",
+        "config_sha256": "b9d18de2daf02645544cf35a5a0b2ea95556bb5f12d560b5bde660705c44e6f9",
+        "npz_sha256": "0e127e1cf59ed15ff2f760512d5f1807540efd7120742ef2d0656c24ab8b4239"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0000_translating_initial.npz": "3f0814bf613b25f5edfe3c70893107198733941c1cc104b003498156614a9e1a",
+      "connectome/phase7/results/activity/train_f0000_translating_initial_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0000_translating_initial_metadata.json": "9bf2f28ca60f7a7f52c4ccdbc5d075359d5557f67f6b76cce0889fc2cb63706b"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_looming",
+    "group_id": "train_f0001",
+    "role": "looming",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.01763362500059884,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 13.906273747435574,
+      "peak_preclip_activation": 13.99603418170168,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.6885078197379834,
+      "input_scaled_max": 0.27540312789519333,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "b6c605735e5095c16fea8bc3844177cbd3f3a691249977d549c53ef1ec403bd0",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0001_looming",
+        "schema_version": "1.0",
+        "config_sha256": "2c970dd851ce22525c721e6cd362a9baa955b53c03f80aa194683cfd054c2045",
+        "npz_sha256": "4974e148eb9af66c71927a1253504268d383c9d238c84b927fafa17fc24829ac"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0001_looming.npz": "d85bcc012ae53364fb610f6544cbd864435705ecba963babb8d297a649de16e0",
+      "connectome/phase7/results/activity/train_f0001_looming_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0001_looming_metadata.json": "a68f388b9acd9024e93b5c49380fc2694009cd115a5f41bd8c7c40d0bfa24f27"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_static_initial",
+    "group_id": "train_f0001",
+    "role": "static_initial",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.017259667001781054,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 0.0,
+      "peak_preclip_activation": 0.0,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.0,
+      "input_scaled_max": 0.0,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "107f73fcda3901107a23ddf24c0d896a900917035ecbf8f39267c7da2d0d351a",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0001_static_initial",
+        "schema_version": "1.0",
+        "config_sha256": "26f537927103b8c2c33d7f84667bc2f61ddf38fbd03dccc709da127b69544d34",
+        "npz_sha256": "568da7494739a42bb1af4123b2607226eef311ab44262852d29c1b856a042623"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0001_static_initial.npz": "3f0814bf613b25f5edfe3c70893107198733941c1cc104b003498156614a9e1a",
+      "connectome/phase7/results/activity/train_f0001_static_initial_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0001_static_initial_metadata.json": "d6b79620ea70545b485bf0de86249ec1fc31cd7d4ed5a99572a990726d8aec3c"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_static_terminal",
+    "group_id": "train_f0001",
+    "role": "static_terminal",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.01709320899681188,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 0.0,
+      "peak_preclip_activation": 0.0,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.0,
+      "input_scaled_max": 0.0,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "d4e449bdb6e2fb866449677e219acb35f7ba25717dc8374901934cf6985d6e78",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0001_static_terminal",
+        "schema_version": "1.0",
+        "config_sha256": "391b877a9bcb73883d64a5dac4d5dc1b1dc3237f09df043b62832b58cd34d244",
+        "npz_sha256": "7606075fbe77798a637ffe655d9eb23fe64a98bf6de13c1df47990f033d3a34d"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0001_static_terminal.npz": "3f0814bf613b25f5edfe3c70893107198733941c1cc104b003498156614a9e1a",
+      "connectome/phase7/results/activity/train_f0001_static_terminal_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0001_static_terminal_metadata.json": "7c3d51af70aa026edcd73f5a95099b03d06b420c0cfd9c7d93448f3ee18a746b"
+    }
+  },
+  {
+    "scenario_id": "train_f0001_translating_initial",
+    "group_id": "train_f0001",
+    "role": "translating_initial",
+    "cohort": "train",
+    "metrics": {
+      "runtime_s": 0.016803791993879713,
+      "finite": true,
+      "activity_min": 0.0,
+      "activity_max": 0.0,
+      "peak_preclip_activation": 0.0,
+      "activation_clipped_fraction": 0.0,
+      "encoder_channel_cap_fraction": 0.0,
+      "direct_dn_input_max": 0.0,
+      "input_unscaled_max": 0.0,
+      "input_scaled_max": 0.0,
+      "trainable_parameters": 0,
+      "numerical_steps": 1000,
+      "state_samples": 1001
+    },
+    "provenance": {
+      "pipeline_version": "1.0.0",
+      "schema_version": "1.0",
+      "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+      "encoder_version": "1.0.0",
+      "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+      "circuit_hashes": {
+        "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+        "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+        "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+        "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+        "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+        "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+      },
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+      "units": {
+        "frame_time": "s",
+        "state_time": "ms",
+        "drive": "dimensionless arbitrary drive",
+        "activity": "arbitrary model activity"
+      },
+      "initial_state": "zeros",
+      "warmup_ms": 0.0,
+      "resampling": "causal zero-order hold",
+      "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+      "frame_input": {
+        "shape": [
+          60,
+          256,
+          256
+        ],
+        "movie_sha256": "cd59652e67fd31732d19fe8a8bff60ac714f843bda26f8fca270613f69607427",
+        "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+      },
+      "stimulus_source": {
+        "stimulus_id": "train_f0001_translating_initial",
+        "schema_version": "1.0",
+        "config_sha256": "75e3d457698cf105726c6e4ed05439e6a19eb25ca02633476a883a1458a6a7da",
+        "npz_sha256": "2a378aa3bbcafa9e12385f73e5b33781b5f20fde6816f7e965182a306afbb2eb"
+      }
+    },
+    "artifacts": {
+      "connectome/phase7/results/activity/train_f0001_translating_initial.npz": "3f0814bf613b25f5edfe3c70893107198733941c1cc104b003498156614a9e1a",
+      "connectome/phase7/results/activity/train_f0001_translating_initial_config.json": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+      "connectome/phase7/results/activity/train_f0001_translating_initial_metadata.json": "7a041e6b0e0ff4b2ca21c7dcf5f2f405a3f79c261f406100f299899ab14b18a8"
+    }
+  }
+]

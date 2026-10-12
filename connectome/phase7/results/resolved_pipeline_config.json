@@ -1,0 +1,23 @@
+{
+  "pipeline_version": "1.0.0",
+  "encoded_schema_version": "1.0",
+  "mapping": "uniform_population",
+  "resampling": "causal_zero_order_hold",
+  "time_conversion": "seconds_to_ms_explicit",
+  "initial_state": "zeros",
+  "warmup_ms": 0.0,
+  "duration_source": "explicit_episode_duration_ms",
+  "simulation_config": "connectome/phase4/simulation_config.yaml",
+  "encoder_config": "connectome/phase6/encoder_config.yaml",
+  "normalization": "connectome/phase6/results/normalization.json",
+  "validation_sample_ids": [
+    "train_f0000_looming",
+    "train_f0000_static_initial",
+    "train_f0000_static_terminal",
+    "train_f0000_translating_initial",
+    "train_f0001_looming",
+    "train_f0001_static_initial",
+    "train_f0001_static_terminal",
+    "train_f0001_translating_initial"
+  ]
+}

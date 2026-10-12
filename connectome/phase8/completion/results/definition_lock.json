@@ -1,0 +1,45 @@
+{
+  "version": "1.2.0",
+  "sources_sha256": {
+    "connectome/phase8/completion/README.md": "278081ce4cf2d4f317cc667eb61042ec7b271d22d92f9bdd38156792d11570bf",
+    "connectome/phase8/completion/amendment_v1_2.md": "8aecda79a955af35f7ae3286b8115f58552e11a403fea93a9dc0374fe717dcb1",
+    "connectome/phase8/completion/completion_config.yaml": "5fd95e714ff6e12de7dcfaa753d4c7d287bcd9c31ad645c075c2568a9016f8ef",
+    "connectome/phase8/completion/tests/test_completion.py": "b0d2d76a0305d373fe33c0c7a52568d288ab23b6912ccd953b278d0017966384",
+    "connectome/scripts/phase8/completion/activity_io.py": "89eac7b67cd4aed7a64d88f4fdd9156652980db8bc8127d76b2854eab6e4a7c7",
+    "connectome/scripts/phase8/completion/calibration.py": "032fa2143fbceb57ed6b0c9ed719915ab0696196b1f6c25e171a7241cb20f845",
+    "connectome/scripts/phase8/completion/controls.py": "209ccc8a9fab54863fb86f60648fd96846177568dd3364aec3ea0c2fa4d05892",
+    "connectome/scripts/phase8/completion/decoder.py": "bc421f30bd6d3508adb9b312e56b49535cce0429fe9efa91e65a3b0ca6a4b5b0",
+    "connectome/scripts/phase8/completion/evidence.py": "b1e1baac7a55b5a54d1fde97b0904067f3feec056dfdf2bae965a286af68716f",
+    "connectome/scripts/phase8/completion/regression.py": "8527d359dce2ae005b545089326bd86e1d94021ebe4c6aa86c8c7383bfcd88d8",
+    "connectome/scripts/phase8/completion/run_decoder.py": "5b95e1d8551624ab2c468d10a0a83f493406d47e59e647af3f107f6a531b669c",
+    "connectome/scripts/phase8/completion/spatial.py": "3404925ffb8ef1777fabc64ce5678fe20d6c04fe748658cd1f034357693ecff3",
+    "connectome/scripts/phase8/completion/validate_completion.py": "627797566fb8a44a5882d7799a162c830cbf0926efa8ed1ffb288c1e55a25c3c"
+  },
+  "completion_config_sha256": "8597aa89abf8edd80654b48e0fbf5dfe99de478feb29efe5a1aa73e34771357a",
+  "parent_evidence": {
+    "status": "PASS",
+    "previous": {
+      "status": "PASS",
+      "phase6": {
+        "status": "PASS",
+        "checked_locked_files": 152,
+        "encoded_files_checked": 1024,
+        "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+        "scales": [
+          8.632185525889524,
+          8.417362938348457
+        ],
+        "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+        "manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002"
+      },
+      "phase7_source_files": 9,
+      "phase7_saved_episodes": 8,
+      "phase7_validation_sha256": "ca9360474b80e1b095a9bbbdd86966348beca6721e1baafb104a7f51245f9e75"
+    },
+    "checkpoint_report_sha256": "c1ce5319515e1d1ba97694a58e72a0de0e4d4156461c76a1afbb84f13e6872db",
+    "checkpoint_lock_sha256": "4682a4de3c51cade8a7a1dd9dd59084d7c28b7149ac39b1c52424340a1939faa"
+  },
+  "authorization": "User: Fully complete the phase 8; approved versioned next-float improvement",
+  "outcome_order": "Definition and mappings -> controls tests/train-only fitting -> candidate plans -> validation -> freeze -> spatial fixtures",
+  "held_out_test_neural_or_decision_runs": 0
+}

@@ -1,0 +1,73 @@
+{
+  "provenance": {
+    "pipeline_version": "1.0.0",
+    "schema_version": "1.0",
+    "pipeline_config_sha256": "05732c26c85499fe8906397253ae13414119458f7faae62eafe473303652e2a7",
+    "encoder_version": "1.0.0",
+    "encoder_config_sha256": "6cd83651611c24e7c741b9104fb93d252294ca34c8c8bb02bd648c7bfa04f26a",
+    "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+    "simulation_config_sha256": "264ada244bcea898fc5513590f6f388c3e64320898d770eba4ca7fa2fcb09ede",
+    "circuit_hashes": {
+      "circuit_v2_nodes.csv": "6c39db7b41cceff06ce80b877637b1af282d0b78ce4b58d1cd443bcd30fef01d",
+      "circuit_v2_edges.csv": "d333731d3c2ddca98f05f19dfd4de56aae879cd5901a0b267ac5878ff0c5f950",
+      "circuit_v2.json": "27327c030a09222d381f17c53de01de66b1b99744e0b2268e342a42f915d1b8a",
+      "circuit_v2_provenance.json": "a7b11299df76a4ca15429f1af6c044df9b1db5672868a8baa3f5134316527934",
+      "circuit_v2_schema.json": "c369e3c11ab8abf885fa29d7d97eac7f3edf6b42f3a2003201b9679a074d55a2",
+      "circuit_v2_build_validation.json": "9d3d45a1e4452fc9671280d371fd3d19fc70d25cc98e51de986f8484ff6d703c"
+    },
+    "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+    "benchmark_manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002",
+    "units": {
+      "frame_time": "s",
+      "state_time": "ms",
+      "drive": "dimensionless arbitrary drive",
+      "activity": "arbitrary model activity"
+    },
+    "initial_state": "zeros",
+    "warmup_ms": 0.0,
+    "resampling": "causal zero-order hold",
+    "state_semantics": "x[k] at t[k]; input at t[k] updates x[k+1]; endpoint state is diagnostic only",
+    "frame_input": {
+      "shape": [
+        60,
+        256,
+        256
+      ],
+      "movie_sha256": "d4e449bdb6e2fb866449677e219acb35f7ba25717dc8374901934cf6985d6e78",
+      "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4"
+    },
+    "stimulus_source": {
+      "stimulus_id": "train_f0001_static_terminal",
+      "schema_version": "1.0",
+      "config_sha256": "391b877a9bcb73883d64a5dac4d5dc1b1dc3237f09df043b62832b58cd34d244",
+      "npz_sha256": "7606075fbe77798a637ffe655d9eb23fe64a98bf6de13c1df47990f033d3a34d"
+    }
+  },
+  "metrics": {
+    "runtime_s": 0.01709320899681188,
+    "finite": true,
+    "activity_min": 0.0,
+    "activity_max": 0.0,
+    "peak_preclip_activation": 0.0,
+    "activation_clipped_fraction": 0.0,
+    "encoder_channel_cap_fraction": 0.0,
+    "direct_dn_input_max": 0.0,
+    "input_unscaled_max": 0.0,
+    "input_scaled_max": 0.0,
+    "trainable_parameters": 0,
+    "numerical_steps": 1000,
+    "state_samples": 1001
+  },
+  "arrays_sha256": "3f0814bf613b25f5edfe3c70893107198733941c1cc104b003498156614a9e1a",
+  "config_file_sha256": "4c07c9fa5f4d9d1735ce1924fd5844eb0e845567ad479d1628e2d094a84859b2",
+  "invocation": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/scripts/phase7/validate_phase7.py"
+  ],
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "pyyaml": "6.0.3",
+    "platform": "macOS-26.1-arm64-arm-64bit-Mach-O"
+  }
+}

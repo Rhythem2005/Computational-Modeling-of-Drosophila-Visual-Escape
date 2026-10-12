@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "completion_status": "COMPLETE_ENGINEERING",
+  "version": "1.2.0",
+  "run_time_utc": "2026-10-11T16:40:02.683098+00:00",
+  "invocation": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/scripts/phase8/completion/validate_completion.py"
+  ],
+  "tests_command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-m",
+    "pytest",
+    "connectome/phase8/completion/tests/",
+    "-q",
+    "--junitxml=/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/phase8/completion/results/tests.xml"
+  ],
+  "completion_tests": {
+    "tests": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "earlier_regression": {
+    "status": "PASS",
+    "command": [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "-m",
+      "pytest",
+      "connectome/scripts/phase4/tests/",
+      "connectome/phase5/tests/",
+      "connectome/phase5_5/tests/",
+      "connectome/phase6/tests/",
+      "connectome/phase7/tests/",
+      "connectome/phase8/tests/",
+      "-q",
+      "--junitxml=/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/phase8/completion/results/regression/after/tests.xml"
+    ],
+    "tests": {
+      "tests": 364,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "phase4_assertions": {
+      "total": 159,
+      "passed": 159,
+      "failed": 0
+    },
+    "exit_code": 0,
+    "integration_exit_code": 0
+  },
+  "protected_files": 1606,
+  "protected_files_unchanged": true,
+  "training_clips": 256,
+  "reused_v1_1_negative_neural_traces": 192,
+  "fresh_training_positive_neural_runs": 64,
+  "fresh_validation_neural_runs": 128,
+  "validation_positives": 32,
+  "validation_negatives": 96,
+  "held_out_test_neural_or_decision_runs": 0,
+  "thresholds": {
+    "circuit": {
+      "kind": "finite",
+      "value": 5e-324
+    },
+    "feature_only": {
+      "kind": "finite",
+      "value": 5e-324
+    },
+    "linear_temporal": {
+      "kind": "finite",
+      "value": 5e-324
+    }
+  },
+  "calibration_assessments": {
+    "circuit": {
+      "candidate_id": "q00",
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "timely_tpr": 1.0,
+      "full_episode_fpr": 0.0,
+      "pre_onset_decisions": 0,
+      "validation_positives": 32,
+      "validation_negatives": 96
+    },
+    "feature_only": {
+      "candidate_id": "q00",
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "timely_tpr": 1.0,
+      "full_episode_fpr": 0.0,
+      "pre_onset_decisions": 0,
+      "validation_positives": 32,
+      "validation_negatives": 96
+    },
+    "linear_temporal": {
+      "candidate_id": "q00",
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "timely_tpr": 1.0,
+      "full_episode_fpr": 0.0,
+      "pre_onset_decisions": 0,
+      "validation_positives": 32,
+      "validation_negatives": 96
+    }
+  },
+  "calibration_freeze_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41",
+  "prerequisite_controls": "integrated before final selection",
+  "primary_cli_status": "PASS; arrays and action equal integrated decoder",
+  "saved_action_round_trips": true,
+  "primary_steering": "neutral uniform input",
+  "synthetic_mappings": 5,
+  "spatial_fixtures": 10,
+  "spatial_repeat_runs": 10,
+  "spatial_calibration": "uncalibrated spatial fixtures reuse primary frozen initiation threshold",
+  "biological_mapping_validated": false,
+  "plots": {
+    "connectome/phase8/completion/results/plots/calibrated_scores.png": "695a05fe2f61b7e2058da397f3c42b36acffc059d9568117831489c6df0ffb44",
+    "connectome/phase8/completion/results/plots/synthetic_fields.png": "c265ea069d6baffafd4acecbb178f4a1edde6605df4068e2cb964d2212069baf",
+    "connectome/phase8/completion/results/plots/synthetic_turn_requests.png": "2aa7d1c983e48e64846967028280c9a165663597f3dfe5542b14db17f2c64dfb"
+  },
+  "failed_gates": [],
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  }
+}

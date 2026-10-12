@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-m",
+    "connectome.scripts.phase9.run_environment",
+    "--fixture",
+    "world_head_on",
+    "--overwrite"
+  ],
+  "array_and_metrics_equality": true
+}

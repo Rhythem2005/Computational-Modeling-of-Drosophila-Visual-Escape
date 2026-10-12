@@ -1,0 +1,373 @@
+{
+  "status": "PASS",
+  "run_time_utc": "2026-10-11T11:46:51.114500+00:00",
+  "invocation": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/scripts/phase8/validate_phase8.py"
+  ],
+  "tests_command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-m",
+    "pytest",
+    "connectome/phase8/tests/",
+    "-q",
+    "--junitxml=/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/phase8/results/tests.xml"
+  ],
+  "tests": {
+    "tests": 64,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "gates": [
+    {
+      "name": "phase8_tests",
+      "passed": true,
+      "detail": {
+        "tests": 64,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "previous_regression_before_after",
+      "passed": true,
+      "detail": {
+        "status": "PASS",
+        "command": [
+          "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+          "-m",
+          "pytest",
+          "connectome/scripts/phase4/tests/",
+          "connectome/phase5/tests/",
+          "connectome/phase5_5/tests/",
+          "connectome/phase6/tests/",
+          "connectome/phase7/tests/",
+          "-q",
+          "--junitxml=/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/phase8/results/regression/after/tests.xml"
+        ],
+        "tests": {
+          "tests": 300,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "exit_code": 0,
+        "phase4_assertions": {
+          "total": 159,
+          "passed": 159,
+          "failed": 0
+        },
+        "integration_exit_code": 0
+      }
+    },
+    {
+      "name": "training_only_complete_candidates",
+      "passed": true,
+      "detail": {
+        "records": 192,
+        "candidates": 2
+      }
+    },
+    {
+      "name": "training_numeric_contract",
+      "passed": true,
+      "detail": "All training runs finite; no activation clipping; no exclusions"
+    },
+    {
+      "name": "train_f0000_looming:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": true,
+          "first_event_ms": 256.0,
+          "first_event_s": 0.256,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0000_looming:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0000_looming:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "train_f0000_static_initial:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": false,
+          "first_event_ms": null,
+          "first_event_s": null,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0000_static_initial:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0000_static_initial:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "train_f0000_static_terminal:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": false,
+          "first_event_ms": null,
+          "first_event_s": null,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0000_static_terminal:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0000_static_terminal:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "train_f0000_translating_initial:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": false,
+          "first_event_ms": null,
+          "first_event_s": null,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0000_translating_initial:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0000_translating_initial:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "train_f0001_looming:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": true,
+          "first_event_ms": 272.0,
+          "first_event_s": 0.272,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0001_looming:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0001_looming:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "train_f0001_static_initial:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": false,
+          "first_event_ms": null,
+          "first_event_s": null,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0001_static_initial:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0001_static_initial:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "train_f0001_static_terminal:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": false,
+          "first_event_ms": null,
+          "first_event_s": null,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0001_static_terminal:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0001_static_terminal:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "train_f0001_translating_initial:demonstration",
+      "passed": true,
+      "detail": {
+        "action": {
+          "action_type": "escape_initiation_requested",
+          "requested": false,
+          "first_event_ms": null,
+          "first_event_s": null,
+          "threshold": {
+            "kind": "finite",
+            "value": 5e-324
+          },
+          "threshold_status": "provisional_not_validation_selected",
+          "steering": null,
+          "steering_status": "unavailable_no_spatial_mapping",
+          "semantics": "abstract request; no physical movement or success outcome"
+        },
+        "interpretation": "Training integration sanity, not held-out performance"
+      }
+    },
+    {
+      "name": "train_f0001_translating_initial:determinism",
+      "passed": true,
+      "detail": "Bitwise deterministic decoded traces"
+    },
+    {
+      "name": "train_f0001_translating_initial:saved_roundtrip",
+      "passed": true,
+      "detail": "All saved trace arrays/dtypes match"
+    },
+    {
+      "name": "optimized_reference_equivalence",
+      "passed": true,
+      "detail": {
+        "samples": 10000,
+        "seed": 88001,
+        "streaming_decode_runtime_s": 0.006995417003054172,
+        "minimum_reference_runtime_s": 0.008185375001630746,
+        "note": "Streaming time includes checks and action arrays; reference time includes only minimum/event calculation. Not a like-for-like speed comparison."
+      }
+    },
+    {
+      "name": "earlier_artifacts_preserved",
+      "passed": true,
+      "detail": {
+        "files": 1326,
+        "changed": []
+      }
+    }
+  ],
+  "failed_gates": [],
+  "training_negative_runs": 192,
+  "training_materialization_runtime_s": 4.176821041997755,
+  "validation_neural_runs": 0,
+  "held_out_neural_runs": 0,
+  "demonstration_samples": 8,
+  "threshold": {
+    "kind": "finite",
+    "value": 5e-324
+  },
+  "threshold_status": "provisional_not_validation_selected",
+  "calibration_status": "pending_required_controls_and_validation_selection",
+  "steering_status": "unavailable_no_spatial_mapping",
+  "decoder_config_sha256": "b999c95af8b3685dafe5684a0259c2e9245887ce3d38ca8d6abae683b2fa9277",
+  "candidate_plan_sha256": "b5034a4b30c522889c0c36444925b2c7fad3a6993a45e82e3f560a2d90e6e0d3",
+  "implementation_lock_sha256": "4682a4de3c51cade8a7a1dd9dd59084d7c28b7149ac39b1c52424340a1939faa",
+  "protected_files": 1326,
+  "protected_files_unchanged": true,
+  "plots": {
+    "connectome/phase8/results/plots/train_f0000_requests.png": "32d93bd709a9d4d9dabda1a7c7f78fbe837513c8b39a60b20cde9c4934b7001a",
+    "connectome/phase8/results/plots/train_f0001_requests.png": "93e6d02f441db55032e9cb7f4ef163c3555df1f382fe07166589e814a9c99c3f"
+  },
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  }
+}

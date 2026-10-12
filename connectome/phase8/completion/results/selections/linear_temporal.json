@@ -1,0 +1,1726 @@
+{
+  "model": "linear_temporal",
+  "status": "validation_selected",
+  "threshold": {
+    "kind": "finite",
+    "value": 5e-324
+  },
+  "selected_candidate_id": "q00",
+  "assessments": [
+    {
+      "candidate_id": "q00",
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "timely_tpr": 1.0,
+      "full_episode_fpr": 0.0,
+      "pre_onset_decisions": 0,
+      "validation_positives": 32,
+      "validation_negatives": 96
+    },
+    {
+      "candidate_id": "always_silent",
+      "threshold": {
+        "kind": "always_silent",
+        "value": null
+      },
+      "timely_tpr": 0.0,
+      "full_episode_fpr": 0.0,
+      "pre_onset_decisions": 0,
+      "validation_positives": 32,
+      "validation_negatives": 96
+    }
+  ],
+  "candidate_predictions": [
+    {
+      "candidate_id": "q00",
+      "predictions": [
+        {
+          "scenario_id": "validation_f0000_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0000_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0000_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0000_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0001_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0001_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0001_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0001_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0002_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0002_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0002_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0002_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0003_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0003_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0003_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0003_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0004_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0004_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0004_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0004_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0005_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0005_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0005_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0005_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0006_looming",
+          "first_event_ms": 255.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0006_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0006_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0006_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0007_looming",
+          "first_event_ms": 255.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0007_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0007_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0007_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0008_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0008_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0008_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0008_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0009_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0009_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0009_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0009_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0010_looming",
+          "first_event_ms": 255.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0010_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0010_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0010_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0011_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0011_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0011_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0011_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0012_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0012_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0012_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0012_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0013_looming",
+          "first_event_ms": 305.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0013_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0013_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0013_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0014_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0014_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0014_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0014_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0015_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0015_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0015_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0015_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0016_looming",
+          "first_event_ms": 255.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0016_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0016_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0016_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0017_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0017_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0017_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0017_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0018_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0018_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0018_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0018_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0019_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0019_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0019_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0019_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0020_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0020_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0020_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0020_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0021_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0021_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0021_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0021_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0022_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0022_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0022_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0022_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0023_looming",
+          "first_event_ms": 255.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0023_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0023_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0023_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0024_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0024_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0024_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0024_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0025_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0025_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0025_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0025_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0026_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0026_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0026_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0026_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0027_looming",
+          "first_event_ms": 255.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0027_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0027_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0027_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0028_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0028_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0028_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0028_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0029_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0029_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0029_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0029_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0030_looming",
+          "first_event_ms": 288.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0030_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0030_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0030_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0031_looming",
+          "first_event_ms": 271.0,
+          "label": 1,
+          "timely": true
+        },
+        {
+          "scenario_id": "validation_f0031_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0031_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0031_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        }
+      ]
+    },
+    {
+      "candidate_id": "always_silent",
+      "predictions": [
+        {
+          "scenario_id": "validation_f0000_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0000_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0000_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0000_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0001_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0001_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0001_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0001_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0002_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0002_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0002_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0002_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0003_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0003_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0003_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0003_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0004_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0004_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0004_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0004_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0005_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0005_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0005_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0005_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0006_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0006_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0006_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0006_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0007_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0007_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0007_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0007_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0008_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0008_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0008_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0008_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0009_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0009_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0009_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0009_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0010_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0010_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0010_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0010_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0011_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0011_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0011_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0011_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0012_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0012_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0012_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0012_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0013_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0013_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0013_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0013_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0014_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0014_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0014_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0014_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0015_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0015_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0015_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0015_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0016_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0016_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0016_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0016_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0017_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0017_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0017_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0017_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0018_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0018_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0018_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0018_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0019_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0019_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0019_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0019_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0020_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0020_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0020_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0020_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0021_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0021_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0021_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0021_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0022_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0022_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0022_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0022_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0023_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0023_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0023_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0023_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0024_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0024_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0024_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0024_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0025_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0025_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0025_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0025_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0026_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0026_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0026_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0026_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0027_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0027_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0027_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0027_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0028_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0028_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0028_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0028_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0029_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0029_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0029_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0029_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0030_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0030_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0030_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0030_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0031_looming",
+          "first_event_ms": null,
+          "label": 1,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0031_static_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0031_static_terminal",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        },
+        {
+          "scenario_id": "validation_f0031_translating_initial",
+          "first_event_ms": null,
+          "label": 0,
+          "timely": false
+        }
+      ]
+    }
+  ],
+  "selected_assessment": {
+    "candidate_id": "q00",
+    "threshold": {
+      "kind": "finite",
+      "value": 5e-324
+    },
+    "timely_tpr": 1.0,
+    "full_episode_fpr": 0.0,
+    "pre_onset_decisions": 0,
+    "validation_positives": 32,
+    "validation_negatives": 96
+  },
+  "validation_ids": [
+    "validation_f0000_looming",
+    "validation_f0000_static_initial",
+    "validation_f0000_static_terminal",
+    "validation_f0000_translating_initial",
+    "validation_f0001_looming",
+    "validation_f0001_static_initial",
+    "validation_f0001_static_terminal",
+    "validation_f0001_translating_initial",
+    "validation_f0002_looming",
+    "validation_f0002_static_initial",
+    "validation_f0002_static_terminal",
+    "validation_f0002_translating_initial",
+    "validation_f0003_looming",
+    "validation_f0003_static_initial",
+    "validation_f0003_static_terminal",
+    "validation_f0003_translating_initial",
+    "validation_f0004_looming",
+    "validation_f0004_static_initial",
+    "validation_f0004_static_terminal",
+    "validation_f0004_translating_initial",
+    "validation_f0005_looming",
+    "validation_f0005_static_initial",
+    "validation_f0005_static_terminal",
+    "validation_f0005_translating_initial",
+    "validation_f0006_looming",
+    "validation_f0006_static_initial",
+    "validation_f0006_static_terminal",
+    "validation_f0006_translating_initial",
+    "validation_f0007_looming",
+    "validation_f0007_static_initial",
+    "validation_f0007_static_terminal",
+    "validation_f0007_translating_initial",
+    "validation_f0008_looming",
+    "validation_f0008_static_initial",
+    "validation_f0008_static_terminal",
+    "validation_f0008_translating_initial",
+    "validation_f0009_looming",
+    "validation_f0009_static_initial",
+    "validation_f0009_static_terminal",
+    "validation_f0009_translating_initial",
+    "validation_f0010_looming",
+    "validation_f0010_static_initial",
+    "validation_f0010_static_terminal",
+    "validation_f0010_translating_initial",
+    "validation_f0011_looming",
+    "validation_f0011_static_initial",
+    "validation_f0011_static_terminal",
+    "validation_f0011_translating_initial",
+    "validation_f0012_looming",
+    "validation_f0012_static_initial",
+    "validation_f0012_static_terminal",
+    "validation_f0012_translating_initial",
+    "validation_f0013_looming",
+    "validation_f0013_static_initial",
+    "validation_f0013_static_terminal",
+    "validation_f0013_translating_initial",
+    "validation_f0014_looming",
+    "validation_f0014_static_initial",
+    "validation_f0014_static_terminal",
+    "validation_f0014_translating_initial",
+    "validation_f0015_looming",
+    "validation_f0015_static_initial",
+    "validation_f0015_static_terminal",
+    "validation_f0015_translating_initial",
+    "validation_f0016_looming",
+    "validation_f0016_static_initial",
+    "validation_f0016_static_terminal",
+    "validation_f0016_translating_initial",
+    "validation_f0017_looming",
+    "validation_f0017_static_initial",
+    "validation_f0017_static_terminal",
+    "validation_f0017_translating_initial",
+    "validation_f0018_looming",
+    "validation_f0018_static_initial",
+    "validation_f0018_static_terminal",
+    "validation_f0018_translating_initial",
+    "validation_f0019_looming",
+    "validation_f0019_static_initial",
+    "validation_f0019_static_terminal",
+    "validation_f0019_translating_initial",
+    "validation_f0020_looming",
+    "validation_f0020_static_initial",
+    "validation_f0020_static_terminal",
+    "validation_f0020_translating_initial",
+    "validation_f0021_looming",
+    "validation_f0021_static_initial",
+    "validation_f0021_static_terminal",
+    "validation_f0021_translating_initial",
+    "validation_f0022_looming",
+    "validation_f0022_static_initial",
+    "validation_f0022_static_terminal",
+    "validation_f0022_translating_initial",
+    "validation_f0023_looming",
+    "validation_f0023_static_initial",
+    "validation_f0023_static_terminal",
+    "validation_f0023_translating_initial",
+    "validation_f0024_looming",
+    "validation_f0024_static_initial",
+    "validation_f0024_static_terminal",
+    "validation_f0024_translating_initial",
+    "validation_f0025_looming",
+    "validation_f0025_static_initial",
+    "validation_f0025_static_terminal",
+    "validation_f0025_translating_initial",
+    "validation_f0026_looming",
+    "validation_f0026_static_initial",
+    "validation_f0026_static_terminal",
+    "validation_f0026_translating_initial",
+    "validation_f0027_looming",
+    "validation_f0027_static_initial",
+    "validation_f0027_static_terminal",
+    "validation_f0027_translating_initial",
+    "validation_f0028_looming",
+    "validation_f0028_static_initial",
+    "validation_f0028_static_terminal",
+    "validation_f0028_translating_initial",
+    "validation_f0029_looming",
+    "validation_f0029_static_initial",
+    "validation_f0029_static_terminal",
+    "validation_f0029_translating_initial",
+    "validation_f0030_looming",
+    "validation_f0030_static_initial",
+    "validation_f0030_static_terminal",
+    "validation_f0030_translating_initial",
+    "validation_f0031_looming",
+    "validation_f0031_static_initial",
+    "validation_f0031_static_terminal",
+    "validation_f0031_translating_initial"
+  ],
+  "rule": "max timely TPR with negative full-episode FPR<=0.05; tie lower FPR then higher threshold"
+}

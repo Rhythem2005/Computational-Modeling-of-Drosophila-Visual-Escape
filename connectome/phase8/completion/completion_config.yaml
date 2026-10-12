@@ -1,0 +1,25 @@
+version: '1.2.0'
+condition_id: fly_phase8_completion_v1_2
+threshold_policy: next_float_above_training_negative_quantile
+dt_ms: 1.0
+persistence_ms: 20.0
+observation_window_ms: [200.0, 1000.0]
+validation_fpr_limit: 0.05
+feature_only_combination: mean_LC4_LPLC2
+linear_tau_ms: 10.0
+linear_ridge: 0.000001
+linear_bias: 0.0
+linear_trainable_parameters: 2
+input_scale: 0.4
+primary_steering: neutral_uniform_input
+spatial_condition: synthetic_fields_within_type_and_side_v1
+spatial_seeds: [55010, 55011, 55012, 55013, 55014]
+field_sigma_normalized: 0.35
+field_domain: normalized_image_left_right_halves
+steering_source: bilateral_DNp06_normalized_difference
+steering_gain_normalization: mean_uniform_training_positive_peak
+steering_positive: rightward_turn_request
+steering_policy: latch_at_initiation
+spatial_fixture_x_px: [64.0, 192.0]
+spatial_fixture_y_px: 128.0
+new_environment_or_physics: false

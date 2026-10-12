@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "standalone_cli_matches_validation_arrays_bitwise": true,
+  "cli_npz_sha256": "13c50dc81b6bead74d1b2f33ade89f97be699ec3e8df8ffb2a316278f4f6138e",
+  "protected_files": 1237,
+  "protected_files_unchanged_at_delivery": true,
+  "plots_visually_reviewed": [
+    "train_f0000_activity.png",
+    "train_f0001_activity.png",
+    "train_f0000_looming_heatmap.png"
+  ]
+}

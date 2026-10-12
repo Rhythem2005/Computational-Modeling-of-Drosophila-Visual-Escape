@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "completed_validator_invocations_this_completion": 2,
+  "first_pass_utc": "2026-10-11T16:39:22.494894+00:00",
+  "reproduction_pass_utc": "2026-10-11T16:40:02.683098+00:00",
+  "verified_utc": "2026-10-11T16:41:35.076115+00:00",
+  "numerical_reproduction": "Strict existing-result equality passed for all 384 calibration traces, 10 spatial activity files, 18 action traces, selections, fitted weights, training normalizers and calibration freeze",
+  "fresh_neural_runs_per_invocation": {
+    "train_positive": 64,
+    "validation": 128,
+    "spatial_main": 10,
+    "spatial_repeat": 10
+  },
+  "reused_training_negative_neural_traces_per_invocation": 192,
+  "unique_tests": 382,
+  "phase4_assertions": 159,
+  "earlier_files_unchanged": 1606,
+  "calibration_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41",
+  "source_files_checked": 13,
+  "prerequisite_artifacts_checked": 401,
+  "cli_array_and_action_equality": true,
+  "plots_visually_inspected": true,
+  "held_out_test_neural_or_decision_runs": 0,
+  "biological_mapping_validated": false,
+  "no_phase9_implementation": true,
+  "unresolved": [
+    "Synthetic spatial condition reuses primary threshold and is not independently validation-calibrated.",
+    "Retinotopy, image hemisphere assignment and DN motor conventions are engineered assumptions.",
+    "The one-float silence threshold has no established noise robustness.",
+    "No useful-behavior or circuit-advantage conclusion; controls here are minimal prerequisites.",
+    "Historical Phase 0 completion evidence and the referenced progress PDF are absent.",
+    "Earlier specification discrepancies remain preserved; see connectome/phase7/specification.md."
+  ]
+}

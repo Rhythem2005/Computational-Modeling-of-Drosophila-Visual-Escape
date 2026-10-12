@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "completion_status": "COMPLETE_ENGINEERING",
+  "protocol_id": "fly_closed_loop_engineering_v1",
+  "run_time_utc": "2026-10-11T17:19:13.253305+00:00",
+  "invocation": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase9-execution-u6zv0cpi/connectome/scripts/phase9/validate_phase9.py"
+  ],
+  "tests": {
+    "tests": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "tests_command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-m",
+    "pytest",
+    "connectome/phase9/tests/",
+    "-q",
+    "--junitxml=/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase9-execution-u6zv0cpi/connectome/phase9/results/tests.xml"
+  ],
+  "earlier_regression": {
+    "status": "PASS",
+    "command": [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "-m",
+      "pytest",
+      "connectome/scripts/phase4/tests/",
+      "connectome/phase5/tests/",
+      "connectome/phase5_5/tests/",
+      "connectome/phase6/tests/",
+      "connectome/phase7/tests/",
+      "connectome/phase8/tests/",
+      "connectome/phase8/completion/tests/",
+      "-q",
+      "--junitxml=/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase9-execution-u6zv0cpi/connectome/phase9/results/regression/after/tests.xml"
+    ],
+    "tests": {
+      "tests": 382,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "phase4_assertions": {
+      "total": 159,
+      "passed": 159,
+      "failed": 0
+    },
+    "exit_code": 0,
+    "integration_exit_code": 0
+  },
+  "fixed_engineering_fixtures": 15,
+  "repeat_runs": 15,
+  "spatial_mapping_seeds": [
+    55010,
+    55011,
+    55012,
+    55013,
+    55014
+  ],
+  "failed_gates": [],
+  "episode_results_sha256": "8842644aa9e2300d7f9f71cad1dfe9af122857a457281243c6b90569ec03a6a7",
+  "definition_lock_sha256": "02b3be2d15cba12d6e52042ec151b9ccd1adb193940a39ebedf0f0d9d66945e4",
+  "protected_execution_files": 2151,
+  "protected_execution_files_unchanged": true,
+  "action_visual_coupling": {
+    "status": "PASS",
+    "request_ms": 300,
+    "before_frame_ms": 300,
+    "after_frame_ms": 400,
+    "scripted_turn": 0,
+    "before_frames_equal": true,
+    "after_frames_differ": true,
+    "pixels_differ": 100,
+    "fly_displacement_difference": 1.0900000000000005,
+    "interpretation": "scripted plumbing check only; no controller baseline, tuning or efficacy comparison"
+  },
+  "streamed_batch_neural_and_decoder_equal": true,
+  "saved_round_trips": true,
+  "cli_status": "PASS",
+  "world_threshold_fitting": false,
+  "benchmark_test_neural_or_decision_runs": 0,
+  "phase10_implementation": false,
+  "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration",
+  "biological_fidelity_claim": false,
+  "plots": {
+    "connectome/phase9/results/plots/primary_world_activity.png": "5c10da908f68b834793873e9be085facd1d4a2c327bf4175e632518b9b7ad799",
+    "connectome/phase9/results/plots/action_visual_coupling.png": "1a8721f932a082ca8769d080bcf9f67886785090a5f15cfcbf4ab4961e6e30d1",
+    "connectome/phase9/results/plots/synthetic_escape_paths.png": "577df034fa7973fc46335a61a3ad250f42a76ed3b37e1a9b406d507228bf0c8d"
+  },
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  }
+}

@@ -1,0 +1,58 @@
+======================================================================
+INDEPENDENT RAW CONNECTOME AUDIT & VERIFICATION
+======================================================================
+
+[STEP 1] Raw Source Data Checksums:
+  body_annotations: 2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2
+  connectome_weights: e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1
+  body_neurotransmitters: 95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621
+  ✓ All raw source file SHA-256 checksums match provenance exactly.
+
+[STEP 2] Raw Body Annotations Audit:
+  Raw v1 unique bodies: 317
+  Raw v2 unique bodies: 321
+
+  Raw Hemisphere Counts:
+    LC4     : Total=126 | Left=71  | Right=55 
+    LPLC2   : Total=185 | Left=94  | Right=91 
+    DNp01   : Total=2   | Left=1   | Right=1  
+    DNp04   : Total=2   | Left=1   | Right=1  
+    DNp06   : Total=2   | Left=1   | Right=1  
+    DNp02   : Total=2   | Left=1   | Right=1  
+    DNp11   : Total=2   | Left=1   | Right=1  
+  ✓ LC4 raw hemisphere split verified: 71 Left, 55 Right.
+  ✓ LPLC2 raw hemisphere split verified: 94 Left, 91 Right.
+  Raw DNp04 body IDs: [11137, 531898]
+  ✓ DNp04 6-digit bodyId (531898) verified as authentic in raw MaleCNS v1.0.
+
+[STEP 3] Raw Connectome Edge Re-extraction (Streaming 1.05 GB feather):
+  Raw Reconstructed Circuit v1 Edges (w>=3): 11286
+  Raw Reconstructed Circuit v2 Edges (w>=3): 11557
+
+[STEP 4] Compare Reconstructed vs Stored Artifacts (Tolerance = 0):
+  ✓ Circuit v1 stored CSV matches raw recomputed edges exactly (0 mismatches).
+  ✓ Circuit v2 stored CSV matches raw recomputed edges exactly (0 mismatches).
+
+[STEP 5] V1 to V2 Delta Audit:
+  Added nodes (4): {10197, 10106, 10259, 10117} (DNp02_L, DNp02_R, DNp11_L, DNp11_R)
+  Removed nodes: 0
+  Added edges (271): 271
+  Removed edges: 0
+  ✓ Every added edge involves at least one of the four new neurons.
+
+[STEP 6] Recomputed Edge Classes and Synaptic Totals for Circuit v2:
+                   count    sum
+edge_class                     
+cross_visual         388   1806
+inter_readout         27    416
+intra_population    9994  51846
+readout_to_visual      7     22
+visual_to_readout   1141  36933
+  Total Edges: 11557
+  Total Synapses: 91023
+  Max Weight: 172
+  ✓ All edge classes and synaptic weight sums verified from raw data.
+
+======================================================================
+INDEPENDENT AUDIT VERIFIER COMPLETE — ALL 12 CHECKS PASSED
+======================================================================

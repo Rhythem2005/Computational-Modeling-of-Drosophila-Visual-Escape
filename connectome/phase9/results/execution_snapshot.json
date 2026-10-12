@@ -1,0 +1,31 @@
+{
+  "snapshot": "/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase9-execution-u6zv0cpi",
+  "status": "PASS",
+  "commands": [
+    [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "-m",
+      "connectome.scripts.phase9.validate_phase9"
+    ]
+  ],
+  "exit_code": 0,
+  "workspace_parent_files": 2139,
+  "workspace_parent_files_unchanged": true,
+  "current_readme_sha256": "135c249071183153dfc4c8873cdaa9245bb29c5ec59126518855ab3b921db079",
+  "execution_readme_sha256": "c03609c855b40cc9abdeddab8e6ac96b5141861fb51cf912f4f47084df1f9feb",
+  "archival_phase1_files_recovered_in_snapshot_only": [
+    "connectome/data/phase1/matrix_index.json",
+    "connectome/data/phase1/nodes.csv",
+    "connectome/data/phase1/processed_edges.csv",
+    "connectome/data/phase1/raw_edges.csv",
+    "connectome/data/phase1/weight_matrix.npy",
+    "connectome/data/phase1/weight_matrix_normalized.npy",
+    "connectome/phase1/matrix_index.json",
+    "connectome/phase1/nodes.csv",
+    "connectome/phase1/processed_edges.csv",
+    "connectome/phase1/raw_edges.csv",
+    "connectome/phase1/weight_matrix.npy",
+    "connectome/phase1/weight_matrix_normalized.npy"
+  ],
+  "rationale": "User pushed Phase 6 and changed README while later phases were stashed. Restore missing files only; execute unchanged frozen parents with their original README in a copy. No branch/reset/stash mutation."
+}

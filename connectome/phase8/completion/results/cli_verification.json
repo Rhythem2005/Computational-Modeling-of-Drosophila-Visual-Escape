@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-m",
+    "connectome.scripts.phase8.completion.run_decoder",
+    "--activity-dir",
+    "connectome/phase7/results/activity",
+    "--stimulus-id",
+    "train_f0000_looming",
+    "--overwrite"
+  ],
+  "exit_code": 0,
+  "array_and_action_equality": true
+}

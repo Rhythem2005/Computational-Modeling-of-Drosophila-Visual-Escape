@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "successful_full_validator_invocations": 2,
+  "initial_development_validator_failure": true,
+  "source_repair": "Phase 9 body-ID adapter corrected from loader list to exact frozen int64 order; no physical/model tuning",
+  "first_pass_utc": "2026-10-11T17:17:07.402980+00:00",
+  "reproduction_pass_utc": "2026-10-11T17:19:13.253305+00:00",
+  "verified_utc": "2026-10-11T17:21:07.235097+00:00",
+  "unique_tests_passed": 410,
+  "phase4_integration_assertions_passed": 159,
+  "phase9_source_files_checked": 17,
+  "numerical_reproduction": "All 15 fixed episode arrays/configs/actions/metrics matched recorded evidence; per-invocation repeats are bitwise identical",
+  "original_workspace_parent_files_unchanged": 2139,
+  "frozen_execution_parent_files_unchanged": 2151,
+  "observed_request_ms": 239.0,
+  "observed_first_motion_ms": 260.0,
+  "near_miss_false_alarm": true,
+  "static_fixture_no_request": true,
+  "synthetic_encoder_valid_fraction_range": [
+    0.7166666666666667,
+    1.0
+  ],
+  "plots_visually_inspected": true,
+  "benchmark_test_neural_or_decision_runs": 0,
+  "phase10_implementation": false,
+  "unresolved": [
+    "No world-domain or separate spatial threshold calibration.",
+    "Expanding noncolliding near-miss causes a false alarm.",
+    "Synthetic spatial trajectories show encoder frame validity from 71.7% to 100%; edge clipping is an observed limitation.",
+    "One-shot latched actuator has feedback-coupled sensing but no ongoing adaptive steering.",
+    "Fixed engineering fixtures and plant parameters do not establish biological behavior or circuit superiority.",
+    "Noise robustness, realistic sensory/motor mappings, held-out experiments and fair control comparisons remain later work.",
+    "Direct earlier-phase verification in the current checkout conflicts with the user-updated README/missing legacy paths; use the documented Phase 9 snapshot launcher.",
+    "Historical Phase 0/PDF evidence gaps and earlier specification discrepancies remain."
+  ]
+}

@@ -1,0 +1,386 @@
+[
+  {
+    "previous_definition": {
+      "version": "1.0.0",
+      "protocol_id": "fly_closed_loop_engineering_v1",
+      "config": {
+        "version": "1.0.0",
+        "protocol_id": "fly_closed_loop_engineering_v1",
+        "duration_ms": 1000,
+        "world_dt_ms": 1.0,
+        "world_units": "abstract",
+        "bounds_xy": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "fly_radius": 0.5,
+        "camera_width": 256,
+        "camera_height": 256,
+        "camera_fps": 60,
+        "camera_center_px": [
+          128.0,
+          128.0
+        ],
+        "camera_focal_px": 160.0,
+        "camera_near_depth": 0.1,
+        "camera_orientation": "stabilized_positive_world_y",
+        "background_uint8": 128,
+        "object_uint8": 64,
+        "actuation_delay_ms": 20,
+        "escape_speed_max": 20.0,
+        "escape_acceleration_max": 400.0,
+        "escape_lateral_angle_max_deg": 60.0,
+        "success_final_clearance_min": 1.0,
+        "obstacle_motion_onset_ms": 200,
+        "spatial_seeds": [
+          55010,
+          55011,
+          55012,
+          55013,
+          55014
+        ],
+        "primary_condition": "uniform_population",
+        "secondary_condition": "synthetic_fields_within_type_and_side_v1",
+        "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration"
+      },
+      "config_sha256": "7628e60cf1d51f5f269cf816dab686233eefcdca74bf3e776847c4b8938ca78c",
+      "fixtures": [
+        {
+          "scenario_id": "world_head_on",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                0.0,
+                20.0
+              ],
+              "velocity": [
+                -0.0,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_left",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                -6.0,
+                20.0
+              ],
+              "velocity": [
+                7.5,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_right",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                6.0,
+                20.0
+              ],
+              "velocity": [
+                -7.5,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_static",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                0.0,
+                20.0
+              ],
+              "velocity": [
+                0.0,
+                0.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_near_miss",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                0.0,
+                20.0
+              ],
+              "velocity": [
+                6.25,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        }
+      ],
+      "sources_sha256": {
+        "connectome/phase9/README.md": "336a083fd2328fa15b79253c54f538d755ad1325831c9c2f86d3df332a58f295",
+        "connectome/phase9/environment_config.yaml": "b1cd0fa9ad9c0c3b1f385565273989d9c25f7f65fbb9175f448dad0f5f70143c",
+        "connectome/phase9/execution_baseline/README.md": "c03609c855b40cc9abdeddab8e6ac96b5141861fb51cf912f4f47084df1f9feb",
+        "connectome/phase9/plan.md": "ce859590c37eb256cc59d541b9d8b56619eb7c6521302fbdd812593b1f9cb635",
+        "connectome/phase9/protocol.md": "16cc090be5bdca2549c07f31d210689a87513be50e8b33c88d3232f270a4b4d4",
+        "connectome/phase9/recovery_record.json": "f1fb62df313b90091f35d7d0a3db96dcee699238359d042707aed69bd465528a",
+        "connectome/phase9/research_notes.md": "dbc126b743b6d9532ff33a422a8f8fb067e2c868e8a7a4eee3a7f91a8613aa40",
+        "connectome/phase9/tests/test_world.py": "8fca556039eee7d72f47659781998e085660d5ced0d69e1a88375838426658fe",
+        "connectome/scripts/phase9/activity_io.py": "e26d36f029f8bccb370af3a1030aa671151b816020a74a31c74ed4bf1bd8ce63",
+        "connectome/scripts/phase9/config.py": "e71a3d8122698b66de2fe3d8bdaa07708c5c20dfc327bb76221365604a3d81e7",
+        "connectome/scripts/phase9/evidence.py": "3cd24bfd15a9d1424c1b5113d878047ceacc260a84b7882f28bebbff158b6720",
+        "connectome/scripts/phase9/launch.py": "41466c13610c8c790e64f0d33dc70a466f14f95eb3125752af46860b8e268a9f",
+        "connectome/scripts/phase9/regression.py": "c4af6dbc3f1d77459157c6fb496ff48f65af02f8507846fce100d3aeb165ce5e",
+        "connectome/scripts/phase9/run_environment.py": "cf81ca92f2517d8c1f9bcae476a7589032012ce81f7a9cee50a96eaf873edc62",
+        "connectome/scripts/phase9/runner.py": "17faa300685666cda77ea0de88490914d0ccf359d7bdefcaa97608adefaad6e3",
+        "connectome/scripts/phase9/validate_phase9.py": "298fa49f5620dfaeb91e9cbe7452a68dadb763beb6d83933115fe8d71357ba96",
+        "connectome/scripts/phase9/world.py": "a649c7815fba6781595f470c0bc09d38915aa1fe37606af4a4340e5983d7627b"
+      },
+      "parent_evidence": {
+        "status": "PASS",
+        "phase8_freeze_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41",
+        "phase8_source_files": 13,
+        "phase8_prerequisites": 401,
+        "delivered_artifacts_checked": 525,
+        "phase8_report_sha256": "6269dcc4a30c1ccd41e5f845eab03eaf66935eb92e5bb15711f7cbcff0071523",
+        "scientific_limits": "World domain not calibration data; synthetic retinotopy/motor assumptions and noise limits retained"
+      },
+      "threshold_fitting": false,
+      "benchmark_test_use": false,
+      "statistical_experiment": false,
+      "definition_saved_before_engineering_model_outcomes": true
+    },
+    "repaired_definition": {
+      "version": "1.0.0",
+      "protocol_id": "fly_closed_loop_engineering_v1",
+      "config": {
+        "version": "1.0.0",
+        "protocol_id": "fly_closed_loop_engineering_v1",
+        "duration_ms": 1000,
+        "world_dt_ms": 1.0,
+        "world_units": "abstract",
+        "bounds_xy": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "fly_radius": 0.5,
+        "camera_width": 256,
+        "camera_height": 256,
+        "camera_fps": 60,
+        "camera_center_px": [
+          128.0,
+          128.0
+        ],
+        "camera_focal_px": 160.0,
+        "camera_near_depth": 0.1,
+        "camera_orientation": "stabilized_positive_world_y",
+        "background_uint8": 128,
+        "object_uint8": 64,
+        "actuation_delay_ms": 20,
+        "escape_speed_max": 20.0,
+        "escape_acceleration_max": 400.0,
+        "escape_lateral_angle_max_deg": 60.0,
+        "success_final_clearance_min": 1.0,
+        "obstacle_motion_onset_ms": 200,
+        "spatial_seeds": [
+          55010,
+          55011,
+          55012,
+          55013,
+          55014
+        ],
+        "primary_condition": "uniform_population",
+        "secondary_condition": "synthetic_fields_within_type_and_side_v1",
+        "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration"
+      },
+      "config_sha256": "7628e60cf1d51f5f269cf816dab686233eefcdca74bf3e776847c4b8938ca78c",
+      "fixtures": [
+        {
+          "scenario_id": "world_head_on",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                0.0,
+                20.0
+              ],
+              "velocity": [
+                -0.0,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_left",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                -6.0,
+                20.0
+              ],
+              "velocity": [
+                7.5,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_right",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                6.0,
+                20.0
+              ],
+              "velocity": [
+                -7.5,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_static",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                0.0,
+                20.0
+              ],
+              "velocity": [
+                0.0,
+                0.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "scenario_id": "world_near_miss",
+          "fly_position": [
+            0.0,
+            0.0
+          ],
+          "obstacles": [
+            {
+              "id": "obstacle_0",
+              "position": [
+                0.0,
+                20.0
+              ],
+              "velocity": [
+                6.25,
+                -25.0
+              ],
+              "radius": 1.5
+            }
+          ]
+        }
+      ],
+      "sources_sha256": {
+        "connectome/phase9/README.md": "336a083fd2328fa15b79253c54f538d755ad1325831c9c2f86d3df332a58f295",
+        "connectome/phase9/environment_config.yaml": "b1cd0fa9ad9c0c3b1f385565273989d9c25f7f65fbb9175f448dad0f5f70143c",
+        "connectome/phase9/execution_baseline/README.md": "c03609c855b40cc9abdeddab8e6ac96b5141861fb51cf912f4f47084df1f9feb",
+        "connectome/phase9/plan.md": "ce859590c37eb256cc59d541b9d8b56619eb7c6521302fbdd812593b1f9cb635",
+        "connectome/phase9/protocol.md": "16cc090be5bdca2549c07f31d210689a87513be50e8b33c88d3232f270a4b4d4",
+        "connectome/phase9/recovery_record.json": "f1fb62df313b90091f35d7d0a3db96dcee699238359d042707aed69bd465528a",
+        "connectome/phase9/research_notes.md": "dbc126b743b6d9532ff33a422a8f8fb067e2c868e8a7a4eee3a7f91a8613aa40",
+        "connectome/phase9/tests/test_world.py": "220ee693c79233c9895de85204906c45fa32c70c1543e92ad44c24fbbbbeabcf",
+        "connectome/scripts/phase9/activity_io.py": "e26d36f029f8bccb370af3a1030aa671151b816020a74a31c74ed4bf1bd8ce63",
+        "connectome/scripts/phase9/config.py": "e71a3d8122698b66de2fe3d8bdaa07708c5c20dfc327bb76221365604a3d81e7",
+        "connectome/scripts/phase9/evidence.py": "2862a7f71c7878c205b7d65fcabd2a07e58de08677ab509c96fb27810c62f417",
+        "connectome/scripts/phase9/launch.py": "41466c13610c8c790e64f0d33dc70a466f14f95eb3125752af46860b8e268a9f",
+        "connectome/scripts/phase9/regression.py": "c4af6dbc3f1d77459157c6fb496ff48f65af02f8507846fce100d3aeb165ce5e",
+        "connectome/scripts/phase9/run_environment.py": "a423e009e13df257120d87731fac51eb7a99dab78ec09e1d8f818242f25b0147",
+        "connectome/scripts/phase9/runner.py": "8dfd2b8b23750f8de11546a2c29992d62efa4542dd178fbcbf57e0e99136706a",
+        "connectome/scripts/phase9/validate_phase9.py": "298fa49f5620dfaeb91e9cbe7452a68dadb763beb6d83933115fe8d71357ba96",
+        "connectome/scripts/phase9/world.py": "a649c7815fba6781595f470c0bc09d38915aa1fe37606af4a4340e5983d7627b"
+      },
+      "parent_evidence": {
+        "status": "PASS",
+        "phase8_freeze_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41",
+        "phase8_source_files": 13,
+        "phase8_prerequisites": 401,
+        "delivered_artifacts_checked": 525,
+        "phase8_report_sha256": "6269dcc4a30c1ccd41e5f845eab03eaf66935eb92e5bb15711f7cbcff0071523",
+        "scientific_limits": "World domain not calibration data; synthetic retinotopy/motor assumptions and noise limits retained"
+      },
+      "threshold_fitting": false,
+      "benchmark_test_use": false,
+      "statistical_experiment": false,
+      "definition_saved_before_engineering_model_outcomes": true
+    },
+    "time_utc": "2026-10-11T17:16:24.021184+00:00",
+    "reason": "Source-only correctness repair; model/world/fixture definitions unchanged"
+  }
+]

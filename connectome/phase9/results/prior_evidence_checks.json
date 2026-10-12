@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "phase8_freeze_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41",
+  "phase8_source_files": 13,
+  "phase8_prerequisites": 401,
+  "delivered_artifacts_checked": 525,
+  "phase8_report_sha256": "6269dcc4a30c1ccd41e5f845eab03eaf66935eb92e5bb15711f7cbcff0071523",
+  "scientific_limits": "World domain not calibration data; synthetic retinotopy/motor assumptions and noise limits retained"
+}

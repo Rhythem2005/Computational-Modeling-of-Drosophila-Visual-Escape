@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "previous": {
+    "status": "PASS",
+    "phase6": {
+      "status": "PASS",
+      "checked_locked_files": 152,
+      "encoded_files_checked": 1024,
+      "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+      "scales": [
+        8.632185525889524,
+        8.417362938348457
+      ],
+      "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002"
+    },
+    "phase7_source_files": 9,
+    "phase7_saved_episodes": 8,
+    "phase7_validation_sha256": "ca9360474b80e1b095a9bbbdd86966348beca6721e1baafb104a7f51245f9e75"
+  },
+  "checkpoint_report_sha256": "c1ce5319515e1d1ba97694a58e72a0de0e4d4156461c76a1afbb84f13e6872db",
+  "checkpoint_lock_sha256": "4682a4de3c51cade8a7a1dd9dd59084d7c28b7149ac39b1c52424340a1939faa"
+}

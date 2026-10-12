@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="3" failures="5" skipped="0" tests="27" time="6.658" timestamp="2026-10-11T22:45:16.581432+05:30" hostname="RHYTHEMs-MacBook-Air.local"><testcase classname="connectome.phase9.tests.test_world" name="test_analytic_sweeps_tangent_contact_tunneling[p0-d0-1-0.4]" time="0.001" /><testcase classname="connectome.phase9.tests.test_world" name="test_analytic_sweeps_tangent_contact_tunneling[p1-d1-1-0.5]" time="0.000" /><testcase classname="connectome.phase9.tests.test_world" name="test_analytic_sweeps_tangent_contact_tunneling[p2-d2-1-0]" time="0.000" /><testcase classname="connectome.phase9.tests.test_world" name="test_analytic_sweeps_tangent_contact_tunneling[p3-d3-1-None]" time="0.000" /><testcase classname="connectome.phase9.tests.test_world" name="test_analytic_sweeps_tangent_contact_tunneling[p4-d4-1-None]" time="0.000" /><testcase classname="connectome.phase9.tests.test_world" name="test_analytic_sweeps_tangent_contact_tunneling[p5-d5-1-1]" time="0.000" /><testcase classname="connectome.phase9.tests.test_world" name="test_analytic_sweeps_tangent_contact_tunneling[p6-d6-1-None]" time="0.000" /><testcase classname="connectome.phase9.tests.test_world" name="test_swept_geometry_invalid_and_closest_clearance" time="0.000" /><testcase classname="connectome.phase9.tests.test_world" name="test_geometry_only_labels[world_head_on-True]" time="0.001" /><testcase classname="connectome.phase9.tests.test_world" name="test_geometry_only_labels[world_left-True]" time="0.001" /><testcase classname="connectome.phase9.tests.test_world" name="test_geometry_only_labels[world_right-True]" time="0.001" /><testcase classname="connectome.phase9.tests.test_world" name="test_geometry_only_labels[world_static-False]" time="0.001" /><testcase classname="connectome.phase9.tests.test_world" name="test_geometry_only_labels[world_near_miss-False]" time="0.001" /><testcase classname="connectome.phase9.tests.test_world" name="test_actuator_delay_latch_bounds_and_no_step_after_end" time="0.025" /><testcase classname="connectome.phase9.tests.test_world" name="test_collision_partial_step_boundary_and_initial_overlap" time="0.005" /><testcase classname="connectome.phase9.tests.test_world" name="test_horizon_contact_is_collision_not_survival" time="0.023" /><testcase classname="connectome.phase9.tests.test_world" name="test_invalid_config_scenario" time="0.001" /><testcase classname="connectome.phase9.tests.test_world" name="test_camera_perspective_translation_behind_and_current_only" time="0.004" /><testcase classname="connectome.phase9.tests.test_world" name="test_streamed_full_batch_frozen_interfaces" time="0.915"><error message="failed on setup with &quot;ValueError: Body IDs must match frozen Circuit v2 CSV ordering&quot;">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+
+    @pytest.fixture(scope="module")
+&gt;   def primary(runner):return runner.run(fixtures()[0])
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.  ...835],
+       [7.57139227, 4.3993661 , 1.53288669, ..., 0.47079002, 0.36323991,
+        0.30888413]], shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</error></testcase><testcase classname="connectome.phase9.tests.test_world" name="test_fractional_timing_and_action_future_prefix" time="0.000"><error message="failed on setup with &quot;ValueError: Body IDs must match frozen Circuit v2 CSV ordering&quot;">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+
+    @pytest.fixture(scope="module")
+&gt;   def primary(runner):return runner.run(fixtures()[0])
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.  ...835],
+       [7.57139227, 4.3993661 , 1.53288669, ..., 0.47079002, 0.36323991,
+        0.30888413]], shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</error></testcase><testcase classname="connectome.phase9.tests.test_world" name="test_synthetic_seed_streaming_equivalence[55010]" time="1.068"><failure message="ValueError: Body IDs must match frozen Circuit v2 CSV ordering">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+seed = 55010
+
+    @pytest.mark.parametrize("seed",[55010,55011,55012,55013,55014])
+    def test_synthetic_seed_streaming_equivalence(runner,seed):
+&gt;       run=runner.run(fixtures()[1],condition=load_config()["secondary_condition"],seed=seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+...3.39987791e-02, 7.34206009e-01, ...,
+        1.18646947e-03, 8.12298966e-04, 4.96010142e-04]],
+      shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</failure></testcase><testcase classname="connectome.phase9.tests.test_world" name="test_synthetic_seed_streaming_equivalence[55011]" time="1.065"><failure message="ValueError: Body IDs must match frozen Circuit v2 CSV ordering">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+seed = 55011
+
+    @pytest.mark.parametrize("seed",[55010,55011,55012,55013,55014])
+    def test_synthetic_seed_streaming_equivalence(runner,seed):
+&gt;       run=runner.run(fixtures()[1],condition=load_config()["secondary_condition"],seed=seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+...8.43951724e-03, 8.96513147e-02, ...,
+        1.81991304e-04, 1.10376656e-04, 7.58653511e-05]],
+      shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</failure></testcase><testcase classname="connectome.phase9.tests.test_world" name="test_synthetic_seed_streaming_equivalence[55012]" time="1.083"><failure message="ValueError: Body IDs must match frozen Circuit v2 CSV ordering">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+seed = 55012
+
+    @pytest.mark.parametrize("seed",[55010,55011,55012,55013,55014])
+    def test_synthetic_seed_streaming_equivalence(runner,seed):
+&gt;       run=runner.run(fixtures()[1],condition=load_config()["secondary_condition"],seed=seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+...4.40033748e-03, 4.46308452e-02, ...,
+        8.88814667e-05, 5.48094540e-05, 3.30436085e-05]],
+      shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</failure></testcase><testcase classname="connectome.phase9.tests.test_world" name="test_synthetic_seed_streaming_equivalence[55013]" time="1.072"><failure message="ValueError: Body IDs must match frozen Circuit v2 CSV ordering">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+seed = 55013
+
+    @pytest.mark.parametrize("seed",[55010,55011,55012,55013,55014])
+    def test_synthetic_seed_streaming_equivalence(runner,seed):
+&gt;       run=runner.run(fixtures()[1],condition=load_config()["secondary_condition"],seed=seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+...2.35527201e-04, 2.60239009e-03, ...,
+        2.33485946e-06, 1.44626521e-06, 8.70942281e-07]],
+      shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</failure></testcase><testcase classname="connectome.phase9.tests.test_world" name="test_synthetic_seed_streaming_equivalence[55014]" time="1.059"><failure message="ValueError: Body IDs must match frozen Circuit v2 CSV ordering">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+seed = 55014
+
+    @pytest.mark.parametrize("seed",[55010,55011,55012,55013,55014])
+    def test_synthetic_seed_streaming_equivalence(runner,seed):
+&gt;       run=runner.run(fixtures()[1],condition=load_config()["secondary_condition"],seed=seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+...1.33495373e-04, 1.51147074e-03, ...,
+        1.13823528e-06, 7.05209778e-07, 4.23709706e-07]],
+      shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</failure></testcase><testcase classname="connectome.phase9.tests.test_world" name="test_scripted_action_changes_later_observations" time="0.017" /><testcase classname="connectome.phase9.tests.test_world" name="test_repeat_and_saved_schema_roundtrip" time="0.000"><error message="failed on setup with &quot;ValueError: Body IDs must match frozen Circuit v2 CSV ordering&quot;">runner = &lt;connectome.scripts.phase9.runner.ClosedLoopRunner object at 0x10ef3f770&gt;
+
+    @pytest.fixture(scope="module")
+&gt;   def primary(runner):return runner.run(fixtures()[0])
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+connectome/phase9/tests/test_world.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+connectome/scripts/phase9/runner.py:88: in run
+    offline,steering,action=self.decoder.decode_activity(np.arange(n,dtype=np.float64),states[:n],self.pipeline.circuit.body_ids,c["duration_ms"],
+connectome/scripts/phase8/completion/decoder.py:72: in decode_activity
+    decoded = self.core.decode_activity(times_ms, states, body_ids, duration_ms)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;connectome.scripts.phase8.decoder.InitiationDecoder object at 0x10f3d4590&gt;
+times_ms = array([  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,
+        11.,  12.,  13.,  14.,  15.,  16.,  1...1., 982., 983., 984., 985., 986., 987., 988., 989.,
+       990., 991., 992., 993., 994., 995., 996., 997., 998., 999.])
+states = array([[0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.  ...835],
+       [7.57139227, 4.3993661 , 1.53288669, ..., 0.47079002, 0.36323991,
+        0.30888413]], shape=(1000, 321))
+body_ids = [10010, 10001, 10197, 10117, 531898, 11137, ...], duration_ms = 1000
+threshold_status = 'provisional_not_validation_selected'
+
+    def decode_activity(self, times_ms, states, body_ids, duration_ms, *, threshold_status="provisional_not_validation_selected"):
+        if isinstance(duration_ms, bool) or not isinstance(duration_ms, (int, float)) or not np.isfinite(duration_ms) or duration_ms &lt;= 0 or duration_ms != round(duration_ms):
+            raise ValueError("Explicit positive duration on the 1 ms grid required")
+        if not isinstance(body_ids, np.ndarray) or body_ids.dtype != np.int64 or not np.array_equal(body_ids, self.body_ids):
+&gt;           raise ValueError("Body IDs must match frozen Circuit v2 CSV ordering")
+E           ValueError: Body IDs must match frozen Circuit v2 CSV ordering
+
+connectome/scripts/phase8/decoder.py:162: ValueError</error></testcase></testsuite></testsuites>

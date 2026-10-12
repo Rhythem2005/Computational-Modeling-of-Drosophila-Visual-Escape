@@ -1,0 +1,78 @@
+{
+  "provenance": {
+    "mapping_sha256": "d1b8cb807e4e5d285d5ac2d89c6a0285bd3b220fdd7922e3f6c37abda89a606e",
+    "config_sha256": "787c08aba2aa34ce7fddbd883760e70a80055dc7f1aae150e42a67cf77f289f2",
+    "activity_sha256": "03727fccdaff4adacba1dabfbf99f0c6b749bb1cf5dc967884858a477a727f1b",
+    "frames_sha256": "dc52ad80bad23ce05f0f185a9ef708c9db826b4f3df1d334a32c330b3c6c1a84",
+    "timestamps_sha256": "d29cabdf47996552a5e59f556f24f8739c88c6bd154a049cfd5ea613b94459d4",
+    "simulation_config": {
+      "circuit": {
+        "version": "2.0.0",
+        "nodes_file": "connectome/phase3/circuit_v2_nodes.csv",
+        "edges_file": "connectome/phase3/circuit_v2_edges.csv"
+      },
+      "dt": 1.0,
+      "duration": 1000,
+      "gain": 0.5,
+      "phi": "relu",
+      "clip_max": 50.0,
+      "tau": {
+        "default": 10.0,
+        "LC4": 10.0,
+        "LPLC2": 10.0,
+        "DNp01": 10.0,
+        "DNp04": 10.0,
+        "DNp06": 10.0,
+        "DNp02": 10.0,
+        "DNp11": 10.0
+      },
+      "bias": {
+        "default": 0.0
+      },
+      "sign_map": {
+        "acetylcholine": 1.0,
+        "GABA": -1.0,
+        "glutamate": -1.0
+      },
+      "input_scale": 0.4,
+      "response_floor": 1e-08,
+      "convergence_step_tolerance": 0.001,
+      "pulse_residual_fraction_tolerance": 0.05,
+      "dt_response_tolerance": 0.02,
+      "dt_auc_tolerance": 0.02,
+      "dt_values_ms": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "gain_sensitivity_values": [
+        0.3,
+        0.5,
+        0.6
+      ],
+      "seed": 42,
+      "noise_std": 0.0
+    },
+    "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+    "calibration_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41",
+    "seed": 55013,
+    "bitwise_repeat": true
+  },
+  "steering": {
+    "mode": "synthetic_engineered_turn",
+    "condition_id": "synthetic_fields_within_type_and_side_v1",
+    "positive_turn": "rightward",
+    "units": "normalized request [-1,1]",
+    "biological_mapping_validated": false
+  },
+  "action_sha256": "c46a8d818879d403e086aa6abf8d50fcbd3e2064e0ffbeb2b65b44e7b5e06c4b",
+  "arrays_sha256": "37ed8f3483db3ae0978afcebb2f06c983bb4fd6003e63c0a8934885b20430a35",
+  "invocation": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/scripts/phase8/completion/validate_completion.py"
+  ],
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3"
+  }
+}

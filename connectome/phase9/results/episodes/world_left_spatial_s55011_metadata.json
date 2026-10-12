@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "fly_closed_loop_engineering_v1",
+  "arrays_sha256": "052d46ec18116504698b375d59b995743f7c0f382363c4135554d0cd85020c72",
+  "config_sha256": "54c32dc9a1c7509fc500cfba910b32d7f6abf95af9706e896079bc2efe38f779",
+  "files_sha256": {
+    "world_left_spatial_s55011.npz": "052d46ec18116504698b375d59b995743f7c0f382363c4135554d0cd85020c72",
+    "world_left_spatial_s55011_config.json": "7535253118ddf0b10af75cd31c14a76428265c96423104e4885aa832df8290c2",
+    "world_left_spatial_s55011_action.json": "dbb222fb1c523572a1691e1cf39df5c4d64e22fc7c9c063ce5833546d2503a96",
+    "world_left_spatial_s55011_metrics.json": "28abb8b1fa2b661730b5793895901cf0ec1baeb37179c686d14443340e59aa1e"
+  },
+  "units": {
+    "neural_time": "ms",
+    "frame_time": "s",
+    "world_position": "abstract world units",
+    "speed": "world units/s",
+    "activity": "arbitrary model units",
+    "turn": "normalized request [-1,1]"
+  },
+  "endpoint_semantics": "No decision after physical termination or at the 1s endpoint; diagnostic neural endpoint only if its full step completed",
+  "condition": "synthetic_fields_within_type_and_side_v1",
+  "seed": 55011,
+  "world_calibration_status": "frozen_open_loop_threshold_reused_without_world_calibration",
+  "invocation": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase9-execution-u6zv0cpi/connectome/scripts/phase9/validate_phase9.py"
+  ],
+  "run_time_utc": "2026-10-11T17:18:55.568723+00:00",
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3"
+  }
+}

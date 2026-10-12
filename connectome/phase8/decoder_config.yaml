@@ -1,0 +1,19 @@
+decoder_version: '1.1.0'
+base_protocol_id: fly_open_loop_v1
+threshold_amendment_id: fly_decoder_thresholds_v1_1
+score: bilateral_DNp01_mean
+dn_body_ids: [10010, 10001]
+dt_ms: 1.0
+persistence_ms: 20.0
+comparison: greater_or_equal
+persistence_window: closed_inclusive
+episode_interval: half_open
+observation_window_s: [0.2, 1.0]
+action: escape_initiation_requested
+event_policy: first_event_latched
+steering: unavailable_no_spatial_mapping
+threshold_candidate_limit: 32
+threshold_policy: next_float_above_training_negative_quantile
+demo_candidate: highest_training_negative_quantile
+demo_status: provisional_not_validation_selected
+final_calibration_requires: [feature_only_control, linear_temporal_control]

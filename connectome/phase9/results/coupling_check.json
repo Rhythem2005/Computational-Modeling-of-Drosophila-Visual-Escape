@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "request_ms": 300,
+  "before_frame_ms": 300,
+  "after_frame_ms": 400,
+  "scripted_turn": 0,
+  "before_frames_equal": true,
+  "after_frames_differ": true,
+  "pixels_differ": 100,
+  "fly_displacement_difference": 1.0900000000000005,
+  "interpretation": "scripted plumbing check only; no controller baseline, tuning or efficacy comparison"
+}

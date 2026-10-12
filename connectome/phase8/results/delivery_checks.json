@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "standalone_cli_matches_validation_arrays_bitwise": true,
+  "standalone_cli_action_matches": true,
+  "cli_npz_sha256": "610f9a36165382f63d416e9889fb4aa8d9113505de049b2e9697d75b9d18d126",
+  "protected_files": 1326,
+  "protected_files_unchanged_at_delivery": true,
+  "plots_visually_reviewed": [
+    "train_f0000_requests.png",
+    "train_f0001_requests.png"
+  ]
+}

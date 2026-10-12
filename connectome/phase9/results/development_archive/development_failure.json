@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "stage": "tests",
+  "counts": {
+    "tests": 27,
+    "failures": 5,
+    "errors": 3,
+    "skipped": 0
+  },
+  "exit_code": 1
+}

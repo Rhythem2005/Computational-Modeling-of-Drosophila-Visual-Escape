@@ -1,0 +1,2194 @@
+{
+  "version": "1.0",
+  "condition_id": "synthetic_fields_within_type_and_side_v1",
+  "seed": 55014,
+  "sigma": 0.35,
+  "fields": [
+    {
+      "bodyId": 12032,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.5821438437978129,
+      "center_y": -0.8026256842296549
+    },
+    {
+      "bodyId": 12349,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.5723656242714482,
+      "center_y": 0.4187628668987846
+    },
+    {
+      "bodyId": 12824,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.9460660601045375,
+      "center_y": 0.42567789039678927
+    },
+    {
+      "bodyId": 14888,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.7333144997278176,
+      "center_y": -0.5716054708750111
+    },
+    {
+      "bodyId": 15018,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.12325868916306426,
+      "center_y": -0.3468861180705589
+    },
+    {
+      "bodyId": 16809,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.13861491637124146,
+      "center_y": -0.16909547861144203
+    },
+    {
+      "bodyId": 16917,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.19669041373763307,
+      "center_y": -0.3835056108097068
+    },
+    {
+      "bodyId": 17270,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.33055965252322905,
+      "center_y": -0.5199031368797546
+    },
+    {
+      "bodyId": 17340,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.546844418786266,
+      "center_y": -0.5135649702288256
+    },
+    {
+      "bodyId": 17478,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.581795716887009,
+      "center_y": -0.2976481510370894
+    },
+    {
+      "bodyId": 17608,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6982714103162194,
+      "center_y": 0.31413726174132317
+    },
+    {
+      "bodyId": 17653,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.343696909368174,
+      "center_y": 0.04392011563747533
+    },
+    {
+      "bodyId": 18396,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.4273559268955781,
+      "center_y": -0.10668431602186268
+    },
+    {
+      "bodyId": 18432,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.5272691056104372,
+      "center_y": 0.7880856100138309
+    },
+    {
+      "bodyId": 18478,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6501149863989465,
+      "center_y": -0.9949640847259409
+    },
+    {
+      "bodyId": 20440,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.7215471720761149,
+      "center_y": -0.5398350279562287
+    },
+    {
+      "bodyId": 20572,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.4843540522223956,
+      "center_y": 0.37321828149919023
+    },
+    {
+      "bodyId": 20859,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.8175421836654043,
+      "center_y": 0.7692948899385432
+    },
+    {
+      "bodyId": 20967,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6460058283059743,
+      "center_y": 0.8986704801330441
+    },
+    {
+      "bodyId": 20976,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.7434842396229507,
+      "center_y": 0.9347781759129372
+    },
+    {
+      "bodyId": 21721,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.8010389290819232,
+      "center_y": -0.22391510286808192
+    },
+    {
+      "bodyId": 22772,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.03206793155002585,
+      "center_y": -0.6924825220865647
+    },
+    {
+      "bodyId": 22922,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.518336861637084,
+      "center_y": -0.8822287237888597
+    },
+    {
+      "bodyId": 23202,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.8637519429882994,
+      "center_y": 0.0392082474411557
+    },
+    {
+      "bodyId": 23226,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.47421785135750993,
+      "center_y": 0.6642940243437303
+    },
+    {
+      "bodyId": 24523,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.612024780025354,
+      "center_y": -0.1308231135787541
+    },
+    {
+      "bodyId": 27624,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6544623200832006,
+      "center_y": 0.9435637055564869
+    },
+    {
+      "bodyId": 27750,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.3380012364865499,
+      "center_y": 0.22399840283063766
+    },
+    {
+      "bodyId": 27829,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6961975655302832,
+      "center_y": -0.22724708129342464
+    },
+    {
+      "bodyId": 28980,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.573191394329071,
+      "center_y": 0.02568790522272879
+    },
+    {
+      "bodyId": 29417,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.1571474775497812,
+      "center_y": 0.04881061870020398
+    },
+    {
+      "bodyId": 29469,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.9045509499348461,
+      "center_y": 0.8796580208233877
+    },
+    {
+      "bodyId": 29514,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.43168890261898485,
+      "center_y": 0.31570719007512094
+    },
+    {
+      "bodyId": 30087,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.9327799430118381,
+      "center_y": -0.4778443177848666
+    },
+    {
+      "bodyId": 31301,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.4409866104822051,
+      "center_y": -0.2529128466917483
+    },
+    {
+      "bodyId": 31308,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.2545325757359129,
+      "center_y": -0.9508117974600299
+    },
+    {
+      "bodyId": 31429,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.641754108170876,
+      "center_y": 0.8921043043941093
+    },
+    {
+      "bodyId": 32597,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.4950000252814848,
+      "center_y": -0.8180171924303163
+    },
+    {
+      "bodyId": 33137,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.7992366130342573,
+      "center_y": 0.9167862365024517
+    },
+    {
+      "bodyId": 34845,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.8705410297462035,
+      "center_y": -0.6566481998900651
+    },
+    {
+      "bodyId": 35262,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.3595059742966773,
+      "center_y": 0.10048833431652282
+    },
+    {
+      "bodyId": 35616,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.05303831714816809,
+      "center_y": -0.6225652885890474
+    },
+    {
+      "bodyId": 37587,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.3503429393716988,
+      "center_y": 0.6429340602174427
+    },
+    {
+      "bodyId": 77614,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.3858411799957343,
+      "center_y": 0.8174243469128415
+    },
+    {
+      "bodyId": 81112,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.5471064844490774,
+      "center_y": 0.9980805358799911
+    },
+    {
+      "bodyId": 100485,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.029860384845049937,
+      "center_y": -0.9359740189602106
+    },
+    {
+      "bodyId": 107513,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.9141071667905497,
+      "center_y": -0.39048565363417853
+    },
+    {
+      "bodyId": 111787,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.4551602751045758,
+      "center_y": -0.5341890251841455
+    },
+    {
+      "bodyId": 511914,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.9952081241366892,
+      "center_y": 0.8034849898129917
+    },
+    {
+      "bodyId": 512366,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.05478866314973985,
+      "center_y": 0.45863510000285523
+    },
+    {
+      "bodyId": 512705,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.44988722377550383,
+      "center_y": 0.9789368835147398
+    },
+    {
+      "bodyId": 514508,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.31488012171484914,
+      "center_y": 0.5740864420898568
+    },
+    {
+      "bodyId": 514956,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6463791847682095,
+      "center_y": -0.8673774925124054
+    },
+    {
+      "bodyId": 515476,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.24222611252952242,
+      "center_y": 0.7984272094365177
+    },
+    {
+      "bodyId": 515900,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6688247904839771,
+      "center_y": 0.061584843901203445
+    },
+    {
+      "bodyId": 516909,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.7462350020015135,
+      "center_y": 0.26231022968551687
+    },
+    {
+      "bodyId": 517752,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.1320232391855911,
+      "center_y": -0.4656719279052759
+    },
+    {
+      "bodyId": 518016,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.8639519930547236,
+      "center_y": -0.32783726469606167
+    },
+    {
+      "bodyId": 518439,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.0652682999218519,
+      "center_y": 0.07754558750949392
+    },
+    {
+      "bodyId": 518544,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.9368107032271882,
+      "center_y": -0.44510373495265276
+    },
+    {
+      "bodyId": 518730,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.05130271555191579,
+      "center_y": -0.8221626255906163
+    },
+    {
+      "bodyId": 518983,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.29686203840097214,
+      "center_y": 0.4282249868451027
+    },
+    {
+      "bodyId": 519650,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.30668195932061126,
+      "center_y": -0.7674195550094958
+    },
+    {
+      "bodyId": 519931,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.7001975996302132,
+      "center_y": 0.5387788830086957
+    },
+    {
+      "bodyId": 520449,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.37033342830771554,
+      "center_y": -0.21805225349848145
+    },
+    {
+      "bodyId": 524899,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.6174838279560907,
+      "center_y": -0.3357477059147933
+    },
+    {
+      "bodyId": 526286,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.8121386681302631,
+      "center_y": 0.6662165267693632
+    },
+    {
+      "bodyId": 530029,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.35300816215493624,
+      "center_y": -0.9408703242905734
+    },
+    {
+      "bodyId": 532254,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.35391149164391844,
+      "center_y": 0.34925410433513226
+    },
+    {
+      "bodyId": 533129,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.30691881841688706,
+      "center_y": -0.4723985752270481
+    },
+    {
+      "bodyId": 535341,
+      "type": "LC4",
+      "side": "left",
+      "center_x": -0.5482406153208464,
+      "center_y": -0.8775374709118302
+    },
+    {
+      "bodyId": 16128,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.7204444405014614,
+      "center_y": -0.41392613416268675
+    },
+    {
+      "bodyId": 16138,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.07175176097147717,
+      "center_y": 0.5768244904266093
+    },
+    {
+      "bodyId": 16628,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.9555434153839811,
+      "center_y": 0.9491957980279695
+    },
+    {
+      "bodyId": 17054,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.4449540960921825,
+      "center_y": -0.0891457815280452
+    },
+    {
+      "bodyId": 17266,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.3113619740841048,
+      "center_y": -0.4194973894298901
+    },
+    {
+      "bodyId": 17364,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.15717581537715486,
+      "center_y": 0.8335288317445875
+    },
+    {
+      "bodyId": 17548,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.6792781387104222,
+      "center_y": 0.15157565624712022
+    },
+    {
+      "bodyId": 17668,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.5090509259012188,
+      "center_y": 0.5522464661494633
+    },
+    {
+      "bodyId": 17860,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.030500083723016935,
+      "center_y": -0.024990695551959652
+    },
+    {
+      "bodyId": 17926,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.6855316392623336,
+      "center_y": -0.9589453700793109
+    },
+    {
+      "bodyId": 17987,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.28614305670922147,
+      "center_y": -0.5276123357294586
+    },
+    {
+      "bodyId": 18127,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.9083841446535934,
+      "center_y": 0.18617606613131565
+    },
+    {
+      "bodyId": 18189,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.43034719740927574,
+      "center_y": -0.6519887066746759
+    },
+    {
+      "bodyId": 19260,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.11954529741444042,
+      "center_y": -0.4188127107385977
+    },
+    {
+      "bodyId": 19420,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.3602549095308214,
+      "center_y": 0.3448085941762442
+    },
+    {
+      "bodyId": 19543,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.8222125709156934,
+      "center_y": 0.18848701432114456
+    },
+    {
+      "bodyId": 19550,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.1557035063972133,
+      "center_y": 0.04452659360161726
+    },
+    {
+      "bodyId": 19634,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.9582338586863556,
+      "center_y": -0.5732512731202999
+    },
+    {
+      "bodyId": 19794,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.8387178807445612,
+      "center_y": 0.02012561243976685
+    },
+    {
+      "bodyId": 19954,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.36829724642584427,
+      "center_y": 0.30355788280883367
+    },
+    {
+      "bodyId": 20016,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.7421604614089926,
+      "center_y": 0.9690661900657567
+    },
+    {
+      "bodyId": 20282,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.7469469421188156,
+      "center_y": 0.8846154390783236
+    },
+    {
+      "bodyId": 20399,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.3730354058726465,
+      "center_y": -0.4629356026757139
+    },
+    {
+      "bodyId": 20542,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.04296643971005154,
+      "center_y": 0.23638251158817125
+    },
+    {
+      "bodyId": 20588,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.1449760574551754,
+      "center_y": -0.3196185652476782
+    },
+    {
+      "bodyId": 20673,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.12701444489685065,
+      "center_y": -0.15692469696719002
+    },
+    {
+      "bodyId": 20808,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.6698407174829424,
+      "center_y": -0.5378127686544931
+    },
+    {
+      "bodyId": 20917,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.8966165404397891,
+      "center_y": 0.45236081548139295
+    },
+    {
+      "bodyId": 21151,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.5858037181946772,
+      "center_y": -0.29652893371183375
+    },
+    {
+      "bodyId": 21165,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.07560118238075053,
+      "center_y": -0.9866784227539025
+    },
+    {
+      "bodyId": 21225,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.8745925123338099,
+      "center_y": -0.0012893483325091548
+    },
+    {
+      "bodyId": 21287,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.2765545139961847,
+      "center_y": -0.6415021892687083
+    },
+    {
+      "bodyId": 21313,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.27677413861943845,
+      "center_y": -0.8921948352154521
+    },
+    {
+      "bodyId": 21336,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.0785385938468195,
+      "center_y": -0.8802772138146355
+    },
+    {
+      "bodyId": 21804,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.7296859253370559,
+      "center_y": 0.20431003288970628
+    },
+    {
+      "bodyId": 22034,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.7419733945761272,
+      "center_y": -0.34631879172230207
+    },
+    {
+      "bodyId": 22194,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.2139652456560639,
+      "center_y": 0.029706588746561735
+    },
+    {
+      "bodyId": 22328,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.9933690976776677,
+      "center_y": -0.3160642573704673
+    },
+    {
+      "bodyId": 22847,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.8428816686261051,
+      "center_y": -0.3689649251647078
+    },
+    {
+      "bodyId": 22966,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.34827339127820534,
+      "center_y": -0.6454281295871271
+    },
+    {
+      "bodyId": 22975,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.8881867681751949,
+      "center_y": 0.1966524050009204
+    },
+    {
+      "bodyId": 23098,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.17063539129478777,
+      "center_y": 0.8312647214940587
+    },
+    {
+      "bodyId": 23392,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.30521485938167825,
+      "center_y": -0.07814928111764452
+    },
+    {
+      "bodyId": 23792,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.09943754024917217,
+      "center_y": 0.4196880566887915
+    },
+    {
+      "bodyId": 23929,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.5949923289045896,
+      "center_y": 0.5506726158848274
+    },
+    {
+      "bodyId": 24338,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.010744897668905296,
+      "center_y": 0.6429075226001517
+    },
+    {
+      "bodyId": 25584,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.5662167944147013,
+      "center_y": -0.8325832759042495
+    },
+    {
+      "bodyId": 26112,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.12473732200351606,
+      "center_y": 0.238219178994161
+    },
+    {
+      "bodyId": 28945,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.9545261893394856,
+      "center_y": 0.27055513916100504
+    },
+    {
+      "bodyId": 29563,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.3722799007678632,
+      "center_y": 0.8679434297512523
+    },
+    {
+      "bodyId": 30480,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.01104046035078099,
+      "center_y": 0.9312236215455691
+    },
+    {
+      "bodyId": 30803,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.15366419038714396,
+      "center_y": -0.422558173627966
+    },
+    {
+      "bodyId": 31262,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.1784010995364962,
+      "center_y": -0.7145730643867008
+    },
+    {
+      "bodyId": 38065,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.2831837513178218,
+      "center_y": -0.1780030331312008
+    },
+    {
+      "bodyId": 527408,
+      "type": "LC4",
+      "side": "right",
+      "center_x": 0.4552846209630651,
+      "center_y": 0.22637707022031361
+    },
+    {
+      "bodyId": 11498,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.010222147590991826,
+      "center_y": 0.022669843789343558
+    },
+    {
+      "bodyId": 12384,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.9124870906059652,
+      "center_y": 0.8576032537677063
+    },
+    {
+      "bodyId": 13132,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.4776630818730585,
+      "center_y": -0.2417557617161401
+    },
+    {
+      "bodyId": 13726,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5391072430349529,
+      "center_y": 0.9914965118512198
+    },
+    {
+      "bodyId": 13764,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.12032566568552983,
+      "center_y": -0.10098740336368972
+    },
+    {
+      "bodyId": 14030,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.21078249957215578,
+      "center_y": -0.16495825594940805
+    },
+    {
+      "bodyId": 14102,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.3584109716007152,
+      "center_y": 0.3992494343512576
+    },
+    {
+      "bodyId": 15804,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.8050066958288233,
+      "center_y": -0.17929116078922558
+    },
+    {
+      "bodyId": 17059,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.161513312374305,
+      "center_y": -0.05376627476157725
+    },
+    {
+      "bodyId": 17544,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.971608035473912,
+      "center_y": -0.7994545766766801
+    },
+    {
+      "bodyId": 17774,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5138687305671344,
+      "center_y": 0.1903598752311113
+    },
+    {
+      "bodyId": 17775,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.769180043233093,
+      "center_y": 0.7163541355030651
+    },
+    {
+      "bodyId": 17880,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.857071298493734,
+      "center_y": -0.41268849164447596
+    },
+    {
+      "bodyId": 17990,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.11485292066570685,
+      "center_y": -0.741787326526451
+    },
+    {
+      "bodyId": 18900,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.21329805098318944,
+      "center_y": -0.7200814124812998
+    },
+    {
+      "bodyId": 18936,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.05255057889081871,
+      "center_y": 0.5958724879108033
+    },
+    {
+      "bodyId": 19787,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7130295563320213,
+      "center_y": 0.5383205701396034
+    },
+    {
+      "bodyId": 19830,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.8045598201105756,
+      "center_y": -0.1516836496339493
+    },
+    {
+      "bodyId": 19911,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.643772783291035,
+      "center_y": 0.18392612707533496
+    },
+    {
+      "bodyId": 20240,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7545772785819295,
+      "center_y": 0.7419837126596012
+    },
+    {
+      "bodyId": 20329,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5308783080897882,
+      "center_y": 0.20527726356464737
+    },
+    {
+      "bodyId": 20799,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.04264436210847944,
+      "center_y": -0.03864760107364784
+    },
+    {
+      "bodyId": 21299,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5151438444209135,
+      "center_y": 0.4722911722692502
+    },
+    {
+      "bodyId": 21361,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5935824794633053,
+      "center_y": -0.7206797002560088
+    },
+    {
+      "bodyId": 22253,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7013606831031961,
+      "center_y": -0.6195520037785143
+    },
+    {
+      "bodyId": 22557,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.25892820432201313,
+      "center_y": 0.8832449322119531
+    },
+    {
+      "bodyId": 23247,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.13272227215758492,
+      "center_y": -0.18295096794338583
+    },
+    {
+      "bodyId": 23349,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.14952871943178958,
+      "center_y": 0.4253197832730937
+    },
+    {
+      "bodyId": 23550,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.17981570584794027,
+      "center_y": -0.23124840861131557
+    },
+    {
+      "bodyId": 23665,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.3000458835780162,
+      "center_y": -0.37592674792186975
+    },
+    {
+      "bodyId": 23919,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.1882560277923252,
+      "center_y": -0.695421978193322
+    },
+    {
+      "bodyId": 24308,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.026607022134872316,
+      "center_y": -0.025797928429089678
+    },
+    {
+      "bodyId": 24568,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.14184750397557921,
+      "center_y": -0.46727672278230914
+    },
+    {
+      "bodyId": 24605,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5337357468608993,
+      "center_y": -0.20058780267464327
+    },
+    {
+      "bodyId": 24840,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.13834370108405203,
+      "center_y": -0.9486234163911229
+    },
+    {
+      "bodyId": 25027,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.6038270867351995,
+      "center_y": 0.7862289580151887
+    },
+    {
+      "bodyId": 25136,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5984135190318743,
+      "center_y": 0.014624441737924654
+    },
+    {
+      "bodyId": 25209,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7996281701127812,
+      "center_y": 0.15067807998721094
+    },
+    {
+      "bodyId": 25286,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7677922701725886,
+      "center_y": -0.42271162536122864
+    },
+    {
+      "bodyId": 25524,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.4448801396297509,
+      "center_y": -0.6586362597965394
+    },
+    {
+      "bodyId": 25572,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.22585074996232135,
+      "center_y": 0.5629337806278707
+    },
+    {
+      "bodyId": 25575,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.3852207224111662,
+      "center_y": 0.130377181997561
+    },
+    {
+      "bodyId": 25854,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.871271412357018,
+      "center_y": -0.6967668292853171
+    },
+    {
+      "bodyId": 26416,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7492596167079048,
+      "center_y": 0.9669162991428693
+    },
+    {
+      "bodyId": 26528,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.05773946252779116,
+      "center_y": -0.8842543208644611
+    },
+    {
+      "bodyId": 27023,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.8474537883205003,
+      "center_y": -0.01451707645433764
+    },
+    {
+      "bodyId": 27355,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.567181669725867,
+      "center_y": -0.5366542618947621
+    },
+    {
+      "bodyId": 27399,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.20879042016068772,
+      "center_y": -0.2535700211508243
+    },
+    {
+      "bodyId": 27716,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.9214551087758429,
+      "center_y": -0.11404737218684713
+    },
+    {
+      "bodyId": 27796,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.749899652502534,
+      "center_y": 0.7334347090966302
+    },
+    {
+      "bodyId": 28011,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.4930544390455639,
+      "center_y": -0.14451588708249274
+    },
+    {
+      "bodyId": 28188,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.386213379244535,
+      "center_y": 0.9065552310328937
+    },
+    {
+      "bodyId": 29319,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.3631008160503889,
+      "center_y": 0.3784075666146798
+    },
+    {
+      "bodyId": 29702,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.2174824195984224,
+      "center_y": 0.540318869980712
+    },
+    {
+      "bodyId": 29753,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.38443251656596733,
+      "center_y": 0.5021120547130888
+    },
+    {
+      "bodyId": 29815,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.44602000267641906,
+      "center_y": -0.4810232594306807
+    },
+    {
+      "bodyId": 29955,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.04752684221562875,
+      "center_y": -0.2112931074333959
+    },
+    {
+      "bodyId": 30512,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.6748166493389104,
+      "center_y": 0.9856551248364374
+    },
+    {
+      "bodyId": 30893,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.80375611187377,
+      "center_y": 0.6965059671499798
+    },
+    {
+      "bodyId": 30895,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5259416525250764,
+      "center_y": 0.8778907911593385
+    },
+    {
+      "bodyId": 31105,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.2291729021766863,
+      "center_y": -0.035149951848005845
+    },
+    {
+      "bodyId": 31563,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.3247347938267804,
+      "center_y": -0.4829680879875027
+    },
+    {
+      "bodyId": 32223,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.11441609908981343,
+      "center_y": -0.08751733829703179
+    },
+    {
+      "bodyId": 32237,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.03303338328661265,
+      "center_y": 0.02407615308703659
+    },
+    {
+      "bodyId": 32737,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7229001994863352,
+      "center_y": 0.6640294824677211
+    },
+    {
+      "bodyId": 33303,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5048710944420406,
+      "center_y": -0.5131435077540405
+    },
+    {
+      "bodyId": 33406,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.10583156094663515,
+      "center_y": -0.42766336038417085
+    },
+    {
+      "bodyId": 33965,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.496830274934424,
+      "center_y": -0.8428518693881841
+    },
+    {
+      "bodyId": 34051,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.1311792207396132,
+      "center_y": 0.00818880694875368
+    },
+    {
+      "bodyId": 34407,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.1638254710315128,
+      "center_y": 0.7474024133831763
+    },
+    {
+      "bodyId": 34655,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7855785566690917,
+      "center_y": 0.047540074137164545
+    },
+    {
+      "bodyId": 35294,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.24249893184308569,
+      "center_y": -0.655444288777385
+    },
+    {
+      "bodyId": 40811,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5576674726917793,
+      "center_y": -0.22560160371231763
+    },
+    {
+      "bodyId": 40841,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.37214715169710866,
+      "center_y": -0.943637127278637
+    },
+    {
+      "bodyId": 41097,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.05003599866103936,
+      "center_y": -0.31691098852772726
+    },
+    {
+      "bodyId": 95241,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5688937388202442,
+      "center_y": 0.47282649091218065
+    },
+    {
+      "bodyId": 100103,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7445886750568705,
+      "center_y": 0.7309606439245462
+    },
+    {
+      "bodyId": 111903,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.16195846827933424,
+      "center_y": 0.10638858656139139
+    },
+    {
+      "bodyId": 112292,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7281267880712728,
+      "center_y": 0.06558936184165032
+    },
+    {
+      "bodyId": 129687,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.3251524593492142,
+      "center_y": -0.9496593046092521
+    },
+    {
+      "bodyId": 134521,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.15310219943864645,
+      "center_y": -0.9684741952790961
+    },
+    {
+      "bodyId": 514670,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.3843090780617665,
+      "center_y": -0.0016920796338115718
+    },
+    {
+      "bodyId": 515971,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.4605815446795478,
+      "center_y": -0.4286994004323621
+    },
+    {
+      "bodyId": 517078,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.20712825420633907,
+      "center_y": -0.4336748115985538
+    },
+    {
+      "bodyId": 517079,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.54890163359422,
+      "center_y": -0.17649324515582565
+    },
+    {
+      "bodyId": 517819,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.18028612812096145,
+      "center_y": -0.2206372309538598
+    },
+    {
+      "bodyId": 518731,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.2062171024104511,
+      "center_y": 0.5098574646990359
+    },
+    {
+      "bodyId": 520764,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.22891898949635736,
+      "center_y": -0.9333557155734249
+    },
+    {
+      "bodyId": 521115,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.8851429582684228,
+      "center_y": -0.3247025118628055
+    },
+    {
+      "bodyId": 524366,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.71642362275719,
+      "center_y": -0.8399261570395824
+    },
+    {
+      "bodyId": 525844,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.4278799512183873,
+      "center_y": -0.12183263970785085
+    },
+    {
+      "bodyId": 531014,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.7816879316382962,
+      "center_y": -0.6600648606092188
+    },
+    {
+      "bodyId": 533895,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.5682764072954065,
+      "center_y": 0.031706132055074665
+    },
+    {
+      "bodyId": 536444,
+      "type": "LPLC2",
+      "side": "left",
+      "center_x": -0.9659416004384473,
+      "center_y": -0.8978836822236724
+    },
+    {
+      "bodyId": 14465,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7134916668006203,
+      "center_y": 0.8019852534824599
+    },
+    {
+      "bodyId": 17551,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.49517240243990746,
+      "center_y": -0.8342854351279994
+    },
+    {
+      "bodyId": 18672,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5143056657604331,
+      "center_y": -0.3089653657136606
+    },
+    {
+      "bodyId": 18929,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.978799052356108,
+      "center_y": -0.9597907610420713
+    },
+    {
+      "bodyId": 19034,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.2844454595904201,
+      "center_y": -0.9544265613488128
+    },
+    {
+      "bodyId": 19146,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7273967358441771,
+      "center_y": -0.04562022096388518
+    },
+    {
+      "bodyId": 19229,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6096086477103497,
+      "center_y": -0.30711130059173364
+    },
+    {
+      "bodyId": 19249,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.25399150768637857,
+      "center_y": 0.5302534936754613
+    },
+    {
+      "bodyId": 19549,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5362920459924648,
+      "center_y": -0.646908695213924
+    },
+    {
+      "bodyId": 19589,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.11933711261095659,
+      "center_y": 0.7562620011846928
+    },
+    {
+      "bodyId": 19608,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7158093964096078,
+      "center_y": 0.0925405992551862
+    },
+    {
+      "bodyId": 19842,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.44604323602999085,
+      "center_y": -0.49021199506937063
+    },
+    {
+      "bodyId": 20047,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8313338159131102,
+      "center_y": 0.31010584099656313
+    },
+    {
+      "bodyId": 20103,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6722291989562228,
+      "center_y": 0.26939701953479744
+    },
+    {
+      "bodyId": 20162,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.08798439957458781,
+      "center_y": -0.08159748445971049
+    },
+    {
+      "bodyId": 20182,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.4431268657960501,
+      "center_y": 0.41791721379752045
+    },
+    {
+      "bodyId": 20269,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.9321637699582142,
+      "center_y": 0.2536146166162232
+    },
+    {
+      "bodyId": 20334,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.672245888338397,
+      "center_y": 0.5400042385045802
+    },
+    {
+      "bodyId": 20471,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5929735433589552,
+      "center_y": -0.8885928091033051
+    },
+    {
+      "bodyId": 20535,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.18579844825777592,
+      "center_y": -0.16372334976083103
+    },
+    {
+      "bodyId": 20584,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7410173111145973,
+      "center_y": 0.6292791415829502
+    },
+    {
+      "bodyId": 20694,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.353444981347648,
+      "center_y": 0.6565395709425699
+    },
+    {
+      "bodyId": 20749,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.9158342609391019,
+      "center_y": 0.8323466332505134
+    },
+    {
+      "bodyId": 21045,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5413264767372309,
+      "center_y": -0.9689314536079754
+    },
+    {
+      "bodyId": 21318,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.957447647069905,
+      "center_y": -0.9589638355623178
+    },
+    {
+      "bodyId": 21562,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8975281967353307,
+      "center_y": 0.4519644704695238
+    },
+    {
+      "bodyId": 21703,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7335746352925889,
+      "center_y": -0.8913015180525548
+    },
+    {
+      "bodyId": 21769,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.9568814480691679,
+      "center_y": 0.5773941856442484
+    },
+    {
+      "bodyId": 21808,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.31890097005732976,
+      "center_y": 0.20041298155842036
+    },
+    {
+      "bodyId": 21862,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6169740118582621,
+      "center_y": -0.7610760821553084
+    },
+    {
+      "bodyId": 21899,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8290983943079091,
+      "center_y": -0.40878170773248357
+    },
+    {
+      "bodyId": 22218,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.26205930053066695,
+      "center_y": -0.231916804119638
+    },
+    {
+      "bodyId": 22261,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8514481432470229,
+      "center_y": -0.8839137728924376
+    },
+    {
+      "bodyId": 22677,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.47804020365341915,
+      "center_y": 0.566345861928961
+    },
+    {
+      "bodyId": 23497,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.018497124228632922,
+      "center_y": 0.744738546337443
+    },
+    {
+      "bodyId": 23590,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.16193033750229668,
+      "center_y": -0.04803163086560791
+    },
+    {
+      "bodyId": 23878,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7861831531927941,
+      "center_y": 0.47535323866446255
+    },
+    {
+      "bodyId": 24118,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.12384495302614285,
+      "center_y": -0.1472089797293099
+    },
+    {
+      "bodyId": 24187,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8919784905678686,
+      "center_y": -0.07822872829400662
+    },
+    {
+      "bodyId": 24268,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.9560316566774891,
+      "center_y": 0.7813285666285097
+    },
+    {
+      "bodyId": 24401,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8897645187558892,
+      "center_y": -0.6719526553516624
+    },
+    {
+      "bodyId": 24800,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.16888934269527145,
+      "center_y": 0.27225652336519945
+    },
+    {
+      "bodyId": 25253,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.906626368404251,
+      "center_y": -0.09107320038235533
+    },
+    {
+      "bodyId": 25267,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.08060161521226017,
+      "center_y": -0.21492440080005903
+    },
+    {
+      "bodyId": 25316,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6987890062894762,
+      "center_y": -0.10837926140397691
+    },
+    {
+      "bodyId": 25497,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.2453385694964565,
+      "center_y": -0.7343088006843985
+    },
+    {
+      "bodyId": 25511,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.24345039559878656,
+      "center_y": -0.7273690924412972
+    },
+    {
+      "bodyId": 25636,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.03699871697278234,
+      "center_y": 0.9016580238772312
+    },
+    {
+      "bodyId": 26147,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7093615764197306,
+      "center_y": 0.3866455353621223
+    },
+    {
+      "bodyId": 26393,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6950528254870962,
+      "center_y": 0.35028286625706606
+    },
+    {
+      "bodyId": 26730,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5488878974531971,
+      "center_y": 0.06690202492513064
+    },
+    {
+      "bodyId": 26915,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.9333113086271544,
+      "center_y": 0.8108834952688961
+    },
+    {
+      "bodyId": 27471,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.12764489543297974,
+      "center_y": 0.3773871958089172
+    },
+    {
+      "bodyId": 27566,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.029324487139554045,
+      "center_y": -0.895811000021469
+    },
+    {
+      "bodyId": 28003,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.014071863784651306,
+      "center_y": -0.6672689185672347
+    },
+    {
+      "bodyId": 28044,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.23685783996103682,
+      "center_y": -0.3801416556411843
+    },
+    {
+      "bodyId": 28741,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5111004298517178,
+      "center_y": 0.4609749373734382
+    },
+    {
+      "bodyId": 28871,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.9151124152305584,
+      "center_y": 0.8770510164432777
+    },
+    {
+      "bodyId": 29014,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7977038997423885,
+      "center_y": 0.2753511913004838
+    },
+    {
+      "bodyId": 29183,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.15788609699333467,
+      "center_y": 0.14326614859653497
+    },
+    {
+      "bodyId": 29216,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.45148949287491125,
+      "center_y": 0.7270967155750905
+    },
+    {
+      "bodyId": 29287,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7852745620416265,
+      "center_y": 0.7948651878750685
+    },
+    {
+      "bodyId": 29391,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.48601184612942194,
+      "center_y": -0.7048123298807565
+    },
+    {
+      "bodyId": 29598,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8569874478986046,
+      "center_y": -0.5541108167848332
+    },
+    {
+      "bodyId": 29873,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6943709057080649,
+      "center_y": -0.5634386659233968
+    },
+    {
+      "bodyId": 29986,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.833368075634393,
+      "center_y": 0.5677276430332869
+    },
+    {
+      "bodyId": 30041,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.10551969336882216,
+      "center_y": 0.0127017756804495
+    },
+    {
+      "bodyId": 30207,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5727444937061797,
+      "center_y": -0.6396355751551936
+    },
+    {
+      "bodyId": 30938,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.46871717741073815,
+      "center_y": 0.27907959516813885
+    },
+    {
+      "bodyId": 31257,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.4038147533300438,
+      "center_y": 0.8329215218507755
+    },
+    {
+      "bodyId": 31964,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.7973037403596945,
+      "center_y": -0.6711082819897949
+    },
+    {
+      "bodyId": 31988,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.4893716788544916,
+      "center_y": 0.015064102026175918
+    },
+    {
+      "bodyId": 32507,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.4685844812906935,
+      "center_y": -0.17839062910791337
+    },
+    {
+      "bodyId": 33185,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.44223002082120355,
+      "center_y": 0.3442371829429618
+    },
+    {
+      "bodyId": 33396,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6423332825102898,
+      "center_y": 0.2536713071028869
+    },
+    {
+      "bodyId": 33439,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.761857006452054,
+      "center_y": 0.8107805857891024
+    },
+    {
+      "bodyId": 33694,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.32650273386833106,
+      "center_y": -0.12385707977228133
+    },
+    {
+      "bodyId": 34110,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8908708481379791,
+      "center_y": 0.34829373327583246
+    },
+    {
+      "bodyId": 34372,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6289522029511933,
+      "center_y": -0.6781251638442076
+    },
+    {
+      "bodyId": 34681,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8326506661169911,
+      "center_y": -0.06916956745095248
+    },
+    {
+      "bodyId": 35632,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.45063484256867337,
+      "center_y": -0.22594881882281626
+    },
+    {
+      "bodyId": 35680,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.8715351759953327,
+      "center_y": -0.2806289861374567
+    },
+    {
+      "bodyId": 35838,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.46403150394840476,
+      "center_y": -0.271470537783842
+    },
+    {
+      "bodyId": 35889,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.3808612173497189,
+      "center_y": -0.12456283105329247
+    },
+    {
+      "bodyId": 37431,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.9995289612798659,
+      "center_y": 0.10728318434251571
+    },
+    {
+      "bodyId": 37613,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.787139102344716,
+      "center_y": 0.7572261727044272
+    },
+    {
+      "bodyId": 37925,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.5800788543796143,
+      "center_y": -0.8378486325381322
+    },
+    {
+      "bodyId": 38542,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.1551238322341174,
+      "center_y": 0.38753877798194925
+    },
+    {
+      "bodyId": 39620,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.6705365565452959,
+      "center_y": -0.7166258834946184
+    },
+    {
+      "bodyId": 50287,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.27063457741601926,
+      "center_y": -0.31797775843150977
+    },
+    {
+      "bodyId": 55627,
+      "type": "LPLC2",
+      "side": "right",
+      "center_x": 0.01889956308143592,
+      "center_y": -0.08785968255735832
+    }
+  ],
+  "convention": "normalized image +x right, +y up; left cells assigned left half by assumption",
+  "assignment_inputs": [
+    "visual neuron identity",
+    "type",
+    "side",
+    "seed"
+  ],
+  "biological_retinotopy": false,
+  "fit_trials": 0
+}

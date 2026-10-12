@@ -1,0 +1,2312 @@
+{
+  "world": {
+    "version": "1.0.0",
+    "protocol_id": "fly_closed_loop_engineering_v1",
+    "duration_ms": 1000,
+    "world_dt_ms": 1.0,
+    "world_units": "abstract",
+    "bounds_xy": [
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ]
+    ],
+    "fly_radius": 0.5,
+    "camera_width": 256,
+    "camera_height": 256,
+    "camera_fps": 60,
+    "camera_center_px": [
+      128.0,
+      128.0
+    ],
+    "camera_focal_px": 160.0,
+    "camera_near_depth": 0.1,
+    "camera_orientation": "stabilized_positive_world_y",
+    "background_uint8": 128,
+    "object_uint8": 64,
+    "actuation_delay_ms": 20,
+    "escape_speed_max": 20.0,
+    "escape_acceleration_max": 400.0,
+    "escape_lateral_angle_max_deg": 60.0,
+    "success_final_clearance_min": 1.0,
+    "obstacle_motion_onset_ms": 200,
+    "spatial_seeds": [
+      55010,
+      55011,
+      55012,
+      55013,
+      55014
+    ],
+    "primary_condition": "uniform_population",
+    "secondary_condition": "synthetic_fields_within_type_and_side_v1",
+    "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration"
+  },
+  "scenario": {
+    "scenario_id": "world_left",
+    "fly_position": [
+      0.0,
+      0.0
+    ],
+    "obstacles": [
+      {
+        "id": "obstacle_0",
+        "position": [
+          -6.0,
+          20.0
+        ],
+        "velocity": [
+          7.5,
+          -25.0
+        ],
+        "radius": 1.5
+      }
+    ]
+  },
+  "simulation": {
+    "circuit": {
+      "version": "2.0.0",
+      "nodes_file": "connectome/phase3/circuit_v2_nodes.csv",
+      "edges_file": "connectome/phase3/circuit_v2_edges.csv"
+    },
+    "dt": 1.0,
+    "duration": 1000,
+    "gain": 0.5,
+    "phi": "relu",
+    "clip_max": 50.0,
+    "tau": {
+      "default": 10.0,
+      "LC4": 10.0,
+      "LPLC2": 10.0,
+      "DNp01": 10.0,
+      "DNp04": 10.0,
+      "DNp06": 10.0,
+      "DNp02": 10.0,
+      "DNp11": 10.0
+    },
+    "bias": {
+      "default": 0.0
+    },
+    "sign_map": {
+      "acetylcholine": 1.0,
+      "GABA": -1.0,
+      "glutamate": -1.0
+    },
+    "input_scale": 0.4,
+    "response_floor": 1e-08,
+    "convergence_step_tolerance": 0.001,
+    "pulse_residual_fraction_tolerance": 0.05,
+    "dt_response_tolerance": 0.02,
+    "dt_auc_tolerance": 0.02,
+    "dt_values_ms": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "gain_sensitivity_values": [
+      0.3,
+      0.5,
+      0.6
+    ],
+    "seed": 42,
+    "noise_std": 0.0
+  },
+  "mapping": {
+    "version": "1.0",
+    "condition_id": "synthetic_fields_within_type_and_side_v1",
+    "seed": 55012,
+    "sigma": 0.35,
+    "fields": [
+      {
+        "bodyId": 12032,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.5431461958066217,
+        "center_y": -0.02700530550037894
+      },
+      {
+        "bodyId": 12349,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.7868219761886185,
+        "center_y": -0.8495445307859153
+      },
+      {
+        "bodyId": 12824,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.2575872546406609,
+        "center_y": 0.31743605732870583
+      },
+      {
+        "bodyId": 14888,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.07562895466183217,
+        "center_y": 0.5249243828653598
+      },
+      {
+        "bodyId": 15018,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.15269127994559928,
+        "center_y": 0.33370529997337384
+      },
+      {
+        "bodyId": 16809,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.906894185152183,
+        "center_y": -0.7087383908030158
+      },
+      {
+        "bodyId": 16917,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6416391047655315,
+        "center_y": -0.7608502623262119
+      },
+      {
+        "bodyId": 17270,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.04355142250784283,
+        "center_y": -0.31477139018351874
+      },
+      {
+        "bodyId": 17340,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.9039122586069634,
+        "center_y": -0.08709416148079208
+      },
+      {
+        "bodyId": 17478,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6192064140226471,
+        "center_y": 0.5817288632826507
+      },
+      {
+        "bodyId": 17608,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.702464638703983,
+        "center_y": -0.6279208101275977
+      },
+      {
+        "bodyId": 17653,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.8223242098398394,
+        "center_y": 0.7705244381126555
+      },
+      {
+        "bodyId": 18396,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.23559338259349283,
+        "center_y": -0.6858428311870624
+      },
+      {
+        "bodyId": 18432,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.4523812252803445,
+        "center_y": -0.34564660859491725
+      },
+      {
+        "bodyId": 18478,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.2315035325728979,
+        "center_y": -0.01741812974681234
+      },
+      {
+        "bodyId": 20440,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.588288692413371,
+        "center_y": -0.9728955748069761
+      },
+      {
+        "bodyId": 20572,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6915892060713875,
+        "center_y": -0.5906467909404598
+      },
+      {
+        "bodyId": 20859,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.36407193335811905,
+        "center_y": 0.7170996525103761
+      },
+      {
+        "bodyId": 20967,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.8288113138438747,
+        "center_y": -0.22522720363102056
+      },
+      {
+        "bodyId": 20976,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.4308210637673573,
+        "center_y": 0.04812108422754857
+      },
+      {
+        "bodyId": 21721,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.8751075688238215,
+        "center_y": -0.2659723513068353
+      },
+      {
+        "bodyId": 22772,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.798108833123622,
+        "center_y": 0.4984419107870277
+      },
+      {
+        "bodyId": 22922,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.2497103762496098,
+        "center_y": -0.9655837458330683
+      },
+      {
+        "bodyId": 23202,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.22620335472229758,
+        "center_y": -0.48309648528134996
+      },
+      {
+        "bodyId": 23226,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.17697738989726264,
+        "center_y": -0.58753455834468
+      },
+      {
+        "bodyId": 24523,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.5814069195827393,
+        "center_y": 0.0017500022590244413
+      },
+      {
+        "bodyId": 27624,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.2705897177110149,
+        "center_y": -0.31505948463103395
+      },
+      {
+        "bodyId": 27750,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.3864665196650895,
+        "center_y": -0.023678874526284366
+      },
+      {
+        "bodyId": 27829,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.17371464483400834,
+        "center_y": -0.9393122014562698
+      },
+      {
+        "bodyId": 28980,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.3235715741997981,
+        "center_y": -0.12154993809987125
+      },
+      {
+        "bodyId": 29417,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.29582814821568104,
+        "center_y": -0.5971441665983199
+      },
+      {
+        "bodyId": 29469,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.7462847238220179,
+        "center_y": -0.28899280566184715
+      },
+      {
+        "bodyId": 29514,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6947122728707441,
+        "center_y": 0.4252253918641842
+      },
+      {
+        "bodyId": 30087,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6484447223822692,
+        "center_y": 0.5350022675351735
+      },
+      {
+        "bodyId": 31301,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.3907015978744195,
+        "center_y": -0.6624867454251446
+      },
+      {
+        "bodyId": 31308,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.9069392459956209,
+        "center_y": 0.2134543264442923
+      },
+      {
+        "bodyId": 31429,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.14892853407556272,
+        "center_y": -0.3656633225167576
+      },
+      {
+        "bodyId": 32597,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6506716909778316,
+        "center_y": 0.9721382578820892
+      },
+      {
+        "bodyId": 33137,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.5948100967845654,
+        "center_y": -0.7936951076727565
+      },
+      {
+        "bodyId": 34845,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.19264105912567642,
+        "center_y": -0.07194967691202936
+      },
+      {
+        "bodyId": 35262,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.009245079293516922,
+        "center_y": -0.9843261851598708
+      },
+      {
+        "bodyId": 35616,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6019085662549631,
+        "center_y": -0.8735802076510377
+      },
+      {
+        "bodyId": 37587,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.6943065330311794,
+        "center_y": -0.6985914751206477
+      },
+      {
+        "bodyId": 77614,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.7648800301259807,
+        "center_y": 0.2018916673504707
+      },
+      {
+        "bodyId": 81112,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.06507475119104611,
+        "center_y": -0.7220602499200446
+      },
+      {
+        "bodyId": 100485,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.48146834660324245,
+        "center_y": 0.5667378250034512
+      },
+      {
+        "bodyId": 107513,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.5059850071952695,
+        "center_y": 0.9044921341155834
+      },
+      {
+        "bodyId": 111787,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.14289438024250067,
+        "center_y": -0.7327052055425081
+      },
+      {
+        "bodyId": 511914,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.038465288436367984,
+        "center_y": 0.9474906258336755
+      },
+      {
+        "bodyId": 512366,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.7545970689408018,
+        "center_y": 0.48046658379232876
+      },
+      {
+        "bodyId": 512705,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.5763810907894867,
+        "center_y": -0.14870005060773162
+      },
+      {
+        "bodyId": 514508,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.19889113519657164,
+        "center_y": -0.9080837269514788
+      },
+      {
+        "bodyId": 514956,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.02869011637995278,
+        "center_y": -0.5775435290784361
+      },
+      {
+        "bodyId": 515476,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.3507104116732068,
+        "center_y": 0.5689884451655511
+      },
+      {
+        "bodyId": 515900,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.14251143182033232,
+        "center_y": 0.14774231333466914
+      },
+      {
+        "bodyId": 516909,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.5005810708671674,
+        "center_y": -0.5222232814318724
+      },
+      {
+        "bodyId": 517752,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.4258313356132223,
+        "center_y": -0.051337744915961325
+      },
+      {
+        "bodyId": 518016,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.8684807687976261,
+        "center_y": -0.2601329215929813
+      },
+      {
+        "bodyId": 518439,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.8735439351834237,
+        "center_y": -0.05884605354651273
+      },
+      {
+        "bodyId": 518544,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.3882280444046645,
+        "center_y": -0.05461078379734241
+      },
+      {
+        "bodyId": 518730,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.7736111455957827,
+        "center_y": 0.24951081100734052
+      },
+      {
+        "bodyId": 518983,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.9244052745787498,
+        "center_y": 0.3406915356104072
+      },
+      {
+        "bodyId": 519650,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.3849906482689641,
+        "center_y": 0.249254111396515
+      },
+      {
+        "bodyId": 519931,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.46505724826941164,
+        "center_y": -0.6993089286542429
+      },
+      {
+        "bodyId": 520449,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.034322150123616724,
+        "center_y": 0.4536101822782712
+      },
+      {
+        "bodyId": 524899,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.3332020063274451,
+        "center_y": -0.1623913348189392
+      },
+      {
+        "bodyId": 526286,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.7139103214232561,
+        "center_y": -0.5272324835027604
+      },
+      {
+        "bodyId": 530029,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.7291474843970386,
+        "center_y": 0.7719355349482684
+      },
+      {
+        "bodyId": 532254,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.4971260278820948,
+        "center_y": 0.9244796383016085
+      },
+      {
+        "bodyId": 533129,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.5483731612192587,
+        "center_y": 0.46503894086921505
+      },
+      {
+        "bodyId": 535341,
+        "type": "LC4",
+        "side": "left",
+        "center_x": -0.261318426659511,
+        "center_y": -0.5276869957622068
+      },
+      {
+        "bodyId": 16128,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.8607409125678646,
+        "center_y": -0.5926920473478472
+      },
+      {
+        "bodyId": 16138,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.5961399616649544,
+        "center_y": 0.4210538809313584
+      },
+      {
+        "bodyId": 16628,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.4742684985530988,
+        "center_y": -0.7096302692514684
+      },
+      {
+        "bodyId": 17054,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.574648957042805,
+        "center_y": 0.2154662169438195
+      },
+      {
+        "bodyId": 17266,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.5546782733961534,
+        "center_y": 0.7904522978760602
+      },
+      {
+        "bodyId": 17364,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.26335520339195495,
+        "center_y": 0.42773852355919817
+      },
+      {
+        "bodyId": 17548,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.6378488277769927,
+        "center_y": 0.6977456439830907
+      },
+      {
+        "bodyId": 17668,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.97926558874131,
+        "center_y": 0.4313750182649474
+      },
+      {
+        "bodyId": 17860,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.44830474818840893,
+        "center_y": 0.8939262528705083
+      },
+      {
+        "bodyId": 17926,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.39460793859196885,
+        "center_y": 0.32319806471310875
+      },
+      {
+        "bodyId": 17987,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.3602650285795852,
+        "center_y": 0.5970507203993436
+      },
+      {
+        "bodyId": 18127,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.9007647562254841,
+        "center_y": 0.8725427823987235
+      },
+      {
+        "bodyId": 18189,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.6255488938356473,
+        "center_y": -0.009408824017155704
+      },
+      {
+        "bodyId": 19260,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.6375724260531731,
+        "center_y": -0.005676452037665536
+      },
+      {
+        "bodyId": 19420,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.2261990304099466,
+        "center_y": -0.09797080481514708
+      },
+      {
+        "bodyId": 19543,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.7698757100890286,
+        "center_y": -0.627693158999945
+      },
+      {
+        "bodyId": 19550,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.9630994786608293,
+        "center_y": -0.25249726060235833
+      },
+      {
+        "bodyId": 19634,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.7104675197323609,
+        "center_y": 0.1421052081077816
+      },
+      {
+        "bodyId": 19794,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.3214356168613851,
+        "center_y": 0.16763924889184878
+      },
+      {
+        "bodyId": 19954,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.07283542943307075,
+        "center_y": 0.019261811875647794
+      },
+      {
+        "bodyId": 20016,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.04443984069331286,
+        "center_y": -0.5273942811145464
+      },
+      {
+        "bodyId": 20282,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.71046255875699,
+        "center_y": -0.7620297263930864
+      },
+      {
+        "bodyId": 20399,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.08211990394506907,
+        "center_y": -0.1233962221175331
+      },
+      {
+        "bodyId": 20542,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.42252201339116024,
+        "center_y": -0.26724415552279024
+      },
+      {
+        "bodyId": 20588,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.5146251432310878,
+        "center_y": 0.4448532605566409
+      },
+      {
+        "bodyId": 20673,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.8871779391245489,
+        "center_y": -0.7357149152653133
+      },
+      {
+        "bodyId": 20808,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.5297772096807686,
+        "center_y": -0.5407101356050714
+      },
+      {
+        "bodyId": 20917,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.8432048634958199,
+        "center_y": 0.36660120145969377
+      },
+      {
+        "bodyId": 21151,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.1522287997458759,
+        "center_y": 0.24199486296457362
+      },
+      {
+        "bodyId": 21165,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.18025198369159756,
+        "center_y": 0.6198460804593067
+      },
+      {
+        "bodyId": 21225,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.6881851135759314,
+        "center_y": -0.17810202541147957
+      },
+      {
+        "bodyId": 21287,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.18514231933126235,
+        "center_y": 0.5785329980656635
+      },
+      {
+        "bodyId": 21313,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.8899042295067293,
+        "center_y": 0.3867427884281862
+      },
+      {
+        "bodyId": 21336,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.5636421760711595,
+        "center_y": 0.06452548082630183
+      },
+      {
+        "bodyId": 21804,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.18944996768710098,
+        "center_y": 0.3374988673398498
+      },
+      {
+        "bodyId": 22034,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.9531089255535447,
+        "center_y": -0.2681551266519784
+      },
+      {
+        "bodyId": 22194,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.028233267992386346,
+        "center_y": -0.9946586435419413
+      },
+      {
+        "bodyId": 22328,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.698309689118737,
+        "center_y": 0.22514036987216235
+      },
+      {
+        "bodyId": 22847,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.3972920712300313,
+        "center_y": -0.13812966604134314
+      },
+      {
+        "bodyId": 22966,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.7164669019332583,
+        "center_y": 0.23927832337503796
+      },
+      {
+        "bodyId": 22975,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.011377352870386548,
+        "center_y": 0.21046899972111732
+      },
+      {
+        "bodyId": 23098,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.20016826480977157,
+        "center_y": -0.23048865408640706
+      },
+      {
+        "bodyId": 23392,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.3034858610937681,
+        "center_y": -0.15510975276994454
+      },
+      {
+        "bodyId": 23792,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.600439592460473,
+        "center_y": 0.4721511251711381
+      },
+      {
+        "bodyId": 23929,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.7643204708460873,
+        "center_y": 0.4110094678148217
+      },
+      {
+        "bodyId": 24338,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.8096882656335788,
+        "center_y": 0.481674786792188
+      },
+      {
+        "bodyId": 25584,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.5607411191431031,
+        "center_y": 0.013042078244801747
+      },
+      {
+        "bodyId": 26112,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.10341802962941615,
+        "center_y": 0.1341837195602804
+      },
+      {
+        "bodyId": 28945,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.46904724918266016,
+        "center_y": -0.19539620028435523
+      },
+      {
+        "bodyId": 29563,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.18398756864288124,
+        "center_y": -0.4875935203425441
+      },
+      {
+        "bodyId": 30480,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.9705108710750033,
+        "center_y": -0.10880035516050857
+      },
+      {
+        "bodyId": 30803,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.24324265702235282,
+        "center_y": 0.9941359491632074
+      },
+      {
+        "bodyId": 31262,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.9573080621119409,
+        "center_y": -0.11210609901970359
+      },
+      {
+        "bodyId": 38065,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.40102213690549904,
+        "center_y": -0.0013098053301929813
+      },
+      {
+        "bodyId": 527408,
+        "type": "LC4",
+        "side": "right",
+        "center_x": 0.6710906639648848,
+        "center_y": 0.286929077523421
+      },
+      {
+        "bodyId": 11498,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.6827628708293164,
+        "center_y": -0.24993823113940428
+      },
+      {
+        "bodyId": 12384,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7972422754377976,
+        "center_y": 0.014773114555864497
+      },
+      {
+        "bodyId": 13132,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.2857926998573612,
+        "center_y": 0.8020243088137944
+      },
+      {
+        "bodyId": 13726,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.6294407744714867,
+        "center_y": 0.06845785713607477
+      },
+      {
+        "bodyId": 13764,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.3983009119217611,
+        "center_y": 0.9879917794208348
+      },
+      {
+        "bodyId": 14030,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7411091281747144,
+        "center_y": 0.8226164906500022
+      },
+      {
+        "bodyId": 14102,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4275535361218844,
+        "center_y": 0.5146708554466772
+      },
+      {
+        "bodyId": 15804,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.08641708731521569,
+        "center_y": 0.70636123945642
+      },
+      {
+        "bodyId": 17059,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.20561655542755153,
+        "center_y": 0.6724960441403856
+      },
+      {
+        "bodyId": 17544,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7938537169441883,
+        "center_y": 0.7285006899658004
+      },
+      {
+        "bodyId": 17774,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.15331116087047802,
+        "center_y": 0.03166270440797847
+      },
+      {
+        "bodyId": 17775,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.12436563685862145,
+        "center_y": -0.880503894442322
+      },
+      {
+        "bodyId": 17880,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.6961891425503466,
+        "center_y": -0.7987415584516566
+      },
+      {
+        "bodyId": 17990,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.8688162932055765,
+        "center_y": 0.4900366009951156
+      },
+      {
+        "bodyId": 18900,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7340715540003339,
+        "center_y": -0.36801493297724575
+      },
+      {
+        "bodyId": 18936,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.9132908090498045,
+        "center_y": -0.49475992162566174
+      },
+      {
+        "bodyId": 19787,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4430039394595019,
+        "center_y": 0.2776341988422397
+      },
+      {
+        "bodyId": 19830,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.10984175524421647,
+        "center_y": 0.5876968667153206
+      },
+      {
+        "bodyId": 19911,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.33056541876903045,
+        "center_y": 0.5206172072528841
+      },
+      {
+        "bodyId": 20240,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4106994905036042,
+        "center_y": 0.012715301747855401
+      },
+      {
+        "bodyId": 20329,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.08481531868759085,
+        "center_y": 0.7014836173420615
+      },
+      {
+        "bodyId": 20799,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7943468766739562,
+        "center_y": -0.5534437468003617
+      },
+      {
+        "bodyId": 21299,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5263688755310738,
+        "center_y": -0.4442496506223459
+      },
+      {
+        "bodyId": 21361,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.06013566087569211,
+        "center_y": 0.15918973383361612
+      },
+      {
+        "bodyId": 22253,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.48748873641864676,
+        "center_y": 0.9902416197855359
+      },
+      {
+        "bodyId": 22557,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.683396572604824,
+        "center_y": -0.1127874246908851
+      },
+      {
+        "bodyId": 23247,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.3864188144795313,
+        "center_y": -0.8496545961654771
+      },
+      {
+        "bodyId": 23349,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7681196721555691,
+        "center_y": -0.6250391103219519
+      },
+      {
+        "bodyId": 23550,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.9961039981791464,
+        "center_y": 0.062096805112756615
+      },
+      {
+        "bodyId": 23665,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.3079488068169165,
+        "center_y": 0.675851139783475
+      },
+      {
+        "bodyId": 23919,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.6970140058102806,
+        "center_y": -0.3130507651941965
+      },
+      {
+        "bodyId": 24308,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5315026485702882,
+        "center_y": 0.6248476425342908
+      },
+      {
+        "bodyId": 24568,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.28193443854715783,
+        "center_y": -0.948591021885929
+      },
+      {
+        "bodyId": 24605,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.3864474975901848,
+        "center_y": -0.3592280039402904
+      },
+      {
+        "bodyId": 24840,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.12734675629607306,
+        "center_y": 0.9013922578815861
+      },
+      {
+        "bodyId": 25027,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.9936965730210634,
+        "center_y": 0.8887978167949964
+      },
+      {
+        "bodyId": 25136,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.866954715431161,
+        "center_y": -0.5894053060669411
+      },
+      {
+        "bodyId": 25209,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.9315529285496669,
+        "center_y": 0.9641582872888261
+      },
+      {
+        "bodyId": 25286,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.11230731448617237,
+        "center_y": 0.4476780726530114
+      },
+      {
+        "bodyId": 25524,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.6875992585810958,
+        "center_y": -0.6694088247341559
+      },
+      {
+        "bodyId": 25572,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7526672305335672,
+        "center_y": -0.06018035175789538
+      },
+      {
+        "bodyId": 25575,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5845390792885471,
+        "center_y": 0.09532911442933512
+      },
+      {
+        "bodyId": 25854,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.23152354261062846,
+        "center_y": -0.6105518579411062
+      },
+      {
+        "bodyId": 26416,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.9371849708661584,
+        "center_y": -0.5220534554681389
+      },
+      {
+        "bodyId": 26528,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.676056148010388,
+        "center_y": 0.7070119903281111
+      },
+      {
+        "bodyId": 27023,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5032839932231793,
+        "center_y": -0.46203465762036666
+      },
+      {
+        "bodyId": 27355,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.24291159445126498,
+        "center_y": 0.40992799553217885
+      },
+      {
+        "bodyId": 27399,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.43021856607202547,
+        "center_y": 0.27508021603126465
+      },
+      {
+        "bodyId": 27716,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7957369161518631,
+        "center_y": 0.24026803428960664
+      },
+      {
+        "bodyId": 27796,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.26237449281172764,
+        "center_y": 0.9724483858789863
+      },
+      {
+        "bodyId": 28011,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.40934002579909057,
+        "center_y": -0.6085692787859069
+      },
+      {
+        "bodyId": 28188,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.35679588949560226,
+        "center_y": 0.5500945214950586
+      },
+      {
+        "bodyId": 29319,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.42969549864279033,
+        "center_y": -0.5427974379653648
+      },
+      {
+        "bodyId": 29702,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.6350580749757007,
+        "center_y": -0.6774849156335863
+      },
+      {
+        "bodyId": 29753,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.209867415824745,
+        "center_y": 0.231162501142677
+      },
+      {
+        "bodyId": 29815,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.0970070676899003,
+        "center_y": -0.7579133891769452
+      },
+      {
+        "bodyId": 29955,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4366599485095608,
+        "center_y": 0.8536501595572301
+      },
+      {
+        "bodyId": 30512,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.10632480355599205,
+        "center_y": 0.526113694992534
+      },
+      {
+        "bodyId": 30893,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.0770083459914358,
+        "center_y": 0.49808362458817235
+      },
+      {
+        "bodyId": 30895,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.3195371235032949,
+        "center_y": 0.10322407817568524
+      },
+      {
+        "bodyId": 31105,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4395100798392726,
+        "center_y": 0.08215609027621085
+      },
+      {
+        "bodyId": 31563,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.3753566783894635,
+        "center_y": -0.4121491361221845
+      },
+      {
+        "bodyId": 32223,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.24347869460206928,
+        "center_y": 0.2340631209914541
+      },
+      {
+        "bodyId": 32237,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5392236745832198,
+        "center_y": -0.9049158585682531
+      },
+      {
+        "bodyId": 32737,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.8435382638798229,
+        "center_y": -0.1882329778899301
+      },
+      {
+        "bodyId": 33303,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.885411040001995,
+        "center_y": -0.8314048409121984
+      },
+      {
+        "bodyId": 33406,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.1478475242174193,
+        "center_y": 0.1636392245225884
+      },
+      {
+        "bodyId": 33965,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.9187247871389904,
+        "center_y": -0.785153929054357
+      },
+      {
+        "bodyId": 34051,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4652637275737199,
+        "center_y": -0.8078967090816074
+      },
+      {
+        "bodyId": 34407,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7272110425123061,
+        "center_y": 0.32220193264833585
+      },
+      {
+        "bodyId": 34655,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.6165389045744282,
+        "center_y": -0.649010805456196
+      },
+      {
+        "bodyId": 35294,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5795790280953858,
+        "center_y": 0.7757660654821652
+      },
+      {
+        "bodyId": 40811,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.12006191796486698,
+        "center_y": -0.8313646256468608
+      },
+      {
+        "bodyId": 40841,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.46082132531382136,
+        "center_y": 0.055343125538867666
+      },
+      {
+        "bodyId": 41097,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.9224066897989219,
+        "center_y": 0.9164353490089017
+      },
+      {
+        "bodyId": 95241,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4915341828449339,
+        "center_y": -0.3848281479188391
+      },
+      {
+        "bodyId": 100103,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7747572058265888,
+        "center_y": -0.35054119625273295
+      },
+      {
+        "bodyId": 111903,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.2249458820700455,
+        "center_y": -0.507592516311584
+      },
+      {
+        "bodyId": 112292,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.20124350893943244,
+        "center_y": 0.9319299694351544
+      },
+      {
+        "bodyId": 129687,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5354399676776918,
+        "center_y": 0.9908369834414117
+      },
+      {
+        "bodyId": 134521,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.48613754001991816,
+        "center_y": -0.00095041782945815
+      },
+      {
+        "bodyId": 514670,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.11769816850458126,
+        "center_y": 0.5037061614606566
+      },
+      {
+        "bodyId": 515971,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.13417270661350156,
+        "center_y": -0.5892511788854133
+      },
+      {
+        "bodyId": 517078,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.44024881404367355,
+        "center_y": -0.5592214572538765
+      },
+      {
+        "bodyId": 517079,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.2904431070315572,
+        "center_y": 0.32776287912835156
+      },
+      {
+        "bodyId": 517819,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.1867283199468709,
+        "center_y": -0.9675051392469238
+      },
+      {
+        "bodyId": 518731,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.512500998046354,
+        "center_y": 0.804752599617246
+      },
+      {
+        "bodyId": 520764,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7942510701177398,
+        "center_y": -0.9499512683795481
+      },
+      {
+        "bodyId": 521115,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5804974763403756,
+        "center_y": 0.1424488182018142
+      },
+      {
+        "bodyId": 524366,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.4232673176052243,
+        "center_y": -0.8660474955390207
+      },
+      {
+        "bodyId": 525844,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7704854854020671,
+        "center_y": 0.8062293425647917
+      },
+      {
+        "bodyId": 531014,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.5048525432321856,
+        "center_y": 0.05283702407148261
+      },
+      {
+        "bodyId": 533895,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.7634554695129785,
+        "center_y": -0.3332233988486122
+      },
+      {
+        "bodyId": 536444,
+        "type": "LPLC2",
+        "side": "left",
+        "center_x": -0.15611539572821076,
+        "center_y": -0.5052261322880494
+      },
+      {
+        "bodyId": 14465,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.14899933325043635,
+        "center_y": -0.45276953378832596
+      },
+      {
+        "bodyId": 17551,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.2749951218005122,
+        "center_y": 0.7985292036551632
+      },
+      {
+        "bodyId": 18672,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9175866585606808,
+        "center_y": 0.8163941682866034
+      },
+      {
+        "bodyId": 18929,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5370730939397463,
+        "center_y": 0.5168717622032553
+      },
+      {
+        "bodyId": 19034,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6615180684327063,
+        "center_y": -0.1702501824554412
+      },
+      {
+        "bodyId": 19146,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.03681885948696306,
+        "center_y": 0.562491235158181
+      },
+      {
+        "bodyId": 19229,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7128862313208147,
+        "center_y": 0.27490268008481555
+      },
+      {
+        "bodyId": 19249,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.4943938703456674,
+        "center_y": 0.3023079713154362
+      },
+      {
+        "bodyId": 19549,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7178251152204091,
+        "center_y": 0.9061051751461902
+      },
+      {
+        "bodyId": 19589,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.19834339663602774,
+        "center_y": 0.4780259203177313
+      },
+      {
+        "bodyId": 19608,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5956552260412037,
+        "center_y": 0.09679157093267454
+      },
+      {
+        "bodyId": 19842,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.11823129660807741,
+        "center_y": 0.21427466488104874
+      },
+      {
+        "bodyId": 20047,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.006027692656682571,
+        "center_y": 0.2834569954204955
+      },
+      {
+        "bodyId": 20103,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.8050114727488996,
+        "center_y": 0.5700348775371693
+      },
+      {
+        "bodyId": 20162,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7780133375926575,
+        "center_y": -0.486427894783777
+      },
+      {
+        "bodyId": 20182,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.08340266537999386,
+        "center_y": 0.8994082459301027
+      },
+      {
+        "bodyId": 20269,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.12718047664032306,
+        "center_y": 0.851973315061896
+      },
+      {
+        "bodyId": 20334,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6527402645758553,
+        "center_y": 0.7620735095657734
+      },
+      {
+        "bodyId": 20471,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3332663255405445,
+        "center_y": -0.9023487870264753
+      },
+      {
+        "bodyId": 20535,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.2259559728848345,
+        "center_y": 0.6991031954093352
+      },
+      {
+        "bodyId": 20584,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.10515385712410397,
+        "center_y": 0.11024737481585345
+      },
+      {
+        "bodyId": 20694,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3939750327863951,
+        "center_y": 0.944473440957903
+      },
+      {
+        "bodyId": 20749,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6842233732618797,
+        "center_y": 0.3690009248760968
+      },
+      {
+        "bodyId": 21045,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7832674765064191,
+        "center_y": -0.16186645782782216
+      },
+      {
+        "bodyId": 21318,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6203292991037606,
+        "center_y": 0.36366997623544806
+      },
+      {
+        "bodyId": 21562,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3903121833789728,
+        "center_y": 0.7487239581219567
+      },
+      {
+        "bodyId": 21703,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5201624819441133,
+        "center_y": -0.28319103385280453
+      },
+      {
+        "bodyId": 21769,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.07124395740989109,
+        "center_y": 0.3245395961317632
+      },
+      {
+        "bodyId": 21808,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.027462535296227664,
+        "center_y": 0.31882534039370714
+      },
+      {
+        "bodyId": 21862,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6658930870487467,
+        "center_y": -0.4027838974322602
+      },
+      {
+        "bodyId": 21899,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3106921519827496,
+        "center_y": -0.44201642022440235
+      },
+      {
+        "bodyId": 22218,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.35887652431125416,
+        "center_y": 0.10041545093734627
+      },
+      {
+        "bodyId": 22261,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.1796470156740263,
+        "center_y": -0.8327903870381843
+      },
+      {
+        "bodyId": 22677,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7232211698027372,
+        "center_y": -0.6285359880674586
+      },
+      {
+        "bodyId": 23497,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.398777586372812,
+        "center_y": 0.8882033333482362
+      },
+      {
+        "bodyId": 23590,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5039089205365906,
+        "center_y": 0.9075546391614351
+      },
+      {
+        "bodyId": 23878,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9464989307536759,
+        "center_y": -0.42900773737323683
+      },
+      {
+        "bodyId": 24118,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.4831759169472134,
+        "center_y": 0.5592367305742953
+      },
+      {
+        "bodyId": 24187,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5725276281352921,
+        "center_y": 0.9120363938470246
+      },
+      {
+        "bodyId": 24268,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5370243553126827,
+        "center_y": 0.8457318692559188
+      },
+      {
+        "bodyId": 24401,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.08516776510123392,
+        "center_y": 0.5570054751536728
+      },
+      {
+        "bodyId": 24800,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.4126698615370974,
+        "center_y": -0.055968714571633216
+      },
+      {
+        "bodyId": 25253,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9650080781742009,
+        "center_y": -0.4140422308811731
+      },
+      {
+        "bodyId": 25267,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7727978299139711,
+        "center_y": 0.621741523863977
+      },
+      {
+        "bodyId": 25316,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.33383394386928567,
+        "center_y": 0.37340693270925995
+      },
+      {
+        "bodyId": 25497,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.32493746567851056,
+        "center_y": -0.6876324347245182
+      },
+      {
+        "bodyId": 25511,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.03348842539813557,
+        "center_y": 0.4834652456254991
+      },
+      {
+        "bodyId": 25636,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9206363284051735,
+        "center_y": 0.9012284902718177
+      },
+      {
+        "bodyId": 26147,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7534611711186904,
+        "center_y": 0.07263470418588458
+      },
+      {
+        "bodyId": 26393,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9227038486611936,
+        "center_y": 0.7305022461428794
+      },
+      {
+        "bodyId": 26730,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5271284511436728,
+        "center_y": -0.19478489953917322
+      },
+      {
+        "bodyId": 26915,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.8216391254206346,
+        "center_y": 0.07492505097922098
+      },
+      {
+        "bodyId": 27471,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9850399915416526,
+        "center_y": -0.022613171142688238
+      },
+      {
+        "bodyId": 27566,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.8721892043975488,
+        "center_y": -0.12213639092459738
+      },
+      {
+        "bodyId": 28003,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.04632219959309303,
+        "center_y": 0.02151426741944351
+      },
+      {
+        "bodyId": 28044,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.0025426461290253277,
+        "center_y": -0.5634700245332387
+      },
+      {
+        "bodyId": 28741,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5978689498324803,
+        "center_y": -0.5338264738781338
+      },
+      {
+        "bodyId": 28871,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6810610557945477,
+        "center_y": -0.11880158412547015
+      },
+      {
+        "bodyId": 29014,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.17368718216295365,
+        "center_y": -0.9340464221426945
+      },
+      {
+        "bodyId": 29183,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3903155963594437,
+        "center_y": 0.76573463225151
+      },
+      {
+        "bodyId": 29216,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3979071595354966,
+        "center_y": 0.8246477936075052
+      },
+      {
+        "bodyId": 29287,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.30070166014578614,
+        "center_y": -0.09928289273736546
+      },
+      {
+        "bodyId": 29391,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6814555295900775,
+        "center_y": 0.9188603818434287
+      },
+      {
+        "bodyId": 29598,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9083400403174408,
+        "center_y": -0.13743389990937604
+      },
+      {
+        "bodyId": 29873,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5137252072662133,
+        "center_y": -0.6901015342051726
+      },
+      {
+        "bodyId": 29986,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.21835643395611648,
+        "center_y": -0.14454843538368944
+      },
+      {
+        "bodyId": 30041,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.9404095033664437,
+        "center_y": -0.7149049889532317
+      },
+      {
+        "bodyId": 30207,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.423153530177515,
+        "center_y": -0.9907280168921508
+      },
+      {
+        "bodyId": 30938,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.47169683858319056,
+        "center_y": -0.04614927470341268
+      },
+      {
+        "bodyId": 31257,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.022659429586930013,
+        "center_y": -0.8935786628643845
+      },
+      {
+        "bodyId": 31964,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.4244873450450056,
+        "center_y": 0.16068949292146595
+      },
+      {
+        "bodyId": 31988,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6841114501344059,
+        "center_y": 0.5659919136846501
+      },
+      {
+        "bodyId": 32507,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3524137886118769,
+        "center_y": 0.6371544984373088
+      },
+      {
+        "bodyId": 33185,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3038345736620449,
+        "center_y": 0.8968912581913833
+      },
+      {
+        "bodyId": 33396,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7487756900911693,
+        "center_y": -0.4739790054464177
+      },
+      {
+        "bodyId": 33439,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.037762721251285325,
+        "center_y": -0.7472250415718784
+      },
+      {
+        "bodyId": 33694,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5722550399306036,
+        "center_y": 0.5844840516197016
+      },
+      {
+        "bodyId": 34110,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.3363222402060535,
+        "center_y": -0.4109726229856807
+      },
+      {
+        "bodyId": 34372,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.8385639811612238,
+        "center_y": 0.24905350998394127
+      },
+      {
+        "bodyId": 34681,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.1728759270451199,
+        "center_y": -0.47396920844468804
+      },
+      {
+        "bodyId": 35632,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.4722394771527443,
+        "center_y": 0.3125653706935738
+      },
+      {
+        "bodyId": 35680,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5424392811160926,
+        "center_y": -0.5040651743497524
+      },
+      {
+        "bodyId": 35838,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.2176561499631503,
+        "center_y": -0.30667245127034626
+      },
+      {
+        "bodyId": 35889,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.40067780290963273,
+        "center_y": 0.5539041770248849
+      },
+      {
+        "bodyId": 37431,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.20764309123346192,
+        "center_y": -0.4662082610324869
+      },
+      {
+        "bodyId": 37613,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.5852959932691757,
+        "center_y": 0.7946739921975086
+      },
+      {
+        "bodyId": 37925,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.43903137622131894,
+        "center_y": -0.12272560263309185
+      },
+      {
+        "bodyId": 38542,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6120345673817451,
+        "center_y": 0.3397828066753794
+      },
+      {
+        "bodyId": 39620,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.6148439102867943,
+        "center_y": -0.6402459162209637
+      },
+      {
+        "bodyId": 50287,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.7841584732899319,
+        "center_y": -0.7330237446891577
+      },
+      {
+        "bodyId": 55627,
+        "type": "LPLC2",
+        "side": "right",
+        "center_x": 0.16054447040376207,
+        "center_y": -0.5598644386991132
+      }
+    ],
+    "convention": "normalized image +x right, +y up; left cells assigned left half by assumption",
+    "assignment_inputs": [
+      "visual neuron identity",
+      "type",
+      "side",
+      "seed"
+    ],
+    "biological_retinotopy": false,
+    "fit_trials": 0
+  },
+  "calibration_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41"
+}

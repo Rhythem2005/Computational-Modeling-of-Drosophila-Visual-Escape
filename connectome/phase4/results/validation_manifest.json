@@ -1,0 +1,88 @@
+{
+  "run_date": "2026-10-10T10:18:50.601491+00:00",
+  "commands": [
+    {
+      "label": "phase4_unit_tests",
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "connectome/scripts/phase4/tests/test_phase4.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output_file": "connectome/phase4/results/phase4_unit_tests.txt",
+      "output_sha256": "9f17c0020ebb6fc5e2e2d51540c20fd75c081fcb124ae50936bcbc5cb498229b",
+      "pytest_passed": 49
+    },
+    {
+      "label": "phase3_circuit_v2",
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "connectome/scripts/phase3/verify_circuit_v2.py"
+      ],
+      "exit_code": 0,
+      "output_file": "connectome/phase4/results/phase3_circuit_v2.txt",
+      "output_sha256": "2453a3ee53c934a8dfeb059ed2117958ee6bbcf02d8ec1a4b010d632ab15ba22",
+      "pytest_passed": null
+    },
+    {
+      "label": "phase3_independent_audit",
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "connectome/scripts/phase3/independent_audit_verifier.py"
+      ],
+      "exit_code": 0,
+      "output_file": "connectome/phase4/results/phase3_independent_audit.txt",
+      "output_sha256": "c00bef3fb0b7fc2b583bcaa4b8f4c762f7aaca2b397adfa086bb270a02ce24ec",
+      "pytest_passed": null
+    },
+    {
+      "label": "phase3_archival_v1",
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "connectome/scripts/phase3/verify_circuit_v1.py"
+      ],
+      "exit_code": 0,
+      "output_file": "connectome/phase4/results/phase3_archival_v1.txt",
+      "output_sha256": "0f490228a097978c24431de7df7d06adc0edec9844b67debfb3c1090c39fe3dd",
+      "pytest_passed": null
+    },
+    {
+      "label": "phase4_integration",
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "connectome/scripts/phase4/run_phase4_tests.py"
+      ],
+      "exit_code": 0,
+      "output_file": "connectome/phase4/results/phase4_integration.txt",
+      "output_sha256": "fe84771959a3de6477a80e88921227e5351cc87ab83bc9641fb380829e60a01a",
+      "pytest_passed": 159
+    },
+    {
+      "label": "phase4_analysis",
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "connectome/scripts/phase4/analyze_phase4.py"
+      ],
+      "exit_code": 0,
+      "output_file": "connectome/phase4/results/phase4_analysis.txt",
+      "output_sha256": "91cab738dbe0256ebdc4be4a7f133391f23ccfbf971aced830dcbc1865e36ed3",
+      "pytest_passed": null
+    },
+    {
+      "label": "phase4_plots",
+      "command": [
+        "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+        "connectome/scripts/phase4/generate_plots.py"
+      ],
+      "exit_code": 0,
+      "output_file": "connectome/phase4/results/phase4_plots.txt",
+      "output_sha256": "905788b65122db0f8190d51afff628ecf976c333d1ef9b13a752089ccdbc36c3",
+      "pytest_passed": null
+    }
+  ],
+  "status": "PASS"
+}

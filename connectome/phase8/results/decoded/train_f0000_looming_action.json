@@ -1,0 +1,14 @@
+{
+  "action_type": "escape_initiation_requested",
+  "requested": true,
+  "first_event_ms": 256.0,
+  "first_event_s": 0.256,
+  "threshold": {
+    "kind": "finite",
+    "value": 5e-324
+  },
+  "threshold_status": "provisional_not_validation_selected",
+  "steering": null,
+  "steering_status": "unavailable_no_spatial_mapping",
+  "semantics": "abstract request; no physical movement or success outcome"
+}

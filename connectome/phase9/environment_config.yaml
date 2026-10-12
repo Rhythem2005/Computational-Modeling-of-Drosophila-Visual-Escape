@@ -1,0 +1,26 @@
+version: '1.0.0'
+protocol_id: fly_closed_loop_engineering_v1
+duration_ms: 1000
+world_dt_ms: 1.0
+world_units: abstract
+bounds_xy: [[-50.0, 50.0], [-50.0, 50.0]]
+fly_radius: 0.5
+camera_width: 256
+camera_height: 256
+camera_fps: 60
+camera_center_px: [128.0, 128.0]
+camera_focal_px: 160.0
+camera_near_depth: 0.1
+camera_orientation: stabilized_positive_world_y
+background_uint8: 128
+object_uint8: 64
+actuation_delay_ms: 20
+escape_speed_max: 20.0
+escape_acceleration_max: 400.0
+escape_lateral_angle_max_deg: 60.0
+success_final_clearance_min: 1.0
+obstacle_motion_onset_ms: 200
+spatial_seeds: [55010, 55011, 55012, 55013, 55014]
+primary_condition: uniform_population
+secondary_condition: synthetic_fields_within_type_and_side_v1
+calibration_scope: frozen_open_loop_threshold_reused_without_world_calibration

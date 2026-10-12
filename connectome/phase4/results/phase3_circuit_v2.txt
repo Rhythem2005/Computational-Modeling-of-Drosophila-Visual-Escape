@@ -1,0 +1,86 @@
+============================================================
+CIRCUIT v2 — INDEPENDENT VERIFICATION
+============================================================
+
+1. ARTIFACT FILES
+  ✓ circuit_v2_nodes.csv exists
+  ✓ circuit_v2_edges.csv exists
+  ✓ circuit_v2.json exists
+  ✓ circuit_v2_schema.json exists
+  ✓ circuit_v2_provenance.json exists
+  ✓ circuit_v2_build_validation.json exists
+
+2. SOURCE DATA FILES
+  ✓ Annotations feather exists
+  ✓ Connectivity feather exists
+  ✓ Neurotransmitters feather exists
+
+3. NEURON ID VERIFICATION
+  ✓ All 321 frozen neuron IDs exist in annotations (missing: 0)
+
+4. NEURON TYPE VERIFICATION
+  ✓ All neuron types match source (0 mismatches)
+
+5. NEURON SIDE VERIFICATION
+  ✓ All neuron sides match source (0 mismatches)
+
+6. POPULATION COUNTS
+  ✓ Total nodes = 321 (got 321)
+  ✓ No duplicate bodyIds
+  ✓ LC4 = 126 (got 126)
+  ✓ LPLC2 = 185 (got 185)
+  ✓ DNp01 = 2 (got 2)
+  ✓ DNp04 = 2 (got 2)
+  ✓ DNp06 = 2 (got 2)
+  ✓ DNp02 = 2 (got 2)
+  ✓ DNp11 = 2 (got 2)
+
+7. EDGE WEIGHT VERIFICATION (exact match against source)
+  ✓ Edge count matches: frozen=11557 source=11557
+  ✓ No unintended edges in frozen set (0 extra)
+  ✓ No missing edges in frozen set (0 missing)
+  ✓ All edge weights exactly match source (0 mismatches, tolerance=0)
+
+8. THRESHOLD ENFORCEMENT
+  ✓ All edges have weight >= 3
+
+9. EDGE INTEGRITY
+  ✓ No duplicate (pre, post) pairs
+  ✓ No self-loops (0 found)
+
+10. READOUT POPULATIONS
+  ✓ Readout types = {'DNp01', 'DNp06', 'DNp02', 'DNp11', 'DNp04'} (got {'DNp06', 'DNp11', 'DNp04', 'DNp01', 'DNp02'})
+  ✓ DNp01 has L/R pair (got {'left', 'right'})
+  ✓ DNp06 has L/R pair (got {'left', 'right'})
+  ✓ DNp02 has L/R pair (got {'left', 'right'})
+  ✓ DNp11 has L/R pair (got {'left', 'right'})
+  ✓ DNp04 has L/R pair (got {'left', 'right'})
+
+11. NEUROTRANSMITTER VERIFICATION
+  ✓ All NT predictions match source (0 mismatches)
+
+12. PROVENANCE CHECKSUMS
+  ✓ body_annotations checksum matches (SHA-256)
+  ✓ connectome_weights checksum matches (SHA-256)
+  ✓ body_neurotransmitters checksum matches (SHA-256)
+
+13. NORMALIZATION
+  ✓ Max weight is 172 (got 172)
+  ✓ Normalization is consistent (max diff: 1.11e-16)
+  ✓ Max normalized weight = 1.0
+
+14. SCHEMA
+  ✓ All schema node columns present in CSV
+  ✓ All schema edge columns present in CSV
+
+15. PHASE 2 STATISTICS REPRODUCTION
+  ✓ DNp01 visual input (11220) consistent with discovery (11224, ratio=0.9996)
+  ✓ DNp04 visual input (14985) consistent with discovery (14995, ratio=0.9993)
+  ✓ DNp06 visual input (2831) consistent with discovery (2871, ratio=0.9861)
+  ✓ DNp02 visual input (4209) consistent with discovery (4214, ratio=0.9988)
+  ✓ DNp11 visual input (3688) consistent with discovery (3737, ratio=0.9869)
+
+============================================================
+VERIFICATION COMPLETE: 48/48 checks passed
+ALL CHECKS PASSED — CIRCUIT v2 IS VERIFIED
+============================================================
