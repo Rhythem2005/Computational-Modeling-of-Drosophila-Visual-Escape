@@ -3,14 +3,20 @@
 !.env.example
 *.pem
 *.key
+.venv/
 .venv
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+node_modules/
+dist/
+build/
+.runtime/
+frontend/.env.local
 
-# Python
+# Python, TypeScript, and Caches
 __pycache__/
 *.py[cod]
 *$py.class
@@ -18,11 +24,14 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+*.tsbuildinfo
+playwright-report/
+test-results/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# OS and Editors
+# OS, Editors, Temporary Files, and Locks
 .DS_Store
 **/.DS_Store
 *.swp
@@ -30,6 +39,9 @@ htmlcov/
 .vscode/
 .idea/
 *.log
+*.lock
+*.lock.txt
+*.tmp
 
 # Large Raw Datasets (MaleCNS v1.0 feather files)
 *.feather
@@ -41,3 +53,32 @@ connectome/data/raw/neurotransmitters/
 connectome/phase4/results/*.txt
 connectome/phase4/results/analysis_data.json
 connectome/phase4/results/validation_manifest.json
+
+# Generated Simulation Outputs and Experiment Runs
+connectome/Results/phase10/results/
+!connectome/Results/phase10/results/validation_report.md
+connectome/Results/phase11/results/
+!connectome/Results/phase11/results/validation_report.md
+connectome/Results/behavior_validation/[0-9]*/
+connectome/Results/collision_threat_v1/prototype/
+connectome/Results/collision_threat_v1/[0-9]*/
+connectome/Results/collision_threat_v2/runs/
+dashboard/runs/*/
+!dashboard/runs/README.md
+!dashboard/runs/live_demo_20261027_summary.json
+
+# Simulation Data Arrays, Checkpoints, and Weights
+*.npz
+*.npy
+*.ckpt
+*.pt
+*.pth
+checkpoints/
+checkpoint_*/
+state_*.npz
+selected.npz
+
+# Preserve Essential Historical Reproducibility Assets (Phases 1-9)
+!connectome/Results/phase[1-9]/**/*.npz
+!connectome/Results/phase[1-9]/**/*.npy
+

@@ -1,11 +1,17 @@
 node_modules/
 dist/
+build/
 .venv/
 __pycache__/
 .pytest_cache/
 .runtime/
 *.pyc
+*.tsbuildinfo
 .env
 frontend/.env.local
 playwright-report/
 test-results/
+runs/*/
+!runs/README.md
+!runs/live_demo_20261027_summary.json
+

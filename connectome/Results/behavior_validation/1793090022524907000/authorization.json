@@ -1,6 +1,0 @@
-{
-  "protocol": "fly_behavior_neutral_fixture_v1",
-  "user_instruction": "So now implement it also if there are any better ideas that may come up while implementing take those then.",
-  "scope": "Approved bounded proposal: adapters, targeted checks, <=182 existing-fixture episodes; no training or held-out evaluation.",
-  "planning_sha256": "2f2c18f2e31bbd070f850215db059b4557b6d8d9875c77b9bcf27ce2a85f7640"
-}

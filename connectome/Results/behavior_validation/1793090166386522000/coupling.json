@@ -1,5 +1,0 @@
-{
-  "equal_pre_motion_frames": true,
-  "post_motion_changed_pixels": 179760,
-  "note": "Actual controller versus no-action feedback; unequal later observations are expected."
-}

@@ -1,6 +1,0 @@
-{
-  "physical_memory_bytes": 17179869184,
-  "measurement_command": "sysctl -n hw.memsize",
-  "measurement_exit_code": 0,
-  "note": "Read with approved sandbox escalation; no system settings changed."
-}
