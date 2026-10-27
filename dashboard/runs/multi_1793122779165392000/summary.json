@@ -1,0 +1,893 @@
+{
+  "status": "COMPLETED_EXECUTION_OUTCOMES_RECORDED",
+  "acceptance_status": "REQUIRES_PREREGISTERED_OUTCOME_REVIEW",
+  "attempts": 20,
+  "completed": 18,
+  "failed": [
+    "00_horizontal_pair_no_action",
+    "07_vertical_pair_frozen_latched"
+  ],
+  "results": [
+    {
+      "job": {
+        "id": "01_horizontal_pair_simple_trigger",
+        "scenario_id": "horizontal_pair",
+        "model": "simple_trigger"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 12.349999999999783,
+            "final_clearance": 12.349999999999783
+          },
+          {
+            "id": "right",
+            "minimum_swept_clearance": 12.349999999999783,
+            "final_clearance": 12.349999999999783
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 12.349999999999783,
+        "final_clearance": 12.349999999999783,
+        "path_length": 14.349999999999781,
+        "request_count": 1,
+        "motor_command_count": 1,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.85,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.18333333333333332,
+        "model": "simple_trigger",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 237.0,
+        "scheduled_actuation_ms": 257.0,
+        "first_motion_ms": 258.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 151,
+        "unsupported_frozen_encoder_multiobject_ticks": 800,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "02_horizontal_pair_frozen_latched",
+        "scenario_id": "horizontal_pair",
+        "model": "frozen_latched"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 12.309999999999784,
+            "final_clearance": 12.309999999999784
+          },
+          {
+            "id": "right",
+            "minimum_swept_clearance": 12.309999999999784,
+            "final_clearance": 12.309999999999784
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 12.309999999999784,
+        "final_clearance": 12.309999999999784,
+        "path_length": 14.309999999999782,
+        "request_count": 1,
+        "motor_command_count": 1,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.85,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.18333333333333332,
+        "model": "frozen_latched",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 239.0,
+        "scheduled_actuation_ms": 259.0,
+        "first_motion_ms": 260.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 151,
+        "unsupported_frozen_encoder_multiobject_ticks": 800,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "03_horizontal_pair_planner_only",
+        "scenario_id": "horizontal_pair",
+        "model": "planner_only"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          },
+          {
+            "id": "right",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 4.910326011721232,
+        "final_clearance": 4.910326011721232,
+        "path_length": 7.236879660918131,
+        "request_count": 1,
+        "motor_command_count": 23,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8666666666666667,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.16666666666666666,
+        "model": "planner_only",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 270.0,
+        "scheduled_actuation_ms": 290.0,
+        "first_motion_ms": 291.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 134,
+        "unsupported_frozen_encoder_multiobject_ticks": 817,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "04_horizontal_pair_circuit_planner",
+        "scenario_id": "horizontal_pair",
+        "model": "circuit_planner"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          },
+          {
+            "id": "right",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 4.910326011721232,
+        "final_clearance": 4.910326011721232,
+        "path_length": 7.236879660918131,
+        "request_count": 1,
+        "motor_command_count": 23,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8666666666666667,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.16666666666666666,
+        "model": "circuit_planner",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 270.0,
+        "scheduled_actuation_ms": 290.0,
+        "first_motion_ms": 291.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 134,
+        "unsupported_frozen_encoder_multiobject_ticks": 817,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "05_vertical_pair_no_action",
+        "scenario_id": "vertical_pair",
+        "model": "no_action"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "above",
+            "minimum_swept_clearance": 0.0,
+            "final_clearance": 0.0
+          },
+          {
+            "id": "below",
+            "minimum_swept_clearance": 0.0,
+            "final_clearance": 0.0
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": false,
+        "false_alarm": false,
+        "dangerous_miss": true,
+        "failure": {
+          "kind": "collision",
+          "time_ms": 923.3738971823079,
+          "object_id": "above"
+        },
+        "end_ms": 923.3738971823079,
+        "survived_horizon": false,
+        "minimum_swept_clearance": 0.0,
+        "final_clearance": 0.0,
+        "path_length": 0.0,
+        "request_count": 0,
+        "motor_command_count": 0,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8392857142857143,
+        "frozen_encoder_valid_fraction": 0.9464285714285714,
+        "frozen_domain_valid_fraction": 0.07142857142857142,
+        "model": "no_action",
+        "internal_request_ms": 239.0,
+        "first_request_ms": null,
+        "scheduled_actuation_ms": null,
+        "first_motion_ms": null,
+        "avoidance_bouts": 0,
+        "unknown_ticks": 141,
+        "unsupported_frozen_encoder_multiobject_ticks": 800,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "06_vertical_pair_simple_trigger",
+        "scenario_id": "vertical_pair",
+        "model": "simple_trigger"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "above",
+            "minimum_swept_clearance": 12.349999999999783,
+            "final_clearance": 12.349999999999783
+          },
+          {
+            "id": "below",
+            "minimum_swept_clearance": 12.349999999999783,
+            "final_clearance": 12.349999999999783
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 12.349999999999783,
+        "final_clearance": 12.349999999999783,
+        "path_length": 14.349999999999781,
+        "request_count": 1,
+        "motor_command_count": 1,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.85,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.18333333333333332,
+        "model": "simple_trigger",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 237.0,
+        "scheduled_actuation_ms": 257.0,
+        "first_motion_ms": 258.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 151,
+        "unsupported_frozen_encoder_multiobject_ticks": 800,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "08_vertical_pair_planner_only",
+        "scenario_id": "vertical_pair",
+        "model": "planner_only"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "above",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          },
+          {
+            "id": "below",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 4.910326011721232,
+        "final_clearance": 4.910326011721232,
+        "path_length": 7.236879660918131,
+        "request_count": 1,
+        "motor_command_count": 23,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8666666666666667,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.16666666666666666,
+        "model": "planner_only",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 270.0,
+        "scheduled_actuation_ms": 290.0,
+        "first_motion_ms": 291.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 134,
+        "unsupported_frozen_encoder_multiobject_ticks": 817,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "09_vertical_pair_circuit_planner",
+        "scenario_id": "vertical_pair",
+        "model": "circuit_planner"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "above",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          },
+          {
+            "id": "below",
+            "minimum_swept_clearance": 4.910326011721232,
+            "final_clearance": 4.910326011721232
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 4.910326011721232,
+        "final_clearance": 4.910326011721232,
+        "path_length": 7.236879660918131,
+        "request_count": 1,
+        "motor_command_count": 23,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8666666666666667,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.16666666666666666,
+        "model": "circuit_planner",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 270.0,
+        "scheduled_actuation_ms": 290.0,
+        "first_motion_ms": 291.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 134,
+        "unsupported_frozen_encoder_multiobject_ticks": 817,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "10_mixed_three_no_action",
+        "scenario_id": "mixed_three",
+        "model": "no_action"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 0.0,
+            "final_clearance": 0.0
+          },
+          {
+            "id": "above",
+            "minimum_swept_clearance": 0.0,
+            "final_clearance": 0.0
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 2.9101885037849193,
+            "final_clearance": 2.9101885037849193
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": false,
+        "false_alarm": false,
+        "dangerous_miss": true,
+        "failure": {
+          "kind": "collision",
+          "time_ms": 923.3738971823079,
+          "object_id": "above"
+        },
+        "end_ms": 923.3738971823079,
+        "survived_horizon": false,
+        "minimum_swept_clearance": 0.0,
+        "final_clearance": 0.0,
+        "path_length": 0.0,
+        "request_count": 0,
+        "motor_command_count": 0,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.75,
+        "frozen_encoder_valid_fraction": 0.8392857142857143,
+        "frozen_domain_valid_fraction": 0.0,
+        "model": "no_action",
+        "internal_request_ms": 239.0,
+        "first_request_ms": null,
+        "scheduled_actuation_ms": null,
+        "first_motion_ms": null,
+        "avoidance_bouts": 0,
+        "unknown_ticks": 224,
+        "unsupported_frozen_encoder_multiobject_ticks": 867,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "11_mixed_three_simple_trigger",
+        "scenario_id": "mixed_three",
+        "model": "simple_trigger"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 12.349999999999783,
+            "final_clearance": 12.349999999999783
+          },
+          {
+            "id": "above",
+            "minimum_swept_clearance": 12.349999999999783,
+            "final_clearance": 12.349999999999783
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 13.196134376873408,
+            "final_clearance": 13.196134376873408
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 12.349999999999783,
+        "final_clearance": 12.349999999999783,
+        "path_length": 14.349999999999781,
+        "request_count": 1,
+        "motor_command_count": 1,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8166666666666667,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.0,
+        "model": "simple_trigger",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 237.0,
+        "scheduled_actuation_ms": 257.0,
+        "first_motion_ms": 258.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 184,
+        "unsupported_frozen_encoder_multiobject_ticks": 1000,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "12_mixed_three_frozen_latched",
+        "scenario_id": "mixed_three",
+        "model": "frozen_latched"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 12.309999999999784,
+            "final_clearance": 12.309999999999784
+          },
+          {
+            "id": "above",
+            "minimum_swept_clearance": 12.309999999999784,
+            "final_clearance": 12.309999999999784
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 13.158367326331481,
+            "final_clearance": 13.158367326331481
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 12.309999999999784,
+        "final_clearance": 12.309999999999784,
+        "path_length": 14.309999999999782,
+        "request_count": 1,
+        "motor_command_count": 1,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.0,
+        "model": "frozen_latched",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 239.0,
+        "scheduled_actuation_ms": 259.0,
+        "first_motion_ms": 260.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 200,
+        "unsupported_frozen_encoder_multiobject_ticks": 1000,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "13_mixed_three_planner_only",
+        "scenario_id": "mixed_three",
+        "model": "planner_only"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 3.7905889824641967,
+            "final_clearance": 3.7905889824641967
+          },
+          {
+            "id": "above",
+            "minimum_swept_clearance": 3.7905889824641967,
+            "final_clearance": 3.7905889824641967
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 5.617811359582086,
+            "final_clearance": 5.617811359582086
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 3.7905889824641967,
+        "final_clearance": 3.7905889824641967,
+        "path_length": 6.279380453868976,
+        "request_count": 1,
+        "motor_command_count": 15,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.7,
+        "frozen_encoder_valid_fraction": 0.9,
+        "frozen_domain_valid_fraction": 0.0,
+        "model": "planner_only",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 270.0,
+        "scheduled_actuation_ms": 290.0,
+        "first_motion_ms": 291.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 300,
+        "unsupported_frozen_encoder_multiobject_ticks": 1000,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "14_mixed_three_circuit_planner",
+        "scenario_id": "mixed_three",
+        "model": "circuit_planner"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "left",
+            "minimum_swept_clearance": 3.7905889824641967,
+            "final_clearance": 3.7905889824641967
+          },
+          {
+            "id": "above",
+            "minimum_swept_clearance": 3.7905889824641967,
+            "final_clearance": 3.7905889824641967
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 5.617811359582086,
+            "final_clearance": 5.617811359582086
+          }
+        ],
+        "danger": true,
+        "stationary_contact_ms": 923.3738971823078,
+        "escape_success": true,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 3.7905889824641967,
+        "final_clearance": 3.7905889824641967,
+        "path_length": 6.279380453868976,
+        "request_count": 1,
+        "motor_command_count": 15,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.7,
+        "frozen_encoder_valid_fraction": 0.9,
+        "frozen_domain_valid_fraction": 0.0,
+        "model": "circuit_planner",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 270.0,
+        "scheduled_actuation_ms": 290.0,
+        "first_motion_ms": 291.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 300,
+        "unsupported_frozen_encoder_multiobject_ticks": 1000,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "15_harmless_pair_no_action",
+        "scenario_id": "harmless_pair",
+        "model": "no_action"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "static",
+            "minimum_swept_clearance": 18.8806130178211,
+            "final_clearance": 18.8806130178211
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 2.85071250072666,
+            "final_clearance": 3.0
+          }
+        ],
+        "danger": false,
+        "stationary_contact_ms": null,
+        "escape_success": null,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 2.85071250072666,
+        "final_clearance": 3.0,
+        "path_length": 0.0,
+        "request_count": 0,
+        "motor_command_count": 0,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8666666666666667,
+        "frozen_encoder_valid_fraction": 0.9,
+        "frozen_domain_valid_fraction": 0.11666666666666667,
+        "model": "no_action",
+        "internal_request_ms": 239.0,
+        "first_request_ms": null,
+        "scheduled_actuation_ms": null,
+        "first_motion_ms": null,
+        "avoidance_bouts": 0,
+        "unknown_ticks": 134,
+        "unsupported_frozen_encoder_multiobject_ticks": 867,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "16_harmless_pair_simple_trigger",
+        "scenario_id": "harmless_pair",
+        "model": "simple_trigger"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "static",
+            "minimum_swept_clearance": 18.8806130178211,
+            "final_clearance": 32.87008029815797
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 13.196134376873408,
+            "final_clearance": 13.196134376873408
+          }
+        ],
+        "danger": false,
+        "stationary_contact_ms": null,
+        "escape_success": null,
+        "false_alarm": true,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 13.196134376873408,
+        "final_clearance": 13.196134376873408,
+        "path_length": 14.349999999999781,
+        "request_count": 1,
+        "motor_command_count": 1,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.9833333333333333,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.0,
+        "model": "simple_trigger",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 237.0,
+        "scheduled_actuation_ms": 257.0,
+        "first_motion_ms": 258.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 17,
+        "unsupported_frozen_encoder_multiobject_ticks": 1000,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "17_harmless_pair_frozen_latched",
+        "scenario_id": "harmless_pair",
+        "model": "frozen_latched"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "static",
+            "minimum_swept_clearance": 18.8806130178211,
+            "final_clearance": 32.83067757021079
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 13.158367326331481,
+            "final_clearance": 13.158367326331481
+          }
+        ],
+        "danger": false,
+        "stationary_contact_ms": null,
+        "escape_success": null,
+        "false_alarm": true,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 13.158367326331481,
+        "final_clearance": 13.158367326331481,
+        "path_length": 14.309999999999782,
+        "request_count": 1,
+        "motor_command_count": 1,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.9833333333333333,
+        "frozen_encoder_valid_fraction": 1.0,
+        "frozen_domain_valid_fraction": 0.0,
+        "model": "frozen_latched",
+        "internal_request_ms": 239.0,
+        "first_request_ms": 239.0,
+        "scheduled_actuation_ms": 259.0,
+        "first_motion_ms": 260.0,
+        "avoidance_bouts": 1,
+        "unknown_ticks": 17,
+        "unsupported_frozen_encoder_multiobject_ticks": 1000,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "18_harmless_pair_planner_only",
+        "scenario_id": "harmless_pair",
+        "model": "planner_only"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "static",
+            "minimum_swept_clearance": 18.8806130178211,
+            "final_clearance": 18.8806130178211
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 2.85071250072666,
+            "final_clearance": 3.0
+          }
+        ],
+        "danger": false,
+        "stationary_contact_ms": null,
+        "escape_success": null,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 2.85071250072666,
+        "final_clearance": 3.0,
+        "path_length": 0.0,
+        "request_count": 0,
+        "motor_command_count": 0,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8666666666666667,
+        "frozen_encoder_valid_fraction": 0.9,
+        "frozen_domain_valid_fraction": 0.11666666666666667,
+        "model": "planner_only",
+        "internal_request_ms": 239.0,
+        "first_request_ms": null,
+        "scheduled_actuation_ms": null,
+        "first_motion_ms": null,
+        "avoidance_bouts": 0,
+        "unknown_ticks": 134,
+        "unsupported_frozen_encoder_multiobject_ticks": 867,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    },
+    {
+      "job": {
+        "id": "19_harmless_pair_circuit_planner",
+        "scenario_id": "harmless_pair",
+        "model": "circuit_planner"
+      },
+      "metrics": {
+        "per_object": [
+          {
+            "id": "static",
+            "minimum_swept_clearance": 18.8806130178211,
+            "final_clearance": 18.8806130178211
+          },
+          {
+            "id": "near_miss",
+            "minimum_swept_clearance": 2.85071250072666,
+            "final_clearance": 3.0
+          }
+        ],
+        "danger": false,
+        "stationary_contact_ms": null,
+        "escape_success": null,
+        "false_alarm": false,
+        "dangerous_miss": false,
+        "failure": null,
+        "end_ms": 1000.0,
+        "survived_horizon": true,
+        "minimum_swept_clearance": 2.85071250072666,
+        "final_clearance": 3.0,
+        "path_length": 0.0,
+        "request_count": 0,
+        "motor_command_count": 0,
+        "endpoint_scope": "stationary-fly whole-scene danger; not a per-object causal false-alarm adjudication",
+        "perception_valid_fraction": 0.8666666666666667,
+        "frozen_encoder_valid_fraction": 0.9,
+        "frozen_domain_valid_fraction": 0.11666666666666667,
+        "model": "circuit_planner",
+        "internal_request_ms": 239.0,
+        "first_request_ms": null,
+        "scheduled_actuation_ms": null,
+        "first_motion_ms": null,
+        "avoidance_bouts": 0,
+        "unknown_ticks": 134,
+        "unsupported_frozen_encoder_multiobject_ticks": 867,
+        "domain": "new_multi_object_engineering_not_independently_validated"
+      }
+    }
+  ],
+  "training_runs": 0,
+  "held_out_evaluations": 0
+}

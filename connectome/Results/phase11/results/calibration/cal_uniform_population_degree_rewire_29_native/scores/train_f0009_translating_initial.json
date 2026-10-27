@@ -1,0 +1,65 @@
+{
+  "contract": {
+    "identity": {
+      "model_id": "degree_rewire_29",
+      "model_sha256": "af4b8641580a39ad24c9c32f1584c2da0de06cf35eadf842f54ccf5a99ecbb24",
+      "gain_condition": "native",
+      "mapping": "uniform_population",
+      "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+      "duration_ms": 1000,
+      "dt_ms": 1,
+      "input_scale": 0.4,
+      "persistence_ms": 20,
+      "decoder": "first_event_latched_closed_20ms_half_open_episode",
+      "initial_state": "zeros",
+      "warmup_ms": 0
+    },
+    "input_sha256": "eb86d727b80e52c96043c97f67be4a2ef5935e5324f73eba1560db492c4d9aca",
+    "phase11_sources_sha256": {
+      "connectome/Results/phase11/README.md": "a79927aa6a3284e2917d76cd0c42c2b10543b78991d7c7263a53232ac255f3f3",
+      "connectome/Results/phase11/training_plan.md": "b36ee54d40d85fe61f3f68e92f62f232b3ff7cd579f5e7b6bf5d7a878cd9ed89",
+      "connectome/scripts/phase11/assessment.py": "b40ad5f323202630fcf8528d07dae949e3097b69d760af456e72290c6f1e5fae",
+      "connectome/scripts/phase11/common.py": "72cbc548279b15e03f6f7681b9eecf5fe87b2f0193f7cb01ba922abae7ca68ec",
+      "connectome/scripts/phase11/dataset.py": "19d07776af29c0739f8f0a60e1c0f2497472396548f1d8e6bbbe6e00300fc926",
+      "connectome/scripts/phase11/engineering.py": "d1241e8c227042d481a55ecadc7cf51d5f465da18909ae7a1981560a133f5033",
+      "connectome/scripts/phase11/integrity.py": "97ec3337727d690bc04a59d8871456253b720a06a402c72a4ad6927ed636cf8c",
+      "connectome/scripts/phase11/jobs.py": "25be78ab0ef3c49694a79f1840c22f59ba2d45a907f62f7a24af9379278ac21f",
+      "connectome/scripts/phase11/launch.py": "124874c4ff270826384535987d1ef9987c2d887bfac6e68635fe6eeb06331f97",
+      "connectome/scripts/phase11/manual_stop.py": "c017188ad89e46843f213cde9ebb15a8ff70bbbe73122da53734ed6af7afd9b4",
+      "connectome/scripts/phase11/repair_provenance.py": "db7001f7bed40cc6ffa65342bbc56ea1580c9aa1a974fef5cfa2d61b31a824f1",
+      "connectome/scripts/phase11/resources.py": "1b2c9ba8744f3f08b3117a173649b1b0c90379458a3b4efb1a0f00a1be51544d",
+      "connectome/scripts/phase11/runner.py": "705a06eeca7a9a35ef040da153ab856d2f43e7d2a8b57f561062afc488589b20",
+      "connectome/scripts/phase11/runtime.py": "700221efd36096b63b13b62a4f635a520f92a2773719f9d1b0d9330506b4f861",
+      "connectome/scripts/phase11/tests/launcher_fixture.py": "b95a2655dc251abb61f774866047c9864f27d462b50d60185709d543e8e3c185",
+      "connectome/scripts/phase11/tests/manual_fixture.py": "faf19c64758726437c3be9c8f12d80ada96d015c99038842a762f2d1ae437ba0",
+      "connectome/scripts/phase11/tests/test_calibration_repair.py": "7c27b3b49cb5bd2e18390d4a1f75f4782e7af891c4e7287c82fc0058fa56b3d1",
+      "connectome/scripts/phase11/tests/test_manual_resume.py": "4e54aa1ebad97dc2ef911d0b3c35a37136a019e25ba42766ecc2ad57354d4410",
+      "connectome/scripts/phase11/tests/test_orchestration.py": "e402ff25f5d122682c52b7f3ad188416243fdaf113d1e3a1c65f638eae48569d",
+      "connectome/scripts/phase11/training.py": "e2d497db3b959930f402e7612f102c6d4a52721f7dde5feb89ad9787a5f402dd"
+    }
+  },
+  "sha256": "69791da8d48df66d5f0fa94774c34e63ccc37434998296b4b15d7acc1a9c7792",
+  "diagnostics": {
+    "finite": true,
+    "runtime_s": 0.01046074999976554,
+    "activity_min": 0.0,
+    "activity_max": 0.0,
+    "input_scaled_max": 0.0,
+    "clipped_fraction": 0.0,
+    "linear_regime_valid": true,
+    "input_sha256": "3eaa04da2d31788d8a467bc90411b117407b15f6c255fe18e1a0d696b2c7d374",
+    "trainable_parameters": 0,
+    "condition": {
+      "condition": "native",
+      "gain": 0.5,
+      "unscaled_radius": 1.2864615359492777,
+      "effective_radius": 0.6432307679746389,
+      "continuous_max_real": -0.03567692320253612,
+      "discrete_radius": 0.9643230767974639,
+      "stable": true,
+      "zero_radius": false,
+      "target": null,
+      "recurrent_matrix_rescale": 1.0
+    }
+  }
+}

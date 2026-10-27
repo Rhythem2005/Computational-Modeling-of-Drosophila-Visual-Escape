@@ -1,0 +1,39 @@
+{
+  "final_status": "BLOCKED",
+  "thermal_feature_removed_from_active_code": true,
+  "historical_thermal_evidence_archived": true,
+  "pre_session_launcher_backup_hash_verified": true,
+  "existing_source_files_changed": [
+    "launch.py",
+    "runner.py",
+    "training.py",
+    "jobs.py",
+    "dataset.py",
+    "resources.py"
+  ],
+  "frozen_phase1_through10_files_unchanged": 2669,
+  "historical_phase11_checkpoint_array_pointer_files_unchanged": 391,
+  "job_ledger_bytes_unchanged": true,
+  "registered_training_trials_executed": 0,
+  "calibration_jobs_executed": 0,
+  "held_out_inference_runs": 0,
+  "resource_profiling_epochs_this_task": 2,
+  "gate_A": "PASS",
+  "gate_B": "PASS",
+  "tests": {
+    "tests": 542,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "gate_C": "BLOCKED_RESOURCES",
+  "current_blockers": [
+    "STABLE_AC_NOT_VERIFIED",
+    "BATTERY_DISCHARGING"
+  ],
+  "tested_source_hashes_verified": 18,
+  "exact_fresh_process_continuation_verified": true,
+  "parent_SIGINT_final_publication_verified": true,
+  "checkpoint_format_changed": false,
+  "production_background_workers_started": false
+}

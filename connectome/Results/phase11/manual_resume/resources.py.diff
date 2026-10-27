@@ -1,0 +1,81 @@
+--- pre_manual/resources.py
++++ manual/resources.py
+@@ -11,7 +11,7 @@
+ from connectome.scripts.phase10.gru import GRU, Adam
+ from connectome.scripts.phase10.models import rate_trace
+ from connectome.scripts.phase10.networks import load_network
+-from .common import ROOT, OUT, write, arrays, sha, read
++from .common import ROOT, OUT, write, arrays, sha, read, sources
+ from .dataset import Dataset
+ from .training import batch_inputs, save_state
+ 
+@@ -28,6 +28,7 @@
+ def profile():
+     from connectome.scripts.phase7.pipeline import FrozenPipeline
+     pipeline = FrozenPipeline()
++    profile_dir=OUT/'resources/profiles'/str(time.time_ns())
+     dataset = Dataset(pipeline, 'uniform_population')
+     start = time.perf_counter()
+     inputs = dataset.prepare()
+@@ -52,7 +53,7 @@
+                      epoch=1, offset=offset+c['batch_size'], order=order.tolist(), history=[], best_bce=None,
+                      best_epoch=0, stale=0, contract=dict(profile_only=True, input_identity=inputs))
+         checkpoint_start = time.perf_counter()
+-        save_state(OUT/'resources/checkpoint_profile', net, adam, state)
++        save_state(profile_dir/'checkpoint_profile', net, adam, state)
+         checkpoint_s.append(time.perf_counter()-checkpoint_start)
+         print(f'Profiling full BPTT batch {len(training_batches)}/16', flush=True)
+     validation_bce = 0.
+@@ -67,11 +68,11 @@
+     before = time.perf_counter()
+     trace = rate_trace(drive, pipeline, weights, setting)
+     rate_s = time.perf_counter()-before
+-    arrays(OUT/'resources/rate_profile.npz', score=trace['score'], dn_activity=trace['dn_activity'], final_state=trace['states'][-1])
+-    arrays(OUT/'resources/gru_profile.npz', **net.p)
+-    rate_bytes = (OUT/'resources/rate_profile.npz').stat().st_size
+-    state_bytes = sum(p.stat().st_size for p in (OUT/'resources/checkpoint_profile').glob('*.npz'))
+-    gru_bytes = (OUT/'resources/gru_profile.npz').stat().st_size
++    arrays(profile_dir/'rate_profile.npz', score=trace['score'], dn_activity=trace['dn_activity'], final_state=trace['states'][-1])
++    arrays(profile_dir/'gru_profile.npz', **net.p)
++    rate_bytes = (profile_dir/'rate_profile.npz').stat().st_size
++    state_bytes = sum(p.stat().st_size for p in (profile_dir/'checkpoint_profile').glob('*.npz'))
++    gru_bytes = (profile_dir/'gru_profile.npz').stat().st_size
+     # Uncompressed upper bound avoids assuming all clips compress like one clip.
+     score_upper = 744*384*((1000+10000+321)*8+8192) + 72*384*(1000*8+8192)
+     checkpoint_upper = 120*(2*4*16241*8 + 200*4096) + 60*16241*8
+@@ -85,14 +86,13 @@
+     minimum_training_s = epoch_s*21*120
+     maximum_training_s = epoch_s*200*120
+     rate_total_s = rate_s*744*384
+-    blockers = []
++    from .runtime import check
++    live=check(required_bytes)
++    blockers=list(live['blockers'])
+     if free < required_bytes:
+         blockers.append('Available disk is below conservative complete-artifact allowance; budget is not reduced.')
+     if hardware.get('physical_memory_bytes', 0) and resource.getrusage(resource.RUSAGE_SELF).ru_maxrss > .8*hardware['physical_memory_bytes']:
+         blockers.append('Measured peak RSS exceeds 80% of installed physical RAM.')
+-    if power['discharging']:
+-        if power['remaining_s'] is None or power['remaining_s'] < minimum_training_s+rate_total_s:
+-            blockers.append('Battery is discharging and reported remaining runtime cannot cover even the projected earliest-stop full schedule. Reliable sustained power is required before Gate D.')
+     report = dict(status='BLOCKED_RESOURCES' if blockers else 'PASS', blockers=blockers,
+         profile_only=True, registered_training_trials_completed=0, calibration_conditions_completed=0,
+         benchmark_profiling_epochs=1, profiling_training_clips=len(train), profiling_validation_clips=len(val),
+@@ -106,15 +106,8 @@
+         estimate_limits='Single uniform-mapping epoch/one circuit clip; ignores spatial input preparation and candidate decoding; throughput may vary with mapping, cache, thermal state and power. Estimates are not completed work.',
+         conservative_disk_allowance_bytes=required_bytes, disk_free_bytes=free, power=power,
+         hardware=hardware, threads={k:os.environ.get(k) for k in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','VECLIB_MAXIMUM_THREADS')},
+-        held_out_inference_runs=0, input_identity=inputs)
++        held_out_inference_runs=0, input_identity=inputs,live_preflight=live,
++        phase11_sources_sha256=sources(),profile_directory=str(profile_dir.relative_to(ROOT)))
+     write(OUT/'gate_C.json', report)
+-    from .jobs import ledger
+-    jobs = ledger()
+-    if blockers:
+-        for job in jobs:
+-            if job['status'] == 'NOT_STARTED':
+-                job['status'] = 'BLOCKED_GATE_C'
+-                job['blockers'] = blockers
+-        write(OUT/'job_ledger.json', jobs)
+     print('Gate C:', report['status'], f'epoch {epoch_s:.3f}s, peak RSS {report["maximum_resident_bytes"]/1024**2:.1f} MiB', flush=True)
+     return report

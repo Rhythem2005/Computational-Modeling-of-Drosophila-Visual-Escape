@@ -1,0 +1,208 @@
+{
+  "status": "BOUNDED_DEMONSTRATION_FINISHED_WITH_ADAPTER_ERRORS",
+  "attempts_reserved": 15,
+  "verified_recordings": 13,
+  "dangerous_successes": 11,
+  "harmless_false_alarms": 0,
+  "unverified_attempts": [
+    {
+      "scenario": "world_head_on",
+      "model": "finite_retirement_gate_v2",
+      "failure": "observer body-ID conversion before first world step; not retried"
+    },
+    {
+      "scenario": "world_left",
+      "model": "circuit",
+      "seed": 55010,
+      "failure": "simulation finished but metric checker used newer schema; not retried or counted as verified"
+    }
+  ],
+  "bootstrap_failures_without_new_attempts": 1,
+  "training_runs": 0,
+  "held_out_evaluations": 0,
+  "source_and_pointer_preservation": true,
+  "recordings": [
+    {
+      "recording": "dashboard/runs/1793100586599707000/episodes/01_world_left_finite_retirement_gate_v2.json",
+      "scenario": "world_left",
+      "model": "finite_retirement_gate_v2",
+      "seed": null,
+      "final_fly_xy": [
+        0.0,
+        -14.309999999999784
+      ],
+      "turn_command": null,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100586599707000/episodes/02_world_right_finite_retirement_gate_v2.json",
+      "scenario": "world_right",
+      "model": "finite_retirement_gate_v2",
+      "seed": null,
+      "final_fly_xy": [
+        0.0,
+        -14.309999999999784
+      ],
+      "turn_command": null,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100586599707000/episodes/03_world_static_finite_retirement_gate_v2.json",
+      "scenario": "world_static",
+      "model": "finite_retirement_gate_v2",
+      "seed": null,
+      "final_fly_xy": [
+        0.0,
+        0.0
+      ],
+      "turn_command": null,
+      "escape_success": null,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100586599707000/episodes/04_world_near_miss_finite_retirement_gate_v2.json",
+      "scenario": "world_near_miss",
+      "model": "finite_retirement_gate_v2",
+      "seed": null,
+      "final_fly_xy": [
+        0.0,
+        0.0
+      ],
+      "turn_command": null,
+      "escape_success": null,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/06_world_left_circuit_s55011.json",
+      "scenario": "world_left",
+      "model": "circuit",
+      "seed": 55011,
+      "final_fly_xy": [
+        8.507574461280578,
+        -11.506401556775618
+      ],
+      "turn_command": 0.6079731332190377,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/07_world_left_circuit_s55012.json",
+      "scenario": "world_left",
+      "model": "circuit",
+      "seed": 55012,
+      "final_fly_xy": [
+        8.648876364961975,
+        -11.400571811255656
+      ],
+      "turn_command": 0.6197539708773249,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/08_world_left_circuit_s55013.json",
+      "scenario": "world_left",
+      "model": "circuit",
+      "seed": 55013,
+      "final_fly_xy": [
+        9.495341375258148,
+        -10.705820480809116
+      ],
+      "turn_command": 0.6928477475031604,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/09_world_left_circuit_s55014.json",
+      "scenario": "world_left",
+      "model": "circuit",
+      "seed": 55014,
+      "final_fly_xy": [
+        9.6957079019204,
+        -10.524701814333561
+      ],
+      "turn_command": 0.7108718220692651,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/10_world_right_circuit_s55010.json",
+      "scenario": "world_right",
+      "model": "circuit",
+      "seed": 55010,
+      "final_fly_xy": [
+        -10.98654789858492,
+        -9.169071123734417
+      ],
+      "turn_command": -0.8358758702219697,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/11_world_right_circuit_s55011.json",
+      "scenario": "world_right",
+      "model": "circuit",
+      "seed": 55011,
+      "final_fly_xy": [
+        -9.963321513422544,
+        -10.271724510527612
+      ],
+      "turn_command": -0.7354470126600621,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/12_world_right_circuit_s55012.json",
+      "scenario": "world_right",
+      "model": "circuit",
+      "seed": 55012,
+      "final_fly_xy": [
+        -10.494466612635296,
+        -9.72842590125862
+      ],
+      "turn_command": -0.7861553331379865,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/13_world_right_circuit_s55013.json",
+      "scenario": "world_right",
+      "model": "circuit",
+      "seed": 55013,
+      "final_fly_xy": [
+        -9.159174393220338,
+        -10.994799881515739
+      ],
+      "turn_command": -0.6632642479412614,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    },
+    {
+      "recording": "dashboard/runs/1793100701832212000/episodes/14_world_right_circuit_s55014.json",
+      "scenario": "world_right",
+      "model": "circuit",
+      "seed": 55014,
+      "final_fly_xy": [
+        -8.975332812824707,
+        -11.145380249189923
+      ],
+      "turn_command": -0.6474060442633599,
+      "escape_success": true,
+      "false_alarm": false,
+      "exact_reference_match": true
+    }
+  ]
+}

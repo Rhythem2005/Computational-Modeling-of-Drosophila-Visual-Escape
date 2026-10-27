@@ -1,0 +1,17 @@
+--- before/resources.py
++++ after/resources.py
+@@ -89,11 +89,12 @@
+     from .runtime import check
+     live=check(required_bytes)
+     blockers=list(live['blockers'])
++    warnings=list(live.get('warnings',[]))
+     if free < required_bytes:
+-        blockers.append('Available disk is below conservative complete-artifact allowance; budget is not reduced.')
++        warnings.append('Available disk is below conservative complete-artifact allowance; budget is not reduced.')
+     if hardware.get('physical_memory_bytes', 0) and resource.getrusage(resource.RUSAGE_SELF).ru_maxrss > .8*hardware['physical_memory_bytes']:
+         blockers.append('Measured peak RSS exceeds 80% of installed physical RAM.')
+-    report = dict(status='BLOCKED_RESOURCES' if blockers else 'PASS', blockers=blockers,
++    report = dict(status='BLOCKED_RESOURCES' if blockers else 'PASS', blockers=blockers, warnings=warnings,
+         profile_only=True, registered_training_trials_completed=0, calibration_conditions_completed=0,
+         benchmark_profiling_epochs=1, profiling_training_clips=len(train), profiling_validation_clips=len(val),
+         gradient_updates=adam.t, preparation_s=preparation_s, measured_epoch_s=epoch_s,

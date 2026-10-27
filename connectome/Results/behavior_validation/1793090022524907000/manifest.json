@@ -1,0 +1,1739 @@
+{
+  "protocol": "fly_behavior_neutral_fixture_v1",
+  "status": "LOCKED_BEFORE_ENGINEERING_CHECKS_AND_NEW_BEHAVIOR",
+  "roster": {
+    "uniform_population": [
+      {
+        "id": "circuit",
+        "model": "circuit",
+        "threshold": {
+          "kind": "finite",
+          "value": 5e-324
+        },
+        "freeze_sha256": "7f1a91526429e2d19cfbc58d385b679906ee918671c39279a4ce44c1d09a3a5f"
+      },
+      {
+        "id": "feature_only",
+        "model": "feature_only",
+        "threshold": {
+          "kind": "finite",
+          "value": 5e-324
+        },
+        "freeze_sha256": "3a2b48442116fa965f394115de9aaef7335f67334147b442d9e7685388f7adf8"
+      },
+      {
+        "id": "no_action",
+        "model": "no_action",
+        "threshold": {
+          "kind": "always_silent",
+          "value": null
+        },
+        "freeze_sha256": null
+      },
+      {
+        "id": "gru_55100",
+        "model": "gru",
+        "seed": 55100,
+        "parameters_sha256": "ebff2d27ab94a71bb3aed09ff31c3301b68289eadd3da24f7df4c8c41aab70b9",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00011725363313339216
+        },
+        "freeze_sha256": "cad5ed8e4d458de762dd99c77a39832df1517967686ff23064c5c90c5ed07942"
+      },
+      {
+        "id": "gru_55101",
+        "model": "gru",
+        "seed": 55101,
+        "parameters_sha256": "5b4b0b78e4f25df12cd84ec177226e080ccbe88fed4a5cfdd60ba91629858ef7",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00012808420547957822
+        },
+        "freeze_sha256": "e733c94ad595ffc5906d8515da6ff60b123a36cd45efe3606a38eac675c7f0f6"
+      },
+      {
+        "id": "gru_55102",
+        "model": "gru",
+        "seed": 55102,
+        "parameters_sha256": "52bae4dc11eb345d412c322ac1543db5d3375607c7897f620b4e678f92196c46",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00011870586782276681
+        },
+        "freeze_sha256": "3f6da0ef33bcbeea3bb072e9f6730b7cc55f4c1926beb76822d9262821513636"
+      },
+      {
+        "id": "gru_55103",
+        "model": "gru",
+        "seed": 55103,
+        "parameters_sha256": "27a283f0f5a92732187d1cd3f3547abc38ef63c13a4cc33eacea4a4be36bac73",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.000104365214213485
+        },
+        "freeze_sha256": "de49a9c7b5427028319144c5a175881eac0ed3d076ee781b5cd4717e63bf21c5"
+      },
+      {
+        "id": "gru_55104",
+        "model": "gru",
+        "seed": 55104,
+        "parameters_sha256": "f448f77efff7c9b4607133b0b635bd787b3949187d43f34a4d6d6de544e50bee",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00010891398579817511
+        },
+        "freeze_sha256": "f602f8c8c033ebcd9847d7c61d14a65425d61759b02b1e7880fe1036015b5e29"
+      },
+      {
+        "id": "gru_55105",
+        "model": "gru",
+        "seed": 55105,
+        "parameters_sha256": "2a8e2689f4f1160bb1600100c7e91def87abc922dfcbf7d37f03e6be91b5077d",
+        "threshold": {
+          "kind": "finite",
+          "value": 9.93393178279596e-05
+        },
+        "freeze_sha256": "e542f1e4f58089abd847924205bf0d2b548cf733cc680ae3e4f99fe8c315c073"
+      },
+      {
+        "id": "gru_55106",
+        "model": "gru",
+        "seed": 55106,
+        "parameters_sha256": "54934110c4327402c6f7f3f55c48d27ad050d153dbb25ca579c156113867ca75",
+        "threshold": {
+          "kind": "always_silent",
+          "value": null
+        },
+        "freeze_sha256": "507e54365414039e6f1f327a337f1539764aa78bf5590483f678933295c15036"
+      },
+      {
+        "id": "gru_55107",
+        "model": "gru",
+        "seed": 55107,
+        "parameters_sha256": "ee10663611c2b89e91aa3f64a0d99377bf6c8685b0741a96e981261e80900311",
+        "threshold": {
+          "kind": "finite",
+          "value": 9.576478685927849e-05
+        },
+        "freeze_sha256": "63dbe46f270d37103feeff3ba883eaa3670a444404156565741431c8da9c6dc2"
+      },
+      {
+        "id": "gru_55108",
+        "model": "gru",
+        "seed": 55108,
+        "parameters_sha256": "6072e1b5cde8883f34e6e3dc546e9e0530ba208f92e95f1d27fcc72c70638f07",
+        "threshold": {
+          "kind": "always_silent",
+          "value": null
+        },
+        "freeze_sha256": "1b6bf38e65468f38fd986e92214f7cf6e20925077ea319a6e82757cf6bed7f61"
+      },
+      {
+        "id": "gru_55109",
+        "model": "gru",
+        "seed": 55109,
+        "parameters_sha256": "983e05a41466601087270543ac5220956b2815677ab2a599a4bfff49e12b28c0",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00013471625409457112
+        },
+        "freeze_sha256": "96afca5b392998cc039f835e71ad9265c1c4f51c5f76b7f8d07334ca2370917b"
+      }
+    ],
+    "55010": [
+      {
+        "id": "circuit",
+        "model": "circuit",
+        "threshold": {
+          "kind": "finite",
+          "value": 5e-324
+        },
+        "freeze_sha256": "d6b01218a5ada86c326cebc47991b93b7683da5ffaab8271ec4ec372a781cc70"
+      },
+      {
+        "id": "feature_only",
+        "model": "feature_only",
+        "threshold": {
+          "kind": "finite",
+          "value": 5e-324
+        },
+        "freeze_sha256": "e771c2bae319258de58d5e3deb3b94175523d54d0597f9d11cf0caff056cdf50"
+      },
+      {
+        "id": "no_action",
+        "model": "no_action",
+        "threshold": {
+          "kind": "always_silent",
+          "value": null
+        },
+        "freeze_sha256": null
+      },
+      {
+        "id": "gru_55100",
+        "model": "gru",
+        "seed": 55100,
+        "parameters_sha256": "3586371553194b5d7a345f8a917f3855715ff1ec0fea1c15b8e6bd0c9c766ab4",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00010389576015226307
+        },
+        "freeze_sha256": "8cbe9b71ae7ee93559659d7af6fe0624ae38736fe7b9722eba66bebf463588fd"
+      },
+      {
+        "id": "gru_55101",
+        "model": "gru",
+        "seed": 55101,
+        "parameters_sha256": "d3dbab866da15d7d46f9bcb611b9013b21cdbb2ecd8ee53a7eb59a019b679fd9",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00012276969090324445
+        },
+        "freeze_sha256": "aa42c983758cfe87a56718557ab57f5423a13a3efb42d6de37f93df095d8fd14"
+      },
+      {
+        "id": "gru_55102",
+        "model": "gru",
+        "seed": 55102,
+        "parameters_sha256": "6d90634b2551e8dd61006e34083d92aa3e737cd10efbd341325f89f39ec43c68",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00011436226738525891
+        },
+        "freeze_sha256": "86f00e9cc40d82735481abba13a69201e7e082a0ff12160cc2aa1f4bcc7134df"
+      },
+      {
+        "id": "gru_55103",
+        "model": "gru",
+        "seed": 55103,
+        "parameters_sha256": "ea05ea8406fed7ee3ee5ed48aee6865e9fe5cbdcf41342f0bfd596c341725465",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00011765599604671922
+        },
+        "freeze_sha256": "83ee2a4c2c7825fcc37ceacc7e35c7a1028152197565a443d49323fd2a6c9279"
+      },
+      {
+        "id": "gru_55104",
+        "model": "gru",
+        "seed": 55104,
+        "parameters_sha256": "57752539ae790c43ff23cf288a511cdc8658f2ef1e99055a7e335013c73cbacb",
+        "threshold": {
+          "kind": "finite",
+          "value": 8.705673471358629e-05
+        },
+        "freeze_sha256": "eff6eae58a9b7750b2f73555c5705c71553a9a57ccccbfaedd1a99617a1b6e41"
+      },
+      {
+        "id": "gru_55105",
+        "model": "gru",
+        "seed": 55105,
+        "parameters_sha256": "49b03b526ade92347504ec8bc56aa030a22345bf945b8e4cbbf62af55d043ea5",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00010638871431340518
+        },
+        "freeze_sha256": "e859e830840309fdd7acf3219aa1744f8326e7dd6dcafe9ba504bf96341a4f9a"
+      },
+      {
+        "id": "gru_55106",
+        "model": "gru",
+        "seed": 55106,
+        "parameters_sha256": "20da2c9892128eb05fca002c37901625c2315bf1b71ea61357661a64ecc74982",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00014332545930302633
+        },
+        "freeze_sha256": "451353360961dfd3e9c3966470d51fb2b476a391ee40a53b01291d765d5dc8cd"
+      },
+      {
+        "id": "gru_55107",
+        "model": "gru",
+        "seed": 55107,
+        "parameters_sha256": "6f2ada5e0b9ed1a8c8ad65756fcb1e6b0cb3c61dc1442c8a47b896eae79dacaf",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.0001192112377831635
+        },
+        "freeze_sha256": "cb05ca5819b7d8769c2cd1addb7297e2e26d0ed28630ecdf1833b8cf026b1a50"
+      },
+      {
+        "id": "gru_55108",
+        "model": "gru",
+        "seed": 55108,
+        "parameters_sha256": "dad26f7319a7503bc672f5584704d4199aa5766ba9d7c1ecdd95b1cb7f979c68",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.000126507879489907
+        },
+        "freeze_sha256": "4b34f7f798b3012ae8a93c4d6e7284d886b2c6006e20fa9b75c8bd3a59d6eff2"
+      },
+      {
+        "id": "gru_55109",
+        "model": "gru",
+        "seed": 55109,
+        "parameters_sha256": "5d24491fa184cc9217561b002308a38f9ee43b1461379806064e9595af2c3d02",
+        "threshold": {
+          "kind": "finite",
+          "value": 0.00015663569882577792
+        },
+        "freeze_sha256": "3a69a2062724502ecec5deb661c3e90cc4dd7497d9c43fd234352c3704beda7b"
+      }
+    ]
+  },
+  "world_config": {
+    "version": "1.0.0",
+    "protocol_id": "fly_closed_loop_engineering_v1",
+    "duration_ms": 1000,
+    "world_dt_ms": 1.0,
+    "world_units": "abstract",
+    "bounds_xy": [
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ]
+    ],
+    "fly_radius": 0.5,
+    "camera_width": 256,
+    "camera_height": 256,
+    "camera_fps": 60,
+    "camera_center_px": [
+      128.0,
+      128.0
+    ],
+    "camera_focal_px": 160.0,
+    "camera_near_depth": 0.1,
+    "camera_orientation": "stabilized_positive_world_y",
+    "background_uint8": 128,
+    "object_uint8": 64,
+    "actuation_delay_ms": 20,
+    "escape_speed_max": 20.0,
+    "escape_acceleration_max": 400.0,
+    "escape_lateral_angle_max_deg": 60.0,
+    "success_final_clearance_min": 1.0,
+    "obstacle_motion_onset_ms": 200,
+    "spatial_seeds": [
+      55010,
+      55011,
+      55012,
+      55013,
+      55014
+    ],
+    "primary_condition": "uniform_population",
+    "secondary_condition": "synthetic_fields_within_type_and_side_v1",
+    "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration"
+  },
+  "scenarios": [
+    {
+      "scenario_id": "world_head_on",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            -0.0,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_left",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            -6.0,
+            20.0
+          ],
+          "velocity": [
+            7.5,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_right",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            6.0,
+            20.0
+          ],
+          "velocity": [
+            -7.5,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_static",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_near_miss",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            6.25,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "episode_id": "muniform_population_world_head_on_circuit_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_circuit_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_feature_only_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "feature_only",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_feature_only_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "feature_only",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_no_action_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_no_action_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55100_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55100",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55100_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55100",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55101_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55101",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55101_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55101",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55102_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55102",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55102_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55102",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55103_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55103",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55103_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55103",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55104_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55104",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55104_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55104",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55105_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55105",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55105_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55105",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55106_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55106",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55106_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55106",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55107_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55107",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55107_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55107",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55108_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55108",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55108_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55108",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55109_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55109",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_head_on_gru_55109_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_head_on",
+      "model_id": "gru_55109",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_circuit_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_circuit_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_feature_only_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "feature_only",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_feature_only_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "feature_only",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_no_action_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_no_action_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55100_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55100",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55100_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55100",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55101_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55101",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55101_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55101",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55102_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55102",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55102_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55102",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55103_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55103",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55103_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55103",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55104_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55104",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55104_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55104",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55105_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55105",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55105_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55105",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55106_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55106",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55106_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55106",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55107_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55107",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55107_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55107",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55108_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55108",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55108_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55108",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55109_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55109",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_left_gru_55109_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_left",
+      "model_id": "gru_55109",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_circuit_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_circuit_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_feature_only_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "feature_only",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_feature_only_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "feature_only",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_no_action_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_no_action_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55100_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55100",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55100_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55100",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55101_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55101",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55101_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55101",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55102_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55102",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55102_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55102",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55103_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55103",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55103_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55103",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55104_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55104",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55104_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55104",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55105_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55105",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55105_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55105",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55106_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55106",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55106_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55106",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55107_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55107",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55107_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55107",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55108_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55108",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55108_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55108",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55109_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55109",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_right_gru_55109_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_right",
+      "model_id": "gru_55109",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_circuit_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_circuit_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_feature_only_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "feature_only",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_feature_only_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "feature_only",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_no_action_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_no_action_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55100_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55100",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55100_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55100",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55101_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55101",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55101_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55101",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55102_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55102",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55102_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55102",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55103_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55103",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55103_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55103",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55104_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55104",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55104_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55104",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55105_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55105",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55105_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55105",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55106_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55106",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55106_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55106",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55107_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55107",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55107_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55107",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55108_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55108",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55108_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55108",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55109_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55109",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_static_gru_55109_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_static",
+      "model_id": "gru_55109",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_circuit_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_circuit_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_feature_only_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "feature_only",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_feature_only_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "feature_only",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_no_action_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_no_action_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55100_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55100",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55100_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55100",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55101_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55101",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55101_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55101",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55102_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55102",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55102_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55102",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55103_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55103",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55103_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55103",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55104_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55104",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55104_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55104",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55105_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55105",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55105_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55105",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55106_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55106",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55106_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55106",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55107_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55107",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55107_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55107",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55108_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55108",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55108_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55108",
+      "repeat": 1
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55109_r0",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55109",
+      "repeat": 0
+    },
+    {
+      "episode_id": "muniform_population_world_near_miss_gru_55109_r1",
+      "mapping": "uniform_population",
+      "scenario_id": "world_near_miss",
+      "model_id": "gru_55109",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_circuit_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_circuit_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_feature_only_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "feature_only",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_feature_only_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "feature_only",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_no_action_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_no_action_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55100_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55100",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55100_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55100",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55101_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55101",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55101_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55101",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55102_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55102",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55102_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55102",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55103_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55103",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55103_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55103",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55104_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55104",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55104_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55104",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55105_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55105",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55105_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55105",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55106_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55106",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55106_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55106",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55107_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55107",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55107_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55107",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55108_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55108",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55108_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55108",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55109_r0",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55109",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_left_gru_55109_r1",
+      "mapping": "55010",
+      "scenario_id": "world_left",
+      "model_id": "gru_55109",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_circuit_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_circuit_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_feature_only_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "feature_only",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_feature_only_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "feature_only",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_no_action_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_no_action_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55100_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55100",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55100_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55100",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55101_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55101",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55101_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55101",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55102_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55102",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55102_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55102",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55103_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55103",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55103_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55103",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55104_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55104",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55104_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55104",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55105_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55105",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55105_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55105",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55106_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55106",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55106_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55106",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55107_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55107",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55107_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55107",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55108_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55108",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55108_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55108",
+      "repeat": 1
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55109_r0",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55109",
+      "repeat": 0
+    },
+    {
+      "episode_id": "m55010_world_right_gru_55109_r1",
+      "mapping": "55010",
+      "scenario_id": "world_right",
+      "model_id": "gru_55109",
+      "repeat": 1
+    }
+  ],
+  "source_hashes": {
+    "connectome/scripts/behavior_validation/__init__.py": "69ed086b148a2ad4fc6a24b911fcc61a487d6c062b0fab2124c7b00e5ba1bcc3",
+    "connectome/scripts/behavior_validation/artifacts.py": "a14eab5e3bbdef9f7b199dd04abc82cb820531749f175d94717eefab3e99175b",
+    "connectome/scripts/behavior_validation/common.py": "ba4ff97e7fbce801da12ed97751858baeb0679b26afc83611d73c9f88fcbb9dd",
+    "connectome/scripts/behavior_validation/controllers.py": "c7a5167e35045e8f036303f750929c6d7f4fc4ed4c645de0b7035ccd68e43b21",
+    "connectome/scripts/behavior_validation/evidence.py": "69ac601a2a846a10f25e17bbe6b03d948890af4b0f684619b4bda0e62a572b83",
+    "connectome/scripts/behavior_validation/launch.py": "1089a60524ee73337b6209f9c0a48135b2971563937af3882b7c58eb54a6de98",
+    "connectome/scripts/behavior_validation/run.py": "828aa8065702286221dd600ebc0cc57ff868e32bf99ce818ef4926373ba3dc55",
+    "connectome/scripts/behavior_validation/runner.py": "93d87505c91dafb913295c5a01ac09f13aaa32008467b4333f0266a6248cea58",
+    "connectome/scripts/behavior_validation/tests/test_adapters.py": "ba3649674ad86c6764b8000b4c0159586b6c847634b3df66276342e0f3f3cb64"
+  },
+  "motor_command": 0.0,
+  "trained_gru_coverage": "20/60 selected/calibrated; full schedule incomplete",
+  "no_new_thresholds": true,
+  "no_new_seeds": true,
+  "no_new_geometries": true,
+  "held_out_authorized": false,
+  "world_calibration_authorized": false,
+  "acceptance": "primary active controller: 3/3 danger success, 0/2 harmless requests, no pre-onset requests",
+  "limits": {
+    "episodes": 182,
+    "rss_bytes": 4294967296,
+    "output_and_snapshot_bytes": 2147483648,
+    "check_seconds": 1800,
+    "behavior_seconds": 3600
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "model_id": "population_average",
+  "kind": "population_average",
+  "seed": null,
+  "weights_sha256": "4cc3cfcb4e68a106ccc81a1ad706e8082fa6e168bd4c68b45eb0baee611e7f30",
+  "path": "networks/population_average.npz",
+  "invariants": {
+    "no_self_loops": true,
+    "finite": true,
+    "same_block_totals": true,
+    "same_block_weight_multisets": false,
+    "same_topology": false,
+    "same_in_out_degrees": false,
+    "max_in_strength_change": 0.8715363681345862,
+    "max_out_strength_change": 1.3889782285996999
+  },
+  "mixing": null,
+  "conditions": {
+    "native": {
+      "condition": "native",
+      "gain": 0.5,
+      "unscaled_radius": 1.2326533624735656,
+      "effective_radius": 0.6163266812367828,
+      "continuous_max_real": -0.03836733187632172,
+      "discrete_radius": 0.9616326681236783,
+      "stable": true,
+      "zero_radius": false,
+      "target": null,
+      "recurrent_matrix_rescale": 1.0
+    },
+    "stability_matched": {
+      "condition": "stability_matched",
+      "gain": 0.5644989602351301,
+      "unscaled_radius": 1.2326533624735656,
+      "effective_radius": 0.6958315414466648,
+      "continuous_max_real": -0.03041684585533352,
+      "discrete_radius": 0.9695831541446664,
+      "stable": true,
+      "zero_radius": false,
+      "target": 0.6958315414466647,
+      "recurrent_matrix_rescale": 1.1289979204702603
+    }
+  },
+  "trainable_parameters": 0,
+  "threshold_parameters": 1,
+  "eligible_for_use": true
+}

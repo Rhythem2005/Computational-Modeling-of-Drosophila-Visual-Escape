@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "input_dimension": 321,
+  "hidden_units": 16,
+  "seed": 55100,
+  "parameter_count": 16241,
+  "parameters_sha256": "794518bdb141a1894dd2dbd167eb17ee5b8d1162c03ad1fd7dc8b19048e83d85",
+  "state_semantics": "h[k] precedes input u[k]; scores sigmoid(readout(h[k]))",
+  "status": "UNTRAINED",
+  "training": null
+}

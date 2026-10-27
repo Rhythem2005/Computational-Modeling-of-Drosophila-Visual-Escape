@@ -1,0 +1,36 @@
+--- before/common.py
++++ after/common.py
+@@ -58,10 +58,32 @@
+     atomic(path, buffer.getvalue())
+ 
+ 
+-def sources():
++def raw_sources():
+     files = list((ROOT/'connectome/scripts/phase11').rglob('*.py'))
+     files += [BASE/'training_plan.md', BASE/'README.md']
+     return {str(p.relative_to(ROOT)): sha(p) for p in sorted(files) if p.is_file()}
++
++
++def sources():
++    """Preserve checkpoint contracts across one explicitly audited power-only edit.
++
++    Raw execution hashes remain in the certificate and resource evidence. No
++    training, calibration, dataset or other source changes are interchangeable.
++    """
++    actual = raw_sources()
++    path = BASE/'repairs/battery_power_v1/source_compatibility.json'
++    if not path.exists():
++        return actual
++    certificate = read(path)
++    prior = certificate['checkpoint_sources_sha256']
++    allowed = {'connectome/scripts/phase11/'+name for name in
++               ('common.py', 'runtime.py', 'tests/test_manual_resume.py')}
++    changed = {k for k in set(actual) | set(prior) if actual.get(k) != prior.get(k)}
++    if (digest(prior) != '5d923b56111a97521dedbb09f40ff0ed1eb9ff43eae5aeb4c27a0939bbed7661'
++            or actual != certificate['execution_sources_sha256'] or changed != allowed
++            or certificate['scope'] != 'USER_AUTHORIZED_POWER_POLICY_ONLY'):
++        raise ValueError('Unapproved source change outside audited battery power policy')
++    return prior
+ 
+ 
+ def protected():

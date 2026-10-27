@@ -1,0 +1,2306 @@
+[
+  {
+    "scenario_id": "train_f0000_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.25299233775011637
+  },
+  {
+    "scenario_id": "train_f0000_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0000_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0000_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0001_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2595304036275864
+  },
+  {
+    "scenario_id": "train_f0001_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0001_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0001_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0002_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.14351349888955103
+  },
+  {
+    "scenario_id": "train_f0002_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0002_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0002_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0003_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.27144193021773866
+  },
+  {
+    "scenario_id": "train_f0003_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0003_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0003_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0004_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2197805294135069
+  },
+  {
+    "scenario_id": "train_f0004_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0004_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0004_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0005_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.32956642083358734
+  },
+  {
+    "scenario_id": "train_f0005_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0005_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0005_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0006_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.14541629279366317
+  },
+  {
+    "scenario_id": "train_f0006_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0006_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0006_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0007_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.23173320248587106
+  },
+  {
+    "scenario_id": "train_f0007_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0007_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0007_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0008_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.20171856762104118
+  },
+  {
+    "scenario_id": "train_f0008_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0008_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0008_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0009_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.12740576187498295
+  },
+  {
+    "scenario_id": "train_f0009_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0009_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0009_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0010_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3661542214957331
+  },
+  {
+    "scenario_id": "train_f0010_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0010_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0010_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0011_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.13503094484377284
+  },
+  {
+    "scenario_id": "train_f0011_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0011_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0011_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0012_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2220203269202842
+  },
+  {
+    "scenario_id": "train_f0012_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0012_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0012_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0013_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3489911410504867
+  },
+  {
+    "scenario_id": "train_f0013_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0013_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0013_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0014_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.1763475986949985
+  },
+  {
+    "scenario_id": "train_f0014_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0014_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0014_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0015_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3849063851498789
+  },
+  {
+    "scenario_id": "train_f0015_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0015_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0015_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0016_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2739615423900594
+  },
+  {
+    "scenario_id": "train_f0016_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0016_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0016_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0017_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.27983175726568527
+  },
+  {
+    "scenario_id": "train_f0017_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0017_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0017_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0018_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.10190365098916776
+  },
+  {
+    "scenario_id": "train_f0018_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0018_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0018_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0019_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.4
+  },
+  {
+    "scenario_id": "train_f0019_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0019_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0019_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0020_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.15699673714667325
+  },
+  {
+    "scenario_id": "train_f0020_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0020_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0020_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0021_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.12452781702681313
+  },
+  {
+    "scenario_id": "train_f0021_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0021_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0021_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0022_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2366259742539033
+  },
+  {
+    "scenario_id": "train_f0022_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0022_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0022_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0023_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.11295695010009324
+  },
+  {
+    "scenario_id": "train_f0023_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0023_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0023_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0024_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.25068953342453054
+  },
+  {
+    "scenario_id": "train_f0024_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0024_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0024_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0025_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.1697080814115168
+  },
+  {
+    "scenario_id": "train_f0025_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0025_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0025_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0026_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.1527329723842457
+  },
+  {
+    "scenario_id": "train_f0026_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0026_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0026_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0027_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.19756313529132694
+  },
+  {
+    "scenario_id": "train_f0027_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0027_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0027_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0028_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.21649942310418463
+  },
+  {
+    "scenario_id": "train_f0028_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0028_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0028_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0029_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.18726469993830938
+  },
+  {
+    "scenario_id": "train_f0029_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0029_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0029_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0030_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.31758622891925337
+  },
+  {
+    "scenario_id": "train_f0030_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0030_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0030_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0031_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.08974631639917688
+  },
+  {
+    "scenario_id": "train_f0031_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0031_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0031_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0032_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2476447589724322
+  },
+  {
+    "scenario_id": "train_f0032_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0032_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0032_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0033_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.21411822992519616
+  },
+  {
+    "scenario_id": "train_f0033_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0033_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0033_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0034_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.15964307422322802
+  },
+  {
+    "scenario_id": "train_f0034_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0034_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0034_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0035_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.24527751015254637
+  },
+  {
+    "scenario_id": "train_f0035_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0035_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0035_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0036_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.23930262633671384
+  },
+  {
+    "scenario_id": "train_f0036_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0036_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0036_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0037_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.16723415933280636
+  },
+  {
+    "scenario_id": "train_f0037_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0037_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0037_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0038_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.15416109860682622
+  },
+  {
+    "scenario_id": "train_f0038_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0038_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0038_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0039_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.36053222857722234
+  },
+  {
+    "scenario_id": "train_f0039_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0039_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0039_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0040_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3870777079925574
+  },
+  {
+    "scenario_id": "train_f0040_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0040_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0040_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0041_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.23358713988453594
+  },
+  {
+    "scenario_id": "train_f0041_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0041_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0041_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0042_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.1268522562201977
+  },
+  {
+    "scenario_id": "train_f0042_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0042_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0042_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0043_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.17318338405730113
+  },
+  {
+    "scenario_id": "train_f0043_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0043_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0043_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0044_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.28307647562925553
+  },
+  {
+    "scenario_id": "train_f0044_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0044_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0044_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0045_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2937366732766523
+  },
+  {
+    "scenario_id": "train_f0045_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0045_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0045_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0046_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.18355939916468247
+  },
+  {
+    "scenario_id": "train_f0046_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0046_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0046_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0047_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.13693729140910993
+  },
+  {
+    "scenario_id": "train_f0047_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0047_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0047_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0048_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.20022966727999547
+  },
+  {
+    "scenario_id": "train_f0048_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0048_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0048_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0049_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.09750915407957086
+  },
+  {
+    "scenario_id": "train_f0049_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0049_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0049_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0050_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2689143089381228
+  },
+  {
+    "scenario_id": "train_f0050_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0050_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0050_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0051_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3550392005362797
+  },
+  {
+    "scenario_id": "train_f0051_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0051_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0051_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0052_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.1269462175196299
+  },
+  {
+    "scenario_id": "train_f0052_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0052_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0052_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0053_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.15941096822633893
+  },
+  {
+    "scenario_id": "train_f0053_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0053_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0053_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0054_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.11694646607724435
+  },
+  {
+    "scenario_id": "train_f0054_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0054_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0054_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0055_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.17329772742036914
+  },
+  {
+    "scenario_id": "train_f0055_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0055_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0055_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0056_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.382469750634584
+  },
+  {
+    "scenario_id": "train_f0056_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0056_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0056_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0057_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.36958378547818665
+  },
+  {
+    "scenario_id": "train_f0057_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0057_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0057_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0058_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.22501256045911378
+  },
+  {
+    "scenario_id": "train_f0058_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0058_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0058_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0059_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2692427323401242
+  },
+  {
+    "scenario_id": "train_f0059_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0059_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0059_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0060_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.4
+  },
+  {
+    "scenario_id": "train_f0060_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0060_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0060_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0061_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.13579563465456876
+  },
+  {
+    "scenario_id": "train_f0061_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0061_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0061_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0062_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.4
+  },
+  {
+    "scenario_id": "train_f0062_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0062_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0062_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0063_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.25302885102613304
+  },
+  {
+    "scenario_id": "train_f0063_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0063_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "train_f0063_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0000_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.4
+  },
+  {
+    "scenario_id": "validation_f0000_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0000_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0000_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0001_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.18502368548496753
+  },
+  {
+    "scenario_id": "validation_f0001_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0001_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0001_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0002_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3703498952346566
+  },
+  {
+    "scenario_id": "validation_f0002_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0002_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0002_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0003_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.16702918977312964
+  },
+  {
+    "scenario_id": "validation_f0003_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0003_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0003_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0004_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3808509047985096
+  },
+  {
+    "scenario_id": "validation_f0004_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0004_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0004_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0005_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.25511443668219774
+  },
+  {
+    "scenario_id": "validation_f0005_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0005_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0005_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0006_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.23247505050423076
+  },
+  {
+    "scenario_id": "validation_f0006_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0006_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0006_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0007_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3762260640954428
+  },
+  {
+    "scenario_id": "validation_f0007_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0007_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0007_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0008_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.1471240921353276
+  },
+  {
+    "scenario_id": "validation_f0008_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0008_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0008_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0009_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.23354035023190145
+  },
+  {
+    "scenario_id": "validation_f0009_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0009_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0009_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0010_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2437042081156396
+  },
+  {
+    "scenario_id": "validation_f0010_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0010_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0010_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0011_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.24447019780375234
+  },
+  {
+    "scenario_id": "validation_f0011_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0011_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0011_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0012_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.2615694599960293
+  },
+  {
+    "scenario_id": "validation_f0012_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0012_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0012_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0013_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.148237490548598
+  },
+  {
+    "scenario_id": "validation_f0013_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0013_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0013_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0014_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.22781589048320372
+  },
+  {
+    "scenario_id": "validation_f0014_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0014_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0014_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0015_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.21152841684253004
+  },
+  {
+    "scenario_id": "validation_f0015_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0015_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0015_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0016_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.4
+  },
+  {
+    "scenario_id": "validation_f0016_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0016_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0016_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0017_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.18522037545945122
+  },
+  {
+    "scenario_id": "validation_f0017_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0017_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0017_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0018_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.17905443145432584
+  },
+  {
+    "scenario_id": "validation_f0018_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0018_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0018_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0019_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.12893409494296246
+  },
+  {
+    "scenario_id": "validation_f0019_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0019_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0019_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0020_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.28993976685583256
+  },
+  {
+    "scenario_id": "validation_f0020_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0020_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0020_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0021_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.18372478027433842
+  },
+  {
+    "scenario_id": "validation_f0021_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0021_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0021_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0022_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3004863653236357
+  },
+  {
+    "scenario_id": "validation_f0022_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0022_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0022_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0023_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.37198292829212565
+  },
+  {
+    "scenario_id": "validation_f0023_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0023_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0023_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0024_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.23513582455013982
+  },
+  {
+    "scenario_id": "validation_f0024_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0024_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0024_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0025_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.17659977458849047
+  },
+  {
+    "scenario_id": "validation_f0025_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0025_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0025_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0026_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.23734796105353093
+  },
+  {
+    "scenario_id": "validation_f0026_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0026_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0026_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0027_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.19937350695952705
+  },
+  {
+    "scenario_id": "validation_f0027_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0027_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0027_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0028_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.11292464602052413
+  },
+  {
+    "scenario_id": "validation_f0028_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0028_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0028_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0029_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.3974047226069393
+  },
+  {
+    "scenario_id": "validation_f0029_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0029_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0029_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0030_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.15028679798117747
+  },
+  {
+    "scenario_id": "validation_f0030_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0030_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0030_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0031_looming",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.14150360991347558
+  },
+  {
+    "scenario_id": "validation_f0031_static_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0031_static_terminal",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  },
+  {
+    "scenario_id": "validation_f0031_translating_initial",
+    "finite": true,
+    "score_min": 0.0,
+    "score_max": 0.0
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "total_reserved_attempts": 60,
+  "approved_cap": 60,
+  "current": {
+    "id": "world_near_miss_circuit_threat_gate_r1",
+    "scenario": "world_near_miss",
+    "model": "circuit_threat_gate",
+    "repeat": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "legacy_artifacts_verified_unchanged": 1255,
+  "frozen_parent_files_verified_unchanged": 2669,
+  "trained_and_selected_files_verified_unchanged": 100,
+  "tests": {
+    "tests": 552,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "failed_condition_replay": "PASS",
+  "held_out_inference_runs": 0
+}

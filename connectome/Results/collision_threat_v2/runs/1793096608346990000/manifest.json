@@ -1,0 +1,785 @@
+{
+  "status": "LOCKED_BEFORE_TESTS_AND_EPISODES",
+  "protocol_id": "finite_body_evidence_gate_v2_proposal",
+  "plan_date_local": "2026-10-27",
+  "source_run": "connectome/Results/collision_threat_v1/prototype/1793093607177149000",
+  "source_manifest_sha256": "22ee88138e66e3a53ce9afd65acc5ab1cf42a2c37261451c7d1500ef7572c124",
+  "new_world_geometries": 0,
+  "scenarios": [
+    {
+      "scenario_id": "world_head_on",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            -0.0,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_left",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            -6.0,
+            20.0
+          ],
+          "velocity": [
+            7.5,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_right",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            6.0,
+            20.0
+          ],
+          "velocity": [
+            -7.5,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_static",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_near_miss",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            6.25,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    }
+  ],
+  "world_config": {
+    "version": "1.0.0",
+    "protocol_id": "fly_closed_loop_engineering_v1",
+    "duration_ms": 1000,
+    "world_dt_ms": 1.0,
+    "world_units": "abstract",
+    "bounds_xy": [
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ]
+    ],
+    "fly_radius": 0.5,
+    "camera_width": 256,
+    "camera_height": 256,
+    "camera_fps": 60,
+    "camera_center_px": [
+      128.0,
+      128.0
+    ],
+    "camera_focal_px": 160.0,
+    "camera_near_depth": 0.1,
+    "camera_orientation": "stabilized_positive_world_y",
+    "background_uint8": 128,
+    "object_uint8": 64,
+    "actuation_delay_ms": 20,
+    "escape_speed_max": 20.0,
+    "escape_acceleration_max": 400.0,
+    "escape_lateral_angle_max_deg": 60.0,
+    "success_final_clearance_min": 1.0,
+    "obstacle_motion_onset_ms": 200,
+    "spatial_seeds": [
+      55010,
+      55011,
+      55012,
+      55013,
+      55014
+    ],
+    "primary_condition": "uniform_population",
+    "secondary_condition": "synthetic_fields_within_type_and_side_v1",
+    "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration"
+  },
+  "controllers": [
+    {
+      "id": "no_action",
+      "finite_body_prior_active": false,
+      "gate": "none"
+    },
+    {
+      "id": "circuit",
+      "finite_body_prior_active": false,
+      "gate": "none"
+    },
+    {
+      "id": "point_standalone_v1",
+      "finite_body_prior_active": false,
+      "gate": "standalone"
+    },
+    {
+      "id": "finite_standalone_v2",
+      "finite_body_prior_active": true,
+      "gate": "standalone"
+    },
+    {
+      "id": "point_original_gate_v1",
+      "finite_body_prior_active": false,
+      "gate": "original_unknown_fallback"
+    },
+    {
+      "id": "point_retirement_gate_v2",
+      "finite_body_prior_active": false,
+      "gate": "evidence_aware_retirement"
+    },
+    {
+      "id": "finite_original_gate_v2",
+      "finite_body_prior_active": true,
+      "gate": "original_unknown_fallback"
+    },
+    {
+      "id": "finite_retirement_gate_v2",
+      "finite_body_prior_active": true,
+      "gate": "evidence_aware_retirement"
+    }
+  ],
+  "jobs": [
+    {
+      "episode_id": "world_head_on_no_action_r0",
+      "scenario_id": "world_head_on",
+      "controller": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_no_action_r1",
+      "scenario_id": "world_head_on",
+      "controller": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_head_on_circuit_r0",
+      "scenario_id": "world_head_on",
+      "controller": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_circuit_r1",
+      "scenario_id": "world_head_on",
+      "controller": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_head_on_point_standalone_v1_r0",
+      "scenario_id": "world_head_on",
+      "controller": "point_standalone_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_point_standalone_v1_r1",
+      "scenario_id": "world_head_on",
+      "controller": "point_standalone_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_head_on_finite_standalone_v2_r0",
+      "scenario_id": "world_head_on",
+      "controller": "finite_standalone_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_finite_standalone_v2_r1",
+      "scenario_id": "world_head_on",
+      "controller": "finite_standalone_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_head_on_point_original_gate_v1_r0",
+      "scenario_id": "world_head_on",
+      "controller": "point_original_gate_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_point_original_gate_v1_r1",
+      "scenario_id": "world_head_on",
+      "controller": "point_original_gate_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_head_on_point_retirement_gate_v2_r0",
+      "scenario_id": "world_head_on",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_point_retirement_gate_v2_r1",
+      "scenario_id": "world_head_on",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_head_on_finite_original_gate_v2_r0",
+      "scenario_id": "world_head_on",
+      "controller": "finite_original_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_finite_original_gate_v2_r1",
+      "scenario_id": "world_head_on",
+      "controller": "finite_original_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_head_on_finite_retirement_gate_v2_r0",
+      "scenario_id": "world_head_on",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_head_on_finite_retirement_gate_v2_r1",
+      "scenario_id": "world_head_on",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_no_action_r0",
+      "scenario_id": "world_left",
+      "controller": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_no_action_r1",
+      "scenario_id": "world_left",
+      "controller": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_circuit_r0",
+      "scenario_id": "world_left",
+      "controller": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_circuit_r1",
+      "scenario_id": "world_left",
+      "controller": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_point_standalone_v1_r0",
+      "scenario_id": "world_left",
+      "controller": "point_standalone_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_point_standalone_v1_r1",
+      "scenario_id": "world_left",
+      "controller": "point_standalone_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_finite_standalone_v2_r0",
+      "scenario_id": "world_left",
+      "controller": "finite_standalone_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_finite_standalone_v2_r1",
+      "scenario_id": "world_left",
+      "controller": "finite_standalone_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_point_original_gate_v1_r0",
+      "scenario_id": "world_left",
+      "controller": "point_original_gate_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_point_original_gate_v1_r1",
+      "scenario_id": "world_left",
+      "controller": "point_original_gate_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_point_retirement_gate_v2_r0",
+      "scenario_id": "world_left",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_point_retirement_gate_v2_r1",
+      "scenario_id": "world_left",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_finite_original_gate_v2_r0",
+      "scenario_id": "world_left",
+      "controller": "finite_original_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_finite_original_gate_v2_r1",
+      "scenario_id": "world_left",
+      "controller": "finite_original_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_left_finite_retirement_gate_v2_r0",
+      "scenario_id": "world_left",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_left_finite_retirement_gate_v2_r1",
+      "scenario_id": "world_left",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_no_action_r0",
+      "scenario_id": "world_right",
+      "controller": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_no_action_r1",
+      "scenario_id": "world_right",
+      "controller": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_circuit_r0",
+      "scenario_id": "world_right",
+      "controller": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_circuit_r1",
+      "scenario_id": "world_right",
+      "controller": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_point_standalone_v1_r0",
+      "scenario_id": "world_right",
+      "controller": "point_standalone_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_point_standalone_v1_r1",
+      "scenario_id": "world_right",
+      "controller": "point_standalone_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_finite_standalone_v2_r0",
+      "scenario_id": "world_right",
+      "controller": "finite_standalone_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_finite_standalone_v2_r1",
+      "scenario_id": "world_right",
+      "controller": "finite_standalone_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_point_original_gate_v1_r0",
+      "scenario_id": "world_right",
+      "controller": "point_original_gate_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_point_original_gate_v1_r1",
+      "scenario_id": "world_right",
+      "controller": "point_original_gate_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_point_retirement_gate_v2_r0",
+      "scenario_id": "world_right",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_point_retirement_gate_v2_r1",
+      "scenario_id": "world_right",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_finite_original_gate_v2_r0",
+      "scenario_id": "world_right",
+      "controller": "finite_original_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_finite_original_gate_v2_r1",
+      "scenario_id": "world_right",
+      "controller": "finite_original_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_right_finite_retirement_gate_v2_r0",
+      "scenario_id": "world_right",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_right_finite_retirement_gate_v2_r1",
+      "scenario_id": "world_right",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_no_action_r0",
+      "scenario_id": "world_static",
+      "controller": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_no_action_r1",
+      "scenario_id": "world_static",
+      "controller": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_circuit_r0",
+      "scenario_id": "world_static",
+      "controller": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_circuit_r1",
+      "scenario_id": "world_static",
+      "controller": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_point_standalone_v1_r0",
+      "scenario_id": "world_static",
+      "controller": "point_standalone_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_point_standalone_v1_r1",
+      "scenario_id": "world_static",
+      "controller": "point_standalone_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_finite_standalone_v2_r0",
+      "scenario_id": "world_static",
+      "controller": "finite_standalone_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_finite_standalone_v2_r1",
+      "scenario_id": "world_static",
+      "controller": "finite_standalone_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_point_original_gate_v1_r0",
+      "scenario_id": "world_static",
+      "controller": "point_original_gate_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_point_original_gate_v1_r1",
+      "scenario_id": "world_static",
+      "controller": "point_original_gate_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_point_retirement_gate_v2_r0",
+      "scenario_id": "world_static",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_point_retirement_gate_v2_r1",
+      "scenario_id": "world_static",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_finite_original_gate_v2_r0",
+      "scenario_id": "world_static",
+      "controller": "finite_original_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_finite_original_gate_v2_r1",
+      "scenario_id": "world_static",
+      "controller": "finite_original_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_static_finite_retirement_gate_v2_r0",
+      "scenario_id": "world_static",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_static_finite_retirement_gate_v2_r1",
+      "scenario_id": "world_static",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_no_action_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "no_action",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_no_action_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "no_action",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_circuit_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "circuit",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_circuit_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "circuit",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_point_standalone_v1_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "point_standalone_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_point_standalone_v1_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "point_standalone_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_finite_standalone_v2_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "finite_standalone_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_finite_standalone_v2_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "finite_standalone_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_point_original_gate_v1_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "point_original_gate_v1",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_point_original_gate_v1_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "point_original_gate_v1",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_point_retirement_gate_v2_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_point_retirement_gate_v2_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "point_retirement_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_finite_original_gate_v2_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "finite_original_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_finite_original_gate_v2_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "finite_original_gate_v2",
+      "repeat": 1
+    },
+    {
+      "episode_id": "world_near_miss_finite_retirement_gate_v2_r0",
+      "scenario_id": "world_near_miss",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 0
+    },
+    {
+      "episode_id": "world_near_miss_finite_retirement_gate_v2_r1",
+      "scenario_id": "world_near_miss",
+      "controller": "finite_retirement_gate_v2",
+      "repeat": 1
+    }
+  ],
+  "maximum_attempts_including_failures": 80,
+  "unique_combinations": 40,
+  "exact_repeats": 40,
+  "new_seeds": [],
+  "threshold_searches": 0,
+  "calibration_runs": 0,
+  "training_authorized": false,
+  "held_out_authorized": false,
+  "independent_evaluation_authorized": false,
+  "size_information": {
+    "scope": "Declared known-size synthetic prior; not measured episode ground truth",
+    "object_radius_prior": 1.5,
+    "self_radius": 0.5,
+    "finite_body_contact_radius_normalized": 1.3333333333333333,
+    "boundary_expression": "1 + self_radius/object_radius_prior = 4/3",
+    "point_body_contact_radius_normalized": 1.0,
+    "runtime_actual_radius_input_allowed": false,
+    "unsupported_size_protocol": "Requires separately reviewed prior/bounds/sensing specification; no silent per-episode adaptation"
+  },
+  "temporal_rules": {
+    "camera_hz": 60,
+    "controller_dt_ms": 1,
+    "threat_persistence_ms": 20,
+    "clear_persistence_ms": 20,
+    "persistence_interval": "closed inclusive, 21 samples",
+    "new_timeouts": [],
+    "physical_first_event_latched": true,
+    "retirement_requires_current_sustained_clear": true,
+    "unknown_breaks_clear_and_threat_history": true,
+    "retired_unknown_revives_old_request": false,
+    "fresh_threat_can_rearm_armed_hybrid": true,
+    "fresh_threat_epoch_after_retirement_required": true,
+    "silent_circuit_can_be_bypassed": false,
+    "unknown_before_retirement": "original fallback, explicitly recorded",
+    "defects": "abort, never fallback"
+  },
+  "gate_states": [
+    "unarmed",
+    "pending",
+    "retired_clear",
+    "physical_latched"
+  ],
+  "acceptance": {
+    "danger_success_required": 3,
+    "harmless_requests_allowed": 0,
+    "harmless_fixture_count": 2,
+    "pre_onset_requests_allowed": 0,
+    "independent_generalization_claim_allowed": false
+  },
+  "limits": {
+    "workers": 1,
+    "checks_seconds": 1800,
+    "episode_report_seconds": 900,
+    "rss_bytes": 4294967296,
+    "output_plus_snapshot_bytes": 1073741824
+  },
+  "historical_v1_attempt_budget": {
+    "consumed": 60,
+    "extension_allowed": false
+  },
+  "execution_protocol": "known_size_finite_body_retirement_gate_v2",
+  "approval_sha256": "7a09cf6905dcfafec1aa5a6676a569d2ac9b12a79a84947699abe948cc3c2c3e",
+  "source_hashes": {
+    "connectome/scripts/collision_threat_v2/__init__.py": "33898cd83440fd236c38be77c84d0d7a480cfeb3e0df1fd640b59d095350a676",
+    "connectome/scripts/collision_threat_v2/common.py": "a37edff90c8d4b3c43f884bd1f384f549b14e4494a234b9cc4c6ee6077e15c36",
+    "connectome/scripts/collision_threat_v2/driver.py": "fda87a3b9b6e5807161d49b681c67f6a84e66ebadb14f675d09948d0b0c66606",
+    "connectome/scripts/collision_threat_v2/gate.py": "557e686aa0c9c096be921a40343867e444447d0e3b0710bb43e03f1801f5ffef",
+    "connectome/scripts/collision_threat_v2/launch.py": "42ea11f544febdce6471dc9273719b21c8dc190a9f045a800d41e483d04e2512",
+    "connectome/scripts/collision_threat_v2/recording.py": "81120d024672e8cc32898ccc0fee5d7b36d7ac8ebde6e5f0ec87cb6a6c00aa47",
+    "connectome/scripts/collision_threat_v2/rule.py": "18a5841d43357529aa9e9645badbaf762e5386fd1d321ec49be1821aa51dfe1d",
+    "connectome/scripts/collision_threat_v2/run.py": "4b0c8d07abe19029cafa8baa85d5478e1bfa8ca1e4037ad085f8c88080155e1d",
+    "connectome/scripts/collision_threat_v2/runner.py": "5828804d907c86242c705f2c8394bec89804f95e1f312c77496e2846a97a7342",
+    "connectome/scripts/collision_threat_v2/tests/test_integration.py": "50ffd137d8849b6f1b8739f1124eb8ff1f50c7eba172d2ca44c8b9b18521aaab",
+    "connectome/scripts/collision_threat_v2/tests/test_v2.py": "9320a27f0c9959eb913558d114779eb8cadda48a8fbd4c7090f3d91f546548c5"
+  },
+  "legacy_controls": {
+    "circuit": {
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "freeze_sha256": "7f1a91526429e2d19cfbc58d385b679906ee918671c39279a4ce44c1d09a3a5f"
+    },
+    "feature_only": {
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "freeze_sha256": "3a2b48442116fa965f394115de9aaef7335f67334147b442d9e7685388f7adf8"
+    },
+    "no_action": {
+      "threshold": {
+        "kind": "always_silent",
+        "value": null
+      },
+      "freeze_sha256": null
+    }
+  },
+  "plan_sha256": "62f73ae9478197f9606786e71cdcbd2071fd7769e8953d14a3f44dc6fa6e9e2f",
+  "proposal_sha256": "fb98c8f2f06851e3aeace9a8d5c0d6f5f5eb5c29157cf67d576eabd1961c1545"
+}

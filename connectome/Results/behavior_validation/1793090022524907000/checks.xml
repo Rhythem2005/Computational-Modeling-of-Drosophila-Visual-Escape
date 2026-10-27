@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="22" skipped="0" tests="30" time="2.775" timestamp="2026-10-27T14:04:06.309153+05:30" hostname="RHYTHEMs-MacBook-Air.local"><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_roster_and_control_contracts[uniform_population]" time="0.854" /><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_roster_and_control_contracts[55010]" time="0.000" /><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[0-uniform_population]" time="0.048"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 47 / 1000 (4.7%)&#10;First 5 mismatches are at indices:&#10; [14]: 0.00011941833127788489 (ACTUAL), 0.00011941833127788509 (DESIRED)&#10; [17]: 0.00011766657314558172 (ACTUAL), 0.00011766657314558151 (DESIRED)&#10; [18]: 0.0001174698578586569 (ACTUAL), 0.00011746985785865711 (DESIRED)&#10; [21]: 0.00011719277629480327 (ACTUAL), 0.00011719277629480307 (DESIRED)&#10; [24]: 0.00011709541371166165 (ACTUAL), 0.00011709541371166186 (DESIRED)&#10;Max absolute difference among violations: 7.49400542e-16&#10;Max relative difference among violations: 4.01586783e-15&#10; ACTUAL: array([4.700358e-01, 3.382662e-01, 2.144804e-01, 1.090227e-01,&#10;       4.012114e-02, 1.029859e-02, 2.238206e-03, 6.256774e-04,&#10;       2.794659e-04, 1.812943e-04, 1.459428e-04, 1.311681e-04,...&#10; DESIRED: array([4.700358e-01, 3.382662e-01, 2.144804e-01, 1.090227e-01,&#10;       4.012114e-02, 1.029859e-02, 2.238206e-03, 6.256774e-04,&#10;       2.794659e-04, 1.812943e-04, 1.459428e-04, 1.311681e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 0
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 47 / 1000 (4.7%)
+E       First 5 mismatches are at indices:
+E        [14]: 0.00011941833127788489 (ACTUAL), 0.00011941833127788509 (DESIRED)
+E        [17]: 0.00011766657314558172 (ACTUAL), 0.00011766657314558151 (DESIRED)
+E        [18]: 0.0001174698578586569 (ACTUAL), 0.00011746985785865711 (DESIRED)
+E        [21]: 0.00011719277629480327 (ACTUAL), 0.00011719277629480307 (DESIRED)
+E        [24]: 0.00011709541371166165 (ACTUAL), 0.00011709541371166186 (DESIRED)
+E       Max absolute difference among violations: 7.49400542e-16
+E       Max relative difference among violations: 4.01586783e-15
+E        ACTUAL: array([4.700358e-01, 3.382662e-01, 2.144804e-01, 1.090227e-01,
+E              4.012114e-02, 1.029859e-02, 2.238206e-03, 6.256774e-04,
+E              2.794659e-04, 1.812943e-04, 1.459428e-04, 1.311681e-04,...
+E        DESIRED: array([4.700358e-01, 3.382662e-01, 2.144804e-01, 1.090227e-01,
+E              4.012114e-02, 1.029859e-02, 2.238206e-03, 6.256774e-04,
+E              2.794659e-04, 1.812943e-04, 1.459428e-04, 1.311681e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[0-55010]" time="0.056"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 51 / 1000 (5.1%)&#10;First 5 mismatches are at indices:&#10; [7]: 0.0015031398626049314 (ACTUAL), 0.001503139862604933 (DESIRED)&#10; [9]: 0.0003031658707445846 (ACTUAL), 0.00030316587074458515 (DESIRED)&#10; [12]: 0.0001315442855055964 (ACTUAL), 0.00013154428550559615 (DESIRED)&#10; [14]: 0.00011340362980143465 (ACTUAL), 0.00011340362980143485 (DESIRED)&#10; [15]: 0.00010956959079817188 (ACTUAL), 0.00010956959079817169 (DESIRED)&#10;Max absolute difference among violations: 6.27276009e-15&#10;Max relative difference among violations: 1.72471894e-14&#10; ACTUAL: array([4.710325e-01, 3.390922e-01, 2.132967e-01, 1.112348e-01,&#10;       4.656550e-02, 1.582506e-02, 4.764231e-03, 1.503140e-03,&#10;       5.875820e-04, 3.031659e-04, 1.985577e-04, 1.534696e-04,...&#10; DESIRED: array([4.710325e-01, 3.390922e-01, 2.132967e-01, 1.112348e-01,&#10;       4.656550e-02, 1.582506e-02, 4.764231e-03, 1.503140e-03,&#10;       5.875820e-04, 3.031659e-04, 1.985577e-04, 1.534696e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 0
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 51 / 1000 (5.1%)
+E       First 5 mismatches are at indices:
+E        [7]: 0.0015031398626049314 (ACTUAL), 0.001503139862604933 (DESIRED)
+E        [9]: 0.0003031658707445846 (ACTUAL), 0.00030316587074458515 (DESIRED)
+E        [12]: 0.0001315442855055964 (ACTUAL), 0.00013154428550559615 (DESIRED)
+E        [14]: 0.00011340362980143465 (ACTUAL), 0.00011340362980143485 (DESIRED)
+E        [15]: 0.00010956959079817188 (ACTUAL), 0.00010956959079817169 (DESIRED)
+E       Max absolute difference among violations: 6.27276009e-15
+E       Max relative difference among violations: 1.72471894e-14
+E        ACTUAL: array([4.710325e-01, 3.390922e-01, 2.132967e-01, 1.112348e-01,
+E              4.656550e-02, 1.582506e-02, 4.764231e-03, 1.503140e-03,
+E              5.875820e-04, 3.031659e-04, 1.985577e-04, 1.534696e-04,...
+E        DESIRED: array([4.710325e-01, 3.390922e-01, 2.132967e-01, 1.112348e-01,
+E              4.656550e-02, 1.582506e-02, 4.764231e-03, 1.503140e-03,
+E              5.875820e-04, 3.031659e-04, 1.985577e-04, 1.534696e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[1-uniform_population]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 103 / 1000 (10.3%)&#10;First 5 mismatches are at indices:&#10; [6]: 0.004253105228980054 (ACTUAL), 0.00425310522898005 (DESIRED)&#10; [7]: 0.0011523475915967078 (ACTUAL), 0.001152347591596707 (DESIRED)&#10; [8]: 0.0004812481510838624 (ACTUAL), 0.000481248151083862 (DESIRED)&#10; [14]: 0.00014898909826635068 (ACTUAL), 0.0001489890982663504 (DESIRED)&#10; [20]: 0.00012808420547957798 (ACTUAL), 0.0001280842054795782 (DESIRED)&#10;Max absolute difference among violations: 3.27515792e-15&#10;Max relative difference among violations: 1.42262361e-14&#10; ACTUAL: array([4.731383e-01, 3.579177e-01, 2.417456e-01, 1.362302e-01,&#10;       5.838863e-02, 1.779509e-02, 4.253105e-03, 1.152348e-03,&#10;       4.812482e-04, 2.939772e-04, 2.227223e-04, 1.884585e-04,...&#10; DESIRED: array([4.731383e-01, 3.579177e-01, 2.417456e-01, 1.362302e-01,&#10;       5.838863e-02, 1.779509e-02, 4.253105e-03, 1.152348e-03,&#10;       4.812482e-04, 2.939772e-04, 2.227223e-04, 1.884585e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 1
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 103 / 1000 (10.3%)
+E       First 5 mismatches are at indices:
+E        [6]: 0.004253105228980054 (ACTUAL), 0.00425310522898005 (DESIRED)
+E        [7]: 0.0011523475915967078 (ACTUAL), 0.001152347591596707 (DESIRED)
+E        [8]: 0.0004812481510838624 (ACTUAL), 0.000481248151083862 (DESIRED)
+E        [14]: 0.00014898909826635068 (ACTUAL), 0.0001489890982663504 (DESIRED)
+E        [20]: 0.00012808420547957798 (ACTUAL), 0.0001280842054795782 (DESIRED)
+E       Max absolute difference among violations: 3.27515792e-15
+E       Max relative difference among violations: 1.42262361e-14
+E        ACTUAL: array([4.731383e-01, 3.579177e-01, 2.417456e-01, 1.362302e-01,
+E              5.838863e-02, 1.779509e-02, 4.253105e-03, 1.152348e-03,
+E              4.812482e-04, 2.939772e-04, 2.227223e-04, 1.884585e-04,...
+E        DESIRED: array([4.731383e-01, 3.579177e-01, 2.417456e-01, 1.362302e-01,
+E              5.838863e-02, 1.779509e-02, 4.253105e-03, 1.152348e-03,
+E              4.812482e-04, 2.939772e-04, 2.227223e-04, 1.884585e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[1-55010]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 138 / 1000 (13.8%)&#10;First 5 mismatches are at indices:&#10; [6]: 0.019667747664422173 (ACTUAL), 0.01966774766442218 (DESIRED)&#10; [10]: 0.0006258569218966576 (ACTUAL), 0.0006258569218966582 (DESIRED)&#10; [11]: 0.00036710212138375343 (ACTUAL), 0.0003671021213837528 (DESIRED)&#10; [13]: 0.00019825453362041652 (ACTUAL), 0.00019825453362041617 (DESIRED)&#10; [15]: 0.00015099977540312872 (ACTUAL), 0.000150999775403129 (DESIRED)&#10;Max absolute difference among violations: 4.4408921e-16&#10;Max relative difference among violations: 3.5491244e-15&#10; ACTUAL: array([4.721526e-01, 3.613847e-01, 2.539544e-01, 1.611851e-01,&#10;       9.084566e-02, 4.498491e-02, 1.966775e-02, 7.844490e-03,&#10;       3.058900e-03, 1.281774e-03, 6.258569e-04, 3.671021e-04,...&#10; DESIRED: array([4.721526e-01, 3.613847e-01, 2.539544e-01, 1.611851e-01,&#10;       9.084566e-02, 4.498491e-02, 1.966775e-02, 7.844490e-03,&#10;       3.058900e-03, 1.281774e-03, 6.258569e-04, 3.671021e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 1
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 138 / 1000 (13.8%)
+E       First 5 mismatches are at indices:
+E        [6]: 0.019667747664422173 (ACTUAL), 0.01966774766442218 (DESIRED)
+E        [10]: 0.0006258569218966576 (ACTUAL), 0.0006258569218966582 (DESIRED)
+E        [11]: 0.00036710212138375343 (ACTUAL), 0.0003671021213837528 (DESIRED)
+E        [13]: 0.00019825453362041652 (ACTUAL), 0.00019825453362041617 (DESIRED)
+E        [15]: 0.00015099977540312872 (ACTUAL), 0.000150999775403129 (DESIRED)
+E       Max absolute difference among violations: 4.4408921e-16
+E       Max relative difference among violations: 3.5491244e-15
+E        ACTUAL: array([4.721526e-01, 3.613847e-01, 2.539544e-01, 1.611851e-01,
+E              9.084566e-02, 4.498491e-02, 1.966775e-02, 7.844490e-03,
+E              3.058900e-03, 1.281774e-03, 6.258569e-04, 3.671021e-04,...
+E        DESIRED: array([4.721526e-01, 3.613847e-01, 2.539544e-01, 1.611851e-01,
+E              9.084566e-02, 4.498491e-02, 1.966775e-02, 7.844490e-03,
+E              3.058900e-03, 1.281774e-03, 6.258569e-04, 3.671021e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[2-uniform_population]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 70 / 1000 (7%)&#10;First 5 mismatches are at indices:&#10; [3]: 0.13586423744726883 (ACTUAL), 0.1358642374472688 (DESIRED)&#10; [4]: 0.05525911233298514 (ACTUAL), 0.05525911233298511 (DESIRED)&#10; [5]: 0.015901157340126256 (ACTUAL), 0.015901157340126242 (DESIRED)&#10; [8]: 0.00034581968400773856 (ACTUAL), 0.0003458196840077392 (DESIRED)&#10; [10]: 0.0001615195184225761 (ACTUAL), 0.0001615195184225758 (DESIRED)&#10;Max absolute difference among violations: 2.22044605e-16&#10;Max relative difference among violations: 3.537308e-15&#10; ACTUAL: array([4.726311e-01, 3.671753e-01, 2.482862e-01, 1.358642e-01,&#10;       5.525911e-02, 1.590116e-02, 3.583493e-03, 8.933236e-04,&#10;       3.458197e-04, 2.076031e-04, 1.615195e-04, 1.423464e-04,...&#10; DESIRED: array([4.726311e-01, 3.671753e-01, 2.482862e-01, 1.358642e-01,&#10;       5.525911e-02, 1.590116e-02, 3.583493e-03, 8.933236e-04,&#10;       3.458197e-04, 2.076031e-04, 1.615195e-04, 1.423464e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 2
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 70 / 1000 (7%)
+E       First 5 mismatches are at indices:
+E        [3]: 0.13586423744726883 (ACTUAL), 0.1358642374472688 (DESIRED)
+E        [4]: 0.05525911233298514 (ACTUAL), 0.05525911233298511 (DESIRED)
+E        [5]: 0.015901157340126256 (ACTUAL), 0.015901157340126242 (DESIRED)
+E        [8]: 0.00034581968400773856 (ACTUAL), 0.0003458196840077392 (DESIRED)
+E        [10]: 0.0001615195184225761 (ACTUAL), 0.0001615195184225758 (DESIRED)
+E       Max absolute difference among violations: 2.22044605e-16
+E       Max relative difference among violations: 3.537308e-15
+E        ACTUAL: array([4.726311e-01, 3.671753e-01, 2.482862e-01, 1.358642e-01,
+E              5.525911e-02, 1.590116e-02, 3.583493e-03, 8.933236e-04,
+E              3.458197e-04, 2.076031e-04, 1.615195e-04, 1.423464e-04,...
+E        DESIRED: array([4.726311e-01, 3.671753e-01, 2.482862e-01, 1.358642e-01,
+E              5.525911e-02, 1.590116e-02, 3.583493e-03, 8.933236e-04,
+E              3.458197e-04, 2.076031e-04, 1.615195e-04, 1.423464e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[2-55010]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 166 / 1000 (16.6%)&#10;First 5 mismatches are at indices:&#10; [3]: 0.1394426931787377 (ACTUAL), 0.13944269317873767 (DESIRED)&#10; [5]: 0.025091872079858715 (ACTUAL), 0.025091872079858735 (DESIRED)&#10; [7]: 0.002806753433449293 (ACTUAL), 0.0028067534334492955 (DESIRED)&#10; [10]: 0.000274089545395283 (ACTUAL), 0.0002740895453952825 (DESIRED)&#10; [13]: 0.00013800182398822515 (ACTUAL), 0.0001380018239882249 (DESIRED)&#10;Max absolute difference among violations: 5.49560397e-15&#10;Max relative difference among violations: 1.82752373e-14&#10; ACTUAL: array([4.724138e-01, 3.641733e-01, 2.456691e-01, 1.394427e-01,&#10;       6.499041e-02, 2.509187e-02, 8.491648e-03, 2.806753e-03,&#10;       1.036338e-03, 4.732953e-04, 2.740895e-04, 1.934156e-04,...&#10; DESIRED: array([4.724138e-01, 3.641733e-01, 2.456691e-01, 1.394427e-01,&#10;       6.499041e-02, 2.509187e-02, 8.491648e-03, 2.806753e-03,&#10;       1.036338e-03, 4.732953e-04, 2.740895e-04, 1.934156e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 2
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 166 / 1000 (16.6%)
+E       First 5 mismatches are at indices:
+E        [3]: 0.1394426931787377 (ACTUAL), 0.13944269317873767 (DESIRED)
+E        [5]: 0.025091872079858715 (ACTUAL), 0.025091872079858735 (DESIRED)
+E        [7]: 0.002806753433449293 (ACTUAL), 0.0028067534334492955 (DESIRED)
+E        [10]: 0.000274089545395283 (ACTUAL), 0.0002740895453952825 (DESIRED)
+E        [13]: 0.00013800182398822515 (ACTUAL), 0.0001380018239882249 (DESIRED)
+E       Max absolute difference among violations: 5.49560397e-15
+E       Max relative difference among violations: 1.82752373e-14
+E        ACTUAL: array([4.724138e-01, 3.641733e-01, 2.456691e-01, 1.394427e-01,
+E              6.499041e-02, 2.509187e-02, 8.491648e-03, 2.806753e-03,
+E              1.036338e-03, 4.732953e-04, 2.740895e-04, 1.934156e-04,...
+E        DESIRED: array([4.724138e-01, 3.641733e-01, 2.456691e-01, 1.394427e-01,
+E              6.499041e-02, 2.509187e-02, 8.491648e-03, 2.806753e-03,
+E              1.036338e-03, 4.732953e-04, 2.740895e-04, 1.934156e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[3-uniform_population]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 100 / 1000 (10%)&#10;First 5 mismatches are at indices:&#10; [7]: 0.0006073651891519955 (ACTUAL), 0.000607365189151995 (DESIRED)&#10; [14]: 0.00011787550213865587 (ACTUAL), 0.00011787550213865567 (DESIRED)&#10; [17]: 0.00010863362675476671 (ACTUAL), 0.00010863362675476652 (DESIRED)&#10; [22]: 0.00010272673705948764 (ACTUAL), 0.00010272673705948782 (DESIRED)&#10; [23]: 0.00010212233055951816 (ACTUAL), 0.00010212233055951799 (DESIRED)&#10;Max absolute difference among violations: 1.66533454e-15&#10;Max relative difference among violations: 5.75223216e-15&#10; ACTUAL: array([4.721787e-01, 3.437287e-01, 2.091618e-01, 9.647512e-02,&#10;       3.107235e-02, 7.394703e-03, 1.776334e-03, 6.073652e-04,&#10;       3.112042e-04, 2.105764e-04, 1.670818e-04, 1.447371e-04,...&#10; DESIRED: array([4.721787e-01, 3.437287e-01, 2.091618e-01, 9.647512e-02,&#10;       3.107235e-02, 7.394703e-03, 1.776334e-03, 6.073652e-04,&#10;       3.112042e-04, 2.105764e-04, 1.670818e-04, 1.447371e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 3
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 100 / 1000 (10%)
+E       First 5 mismatches are at indices:
+E        [7]: 0.0006073651891519955 (ACTUAL), 0.000607365189151995 (DESIRED)
+E        [14]: 0.00011787550213865587 (ACTUAL), 0.00011787550213865567 (DESIRED)
+E        [17]: 0.00010863362675476671 (ACTUAL), 0.00010863362675476652 (DESIRED)
+E        [22]: 0.00010272673705948764 (ACTUAL), 0.00010272673705948782 (DESIRED)
+E        [23]: 0.00010212233055951816 (ACTUAL), 0.00010212233055951799 (DESIRED)
+E       Max absolute difference among violations: 1.66533454e-15
+E       Max relative difference among violations: 5.75223216e-15
+E        ACTUAL: array([4.721787e-01, 3.437287e-01, 2.091618e-01, 9.647512e-02,
+E              3.107235e-02, 7.394703e-03, 1.776334e-03, 6.073652e-04,
+E              3.112042e-04, 2.105764e-04, 1.670818e-04, 1.447371e-04,...
+E        DESIRED: array([4.721787e-01, 3.437287e-01, 2.091618e-01, 9.647512e-02,
+E              3.107235e-02, 7.394703e-03, 1.776334e-03, 6.073652e-04,
+E              3.112042e-04, 2.105764e-04, 1.670818e-04, 1.447371e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[3-55010]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 94 / 1000 (9.4%)&#10;First 5 mismatches are at indices:&#10; [2]: 0.2253003652705237 (ACTUAL), 0.22530036527052374 (DESIRED)&#10; [6]: 0.006088196542268881 (ACTUAL), 0.006088196542268887 (DESIRED)&#10; [8]: 0.0008019015673237392 (ACTUAL), 0.0008019015673237386 (DESIRED)&#10; [16]: 0.0001253492963033321 (ACTUAL), 0.00012534929630333188 (DESIRED)&#10; [17]: 0.00012251475336165735 (ACTUAL), 0.00012251475336165713 (DESIRED)&#10;Max absolute difference among violations: 2.1649349e-14&#10;Max relative difference among violations: 5.64843706e-14&#10; ACTUAL: array([4.714787e-01, 3.493485e-01, 2.253004e-01, 1.208248e-01,&#10;       5.252648e-02, 1.887305e-02, 6.088197e-03, 2.026776e-03,&#10;       8.019016e-04, 4.050062e-04, 2.571066e-04, 1.932913e-04,...&#10; DESIRED: array([4.714787e-01, 3.493485e-01, 2.253004e-01, 1.208248e-01,&#10;       5.252648e-02, 1.887305e-02, 6.088197e-03, 2.026776e-03,&#10;       8.019016e-04, 4.050062e-04, 2.571066e-04, 1.932913e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 3
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 94 / 1000 (9.4%)
+E       First 5 mismatches are at indices:
+E        [2]: 0.2253003652705237 (ACTUAL), 0.22530036527052374 (DESIRED)
+E        [6]: 0.006088196542268881 (ACTUAL), 0.006088196542268887 (DESIRED)
+E        [8]: 0.0008019015673237392 (ACTUAL), 0.0008019015673237386 (DESIRED)
+E        [16]: 0.0001253492963033321 (ACTUAL), 0.00012534929630333188 (DESIRED)
+E        [17]: 0.00012251475336165735 (ACTUAL), 0.00012251475336165713 (DESIRED)
+E       Max absolute difference among violations: 2.1649349e-14
+E       Max relative difference among violations: 5.64843706e-14
+E        ACTUAL: array([4.714787e-01, 3.493485e-01, 2.253004e-01, 1.208248e-01,
+E              5.252648e-02, 1.887305e-02, 6.088197e-03, 2.026776e-03,
+E              8.019016e-04, 4.050062e-04, 2.571066e-04, 1.932913e-04,...
+E        DESIRED: array([4.714787e-01, 3.493485e-01, 2.253004e-01, 1.208248e-01,
+E              5.252648e-02, 1.887305e-02, 6.088197e-03, 2.026776e-03,
+E              8.019016e-04, 4.050062e-04, 2.571066e-04, 1.932913e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[4-uniform_population]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 73 / 1000 (7.3%)&#10;First 5 mismatches are at indices:&#10; [9]: 0.00015858375415113906 (ACTUAL), 0.0001585837541511388 (DESIRED)&#10; [11]: 0.0001252763924636922 (ACTUAL), 0.00012527639246369198 (DESIRED)&#10; [19]: 0.00010918180814799625 (ACTUAL), 0.00010918180814799606 (DESIRED)&#10; [21]: 0.0001087171323755842 (ACTUAL), 0.0001087171323755844 (DESIRED)&#10; [25]: 0.00010831698828563856 (ACTUAL), 0.00010831698828563875 (DESIRED)&#10;Max absolute difference among violations: 8.32667268e-16&#10;Max relative difference among violations: 2.07133915e-15&#10; ACTUAL: array([4.718198e-01, 3.499465e-01, 2.219862e-01, 1.088176e-01,&#10;       3.635700e-02, 7.858539e-03, 1.456212e-03, 4.165754e-04,&#10;       2.158817e-04, 1.585838e-04, 1.361308e-04, 1.252764e-04,...&#10; DESIRED: array([4.718198e-01, 3.499465e-01, 2.219862e-01, 1.088176e-01,&#10;       3.635700e-02, 7.858539e-03, 1.456212e-03, 4.165754e-04,&#10;       2.158817e-04, 1.585838e-04, 1.361308e-04, 1.252764e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 4
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 73 / 1000 (7.3%)
+E       First 5 mismatches are at indices:
+E        [9]: 0.00015858375415113906 (ACTUAL), 0.0001585837541511388 (DESIRED)
+E        [11]: 0.0001252763924636922 (ACTUAL), 0.00012527639246369198 (DESIRED)
+E        [19]: 0.00010918180814799625 (ACTUAL), 0.00010918180814799606 (DESIRED)
+E        [21]: 0.0001087171323755842 (ACTUAL), 0.0001087171323755844 (DESIRED)
+E        [25]: 0.00010831698828563856 (ACTUAL), 0.00010831698828563875 (DESIRED)
+E       Max absolute difference among violations: 8.32667268e-16
+E       Max relative difference among violations: 2.07133915e-15
+E        ACTUAL: array([4.718198e-01, 3.499465e-01, 2.219862e-01, 1.088176e-01,
+E              3.635700e-02, 7.858539e-03, 1.456212e-03, 4.165754e-04,
+E              2.158817e-04, 1.585838e-04, 1.361308e-04, 1.252764e-04,...
+E        DESIRED: array([4.718198e-01, 3.499465e-01, 2.219862e-01, 1.088176e-01,
+E              3.635700e-02, 7.858539e-03, 1.456212e-03, 4.165754e-04,
+E              2.158817e-04, 1.585838e-04, 1.361308e-04, 1.252764e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[4-55010]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 78 / 1000 (7.8%)&#10;First 5 mismatches are at indices:&#10; [6]: 0.004153776102651263 (ACTUAL), 0.004153776102651256 (DESIRED)&#10; [10]: 0.00016996586472946601 (ACTUAL), 0.0001699658647294657 (DESIRED)&#10; [11]: 0.0001315187498519098 (ACTUAL), 0.00013151874985191 (DESIRED)&#10; [19]: 8.774158299446734e-05 (ACTUAL), 8.774158299446718e-05 (DESIRED)&#10; [20]: 8.705673471358613e-05 (ACTUAL), 8.705673471358628e-05 (DESIRED)&#10;Max absolute difference among violations: 3.21964677e-15&#10;Max relative difference among violations: 8.96826378e-15&#10; ACTUAL: array([4.728382e-01, 3.477451e-01, 2.146650e-01, 1.068115e-01,&#10;       4.245406e-02, 1.394888e-02, 4.153776e-03, 1.306749e-03,&#10;       5.073795e-04, 2.600425e-04, 1.699659e-04, 1.315187e-04,...&#10; DESIRED: array([4.728382e-01, 3.477451e-01, 2.146650e-01, 1.068115e-01,&#10;       4.245406e-02, 1.394888e-02, 4.153776e-03, 1.306749e-03,&#10;       5.073795e-04, 2.600425e-04, 1.699659e-04, 1.315187e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 4
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 78 / 1000 (7.8%)
+E       First 5 mismatches are at indices:
+E        [6]: 0.004153776102651263 (ACTUAL), 0.004153776102651256 (DESIRED)
+E        [10]: 0.00016996586472946601 (ACTUAL), 0.0001699658647294657 (DESIRED)
+E        [11]: 0.0001315187498519098 (ACTUAL), 0.00013151874985191 (DESIRED)
+E        [19]: 8.774158299446734e-05 (ACTUAL), 8.774158299446718e-05 (DESIRED)
+E        [20]: 8.705673471358613e-05 (ACTUAL), 8.705673471358628e-05 (DESIRED)
+E       Max absolute difference among violations: 3.21964677e-15
+E       Max relative difference among violations: 8.96826378e-15
+E        ACTUAL: array([4.728382e-01, 3.477451e-01, 2.146650e-01, 1.068115e-01,
+E              4.245406e-02, 1.394888e-02, 4.153776e-03, 1.306749e-03,
+E              5.073795e-04, 2.600425e-04, 1.699659e-04, 1.315187e-04,...
+E        DESIRED: array([4.728382e-01, 3.477451e-01, 2.146650e-01, 1.068115e-01,
+E              4.245406e-02, 1.394888e-02, 4.153776e-03, 1.306749e-03,
+E              5.073795e-04, 2.600425e-04, 1.699659e-04, 1.315187e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[5-uniform_population]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 160 / 1000 (16%)&#10;First 5 mismatches are at indices:&#10; [2]: 0.24494194368515995 (ACTUAL), 0.2449419436851599 (DESIRED)&#10; [6]: 0.0033530948750443686 (ACTUAL), 0.0033530948750443656 (DESIRED)&#10; [12]: 0.00011187395586555921 (ACTUAL), 0.000111873955865559 (DESIRED)&#10; [18]: 9.99077988319963e-05 (ACTUAL), 9.990779883199647e-05 (DESIRED)&#10; [19]: 9.957529450998931e-05 (ACTUAL), 9.957529450998948e-05 (DESIRED)&#10;Max absolute difference among violations: 3.99680289e-15&#10;Max relative difference among violations: 8.1116817e-15&#10; ACTUAL: array([4.746640e-01, 3.669902e-01, 2.449419e-01, 1.313845e-01,&#10;       5.207420e-02, 1.469964e-02, 3.353095e-03, 8.637740e-04,&#10;       3.329663e-04, 1.912679e-04, 1.422175e-04, 1.216665e-04,...&#10; DESIRED: array([4.746640e-01, 3.669902e-01, 2.449419e-01, 1.313845e-01,&#10;       5.207420e-02, 1.469964e-02, 3.353095e-03, 8.637740e-04,&#10;       3.329663e-04, 1.912679e-04, 1.422175e-04, 1.216665e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 5
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 160 / 1000 (16%)
+E       First 5 mismatches are at indices:
+E        [2]: 0.24494194368515995 (ACTUAL), 0.2449419436851599 (DESIRED)
+E        [6]: 0.0033530948750443686 (ACTUAL), 0.0033530948750443656 (DESIRED)
+E        [12]: 0.00011187395586555921 (ACTUAL), 0.000111873955865559 (DESIRED)
+E        [18]: 9.99077988319963e-05 (ACTUAL), 9.990779883199647e-05 (DESIRED)
+E        [19]: 9.957529450998931e-05 (ACTUAL), 9.957529450998948e-05 (DESIRED)
+E       Max absolute difference among violations: 3.99680289e-15
+E       Max relative difference among violations: 8.1116817e-15
+E        ACTUAL: array([4.746640e-01, 3.669902e-01, 2.449419e-01, 1.313845e-01,
+E              5.207420e-02, 1.469964e-02, 3.353095e-03, 8.637740e-04,
+E              3.329663e-04, 1.912679e-04, 1.422175e-04, 1.216665e-04,...
+E        DESIRED: array([4.746640e-01, 3.669902e-01, 2.449419e-01, 1.313845e-01,
+E              5.207420e-02, 1.469964e-02, 3.353095e-03, 8.637740e-04,
+E              3.329663e-04, 1.912679e-04, 1.422175e-04, 1.216665e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[5-55010]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 189 / 1000 (18.9%)&#10;First 5 mismatches are at indices:&#10; [4]: 0.06485801921946727 (ACTUAL), 0.06485801921946724 (DESIRED)&#10; [8]: 0.0009177703953830101 (ACTUAL), 0.0009177703953830093 (DESIRED)&#10; [12]: 0.00013912068289746748 (ACTUAL), 0.00013912068289746772 (DESIRED)&#10; [13]: 0.00012372799342541112 (ACTUAL), 0.00012372799342541137 (DESIRED)&#10; [16]: 0.00010909634363798103 (ACTUAL), 0.00010909634363798084 (DESIRED)&#10;Max absolute difference among violations: 6.66133815e-15&#10;Max relative difference among violations: 2.13189321e-14&#10; ACTUAL: array([4.741329e-01, 3.674670e-01, 2.485405e-01, 1.408479e-01,&#10;       6.485802e-02, 2.439280e-02, 7.967729e-03, 2.545407e-03,&#10;       9.177704e-04, 4.148156e-04, 2.402420e-04, 1.705115e-04,...&#10; DESIRED: array([4.741329e-01, 3.674670e-01, 2.485405e-01, 1.408479e-01,&#10;       6.485802e-02, 2.439280e-02, 7.967729e-03, 2.545407e-03,&#10;       9.177704e-04, 4.148156e-04, 2.402420e-04, 1.705115e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 5
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 189 / 1000 (18.9%)
+E       First 5 mismatches are at indices:
+E        [4]: 0.06485801921946727 (ACTUAL), 0.06485801921946724 (DESIRED)
+E        [8]: 0.0009177703953830101 (ACTUAL), 0.0009177703953830093 (DESIRED)
+E        [12]: 0.00013912068289746748 (ACTUAL), 0.00013912068289746772 (DESIRED)
+E        [13]: 0.00012372799342541112 (ACTUAL), 0.00012372799342541137 (DESIRED)
+E        [16]: 0.00010909634363798103 (ACTUAL), 0.00010909634363798084 (DESIRED)
+E       Max absolute difference among violations: 6.66133815e-15
+E       Max relative difference among violations: 2.13189321e-14
+E        ACTUAL: array([4.741329e-01, 3.674670e-01, 2.485405e-01, 1.408479e-01,
+E              6.485802e-02, 2.439280e-02, 7.967729e-03, 2.545407e-03,
+E              9.177704e-04, 4.148156e-04, 2.402420e-04, 1.705115e-04,...
+E        DESIRED: array([4.741329e-01, 3.674670e-01, 2.485405e-01, 1.408479e-01,
+E              6.485802e-02, 2.439280e-02, 7.967729e-03, 2.545407e-03,
+E              9.177704e-04, 4.148156e-04, 2.402420e-04, 1.705115e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[6-uniform_population]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 406 / 1000 (40.6%)&#10;First 5 mismatches are at indices:&#10; [15]: 0.34421850743412663 (ACTUAL), 0.3442185074341266 (DESIRED)&#10; [16]: 0.33766967981836854 (ACTUAL), 0.3376696798183686 (DESIRED)&#10; [26]: 0.2899694910944238 (ACTUAL), 0.2899694910944237 (DESIRED)&#10; [40]: 0.26169132797014966 (ACTUAL), 0.2616913279701497 (DESIRED)&#10; [43]: 0.2588977708116319 (ACTUAL), 0.25889777081163196 (DESIRED)&#10;Max absolute difference among violations: 1.38777878e-16&#10;Max relative difference among violations: 7.77202584e-16&#10; ACTUAL: array([0.492193, 0.477887, 0.465057, 0.452946, 0.441401, 0.430394,&#10;       0.419898, 0.409879, 0.400304, 0.391145, 0.382385, 0.374011,&#10;       0.366013, 0.358385, 0.351122, 0.344219, 0.33767 , 0.33147 ,...&#10; DESIRED: array([0.492193, 0.477887, 0.465057, 0.452946, 0.441401, 0.430394,&#10;       0.419898, 0.409879, 0.400304, 0.391145, 0.382385, 0.374011,&#10;       0.366013, 0.358385, 0.351122, 0.344219, 0.33767 , 0.33147 ,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 6
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 406 / 1000 (40.6%)
+E       First 5 mismatches are at indices:
+E        [15]: 0.34421850743412663 (ACTUAL), 0.3442185074341266 (DESIRED)
+E        [16]: 0.33766967981836854 (ACTUAL), 0.3376696798183686 (DESIRED)
+E        [26]: 0.2899694910944238 (ACTUAL), 0.2899694910944237 (DESIRED)
+E        [40]: 0.26169132797014966 (ACTUAL), 0.2616913279701497 (DESIRED)
+E        [43]: 0.2588977708116319 (ACTUAL), 0.25889777081163196 (DESIRED)
+E       Max absolute difference among violations: 1.38777878e-16
+E       Max relative difference among violations: 7.77202584e-16
+E        ACTUAL: array([0.492193, 0.477887, 0.465057, 0.452946, 0.441401, 0.430394,
+E              0.419898, 0.409879, 0.400304, 0.391145, 0.382385, 0.374011,
+E              0.366013, 0.358385, 0.351122, 0.344219, 0.33767 , 0.33147 ,...
+E        DESIRED: array([0.492193, 0.477887, 0.465057, 0.452946, 0.441401, 0.430394,
+E              0.419898, 0.409879, 0.400304, 0.391145, 0.382385, 0.374011,
+E              0.366013, 0.358385, 0.351122, 0.344219, 0.33767 , 0.33147 ,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[6-55010]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 129 / 1000 (12.9%)&#10;First 5 mismatches are at indices:&#10; [3]: 0.19894605174885624 (ACTUAL), 0.1989460517488563 (DESIRED)&#10; [4]: 0.11762288007192158 (ACTUAL), 0.11762288007192162 (DESIRED)&#10; [7]: 0.011144055305814641 (ACTUAL), 0.01114405530581463 (DESIRED)&#10; [8]: 0.0045340359367348725 (ACTUAL), 0.004534035936734877 (DESIRED)&#10; [10]: 0.0009656635273111173 (ACTUAL), 0.0009656635273111181 (DESIRED)&#10;Max absolute difference among violations: 2.0206059e-14&#10;Max relative difference among violations: 5.22396137e-14&#10; ACTUAL: array([4.723861e-01, 3.882164e-01, 2.937848e-01, 1.989461e-01,&#10;       1.176229e-01, 6.013253e-02, 2.700163e-02, 1.114406e-02,&#10;       4.534036e-03, 1.965857e-03, 9.656635e-04, 5.518424e-04,...&#10; DESIRED: array([4.723861e-01, 3.882164e-01, 2.937848e-01, 1.989461e-01,&#10;       1.176229e-01, 6.013253e-02, 2.700163e-02, 1.114406e-02,&#10;       4.534036e-03, 1.965857e-03, 9.656635e-04, 5.518424e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 6
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 129 / 1000 (12.9%)
+E       First 5 mismatches are at indices:
+E        [3]: 0.19894605174885624 (ACTUAL), 0.1989460517488563 (DESIRED)
+E        [4]: 0.11762288007192158 (ACTUAL), 0.11762288007192162 (DESIRED)
+E        [7]: 0.011144055305814641 (ACTUAL), 0.01114405530581463 (DESIRED)
+E        [8]: 0.0045340359367348725 (ACTUAL), 0.004534035936734877 (DESIRED)
+E        [10]: 0.0009656635273111173 (ACTUAL), 0.0009656635273111181 (DESIRED)
+E       Max absolute difference among violations: 2.0206059e-14
+E       Max relative difference among violations: 5.22396137e-14
+E        ACTUAL: array([4.723861e-01, 3.882164e-01, 2.937848e-01, 1.989461e-01,
+E              1.176229e-01, 6.013253e-02, 2.700163e-02, 1.114406e-02,
+E              4.534036e-03, 1.965857e-03, 9.656635e-04, 5.518424e-04,...
+E        DESIRED: array([4.723861e-01, 3.882164e-01, 2.937848e-01, 1.989461e-01,
+E              1.176229e-01, 6.013253e-02, 2.700163e-02, 1.114406e-02,
+E              4.534036e-03, 1.965857e-03, 9.656635e-04, 5.518424e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[7-uniform_population]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 175 / 1000 (17.5%)&#10;First 5 mismatches are at indices:&#10; [1]: 0.3640603076876345 (ACTUAL), 0.36406030768763437 (DESIRED)&#10; [2]: 0.2419496930723843 (ACTUAL), 0.24194969307238418 (DESIRED)&#10; [3]: 0.1292005469587652 (ACTUAL), 0.12920054695876515 (DESIRED)&#10; [6]: 0.002839032824808007 (ACTUAL), 0.002839032824808002 (DESIRED)&#10; [7]: 0.0006800390051337329 (ACTUAL), 0.0006800390051337323 (DESIRED)&#10;Max absolute difference among violations: 3.33066907e-16&#10;Max relative difference among violations: 2.49044238e-15&#10; ACTUAL: array([4.755214e-01, 3.640603e-01, 2.419497e-01, 1.292005e-01,&#10;       5.043272e-02, 1.358314e-02, 2.839033e-03, 6.800390e-04,&#10;       2.621798e-04, 1.580243e-04, 1.236975e-04, 1.098539e-04,...&#10; DESIRED: array([4.755214e-01, 3.640603e-01, 2.419497e-01, 1.292005e-01,&#10;       5.043272e-02, 1.358314e-02, 2.839033e-03, 6.800390e-04,&#10;       2.621798e-04, 1.580243e-04, 1.236975e-04, 1.098539e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 7
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 175 / 1000 (17.5%)
+E       First 5 mismatches are at indices:
+E        [1]: 0.3640603076876345 (ACTUAL), 0.36406030768763437 (DESIRED)
+E        [2]: 0.2419496930723843 (ACTUAL), 0.24194969307238418 (DESIRED)
+E        [3]: 0.1292005469587652 (ACTUAL), 0.12920054695876515 (DESIRED)
+E        [6]: 0.002839032824808007 (ACTUAL), 0.002839032824808002 (DESIRED)
+E        [7]: 0.0006800390051337329 (ACTUAL), 0.0006800390051337323 (DESIRED)
+E       Max absolute difference among violations: 3.33066907e-16
+E       Max relative difference among violations: 2.49044238e-15
+E        ACTUAL: array([4.755214e-01, 3.640603e-01, 2.419497e-01, 1.292005e-01,
+E              5.043272e-02, 1.358314e-02, 2.839033e-03, 6.800390e-04,
+E              2.621798e-04, 1.580243e-04, 1.236975e-04, 1.098539e-04,...
+E        DESIRED: array([4.755214e-01, 3.640603e-01, 2.419497e-01, 1.292005e-01,
+E              5.043272e-02, 1.358314e-02, 2.839033e-03, 6.800390e-04,
+E              2.621798e-04, 1.580243e-04, 1.236975e-04, 1.098539e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[7-55010]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 133 / 1000 (13.3%)&#10;First 5 mismatches are at indices:&#10; [2]: 0.2459445198912204 (ACTUAL), 0.24594451989122046 (DESIRED)&#10; [11]: 0.0003068287113281207 (ACTUAL), 0.0003068287113281212 (DESIRED)&#10; [12]: 0.0002293032003367548 (ACTUAL), 0.0002293032003367552 (DESIRED)&#10; [16]: 0.00013708097260999776 (ACTUAL), 0.00013708097260999751 (DESIRED)&#10; [18]: 0.00012529738198132495 (ACTUAL), 0.00012529738198132473 (DESIRED)&#10;Max absolute difference among violations: 1.23234756e-14&#10;Max relative difference among violations: 3.45870511e-14&#10; ACTUAL: array([4.742565e-01, 3.632195e-01, 2.459445e-01, 1.432244e-01,&#10;       7.067905e-02, 2.993912e-02, 1.144239e-02, 4.295307e-03,&#10;       1.745327e-03, 8.250174e-04, 4.647375e-04, 3.068287e-04,...&#10; DESIRED: array([4.742565e-01, 3.632195e-01, 2.459445e-01, 1.432244e-01,&#10;       7.067905e-02, 2.993912e-02, 1.144239e-02, 4.295307e-03,&#10;       1.745327e-03, 8.250174e-04, 4.647375e-04, 3.068287e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 7
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 133 / 1000 (13.3%)
+E       First 5 mismatches are at indices:
+E        [2]: 0.2459445198912204 (ACTUAL), 0.24594451989122046 (DESIRED)
+E        [11]: 0.0003068287113281207 (ACTUAL), 0.0003068287113281212 (DESIRED)
+E        [12]: 0.0002293032003367548 (ACTUAL), 0.0002293032003367552 (DESIRED)
+E        [16]: 0.00013708097260999776 (ACTUAL), 0.00013708097260999751 (DESIRED)
+E        [18]: 0.00012529738198132495 (ACTUAL), 0.00012529738198132473 (DESIRED)
+E       Max absolute difference among violations: 1.23234756e-14
+E       Max relative difference among violations: 3.45870511e-14
+E        ACTUAL: array([4.742565e-01, 3.632195e-01, 2.459445e-01, 1.432244e-01,
+E              7.067905e-02, 2.993912e-02, 1.144239e-02, 4.295307e-03,
+E              1.745327e-03, 8.250174e-04, 4.647375e-04, 3.068287e-04,...
+E        DESIRED: array([4.742565e-01, 3.632195e-01, 2.459445e-01, 1.432244e-01,
+E              7.067905e-02, 2.993912e-02, 1.144239e-02, 4.295307e-03,
+E              1.745327e-03, 8.250174e-04, 4.647375e-04, 3.068287e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[8-uniform_population]" time="0.044"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 438 / 1000 (43.8%)&#10;First 5 mismatches are at indices:&#10; [3]: 0.4403725397792216 (ACTUAL), 0.44037253977922153 (DESIRED)&#10; [8]: 0.3863869867642215 (ACTUAL), 0.38638698676422156 (DESIRED)&#10; [16]: 0.32324145079292466 (ACTUAL), 0.32324145079292477 (DESIRED)&#10; [19]: 0.306213137758291 (ACTUAL), 0.3062131377582909 (DESIRED)&#10; [23]: 0.2886442059599688 (ACTUAL), 0.28864420595996887 (DESIRED)&#10;Max absolute difference among violations: 1.11022302e-16&#10;Max relative difference among violations: 5.4046977e-16&#10; ACTUAL: array([0.490338, 0.469687, 0.453814, 0.440373, 0.428256, 0.416972,&#10;       0.406297, 0.39612 , 0.386387, 0.377071, 0.368161, 0.359656,&#10;       0.351556, 0.343865, 0.336583, 0.329709, 0.323241, 0.317175,...&#10; DESIRED: array([0.490338, 0.469687, 0.453814, 0.440373, 0.428256, 0.416972,&#10;       0.406297, 0.39612 , 0.386387, 0.377071, 0.368161, 0.359656,&#10;       0.351556, 0.343865, 0.336583, 0.329709, 0.323241, 0.317175,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 8
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 438 / 1000 (43.8%)
+E       First 5 mismatches are at indices:
+E        [3]: 0.4403725397792216 (ACTUAL), 0.44037253977922153 (DESIRED)
+E        [8]: 0.3863869867642215 (ACTUAL), 0.38638698676422156 (DESIRED)
+E        [16]: 0.32324145079292466 (ACTUAL), 0.32324145079292477 (DESIRED)
+E        [19]: 0.306213137758291 (ACTUAL), 0.3062131377582909 (DESIRED)
+E        [23]: 0.2886442059599688 (ACTUAL), 0.28864420595996887 (DESIRED)
+E       Max absolute difference among violations: 1.11022302e-16
+E       Max relative difference among violations: 5.4046977e-16
+E        ACTUAL: array([0.490338, 0.469687, 0.453814, 0.440373, 0.428256, 0.416972,
+E              0.406297, 0.39612 , 0.386387, 0.377071, 0.368161, 0.359656,
+E              0.351556, 0.343865, 0.336583, 0.329709, 0.323241, 0.317175,...
+E        DESIRED: array([0.490338, 0.469687, 0.453814, 0.440373, 0.428256, 0.416972,
+E              0.406297, 0.39612 , 0.386387, 0.377071, 0.368161, 0.359656,
+E              0.351556, 0.343865, 0.336583, 0.329709, 0.323241, 0.317175,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[8-55010]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 97 / 1000 (9.7%)&#10;First 5 mismatches are at indices:&#10; [7]: 0.005345722536432324 (ACTUAL), 0.005345722536432329 (DESIRED)&#10; [9]: 0.0010162686935910104 (ACTUAL), 0.0010162686935910113 (DESIRED)&#10; [10]: 0.0005514187356617648 (ACTUAL), 0.0005514187356617643 (DESIRED)&#10; [12]: 0.00025555371587878507 (ACTUAL), 0.00025555371587878556 (DESIRED)&#10; [19]: 0.00012951657834210133 (ACTUAL), 0.00012951657834210108 (DESIRED)&#10;Max absolute difference among violations: 1.63202785e-14&#10;Max relative difference among violations: 4.61508653e-14&#10; ACTUAL: array([4.721982e-01, 3.563204e-01, 2.394436e-01, 1.411852e-01,&#10;       7.260555e-02, 3.288021e-02, 1.352149e-02, 5.345723e-03,&#10;       2.198796e-03, 1.016269e-03, 5.514187e-04, 3.512881e-04,...&#10; DESIRED: array([4.721982e-01, 3.563204e-01, 2.394436e-01, 1.411852e-01,&#10;       7.260555e-02, 3.288021e-02, 1.352149e-02, 5.345723e-03,&#10;       2.198796e-03, 1.016269e-03, 5.514187e-04, 3.512881e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 8
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 97 / 1000 (9.7%)
+E       First 5 mismatches are at indices:
+E        [7]: 0.005345722536432324 (ACTUAL), 0.005345722536432329 (DESIRED)
+E        [9]: 0.0010162686935910104 (ACTUAL), 0.0010162686935910113 (DESIRED)
+E        [10]: 0.0005514187356617648 (ACTUAL), 0.0005514187356617643 (DESIRED)
+E        [12]: 0.00025555371587878507 (ACTUAL), 0.00025555371587878556 (DESIRED)
+E        [19]: 0.00012951657834210133 (ACTUAL), 0.00012951657834210108 (DESIRED)
+E       Max absolute difference among violations: 1.63202785e-14
+E       Max relative difference among violations: 4.61508653e-14
+E        ACTUAL: array([4.721982e-01, 3.563204e-01, 2.394436e-01, 1.411852e-01,
+E              7.260555e-02, 3.288021e-02, 1.352149e-02, 5.345723e-03,
+E              2.198796e-03, 1.016269e-03, 5.514187e-04, 3.512881e-04,...
+E        DESIRED: array([4.721982e-01, 3.563204e-01, 2.394436e-01, 1.411852e-01,
+E              7.260555e-02, 3.288021e-02, 1.352149e-02, 5.345723e-03,
+E              2.198796e-03, 1.016269e-03, 5.514187e-04, 3.512881e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[9-uniform_population]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 156 / 1000 (15.6%)&#10;First 5 mismatches are at indices:&#10; [3]: 0.16463516781999624 (ACTUAL), 0.1646351678199963 (DESIRED)&#10; [5]: 0.026637556353579873 (ACTUAL), 0.026637556353579884 (DESIRED)&#10; [8]: 0.0007091590030390649 (ACTUAL), 0.0007091590030390655 (DESIRED)&#10; [11]: 0.0001965485224605604 (ACTUAL), 0.00019654852246056077 (DESIRED)&#10; [18]: 0.00013644015708799627 (ACTUAL), 0.00013644015708799652 (DESIRED)&#10;Max absolute difference among violations: 1.49880108e-15&#10;Max relative difference among violations: 4.55619854e-15&#10; ACTUAL: array([4.743199e-01, 3.813489e-01, 2.734353e-01, 1.646352e-01,&#10;       7.713635e-02, 2.663756e-02, 7.195036e-03, 1.954364e-03,&#10;       7.091590e-04, 3.674088e-04, 2.478977e-04, 1.965485e-04,...&#10; DESIRED: array([4.743199e-01, 3.813489e-01, 2.734353e-01, 1.646352e-01,&#10;       7.713635e-02, 2.663756e-02, 7.195036e-03, 1.954364e-03,&#10;       7.091590e-04, 3.674088e-04, 2.478977e-04, 1.965485e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population', index = 9
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 156 / 1000 (15.6%)
+E       First 5 mismatches are at indices:
+E        [3]: 0.16463516781999624 (ACTUAL), 0.1646351678199963 (DESIRED)
+E        [5]: 0.026637556353579873 (ACTUAL), 0.026637556353579884 (DESIRED)
+E        [8]: 0.0007091590030390649 (ACTUAL), 0.0007091590030390655 (DESIRED)
+E        [11]: 0.0001965485224605604 (ACTUAL), 0.00019654852246056077 (DESIRED)
+E        [18]: 0.00013644015708799627 (ACTUAL), 0.00013644015708799652 (DESIRED)
+E       Max absolute difference among violations: 1.49880108e-15
+E       Max relative difference among violations: 4.55619854e-15
+E        ACTUAL: array([4.743199e-01, 3.813489e-01, 2.734353e-01, 1.646352e-01,
+E              7.713635e-02, 2.663756e-02, 7.195036e-03, 1.954364e-03,
+E              7.091590e-04, 3.674088e-04, 2.478977e-04, 1.965485e-04,...
+E        DESIRED: array([4.743199e-01, 3.813489e-01, 2.734353e-01, 1.646352e-01,
+E              7.713635e-02, 2.663756e-02, 7.195036e-03, 1.954364e-03,
+E              7.091590e-04, 3.674088e-04, 2.478977e-04, 1.965485e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_gru_streaming_exact_batch_and_reset[9-55010]" time="0.045"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 84 / 1000 (8.4%)&#10;First 5 mismatches are at indices:&#10; [3]: 0.18642756950534084 (ACTUAL), 0.18642756950534078 (DESIRED)&#10; [6]: 0.022000911135300474 (ACTUAL), 0.022000911135300463 (DESIRED)&#10; [8]: 0.003369094082738167 (ACTUAL), 0.00336909408273817 (DESIRED)&#10; [11]: 0.00046468244034214486 (ACTUAL), 0.0004646824403421453 (DESIRED)&#10; [13]: 0.0002629350907484933 (ACTUAL), 0.0002629350907484938 (DESIRED)&#10;Max absolute difference among violations: 1.23234756e-14&#10;Max relative difference among violations: 3.89137462e-14&#10; ACTUAL: array([4.716535e-01, 3.830291e-01, 2.836444e-01, 1.864276e-01,&#10;       1.061352e-01, 5.178070e-02, 2.200091e-02, 8.588978e-03,&#10;       3.369094e-03, 1.465825e-03, 7.550160e-04, 4.646824e-04,...&#10; DESIRED: array([4.716535e-01, 3.830291e-01, 2.836444e-01, 1.864276e-01,&#10;       1.061352e-01, 5.178070e-02, 2.200091e-02, 8.588978e-03,&#10;       3.369094e-03, 1.465825e-03, 7.550160e-04, 4.646824e-04,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010', index = 9
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    @pytest.mark.parametrize('index',range(10))
+    def test_gru_streaming_exact_batch_and_reset(pipeline,roster,mapping,index):
+        row=roster[mapping][index+3]
+        drive=trace(mapping)['step_drive_unscaled']
+        actual, states=replay(row,pipeline,drive)
+        logits,cache=row['net'].forward(.4*drive[None],cache=True)
+        from connectome.scripts.phase10.gru import sigmoid
+&gt;       np.testing.assert_array_equal(actual,sigmoid(logits)[0])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 84 / 1000 (8.4%)
+E       First 5 mismatches are at indices:
+E        [3]: 0.18642756950534084 (ACTUAL), 0.18642756950534078 (DESIRED)
+E        [6]: 0.022000911135300474 (ACTUAL), 0.022000911135300463 (DESIRED)
+E        [8]: 0.003369094082738167 (ACTUAL), 0.00336909408273817 (DESIRED)
+E        [11]: 0.00046468244034214486 (ACTUAL), 0.0004646824403421453 (DESIRED)
+E        [13]: 0.0002629350907484933 (ACTUAL), 0.0002629350907484938 (DESIRED)
+E       Max absolute difference among violations: 1.23234756e-14
+E       Max relative difference among violations: 3.89137462e-14
+E        ACTUAL: array([4.716535e-01, 3.830291e-01, 2.836444e-01, 1.864276e-01,
+E              1.061352e-01, 5.178070e-02, 2.200091e-02, 8.588978e-03,
+E              3.369094e-03, 1.465825e-03, 7.550160e-04, 4.646824e-04,...
+E        DESIRED: array([4.716535e-01, 3.830291e-01, 2.836444e-01, 1.864276e-01,
+E              1.061352e-01, 5.178070e-02, 2.200091e-02, 8.588978e-03,
+E              3.369094e-03, 1.465825e-03, 7.550160e-04, 4.646824e-04,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:51: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_circuit_feature_and_no_action_saved_drive[uniform_population]" time="0.053"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 699 / 1000 (69.9%)&#10;First 5 mismatches are at indices:&#10; [217]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)&#10; [218]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)&#10; [219]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)&#10; [220]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)&#10; [221]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)&#10;Max absolute difference among violations: 4.02455846e-16&#10;Max relative difference among violations: 3.2673317e-15&#10; ACTUAL: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...&#10; DESIRED: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = 'uniform_population'
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    def test_circuit_feature_and_no_action_saved_drive(pipeline,roster,mapping):
+        saved=trace(mapping);drive=saved['step_drive_unscaled']
+        score,states=replay(roster[mapping][0],pipeline,drive)
+        np.testing.assert_array_equal(score,saved['score'])
+        np.testing.assert_array_equal(states,saved['states'])
+        score,_=replay(roster[mapping][1],pipeline,drive)
+&gt;       np.testing.assert_array_equal(score,score_model('feature_only',drive,pipeline))
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 699 / 1000 (69.9%)
+E       First 5 mismatches are at indices:
+E        [217]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)
+E        [218]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)
+E        [219]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)
+E        [220]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)
+E        [221]: 0.10435616603642316 (ACTUAL), 0.10435616603642334 (DESIRED)
+E       Max absolute difference among violations: 4.02455846e-16
+E       Max relative difference among violations: 3.2673317e-15
+E        ACTUAL: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...
+E        DESIRED: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:72: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_circuit_feature_and_no_action_saved_drive[55010]" time="0.053"><failure message="AssertionError: &#10;Arrays are not equal&#10;&#10;Mismatched elements: 515 / 1000 (51.5%)&#10;First 5 mismatches are at indices:&#10; [217]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)&#10; [218]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)&#10; [219]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)&#10; [220]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)&#10; [221]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)&#10;Max absolute difference among violations: 2.77555756e-17&#10;Max relative difference among violations: 9.82513617e-16&#10; ACTUAL: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...&#10; DESIRED: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,&#10;       0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...">pipeline = &lt;connectome.scripts.phase7.pipeline.FrozenPipeline object at 0x10b3e1010&gt;
+roster = {'uniform_population': [{'id': 'circuit', 'model': 'circuit', 'threshold': {'kind': 'finite', 'value': 5e-324}, 'freez...u_55102', 'model': 'gru', 'seed': 55102, 'net': &lt;connectome.scripts.phase10.gru.GRU object at 0x1116eb8c0&gt;, ...}, ...]}
+mapping = '55010'
+
+    @pytest.mark.parametrize('mapping',['uniform_population','55010'])
+    def test_circuit_feature_and_no_action_saved_drive(pipeline,roster,mapping):
+        saved=trace(mapping);drive=saved['step_drive_unscaled']
+        score,states=replay(roster[mapping][0],pipeline,drive)
+        np.testing.assert_array_equal(score,saved['score'])
+        np.testing.assert_array_equal(states,saved['states'])
+        score,_=replay(roster[mapping][1],pipeline,drive)
+&gt;       np.testing.assert_array_equal(score,score_model('feature_only',drive,pipeline))
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       Mismatched elements: 515 / 1000 (51.5%)
+E       First 5 mismatches are at indices:
+E        [217]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)
+E        [218]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)
+E        [219]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)
+E        [220]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)
+E        [221]: 0.01732399525814941 (ACTUAL), 0.017323995258149417 (DESIRED)
+E       Max absolute difference among violations: 2.77555756e-17
+E       Max relative difference among violations: 9.82513617e-16
+E        ACTUAL: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...
+E        DESIRED: array([0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,
+E              0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,...
+
+connectome/scripts/behavior_validation/tests/test_adapters.py:72: AssertionError</failure></testcase><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_input_validation_and_model_rejection" time="0.000" /><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_decoder_boundaries_and_latch" time="0.001" /><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_frame_availability_and_future_prefix" time="0.024" /><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_world_delay_latch_and_existing_collision" time="0.001" /><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_stored_metric_checker_and_hash_rejection" time="0.019" /><testcase classname="connectome.scripts.behavior_validation.tests.test_adapters" name="test_no_training_dispatch_during_loading" time="0.591" /></testsuite></testsuites>

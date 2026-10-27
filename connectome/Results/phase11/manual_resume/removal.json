@@ -1,0 +1,14 @@
+{
+  "restored_launcher_sha256": "263c9d1755cbeac0dc49191a6bb12f52b36861d0d0b008a57616ff4042f81160",
+  "pre_session_sha256": "263c9d1755cbeac0dc49191a6bb12f52b36861d0d0b008a57616ff4042f81160",
+  "removed_active_source_paths": [
+    "worker_guard.py",
+    "session_telemetry.py",
+    "sessions.py",
+    "session_worker.py",
+    "session_launch.py",
+    "tests/test_sessions.py"
+  ],
+  "archive": "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/Results/phase11/manual_resume/historical_thermal",
+  "unrelated_source_hash_conflicts": []
+}

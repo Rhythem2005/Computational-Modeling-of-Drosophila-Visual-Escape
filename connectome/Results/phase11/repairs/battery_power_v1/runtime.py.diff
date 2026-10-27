@@ -1,0 +1,53 @@
+--- before/runtime.py
++++ after/runtime.py
+@@ -8,7 +8,9 @@
+ import shutil
+ import subprocess
+ import time
+-from .common import ROOT, OUT, write
++from .common import ROOT, OUT, write, raw_sources, BASE, sha
++
++MINIMUM_BATTERY_PERCENT = 20
+ 
+ 
+ @contextmanager
+@@ -83,14 +85,24 @@
+ def assess(first,second,minimum_disk):
+     errors=[]
+     if second['disk_free_bytes']<minimum_disk: errors.append('INSUFFICIENT_DISK')
+-    if not second['power_query_ok'] or not second['ac_connected']: errors.append('STABLE_AC_NOT_VERIFIED')
+     stable=(first['battery_percent'] is not None and second['battery_percent'] is not None
+             and second['battery_percent']>=first['battery_percent'])
+-    if first['battery_percent'] is not None and second['battery_percent'] is not None and second['battery_percent']<first['battery_percent']:
+-        errors.append('BATTERY_PERCENT_DECREASED')
+     status=second['power_status']
+-    if status=='discharging': errors.append('BATTERY_DISCHARGING')
+-    elif status not in ('charging','charged','finishing charge') and not(status=='not charging' and stable): errors.append('CHARGING_OR_STABLE_NOT_VERIFIED')
++    if not first['power_query_ok'] or not second['power_query_ok']:
++        errors.append('POWER_STATUS_NOT_VERIFIED')
++    elif not second['ac_connected']:
++        levels=(first['battery_percent'],second['battery_percent'])
++        if any(type(level) is not int or not 0 <= level <= 100 for level in levels):
++            errors.append('BATTERY_LEVEL_NOT_VERIFIED')
++        elif min(levels)<MINIMUM_BATTERY_PERCENT:
++            errors.append('BATTERY_BELOW_20_PERCENT')
++        if status not in ('discharging','charged','not charging'):
++            errors.append('BATTERY_POWER_STATUS_NOT_VERIFIED')
++    else:
++        if first['battery_percent'] is not None and second['battery_percent'] is not None and second['battery_percent']<first['battery_percent']:
++            errors.append('BATTERY_PERCENT_DECREASED')
++        if status=='discharging': errors.append('BATTERY_DISCHARGING')
++        elif status not in ('charging','charged','finishing charge') and not(status=='not charging' and stable): errors.append('CHARGING_OR_STABLE_NOT_VERIFIED')
+     if not second['process_query_ok']: errors.append('WORKER_QUERY_UNAVAILABLE')
+     elif second['other_workers']: errors.append('ANOTHER_PHASE11_WORKER')
+     available=second['available_memory_estimate_bytes']
+@@ -103,5 +115,9 @@
+     first=sample(); time.sleep(2); second=sample()
+     errors=assess(first,second,minimum_disk)
+     result=dict(status='PASS' if not errors else 'BLOCKED_RESOURCES',blockers=errors,samples=[first,second])
++    certificate=BASE/'repairs/battery_power_v1/source_compatibility.json'
++    result.update(power_policy=dict(ac_required=False,minimum_battery_percent=MINIMUM_BATTERY_PERCENT,
++                  startup_check_only=True), execution_sources_sha256=raw_sources(),
++                  power_policy_certificate_sha256=sha(certificate) if certificate.exists() else None)
+     write(OUT/'runtime_preflight.json',result)
+     return result

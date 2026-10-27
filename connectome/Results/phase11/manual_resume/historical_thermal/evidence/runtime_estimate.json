@@ -1,0 +1,44 @@
+{
+  "measured_epoch_s": 1.6151376660000096,
+  "measurement_source": "acceleration_audit_20261025/cpu_cap1.json",
+  "trial_count": 120,
+  "trials_per_session": 2,
+  "work_sessions": 60,
+  "cooling_breaks": 59,
+  "cooling_seconds": 180,
+  "total_cooling_s": 10620,
+  "projected_trial_compute_s": [
+    33.9178909860002,
+    323.0275332000019
+  ],
+  "projected_session_compute_s": [
+    67.8357819720004,
+    646.0550664000039
+  ],
+  "projected_gru_compute_s": [
+    4070.1469183200243,
+    38763.30398400023
+  ],
+  "projected_gru_stage_with_cooling_s": [
+    14690.146918320024,
+    49383.30398400023
+  ],
+  "projected_phase11_profiled_components_with_cooling_s": [
+    19475.65416124642,
+    56104.62538699794
+  ],
+  "preflight_delay_s_per_session": 2,
+  "preflight_overhead_note": "Approximately 2\u20134 minutes additional across 60 sessions, depending on bounded launcher invocations; worker startup/input verification/publication overhead is unmeasured.",
+  "alternative_four_trials": {
+    "sessions": 30,
+    "cooling_breaks": 29,
+    "cooling_s": 5220,
+    "work_interval_s": [
+      135.6715639440008,
+      1292.1101328000077
+    ],
+    "thermal_safety_verified": false,
+    "enabled": false
+  },
+  "limits": "Extrapolations, not completed training. Safe uninterrupted-resource scenario; resource stops and user interruptions make absolute wall time unbounded. Calibration and spatial I/O estimates retain acceleration-audit limitations."
+}

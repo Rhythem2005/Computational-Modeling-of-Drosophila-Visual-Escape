@@ -1,0 +1,58 @@
+{
+  "schema": "multi_object_protocol_1.0",
+  "protocol_id": "multi_object_3d_development_v1",
+  "status": "REQUIRES_EXACT_PROTOCOL_REVIEW_NOT_EXECUTABLE",
+  "partition": "engineering_development",
+  "frozen_parent_manifest_sha256": "99ed0c6e95b25d77de53062e3b12961353a9448845cd6ecdc918fb471d09fba1",
+  "settings": {
+    "duration_ms": 1000,
+    "fly_radius": 0.5,
+    "camera_width": 256,
+    "camera_height": 256,
+    "camera_fps": 60,
+    "camera_center_px": [
+      128.0,
+      128.0
+    ],
+    "camera_focal_px": 160.0,
+    "camera_near_depth": 0.1,
+    "background_uint8": 128,
+    "object_uint8": 64,
+    "actuation_delay_ms": 20,
+    "escape_speed_max": 20.0,
+    "escape_acceleration_max": 400.0,
+    "success_final_clearance_min": 1.0,
+    "dimensions": 3,
+    "bounds": [
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ],
+      null
+    ],
+    "object_radius_prior": 1.5,
+    "min_contrast_uint8": 4,
+    "prediction_horizon_ms": null,
+    "candidate_directions": null,
+    "association_gate_px": null,
+    "association_ambiguity_px": null,
+    "max_radius_fraction_change": null,
+    "max_shape_error_fraction": null,
+    "clearance_margin": null,
+    "max_observation_age_ms": null
+  },
+  "models": [
+    "no_action",
+    "simple_trigger",
+    "frozen_latched",
+    "planner_only",
+    "circuit_planner"
+  ],
+  "scenarios": [],
+  "max_stage_seconds": 1800,
+  "max_output_bytes": 1073741824
+}

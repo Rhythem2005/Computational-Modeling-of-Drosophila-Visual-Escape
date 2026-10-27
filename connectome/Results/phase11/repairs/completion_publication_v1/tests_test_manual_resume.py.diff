@@ -1,0 +1,53 @@
+--- before/tests/test_manual_resume.py
++++ after/tests/test_manual_resume.py
+@@ -5,6 +5,7 @@
+ import sys
+ import time
+ import uuid
++from pathlib import Path
+ import numpy as np
+ import pytest
+ from connectome.scripts.phase11.common import ROOT,OUT,read,write,sha
+@@ -174,18 +175,28 @@
+     assert calls==[True,False,'freeze','freeze']
+ 
+ 
+-def test_completion_during_publication_refreshes_final_checkpoint(monkeypatch):
++@pytest.mark.parametrize('late',[False,True])
++def test_completion_during_publication_refreshes_final_checkpoint(monkeypatch,late):
+     from connectome.scripts.phase11 import launch
+     from connectome.scripts.phase11.common import arrays
+     base=OUT/'tests/manual'/uuid.uuid4().hex;source=base/'source';dest=base/'dest'
+     trial=source/'training/unit';target=dest/'training/unit';target.mkdir(parents=True)
+     arrays(trial/'state_000001.npz',x=np.array([1.]))
+     write(trial/'current.json',dict(generation=1,arrays_file='state_000001.npz',arrays_sha256=sha(trial/'state_000001.npz')))
++    write(source/'job_ledger.json',[dict(status='RUNNING_OR_RESUMING',definition=dict(job_id='unit'))])
++    write(source/'trigger.json',dict(unit_only=True))
++    if late:
++        original_rglob=Path.rglob
++        def rglob(path,pattern):
++            result=original_rglob(path,pattern)
++            return iter(list(result)) if path==source and pattern=='*' else result
++        monkeypatch.setattr(Path,'rglob',rglob)
+     original=launch.atomic;changed=False
+     def atomic(path,data):
+         nonlocal changed
+         original(path,data)
+-        if path==target/'current.json' and not changed:
++        trigger=dest/'trigger.json' if late else target/'current.json'
++        if path==trigger and not changed:
+             changed=True
+             arrays(trial/'state_000002.npz',x=np.array([2.]))
+             write(trial/'current.json',dict(generation=2,arrays_file='state_000002.npz',arrays_sha256=sha(trial/'state_000002.npz')))
+@@ -194,7 +205,10 @@
+             write(source/'job_ledger.json',[dict(status='COMPLETE',definition=dict(job_id='unit'))])
+     monkeypatch.setattr(launch,'atomic',atomic)
+     launch.publish(source,dest)
+-    assert read(target/'current.json')['generation']==2
++    assert read(target/'current.json')['generation']==(1 if late else 2)
++    if late:assert not (target/'report.json').exists()
++    assert read(dest/'job_ledger.json')[0]['status']=='RUNNING_OR_RESUMING'
++    launch.publish(source,dest)
+     assert read(dest/'job_ledger.json')[0]['status']=='COMPLETE'
+     assert sha(target/'selected.npz')==read(target/'report.json')['parameters_sha256']
+ 

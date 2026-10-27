@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-24T19:13:21.327800+00:00",
+  "successful_full_validations": 2,
+  "source_files_verified": 17,
+  "delivered_result_hashes_verified": 340,
+  "original_parent_files_unchanged": 2290,
+  "isolated_parent_files_unchanged": 2295,
+  "unique_tests": 499,
+  "phase10_tests": 89,
+  "earlier_tests": 410,
+  "separate_simulator_assertions": {
+    "total": 159,
+    "passed": 159,
+    "failed": 0
+  },
+  "matrices": 62,
+  "native_and_stability_matched_conditions": 124,
+  "weight_nulls": 30,
+  "degree_nulls": 30,
+  "all_mixing_gates_passed": true,
+  "synthetic_training_trials": 20,
+  "registered_training_seeds": 10,
+  "benchmark_training_runs": 0,
+  "benchmark_comparative_runs": 0,
+  "held_out_inference_runs": 0,
+  "scientific_model_freezes": 0,
+  "numerical_reproduction": "Both full runs matched existing matrices, model metadata, score/DN/final-state arrays, synthetic training histories and checkpoints.",
+  "development_failure": "First development suite had 30 failing success-case assertions because a synthetic graph contained an unswappable degree-constrained block; retained as a failure-case test and added a known swappable success fixture. All seeds/configuration/mixing gates unchanged; archived logs retained.",
+  "baseline_status": "Untrained initializations and synthetic smoke weights explicitly labeled; full benchmark fits/calibration are Phase 11 work.",
+  "limitations": [
+    "No benchmark training/calibration or scientific model freezes yet; Phase 11 must execute the saved plan.",
+    "Finite rewiring diagnostics do not prove independent uniform graph sampling; rigid blocks remain fixed.",
+    "GRU has 16,241 fitted parameters versus zero learned anatomical weights; fitting opportunities differ.",
+    "Synthetic receptive fields, world-domain calibration, noise robustness and encoder clipping limits remain.",
+    "No H1/H2/H3, biological fidelity or wiring-advantage conclusion."
+  ],
+  "no_new_dependencies": true,
+  "no_commit_or_push": true,
+  "scope": "Phase 10 engineering only"
+}

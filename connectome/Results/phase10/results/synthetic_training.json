@@ -1,0 +1,1132 @@
+[
+  {
+    "selected": {
+      "seed": 55100,
+      "learning_rate": 0.0003,
+      "best_epoch": 1,
+      "validation_bce": 0.693147209390665,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6933973060496722,
+          "validation_bce": 0.693147209390665,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.693147209390665,
+          "validation_bce": 0.6931472107449076,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55100,
+        "learning_rate": 0.0003,
+        "best_epoch": 1,
+        "validation_bce": 0.693147209390665,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6933973060496722,
+            "validation_bce": 0.693147209390665,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.693147209390665,
+            "validation_bce": 0.6931472107449076,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55100,
+        "learning_rate": 0.001,
+        "best_epoch": 2,
+        "validation_bce": 0.6931472546459705,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6933973060496722,
+            "validation_bce": 0.6931475049395153,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931475049395153,
+            "validation_bce": 0.6931472546459705,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55101,
+      "learning_rate": 0.001,
+      "best_epoch": 1,
+      "validation_bce": 0.6931484748592631,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6940575349739069,
+          "validation_bce": 0.6931484748592631,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6931484748592631,
+          "validation_bce": 0.6931490681746221,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55101,
+        "learning_rate": 0.0003,
+        "best_epoch": 2,
+        "validation_bce": 0.6934553548283868,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6940575349739069,
+            "validation_bce": 0.6940169587171858,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6934809877639426,
+            "validation_bce": 0.6934553548283868,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55101,
+        "learning_rate": 0.001,
+        "best_epoch": 1,
+        "validation_bce": 0.6931484748592631,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6940575349739069,
+            "validation_bce": 0.6931484748592631,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931484748592631,
+            "validation_bce": 0.6931490681746221,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55102,
+      "learning_rate": 0.001,
+      "best_epoch": 1,
+      "validation_bce": 0.6931471812367885,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6946659125373958,
+          "validation_bce": 0.6931471812367885,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6931471812367885,
+          "validation_bce": 0.6931471814538652,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55102,
+        "learning_rate": 0.0003,
+        "best_epoch": 2,
+        "validation_bce": 0.6936009681856623,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6946659125373958,
+            "validation_bce": 0.6942883266679812,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.694021104362484,
+            "validation_bce": 0.6936009681856623,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55102,
+        "learning_rate": 0.001,
+        "best_epoch": 1,
+        "validation_bce": 0.6931471812367885,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6946659125373958,
+            "validation_bce": 0.6931471812367885,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931471812367885,
+            "validation_bce": 0.6931471814538652,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55103,
+      "learning_rate": 0.0003,
+      "best_epoch": 2,
+      "validation_bce": 0.6931472072456228,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6934105015400944,
+          "validation_bce": 0.6931674955205996,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6931472021536166,
+          "validation_bce": 0.6931472072456228,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55103,
+        "learning_rate": 0.0003,
+        "best_epoch": 2,
+        "validation_bce": 0.6931472072456228,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6934105015400944,
+            "validation_bce": 0.6931674955205996,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931472021536166,
+            "validation_bce": 0.6931472072456228,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55103,
+        "learning_rate": 0.001,
+        "best_epoch": 2,
+        "validation_bce": 0.6931472459628154,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6934105015400944,
+            "validation_bce": 0.6931474219757573,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931474219757573,
+            "validation_bce": 0.6931472459628154,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55104,
+      "learning_rate": 0.001,
+      "best_epoch": 2,
+      "validation_bce": 0.613919565040207,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.679471899026806,
+          "validation_bce": 0.6450931004505508,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6454900280091216,
+          "validation_bce": 0.613919565040207,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55104,
+        "learning_rate": 0.0003,
+        "best_epoch": 2,
+        "validation_bce": 0.6583472166354629,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.679471899026806,
+            "validation_bce": 0.6683876542845516,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6690639024966663,
+            "validation_bce": 0.6583472166354629,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55104,
+        "learning_rate": 0.001,
+        "best_epoch": 2,
+        "validation_bce": 0.613919565040207,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.679471899026806,
+            "validation_bce": 0.6450931004505508,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6454900280091216,
+            "validation_bce": 0.613919565040207,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55105,
+      "learning_rate": 0.0003,
+      "best_epoch": 1,
+      "validation_bce": 0.6931471805599453,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6931471805599453,
+          "validation_bce": 0.6931471805599453,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6931471805599453,
+          "validation_bce": 0.6931471805599453,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55105,
+        "learning_rate": 0.0003,
+        "best_epoch": 1,
+        "validation_bce": 0.6931471805599453,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55105,
+        "learning_rate": 0.001,
+        "best_epoch": 1,
+        "validation_bce": 0.6931471805599453,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55106,
+      "learning_rate": 0.0003,
+      "best_epoch": 1,
+      "validation_bce": 0.6931471805599453,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6931471805599453,
+          "validation_bce": 0.6931471805599453,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6931471805599453,
+          "validation_bce": 0.6931471805599453,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55106,
+        "learning_rate": 0.0003,
+        "best_epoch": 1,
+        "validation_bce": 0.6931471805599453,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55106,
+        "learning_rate": 0.001,
+        "best_epoch": 1,
+        "validation_bce": 0.6931471805599453,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55107,
+      "learning_rate": 0.001,
+      "best_epoch": 2,
+      "validation_bce": 0.5964391236821772,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.673536016146541,
+          "validation_bce": 0.632629822266039,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6325350405118451,
+          "validation_bce": 0.5964391236821772,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55107,
+        "learning_rate": 0.0003,
+        "best_epoch": 2,
+        "validation_bce": 0.6484679418726256,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.673536016146541,
+            "validation_bce": 0.6608080389690265,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6607356702635118,
+            "validation_bce": 0.6484679418726256,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55107,
+        "learning_rate": 0.001,
+        "best_epoch": 2,
+        "validation_bce": 0.5964391236821772,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.673536016146541,
+            "validation_bce": 0.632629822266039,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6325350405118451,
+            "validation_bce": 0.5964391236821772,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55108,
+      "learning_rate": 0.0003,
+      "best_epoch": 1,
+      "validation_bce": 0.6931471805599453,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6931471805599453,
+          "validation_bce": 0.6931471805599453,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6931471805599453,
+          "validation_bce": 0.6931471805599453,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55108,
+        "learning_rate": 0.0003,
+        "best_epoch": 1,
+        "validation_bce": 0.6931471805599453,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55108,
+        "learning_rate": 0.001,
+        "best_epoch": 1,
+        "validation_bce": 0.6931471805599453,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6931471805599453,
+            "validation_bce": 0.6931471805599453,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  },
+  {
+    "selected": {
+      "seed": 55109,
+      "learning_rate": 0.001,
+      "best_epoch": 2,
+      "validation_bce": 0.6063325236212314,
+      "epochs_run": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "training_bce": 0.6860704870139567,
+          "validation_bce": 0.6450569922754461,
+          "gradient_clipped_batches": 0
+        },
+        {
+          "epoch": 2,
+          "training_bce": 0.6448840331832226,
+          "validation_bce": 0.6063325236212314,
+          "gradient_clipped_batches": 0
+        }
+      ],
+      "trainable_parameters": 16241,
+      "training_ids": [
+        "smoke_train_0",
+        "smoke_train_1",
+        "smoke_train_2",
+        "smoke_train_3"
+      ],
+      "validation_ids": [
+        "smoke_validation_0",
+        "smoke_validation_1",
+        "smoke_validation_2",
+        "smoke_validation_3"
+      ],
+      "smoke_only": true,
+      "status": "SYNTHETIC_SMOKE_ONLY"
+    },
+    "candidates": [
+      {
+        "seed": 55109,
+        "learning_rate": 0.0003,
+        "best_epoch": 2,
+        "validation_bce": 0.6617838582961949,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6860704870139567,
+            "validation_bce": 0.6748664833234288,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6745517900414042,
+            "validation_bce": 0.6617838582961949,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      },
+      {
+        "seed": 55109,
+        "learning_rate": 0.001,
+        "best_epoch": 2,
+        "validation_bce": 0.6063325236212314,
+        "epochs_run": 2,
+        "history": [
+          {
+            "epoch": 1,
+            "training_bce": 0.6860704870139567,
+            "validation_bce": 0.6450569922754461,
+            "gradient_clipped_batches": 0
+          },
+          {
+            "epoch": 2,
+            "training_bce": 0.6448840331832226,
+            "validation_bce": 0.6063325236212314,
+            "gradient_clipped_batches": 0
+          }
+        ],
+        "trainable_parameters": 16241,
+        "training_ids": [
+          "smoke_train_0",
+          "smoke_train_1",
+          "smoke_train_2",
+          "smoke_train_3"
+        ],
+        "validation_ids": [
+          "smoke_validation_0",
+          "smoke_validation_1",
+          "smoke_validation_2",
+          "smoke_validation_3"
+        ],
+        "smoke_only": true,
+        "status": "SYNTHETIC_SMOKE_ONLY"
+      }
+    ],
+    "failed_trials": []
+  }
+]

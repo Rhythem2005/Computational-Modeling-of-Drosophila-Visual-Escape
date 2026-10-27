@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "existing_files_rehashed_unchanged": 3097,
+  "installed_distribution_set_unchanged": true,
+  "production_source_changed": false,
+  "frozen_results_changed": false,
+  "source_script_sha256": "e6b5959ddcedccac6e903216f29f4cd583eb3f57992bec9795d0707b4c58c1f7"
+}

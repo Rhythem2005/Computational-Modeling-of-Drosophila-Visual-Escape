@@ -1,0 +1,611 @@
+{
+  "protocol": "image_constant_velocity_point_observer_v1",
+  "status": "LOCKED_BEFORE_RULE_CHECKS_AND_PROTOTYPE_EPISODES",
+  "approval_sha256": "a08945944795317bfc0874563e7438eade56082f59259b206b2aa28e631b0b7d",
+  "spec_sha256": "e6080c8ab83d9ccdd477a1675726dae907fa529d9a3a2fbeb4f2280d407d1378",
+  "stage_a_audit_sha256": "c36e4d01ee66370479a0d7f378cbeef7cb8ae5a4c7c29fdb5bb19d5e0a43f7d4",
+  "sources_sha256": {
+    "connectome/scripts/collision_threat_v1/__init__.py": "acbfba8d042c0b270e1d1c9d78404253d78b92d1e71a9aecfd93e10ef6732e89",
+    "connectome/scripts/collision_threat_v1/common.py": "e49b519018d7ae0023b300b2a3c1f129568d94febdc91c661cb81363a97c118e",
+    "connectome/scripts/collision_threat_v1/diagnose_saved.py": "c7abb60cb644f6143717a5f794e9af71854733e5a23ce25ec929d19478bfd59c",
+    "connectome/scripts/collision_threat_v1/features.py": "70a043f021ad29df66909431dab46bd2b26b2e6560912010dcc9ddb499bfa551",
+    "connectome/scripts/collision_threat_v1/hybrid.py": "9a1f35340f51985a997b7acc53c12358221f98786ab4456f1eedeb3c25565516",
+    "connectome/scripts/collision_threat_v1/launch.py": "e02570744f798b17df5cb0c10cd9cfe3e37d54774ff660f1ddb45ae24d2bff78",
+    "connectome/scripts/collision_threat_v1/launch_prototype.py": "e5f0e96af78740c4176965cd163fb477f79ef0b7fd41bc0c595a356ed0bec60b",
+    "connectome/scripts/collision_threat_v1/protocol.py": "2f21b89c43edd78fea79e10f5d63b5cf9792e06fe4da62e9bd2b76f22618b7c7",
+    "connectome/scripts/collision_threat_v1/prototype.py": "4be04c61cf4646f6cf8a76d2b54e542297d17c0e5e01ac7a0f989988ba4a6640",
+    "connectome/scripts/collision_threat_v1/prototype_io.py": "648f996f025155ec73d52137b41ba95156d1d29a65ba3cdd4f1bbd9cd14020fa",
+    "connectome/scripts/collision_threat_v1/prototype_runner.py": "efc1218841066a18dd53296e0ed33f3785fc0ee32a18d6297fa2dc172054115e",
+    "connectome/scripts/collision_threat_v1/tests/test_features.py": "300fe05c127c1df8250fa3745b428d6fc68abc4a8eae41c306b1f34fd0f338ad",
+    "connectome/scripts/collision_threat_v1/tests_prototype/test_rules.py": "8457da15439f6d469cb678021d749cfc3275bd3ccdd36c53b186b4cade963424",
+    "connectome/scripts/collision_threat_v1/threat_rule.py": "ed8285fbc1d18d42b2722a2b5ec87d0f7678f9fe7363d49c6c9dd8436fbe2e61"
+  },
+  "jobs": [
+    {
+      "id": "world_head_on_no_action_r0",
+      "scenario": "world_head_on",
+      "model": "no_action",
+      "repeat": 0
+    },
+    {
+      "id": "world_head_on_no_action_r1",
+      "scenario": "world_head_on",
+      "model": "no_action",
+      "repeat": 1
+    },
+    {
+      "id": "world_head_on_circuit_r0",
+      "scenario": "world_head_on",
+      "model": "circuit",
+      "repeat": 0
+    },
+    {
+      "id": "world_head_on_circuit_r1",
+      "scenario": "world_head_on",
+      "model": "circuit",
+      "repeat": 1
+    },
+    {
+      "id": "world_head_on_feature_only_r0",
+      "scenario": "world_head_on",
+      "model": "feature_only",
+      "repeat": 0
+    },
+    {
+      "id": "world_head_on_feature_only_r1",
+      "scenario": "world_head_on",
+      "model": "feature_only",
+      "repeat": 1
+    },
+    {
+      "id": "world_head_on_expansion_rule_r0",
+      "scenario": "world_head_on",
+      "model": "expansion_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_head_on_expansion_rule_r1",
+      "scenario": "world_head_on",
+      "model": "expansion_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_head_on_closest_approach_rule_r0",
+      "scenario": "world_head_on",
+      "model": "closest_approach_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_head_on_closest_approach_rule_r1",
+      "scenario": "world_head_on",
+      "model": "closest_approach_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_head_on_circuit_threat_gate_r0",
+      "scenario": "world_head_on",
+      "model": "circuit_threat_gate",
+      "repeat": 0
+    },
+    {
+      "id": "world_head_on_circuit_threat_gate_r1",
+      "scenario": "world_head_on",
+      "model": "circuit_threat_gate",
+      "repeat": 1
+    },
+    {
+      "id": "world_left_no_action_r0",
+      "scenario": "world_left",
+      "model": "no_action",
+      "repeat": 0
+    },
+    {
+      "id": "world_left_no_action_r1",
+      "scenario": "world_left",
+      "model": "no_action",
+      "repeat": 1
+    },
+    {
+      "id": "world_left_circuit_r0",
+      "scenario": "world_left",
+      "model": "circuit",
+      "repeat": 0
+    },
+    {
+      "id": "world_left_circuit_r1",
+      "scenario": "world_left",
+      "model": "circuit",
+      "repeat": 1
+    },
+    {
+      "id": "world_left_feature_only_r0",
+      "scenario": "world_left",
+      "model": "feature_only",
+      "repeat": 0
+    },
+    {
+      "id": "world_left_feature_only_r1",
+      "scenario": "world_left",
+      "model": "feature_only",
+      "repeat": 1
+    },
+    {
+      "id": "world_left_expansion_rule_r0",
+      "scenario": "world_left",
+      "model": "expansion_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_left_expansion_rule_r1",
+      "scenario": "world_left",
+      "model": "expansion_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_left_closest_approach_rule_r0",
+      "scenario": "world_left",
+      "model": "closest_approach_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_left_closest_approach_rule_r1",
+      "scenario": "world_left",
+      "model": "closest_approach_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_left_circuit_threat_gate_r0",
+      "scenario": "world_left",
+      "model": "circuit_threat_gate",
+      "repeat": 0
+    },
+    {
+      "id": "world_left_circuit_threat_gate_r1",
+      "scenario": "world_left",
+      "model": "circuit_threat_gate",
+      "repeat": 1
+    },
+    {
+      "id": "world_right_no_action_r0",
+      "scenario": "world_right",
+      "model": "no_action",
+      "repeat": 0
+    },
+    {
+      "id": "world_right_no_action_r1",
+      "scenario": "world_right",
+      "model": "no_action",
+      "repeat": 1
+    },
+    {
+      "id": "world_right_circuit_r0",
+      "scenario": "world_right",
+      "model": "circuit",
+      "repeat": 0
+    },
+    {
+      "id": "world_right_circuit_r1",
+      "scenario": "world_right",
+      "model": "circuit",
+      "repeat": 1
+    },
+    {
+      "id": "world_right_feature_only_r0",
+      "scenario": "world_right",
+      "model": "feature_only",
+      "repeat": 0
+    },
+    {
+      "id": "world_right_feature_only_r1",
+      "scenario": "world_right",
+      "model": "feature_only",
+      "repeat": 1
+    },
+    {
+      "id": "world_right_expansion_rule_r0",
+      "scenario": "world_right",
+      "model": "expansion_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_right_expansion_rule_r1",
+      "scenario": "world_right",
+      "model": "expansion_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_right_closest_approach_rule_r0",
+      "scenario": "world_right",
+      "model": "closest_approach_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_right_closest_approach_rule_r1",
+      "scenario": "world_right",
+      "model": "closest_approach_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_right_circuit_threat_gate_r0",
+      "scenario": "world_right",
+      "model": "circuit_threat_gate",
+      "repeat": 0
+    },
+    {
+      "id": "world_right_circuit_threat_gate_r1",
+      "scenario": "world_right",
+      "model": "circuit_threat_gate",
+      "repeat": 1
+    },
+    {
+      "id": "world_static_no_action_r0",
+      "scenario": "world_static",
+      "model": "no_action",
+      "repeat": 0
+    },
+    {
+      "id": "world_static_no_action_r1",
+      "scenario": "world_static",
+      "model": "no_action",
+      "repeat": 1
+    },
+    {
+      "id": "world_static_circuit_r0",
+      "scenario": "world_static",
+      "model": "circuit",
+      "repeat": 0
+    },
+    {
+      "id": "world_static_circuit_r1",
+      "scenario": "world_static",
+      "model": "circuit",
+      "repeat": 1
+    },
+    {
+      "id": "world_static_feature_only_r0",
+      "scenario": "world_static",
+      "model": "feature_only",
+      "repeat": 0
+    },
+    {
+      "id": "world_static_feature_only_r1",
+      "scenario": "world_static",
+      "model": "feature_only",
+      "repeat": 1
+    },
+    {
+      "id": "world_static_expansion_rule_r0",
+      "scenario": "world_static",
+      "model": "expansion_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_static_expansion_rule_r1",
+      "scenario": "world_static",
+      "model": "expansion_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_static_closest_approach_rule_r0",
+      "scenario": "world_static",
+      "model": "closest_approach_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_static_closest_approach_rule_r1",
+      "scenario": "world_static",
+      "model": "closest_approach_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_static_circuit_threat_gate_r0",
+      "scenario": "world_static",
+      "model": "circuit_threat_gate",
+      "repeat": 0
+    },
+    {
+      "id": "world_static_circuit_threat_gate_r1",
+      "scenario": "world_static",
+      "model": "circuit_threat_gate",
+      "repeat": 1
+    },
+    {
+      "id": "world_near_miss_no_action_r0",
+      "scenario": "world_near_miss",
+      "model": "no_action",
+      "repeat": 0
+    },
+    {
+      "id": "world_near_miss_no_action_r1",
+      "scenario": "world_near_miss",
+      "model": "no_action",
+      "repeat": 1
+    },
+    {
+      "id": "world_near_miss_circuit_r0",
+      "scenario": "world_near_miss",
+      "model": "circuit",
+      "repeat": 0
+    },
+    {
+      "id": "world_near_miss_circuit_r1",
+      "scenario": "world_near_miss",
+      "model": "circuit",
+      "repeat": 1
+    },
+    {
+      "id": "world_near_miss_feature_only_r0",
+      "scenario": "world_near_miss",
+      "model": "feature_only",
+      "repeat": 0
+    },
+    {
+      "id": "world_near_miss_feature_only_r1",
+      "scenario": "world_near_miss",
+      "model": "feature_only",
+      "repeat": 1
+    },
+    {
+      "id": "world_near_miss_expansion_rule_r0",
+      "scenario": "world_near_miss",
+      "model": "expansion_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_near_miss_expansion_rule_r1",
+      "scenario": "world_near_miss",
+      "model": "expansion_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_near_miss_closest_approach_rule_r0",
+      "scenario": "world_near_miss",
+      "model": "closest_approach_rule",
+      "repeat": 0
+    },
+    {
+      "id": "world_near_miss_closest_approach_rule_r1",
+      "scenario": "world_near_miss",
+      "model": "closest_approach_rule",
+      "repeat": 1
+    },
+    {
+      "id": "world_near_miss_circuit_threat_gate_r0",
+      "scenario": "world_near_miss",
+      "model": "circuit_threat_gate",
+      "repeat": 0
+    },
+    {
+      "id": "world_near_miss_circuit_threat_gate_r1",
+      "scenario": "world_near_miss",
+      "model": "circuit_threat_gate",
+      "repeat": 1
+    }
+  ],
+  "legacy_controls": {
+    "circuit": {
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "freeze_sha256": "7f1a91526429e2d19cfbc58d385b679906ee918671c39279a4ce44c1d09a3a5f"
+    },
+    "feature_only": {
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "freeze_sha256": "3a2b48442116fa965f394115de9aaef7335f67334147b442d9e7685388f7adf8"
+    },
+    "no_action": {
+      "threshold": {
+        "kind": "always_silent",
+        "value": null
+      },
+      "freeze_sha256": null
+    }
+  },
+  "world_config": {
+    "version": "1.0.0",
+    "protocol_id": "fly_closed_loop_engineering_v1",
+    "duration_ms": 1000,
+    "world_dt_ms": 1.0,
+    "world_units": "abstract",
+    "bounds_xy": [
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ]
+    ],
+    "fly_radius": 0.5,
+    "camera_width": 256,
+    "camera_height": 256,
+    "camera_fps": 60,
+    "camera_center_px": [
+      128.0,
+      128.0
+    ],
+    "camera_focal_px": 160.0,
+    "camera_near_depth": 0.1,
+    "camera_orientation": "stabilized_positive_world_y",
+    "background_uint8": 128,
+    "object_uint8": 64,
+    "actuation_delay_ms": 20,
+    "escape_speed_max": 20.0,
+    "escape_acceleration_max": 400.0,
+    "escape_lateral_angle_max_deg": 60.0,
+    "success_final_clearance_min": 1.0,
+    "obstacle_motion_onset_ms": 200,
+    "spatial_seeds": [
+      55010,
+      55011,
+      55012,
+      55013,
+      55014
+    ],
+    "primary_condition": "uniform_population",
+    "secondary_condition": "synthetic_fields_within_type_and_side_v1",
+    "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration"
+  },
+  "scenarios": [
+    {
+      "scenario_id": "world_head_on",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            -0.0,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_left",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            -6.0,
+            20.0
+          ],
+          "velocity": [
+            7.5,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_right",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            6.0,
+            20.0
+          ],
+          "velocity": [
+            -7.5,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_static",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    },
+    {
+      "scenario_id": "world_near_miss",
+      "fly_position": [
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "obstacle_0",
+          "position": [
+            0.0,
+            20.0
+          ],
+          "velocity": [
+            6.25,
+            -25.0
+          ],
+          "radius": 1.5
+        }
+      ]
+    }
+  ],
+  "reference_files_sha256": {
+    "episodes/muniform_population_world_head_on_no_action_r0.json": "34ef83e8cba3e28578c2940cd79addf23da551ffc2ec3a988fb0784d9a012195",
+    "episodes/muniform_population_world_head_on_no_action_r0.npz": "27686a0c06941fb03016502a8b4fca70ee3aa6d274068036cbc895773de57957",
+    "episodes/muniform_population_world_head_on_circuit_r0.json": "7d4c1b759345a7d0824a8eefea30d71b01416eebdacade7ec059a6831b96891c",
+    "episodes/muniform_population_world_head_on_circuit_r0.npz": "b367877c8a379de19238fe1aec2eeacdeac188a45d0b3ac9aa22a52b10d0361f",
+    "episodes/muniform_population_world_head_on_feature_only_r0.json": "1ed8a39af8757de90cf060c7933d0420db2e6841f69c90208858a8d5599c383f",
+    "episodes/muniform_population_world_head_on_feature_only_r0.npz": "a72d773167a65ac3d1a0c74660432c1455390c4cdb1ff880ea70e89afe63a3d2",
+    "episodes/muniform_population_world_left_no_action_r0.json": "e707837658fa343b8221031f7a0c4ca5fe5dd5a640d2cf10071a605a7def502d",
+    "episodes/muniform_population_world_left_no_action_r0.npz": "9b70e58d4e13db26be701bf6a3d2a7df4e49ee4b292ec85df9abc0bf725a2314",
+    "episodes/muniform_population_world_left_circuit_r0.json": "af47b5ea6bdcaeb3c6ed307e87b66cfd6d028270f7371138d98d0c98af9a510d",
+    "episodes/muniform_population_world_left_circuit_r0.npz": "6b83d93f2a15c6d90d2e725e0365af76d42b0c9814f4e846cb138e785084df41",
+    "episodes/muniform_population_world_left_feature_only_r0.json": "7b5e87feac6723a682cf4a212c64ff92d8a9f39ccfedc27d0d0316951c242a93",
+    "episodes/muniform_population_world_left_feature_only_r0.npz": "5d6175138a38f880c3759a59eedf367d6fb0f5e8725170da230710f2cf4d6395",
+    "episodes/muniform_population_world_right_no_action_r0.json": "0b812f040b9595cc13d66099f7109f43d9bdbb7023784b2487c86f5f43c5ddbf",
+    "episodes/muniform_population_world_right_no_action_r0.npz": "89e825f90ad3c8f9ed6b978a0969af7faef0c0820e671f2ea4f04393b0caa45b",
+    "episodes/muniform_population_world_right_circuit_r0.json": "df64e8565230ed397458398f3f5502ae65f4c0b6274849440690b6818ba89727",
+    "episodes/muniform_population_world_right_circuit_r0.npz": "3fde8e5d251f10b4ec1e01d5219dfd2b5aa707c6a35de0fdcd31f3f18b728a6f",
+    "episodes/muniform_population_world_right_feature_only_r0.json": "9acd9e82969409af25211e58ce9c8ad50b9e497c1e0d4b303991351f703ff6e4",
+    "episodes/muniform_population_world_right_feature_only_r0.npz": "56e15ad5d3cada846edb9d44f01e7c89a6ed8db0d1955730701050f9d282bf4c",
+    "episodes/muniform_population_world_static_no_action_r0.json": "11ff56a0490caf4a5645f0aeabe6756a1e2d7d1ecc4959bb7eb712e548ddce81",
+    "episodes/muniform_population_world_static_no_action_r0.npz": "0a4036cae1ca82fc1efb262e74d7c3b73b2c133a05ac33bb8ca7c7f008c39ab8",
+    "episodes/muniform_population_world_static_circuit_r0.json": "48d491380ffcbbb29c7439aa806c8671b3c33e69933c1227a381ec07373b9299",
+    "episodes/muniform_population_world_static_circuit_r0.npz": "cad897a7e099a9467f1577f32926b20817ae174b1f2f2a4de3218479dd765360",
+    "episodes/muniform_population_world_static_feature_only_r0.json": "b537208a4d27e255329e5fe330b9b93fbf0e86653c610afbbfd807b89f633871",
+    "episodes/muniform_population_world_static_feature_only_r0.npz": "0a4036cae1ca82fc1efb262e74d7c3b73b2c133a05ac33bb8ca7c7f008c39ab8",
+    "episodes/muniform_population_world_near_miss_no_action_r0.json": "e7111b1d23b4fbf58357b382cc273dcd8bdeb4e3330b09682d32572df1c9dba3",
+    "episodes/muniform_population_world_near_miss_no_action_r0.npz": "8c9ad646049b21bf91b8017f58d862545bce7867991196c598447bba6572bce5",
+    "episodes/muniform_population_world_near_miss_circuit_r0.json": "1bce0bd6890100b228e12515cb3a5eb620907ecb815adda87e452bd2b7ad8d65",
+    "episodes/muniform_population_world_near_miss_circuit_r0.npz": "607bd67243a27723184c27a597597ffca57dc738aacbdfac13ecd3f4cb63bd94",
+    "episodes/muniform_population_world_near_miss_feature_only_r0.json": "724f8cb7c7f5bfbe94a4db9f7b44e140f00e5d5da9fdb0a4ab8a88789c120220",
+    "episodes/muniform_population_world_near_miss_feature_only_r0.npz": "d946060898c6c03c166c402d46c1fab720a74ced11f77e334addbf4c00d3ce25"
+  },
+  "candidate_count": 1,
+  "calibration_runs": 0,
+  "threshold_searches": 0,
+  "growth_test": "radius_current>radius_previous",
+  "closest_approach_boundary": 1.0,
+  "boundary_units": "object radii, point observer only",
+  "persistence_ms": 20,
+  "motor_command": 0.0,
+  "unknown_policy": "standalone abstains; pending hybrid falls back immediately",
+  "limits": {
+    "total_attempts": 60,
+    "check_seconds": 1800,
+    "episode_seconds": 900,
+    "rss_bytes": 4294967296,
+    "output_plus_snapshot_bytes": 1073741824
+  },
+  "held_out_authorized": false,
+  "training_authorized": false
+}

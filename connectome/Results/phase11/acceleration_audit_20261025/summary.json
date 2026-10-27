@@ -1,0 +1,40 @@
+{
+  "recommendation": "USE CPU",
+  "gpu_device": {
+    "metal_device_available": true,
+    "probe": "Native Metal MTLCreateSystemDefaultDevice; no GPU workload",
+    "device_name": "Apple M4",
+    "hasUnifiedMemory": 1,
+    "isLowPower": 0,
+    "recommendedMaxWorkingSetSize": 12713115648,
+    "currentAllocatedSize": 81920
+  },
+  "gpu_frameworks_available_in_venv": false,
+  "gpu_training_measured": false,
+  "gpu_speedup": null,
+  "gpu_equivalence_established": false,
+  "cpu_median_epoch_with_checkpoints_s": 1.6151376660000096,
+  "cpu_full120_training_range_s": [
+    4070.1469183200243,
+    38763.30398400023
+  ],
+  "fixed_rate_inference_estimate_s": 4195.088639907539,
+  "selected_gru_calibration_score_estimate_s": 138.72863233555108,
+  "decoder_estimate_range_s": [
+    451.68997068330646,
+    2387.50413075462
+  ],
+  "phase11_profiled_components_range_s": [
+    8855.65416124642,
+    45484.62538699794
+  ],
+  "estimation_limits": "Uniform seed55100 rate0.0003 first-epoch / one training-clip throughput. Minimum 21, maximum 200 epochs, candidate counts 2..32. Excludes spatial preparation, minimal controls, metadata/hash/score-cache I/O, freeze overhead and long-duration thermal/power effects. No complete wall-clock bound is established.",
+  "peak_cpu_worker_bytes": 393986048,
+  "cpu_cap1_over_cap4_ratio": 1.0021995573786038,
+  "cpu_arrays_compared": 68,
+  "all_cpu_comparison_arrays_exact": true,
+  "finite_difference_entries_verified": 33,
+  "registered_training_trials": 0,
+  "calibration_conditions": 0,
+  "held_out_inference_runs": 0
+}

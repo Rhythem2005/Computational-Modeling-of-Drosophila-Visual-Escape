@@ -1,0 +1,37 @@
+{
+  "status": "PLANNING_ONLY",
+  "date_local": "2026-10-27",
+  "plan_sha256": "b3479475aadf7c536440508dc940547977efbaeaf013a1763ee64178adedc048",
+  "evidence_run": "connectome/Results/behavior_validation/1793090166386522000",
+  "evidence_sha256": {
+    "README.md": "7677092c8730cdc2c406779632480e353c8c59740dc103a0312f06149db6567b",
+    "summary.json": "aef2c059b6684b2ddd06cb89d67c614990edd5a6fde75a979ae9e3d0dabce6dc",
+    "manifest.json": "f744541f976baf3f9d8b137a29b21f894d6e20ebbc9139ff800d0a073ccbf97b",
+    "saved_file_audit.json": "fcecddf13c654b9e50e9579f77e97f71f3af39cf696c01076d0e5731ce12711d",
+    "preservation.json": "a53a7235eb9bcc5180bcd6933f9146b196288f2108c8aeb0d229f850d476cb19",
+    "checks.xml": "56cec1a1d1ccd837f48f96940d8c1d73fe5d3d3c701c87b14f809f9f3260e5b6",
+    "execution.json": "3fbb6341a158a4a39f799cf24dd844ebd070bf5d946916c8b5ebc27757307d94"
+  },
+  "production_pointers_sha256": {
+    "connectome/Results/phase11/results/job_ledger.json": "8cf0467675131563896ccff7c02d398df394ff14430286889bb75597d988a18c",
+    "connectome/Results/phase11/results/training/train_55011_55102_0p001/current.json": "24cddf61f4f43d3116280a48ead334cb0abea14f7f4919870c2cc4a20ed97cfc"
+  },
+  "production_pointers_unchanged_during_planning": true,
+  "training_trials_complete": 45,
+  "calibrations_complete": 272,
+  "partial": {
+    "epoch": 51,
+    "offset": 256,
+    "adam_updates": 816,
+    "finished": false
+  },
+  "new_model_code": false,
+  "new_feature_extraction_runs": 0,
+  "new_simulations": 0,
+  "new_model_inference": 0,
+  "new_training": 0,
+  "new_calibration": 0,
+  "new_test_suites": 0,
+  "held_out_evaluations": 0,
+  "live_worker_status_rechecked": false
+}

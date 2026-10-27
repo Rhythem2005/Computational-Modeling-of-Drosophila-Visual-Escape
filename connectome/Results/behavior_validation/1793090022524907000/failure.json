@@ -1,0 +1,6 @@
+{
+  "type": "RuntimeError",
+  "error": "Adapter checks failed; behavior blocked; see checks.log",
+  "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-behavior-execution-rsmigtzy/connectome/scripts/behavior_validation/run.py\", line 165, in <module>\n    try:main()\n        ~~~~^^\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-behavior-execution-rsmigtzy/connectome/scripts/behavior_validation/run.py\", line 51, in main\n    raise RuntimeError('Adapter checks failed; behavior blocked; see checks.log')\nRuntimeError: Adapter checks failed; behavior blocked; see checks.log\n",
+  "behavior_not_completed": true
+}

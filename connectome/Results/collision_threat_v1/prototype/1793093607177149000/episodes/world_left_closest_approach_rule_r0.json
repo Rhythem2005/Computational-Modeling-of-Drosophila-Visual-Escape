@@ -1,0 +1,128 @@
+{
+  "metrics": {
+    "danger": true,
+    "stationary_contact_ms": 923.3738971823078,
+    "first_request_ms": 237.0,
+    "pre_onset_request": false,
+    "onset_relative_latency_ms": 37.0,
+    "scheduled_actuation_ms": 257.0,
+    "first_motion_ms": 258.0,
+    "turn": 0.0,
+    "terminated": false,
+    "truncated": true,
+    "failure": null,
+    "end_ms": 1000.0,
+    "survived_horizon": true,
+    "escape_success": true,
+    "dangerous_miss": false,
+    "false_alarm": false,
+    "minimum_swept_clearance": 12.349999999999783,
+    "final_clearance": 12.349999999999783,
+    "path_length": 14.349999999999783,
+    "interpretation": "finite-horizon engineering fixture; no calibrated fly behavior or architecture advantage",
+    "model": "closest_approach_rule",
+    "mapping": "uniform_population",
+    "internal_request_ms": null,
+    "physical_request_ms": 237.0,
+    "gate_delay_ms": null,
+    "physical_request_reason": "standalone_sustained_threat",
+    "unknown_decision_ticks": 17,
+    "fallback_events": 0,
+    "encoder_valid_fraction": 1.0,
+    "encoder_valid_frames": 60,
+    "frame_count": 60,
+    "pre_request_valid_fraction": 1.0,
+    "encoder_cap_fraction": 0.0,
+    "perception_frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "pre_request_measurement_frames": 15,
+    "pre_request_measurement_valid_frames": 15,
+    "border_contact_frames": 0,
+    "near_or_behind_frame_count": 0,
+    "whole_episode_encoder_valid": true,
+    "direct_dn_input_max": 0.0,
+    "finite_controller_state": true,
+    "threat_estimator": "point observer; constant unknown object radius and relative velocity; not finite-fly safety proof",
+    "new_calibration": false
+  },
+  "scenario": {
+    "scenario_id": "world_left",
+    "fly_position": [
+      0.0,
+      0.0
+    ],
+    "obstacles": [
+      {
+        "id": "obstacle_0",
+        "position": [
+          -6.0,
+          20.0
+        ],
+        "velocity": [
+          7.5,
+          -25.0
+        ],
+        "radius": 1.5
+      }
+    ]
+  },
+  "config": {
+    "version": "1.0.0",
+    "protocol_id": "fly_closed_loop_engineering_v1",
+    "duration_ms": 1000,
+    "world_dt_ms": 1.0,
+    "world_units": "abstract",
+    "bounds_xy": [
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ]
+    ],
+    "fly_radius": 0.5,
+    "camera_width": 256,
+    "camera_height": 256,
+    "camera_fps": 60,
+    "camera_center_px": [
+      128.0,
+      128.0
+    ],
+    "camera_focal_px": 160.0,
+    "camera_near_depth": 0.1,
+    "camera_orientation": "stabilized_positive_world_y",
+    "background_uint8": 128,
+    "object_uint8": 64,
+    "actuation_delay_ms": 20,
+    "escape_speed_max": 20.0,
+    "escape_acceleration_max": 400.0,
+    "escape_lateral_angle_max_deg": 60.0,
+    "success_final_clearance_min": 1.0,
+    "obstacle_motion_onset_ms": 200,
+    "spatial_seeds": [
+      55010,
+      55011,
+      55012,
+      55013,
+      55014
+    ],
+    "primary_condition": "uniform_population",
+    "secondary_condition": "synthetic_fields_within_type_and_side_v1",
+    "calibration_scope": "frozen_open_loop_threshold_reused_without_world_calibration"
+  },
+  "model": "closest_approach_rule",
+  "mapping": "uniform_population",
+  "controller_state_kind": "stateless",
+  "threshold": {
+    "kind": "binary_threat",
+    "value": 1.0,
+    "persistence_ms": 20
+  },
+  "assumptions": "single rigid circular billboard; image-only estimate; point observer; no fitted parameters",
+  "protocol": "image_constant_velocity_point_observer_v1",
+  "arrays_sha256": "74e85272ba9c2815b466984b9fbf66afbd08d72ebe28ee5f8b39a7d41e12bdda",
+  "independent_metric_check": true
+}

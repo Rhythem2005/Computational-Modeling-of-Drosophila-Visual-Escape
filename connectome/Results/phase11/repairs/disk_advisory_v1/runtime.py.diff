@@ -1,0 +1,21 @@
+--- before/runtime.py
++++ after/runtime.py
+@@ -84,7 +84,6 @@
+ 
+ def assess(first,second,minimum_disk):
+     errors=[]
+-    if second['disk_free_bytes']<minimum_disk: errors.append('INSUFFICIENT_DISK')
+     stable=(first['battery_percent'] is not None and second['battery_percent'] is not None
+             and second['battery_percent']>=first['battery_percent'])
+     status=second['power_status']
+@@ -114,7 +113,9 @@
+ def check(minimum_disk):
+     first=sample(); time.sleep(2); second=sample()
+     errors=assess(first,second,minimum_disk)
+-    result=dict(status='PASS' if not errors else 'BLOCKED_RESOURCES',blockers=errors,samples=[first,second])
++    warnings=['DISK_BELOW_CONSERVATIVE_ESTIMATE'] if second['disk_free_bytes']<minimum_disk else []
++    result=dict(status='PASS' if not errors else 'BLOCKED_RESOURCES',blockers=errors,samples=[first,second],
++                warnings=warnings,disk_policy=dict(blocking=False,estimated_required_bytes=minimum_disk))
+     certificate=BASE/'repairs/battery_power_v1/source_compatibility.json'
+     result.update(power_policy=dict(ac_required=False,minimum_battery_percent=MINIMUM_BATTERY_PERCENT,
+                   startup_check_only=True), execution_sources_sha256=raw_sources(),

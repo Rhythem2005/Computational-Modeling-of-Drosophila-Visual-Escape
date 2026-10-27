@@ -1,0 +1,8 @@
+{
+  "reason": "User-authorized metadata repair, not a failed numerical/model trial or a replacement seed.",
+  "job_id": "cal_uniform_population_gru_55100",
+  "previous_ledger_sha256": "cffa4d99c233be8cadb7a3b8b05e336f4e68d048dd8ec0281053bf6c0ace97fa",
+  "new_ledger_sha256": "8477cf948f5c6b456b82a86eb23f7a4c347cf651cb1db645681df72a2fc50289",
+  "completed_training_trials_preserved": 20,
+  "scientific_job_definitions_changed": false
+}

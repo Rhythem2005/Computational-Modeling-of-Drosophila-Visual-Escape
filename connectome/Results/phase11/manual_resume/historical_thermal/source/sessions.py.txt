@@ -1,0 +1,197 @@
+"""Opt-in job sessions; cooling and journal state never enter training math."""
+from dataclasses import dataclass, asdict
+import json
+import time
+from .common import BASE, write, read, digest
+from .session_telemetry import blockers, utc
+
+
+@dataclass(frozen=True)
+class Policy:
+    trials_per_session: int = 2
+    cooling_seconds: float = 180.
+    check_interval_seconds: float = 5.
+    preflight_interval_seconds: float = 2.
+
+
+class SessionController:
+    def __init__(self, backend, probe, directory, minimum_disk_bytes, *, policy=None,
+                 now=time.time, sleep=time.sleep):
+        self.backend, self.probe, self.directory = backend, probe, directory
+        self.minimum_disk_bytes = minimum_disk_bytes
+        self.policy, self.now, self.sleep = policy or Policy(), now, sleep
+        if not directory.resolve().is_relative_to(BASE.resolve()):
+            raise ValueError('Session journal must stay in Phase 11')
+        self.path = directory/'controller.json'
+        definitions = [r['definition'] for r in backend.rows()]
+        identity = dict(policy=asdict(self.policy), schedule_sha256=digest(definitions))
+        if self.path.exists():
+            self.state = read(self.path)
+            if self.state['identity'] != identity:
+                raise ValueError('Session policy or registered schedule changed')
+        else:
+            self.state = dict(identity=identity, active=None, sessions=[], cooling_until=None,
+                              cooling_periods=[], status='PREPARED_NOT_STARTED')
+        self.last_sample = None
+        self.unsafe = []
+
+    def save(self):
+        write(self.path, self.state)
+
+    def record(self, sample):
+        self.directory.mkdir(parents=True, exist_ok=True)
+        # Append-only telemetry is separate from the atomic scheduling journal.
+        with (self.directory/'telemetry.jsonl').open('a') as handle:
+            handle.write(json.dumps(sample, allow_nan=False)+'\n')
+            handle.flush()
+
+    def monitor(self, sample):
+        self.record(sample)
+        issues = blockers(sample, self.minimum_disk_bytes, self.last_sample)
+        self.last_sample = sample
+        self.unsafe = sorted(set(self.unsafe+issues))
+        return issues
+
+    def preflight(self):
+        first = self.probe()
+        self.record(first)
+        self.sleep(self.policy.preflight_interval_seconds)
+        second = self.probe()
+        self.record(second)
+        self.last_sample = second
+        issues = blockers(second, self.minimum_disk_bytes, first)
+        self.state['last_preflight'] = dict(samples=[first, second], blockers=issues)
+        self.save()
+        return issues
+
+    def cool(self):
+        deadline = self.state['cooling_until']
+        if deadline is None:
+            return
+        if not self.state['cooling_periods'] or self.state['cooling_periods'][-1].get('finished_utc'):
+            self.state['cooling_periods'].append(dict(start_utc=utc(self.now()), requested_seconds=self.policy.cooling_seconds,
+                                                     deadline_utc=utc(deadline), observed_wait_seconds=0.))
+        entry = self.state['cooling_periods'][-1]
+        try:
+            while self.now() < deadline:
+                duration = min(self.policy.check_interval_seconds, deadline-self.now())
+                before = self.now()
+                try:
+                    self.sleep(duration)
+                finally:
+                    entry['observed_wait_seconds'] += max(0., self.now()-before)
+                    self.save()
+            entry['finished_utc'] = utc(self.now())
+            self.state['cooling_until'] = None
+            self.save()
+        except BaseException:
+            # The original deadline survives Ctrl-C/restart; no reset to 180 s.
+            self.save()
+            raise
+
+    def pending(self, scope):
+        for row in self.backend.rows():
+            job = row['definition']
+            if job['kind'] != 'gru_trial' or (job['mapping'] == 'uniform_population') != (scope == 'primary'):
+                continue
+            if row['status'] == 'COMPLETE':
+                self.backend.verify_complete(job)
+                continue
+            if row['status'] == 'FAILED_NO_REPLACEMENT':
+                raise RuntimeError(f"Failed scientific trial cannot be retried: {job['job_id']}")
+            return job
+        return None
+
+    def finish(self, reason):
+        active = self.state['active']
+        active.update(finished_utc=utc(self.now()), finish_timestamp=self.now(),
+                      wall_seconds=max(0., self.now()-active['start_timestamp']), stop_reason=reason)
+        self.state['sessions'].append(active)
+        self.state['active'] = None
+        self.state['cooling_until'] = self.now()+self.policy.cooling_seconds
+        self.save()
+
+    def run(self, scope='primary', max_sessions=1):
+        if scope not in ('primary', 'secondary') or type(max_sessions) is not int or max_sessions < 1:
+            raise ValueError('Explicit scope and positive bounded session count required')
+        completed_sessions = 0
+        while completed_sessions < max_sessions:
+            if self.state['active'] and self.state['active']['scope'] != scope:
+                raise ValueError('An interrupted session must resume in its original scope')
+            # Reconcile registration after a crash, before any new dispatch.
+            active = self.state['active']
+            if active and active.get('active_job'):
+                job = active['active_job']
+                row = next(r for r in self.backend.rows() if r['definition']['job_id'] == job['job_id'])
+                if row['status'] == 'COMPLETE':
+                    self.backend.verify_complete(job)
+                    if job['job_id'] not in active['completed']:
+                        active['completed'].append(job['job_id'])
+                    active['active_job'] = None
+                    self.save()
+            if active and len(active['completed']) >= self.policy.trials_per_session:
+                self.finish('SESSION_LIMIT')
+                completed_sessions += 1
+                if completed_sessions >= max_sessions:
+                    break
+            if self.pending(scope) is None:
+                if self.state['active']:
+                    self.finish('SCOPE_COMPLETE')
+                self.state['status'] = 'SCOPE_COMPLETE'
+                self.save()
+                return self.state
+            self.cool()
+            issues = self.preflight()
+            if issues:
+                self.state['status'] = 'BLOCKED_RESOURCES'
+                self.state['blockers'] = issues
+                self.save()
+                return self.state
+            self.unsafe = []
+            if self.state['active'] is None:
+                self.state['active'] = dict(scope=scope, start_utc=utc(self.now()), start_timestamp=self.now(),
+                                            completed=[], attempts=[], active_job=None)
+                self.save()
+            active = self.state['active']
+            while len(active['completed']) < self.policy.trials_per_session:
+                job = active.get('active_job') or self.pending(scope)
+                if job is None:
+                    break
+                # Recheck immediately before dispatch, including resumed trials.
+                self.monitor(self.probe())
+                if self.unsafe:
+                    break
+                active['active_job'] = job
+                attempt = dict(job_id=job['job_id'], start_utc=utc(self.now()), start_timestamp=self.now())
+                active['attempts'].append(attempt)
+                self.save()
+                try:
+                    result = self.backend.run(job, self.monitor)
+                except BaseException:
+                    attempt.update(status='INTERRUPTED', finished_utc=utc(self.now()), wall_seconds=self.now()-attempt['start_timestamp'])
+                    self.state['status'] = 'INTERRUPTED_CHECKPOINT_RESUMABLE'
+                    self.save()
+                    raise
+                attempt.update(status=result['status'], finished_utc=utc(self.now()),
+                               wall_seconds=self.now()-attempt['start_timestamp'])
+                if result['status'] != 'COMPLETE':
+                    self.state['status'] = result['status']
+                    self.save()
+                    return self.state
+                self.backend.verify_complete(job)
+                if job['job_id'] not in active['completed']:
+                    active['completed'].append(job['job_id'])
+                active['active_job'] = None
+                self.monitor(self.probe())
+                self.save()
+                if self.unsafe:
+                    break
+            self.finish('RESOURCE_STOP' if self.unsafe else 'SESSION_LIMIT_OR_SCOPE_END')
+            completed_sessions += 1
+            if self.unsafe:
+                self.state.update(status='STOPPED_RESOURCES', blockers=self.unsafe)
+                self.save()
+                return self.state
+        self.state['status'] = 'BOUNDED_SESSION_REQUEST_FINISHED'
+        self.save()
+        return self.state

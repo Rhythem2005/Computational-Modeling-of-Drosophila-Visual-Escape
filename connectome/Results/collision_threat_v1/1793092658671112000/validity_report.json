@@ -1,0 +1,1458 @@
+{
+  "muniform_population_world_head_on_circuit_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "7d4c1b759345a7d0824a8eefea30d71b01416eebdacade7ec059a6831b96891c",
+      "npz_sha256": "b367877c8a379de19238fe1aec2eeacdeac188a45d0b3ac9aa22a52b10d0361f"
+    }
+  },
+  "muniform_population_world_head_on_feature_only_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "1ed8a39af8757de90cf060c7933d0420db2e6841f69c90208858a8d5599c383f",
+      "npz_sha256": "a72d773167a65ac3d1a0c74660432c1455390c4cdb1ff880ea70e89afe63a3d2"
+    }
+  },
+  "muniform_population_world_head_on_no_action_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 55,
+    "motion_valid_frames": 54,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "34ef83e8cba3e28578c2940cd79addf23da551ffc2ec3a988fb0784d9a012195",
+      "npz_sha256": "27686a0c06941fb03016502a8b4fca70ee3aa6d274068036cbc895773de57957"
+    }
+  },
+  "muniform_population_world_head_on_gru_55100_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "d052e31df9df3c74552ecf2c3d969770ea34fa54892e44b796ef6186e74c3d23",
+      "npz_sha256": "c43ea047e48dcb8cb5994d0aca31a3b69438586e6ab5e43ed8f0177ea89c2ff0"
+    }
+  },
+  "muniform_population_world_head_on_gru_55101_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "d69a69d5b71dca2617a2589484db0c818fb9e186c4b445055be141f50926b1b3",
+      "npz_sha256": "8da53fbabf28fabbc870ab0a8f216b6712f298fa67409a98a90c811298f4c830"
+    }
+  },
+  "muniform_population_world_head_on_gru_55102_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "b9b61754d11b9628ee79532a5ff96b0a669626486a92b3ed169896a8d18e8eaf",
+      "npz_sha256": "62f0f0a260ca603edb820d41b5f3891ad1748810858289eca3f7564cfe1ef9b4"
+    }
+  },
+  "muniform_population_world_head_on_gru_55103_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "00dbfa81f2ef4a0550a4ea5d8305ed9ebc888d31e288960e3e827f590ba777cc",
+      "npz_sha256": "7ffae26f7c9a2a300f55f661e71737c78a4c8e06a2f3aaaa5514b36cd1bc16db"
+    }
+  },
+  "muniform_population_world_head_on_gru_55104_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "91a8e146a0cd610de453428499c8124f18ab1e61e93b7ba28ba5b50da9eabefe",
+      "npz_sha256": "452250f61ffc6a130a7912a0a6d686f4a511ca4fed0fab67f980b1da83144b0b"
+    }
+  },
+  "muniform_population_world_head_on_gru_55105_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "2fff285bb4230308e986a0cd7198a5d682b5662a46eb4f088e8012e72de808d6",
+      "npz_sha256": "a83990eb6d69b8e11ad9b0377bf58247046367a1f03a6dabebaa9282771a77ce"
+    }
+  },
+  "muniform_population_world_head_on_gru_55106_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 55,
+    "motion_valid_frames": 54,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "6dbf1338609a33ba9e71e5608359de853d8e4c56721282dff2b0db04ce38b20e",
+      "npz_sha256": "4445061b717e211c6ba5e5936337a574d075cab62ee0cfe883b3dd879a196474"
+    }
+  },
+  "muniform_population_world_head_on_gru_55107_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "4f5f91374501e8f53e5b9efe540026b5a59b21f12f66b5fabf812c232afd1433",
+      "npz_sha256": "9ecf1d898911c3d557dabdafa26c21901be597381d0528f885a8eca5890e3552"
+    }
+  },
+  "muniform_population_world_head_on_gru_55108_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 55,
+    "motion_valid_frames": 54,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "3f8c5330ee0fd449ba94fb124288da76b8e4797399f76950a0e2847a07a38221",
+      "npz_sha256": "16f2c120139ab1b9e7e886d0ab8be5060c1314ce2517cbf3146f3405ef750a7d"
+    }
+  },
+  "muniform_population_world_head_on_gru_55109_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "27e7ce8a42cfd1873fa94e7e3feeec50c6b314c8c6326fe07e182e6d9b09a2ae",
+      "npz_sha256": "6341f5820651ccd8c3e4e64023463c6ff25f19bf52d4d689515f19d3851ac9ff"
+    }
+  },
+  "muniform_population_world_left_circuit_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "af47b5ea6bdcaeb3c6ed307e87b66cfd6d028270f7371138d98d0c98af9a510d",
+      "npz_sha256": "6b83d93f2a15c6d90d2e725e0365af76d42b0c9814f4e846cb138e785084df41"
+    }
+  },
+  "muniform_population_world_left_feature_only_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "7b5e87feac6723a682cf4a212c64ff92d8a9f39ccfedc27d0d0316951c242a93",
+      "npz_sha256": "5d6175138a38f880c3759a59eedf367d6fb0f5e8725170da230710f2cf4d6395"
+    }
+  },
+  "muniform_population_world_left_no_action_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "e707837658fa343b8221031f7a0c4ca5fe5dd5a640d2cf10071a605a7def502d",
+      "npz_sha256": "9b70e58d4e13db26be701bf6a3d2a7df4e49ee4b292ec85df9abc0bf725a2314"
+    }
+  },
+  "muniform_population_world_left_gru_55100_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "2710eb4ff164617d19e8c4a45134b48a75af551ab465b289ef33303da184cabc",
+      "npz_sha256": "aec7003d596777f2d9243f75cec719d97c6f87972dff4650e5e0bb96ca73910b"
+    }
+  },
+  "muniform_population_world_left_gru_55101_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "01ecfb900b252bf56d1af8b731925e9454beaa97091745800cea653ce807d571",
+      "npz_sha256": "4f339245dc93bbe8d9136800b9bdb786f2ad369d1e5ddeab51b264640cda33c5"
+    }
+  },
+  "muniform_population_world_left_gru_55102_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "9d2fc424d3685bebc1bf95d87f219d93a6eb63ef5665d32267f4da3c97c082a8",
+      "npz_sha256": "89f31260470f0858f6e8fb8e34870f691e9350f8b5331456d34a4965305abed6"
+    }
+  },
+  "muniform_population_world_left_gru_55103_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "8d5117df4958851d5956b3a454ffa64f3b11bd2c67e46aa4bba2f6db549cc63b",
+      "npz_sha256": "bef247fa6100cee531ac7698d08cccbd1986f92a4b5411db5386c7da67fcd90d"
+    }
+  },
+  "muniform_population_world_left_gru_55104_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "bd8213a39a9cf1258de2f611f5c5c149856337e683f2d8c11be9a1a5da2523ac",
+      "npz_sha256": "736fdeab948146dd79bf8ab9dd76277ec522878637e979ac4838983dc7c39072"
+    }
+  },
+  "muniform_population_world_left_gru_55105_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "ed4ee7351fd0329ec8b0c8a185599aa3251c9b6d46d628f9ebee96601d13eb9d",
+      "npz_sha256": "c540370a8378ee49f28984428a71fcd9cecd38f16d3ce419a1b2e35c5c60ed9d"
+    }
+  },
+  "muniform_population_world_left_gru_55106_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "12c4a438eabb36ac9f683b7e070d3a6b74d4a832de9f7740bf493ea9b8af4c8d",
+      "npz_sha256": "bfa922df810c07f85c71d590eebff4115dd71bf017bdadfc7dc25e6f9a9c37ba"
+    }
+  },
+  "muniform_population_world_left_gru_55107_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "91827e1d4de1678f4b168305d3ad6921852ebef9aec11f633c0d05d65e182124",
+      "npz_sha256": "f529e40f16755f9e0be60d75b106e96bf4c41fbb6deef7f30990db1029af40bf"
+    }
+  },
+  "muniform_population_world_left_gru_55108_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "dff53ea77516ab2801592afff782dffe4ea47136fd0a48e0e8d91acaf630c8ff",
+      "npz_sha256": "7b914745ca09f85a93cd0ba909912be0992b9c1e9d92e4fa0ede2b8e74cce4e9"
+    }
+  },
+  "muniform_population_world_left_gru_55109_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "3351150f40c95e9454a82079862817df4c65b50bcb2483d32ad9028dae6ce550",
+      "npz_sha256": "39339d7bf36763f1b23b94d33c3323032a132a9ad2d18af26dc5627bf928c03a"
+    }
+  },
+  "muniform_population_world_right_circuit_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "df64e8565230ed397458398f3f5502ae65f4c0b6274849440690b6818ba89727",
+      "npz_sha256": "3fde8e5d251f10b4ec1e01d5219dfd2b5aa707c6a35de0fdcd31f3f18b728a6f"
+    }
+  },
+  "muniform_population_world_right_feature_only_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "9acd9e82969409af25211e58ce9c8ad50b9e497c1e0d4b303991351f703ff6e4",
+      "npz_sha256": "56e15ad5d3cada846edb9d44f01e7c89a6ed8db0d1955730701050f9d282bf4c"
+    }
+  },
+  "muniform_population_world_right_no_action_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "0b812f040b9595cc13d66099f7109f43d9bdbb7023784b2487c86f5f43c5ddbf",
+      "npz_sha256": "89e825f90ad3c8f9ed6b978a0969af7faef0c0820e671f2ea4f04393b0caa45b"
+    }
+  },
+  "muniform_population_world_right_gru_55100_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "c32787e4dc844a363e4c76113fe402e63c59c09f59acb2db6ce1061327c9fb35",
+      "npz_sha256": "d06e17bcff8e3a41098e49d5988417462f314b258178d82ed9112af74acc1b1b"
+    }
+  },
+  "muniform_population_world_right_gru_55101_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "4149eaccb267bd4d3d60efd661ea678c4065c72ad31574ecbf81901d74143d50",
+      "npz_sha256": "86876ba1af0d45b4216167aabcf6ddf0b19f46c2e406a555c3223265cd5cde7a"
+    }
+  },
+  "muniform_population_world_right_gru_55102_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "dd710492ba9228ba7563a1b518175d8efd450b0ec268e4b1a18f7d2c53da395d",
+      "npz_sha256": "9c75f170d9d7c921336b99c99a0f387f71fbfe9741ca90714dc056c5f4891b21"
+    }
+  },
+  "muniform_population_world_right_gru_55103_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "4763e6d79dab895156b7dcb50c8f2eb53b411cef2f19465462cf24e8d209da01",
+      "npz_sha256": "ac67105616d2d4ae3ab3f14fadebc43f6f39c85f7b003b4437b4cb355837eb08"
+    }
+  },
+  "muniform_population_world_right_gru_55104_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "9e87df11adf9b9e814feae0eb084500aec85293f213b5ca547035159aef04ed4",
+      "npz_sha256": "f06ac0474d8e7d1fe6e24e97f6826e07faf1b5978c1e2ed4b54c994c8b82a1c2"
+    }
+  },
+  "muniform_population_world_right_gru_55105_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "fda11ba16ea606936f0a1d5a572dcc567fdde43ff2dcde8559d1ddce349112f9",
+      "npz_sha256": "d0e72631fe36312bf0a27db88351b00f17358bf33bd45f184b9f27307ed66fd3"
+    }
+  },
+  "muniform_population_world_right_gru_55106_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "8f0afe2587394de98dc4ee8e3cfa93f88c205fa3e3f866d9ad9629814692b2ae",
+      "npz_sha256": "6db6e5e7e408ce0c6779c1c646c655c98fae5d0bf6afee7a329f39491bab7b1f"
+    }
+  },
+  "muniform_population_world_right_gru_55107_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "376d1bbb6e9c30e93dc2b6225c2bd60438a30c01b380a3c9f661e62c8cd02983",
+      "npz_sha256": "a558d6845a559b5417a455585992e6fd6642fd367e3632b403636613a35cc30b"
+    }
+  },
+  "muniform_population_world_right_gru_55108_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "5b05cf7f6f3e38f0acde82b2d299b6a4eb0034a425f5f95d430ef98c29715ea8",
+      "npz_sha256": "0a72c2f185f9eea85cb75a497c4c3e86280fa4a87e4d47aff54805ab0dd8eca1"
+    }
+  },
+  "muniform_population_world_right_gru_55109_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "6bb495a7291b41a609d98c56065bf65ca7bf7a876d287fb168d8e17385a733d2",
+      "npz_sha256": "f4342bf8549d2343e3f3fff50bcee7b6afce16bf811beef66f069e2904317d47"
+    }
+  },
+  "muniform_population_world_static_circuit_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "48d491380ffcbbb29c7439aa806c8671b3c33e69933c1227a381ec07373b9299",
+      "npz_sha256": "cad897a7e099a9467f1577f32926b20817ae174b1f2f2a4de3218479dd765360"
+    }
+  },
+  "muniform_population_world_static_feature_only_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "b537208a4d27e255329e5fe330b9b93fbf0e86653c610afbbfd807b89f633871",
+      "npz_sha256": "0a4036cae1ca82fc1efb262e74d7c3b73b2c133a05ac33bb8ca7c7f008c39ab8"
+    }
+  },
+  "muniform_population_world_static_no_action_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "11ff56a0490caf4a5645f0aeabe6756a1e2d7d1ecc4959bb7eb712e548ddce81",
+      "npz_sha256": "0a4036cae1ca82fc1efb262e74d7c3b73b2c133a05ac33bb8ca7c7f008c39ab8"
+    }
+  },
+  "muniform_population_world_static_gru_55100_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "e3632431bff1b7aae03481ee86bb1fd754e09240838365ae23a7c1c65cc21ef6",
+      "npz_sha256": "0119a18baf4af1c8b548805a05c68b0b432ba938194a0ef89d143362873df166"
+    }
+  },
+  "muniform_population_world_static_gru_55101_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "53a7c15d0f79db373fadbfb68ed1f95240655f13bb8287a0e3dedd55cb8f537f",
+      "npz_sha256": "341aedb5ae929ebc58847fd0002abb136b872502b4483c57bbf5eb4ac7d87cdd"
+    }
+  },
+  "muniform_population_world_static_gru_55102_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "071113d8d984e609da24ffaa8fcd80c6997507c65a3228355e4146c9c94fb842",
+      "npz_sha256": "eaffb6fb857eb57c3a8ca0a303a0d7c1624b01eb885afceba5b3fea2d6e16a77"
+    }
+  },
+  "muniform_population_world_static_gru_55103_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "e834e92d25060278c66edd414e84e504c1136f58a6a2bbc690e95dd7299769d6",
+      "npz_sha256": "10536b17c1e5839ff5a2844cb37fbfaf2b268897614588c700aa30737c7dc1b0"
+    }
+  },
+  "muniform_population_world_static_gru_55104_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "20ac19fc69401005ad2204fd6b18ab4c0f6cc8c6592985cf3fa6a2fed3e4af03",
+      "npz_sha256": "fc2138446c90c438ad886bbaf5b8b26a320d5b7ebd8d0c73d1bd0e105164aba9"
+    }
+  },
+  "muniform_population_world_static_gru_55105_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "b1b9fc7772b8ed42d043cc2ca4956a402899e241c19f0928e8ebfebf5aabec32",
+      "npz_sha256": "cc8e4c1d49acda790390b610d86b5c0bf4e6c58f3a546c6a4484118d36cdd444"
+    }
+  },
+  "muniform_population_world_static_gru_55106_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "7a27233ee5876fbf0af4fdb107c70f6ec8c7f0510c8e1da50897f82a72cc26b6",
+      "npz_sha256": "589b4f840572f7c6c4c20b693728e8959c516a4445f9387026bfb64e119972f6"
+    }
+  },
+  "muniform_population_world_static_gru_55107_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "daeca9d2b2452b6a2b293f2ebe61c1329b3d8082b3218e28bfd0ff7e8fc325df",
+      "npz_sha256": "928ae3ba558bbba0666b90bc14ce7d0e393abc1d9cf7e58d6c90f2dbc697a279"
+    }
+  },
+  "muniform_population_world_static_gru_55108_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "30e0f15cea0dd96d280eb1dfb41217c584f3d8802fe3a7717e3140902899eeb1",
+      "npz_sha256": "b7a739b1fc13edcf08f8470c7b0d20bcf494f860393f92a97d37a824a8b488f3"
+    }
+  },
+  "muniform_population_world_static_gru_55109_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "2456dcdb63ee008998ae848fd5eac0e5e2c0b3dbf214fe80672980d6e92edbee",
+      "npz_sha256": "803b59b234f03da3f38acaa691bd67943f99345c7165932efd6a01f4f088b831"
+    }
+  },
+  "muniform_population_world_near_miss_circuit_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "1bce0bd6890100b228e12515cb3a5eb620907ecb815adda87e452bd2b7ad8d65",
+      "npz_sha256": "607bd67243a27723184c27a597597ffca57dc738aacbdfac13ecd3f4cb63bd94"
+    }
+  },
+  "muniform_population_world_near_miss_feature_only_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "724f8cb7c7f5bfbe94a4db9f7b44e140f00e5d5da9fdb0a4ab8a88789c120220",
+      "npz_sha256": "d946060898c6c03c166c402d46c1fab720a74ced11f77e334addbf4c00d3ce25"
+    }
+  },
+  "muniform_population_world_near_miss_no_action_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 46,
+    "motion_valid_frames": 45,
+    "empty_frames": 8,
+    "multiple_component_frames": 0,
+    "border_frames": 6,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "e7111b1d23b4fbf58357b382cc273dcd8bdeb4e3330b09682d32572df1c9dba3",
+      "npz_sha256": "8c9ad646049b21bf91b8017f58d862545bce7867991196c598447bba6572bce5"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55100_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "4b82501baffaaf0a50b727cf3c508049f064ecdfad75d9cb972c2e93f6a92bff",
+      "npz_sha256": "38855775876d9c4bc92e48420c44f8c2f241ea59e5e1366ff6736e63a6227520"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55101_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "92942043c2812e7de0fcfd94c1de84d7f073a41e371406bfda89c103a1e5dc79",
+      "npz_sha256": "a371211792d49be461a08dbf9e4fa8114fddba2c593cdfa1db555eed1fe762f7"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55102_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "476e3c00ac0f24aec86c0d7a136ebdd4f38c3c23002c04190c8280fad918d4c2",
+      "npz_sha256": "7ed343ad71c6f9b3b65594d3a7289f011194303dcdcedfec86b0a1917252e11f"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55103_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "2a633ae4d9521f0900d7cfcb7863bbac1d10a5bca0a9f2632d20454a32c168b4",
+      "npz_sha256": "e8c602dc036fabc06e3a66e5d052602876de9d91a18bf96a247950edfc15d574"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55104_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "dadb004405d0890d634709a56e8078a0049c582675d9d9a157dc5ada6011c51e",
+      "npz_sha256": "1aa26e6bb2121e84f21c062aee5e825965929647fdd91905f2852fb8fe52e6c7"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55105_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "866f4d60e8b0e0f85d1e20a112f7662703257588f7adee6a3ec2d64be0ce79c5",
+      "npz_sha256": "d507fcf5b26dfe9ef8d53af53daa0ab663a2295b792165ac409124c370ee6efe"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55106_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 46,
+    "motion_valid_frames": 45,
+    "empty_frames": 8,
+    "multiple_component_frames": 0,
+    "border_frames": 6,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "cda8ffa39246684c4e38b6b6bbcdadc99a4bdab34072292f634c8118e70f4102",
+      "npz_sha256": "25cb01fb19917309d12196296f026e3cd5db9a6bde308763d71e38b122ddfcd1"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55107_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "268739ce64de0f33ad20e969c2761913f48fc277f8f5062363d3a656fff75949",
+      "npz_sha256": "511aa4ed9effabc40b81d4ae8cd341b17b8c88f995ff844856c73751dc36f99a"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55108_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 46,
+    "motion_valid_frames": 45,
+    "empty_frames": 8,
+    "multiple_component_frames": 0,
+    "border_frames": 6,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "02d851a7427cd9f8e4fbe3f03b594a79d1d0e86aa569ec1350fdade953030083",
+      "npz_sha256": "5175a780461411b46819a38fdd3a09c88b99fea28646b00da9c8df4b72d8306e"
+    }
+  },
+  "muniform_population_world_near_miss_gru_55109_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "44430539dc1259e4cb827024cd63d11c712461a547e1d7c40c6514f15b6f780f",
+      "npz_sha256": "3e89308b8ff49f52a43dbfa3228be0109aa1be9465df28d84e4358829ccb044f"
+    }
+  },
+  "m55010_world_left_circuit_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "85886f19b630acb34ea5822b43ae9504778e468e68d017f79df46eac6893438d",
+      "npz_sha256": "48a35fd5b8704b60893344f134aa56ecfab58bb1659ccf06562d73a4dc97c9f4"
+    }
+  },
+  "m55010_world_left_feature_only_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "74e59cf5b8589dddd7875a4b8bca0421a1180e295a88e7b6fdec39810f10633f",
+      "npz_sha256": "fd2498500eb233fbf71aef0c7496aa89c127b0e6e64f82e7445a029cc5666a26"
+    }
+  },
+  "m55010_world_left_no_action_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "1891ff7cab07dab327088715decf916c05676c0cf60337c6289905538f37b4de",
+      "npz_sha256": "05be451fae4a5b2de3023d341bb199ba44989a4c1eb7c997373aba256b3d8ec4"
+    }
+  },
+  "m55010_world_left_gru_55100_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "30ac827bee9104f5541f2f32c10b0638a70c6bebb5080dda93acc9a857863414",
+      "npz_sha256": "2767ca02ea6e306f9be755e335237a7af56593cc2c61cfe8a24ea889205538cc"
+    }
+  },
+  "m55010_world_left_gru_55101_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "014fc849a90f9c84a5c0d9f3de8254ccfe8af2ac03449084395b81897bd1603d",
+      "npz_sha256": "e98e506ea639165b715a2757dcf7d3c1ac9813c0691f6c25ee9ad54c75ac477d"
+    }
+  },
+  "m55010_world_left_gru_55102_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "d66732e6a653f111b68dde890e35bbb2de8c1751aeba5efba5c422be5dfc40ca",
+      "npz_sha256": "d4fe346e3974d05e8a58c6ba6681457b90e83ce0378ce1a00715e069d48b4326"
+    }
+  },
+  "m55010_world_left_gru_55103_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "18dc739f2dca2fae2f55e64b6a21feced98ede2a533bca8f3a2294f230760647",
+      "npz_sha256": "bbaf46fbf98574d5b7042807ae6ef339658949b6b1b7c6af4fa3adf33fa8deac"
+    }
+  },
+  "m55010_world_left_gru_55104_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "30598ebbe443b9ed5eb1787eac16e9568903428f6062b78ca8e96161b88c8444",
+      "npz_sha256": "65251bd99b573214888083b953751a8a31883a38e0aed81dbe5a4dc4ac410c94"
+    }
+  },
+  "m55010_world_left_gru_55105_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "b7ed164132e51233ecc5d4d4e2b2c959b2b6d82f26e96eefb9b8397b214c05ad",
+      "npz_sha256": "590a2110af115292dff783592f2af444cbfad16c564f16b6596b77e460a0d274"
+    }
+  },
+  "m55010_world_left_gru_55106_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "942e4d59cf45dae54824098b8b0a798d04e5034ac8831d531dcea3de75077a16",
+      "npz_sha256": "60a7ac129574f7ab948ae3682e6f57248c9f51a12b9c2f4e29ec58339d559893"
+    }
+  },
+  "m55010_world_left_gru_55107_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "ff07a8729a7638f8cbab235c25168db5343a63f8ef04fa60173719a51627da01",
+      "npz_sha256": "eb8970b921cd27b53c7c148b3151507735c63ad567114873f5d9fddd41560cfc"
+    }
+  },
+  "m55010_world_left_gru_55108_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "909770ee394b2352a9800e53a413e543c848eaa49bc55ad72ebe038c10ce41a5",
+      "npz_sha256": "d42fa262aed16b38f2bcf97489934bf98a07576a6dcc3e477390f78c49a6ae5f"
+    }
+  },
+  "m55010_world_left_gru_55109_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "bc161c7ae7ac132c93580be82c9a4ab4f1c94e1c7b1f0fb5234a23e35e7343b9",
+      "npz_sha256": "9314c6f17868f209ae9719cb585441d5376fa209434006b370234af645d15573"
+    }
+  },
+  "m55010_world_right_circuit_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "4e120345d9e1ce189fe9d655348c7483f6f396fc1af552e00c406b35a5bff465",
+      "npz_sha256": "a6a1e31b5c37194eb42d1167d3bb0a682147f16c377edaefc44c1ec17e896c03"
+    }
+  },
+  "m55010_world_right_feature_only_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "3ef0e6c21bb99a6ea48e4885d1beefc4588021356b08bdce7fa3ce656d80dbdd",
+      "npz_sha256": "9569906752bf1e03e8ab2ddacb86eb109c68266acede12eb72b877774d57afdb"
+    }
+  },
+  "m55010_world_right_no_action_r0": {
+    "frame_count": 56,
+    "measurement_valid_frames": 53,
+    "motion_valid_frames": 52,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 3,
+    "foreground_dominant_frames": 1,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "c1218af36e16d9bb1e3e66e29abc7e3c4626649303cd941572303d794744f365",
+      "npz_sha256": "c502adc2e10a0e0ed555695b686372822e216ca23f71e6756071ee4da0de31ef"
+    }
+  },
+  "m55010_world_right_gru_55100_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "3dc6ebf3b86eeb151145c4fdb6ed73a1bb8e16048b687306196a5206c734b2b7",
+      "npz_sha256": "c8fac6ba3139196ddcb5a436979794d64d10ac948b4a0e297752fe1562ad36c5"
+    }
+  },
+  "m55010_world_right_gru_55101_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "304cb0e6ac2782a050564790a75c24c774e073acc4769902da10b7cd871d9b4a",
+      "npz_sha256": "1cd1602a0a6210db304ea8ab16556412b73bf90464ace13bf35d1f226eae412b"
+    }
+  },
+  "m55010_world_right_gru_55102_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "b31f984f2149bd713f9aac9e84e329376999a7a268541d2c8626549ca9e43df0",
+      "npz_sha256": "e1cec697c9cd466203093037f265dfbf3313cf902b6f18417669f87de5f0c065"
+    }
+  },
+  "m55010_world_right_gru_55103_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "b69341668f14e7f0f88c37236ae2f159690e19e03a39f3dfb4180e621834bb5d",
+      "npz_sha256": "7f62befcefb3ba83e4e6c45f709f929a41f29f88c68251cca9da6f536295e150"
+    }
+  },
+  "m55010_world_right_gru_55104_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "9bb6d975670de6ba1fa6afded24a419b513d743beba39c3933cc9246cfc32dd9",
+      "npz_sha256": "d41a67ff045ec2546efa5b5f30fe322a1c0dda6e5415821c45feeb2e017d4868"
+    }
+  },
+  "m55010_world_right_gru_55105_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "71c2ad1ba97a12342797bb3527c686f331ac282b0dc789aab68b8e3d04f12da2",
+      "npz_sha256": "52dd00967efa7ca2125e84136a53a92094b67fa18da172726435b670b36ae74c"
+    }
+  },
+  "m55010_world_right_gru_55106_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "a57c93c7d518e85eeafbd0297a217425f7124bc829abf212b81f023e335a056a",
+      "npz_sha256": "2b04a104118d5257dcb46a5a59d0ac84d08b3d0ef3ed815126481f5b481721e0"
+    }
+  },
+  "m55010_world_right_gru_55107_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "19171e0bac319db3bf53c02611e8a244569145b5e92f29703e7e59979dffc6aa",
+      "npz_sha256": "1b02d9b56f30b2137c632a9863792bf63761b0b05d2621246694562a5a20a95c"
+    }
+  },
+  "m55010_world_right_gru_55108_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "425d12cbccf8168ead18c1ea0fd86ae15eefda7d1223e642719b500fa2dae676",
+      "npz_sha256": "4f52456264648a404d3b3eace78ef4d2cf260d359caee0e9f35a8acb8dcf2d32"
+    }
+  },
+  "m55010_world_right_gru_55109_r0": {
+    "frame_count": 60,
+    "measurement_valid_frames": 60,
+    "motion_valid_frames": 59,
+    "empty_frames": 0,
+    "multiple_component_frames": 0,
+    "border_frames": 0,
+    "foreground_dominant_frames": 0,
+    "timestamp_gap_frames": 0,
+    "saved_renderer_near_or_behind_frames": 0,
+    "depth_inferred_by_extractor": false,
+    "source_bindings": {
+      "metadata_sha256": "5bdbf3363468cd91700714675ccd443a6e1b2924241e0a942d4fbabb10f3ca09",
+      "npz_sha256": "9227072fe11f7e5c3318ef381cf6b03d8a04dc2bccaeceb5014e9749d53159f8"
+    }
+  }
+}

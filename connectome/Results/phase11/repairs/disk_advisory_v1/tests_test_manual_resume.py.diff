@@ -1,0 +1,33 @@
+--- before/tests/test_manual_resume.py
++++ after/tests/test_manual_resume.py
+@@ -67,7 +67,7 @@
+ 
+ 
+ @pytest.mark.parametrize('field,value,reason',[
+-    ('disk_free_bytes',0,'INSUFFICIENT_DISK'),('power_query_ok',False,'POWER_STATUS_NOT_VERIFIED'),
++    ('power_query_ok',False,'POWER_STATUS_NOT_VERIFIED'),
+     ('power_status','discharging','BATTERY_DISCHARGING'),('available_memory_estimate_bytes',None,'AVAILABLE_MEMORY_BELOW_2_GIB_OR_UNKNOWN'),
+     ('other_workers',[dict(pid=123)],'ANOTHER_PHASE11_WORKER'),('process_query_ok',False,'WORKER_QUERY_UNAVAILABLE')])
+ def test_runtime_gate_fails_closed(field,value,reason):
+@@ -86,6 +86,21 @@
+     assert 'SERIOUS_OR_CRITICAL_THERMAL_PRESSURE' in assess(a,b,10**9)
+     b['thermal']=dict(available=False,state=None,temperature_c=None)
+     assert assess(a,b,10**9)==[]
++
++
++@pytest.mark.parametrize('free',[0,10**8])
++def test_disk_estimate_is_logged_but_does_not_block(monkeypatch,free):
++    from connectome.scripts.phase11 import runtime
++    row=sample();row['disk_free_bytes']=free
++    monkeypatch.setattr(runtime,'sample',lambda:row.copy())
++    monkeypatch.setattr(runtime.time,'sleep',lambda seconds:None)
++    saved=[]
++    monkeypatch.setattr(runtime,'write',lambda path,value:saved.append(value))
++    result=runtime.check(10**9)
++    assert result['status']=='PASS' and result['blockers']==[]
++    assert result['warnings']==['DISK_BELOW_CONSERVATIVE_ESTIMATE']
++    assert result['disk_policy']==dict(blocking=False,estimated_required_bytes=10**9)
++    assert saved==[result]
+ 
+ 
+ @pytest.mark.parametrize('level,allowed',[(96,True),(21,True),(20,True),(19,False),(0,False),(None,False),(101,False)])

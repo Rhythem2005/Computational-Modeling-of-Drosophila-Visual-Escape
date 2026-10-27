@@ -1,0 +1,18 @@
+--- before/common.py
++++ after/common.py
+@@ -77,12 +77,12 @@
+     certificate = read(path)
+     prior = certificate['checkpoint_sources_sha256']
+     allowed = {'connectome/scripts/phase11/'+name for name in
+-               ('common.py', 'runtime.py', 'resources.py', 'tests/test_manual_resume.py')}
++               ('common.py', 'runtime.py', 'resources.py', 'launch.py', 'tests/test_manual_resume.py')}
+     changed = {k for k in set(actual) | set(prior) if actual.get(k) != prior.get(k)}
+     if (digest(prior) != '5d923b56111a97521dedbb09f40ff0ed1eb9ff43eae5aeb4c27a0939bbed7661'
+             or actual != certificate['execution_sources_sha256'] or changed != allowed
+-            or certificate['scope'] != 'USER_AUTHORIZED_RESOURCE_POLICY_ONLY'):
+-        raise ValueError('Unapproved source change outside audited resource policy')
++            or certificate['scope'] != 'USER_AUTHORIZED_RESOURCE_AND_PUBLICATION_REPAIR_ONLY'):
++        raise ValueError('Unapproved source change outside audited operational repairs')
+     return prior
+ 
+ 

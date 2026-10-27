@@ -1,0 +1,413 @@
+{
+  "sessions": [
+    {
+      "id": "69b79a3fd2254943ab519d29695c88f8",
+      "name": "03_horizontal_pair_planner_only",
+      "protocol": "multi_object_initial_3d_v1",
+      "controller": "planner_only",
+      "source_note": "Fresh multi-object computation; separate engineering controller; known common size prior",
+      "world_config": {
+        "dimensions": 3,
+        "duration_ms": 1000,
+        "bounds": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "fly_radius": 0.5,
+        "object_radius_prior": 1.5,
+        "camera_width": 256,
+        "camera_height": 256,
+        "camera_fps": 60,
+        "camera_center_px": [
+          128.0,
+          128.0
+        ],
+        "camera_focal_px": 160.0,
+        "camera_near_depth": 0.1,
+        "background_uint8": 128,
+        "object_uint8": 64,
+        "min_contrast_uint8": 4,
+        "actuation_delay_ms": 20,
+        "escape_speed_max": 20.0,
+        "escape_acceleration_max": 400.0,
+        "prediction_horizon_ms": 1000,
+        "candidate_directions": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "association_gate_px": 24.0,
+        "association_ambiguity_px": 2.0,
+        "max_radius_fraction_change": 0.5,
+        "max_shape_error_fraction": 0.25,
+        "clearance_margin": 1.0,
+        "max_observation_age_ms": 17,
+        "success_final_clearance_min": 1.0,
+        "world_dimension": 3,
+        "world_units": "abstract",
+        "world_dt_ms": 1,
+        "coordinate_semantics": "x_right_y_forward_z_up",
+        "physics_model": "bounded_acceleration_kinematic",
+        "bounds_xy": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "frozen_encoder_multiobject_validated": false
+      },
+      "active": false,
+      "frame_count": 62,
+      "last_time_ms": 1000.0,
+      "verification": "external_producer_unverified"
+    },
+    {
+      "id": "d26aeeaaefb04ede8b35087e896e0f0f",
+      "name": "04_horizontal_pair_circuit_planner",
+      "protocol": "multi_object_initial_3d_v1",
+      "controller": "circuit_planner",
+      "source_note": "Fresh multi-object computation; separate engineering controller; known common size prior",
+      "world_config": {
+        "dimensions": 3,
+        "duration_ms": 1000,
+        "bounds": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "fly_radius": 0.5,
+        "object_radius_prior": 1.5,
+        "camera_width": 256,
+        "camera_height": 256,
+        "camera_fps": 60,
+        "camera_center_px": [
+          128.0,
+          128.0
+        ],
+        "camera_focal_px": 160.0,
+        "camera_near_depth": 0.1,
+        "background_uint8": 128,
+        "object_uint8": 64,
+        "min_contrast_uint8": 4,
+        "actuation_delay_ms": 20,
+        "escape_speed_max": 20.0,
+        "escape_acceleration_max": 400.0,
+        "prediction_horizon_ms": 1000,
+        "candidate_directions": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "association_gate_px": 24.0,
+        "association_ambiguity_px": 2.0,
+        "max_radius_fraction_change": 0.5,
+        "max_shape_error_fraction": 0.25,
+        "clearance_margin": 1.0,
+        "max_observation_age_ms": 17,
+        "success_final_clearance_min": 1.0,
+        "world_dimension": 3,
+        "world_units": "abstract",
+        "world_dt_ms": 1,
+        "coordinate_semantics": "x_right_y_forward_z_up",
+        "physics_model": "bounded_acceleration_kinematic",
+        "bounds_xy": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "frozen_encoder_multiobject_validated": false
+      },
+      "active": false,
+      "frame_count": 62,
+      "last_time_ms": 1000.0,
+      "verification": "external_producer_unverified"
+    },
+    {
+      "id": "3a98b5402ea6458eb6091588191c0365",
+      "name": "05_vertical_pair_no_action",
+      "protocol": "multi_object_initial_3d_v1",
+      "controller": "no_action",
+      "source_note": "Fresh multi-object computation; separate engineering controller; known common size prior",
+      "world_config": {
+        "dimensions": 3,
+        "duration_ms": 1000,
+        "bounds": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "fly_radius": 0.5,
+        "object_radius_prior": 1.5,
+        "camera_width": 256,
+        "camera_height": 256,
+        "camera_fps": 60,
+        "camera_center_px": [
+          128.0,
+          128.0
+        ],
+        "camera_focal_px": 160.0,
+        "camera_near_depth": 0.1,
+        "background_uint8": 128,
+        "object_uint8": 64,
+        "min_contrast_uint8": 4,
+        "actuation_delay_ms": 20,
+        "escape_speed_max": 20.0,
+        "escape_acceleration_max": 400.0,
+        "prediction_horizon_ms": 1000,
+        "candidate_directions": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "association_gate_px": 24.0,
+        "association_ambiguity_px": 2.0,
+        "max_radius_fraction_change": 0.5,
+        "max_shape_error_fraction": 0.25,
+        "clearance_margin": 1.0,
+        "max_observation_age_ms": 17,
+        "success_final_clearance_min": 1.0,
+        "world_dimension": 3,
+        "world_units": "abstract",
+        "world_dt_ms": 1,
+        "coordinate_semantics": "x_right_y_forward_z_up",
+        "physics_model": "bounded_acceleration_kinematic",
+        "bounds_xy": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "frozen_encoder_multiobject_validated": false
+      },
+      "active": false,
+      "frame_count": 57,
+      "last_time_ms": 923.3738971823079,
+      "verification": "external_producer_unverified"
+    },
+    {
+      "id": "2c0634ebc5864e519d017b38dac5d5fb",
+      "name": "06_vertical_pair_simple_trigger",
+      "protocol": "multi_object_initial_3d_v1",
+      "controller": "simple_trigger",
+      "source_note": "Fresh multi-object computation; separate engineering controller; known common size prior",
+      "world_config": {
+        "dimensions": 3,
+        "duration_ms": 1000,
+        "bounds": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "fly_radius": 0.5,
+        "object_radius_prior": 1.5,
+        "camera_width": 256,
+        "camera_height": 256,
+        "camera_fps": 60,
+        "camera_center_px": [
+          128.0,
+          128.0
+        ],
+        "camera_focal_px": 160.0,
+        "camera_near_depth": 0.1,
+        "background_uint8": 128,
+        "object_uint8": 64,
+        "min_contrast_uint8": 4,
+        "actuation_delay_ms": 20,
+        "escape_speed_max": 20.0,
+        "escape_acceleration_max": 400.0,
+        "prediction_horizon_ms": 1000,
+        "candidate_directions": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "association_gate_px": 24.0,
+        "association_ambiguity_px": 2.0,
+        "max_radius_fraction_change": 0.5,
+        "max_shape_error_fraction": 0.25,
+        "clearance_margin": 1.0,
+        "max_observation_age_ms": 17,
+        "success_final_clearance_min": 1.0,
+        "world_dimension": 3,
+        "world_units": "abstract",
+        "world_dt_ms": 1,
+        "coordinate_semantics": "x_right_y_forward_z_up",
+        "physics_model": "bounded_acceleration_kinematic",
+        "bounds_xy": [
+          [
+            -50.0,
+            50.0
+          ],
+          [
+            -50.0,
+            50.0
+          ]
+        ],
+        "frozen_encoder_multiobject_validated": false
+      },
+      "active": false,
+      "frame_count": 62,
+      "last_time_ms": 1000.0,
+      "verification": "external_producer_unverified"
+    }
+  ],
+  "ingestion_enabled": true
+}

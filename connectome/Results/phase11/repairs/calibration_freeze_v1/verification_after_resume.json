@@ -1,0 +1,28 @@
+{
+  "status": "FIX_VERIFIED_AND_CONTINUOUS_RUN_RESUMED",
+  "cause": "Freeze selected-proof search called dict.get on a list-valued diagnostics artifact.",
+  "tests": {
+    "tests": 552,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "gate_C": "PASS",
+  "original_trained_and_selected_files_unchanged": 100,
+  "first_failed_calibration_freeze_canonical_hashes_verified": true,
+  "held_out_ids_used": [],
+  "counts_at_audit": {
+    "gru_trial": {
+      "COMPLETE": 20,
+      "BLOCKED_GATE_C": 100
+    },
+    "calibration": {
+      "COMPLETE": 18,
+      "BLOCKED_GATE_C": 797,
+      "RUNNING_OR_RESUMING": 1
+    }
+  },
+  "checkpoint_contracts_rewritten": false,
+  "old_failure_preserved": true,
+  "repair_source_compatibility": "Exact legacy source catalog, 1255 explicitly bound artifacts, immutable scientific hashes and tested new source catalog; changed existing source limited to jobs.py."
+}

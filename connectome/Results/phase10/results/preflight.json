@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "phase6": {
+    "status": "PASS",
+    "checked_locked_files": 152,
+    "encoded_files_checked": 1024,
+    "normalization_sha256": "844f1934245762778874fce810808365319c6948c7ea57da19b425497cc86a75",
+    "scales": [
+      8.632185525889524,
+      8.417362938348457
+    ],
+    "phase6_freeze_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+    "manifest_sha256": "3f02344ec47293788fb5ef01c1a835f98e04310d9c209608dae326a77edd1002"
+  },
+  "phase9_protocol": "fly_closed_loop_engineering_v1",
+  "phase9_sources": 17,
+  "phase8": {
+    "status": "PASS",
+    "phase8_freeze_sha256": "73ba74974eeda1070e529a761588259a31bef0c4fb403efc0c71e6ec1cda6a41",
+    "phase8_source_files": 13,
+    "phase8_prerequisites": 401,
+    "delivered_artifacts_checked": 525,
+    "phase8_report_sha256": "6269dcc4a30c1ccd41e5f845eab03eaf66935eb92e5bb15711f7cbcff0071523",
+    "scientific_limits": "World domain not calibration data; synthetic retinotopy/motor assumptions and noise limits retained"
+  }
+}

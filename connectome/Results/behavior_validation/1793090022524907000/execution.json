@@ -1,0 +1,12 @@
+{
+  "exit_code": 1,
+  "snapshot": "/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-behavior-execution-rsmigtzy",
+  "command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-B",
+    "-m",
+    "connectome.scripts.behavior_validation.run"
+  ],
+  "execution_files_unchanged": true,
+  "snapshot_bytes": 176793325
+}

@@ -1,0 +1,414 @@
+{
+  "comparisons": [
+    {
+      "label": "cpu_cap4",
+      "array": "logits",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_Wr",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_Wz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_Wn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_Ur",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_Uz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_Un",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_br",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_bz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_bn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_w",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "g_b",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_Wr",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_Wz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_Wn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_Ur",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_Uz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_Un",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_br",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_bz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_bn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_w",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "updated_b",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_Wr",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_Wz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_Wn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_Ur",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_Uz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_Un",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_br",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_bz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_bn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_w",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_cap4",
+      "array": "epoch_b",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "logits",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_Wr",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_Wz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_Wn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_Ur",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_Uz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_Un",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_br",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_bz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_bn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_w",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "g_b",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_Wr",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_Wz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_Wn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_Ur",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_Uz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_Un",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_br",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_bz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_bn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_w",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "updated_b",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_Wr",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_Wz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_Wn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_Ur",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_Uz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_Un",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_br",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_bz",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_bn",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_w",
+      "exact": true,
+      "max_abs_error": 0.0
+    },
+    {
+      "label": "cpu_default",
+      "array": "epoch_b",
+      "exact": true,
+      "max_abs_error": 0.0
+    }
+  ],
+  "all_exact": true,
+  "gpu_equivalence_established": false
+}

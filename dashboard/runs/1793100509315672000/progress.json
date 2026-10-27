@@ -1,0 +1,12 @@
+{
+  "status": "RUNNING",
+  "reserved_attempt": 1,
+  "maximum": 15,
+  "job": {
+    "kind": "v2",
+    "scenario": "world_head_on",
+    "model": "finite_retirement_gate_v2",
+    "seed": null
+  },
+  "completed": []
+}

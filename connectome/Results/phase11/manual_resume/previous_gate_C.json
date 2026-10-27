@@ -1,0 +1,103 @@
+{
+  "status": "BLOCKED_RESOURCES",
+  "blockers": [
+    "Battery is discharging and reported remaining runtime cannot cover even the projected earliest-stop full schedule. Reliable sustained power is required before Gate D."
+  ],
+  "profile_only": true,
+  "registered_training_trials_completed": 0,
+  "calibration_conditions_completed": 0,
+  "benchmark_profiling_epochs": 1,
+  "profiling_training_clips": 256,
+  "profiling_validation_clips": 128,
+  "gradient_updates": 16,
+  "preparation_s": 0.9287437920002048,
+  "measured_epoch_s": 1.678645707999749,
+  "training_batch_s": [
+    0.08525366699996084,
+    0.0799549170001228,
+    0.08022829199990156,
+    0.08025575000010576,
+    0.08131950000006327,
+    0.0798905830001786,
+    0.08049958299989157,
+    0.08010837499978152,
+    0.08003716699977304,
+    0.08024562500031607,
+    0.0801442090000819,
+    0.08017525000013848,
+    0.08158941700003197,
+    0.08073558299975048,
+    0.0802977089997512,
+    0.08029974999999467
+  ],
+  "validation_batch_s": [
+    0.039191000000300846,
+    0.038920958999824506,
+    0.038954042000113986,
+    0.039346666999790614,
+    0.03928512499987846,
+    0.03929108300008011,
+    0.0395021250001264,
+    0.03906233399993653
+  ],
+  "checkpoint_write_s": [
+    0.004433999999946536,
+    0.004743666999729612,
+    0.004690666999977111,
+    0.004440250000243395,
+    0.004680500000176835,
+    0.004738209000151983,
+    0.004592124999817315,
+    0.004618250000021362,
+    0.0045187499999883585,
+    0.004619291999915731,
+    0.004631958000118175,
+    0.004619374999947468,
+    0.004738040999654913,
+    0.004512333000093349,
+    0.0046269170002233295,
+    0.004410417000144662
+  ],
+  "validation_bce": 0.6893377947648125,
+  "validation_evidence": "Profiling/calibration only; no model selected or frozen.",
+  "rate_clip_s": 0.014891334000367351,
+  "maximum_resident_bytes": 343490560,
+  "rss_units": "bytes on macOS",
+  "representative_compressed_rate_output_bytes": 66659,
+  "representative_gru_parameter_bytes": 126724,
+  "retained_profile_checkpoint_bytes": 293642,
+  "estimated_full_training_range_s": [
+    4230.1871841593675,
+    40287.496991993976
+  ],
+  "estimated_rate_inference_s": 4254.394558568951,
+  "estimate_limits": "Single uniform-mapping epoch/one circuit clip; ignores spatial input preparation and candidate decoding; throughput may vary with mapping, cache, thermal state and power. Estimates are not completed work.",
+  "conservative_disk_allowance_bytes": 63904146368,
+  "disk_free_bytes": 64387239936,
+  "power": {
+    "raw": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22085731)\t19%; discharging; 1:32 remaining present: true",
+    "exit_code": 0,
+    "discharging": true,
+    "remaining_s": 5520
+  },
+  "hardware": {
+    "physical_memory_bytes": 17179869184,
+    "measurement_command": "sysctl -n hw.memsize",
+    "measurement_exit_code": 0,
+    "note": "Read with approved sandbox escalation; no system settings changed."
+  },
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "held_out_inference_runs": 0,
+  "input_identity": {
+    "mapping": "uniform_population",
+    "mapping_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "manifest_sha256": "2dd0df51d8d404c5b8b6d1b86432fee4e13d588a58f0ff8e82fdee7aaf389f82",
+    "encoder_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+    "cache_sha256": "6427526fa740a60689e72d819029a1859c4135983d73e539bb99881d1c82e369",
+    "clips": 384
+  }
+}

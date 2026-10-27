@@ -1,0 +1,6 @@
+{
+  "type": "KeyError",
+  "error": "'controller_states'",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/rhythemsabharwalgmail.com/Desktop/FLY/dashboard/simulation/live_demo.py\", line 149, in <module>\n    try:worker(Path(args.worker),args.snapshot)\n        ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/rhythemsabharwalgmail.com/Desktop/FLY/dashboard/simulation/live_demo.py\", line 97, in worker\n    verify_metrics(run)\n    ~~~~~~~~~~~~~~^^^^^\n  File \"/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-behavior-execution-u_frg8wy/connectome/scripts/behavior_validation/evidence.py\", line 54, in verify_metrics\n    assert len(a['controller_states']) == int(t[-1])+1\n               ~^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'controller_states'\n",
+  "no_automatic_retry": true
+}

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE_STAGE_A",
+  "elapsed_s": 37.394073542000115,
+  "peak_rss_bytes": 308723712,
+  "output_bytes": 49442703,
+  "new_simulations": 0,
+  "new_model_inference": 0,
+  "new_calibration": 0,
+  "new_training": 0,
+  "held_out_evaluations": 0,
+  "stage_a_review": "PROCEED_TO_EXACT_RULE_SPECIFICATION",
+  "stage_b_enabled": false
+}

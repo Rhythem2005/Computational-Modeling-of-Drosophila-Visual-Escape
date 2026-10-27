@@ -1,0 +1,4 @@
+{
+  "type": "RuntimeError",
+  "error": "Resource startup gate: WORKER_QUERY_UNAVAILABLE"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PLANNING_ONLY",
+  "date_local": "2026-10-27",
+  "plan_sha256": "62f73ae9478197f9606786e71cdcbd2071fd7769e8953d14a3f44dc6fa6e9e2f",
+  "proposed_protocol_sha256": "fb98c8f2f06851e3aeace9a8d5c0d6f5f5eb5c29157cf67d576eabd1961c1545",
+  "evidence_sha256": {
+    "connectome/Results/collision_threat_v1/prototype/1793093607177149000/summary.json": "8bdfd58b3bbd4e1d31fb4d8faec56394b49cd1e7b6ef77d71b149ec13ff9de0a",
+    "connectome/Results/collision_threat_v1/prototype/1793093607177149000/manifest.json": "22ee88138e66e3a53ce9afd65acc5ab1cf42a2c37261451c7d1500ef7572c124",
+    "connectome/Results/collision_threat_v1/prototype/1793093607177149000/saved_file_audit.json": "4ee8f689c1dd168552ccfdbca7f79ba138310a6a4f88ae996cf1fa3407fb4350",
+    "connectome/Results/collision_threat_v1/prototype/1793093607177149000/tests.xml": "2a28c776e91d731a277eeb88e74a4b1cae8a8241f3af0664d7fc66d0382030c4",
+    "connectome/Results/collision_threat_v1/prototype/1793093607177149000/preservation.json": "d87f789704f49e548a395c7a8db246f3583e4da9d2a3dd95f290c150b3cb1308",
+    "connectome/Results/collision_threat_v1/prototype/1793093607177149000/execution.json": "aedb0d0e8d9d274cbe0a874963fbd3c5ea6e522a0af4cafffbc111c32c01ccd1"
+  },
+  "existing_source_fingerprints_verified": 14,
+  "v1_budget_consumed": 60,
+  "production_pointers_sha256": {
+    "connectome/Results/phase11/results/job_ledger.json": "8cf0467675131563896ccff7c02d398df394ff14430286889bb75597d988a18c",
+    "connectome/Results/phase11/results/training/train_55011_55102_0p001/current.json": "24cddf61f4f43d3116280a48ead334cb0abea14f7f4919870c2cc4a20ed97cfc"
+  },
+  "production_pointers_unchanged_during_planning": true,
+  "new_model_code": false,
+  "new_feature_extraction": 0,
+  "new_rule_scoring": 0,
+  "new_simulations": 0,
+  "new_training": 0,
+  "new_calibration": 0,
+  "new_test_suites": 0,
+  "held_out_evaluations": 0,
+  "live_worker_status_rechecked": false
+}

@@ -1,0 +1,11 @@
+--- pre_manual/dataset.py
++++ manual/dataset.py
+@@ -46,6 +46,8 @@
+         for sid, row in self.rows.items():
+             if row['split'] not in ('train', 'validation'):
+                 continue
++            from .manual_stop import boundary
++            boundary()
+             self.permitted(sid)
+             path = self.directory/f'{sid}.npz'
+             if sid in self.index:

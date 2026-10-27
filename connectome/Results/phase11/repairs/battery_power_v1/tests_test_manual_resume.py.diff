@@ -1,0 +1,39 @@
+--- before/tests/test_manual_resume.py
++++ after/tests/test_manual_resume.py
+@@ -67,7 +67,7 @@
+ 
+ 
+ @pytest.mark.parametrize('field,value,reason',[
+-    ('disk_free_bytes',0,'INSUFFICIENT_DISK'),('ac_connected',False,'STABLE_AC_NOT_VERIFIED'),
++    ('disk_free_bytes',0,'INSUFFICIENT_DISK'),('power_query_ok',False,'POWER_STATUS_NOT_VERIFIED'),
+     ('power_status','discharging','BATTERY_DISCHARGING'),('available_memory_estimate_bytes',None,'AVAILABLE_MEMORY_BELOW_2_GIB_OR_UNKNOWN'),
+     ('other_workers',[dict(pid=123)],'ANOTHER_PHASE11_WORKER'),('process_query_ok',False,'WORKER_QUERY_UNAVAILABLE')])
+ def test_runtime_gate_fails_closed(field,value,reason):
+@@ -86,6 +86,27 @@
+     assert 'SERIOUS_OR_CRITICAL_THERMAL_PRESSURE' in assess(a,b,10**9)
+     b['thermal']=dict(available=False,state=None,temperature_c=None)
+     assert assess(a,b,10**9)==[]
++
++
++@pytest.mark.parametrize('level,allowed',[(96,True),(21,True),(20,True),(19,False),(0,False),(None,False),(101,False)])
++def test_battery_power_without_ac(level,allowed):
++    from connectome.scripts.phase11.runtime import assess
++    a=sample();b=sample()
++    for row in (a,b):
++        row.update(ac_connected=False,power_status='discharging',battery_percent=level)
++    assert (assess(a,b,10**9)==[]) is allowed
++
++
++def test_normal_battery_discharge_allowed_but_other_guards_remain():
++    from connectome.scripts.phase11.runtime import assess
++    a=sample();b=sample()
++    a.update(ac_connected=False,power_status='discharging',battery_percent=96)
++    b.update(ac_connected=False,power_status='discharging',battery_percent=95)
++    assert assess(a,b,10**9)==[]
++    b['thermal']['state']=2
++    assert 'SERIOUS_OR_CRITICAL_THERMAL_PRESSURE' in assess(a,b,10**9)
++    b['thermal']['state']=0;b['power_status']='unknown'
++    assert 'BATTERY_POWER_STATUS_NOT_VERIFIED' in assess(a,b,10**9)
+ 
+ 
+ def test_continuous_launcher_has_no_session_limits_or_cooling():

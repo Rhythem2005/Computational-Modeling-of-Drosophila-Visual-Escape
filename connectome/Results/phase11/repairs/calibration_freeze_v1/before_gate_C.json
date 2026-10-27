@@ -1,0 +1,172 @@
+{
+  "status": "PASS",
+  "blockers": [],
+  "profile_only": true,
+  "registered_training_trials_completed": 0,
+  "calibration_conditions_completed": 0,
+  "benchmark_profiling_epochs": 1,
+  "profiling_training_clips": 256,
+  "profiling_validation_clips": 128,
+  "gradient_updates": 16,
+  "preparation_s": 0.014975207999668783,
+  "measured_epoch_s": 1.6844404160001432,
+  "training_batch_s": [
+    0.09444329200050561,
+    0.08273366699904727,
+    0.0817102499986504,
+    0.07948062499963271,
+    0.08021254199957184,
+    0.07967741699940234,
+    0.07969733299978543,
+    0.07871820800028217,
+    0.08056029200088233,
+    0.07905349999964528,
+    0.08069141600026342,
+    0.07933991599929868,
+    0.07909624999956577,
+    0.07996525000089605,
+    0.07913841699883051,
+    0.08066937499825144
+  ],
+  "validation_batch_s": [
+    0.03987920799954736,
+    0.039317665999988094,
+    0.03960320799887995,
+    0.039271667001230526,
+    0.03925608399913472,
+    0.039379416999508976,
+    0.038819332999992184,
+    0.039703750000626314
+  ],
+  "checkpoint_write_s": [
+    0.0044480830001703,
+    0.004524915999354562,
+    0.0044870420006191125,
+    0.0045023330003459705,
+    0.004401750000397442,
+    0.0045133749990782235,
+    0.004525500000454485,
+    0.004507041998294881,
+    0.004558624999845051,
+    0.004518541998550063,
+    0.004610750000210828,
+    0.004542624999885447,
+    0.004816541999389301,
+    0.00515179200010607,
+    0.0047357080002257135,
+    0.004685292000431218
+  ],
+  "validation_bce": 0.6893377947648125,
+  "validation_evidence": "Profiling/calibration only; no model selected or frozen.",
+  "rate_clip_s": 0.014631000000008498,
+  "maximum_resident_bytes": 343982080,
+  "rss_units": "bytes on macOS",
+  "representative_compressed_rate_output_bytes": 66659,
+  "representative_gru_parameter_bytes": 126724,
+  "retained_profile_checkpoint_bytes": 293642,
+  "estimated_full_training_range_s": [
+    4244.789848320361,
+    40426.569984003436
+  ],
+  "estimated_rate_inference_s": 4180.018176002428,
+  "estimate_limits": "Single uniform-mapping epoch/one circuit clip; ignores spatial input preparation and candidate decoding; throughput may vary with mapping, cache, thermal state and power. Estimates are not completed work.",
+  "conservative_disk_allowance_bytes": 63904146368,
+  "disk_free_bytes": 66630479872,
+  "power": {
+    "raw": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22085731)\t61%; charging; (no estimate) present: true",
+    "exit_code": 0,
+    "discharging": false,
+    "remaining_s": null
+  },
+  "hardware": {
+    "physical_memory_bytes": 17179869184,
+    "measurement_command": "sysctl -n hw.memsize",
+    "measurement_exit_code": 0,
+    "note": "Read with approved sandbox escalation; no system settings changed."
+  },
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "held_out_inference_runs": 0,
+  "input_identity": {
+    "mapping": "uniform_population",
+    "mapping_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "manifest_sha256": "2dd0df51d8d404c5b8b6d1b86432fee4e13d588a58f0ff8e82fdee7aaf389f82",
+    "encoder_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+    "cache_sha256": "6427526fa740a60689e72d819029a1859c4135983d73e539bb99881d1c82e369",
+    "clips": 384
+  },
+  "live_preflight": {
+    "status": "PASS",
+    "blockers": [],
+    "samples": [
+      {
+        "timestamp": 1792939495.9277031,
+        "disk_free_bytes": 66631553024,
+        "ac_connected": true,
+        "power_status": "charging",
+        "battery_percent": 61,
+        "power_query_ok": true,
+        "power_raw": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22085731)\t61%; charging; (no estimate) present: true",
+        "power_error": "",
+        "process_query_ok": true,
+        "other_workers": [],
+        "process_error": "",
+        "available_memory_estimate_bytes": 6501105664,
+        "memory_estimate": "vm_stat free + inactive + speculative pages; reclaimable estimate",
+        "memory_error": "",
+        "thermal": {
+          "available": true,
+          "state": 0,
+          "name": "nominal",
+          "temperature_c": null
+        }
+      },
+      {
+        "timestamp": 1792939498.009472,
+        "disk_free_bytes": 66780962816,
+        "ac_connected": true,
+        "power_status": "charging",
+        "battery_percent": 61,
+        "power_query_ok": true,
+        "power_raw": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22085731)\t61%; charging; (no estimate) present: true",
+        "power_error": "",
+        "process_query_ok": true,
+        "other_workers": [],
+        "process_error": "",
+        "available_memory_estimate_bytes": 6504284160,
+        "memory_estimate": "vm_stat free + inactive + speculative pages; reclaimable estimate",
+        "memory_error": "",
+        "thermal": {
+          "available": true,
+          "state": 0,
+          "name": "nominal",
+          "temperature_c": null
+        }
+      }
+    ]
+  },
+  "phase11_sources_sha256": {
+    "connectome/Results/phase11/README.md": "a79927aa6a3284e2917d76cd0c42c2b10543b78991d7c7263a53232ac255f3f3",
+    "connectome/Results/phase11/training_plan.md": "b36ee54d40d85fe61f3f68e92f62f232b3ff7cd579f5e7b6bf5d7a878cd9ed89",
+    "connectome/scripts/phase11/assessment.py": "b40ad5f323202630fcf8528d07dae949e3097b69d760af456e72290c6f1e5fae",
+    "connectome/scripts/phase11/common.py": "72cbc548279b15e03f6f7681b9eecf5fe87b2f0193f7cb01ba922abae7ca68ec",
+    "connectome/scripts/phase11/dataset.py": "19d07776af29c0739f8f0a60e1c0f2497472396548f1d8e6bbbe6e00300fc926",
+    "connectome/scripts/phase11/engineering.py": "d1241e8c227042d481a55ecadc7cf51d5f465da18909ae7a1981560a133f5033",
+    "connectome/scripts/phase11/integrity.py": "97ec3337727d690bc04a59d8871456253b720a06a402c72a4ad6927ed636cf8c",
+    "connectome/scripts/phase11/jobs.py": "eefaaca9ef92545934eb28fa5832a8537ffe523bf71719dfdfc7d3b7f4fe1352",
+    "connectome/scripts/phase11/launch.py": "124874c4ff270826384535987d1ef9987c2d887bfac6e68635fe6eeb06331f97",
+    "connectome/scripts/phase11/manual_stop.py": "c017188ad89e46843f213cde9ebb15a8ff70bbbe73122da53734ed6af7afd9b4",
+    "connectome/scripts/phase11/resources.py": "1b2c9ba8744f3f08b3117a173649b1b0c90379458a3b4efb1a0f00a1be51544d",
+    "connectome/scripts/phase11/runner.py": "705a06eeca7a9a35ef040da153ab856d2f43e7d2a8b57f561062afc488589b20",
+    "connectome/scripts/phase11/runtime.py": "700221efd36096b63b13b62a4f635a520f92a2773719f9d1b0d9330506b4f861",
+    "connectome/scripts/phase11/tests/launcher_fixture.py": "b95a2655dc251abb61f774866047c9864f27d462b50d60185709d543e8e3c185",
+    "connectome/scripts/phase11/tests/manual_fixture.py": "faf19c64758726437c3be9c8f12d80ada96d015c99038842a762f2d1ae437ba0",
+    "connectome/scripts/phase11/tests/test_manual_resume.py": "4e54aa1ebad97dc2ef911d0b3c35a37136a019e25ba42766ecc2ad57354d4410",
+    "connectome/scripts/phase11/tests/test_orchestration.py": "e402ff25f5d122682c52b7f3ad188416243fdaf113d1e3a1c65f638eae48569d",
+    "connectome/scripts/phase11/training.py": "e2d497db3b959930f402e7612f102c6d4a52721f7dde5feb89ad9787a5f402dd"
+  },
+  "profile_directory": "connectome/Results/phase11/results/resources/profiles/1792939494135894000"
+}

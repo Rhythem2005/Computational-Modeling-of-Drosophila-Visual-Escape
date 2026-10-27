@@ -1,0 +1,114 @@
+"""One existing registered trial; identical trainer and checkpoint format."""
+import argparse
+import traceback
+import numpy as np
+import yaml
+from .common import ROOT, OUT, read, write, sha, digest, sources
+
+
+def verify_complete(job):
+    """Verify a completed trial without running any optimizer updates."""
+    directory = OUT/'training'/job['job_id']
+    report = read(directory/'report.json')
+    current = read(directory/'current.json')
+    payload = current.pop('payload_sha256')
+    if digest(current) != payload or sha(directory/current['arrays_file']) != current['arrays_sha256']:
+        raise ValueError('Completed checkpoint integrity failure')
+    contract = current['contract']
+    config = yaml.safe_load((ROOT/'connectome/Results/phase10/control_config.yaml').read_text())
+    index = read(OUT/'inputs'/str(job['mapping'])/'index.json')
+    input_identity = dict(index['contract'], cache_sha256=digest(index['records']), clips=len(index['records']))
+    manifest = ROOT/'connectome/phase5_5/results/benchmark_manifest.json'
+    if not manifest.exists():
+        manifest = ROOT/'connectome/Results/phase5_5/results/benchmark_manifest.json'
+    scenarios = read(manifest)['scenarios']
+    if input_identity['manifest_sha256'] != sha(manifest):
+        raise ValueError('Completed input manifest hash differs')
+    for name, split in (('training', 'train'), ('validation', 'validation')):
+        expected = [{k: r[k] for k in ('scenario_id','group_id','split','cohort','label','role')}
+                    for r in scenarios if r['cohort'] == split]
+        if contract[name] != expected:
+            raise ValueError('Completed trial does not cover the frozen partition')
+    allowed = {r['scenario_id'] for r in scenarios if r['cohort'] in ('train','validation')}
+    if set(index['records']) != allowed:
+        raise ValueError('Completed input cache coverage differs')
+    for sid, metadata in index['records'].items():
+        if sha(OUT/'inputs'/str(job['mapping'])/f'{sid}.npz') != metadata['sha256']:
+            raise ValueError('Completed input cache hash differs')
+    if (contract['seed'] != job['seed'] or contract['rate'] != job['rate'] or contract['smoke_only']
+            or contract['config'] != config or contract['sources_sha256'] != sources()
+            or contract['input_identity'] != input_identity or contract['window_start'] != 200
+            or contract['epochs'] != config['max_epochs'] or input_identity['mapping'] != job['mapping']):
+        raise ValueError('Completed trial identity/config/source/input mismatch')
+    if (not current['finished'] or report['smoke_only'] or report['status'] != 'TRAIN_VALIDATION_CHECKPOINT_NOT_TESTED'
+            or report['seed'] != job['seed'] or report['learning_rate'] != job['rate']
+            or report['history'] != current['history'] or report['best_epoch'] != current['best_epoch']
+            or report['validation_bce'] != current['best_bce'] or report['updates'] != current['adam_updates']
+            or report['epochs_run'] != len(current['history']) or report['trainable_parameters'] != 16241
+            or sha(directory/'selected.npz') != report['parameters_sha256']):
+        raise ValueError('Completed report differs from checkpoint')
+    for split, key in (('training', 'training_ids'), ('validation', 'validation_ids')):
+        if report[key] != [r['scenario_id'] for r in contract[split]]:
+            raise ValueError('Completed training partition differs')
+    from connectome.scripts.phase10.gru import GRU
+    with np.load(directory/current['arrays_file'], allow_pickle=False) as state, np.load(directory/'selected.npz', allow_pickle=False) as saved:
+        net = GRU(321, 16, job['seed'], {k[2:]: state[k].copy() for k in state.files if k.startswith('p_')})
+        for prefix in ('m_', 'v_', 'best_'):
+            for key, parameter in net.p.items():
+                value = state[prefix+key]
+                if value.shape != parameter.shape or value.dtype != np.float64 or not np.isfinite(value).all():
+                    raise ValueError('Malformed completed optimizer/best state')
+        if set(saved.files) != set(net.p) or any(not np.array_equal(saved[k], state['best_'+k]) for k in saved.files):
+            raise ValueError('Selected parameters are not the best checkpoint')
+    return report
+
+
+def run_one(job_id):
+    from .jobs import ledger, update
+    from .dataset import Dataset
+    from .training import train_trial
+    from connectome.scripts.phase7.pipeline import FrozenPipeline
+    rows = ledger()
+    row = next((r for r in rows if r['definition']['job_id'] == job_id), None)
+    if row is None or row['definition']['kind'] != 'gru_trial':
+        raise ValueError('Registered GRU trial required')
+    job = row['definition']
+    if row['status'] == 'FAILED_NO_REPLACEMENT':
+        raise ValueError('A failed scientific trial cannot be silently retried')
+    if row['status'] == 'COMPLETE':
+        verify_complete(job)
+        return
+    directory = OUT/'training'/job_id
+    # Crash after writing the report but before ledger registration: no retraining.
+    if not (directory/'report.json').exists():
+        update(rows, job_id, 'RUNNING_OR_RESUMING', execution_mode='bounded_cpu_sessions')
+        dataset = Dataset(FrozenPipeline(), job['mapping'])
+        inputs = dataset.prepare()
+        train_trial(dataset.records('train'), dataset.records('validation'), job['seed'], job['rate'], directory, inputs)
+    report = verify_complete(job)
+    update(rows, job_id, 'COMPLETE', report=str((directory/'report.json').relative_to(ROOT)),
+           report_sha256=sha(directory/'report.json'), parameters_sha256=report['parameters_sha256'],
+           execution_mode='bounded_cpu_sessions')
+
+
+def main():
+    import os
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--job-id', required=True)
+    args = parser.parse_args()
+    owner = int(os.environ.get('FLY_PHASE11_LEASE_PID', '0'))
+    lease = os.environ.get('FLY_PHASE11_LEASE_PATH')
+    if owner != os.getppid() or not lease or read(lease).get('pid') != owner:
+        raise RuntimeError('Use the leased opt-in session launcher; direct worker execution is unsupported')
+    try:
+        run_one(args.job_id)
+    except Exception as error:
+        from .jobs import ledger, update
+        rows = ledger()
+        if any(r['definition']['job_id'] == args.job_id for r in rows):
+            update(rows, args.job_id, 'FAILED_NO_REPLACEMENT', error=str(error), traceback=traceback.format_exc())
+        raise
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,9 @@
+{
+  "status": "USER_APPROVED_IMPLEMENTATION",
+  "user_instruction": "Okay so now move with the implementation plan. I am also buildiing a dashboard with frontend and backend if you see any code or new file related to it just ignore and focus on your implementation.",
+  "continuation_instruction": "Continue.",
+  "plan_sha256": "62f73ae9478197f9606786e71cdcbd2071fd7769e8953d14a3f44dc6fa6e9e2f",
+  "proposed_protocol_sha256": "fb98c8f2f06851e3aeace9a8d5c0d6f5f5eb5c29157cf67d576eabd1961c1545",
+  "scope": "Exact known-size prior, derived finite-body boundary, evidence-retirement gate, eight controllers and <=80 known-fixture attempts including failures/repeats; no training/new geometry/held-out evaluation.",
+  "dashboard_work": "Excluded from edits and from fixed scientific filename preservation scope."
+}

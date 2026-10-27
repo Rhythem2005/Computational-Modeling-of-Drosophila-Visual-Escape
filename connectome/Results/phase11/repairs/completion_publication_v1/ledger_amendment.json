@@ -1,0 +1,21 @@
+{
+  "job_id": "train_55010_55103_0p0003",
+  "previous_entry": {
+    "definition": {
+      "job_id": "train_55010_55103_0p0003",
+      "kind": "gru_trial",
+      "mapping": 55010,
+      "seed": 55103,
+      "rate": 0.0003
+    },
+    "status": "FAILED_NO_REPLACEMENT",
+    "blockers": [
+      "Battery is discharging and reported remaining runtime cannot cover even the projected earliest-stop full schedule. Reliable sustained power is required before Gate D."
+    ],
+    "error": "[Errno 2] No such file or directory: '/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-w7kt2fi4/connectome/Results/phase11/results/training/train_55010_55102_0p001/report.json'",
+    "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-w7kt2fi4/connectome/scripts/phase11/jobs.py\", line 259, in execute\n    selected[seed] = selected_gru(mapping, seed, training, validation, inputs, rows)\n                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-w7kt2fi4/connectome/scripts/phase11/jobs.py\", line 139, in selected_gru\n    net, report = completed_trial(directory, training, validation, seed, rate, inputs)\n                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-w7kt2fi4/connectome/scripts/phase11/jobs.py\", line 101, in completed_trial\n    report = read(directory/'report.json')\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-w7kt2fi4/connectome/scripts/phase11/common.py\", line 27, in read\n    return json.loads(Path(path).read_text())\n                      ~~~~~~~~~~~~~~~~~~~~^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 787, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-w7kt2fi4/connectome/Results/phase11/results/training/train_55010_55102_0p001/report.json'\n"
+  },
+  "new_status": "PENDING_INFRASTRUCTURE_REPAIR",
+  "same_job_identity": true,
+  "scientific_failure_replaced": false
+}

@@ -1,0 +1,5453 @@
+{
+  "status": "PASS",
+  "calibration_conditions_checked": 136,
+  "cached_train_validation_episodes_checked": 52224,
+  "audit_script_sha256": "59a4e81da8f2eea603a8417ee1e7287d698a2942161c23e8e1e1326693911cd8",
+  "manifest_sha256": "2dd0df51d8d404c5b8b6d1b86432fee4e13d588a58f0ff8e82fdee7aaf389f82",
+  "runtime_s": 18.86885591600003,
+  "conditions": [
+    {
+      "job_id": "cal_uniform_population_gru_55100",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "ebff2d27ab94a71bb3aed09ff31c3301b68289eadd3da24f7df4c8c41aab70b9",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 0.00011725363313339216
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "cad5ed8e4d458de762dd99c77a39832df1517967686ff23064c5c90c5ed07942",
+      "assessment_sha256": "143804015c161861b87abc917859f6918ab951dcc412126889c356e56adeda41",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55101",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "5b4b0b78e4f25df12cd84ec177226e080ccbe88fed4a5cfdd60ba91629858ef7",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 0.00012808420547957822
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "e733c94ad595ffc5906d8515da6ff60b123a36cd45efe3606a38eac675c7f0f6",
+      "assessment_sha256": "2bb526677b000b8d740bfadd79d9f0918476dde2773a1f095626bfd1d8a52893",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55102",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "52bae4dc11eb345d412c322ac1543db5d3375607c7897f620b4e678f92196c46",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 0.00011870586782276681
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "3f6da0ef33bcbeea3bb072e9f6730b7cc55f4c1926beb76822d9262821513636",
+      "assessment_sha256": "723c93e12cce93c27b16ee70034ae3c1b01e9a194912da66d9596bbb1546dc66",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55103",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "27a283f0f5a92732187d1cd3f3547abc38ef63c13a4cc33eacea4a4be36bac73",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 0.000104365214213485
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "de49a9c7b5427028319144c5a175881eac0ed3d076ee781b5cd4717e63bf21c5",
+      "assessment_sha256": "e15f4ad299a62c98d4df705f92fca32d777cc9f32f0ba8dcc83e5d71dd774df3",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55104",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "f448f77efff7c9b4607133b0b635bd787b3949187d43f34a4d6d6de544e50bee",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 0.00010891398579817511
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "f602f8c8c033ebcd9847d7c61d14a65425d61759b02b1e7880fe1036015b5e29",
+      "assessment_sha256": "c70818d43ee2f9acd7f531166dcbc95ea40f3aae1a7e58b3fdd14b32786d1f42",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55105",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "2a8e2689f4f1160bb1600100c7e91def87abc922dfcbf7d37f03e6be91b5077d",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 9.93393178279596e-05
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "e542f1e4f58089abd847924205bf0d2b548cf733cc680ae3e4f99fe8c315c073",
+      "assessment_sha256": "6f9e419fc5eb37aea54a9dbf3e8eeaddef5bcd3850d2f7199f5caa5a054f2be4",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55106",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "54934110c4327402c6f7f3f55c48d27ad050d153dbb25ca579c156113867ca75",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "always_silent",
+        "value": null
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 0.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 64
+        },
+        "validation": {
+          "timely_tpr": 0.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 32
+        }
+      },
+      "freeze_sha256": "507e54365414039e6f1f327a337f1539764aa78bf5590483f678933295c15036",
+      "assessment_sha256": "48efdb50038f5e97fd2d1b12de56cad2e5fab6ba005d0ebb599518235ae1199c",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": null
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55107",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "ee10663611c2b89e91aa3f64a0d99377bf6c8685b0741a96e981261e80900311",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 9.576478685927849e-05
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "63dbe46f270d37103feeff3ba883eaa3670a444404156565741431c8da9c6dc2",
+      "assessment_sha256": "bb4d8db5454748fa88bb9d77a831c1d5ede89aceca747b7175e39741e00ca986",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55108",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "6072e1b5cde8883f34e6e3dc546e9e0530ba208f92e95f1d27fcc72c70638f07",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "always_silent",
+        "value": null
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 0.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 64
+        },
+        "validation": {
+          "timely_tpr": 0.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 32
+        }
+      },
+      "freeze_sha256": "1b6bf38e65468f38fd986e92214f7cf6e20925077ea319a6e82757cf6bed7f61",
+      "assessment_sha256": "1ce65e8bd84e41b87c16e1427e43a99f01846ec2b0af965f79b9cb3eb6ac3ff1",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": null
+    },
+    {
+      "job_id": "cal_uniform_population_gru_55109",
+      "identity": {
+        "model_id": "gru",
+        "model_sha256": "983e05a41466601087270543ac5220956b2815677ab2a599a4bfff49e12b28c0",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 0.00013471625409457112
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "96afca5b392998cc039f835e71ad9265c1c4f51c5f76b7f8d07334ca2370917b",
+      "assessment_sha256": "1e822f58598113ab9a9f7d336baccfc4f340c2087646b3abf1747429a6a9479e",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    },
+    {
+      "job_id": "cal_uniform_population_circuit_native",
+      "identity": {
+        "model_id": "circuit",
+        "model_sha256": "6392fe2545ee0a926259912ec56fc39228f13df8b5641966927edfa0b34a573a",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "7f1a91526429e2d19cfbc58d385b679906ee918671c39279a4ce44c1d09a3a5f",
+      "assessment_sha256": "a3d3b9a13a1d7b3b3609e5f3d7050f6fec63b11ff999e490273d579a3d3582d7",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_circuit_stability_matched",
+      "identity": {
+        "model_id": "circuit",
+        "model_sha256": "6392fe2545ee0a926259912ec56fc39228f13df8b5641966927edfa0b34a573a",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "671ce6a45ede0506cd8e16ff0380790a120acf7c1fe9f26ba88c9ce02e59fc1b",
+      "assessment_sha256": "565514fd5da2fc1c9e97eaa926c76fd17cfcd1dc2143b62e9087af96c855efed",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_population_average_native",
+      "identity": {
+        "model_id": "population_average",
+        "model_sha256": "4cc3cfcb4e68a106ccc81a1ad706e8082fa6e168bd4c68b45eb0baee611e7f30",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "7b1055c83c2f3732ae6c36815c871b4738c009630029da0dc1a2a4df1ca5c311",
+      "assessment_sha256": "45cb9746182a22c0faf6be6baf30927ece65f8011fedc65264f0d5a01c92c381",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_population_average_stability_matched",
+      "identity": {
+        "model_id": "population_average",
+        "model_sha256": "4cc3cfcb4e68a106ccc81a1ad706e8082fa6e168bd4c68b45eb0baee611e7f30",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "fc527db6789cb085bdb3808238b351c7ad18feb6bc5c0bdbb86f96b62033458d",
+      "assessment_sha256": "53b95c1e0b7db47421a9094e7a75b73dffbe27434a3eb3359ac60d95a2c03967",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_00_native",
+      "identity": {
+        "model_id": "weight_shuffle_00",
+        "model_sha256": "a4e666bc76c702108923bdf7670de88d5bf4d36d8ae24708b3080352d04798ba",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "15f6ccb26aa71de0fbc15ae04e800a2621abfbe2965f44c467611e1aacffa506",
+      "assessment_sha256": "d9aad7fcc1cacbef10b3110b3cc57014340e5c1dad262c083554ef5452544681",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_00_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_00",
+        "model_sha256": "a4e666bc76c702108923bdf7670de88d5bf4d36d8ae24708b3080352d04798ba",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "2eec60e554bc9fd91631e5117a668d9e0882ec9b197ab4c6540b607491c479ee",
+      "assessment_sha256": "c10335af7e20811f9d096cbd2c800ea2b1b9829bc72fafc05d86f85d234cbefb",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_01_native",
+      "identity": {
+        "model_id": "weight_shuffle_01",
+        "model_sha256": "8e032758bbf8a6f506de0be3344c2ffc651ddc76a6bfe2bfdcbb5e546f3981fd",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "6ec3843148437ec49616714cbb35c0399787d77289a3c22648dde0a5f74e4dd9",
+      "assessment_sha256": "279b162f2c5a5c2823453db739d6b883b2e3ca05f6186529cab1ffa673ce50eb",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_01_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_01",
+        "model_sha256": "8e032758bbf8a6f506de0be3344c2ffc651ddc76a6bfe2bfdcbb5e546f3981fd",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "22f315be14763458ceff6cc86bb7329edd039cd184ce8cac5bf2ce883fc659b4",
+      "assessment_sha256": "01c1aae7947440aa5059d1db7c8653a92946708717bc5c775d7de630fc0434d8",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_02_native",
+      "identity": {
+        "model_id": "weight_shuffle_02",
+        "model_sha256": "ab138246c3a3080f6edc14c136710cf838a65c40600da9c47a90ea5a304dad5a",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "8bf5a11c3f19dd15e7b4080e4ae0c3c580bc69c8bbc78d3acff7ae787aaf592a",
+      "assessment_sha256": "3ab3e3ef80d5aa347ee5ba41b0967cc9743f9796704a103eacef0446b5efc585",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_02_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_02",
+        "model_sha256": "ab138246c3a3080f6edc14c136710cf838a65c40600da9c47a90ea5a304dad5a",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "a3eb1efc1d1d91050513a242c6a28fed7889719192cd63f640ca31194dde666f",
+      "assessment_sha256": "984962f3b3172766cea95e86fc74bbaf5230708003d959eb4511ffa44d74ea84",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_03_native",
+      "identity": {
+        "model_id": "weight_shuffle_03",
+        "model_sha256": "c21986b5441814c4479e3feb2dfe95e997410189ff77432b3e90226bc027bbaa",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "197b58a7fb010f037896c34ee18d526a93771e8effb924f1864c5666268eea0b",
+      "assessment_sha256": "21663f9aac9f42971d243c81bd1071948b07191cb2863c00288034c6ce24a882",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_03_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_03",
+        "model_sha256": "c21986b5441814c4479e3feb2dfe95e997410189ff77432b3e90226bc027bbaa",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "597ed7533502d37b7e67d6079345f0956ea083a6a850247f39c4565d604e02ec",
+      "assessment_sha256": "d615676c59ea509e074e1de6afdebe17887adbdaf1f96e9d7c8b87fc8954ade7",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_04_native",
+      "identity": {
+        "model_id": "weight_shuffle_04",
+        "model_sha256": "357f18e9e91f1205b5fe7911a2bcd0153e3d2fbc3aa382fb16815c4a47429af5",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b1ba6f3f077719a4e007edabe1d6befbf3a0d77a3e988ebd7d4d4beae0890a67",
+      "assessment_sha256": "f30399f376a716f570b20c56e608c3c92307af2b82ccd9aaace04af92b7df8d9",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_04_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_04",
+        "model_sha256": "357f18e9e91f1205b5fe7911a2bcd0153e3d2fbc3aa382fb16815c4a47429af5",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "90a1d05cd311872b1d74c83eece371b598f90b45bbaccfc1f4b0256021d5a815",
+      "assessment_sha256": "367f6f89cc0916928080544ed08c30c0f8bdb9ec86be7839e94307d8faef405f",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_05_native",
+      "identity": {
+        "model_id": "weight_shuffle_05",
+        "model_sha256": "44b9424bdaad023f4064d777a81e7475a8c8737cb7ad989831a9a1f5ff8f9652",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "8105408ab6a0e5015171df4a9e562947a91c6d9260d87b8ceb86356080e470c0",
+      "assessment_sha256": "a0f3f77a7cb537350d3c78693ef2b1a01e8f751310c42238f6c33bc520356c77",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_05_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_05",
+        "model_sha256": "44b9424bdaad023f4064d777a81e7475a8c8737cb7ad989831a9a1f5ff8f9652",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "15a050b3590b9c469ceed0b2d76454b0e930c3a01fb423c65f281f801bf99b12",
+      "assessment_sha256": "fdbaa36a4d7668dc0c8782ec5f630b7a0c0ab008bc0fc5bb95948f144d8df325",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_06_native",
+      "identity": {
+        "model_id": "weight_shuffle_06",
+        "model_sha256": "8342234cea0dc3212a37738712345c27674fe63f8f583e204decbee5862203f7",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "21c6dc4e5f24afe02533ba50cb73ed7fd2e8d4faa79e39b73d0d7ab2db154f9e",
+      "assessment_sha256": "d22ce2cf0ad727602dda757b99fb2c57cd6259af31b5683ca8aaf20f5f87969d",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_06_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_06",
+        "model_sha256": "8342234cea0dc3212a37738712345c27674fe63f8f583e204decbee5862203f7",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "9ab50b47e571fc304cc420770a5fed9ff81103bbc0f0cc497762a2246dfe7bb8",
+      "assessment_sha256": "a49874c1ff9e7dc13fcc71171059d1619e6c6037cb9f4e8e6d687f2be536d414",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_07_native",
+      "identity": {
+        "model_id": "weight_shuffle_07",
+        "model_sha256": "df3ee7160d372bd1a9d8caeb9f51288a45c9e8ba95aea4d05e1ae7d3f384f8f4",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "25a659d4b78e78e3771e454143da02bbe93d162c897cf3b6bd331fce346b2a64",
+      "assessment_sha256": "85d00c6f1b9b52bbde554de24adc179461afbe767163b23cbd1c2fc1307042e0",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_07_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_07",
+        "model_sha256": "df3ee7160d372bd1a9d8caeb9f51288a45c9e8ba95aea4d05e1ae7d3f384f8f4",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "a1a377a23b89af1991490eaed67458d1d0da8fffd8b0276265b819af7cb1128a",
+      "assessment_sha256": "8d247296f3580af1d1bd063ee9922967ff865782936182ebde0cda93b62208ba",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_08_native",
+      "identity": {
+        "model_id": "weight_shuffle_08",
+        "model_sha256": "b5600ff5caf8888827bfc98676e221236f3689dfac8da5199ddbf32d578e1d67",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b14c38ca0ae7af1af13fc9829bd4ceb4c4c032a3dcca6c206eed9529c94ebd14",
+      "assessment_sha256": "adf54b241c6af28da0c62d1afb99e8f7f0126c96ed1853fe793d016acab741de",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_08_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_08",
+        "model_sha256": "b5600ff5caf8888827bfc98676e221236f3689dfac8da5199ddbf32d578e1d67",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "93e21b411857047f432787007ace74b1a323092735b0946a9b2fddaefd19cefe",
+      "assessment_sha256": "a170150b6bd380c03c572d7c75ba7f6140a200a955bb20ad9b302f626fb9edf1",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_09_native",
+      "identity": {
+        "model_id": "weight_shuffle_09",
+        "model_sha256": "5853fa7fbb9e254e6fa643ee20ec052beb5a1900a8229f3200df15a2101239db",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "6b20d2aba68e8b929b052c5e3763b58928f67a36a2f3c3273caa957cdb1cea8d",
+      "assessment_sha256": "4d0ae4a6f61472ad66ac1e2d6edb67675dae18a28e1518010023d14ba33a4811",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_09_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_09",
+        "model_sha256": "5853fa7fbb9e254e6fa643ee20ec052beb5a1900a8229f3200df15a2101239db",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "d75cb711650d33891585606eedf8011bdc607473645deb8101d352680cf02cd4",
+      "assessment_sha256": "61cb9635569faae7439cd112b03e595e82e4a4b5f5dd0cef7c087106be6265ff",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_10_native",
+      "identity": {
+        "model_id": "weight_shuffle_10",
+        "model_sha256": "3529c4da068076ec6d08d5be777fe70ebd0f610fe6c2ba3b063c7dbcbe78e953",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "af28b709302de2d3aa6610efae849678bc006f985ce9c19c3d93f4976ee3e710",
+      "assessment_sha256": "13f135bfb9b6c03c931d60ba8911c1dcf7a5f85712d2d426ca26eef5f33e3f9a",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_10_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_10",
+        "model_sha256": "3529c4da068076ec6d08d5be777fe70ebd0f610fe6c2ba3b063c7dbcbe78e953",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "466f83ad8838a9086b15ae9ff4569fdb5658185c1f765467bbba728d0c6988d3",
+      "assessment_sha256": "ae4c427e374dd04c5e9f896e0f2f4e34761615c8d2b3f77414c943297d77a919",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_11_native",
+      "identity": {
+        "model_id": "weight_shuffle_11",
+        "model_sha256": "7cc5d9236d52aed3a89e3289abb838ea5ffbc64b4ca953d69b65099f7e4973d2",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "1b1ba9bd04235f5384447b238b7a27f858beb43561d02fa920716f21374aeecf",
+      "assessment_sha256": "dceff13eefee593312fc679367deeda0428dc53e8c58a133d6f16b3319492e40",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_11_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_11",
+        "model_sha256": "7cc5d9236d52aed3a89e3289abb838ea5ffbc64b4ca953d69b65099f7e4973d2",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "6dc05eb1810ec3060c1b2f42d0bc1caa0f5b59686766677e7bd0e48e7f57e57c",
+      "assessment_sha256": "3b19f503aeeaa6ce857002762009d59b074ff4cefeaef5bba841ca3d4b5aa31e",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_12_native",
+      "identity": {
+        "model_id": "weight_shuffle_12",
+        "model_sha256": "42cd30832ba94bc8d1bd876fcc38cb71a92b1eb62171b48687310d62feb5ba17",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "7e47a6d803d3a6d3604dd981a9269e437f03f2e06cc44e13050fd3d949b6b4d4",
+      "assessment_sha256": "77ef7afc2a9164743e9658a2ee639bc6fcd4c310f6b232f1915091031012f83e",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_12_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_12",
+        "model_sha256": "42cd30832ba94bc8d1bd876fcc38cb71a92b1eb62171b48687310d62feb5ba17",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "6bf1da875020494d1fecf6e9c3fb7b40f1c1cf899b48470c5347e965eb2ca3e7",
+      "assessment_sha256": "c5641a03f9552a0fb4b523b575aa1ddb676b3bcacf6aa21619b4947167f1db20",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_13_native",
+      "identity": {
+        "model_id": "weight_shuffle_13",
+        "model_sha256": "c56ffad2c218af0ee3eed4eeb5b353438036cecbdeac69bfcd648cd779cf36ad",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "ffc99225631ca4d7f32fa9f65d8987167026ef9126963c0894bd4973fc1e1d6a",
+      "assessment_sha256": "335166229a02f58cff1a76da75fd40a4c0176d3b5a874474f872e792d206f0cf",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_13_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_13",
+        "model_sha256": "c56ffad2c218af0ee3eed4eeb5b353438036cecbdeac69bfcd648cd779cf36ad",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "cf43d2d11b8268134d8e2015dbde5292618082e9101367eed2c67d492187b631",
+      "assessment_sha256": "910f4dc212989f2d37ca6cb2dfa7a10b04327e848f48a4edfae9f3c38d7a4918",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_14_native",
+      "identity": {
+        "model_id": "weight_shuffle_14",
+        "model_sha256": "debfeac93fe8ac9392ad1c85bfdd268b082ed5c1771dc054b6ea600692dd7da0",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "80dc1537fa9d761b338e1e3e16a69761695994171e0738a588397dab912e1225",
+      "assessment_sha256": "522ad2f79d84d3568aba30fb73d97b056dea54b4c6fe72c7bb12c6bb7f3bd250",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_14_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_14",
+        "model_sha256": "debfeac93fe8ac9392ad1c85bfdd268b082ed5c1771dc054b6ea600692dd7da0",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b9178644dd0cc58813c28260bd60fc5bfd9bf48c3670ae20933a0e803891274d",
+      "assessment_sha256": "54a7f16b4d3471761787eebe04e5f33feb12c51b93dca6d513841cb6acfedcfe",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_15_native",
+      "identity": {
+        "model_id": "weight_shuffle_15",
+        "model_sha256": "bae9898363a32d8737b83f8fcb22a6dae6b0cdfefd5e365b95f2d29787a7d9bb",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "e5477750814d69b51ceb03090d5c24f88242ebb831fd9b0eb258bf6cf89a4d19",
+      "assessment_sha256": "27e2471b213d894f99341fe890afa8d725ecc247c0e15562d65323c698ed895a",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_15_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_15",
+        "model_sha256": "bae9898363a32d8737b83f8fcb22a6dae6b0cdfefd5e365b95f2d29787a7d9bb",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "45170c23931f9414b25ea78c262e9643416682248661665aa5186df3515c6c3d",
+      "assessment_sha256": "a7c153788394c79af0730deb8c3efc464aa45290d70609785d563e251001ef6e",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_16_native",
+      "identity": {
+        "model_id": "weight_shuffle_16",
+        "model_sha256": "e6ca09a88a3155ab094d14737966ea4385a2eb76248cfabe6cc1de02d66820c3",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "1123055fdab4b92821fa884def2f53915b2cc40b7c493390e54f4de751bfe709",
+      "assessment_sha256": "b6a28dba3fa22c932aed42a5e9bb94a2a9da940f6be8ba2f7fd12439c2c3b582",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_16_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_16",
+        "model_sha256": "e6ca09a88a3155ab094d14737966ea4385a2eb76248cfabe6cc1de02d66820c3",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "9dc93df86d844e29eead239a70bf665063de171090666facf56b0403357b7f80",
+      "assessment_sha256": "0689b8898d03de44d7a345cfb9265a388a3f021182333aac1268a8415dd036c2",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_17_native",
+      "identity": {
+        "model_id": "weight_shuffle_17",
+        "model_sha256": "e0bee177ff007381429117311c7bd52d7f67619b14e70a247be3ef0f639356b0",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "f5047fbb78a42c4c8f317467d8240eb6a8594340d79238c581023836bc002c15",
+      "assessment_sha256": "abfec5c704e1936b257c57b8b3417a9d361ef9dfc0ec31722b9c9d609a1641ea",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_17_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_17",
+        "model_sha256": "e0bee177ff007381429117311c7bd52d7f67619b14e70a247be3ef0f639356b0",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "5154c647c9e8be229cb31d31a0369d208844ba833640b7d7bf428cab06a4b1ca",
+      "assessment_sha256": "2bf067f7fce80b9cb0545614b6f4d696883c16c028209ff8b90b37bfae2f953d",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_18_native",
+      "identity": {
+        "model_id": "weight_shuffle_18",
+        "model_sha256": "e3461e5321996301ad0729b33dcf011fbb2c23ea36833ae551f0800d8388fb8b",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "8d7eee2308149094623a88f4c915b6469893af5e26a9420c8abccb19483cc14d",
+      "assessment_sha256": "caacb9016312be30a5ef69f6df80a711a3df20746d7ad9440dd9116eaa3ebdc9",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_18_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_18",
+        "model_sha256": "e3461e5321996301ad0729b33dcf011fbb2c23ea36833ae551f0800d8388fb8b",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "c6ec40a6ae225024d51d6591d9e6fe077a640eecd6583531b5e31f40e03a1fb5",
+      "assessment_sha256": "c17df967318782b91b410c9cdaf02786149e2cef26c418a9d00caf3c9d150909",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_19_native",
+      "identity": {
+        "model_id": "weight_shuffle_19",
+        "model_sha256": "d57b1089148ed04fe81b9036d6da65b986e2fdca8cc8a6c51d01736c205de5bb",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "88ff0c6f02c6b98609dddbd2890f06e3cd20c7216253b85f6d5e22b36cdeca42",
+      "assessment_sha256": "993078a6542ef13218f14db08661cb8e63e1f43755091ea303ba73526453f3e5",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_19_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_19",
+        "model_sha256": "d57b1089148ed04fe81b9036d6da65b986e2fdca8cc8a6c51d01736c205de5bb",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "96e035e5f0d4c903daec44cd521d96f01e3c163f02d08f3bc9b859d63948b2c3",
+      "assessment_sha256": "811b47f7cf740c3dba31bde791e26c87be47b42324bf9587ca206ab0452cf048",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_20_native",
+      "identity": {
+        "model_id": "weight_shuffle_20",
+        "model_sha256": "37eb202d5d855d65f42b2e692c02295920425180adc1f0a1ecaa0bd1a9702422",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "d00612cb05134cde95ab32601f52a409cf61e2e503d1168362dfc002894853b3",
+      "assessment_sha256": "f72528a04bc6dc11d87f97f67017fbcb48e6bbb08c2f11ba2bcee4cd4477783b",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_20_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_20",
+        "model_sha256": "37eb202d5d855d65f42b2e692c02295920425180adc1f0a1ecaa0bd1a9702422",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "74699e5ad8a143e8facd3ce29235ce6c667829722af0563bba7107c38466cd54",
+      "assessment_sha256": "4d0cbc81d95a5a68c65bb053f5efeb52c4b7534866afd61ccb7681ab408cf754",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_21_native",
+      "identity": {
+        "model_id": "weight_shuffle_21",
+        "model_sha256": "09faa3d31a09aa600f920a30ef28d93448ed65d920072a44f4eac31e4ef1d21e",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "0d949c556531f38e968afa3eff0abcbaa81d53a06757fe975a75807703be0510",
+      "assessment_sha256": "c2f67565987bc199498cfa62e809173d392ad653c8ccfda6175c47babb6ec2b7",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_21_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_21",
+        "model_sha256": "09faa3d31a09aa600f920a30ef28d93448ed65d920072a44f4eac31e4ef1d21e",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "a17456e5ada39ce47d56b39e35273e4f48bc44995c8333df1a46d45357824ff5",
+      "assessment_sha256": "91694a35ea9f004e4608503429e53135d0f3cd82035d402642ddd12c43f80162",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_22_native",
+      "identity": {
+        "model_id": "weight_shuffle_22",
+        "model_sha256": "0f9ca79080f7e73c696c7fd175aea691f4c00fa3e18ce0ea240a427946118725",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "33537ecdbae0eb2792f727e2b4c2e33e5a78dc72db8652f93a250cd820fbc962",
+      "assessment_sha256": "58f44f8c43cfb451ca85e62ea1524b24dd864770859556e4c4dff1efebf59249",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_22_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_22",
+        "model_sha256": "0f9ca79080f7e73c696c7fd175aea691f4c00fa3e18ce0ea240a427946118725",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "2a10b9c686da98b7fdb4dde684c39d669eb7e7621b98902e437299ca9a9afa5b",
+      "assessment_sha256": "d57d41b4ef5a60361c13603a7be3966f140595e16e2cdc105e791fb1f57da61c",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_23_native",
+      "identity": {
+        "model_id": "weight_shuffle_23",
+        "model_sha256": "ca34c0791d84f5b7ef2980b0c0c2f0a3880bba7bcc2806ba722986f5915dfbdf",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b6d8c2f9b36b4c75564b43d35d42ea6afdc7635d5787af4f5a7f6b55a9be44f2",
+      "assessment_sha256": "93a40db3a1d922a272b5e8edfa475688384f43ceb4dc24e0e56504a662cea996",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_23_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_23",
+        "model_sha256": "ca34c0791d84f5b7ef2980b0c0c2f0a3880bba7bcc2806ba722986f5915dfbdf",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "481eb7d9256f38d884ab5c237c3b905c6b28a70888dd3ff39bdd25fbd3d79ae9",
+      "assessment_sha256": "50d44379fde7976eed9d46e38e40fe85ec4a6c07e730bb06b0656ee40e11251f",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_24_native",
+      "identity": {
+        "model_id": "weight_shuffle_24",
+        "model_sha256": "79dda728079aaec30a1f5c39c89cddf95a881eba9b27cc3f22407279724996c4",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "dd88efd77a0219acd8eb764dd6a149b2369dc2da1f616ce230a1ad9345083e84",
+      "assessment_sha256": "6b348cf6e9747acb8bc291560e840ffb945015f808a42353c47e50f540152395",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_24_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_24",
+        "model_sha256": "79dda728079aaec30a1f5c39c89cddf95a881eba9b27cc3f22407279724996c4",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "4797ae0f9c01afccddbe5d6fce59e0457869a8012c2d0463d7a1059cc2dd2fab",
+      "assessment_sha256": "36890e99d803fb32d0f6cda57e5b80b1e02b0bdeab7e9b5b6f2f909855e71c81",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_25_native",
+      "identity": {
+        "model_id": "weight_shuffle_25",
+        "model_sha256": "abcf459ecbcac0a8407854d97f126420c7ef37fd68babb721f895125b03f10bb",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "9d49fa5c49443c4943aed5dc7102041905d79fc6961ab05fd2f66d2a7fab8bb0",
+      "assessment_sha256": "4c4cf0282d2fa9e3e11c5cb54310f83930a619110b7723d8910a51c3b73350cf",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_25_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_25",
+        "model_sha256": "abcf459ecbcac0a8407854d97f126420c7ef37fd68babb721f895125b03f10bb",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "8906d004dda59e4836c1062eba54fe3a0b7b5cb9c324681bb593593d78f8d7fe",
+      "assessment_sha256": "5e0b0571bd6fb2ef5f78d3d1bf15ba4a1047534267058a1bb472cc4da302a052",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_26_native",
+      "identity": {
+        "model_id": "weight_shuffle_26",
+        "model_sha256": "831e1ea11c44b7f08ac410e1d7e1c5ae6797ecee818bdc1db6c3c5551ac7de64",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "e26042c955a6e92df090e46a0ee3e5a8ce5a78c4da12d998f0dcacebc76f0ee7",
+      "assessment_sha256": "65e14f9666e5a5444c178d99ebef8f5fe6f95f0860bcd5bd560d9c4582277a04",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_26_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_26",
+        "model_sha256": "831e1ea11c44b7f08ac410e1d7e1c5ae6797ecee818bdc1db6c3c5551ac7de64",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "f48459ea738159f2eef10d5fef886d1353ed2f102144f54cab887eeaccaec982",
+      "assessment_sha256": "40aa62d0d3360354ce2082d56a6bcc23a85c2c2f598e4eadf2d98bb003c4acf1",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_27_native",
+      "identity": {
+        "model_id": "weight_shuffle_27",
+        "model_sha256": "57771f6e914c9439eef81111f892fe9dd70080cbdf56110e19808a69f75fbafb",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "a7af9626427c3cf628f9ca410a466859ba28109821f0e434ec9962e00a28dc92",
+      "assessment_sha256": "21f8ec67307fda6b1f5318ad9aae8a9d40693dfdab35035a186a4a6eb528476e",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_27_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_27",
+        "model_sha256": "57771f6e914c9439eef81111f892fe9dd70080cbdf56110e19808a69f75fbafb",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "805bb946ec10c9ebafae67c2b18ca483e24946ac9c54b737f3d871f52e2d26ad",
+      "assessment_sha256": "102e1da73f705257548a14e72824eefe051cc50cdc4bd9a527a3e2e630dd2a39",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_28_native",
+      "identity": {
+        "model_id": "weight_shuffle_28",
+        "model_sha256": "6c1fbf5a5a14adfe38bf4c315a51c8e54cd0f10b98209a9d00831dc75a0d054d",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "da558bab3620b855a75a586061588ee19910b7db4634dcd942bd2d2accfd5b4b",
+      "assessment_sha256": "93fdb886bd210bee6c1d6ccceae132b53461fa86e13a935b38dc02e7c8c34f00",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_28_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_28",
+        "model_sha256": "6c1fbf5a5a14adfe38bf4c315a51c8e54cd0f10b98209a9d00831dc75a0d054d",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b1f65279220c3b6856e79aca7aedf458de58f33f05b806eefaa80d1872fb4431",
+      "assessment_sha256": "91bc2afde33bcb2bdd38e8c527979cb8bf01711ec46d5ad091fea4dedb2435dd",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_29_native",
+      "identity": {
+        "model_id": "weight_shuffle_29",
+        "model_sha256": "3f53c8c5ca5464d2417587914ea7c58f00316abc8483d70831220c89266598c2",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "be26fbdeb59fdd28e1d42f518f26bdc80548b559a598b2c9f6459886be431698",
+      "assessment_sha256": "e297faaf1d04889849a9eb7b3de48add504fb6ca0bcf585144db589bbfce4cf4",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_weight_shuffle_29_stability_matched",
+      "identity": {
+        "model_id": "weight_shuffle_29",
+        "model_sha256": "3f53c8c5ca5464d2417587914ea7c58f00316abc8483d70831220c89266598c2",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "541c0367564995d70fd46d6f27a3eace3978a57fd7ae422bbf9f7191b1b17dd3",
+      "assessment_sha256": "63a8ed551190e924f6d5395e32b88593356c54d7da765b987d0c0c7e4f77bdae",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_00_native",
+      "identity": {
+        "model_id": "degree_rewire_00",
+        "model_sha256": "50cbe179fe9dbef58f40b7c5b2afe86e1cda77e1c493fc59dfe907c629778f39",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "819f53d391d6e101f78acfa74c623af2161e7ec2cf3d409be78d7a3ec19321cc",
+      "assessment_sha256": "f966f4e6d8da1b946f880c7eb77b7bee84c32f84eca8b2c0642b4a44cb2b76d6",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_00_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_00",
+        "model_sha256": "50cbe179fe9dbef58f40b7c5b2afe86e1cda77e1c493fc59dfe907c629778f39",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "d1a236b0ec6e1b1bb5857a6cff6fb00c0ff3bdc384240a4467a5a5a0ef1e0e0e",
+      "assessment_sha256": "5ef165c4e5a060b3e6f9c5183398611937c8c1f15feda86eac549f1209a2c40c",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_01_native",
+      "identity": {
+        "model_id": "degree_rewire_01",
+        "model_sha256": "b5fa8249bb58d5b9dc520294af9f65f38d4d8c8125bcedc9663daf2621a33e00",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "812e0e10770ba53d0a4bff3e21abd9972346f0384b12d6c4387df5b3eac7639f",
+      "assessment_sha256": "4ae14764fd23b6bd6f93bfe177a64652f7648f7d92cd73f9f1868424b9de7a48",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_01_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_01",
+        "model_sha256": "b5fa8249bb58d5b9dc520294af9f65f38d4d8c8125bcedc9663daf2621a33e00",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "5de817d6bb12924d7cb7ee1a3a3f339d6b9e57b040fe727fbdc517de95898261",
+      "assessment_sha256": "f634b89ecf3e317720e286935c04b7788efc48b03e07383c175d8a22ec7e1a70",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_02_native",
+      "identity": {
+        "model_id": "degree_rewire_02",
+        "model_sha256": "85709e256ecb6bf7a37eb65b767d471b243e994198a78c853aec78447ea06421",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "c6c3eab0582a9f9f633c067dbc050043f878fa32788caff1cddfc87835fc64d5",
+      "assessment_sha256": "e9ba1b7af1e8d8e680930223e0fb2cb6b7b40d175facee2272be0b283488d59b",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_02_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_02",
+        "model_sha256": "85709e256ecb6bf7a37eb65b767d471b243e994198a78c853aec78447ea06421",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "a38198177237d84413d4afb5d9ae02e4e5505401312843d881f24f26ea9b7e53",
+      "assessment_sha256": "b700995b1d428e3469cbfee0eebd5b2f0d0ff58773329ba44646559dfa0079b2",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_03_native",
+      "identity": {
+        "model_id": "degree_rewire_03",
+        "model_sha256": "45cb3d90d59dd17fa3f53ea7570bc17cd0a4b0b7debf5b862f18ce0b18398ee7",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "0550c484dafaa5fc22a1a7bbea99bdf0bc03862ac0d7da7c5482a22e5e368c72",
+      "assessment_sha256": "fd620f19b24587eb9f97024647db6582857d1441ba3692f591fdabf261d573ed",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_03_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_03",
+        "model_sha256": "45cb3d90d59dd17fa3f53ea7570bc17cd0a4b0b7debf5b862f18ce0b18398ee7",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "0edbe8edf1159fead3c352a905e2a909dc3dea2d20660d2b6f1a3122d22f1920",
+      "assessment_sha256": "c0597b6de173d9f9960f1d23d567f4dd8b07f9b0369056c4898bcf1629995f74",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_04_native",
+      "identity": {
+        "model_id": "degree_rewire_04",
+        "model_sha256": "8358fb12712b52d8cd01688a6c57b1091e683ac7a311b8950f1efdc0a907591d",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "aba84739bfefe4f304fe67815b94eda9e181c5f7dce007d7c10c7cb1309e06ef",
+      "assessment_sha256": "91b7c6a2b3752ccd530dbc4b58552711fd18f31ab115059afa5b15a7bab9d1b8",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_04_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_04",
+        "model_sha256": "8358fb12712b52d8cd01688a6c57b1091e683ac7a311b8950f1efdc0a907591d",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "e95f1dde61f4ccf8cbf04fe5991d66e4aae5f27a8f6ffccebab89795c6b97af1",
+      "assessment_sha256": "70fe3e3b355bf0a605115050b9a8815c73e803978a0b98b155b2127a006aea28",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_05_native",
+      "identity": {
+        "model_id": "degree_rewire_05",
+        "model_sha256": "3a9f070c684ab9b5c71bbd56db16cf8c56f744ea1b8dc0dca1d0531d106469fa",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "918e1c34c130d725827b1bc474084bafc2904d86ed04efeb0ed01675d989c24e",
+      "assessment_sha256": "d20e39c43c7cdc4ea5f4aed42ba836f5ad1cc25d4fabb50308e9d7cf28a39a85",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_05_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_05",
+        "model_sha256": "3a9f070c684ab9b5c71bbd56db16cf8c56f744ea1b8dc0dca1d0531d106469fa",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "5aa0f7ae27203bbf3479ccdfb1cfdf294392fd4a05075acf4cb6169a75944167",
+      "assessment_sha256": "ded252606d7e55869d590249eb3bef486533e5dc2b75cb87fa6775310c12b8f4",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_06_native",
+      "identity": {
+        "model_id": "degree_rewire_06",
+        "model_sha256": "dbbe61cd0bd2a79bac3b8a9383b24f23f4be9d0435e3806aa9b8a278134a5bd5",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "9e7c11c8019b87f7309636f16f2b0310ce09b96ba382380ed21ea65a07288cae",
+      "assessment_sha256": "d20c601eed57d72448a61c10d10a7b7f02ac8230c433ba72be1f1921f0dc9b86",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_06_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_06",
+        "model_sha256": "dbbe61cd0bd2a79bac3b8a9383b24f23f4be9d0435e3806aa9b8a278134a5bd5",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "d9c72f3c41b3a7d5580fc647ef0bc1d698567df6d62bf84c3d8adce3112a1355",
+      "assessment_sha256": "46b4d3548de14a08cb9b622598086d148705d213954406d16dde8b93d008a82c",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_07_native",
+      "identity": {
+        "model_id": "degree_rewire_07",
+        "model_sha256": "4adef8ccf0813cfdb843cc579e84fdfc4861188345ecff25aab24e0fa3d04085",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "1e254479fc12795c6a1d34f8c3da07adc6d0e855d3c8c8a754eb4fca7ba5ab66",
+      "assessment_sha256": "05d436ee2854b8a1e76760f45cd27a381f151748f8e57a4148e71fe4395cdb11",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_07_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_07",
+        "model_sha256": "4adef8ccf0813cfdb843cc579e84fdfc4861188345ecff25aab24e0fa3d04085",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "cadcc706b5bbe3bbad5fca9b1d07c3839253a7d6ea6c525730913064be867b01",
+      "assessment_sha256": "2a324ecb551d1b39dc1a48ff066b180e4402ee58613b9397450cc88dd200cb33",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_08_native",
+      "identity": {
+        "model_id": "degree_rewire_08",
+        "model_sha256": "f3fa613ef8d576bc18645654bf9bff939e8fb8953e1bf6b2e94815eb5d9477cf",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b366eb838877da092d9548bb60c91024a03f71a2e743deff2914b1e5ff98c62f",
+      "assessment_sha256": "642e8775cfd3f9a3387581a7c2e576debe69834c7f9e6eab4222aa941e15935b",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_08_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_08",
+        "model_sha256": "f3fa613ef8d576bc18645654bf9bff939e8fb8953e1bf6b2e94815eb5d9477cf",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "ee2f61eb8b08c7c7549c762d1a1341eee6236d428ada6b25a592df1b0b5c585d",
+      "assessment_sha256": "f91e8c49f053fb50545fdbb3d87a0adba8abd6d6508df9867c1ea2b2ced601a1",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_09_native",
+      "identity": {
+        "model_id": "degree_rewire_09",
+        "model_sha256": "28e0818773bea5d518be87148c763478a1850099662f6378a04da47f93b83f1b",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "426cac70d0d302a91465b6fa18c2e10d74e606ccf5765ad55d7e65dc38349c1e",
+      "assessment_sha256": "da42c9b30499f7c5bf2cd01393e607cba65f93f7462d8c4b5a432bfd2f9267b2",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_09_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_09",
+        "model_sha256": "28e0818773bea5d518be87148c763478a1850099662f6378a04da47f93b83f1b",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "c8811b8e3d9bad2e65303b417e5775171c9eef5dfc19ff1398673232878027c2",
+      "assessment_sha256": "58068f26fc38b7acb6ef436172dd26d98e39e10452f66e5993045131d551c466",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_10_native",
+      "identity": {
+        "model_id": "degree_rewire_10",
+        "model_sha256": "594cb3fa27102813c9dacd2e7390a00213a31c24750692365e6340682e7f4d05",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "c5391ddc040561a79fd1dd2a1e3913a3a35e5a2d6b5dda746ffef2fea69d73c7",
+      "assessment_sha256": "a430ebb1a2619b1cee7137f9fbb2d98652068a541af6e3ecb0df654bcdf6b8cc",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_10_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_10",
+        "model_sha256": "594cb3fa27102813c9dacd2e7390a00213a31c24750692365e6340682e7f4d05",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "f9778ec7fe4e3acebd82eba940e97e138896aecee0c227cc64e57b8549364839",
+      "assessment_sha256": "d462b001f76ad75749220e39603d1507b33168b23391728c7dbc3c3ead15eff0",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_11_native",
+      "identity": {
+        "model_id": "degree_rewire_11",
+        "model_sha256": "8ffb291095a92d571a55ec30b80153c7b59c5c763003eb13cd7a456973db27ae",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b80fe6f5076c633b0d84686d1878756fe59a2ddf6772588241ee2be49311f0d8",
+      "assessment_sha256": "5a9e64b82bd6a0402c9181237c088566be2c14da4719c318002360cb626d1682",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_11_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_11",
+        "model_sha256": "8ffb291095a92d571a55ec30b80153c7b59c5c763003eb13cd7a456973db27ae",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "f9c7c4ca575781e4865d1b101260baa877daf1bd72d4887bfb99ca4a1937af16",
+      "assessment_sha256": "cbd34017d12e946ee4e63242eacde45b8c66549e6a996426c91ebb5e89a1c490",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_12_native",
+      "identity": {
+        "model_id": "degree_rewire_12",
+        "model_sha256": "92c57a69ab66a8e3397274dafc524b33d7f50a4b79e30c47738e1c98a451f15e",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "fbf821e74a7c60afaef217d7d2b6aa5474fc86e40c511eefe52d62a11ca1661c",
+      "assessment_sha256": "f689c8598bb18f656f654bd74ca3f08b053732e12e05974201ae8cd859bbf0f3",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_12_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_12",
+        "model_sha256": "92c57a69ab66a8e3397274dafc524b33d7f50a4b79e30c47738e1c98a451f15e",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "7a102597fc5b2ad1d2098867f1c8c29a3ce2cc3b3f2839bdd7f7c71cb36e73fd",
+      "assessment_sha256": "0e8c2ddb802c5f30bfab4bf7a09a76221f2eb4c768e302ed16def7f7b122de40",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_13_native",
+      "identity": {
+        "model_id": "degree_rewire_13",
+        "model_sha256": "cda7333b719e3d03454abef270d244dacddc89a870e09f41538ac75c840398f3",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "d5e10fde5560a8901a69db9f3ba4132b5c60f9cd931a2fc62a59b9f79a41490d",
+      "assessment_sha256": "59babf63aff3b1265441a04c3b296aaf0d0dfd5c0de06b6a97e82fecf808eaad",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_13_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_13",
+        "model_sha256": "cda7333b719e3d03454abef270d244dacddc89a870e09f41538ac75c840398f3",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "4d62a978da730dfab2dbd9581e9c9dafc462b050c289172a676e7d36df29c453",
+      "assessment_sha256": "f8f5bd7a1027baf6db9a6f67bc5d68b80ea4b5a0c98aa0c5153830fb565581e7",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_14_native",
+      "identity": {
+        "model_id": "degree_rewire_14",
+        "model_sha256": "4aba25bf1bfcd7afaa2a94483556cf9ee64220ec291c25c7f704f90ecfb81a74",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "9c4adb7f68b900e41354c0654c74a9ec5072a3efcc63f70983a43be64c6d4ee6",
+      "assessment_sha256": "43a3b798fe3acd6371c399febce84511930579c3da7625fb23eb841f1c368f01",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_14_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_14",
+        "model_sha256": "4aba25bf1bfcd7afaa2a94483556cf9ee64220ec291c25c7f704f90ecfb81a74",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "1243c59928baac08f2da3ca5908315fc69fffe4afc850c5cd5b448c71535c795",
+      "assessment_sha256": "84f158cd939bdfd91be68462600592b1912d809fc33cda3480cb838f80116948",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_15_native",
+      "identity": {
+        "model_id": "degree_rewire_15",
+        "model_sha256": "abbcbbb3d4971f89594b43d9ef65ae00858bd604df8462f366d2ba02f99ac4b3",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "d9a32c10e2ff0c4d21cf23b8aff81a6fd35ea2207fb191262522e2c8da391902",
+      "assessment_sha256": "cad0c2ae5ebd1e6a5026da8dc5a164aa90b071b6757d9aaf018773a5daec21b2",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_15_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_15",
+        "model_sha256": "abbcbbb3d4971f89594b43d9ef65ae00858bd604df8462f366d2ba02f99ac4b3",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "40aba2529799f1ceb019760c3c08b211ca594f2ee86fd0595c4e55522fbb73c7",
+      "assessment_sha256": "3279b52355f797078f5ab3b4efffe901271272a413c5154d82f786a3f4f60382",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_16_native",
+      "identity": {
+        "model_id": "degree_rewire_16",
+        "model_sha256": "6969ce43da8251bf5e5cc739ba2682b82b3e56617c340a3fac5d39e164733f5d",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "fc7b75df0bf9e2d0bba3193ecfc50adf9ea58378c8abee0cc189442e9c5e884a",
+      "assessment_sha256": "9092143298f829ff45e9c1d019ff8be084834637d498d4d4e25857ed5391e0c1",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_16_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_16",
+        "model_sha256": "6969ce43da8251bf5e5cc739ba2682b82b3e56617c340a3fac5d39e164733f5d",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "045506cb4b85ba1c5ea4067f8986f196e6ef4956f0e761ced487fd519807d7b2",
+      "assessment_sha256": "b5483a91e0a7e847baeb326c0ffe2e55bb14d19c1335497042c6ee59d27b9466",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_17_native",
+      "identity": {
+        "model_id": "degree_rewire_17",
+        "model_sha256": "876ace15562f2789c52330e63cdb90aa7d8738084934976c04d739e001f78bda",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "685f224325ee11b936fb0f76039bae49371f695c7b71f9699f58f15c6a1a99ad",
+      "assessment_sha256": "8792583b89499b83be081d5836a577f215d935a69e18372094c3bed3154e674d",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_17_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_17",
+        "model_sha256": "876ace15562f2789c52330e63cdb90aa7d8738084934976c04d739e001f78bda",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "033ad471b2a621ff9f82c45e22d5809e2089c186be771aa629a464a2ab06d514",
+      "assessment_sha256": "5d88920cd525a588976d429b0dc85eb087915ec06d441abcf4c477eecf729fc7",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_18_native",
+      "identity": {
+        "model_id": "degree_rewire_18",
+        "model_sha256": "89c09a8978e09904850f9ef9eceb909a5a7668eb36f7148b5a66fe289d0516a3",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "eb8f487f6c59163cd45f6ac4eee918df881366039603f006a1c53ff83f5f1a1f",
+      "assessment_sha256": "fe93335961bcdbbbdd93a97fd4d96ff48a8711f4cdb4faf49c81a1d8c779ea13",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_18_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_18",
+        "model_sha256": "89c09a8978e09904850f9ef9eceb909a5a7668eb36f7148b5a66fe289d0516a3",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "36ee7c1a3c174abeb37d0f9bfe0258480f722057bc3b513bad3caef9819eee9c",
+      "assessment_sha256": "816b9edb0c17d58c419f288ac68d79432757487b0bcc3bbafa3394c266290600",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_19_native",
+      "identity": {
+        "model_id": "degree_rewire_19",
+        "model_sha256": "8e9bbfc09c2f7011f396dc994bdc90b9fce045cefcb0c84081c33db36aaa408f",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "c00106045af7741b8fd328ed0ea72d48ce63e9f7df216a06b2c7a66b44f68512",
+      "assessment_sha256": "8fd65b24ca2b104f8975301f3f9e8bf47c422e947d0ce101bae44765eceadb74",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_19_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_19",
+        "model_sha256": "8e9bbfc09c2f7011f396dc994bdc90b9fce045cefcb0c84081c33db36aaa408f",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "da1488945fd4ae6695a3a623b54bf97e2830641a78a180d343f6bca6bf8ad37c",
+      "assessment_sha256": "494f801e1ff730da85be4bc560328419dcfcc8617a0f56970f7cc75665fc419c",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_20_native",
+      "identity": {
+        "model_id": "degree_rewire_20",
+        "model_sha256": "00dd90d44acb171cee7502b3e146d7784acd5e1361e29a0b9955bf3de1891e64",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "7cb1b5825117513e5cbe1e2a337bf48a598a96c7aa06a579edd45ee85285cba2",
+      "assessment_sha256": "ec3d2a7f411c458de0505f2d9762cb351b12c8cbbdfafe8f6f4203d992553574",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_20_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_20",
+        "model_sha256": "00dd90d44acb171cee7502b3e146d7784acd5e1361e29a0b9955bf3de1891e64",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "d23cd94aeb00caf6f80bcd3698642610dbdcadd4cf1ea1048d85793320f40613",
+      "assessment_sha256": "d1f6a1e2eaf6bd3bc74ac640eea401c8d3c51ec111099b670e686c30c97fd3da",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_21_native",
+      "identity": {
+        "model_id": "degree_rewire_21",
+        "model_sha256": "ef57c226d529f4e6c22eb364ba5b28656354f3cfcf7420a59806061be1434397",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "50528430e5fdf331aa133d15a8b2bf87dda85161f1d444a6a18b6c2a06943e71",
+      "assessment_sha256": "4a5c6c9e713b0582b2c2619f8c134583392471801b6566010afb8cfab8241e0e",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_21_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_21",
+        "model_sha256": "ef57c226d529f4e6c22eb364ba5b28656354f3cfcf7420a59806061be1434397",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "0fa74833210e42611ba733b297f46d71bf2f3147835b1e9f2dae35de07f8660b",
+      "assessment_sha256": "4bec77c4a457e4299f2bfc79ebfc24e0000f7dd40bf042dda73f85c2ed9b0064",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_22_native",
+      "identity": {
+        "model_id": "degree_rewire_22",
+        "model_sha256": "e720829fd0c657cb5edf3ec529c762e678751de38e561ca9e844fc2e684809b8",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "756592d0db9641d2ca112f7e070c407c6eaa6fe5eea7679f19dce9dba069919a",
+      "assessment_sha256": "5676e3742d8ae490edeff1ddb919a15c805a5a149483bbc934f5d03966178bc8",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_22_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_22",
+        "model_sha256": "e720829fd0c657cb5edf3ec529c762e678751de38e561ca9e844fc2e684809b8",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "f34eba07e8ddd2f2316728d920c6b702ab3c60b3e4b27f44645fb7de2351390a",
+      "assessment_sha256": "cb3e037c5e44ad5472827ba5e2649b41992b25d426880f369333c111f928df29",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_23_native",
+      "identity": {
+        "model_id": "degree_rewire_23",
+        "model_sha256": "4879d91f93b820ff5f015e4324dab9ba51aa50dc70a02e5a692822aca92330ae",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "09a492ca297e3398cc1276fb01607e3297fd3f48ce003e2958b19ccf40b7cea4",
+      "assessment_sha256": "046e36027717f9147bc8687e2b22aea1c16d1da469db41c1cf6197819a9caa40",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_23_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_23",
+        "model_sha256": "4879d91f93b820ff5f015e4324dab9ba51aa50dc70a02e5a692822aca92330ae",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "f09c7a6639c3dd42455f4328cc65a3e30af8800da026989d63fa30923f23149d",
+      "assessment_sha256": "e95a83a26195a717185f5ab78219d4dcb863bb83b7d589b101360afe256ee3f0",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_24_native",
+      "identity": {
+        "model_id": "degree_rewire_24",
+        "model_sha256": "3c82dd1464dfba40ca57e36208536d162e15663706d64ad2bcba7011167559f9",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "2d667cb654d2fdf7a852efefc5d3ce893a3c98a312074cc0aad82613dbb800cd",
+      "assessment_sha256": "b7a5a016ac6b6cea6afc2a70bddc4389f441ee7a912670460b4f1f086a8a012c",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_24_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_24",
+        "model_sha256": "3c82dd1464dfba40ca57e36208536d162e15663706d64ad2bcba7011167559f9",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "a9ba72379a81d5fc7e23c59f9e755417d670c283976bc5ca17803efef652790f",
+      "assessment_sha256": "6cd1ffdc312ea7cb64fe5265b3db3000917c29f143cfcf683c2a3191f33aa611",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_25_native",
+      "identity": {
+        "model_id": "degree_rewire_25",
+        "model_sha256": "f258824e3283ed094ae0838842e025e62b78511e197a61332c21d06639e5a3af",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "1fb2f5c0aa1c43aeccd1ee4b919f86c61af4444320b1fb4d41ee0f644f840183",
+      "assessment_sha256": "5e5baa34db2a334927f26c1a14adcee8b02b351434aab071af88716a4ab7a9ed",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_25_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_25",
+        "model_sha256": "f258824e3283ed094ae0838842e025e62b78511e197a61332c21d06639e5a3af",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "cf362a98b731b0d2a67ecdeb2bfd80acc765fbc5cae45bf900a85230094d9914",
+      "assessment_sha256": "1aa216e640e862c8ecac43c643c434d75e39467c2ac6578a532abfa4446212df",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_26_native",
+      "identity": {
+        "model_id": "degree_rewire_26",
+        "model_sha256": "f20b6b3b17f4cac3db8c08bffcbdd36f74d6f41d060e2c8e01d8a84e1b2d3f5c",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "0ba4519d7ebe817d13fd69004f1fa5a4f34ed623514484ffce3408ad0faa0dfb",
+      "assessment_sha256": "5314db8c1b8f140b878171374e666e3e0f579d1a32b83acb71e3b0d8146ef72d",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_26_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_26",
+        "model_sha256": "f20b6b3b17f4cac3db8c08bffcbdd36f74d6f41d060e2c8e01d8a84e1b2d3f5c",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "bfb630401e851a36e311ba9af9cba5f7450a92ba7b8673649f62c4f76a019e25",
+      "assessment_sha256": "e74cdecd1b923b6b34f88e7d542b57c3af53351500735fddd5e30ce045d87c20",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_27_native",
+      "identity": {
+        "model_id": "degree_rewire_27",
+        "model_sha256": "4c4984f132dabbbd32694ed29db73a2798d735557fcbeed01d61490ddc3d532e",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "7d1d1f3c2a33555928383df77cc708586ff78da9467c02218bd20c5976c10d4a",
+      "assessment_sha256": "d2efb00a3d01812ec06929258ce6a46a63fe000da72c58df46d03cc3ac5ddd6d",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_27_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_27",
+        "model_sha256": "4c4984f132dabbbd32694ed29db73a2798d735557fcbeed01d61490ddc3d532e",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "16f1bb781802f30c9450dbbb50f4f694d5fd6413a4a7971aa438558a1e62867a",
+      "assessment_sha256": "32157f52cf7480c5ec8d37790ff44ad9e507b63c67ac023537bddb2f0e613224",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_28_native",
+      "identity": {
+        "model_id": "degree_rewire_28",
+        "model_sha256": "9af7209218393bc62fa30ba73f68649867f73e5b6dc94f383f188c4e60029495",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "783f114bc12edfd3860750eba3b157d6abc3cd30344755e0a10350dcf507298c",
+      "assessment_sha256": "d1ca10c82fe0ad3076785fa51e0d86558764cce1d145f882918de0b2c5eab5f2",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_28_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_28",
+        "model_sha256": "9af7209218393bc62fa30ba73f68649867f73e5b6dc94f383f188c4e60029495",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "2ffd20f4bca44f7b4592ff2787b32c3beb2dcd9479b8fbf8e3c9c7a5f62540bb",
+      "assessment_sha256": "855e804d12716c179c5242da867c557274482ff53debfc3f8a5092b90cc16a2e",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_29_native",
+      "identity": {
+        "model_id": "degree_rewire_29",
+        "model_sha256": "af4b8641580a39ad24c9c32f1584c2da0de06cf35eadf842f54ccf5a99ecbb24",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "b2c1ddf90b29470c068c192de3ce0fec2e8c2bff601535816070d1695701f581",
+      "assessment_sha256": "dc9125c0847ad643df16c27df4caa57a2a14858444943d263e8a503b6fd7dc73",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_degree_rewire_29_stability_matched",
+      "identity": {
+        "model_id": "degree_rewire_29",
+        "model_sha256": "af4b8641580a39ad24c9c32f1584c2da0de06cf35eadf842f54ccf5a99ecbb24",
+        "gain_condition": "stability_matched",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "16c998ab79baa6c27257dce181b547a3b4bfe93dc436220955fe6575e69d21f3",
+      "assessment_sha256": "634fd3e306fafd58b9123cce77883396192d9dbbbd980ffa48dbd466acb95649",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 72.0
+    },
+    {
+      "job_id": "cal_uniform_population_feature_only",
+      "identity": {
+        "model_id": "feature_only",
+        "model_sha256": "6ce573ddffebf4232cda774d321761cf5c4ef4b4668639a89d955d323adb5b19",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "3a2b48442116fa965f394115de9aaef7335f67334147b442d9e7685388f7adf8",
+      "assessment_sha256": "4a9c65877ba248996b26ac3df96d9a7204a8c0732dae319780e1d032c1e965de",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 70.0
+    },
+    {
+      "job_id": "cal_uniform_population_linear_temporal",
+      "identity": {
+        "model_id": "linear_temporal",
+        "model_sha256": "d233c571b0171839aac5867ea37b957499fa3929974db6b46b706fe1585dd9b8",
+        "gain_condition": "native",
+        "mapping": "uniform_population",
+        "config_sha256": "27bf90b03199fb4b58a58ac65689f336fe187c53a1fbb30eb58de19b737ee287",
+        "duration_ms": 1000,
+        "dt_ms": 1,
+        "input_scale": 0.4,
+        "persistence_ms": 20,
+        "decoder": "first_event_latched_closed_20ms_half_open_episode",
+        "initial_state": "zeros",
+        "warmup_ms": 0
+      },
+      "threshold": {
+        "kind": "finite",
+        "value": 5e-324
+      },
+      "metrics": {
+        "train": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        },
+        "validation": {
+          "timely_tpr": 1.0,
+          "full_episode_negative_fpr": 0.0,
+          "early_alarms": 0,
+          "missed_positives": 0
+        }
+      },
+      "freeze_sha256": "810028b7022de689d89802206857d4954f12cb1e319a888e4e3c366049114a13",
+      "assessment_sha256": "3f948b33df509a2d1ddd564dfb4dd0ca2ea6f9e043e3b6cbef0353cbfa34956a",
+      "max_clipped_fraction": 0.0,
+      "candidate_count": 2,
+      "median_latency_ms": 71.0
+    }
+  ],
+  "scope": "Independent replay of cached training/validation scores; no model inference or new threshold conditions.",
+  "held_out_inference_runs": 0,
+  "production_files_modified": 0
+}

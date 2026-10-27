@@ -1,0 +1,7 @@
+{
+  "status": "FAILED_GATE",
+  "task": "engineering",
+  "error": "Engineering tests failed; see /private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-g7zsy6ud/connectome/Results/phase11/results/engineering/1793003282955246000/tests.log",
+  "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-g7zsy6ud/connectome/scripts/phase11/runner.py\", line 32, in run\n    verify()\n    ~~~~~~^^\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-g7zsy6ud/connectome/scripts/phase11/engineering.py\", line 33, in verify\n    raise ValueError(f'Engineering tests failed; see {directory}/tests.log')\nValueError: Engineering tests failed; see /private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-g7zsy6ud/connectome/Results/phase11/results/engineering/1793003282955246000/tests.log\n",
+  "held_out_inference_runs": 0
+}

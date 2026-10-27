@@ -1,0 +1,50 @@
+[
+  {
+    "label": "cpu_cap1",
+    "command": [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/Results/phase11/acceleration_audit_20261025/audit.py",
+      "--root",
+      "/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-fb6wu2vg",
+      "--output",
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/Results/phase11/acceleration_audit_20261025/cpu_cap1.json",
+      "--label",
+      "cpu_cap1"
+    ],
+    "exit_code": 0,
+    "wall_s": 23.866126207998605,
+    "script_sha256": "e6b5959ddcedccac6e903216f29f4cd583eb3f57992bec9795d0707b4c58c1f7"
+  },
+  {
+    "label": "cpu_cap4",
+    "command": [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/Results/phase11/acceleration_audit_20261025/audit.py",
+      "--root",
+      "/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-fb6wu2vg",
+      "--output",
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/Results/phase11/acceleration_audit_20261025/cpu_cap4.json",
+      "--label",
+      "cpu_cap4"
+    ],
+    "exit_code": 0,
+    "wall_s": 23.22481437500028,
+    "script_sha256": "e6b5959ddcedccac6e903216f29f4cd583eb3f57992bec9795d0707b4c58c1f7"
+  },
+  {
+    "label": "cpu_default",
+    "command": [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/Results/phase11/acceleration_audit_20261025/audit.py",
+      "--root",
+      "/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-fb6wu2vg",
+      "--output",
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/Results/phase11/acceleration_audit_20261025/cpu_default.json",
+      "--label",
+      "cpu_default"
+    ],
+    "exit_code": 0,
+    "wall_s": 23.183515582999462,
+    "script_sha256": "e6b5959ddcedccac6e903216f29f4cd583eb3f57992bec9795d0707b4c58c1f7"
+  }
+]

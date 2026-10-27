@@ -1,0 +1,186 @@
+"""Separate opt-in bounded CPU sessions. Default action is read-only preflight."""
+import argparse
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import tempfile
+import time
+from .common import ROOT, OUT, BASE, read, write, atomic, sha, sources
+from .launch import snapshot, publish
+from .session_telemetry import Probe, blockers
+from .sessions import SessionController, Policy
+from .worker_guard import worker_lease
+
+DIRECTORY = BASE/'session_mode'
+
+
+def working_copy():
+    """Keep the same execution copy across interruption, including orphan output."""
+    path = DIRECTORY/'execution/workspace.json'
+    if path.exists():
+        record = read(path)
+        workspace = Path(record['workspace'])
+        if not workspace.is_dir() or record['phase11_sources_sha256'] != sources():
+            raise ValueError('Saved execution copy is missing or sources changed; no silent restart')
+        for name, expected in record['frozen_workspace_sha256'].items():
+            if sha(workspace/name) != expected:
+                raise ValueError('Frozen execution-copy bytes changed')
+        for name, expected in sources().items():
+            if sha(workspace/name) != expected:
+                raise ValueError('Execution-copy Phase 11 source differs')
+        return workspace
+    workspace, count = snapshot()
+    inventory = {str(p.relative_to(workspace)): sha(p) for p in workspace.rglob('*')
+                 if p.is_file() and 'phase11' not in p.relative_to(workspace).parts
+                 and '__pycache__' not in p.parts and '.pytest_cache' not in p.parts}
+    write(path, dict(workspace=str(workspace), legacy_files_verified=count,
+                     phase11_sources_sha256=sources(), frozen_workspace_sha256=inventory))
+    return workspace
+
+
+class Backend:
+    def __init__(self, workspace, probe):
+        self.workspace, self.probe = workspace, probe
+        self.child_out = workspace/'connectome/Results/phase11/results'
+
+    def rows(self):
+        from .jobs import ledger
+        return ledger()
+
+    def verify_complete(self, job):
+        from .session_worker import verify_complete
+        verify_complete(job)
+        row = next(r for r in self.rows() if r['definition']['job_id'] == job['job_id'])
+        if row.get('report_sha256') and row['report_sha256'] != sha(OUT/'training'/job['job_id']/'report.json'):
+            raise ValueError('Completed ledger/report hash mismatch')
+
+    def sync(self):
+        # Checkpoint generations first; ledger completion is published last.
+        for name in ('training', 'inputs'):
+            if (self.child_out/name).exists():
+                publish(self.child_out/name, OUT/name)
+        ledger = self.child_out/'job_ledger.json'
+        if ledger.exists():
+            atomic(OUT/'job_ledger.json', ledger.read_bytes())
+
+    def run(self, job, monitor):
+        command = [sys.executable, '-m', 'connectome.scripts.phase11.session_worker', '--job-id', job['job_id']]
+        env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', VECLIB_MAXIMUM_THREADS='1',
+                   OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1', MPLCONFIGDIR='/tmp/fly-phase11-mpl',
+                   FLY_PHASE11_LEASE_PID=str(os.getpid()), FLY_PHASE11_LEASE_PATH=str(OUT/'worker.lock'))
+        log = DIRECTORY/'logs'/f'{job["job_id"]}_{time.time_ns()}.log'
+        log.parent.mkdir(parents=True, exist_ok=True)
+        interrupted = False
+        with log.open('w') as output:
+            process = subprocess.Popen(command, cwd=self.workspace, env=env, stdout=output, stderr=subprocess.STDOUT)
+            try:
+                while process.poll() is None:
+                    issues = monitor(self.probe(process.pid))
+                    if 'ANOTHER_PHASE11_WORKER' in issues:
+                        interrupted = True
+                        process.terminate()
+                        process.wait(timeout=10)
+                        break
+                    self.sync()
+                    try:
+                        process.wait(timeout=5)
+                    except subprocess.TimeoutExpired:
+                        pass
+            except BaseException:
+                interrupted = True
+                process.terminate()
+                try:
+                    process.wait(timeout=10)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+                    process.wait()
+                raise
+            finally:
+                self.sync()
+                write(log.with_suffix('.json'), dict(command=command, exit_code=process.returncode,
+                      interrupted=interrupted, workspace=str(self.workspace), log=str(log.relative_to(ROOT))))
+        return dict(status='COMPLETE' if process.returncode == 0 else
+                    'INTERRUPTED_CHECKPOINT_RESUMABLE' if interrupted or process.returncode < 0 else 'FAILED_WORKER')
+
+
+def requirements():
+    # Preserve the previously measured full-artifact storage allowance.
+    return read(OUT/'gate_C.json')['conservative_disk_allowance_bytes']
+
+
+def preflight():
+    probe = Probe()
+    first = probe()
+    time.sleep(2)
+    second = probe()
+    result = dict(status='PASS' if not blockers(second, requirements(), first) else 'BLOCKED',
+                  blockers=blockers(second, requirements(), first), samples=[first, second],
+                  policy=Policy().__dict__, training_trials_executed=0)
+    write(DIRECTORY/'preflight.json', result)
+    print('Session preflight:', result['status'], result['blockers'], flush=True)
+    return result
+
+
+def validate():
+    from connectome.scripts.phase10.regression import counts
+    workspace, legacy_count = snapshot()
+    directory = DIRECTORY/'validation'/str(time.time_ns())
+    directory.mkdir(parents=True, exist_ok=True)
+    targets = ['connectome/scripts/phase11/tests', 'connectome/Results/phase10/tests', 'connectome/scripts/phase4/tests',
+               *[f'connectome/{p}/tests' for p in ('phase5','phase5_5','phase6','phase7','phase8','phase8/completion','phase9')]]
+    command = [sys.executable, '-m', 'pytest', *targets, '-q', '-p', 'no:cacheprovider', f'--junitxml={directory/"tests.xml"}']
+    env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', VECLIB_MAXIMUM_THREADS='1', OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1')
+    start = time.perf_counter()
+    result = subprocess.run(command, cwd=workspace, env=env, capture_output=True, text=True)
+    (directory/'tests.log').write_text(result.stdout+result.stderr)
+    summary = dict(status='PASS' if result.returncode == 0 else 'FAIL', tests=counts(directory/'tests.xml'),
+                   command=command, runtime_s=time.perf_counter()-start, exit_code=result.returncode,
+                   sources_sha256=sources(), legacy_files_verified=legacy_count, training_trials_executed=0,
+                   held_out_inference_runs=0, isolation='All output-writing tests in disposable execution copy')
+    write(directory/'summary.json', summary)
+    write(DIRECTORY/'readiness.json', summary)
+    print('Session validation:', summary['status'], summary['tests'], flush=True)
+    return result.returncode
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    action = parser.add_mutually_exclusive_group()
+    action.add_argument('--preflight', action='store_true')
+    action.add_argument('--validate', action='store_true')
+    action.add_argument('--execute', action='store_true')
+    parser.add_argument('--scope', choices=['primary','secondary'], default='primary')
+    parser.add_argument('--sessions', type=int, default=1)
+    args = parser.parse_args()
+    with worker_lease():
+        if args.validate:
+            raise SystemExit(validate())
+        if not args.execute:
+            preflight()
+            return
+        ready = read(DIRECTORY/'readiness.json')
+        if ready['status'] != 'PASS' or ready['sources_sha256'] != sources():
+            raise ValueError('Passing session-mode validation for current sources required')
+        if args.scope == 'secondary' and read(OUT/'gate_D.json')['status'] != 'PASS':
+            raise ValueError('Primary calibration Gate D must pass before secondary trials')
+        if preflight()['status'] != 'PASS':
+            return
+        workspace = working_copy()
+        probe = Probe()
+        backend = Backend(workspace, probe)
+        # A previous parent may have died after its child committed a result.
+        # Preflight already rejected any still-running orphan before this sync.
+        backend.sync()
+        controller = SessionController(backend, probe, DIRECTORY/'execution', requirements())
+        result = controller.run(args.scope, args.sessions)
+        print('Session execution:', result['status'], flush=True)
+
+
+if __name__ == '__main__':
+    import signal
+    def terminate(_signal, _frame):
+        raise KeyboardInterrupt('Controller termination; preserve checkpoint and journal')
+    signal.signal(signal.SIGTERM, terminate)
+    main()

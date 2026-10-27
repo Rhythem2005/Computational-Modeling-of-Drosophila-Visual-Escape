@@ -1,0 +1,19 @@
+{
+  "task": "integrity",
+  "snapshot": "/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-sd04905d",
+  "command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-m",
+    "connectome.scripts.phase11.runner",
+    "--task",
+    "integrity"
+  ],
+  "legacy_files_verified": 2295,
+  "sources_sha256": {
+    "connectome/Results/phase11/training_plan.md": "b36ee54d40d85fe61f3f68e92f62f232b3ff7cd579f5e7b6bf5d7a878cd9ed89",
+    "connectome/scripts/phase11/common.py": "72cbc548279b15e03f6f7681b9eecf5fe87b2f0193f7cb01ba922abae7ca68ec",
+    "connectome/scripts/phase11/integrity.py": "97ec3337727d690bc04a59d8871456253b720a06a402c72a4ad6927ed636cf8c",
+    "connectome/scripts/phase11/launch.py": "555bd2c69f7233498df446f7e69a44457c2a7f1748f5578821df3b47389a9f56",
+    "connectome/scripts/phase11/runner.py": "6768656cd7ff5e308329212b9691eeae3002f192bdeabc4464f9051d8299ff80"
+  }
+}

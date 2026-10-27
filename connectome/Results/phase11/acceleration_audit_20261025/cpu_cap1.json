@@ -1,0 +1,322 @@
+{
+  "label": "cpu_cap1",
+  "status": "PASS_CPU_BENCHMARK_ONLY",
+  "python": "3.14.6 (v3.14.6:c63aec69bd5, Jun 10 2026, 08:07:54) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "numpy": "2.5.3",
+  "environment": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "numpy_build": "Build Dependencies:\n  blas:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\n  lapack:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\nCompilers:\n  c:\n    commands: cc\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  c++:\n    commands: c++\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.3.0\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/build-env-cx6mwxg1/bin/python\n  version: '3.14'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  - ASIMDDP\n  not found:\n  - ASIMDFHM\n\n",
+  "setup_s": 0.32980775000032736,
+  "warmup_s": {
+    "forward_batch16": 0.02331358399896999,
+    "full_bptt_batch16": 0.06337266700029431,
+    "adam_update": 0.00018654199993761722,
+    "bptt_and_adam_batch16": 0.06300287500016566,
+    "validation128_including_input_loading": 0.29943749999983993,
+    "epoch_without_checkpoints": 1.5763388330015005,
+    "epoch_with_checkpoints": 1.6149759589989117
+  },
+  "timing": {
+    "forward_batch16": {
+      "repetitions": 7,
+      "median_s": 0.021499917000255664,
+      "min_s": 0.021123708998857182,
+      "max_s": 0.021762750000561937,
+      "samples_s": [
+        0.0216580830001476,
+        0.021499917000255664,
+        0.021762750000561937,
+        0.021123708998857182,
+        0.02154349999909755,
+        0.021470250001584645,
+        0.02121866699962993
+      ]
+    },
+    "full_bptt_batch16": {
+      "repetitions": 7,
+      "median_s": 0.06299733299965737,
+      "min_s": 0.06242387500060431,
+      "max_s": 0.0643603329990583,
+      "samples_s": [
+        0.062483375000738306,
+        0.06279637499937962,
+        0.0643603329990583,
+        0.06329045799975574,
+        0.06242387500060431,
+        0.06323308300125063,
+        0.06299733299965737
+      ]
+    },
+    "adam_update": {
+      "repetitions": 15,
+      "median_s": 0.00012599999899975955,
+      "min_s": 0.00012333400081843138,
+      "max_s": 0.00014679199921374675,
+      "samples_s": [
+        0.00013179199959267862,
+        0.00014679199921374675,
+        0.00012599999899975955,
+        0.0001252919992111856,
+        0.00012383399916870985,
+        0.00012395799967634957,
+        0.00013504100024874788,
+        0.0001245420007762732,
+        0.0001311249998252606,
+        0.00012391700147418305,
+        0.00013737500012211967,
+        0.00012574999891512562,
+        0.00012333400081843138,
+        0.00013129199942341074,
+        0.00013662499986821786
+      ]
+    },
+    "bptt_and_adam_batch16": {
+      "repetitions": 7,
+      "median_s": 0.0632792079995852,
+      "min_s": 0.0630736250004702,
+      "max_s": 0.06339495899919712,
+      "samples_s": [
+        0.06309700000019802,
+        0.06310975000087637,
+        0.0632792079995852,
+        0.0630736250004702,
+        0.06336162499974307,
+        0.06339495899919712,
+        0.06332583299990802
+      ]
+    },
+    "validation128_including_input_loading": {
+      "repetitions": 5,
+      "median_s": 0.2694083749993297,
+      "min_s": 0.26822591699965415,
+      "max_s": 0.26981912500014005,
+      "samples_s": [
+        0.2694083749993297,
+        0.26870891699945787,
+        0.26961449999907927,
+        0.26981912500014005,
+        0.26822591699965415
+      ]
+    },
+    "epoch_without_checkpoints": {
+      "repetitions": 5,
+      "median_s": 1.5290996670009918,
+      "min_s": 1.5234099169992987,
+      "max_s": 1.532259999999951,
+      "samples_s": [
+        1.5234099169992987,
+        1.5290604589990835,
+        1.5290996670009918,
+        1.5315932080011407,
+        1.532259999999951
+      ]
+    },
+    "epoch_with_checkpoints": {
+      "repetitions": 5,
+      "median_s": 1.6151376660000096,
+      "min_s": 1.612404500001503,
+      "max_s": 1.6156401660009578,
+      "samples_s": [
+        1.6133988330002467,
+        1.6151376660000096,
+        1.615190167000037,
+        1.6156401660009578,
+        1.612404500001503
+      ]
+    }
+  },
+  "epoch_details": {
+    "epoch_without_checkpoints": [
+      {
+        "total_s": 1.5234099169992987,
+        "training_s": 1.2393882500000473,
+        "validation_s": 0.2840207080007531,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.5290604589990835,
+        "training_s": 1.2411262919995352,
+        "validation_s": 0.2879328330000135,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.5290996670009918,
+        "training_s": 1.243631583000024,
+        "validation_s": 0.28546737499891606,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.5315932080011407,
+        "training_s": 1.2444448330006708,
+        "validation_s": 0.2871477499993489,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.532259999999951,
+        "training_s": 1.2457681670002785,
+        "validation_s": 0.28649133399994753,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      }
+    ],
+    "epoch_with_checkpoints": [
+      {
+        "total_s": 1.6133988330002467,
+        "training_s": 1.3190170409998245,
+        "validation_s": 0.28664045900040946,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.6151376660000096,
+        "training_s": 1.3211910410009295,
+        "validation_s": 0.28613475000020117,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.615190167000037,
+        "training_s": 1.318568624999898,
+        "validation_s": 0.28863129099954676,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.6156401660009578,
+        "training_s": 1.3196582079999644,
+        "validation_s": 0.28816474999985076,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      },
+      {
+        "total_s": 1.612404500001503,
+        "training_s": 1.3160530840013962,
+        "validation_s": 0.2884580410009221,
+        "validation_bce": 0.6893377947648125,
+        "updates": 16
+      }
+    ]
+  },
+  "comparison_arrays_sha256": "cde0866e48b5f05ca658d71284989194b049bff054509f4d29b9f1416ad8857d",
+  "finite_difference_checks": [
+    {
+      "parameter": "Wr",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "Wz",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "Wn",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "Ur",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "Uz",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "Un",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "br",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "bz",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "bn",
+      "numerical": -0.11695315583204467,
+      "analytical": -0.11695315583407624,
+      "absolute_error": 2.0315693571859583e-12,
+      "tolerance": 2.3590631166408935e-06,
+      "passed": true
+    },
+    {
+      "parameter": "w",
+      "numerical": 0.0,
+      "analytical": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "parameter": "b",
+      "numerical": 0.37499999999690553,
+      "analytical": 0.375,
+      "absolute_error": 3.0944691253864676e-12,
+      "tolerance": 7.519999999938111e-06,
+      "passed": true
+    }
+  ],
+  "controlled_three_update_repeatable": true,
+  "maximum_resident_bytes": 389316608,
+  "workload": {
+    "parameters": 16241,
+    "batch_size": 16,
+    "steps": 1000,
+    "inputs": 321,
+    "hidden": 16,
+    "dtype": "float64",
+    "seed": 55100,
+    "rate": 0.0003,
+    "input_identity": {
+      "mapping": "uniform_population",
+      "mapping_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "manifest_sha256": "2dd0df51d8d404c5b8b6d1b86432fee4e13d588a58f0ff8e82fdee7aaf389f82",
+      "encoder_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "cache_sha256": "6427526fa740a60689e72d819029a1859c4135983d73e539bb99881d1c82e369",
+      "clips": 384
+    }
+  },
+  "registered_training_trials": 0,
+  "calibrations": 0,
+  "held_out_inference_runs": 0,
+  "synchronization": "Synchronous CPU calls; GPU synchronization/compilation not measured."
+}

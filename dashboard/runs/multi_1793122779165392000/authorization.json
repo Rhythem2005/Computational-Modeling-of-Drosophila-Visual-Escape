@@ -1,0 +1,11 @@
+{
+  "status": "APPROVED_EXACT_PROTOCOL",
+  "protocol_sha256": "06e1011e583d2b88a9a982f8dad7ff0c292eddad53d16523a2d85075859b5ae9",
+  "episode_cap": 24,
+  "planned_attempts": 20,
+  "training_authorized": false,
+  "held_out_authorized": false,
+  "user_instruction": "Approved.",
+  "approval_scope": "Exact initial multi-object protocol linked in the preceding review: four 3D scenes, five controllers; no automatic retries.",
+  "date_local": "2026-10-27"
+}

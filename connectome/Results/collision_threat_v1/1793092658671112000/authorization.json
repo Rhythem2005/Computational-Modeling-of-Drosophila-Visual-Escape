@@ -1,0 +1,7 @@
+{
+  "user_instruction": "Approved.",
+  "approved_plan_sha256": "b3479475aadf7c536440508dc940547977efbaeaf013a1763ee64178adedc048",
+  "scope": "Stage A: <=91 saved trajectories, no inference/fitting/new episodes",
+  "exact_rule_review_reserved": true,
+  "stage_b_dispatch_enabled": false
+}

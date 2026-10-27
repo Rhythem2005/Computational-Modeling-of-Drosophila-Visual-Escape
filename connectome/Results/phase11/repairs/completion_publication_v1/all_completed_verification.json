@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "verified_training_trials": 26,
+  "identities": [
+    "train_55010_55100_0p0003",
+    "train_55010_55100_0p001",
+    "train_55010_55101_0p0003",
+    "train_55010_55101_0p001",
+    "train_55010_55102_0p0003",
+    "train_uniform_population_55100_0p0003",
+    "train_uniform_population_55100_0p001",
+    "train_uniform_population_55101_0p0003",
+    "train_uniform_population_55101_0p001",
+    "train_uniform_population_55102_0p0003",
+    "train_uniform_population_55102_0p001",
+    "train_uniform_population_55103_0p0003",
+    "train_uniform_population_55103_0p001",
+    "train_uniform_population_55104_0p0003",
+    "train_uniform_population_55104_0p001",
+    "train_uniform_population_55105_0p0003",
+    "train_uniform_population_55105_0p001",
+    "train_uniform_population_55106_0p0003",
+    "train_uniform_population_55106_0p001",
+    "train_uniform_population_55107_0p0003",
+    "train_uniform_population_55107_0p001",
+    "train_uniform_population_55108_0p0003",
+    "train_uniform_population_55108_0p001",
+    "train_uniform_population_55109_0p0003",
+    "train_uniform_population_55109_0p001",
+    "recovered:recovered_candidate"
+  ],
+  "training_executed": false
+}

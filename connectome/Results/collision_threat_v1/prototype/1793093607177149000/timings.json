@@ -1,0 +1,247 @@
+{
+  "episodes": [
+    {
+      "id": "world_head_on_no_action_r0",
+      "elapsed_s": 0.4241184169995904
+    },
+    {
+      "id": "world_head_on_no_action_r1",
+      "elapsed_s": 0.4269530419996954
+    },
+    {
+      "id": "world_head_on_circuit_r0",
+      "elapsed_s": 0.5810283330001766
+    },
+    {
+      "id": "world_head_on_circuit_r1",
+      "elapsed_s": 0.5712723750002624
+    },
+    {
+      "id": "world_head_on_feature_only_r0",
+      "elapsed_s": 0.5437492499995642
+    },
+    {
+      "id": "world_head_on_feature_only_r1",
+      "elapsed_s": 0.5601400830000784
+    },
+    {
+      "id": "world_head_on_expansion_rule_r0",
+      "elapsed_s": 0.45641054199950304
+    },
+    {
+      "id": "world_head_on_expansion_rule_r1",
+      "elapsed_s": 0.465575417000764
+    },
+    {
+      "id": "world_head_on_closest_approach_rule_r0",
+      "elapsed_s": 0.4790957499999422
+    },
+    {
+      "id": "world_head_on_closest_approach_rule_r1",
+      "elapsed_s": 0.46501562499997817
+    },
+    {
+      "id": "world_head_on_circuit_threat_gate_r0",
+      "elapsed_s": 0.5708350419999988
+    },
+    {
+      "id": "world_head_on_circuit_threat_gate_r1",
+      "elapsed_s": 0.5610025000005407
+    },
+    {
+      "id": "world_left_no_action_r0",
+      "elapsed_s": 0.4214746670004388
+    },
+    {
+      "id": "world_left_no_action_r1",
+      "elapsed_s": 0.4295597499994983
+    },
+    {
+      "id": "world_left_circuit_r0",
+      "elapsed_s": 0.5843200410008649
+    },
+    {
+      "id": "world_left_circuit_r1",
+      "elapsed_s": 0.5706468749995111
+    },
+    {
+      "id": "world_left_feature_only_r0",
+      "elapsed_s": 0.555814499999542
+    },
+    {
+      "id": "world_left_feature_only_r1",
+      "elapsed_s": 0.5893945000007079
+    },
+    {
+      "id": "world_left_expansion_rule_r0",
+      "elapsed_s": 0.4546824999997625
+    },
+    {
+      "id": "world_left_expansion_rule_r1",
+      "elapsed_s": 0.46525320799992187
+    },
+    {
+      "id": "world_left_closest_approach_rule_r0",
+      "elapsed_s": 0.45964987499974086
+    },
+    {
+      "id": "world_left_closest_approach_rule_r1",
+      "elapsed_s": 0.46664795800006686
+    },
+    {
+      "id": "world_left_circuit_threat_gate_r0",
+      "elapsed_s": 0.5726738329994987
+    },
+    {
+      "id": "world_left_circuit_threat_gate_r1",
+      "elapsed_s": 0.5621344999999565
+    },
+    {
+      "id": "world_right_no_action_r0",
+      "elapsed_s": 0.4208277910001925
+    },
+    {
+      "id": "world_right_no_action_r1",
+      "elapsed_s": 0.42733162500007893
+    },
+    {
+      "id": "world_right_circuit_r0",
+      "elapsed_s": 0.578278875000251
+    },
+    {
+      "id": "world_right_circuit_r1",
+      "elapsed_s": 0.57113954200031
+    },
+    {
+      "id": "world_right_feature_only_r0",
+      "elapsed_s": 0.5590098749999015
+    },
+    {
+      "id": "world_right_feature_only_r1",
+      "elapsed_s": 0.590074167000239
+    },
+    {
+      "id": "world_right_expansion_rule_r0",
+      "elapsed_s": 0.4536468340002102
+    },
+    {
+      "id": "world_right_expansion_rule_r1",
+      "elapsed_s": 0.4635154170000533
+    },
+    {
+      "id": "world_right_closest_approach_rule_r0",
+      "elapsed_s": 0.46008008400076505
+    },
+    {
+      "id": "world_right_closest_approach_rule_r1",
+      "elapsed_s": 0.46357437500046217
+    },
+    {
+      "id": "world_right_circuit_threat_gate_r0",
+      "elapsed_s": 0.5715041250005015
+    },
+    {
+      "id": "world_right_circuit_threat_gate_r1",
+      "elapsed_s": 0.5669948750000913
+    },
+    {
+      "id": "world_static_no_action_r0",
+      "elapsed_s": 0.4651091670002643
+    },
+    {
+      "id": "world_static_no_action_r1",
+      "elapsed_s": 0.4723277920002147
+    },
+    {
+      "id": "world_static_circuit_r0",
+      "elapsed_s": 0.5168884579998121
+    },
+    {
+      "id": "world_static_circuit_r1",
+      "elapsed_s": 0.5009995000000345
+    },
+    {
+      "id": "world_static_feature_only_r0",
+      "elapsed_s": 0.4650670409992017
+    },
+    {
+      "id": "world_static_feature_only_r1",
+      "elapsed_s": 0.4718396660000508
+    },
+    {
+      "id": "world_static_expansion_rule_r0",
+      "elapsed_s": 0.4686970829998245
+    },
+    {
+      "id": "world_static_expansion_rule_r1",
+      "elapsed_s": 0.4549368329999197
+    },
+    {
+      "id": "world_static_closest_approach_rule_r0",
+      "elapsed_s": 0.47407454199947097
+    },
+    {
+      "id": "world_static_closest_approach_rule_r1",
+      "elapsed_s": 0.45440804100053356
+    },
+    {
+      "id": "world_static_circuit_threat_gate_r0",
+      "elapsed_s": 0.5103042079999796
+    },
+    {
+      "id": "world_static_circuit_threat_gate_r1",
+      "elapsed_s": 0.4959618329994555
+    },
+    {
+      "id": "world_near_miss_no_action_r0",
+      "elapsed_s": 0.4941012500003126
+    },
+    {
+      "id": "world_near_miss_no_action_r1",
+      "elapsed_s": 0.481890499999281
+    },
+    {
+      "id": "world_near_miss_circuit_r0",
+      "elapsed_s": 0.5800894169997264
+    },
+    {
+      "id": "world_near_miss_circuit_r1",
+      "elapsed_s": 0.5752642499992362
+    },
+    {
+      "id": "world_near_miss_feature_only_r0",
+      "elapsed_s": 0.5652968750000582
+    },
+    {
+      "id": "world_near_miss_feature_only_r1",
+      "elapsed_s": 0.5873610829994504
+    },
+    {
+      "id": "world_near_miss_expansion_rule_r0",
+      "elapsed_s": 0.46270737499980896
+    },
+    {
+      "id": "world_near_miss_expansion_rule_r1",
+      "elapsed_s": 0.4685802499998317
+    },
+    {
+      "id": "world_near_miss_closest_approach_rule_r0",
+      "elapsed_s": 0.4561281250007596
+    },
+    {
+      "id": "world_near_miss_closest_approach_rule_r1",
+      "elapsed_s": 0.46685462500045105
+    },
+    {
+      "id": "world_near_miss_circuit_threat_gate_r0",
+      "elapsed_s": 0.5710735000002387
+    },
+    {
+      "id": "world_near_miss_circuit_threat_gate_r1",
+      "elapsed_s": 0.5648818330000722
+    }
+  ],
+  "peak_rss_bytes": 248889344,
+  "output_bytes": 77746309,
+  "snapshot_bytes": 185225134
+}

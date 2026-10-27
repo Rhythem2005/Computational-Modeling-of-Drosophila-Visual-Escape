@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "phase10_source_hashes": 17,
+  "phase10_delivered_hashes": 343,
+  "graph_architectures": 62,
+  "graph_conditions": 124,
+  "partitions": {
+    "train": {
+      "clips": 256,
+      "families": 64
+    },
+    "validation": {
+      "clips": 128,
+      "families": 32
+    }
+  },
+  "rejected_test_identities_before_file_access": 640,
+  "parent_protocol": "fly_closed_loop_engineering_v1",
+  "parent_definition_sha256": "02b3be2d15cba12d6e52042ec151b9ccd1adb193940a39ebedf0f0d9d66945e4",
+  "manifest_sha256": "2dd0df51d8d404c5b8b6d1b86432fee4e13d588a58f0ff8e82fdee7aaf389f82",
+  "config": {
+    "version": "1.0.0",
+    "protocol_id": "fly_fair_controls_v1",
+    "design_seed": 55001,
+    "null_count": 30,
+    "mapping_seeds": [
+      55010,
+      55011,
+      55012,
+      55013,
+      55014
+    ],
+    "gain": 0.5,
+    "tau_ms": 10.0,
+    "input_scale": 0.4,
+    "dt_ms": 1,
+    "duration_ms": 1000,
+    "persistence_ms": 20,
+    "input_dimension": 321,
+    "target_radius": 0.6958315414466647,
+    "rewiring_swaps_per_edge": 20,
+    "rewiring_attempts_per_edge": 400,
+    "rewiring_checkpoints": 20,
+    "hidden_units": 16,
+    "training_seeds": [
+      55100,
+      55101,
+      55102,
+      55103,
+      55104,
+      55105,
+      55106,
+      55107,
+      55108,
+      55109
+    ],
+    "learning_rates": [
+      0.0003,
+      0.001
+    ],
+    "max_epochs": 200,
+    "patience": 20,
+    "batch_size": 16,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-08,
+    "gradient_norm_limit": 5.0,
+    "checkpoint_selection": "minimum_validation_episode_BCE_then_earliest_epoch",
+    "rate_selection": "minimum_validation_episode_BCE_then_smaller_rate",
+    "threshold_policy": "next_float_above_training_negative_quantile"
+  },
+  "schedule": {
+    "gru_trials": 120,
+    "selected_grus": 60,
+    "calibrations": 816
+  },
+  "environment": {
+    "python": "3.14.6 (v3.14.6:c63aec69bd5, Jun 10 2026, 08:07:54) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "numpy": "2.5.3",
+    "yaml": "6.0.3",
+    "platform": "macOS-26.1-arm64-arm-64bit-Mach-O"
+  },
+  "held_out_inference_runs": 0
+}

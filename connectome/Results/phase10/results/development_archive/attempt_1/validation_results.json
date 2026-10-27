@@ -1,0 +1,6 @@
+{
+  "status": "FAIL",
+  "error": "Phase 10 tests failed; see /private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase10-execution-oq3_ttrf/connectome/Results/phase10/results/tests/tests.log",
+  "traceback": "Traceback (most recent call last):\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase10-execution-oq3_ttrf/connectome/scripts/phase10/validate.py\", line 31, in main\n    try:validate(parent)\n        ~~~~~~~~^^^^^^^^\n  File \"/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase10-execution-oq3_ttrf/connectome/scripts/phase10/validate.py\", line 158, in validate\n    if result.returncode:raise ValueError(f'Phase 10 tests failed; see {directory/\"tests.log\"}')\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Phase 10 tests failed; see /private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase10-execution-oq3_ttrf/connectome/Results/phase10/results/tests/tests.log\n",
+  "time_utc": "2026-10-24T19:07:17.912014+00:00"
+}

@@ -1,0 +1,57 @@
+"""Explicit sequential Phase 11A gates; no held-out execution entry point."""
+import argparse
+import traceback
+from .common import OUT, write, read, sources
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument('--task', required=True)
+    args = p.parse_args()
+    try:
+        if args.task == 'integrity':
+            from .integrity import verify
+            result = verify()
+            print('Gate A PASS:', result['schedule'], flush=True)
+        elif args.task == 'engineering':
+            if read(OUT/'gate_A.json')['status'] != 'PASS':
+                raise ValueError('Gate A required')
+            from .engineering import verify
+            verify()
+        elif args.task in ('profile', 'primary', 'secondary', 'freeze'):
+            engineering = read(OUT/'gate_B.json')
+            if engineering['status'] != 'PASS' or engineering['phase11_sources_sha256'] != sources():
+                raise ValueError('Passing Gate B for current sources required')
+            from .resources import profile
+            from .jobs import execute, ledger, verify_freeze
+            if args.task == 'profile':
+                profile()
+            else:
+                if read(OUT/'gate_C.json')['status'] != 'PASS':
+                    raise ValueError('Resource Gate C required before benchmark execution')
+                if args.task == 'primary':
+                    write(OUT/'gate_D.json', execute(True))
+                elif args.task == 'secondary':
+                    if read(OUT/'gate_D.json')['status'] != 'PASS':
+                        raise ValueError('Gate D required')
+                    write(OUT/'gate_E.json', execute(False))
+                else:
+                    rows = ledger()
+                    if len(rows) != 936 or any(r['status'] != 'COMPLETE' for r in rows):
+                        raise ValueError('Incomplete registered training/calibration coverage')
+                    for row in rows:
+                        if row['definition']['kind'] == 'calibration':
+                            from .common import ROOT
+                            verify_freeze(ROOT/row['freeze'])
+                    write(OUT/'gate_F.json', dict(status='PASS', training_trials=120,
+                          calibration_conditions=816, held_out_inference_runs=0))
+        else:
+            raise ValueError('Gate not yet implemented')
+    except Exception as error:
+        write(OUT/f'failure_{args.task}.json', dict(status='FAILED_GATE', task=args.task,
+              error=str(error), traceback=traceback.format_exc(), held_out_inference_runs=0))
+        raise
+
+
+if __name__ == '__main__':
+    main()

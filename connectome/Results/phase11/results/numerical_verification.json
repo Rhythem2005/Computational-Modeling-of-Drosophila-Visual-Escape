@@ -1,0 +1,11 @@
+{
+  "threshold": {
+    "kind": "finite",
+    "value": 5e-324
+  },
+  "float64_bits": 1,
+  "positive_after_json_reload": true,
+  "zero_below_threshold": true,
+  "equality_triggers_comparison": true,
+  "limitations": "One-ULP margin above exact silence; float64/subnormal support verified on this machine only. No noise robustness established."
+}

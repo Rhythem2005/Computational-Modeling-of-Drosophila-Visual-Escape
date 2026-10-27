@@ -1,0 +1,290 @@
+{
+  "schema": "multi_object_protocol_1.0",
+  "protocol_id": "multi_object_initial_3d_v1",
+  "status": "PROPOSED_EXACT_SETTINGS_AWAITING_USER_REVIEW",
+  "partition": "engineering_development",
+  "frozen_parent_manifest_sha256": "99ed0c6e95b25d77de53062e3b12961353a9448845cd6ecdc918fb471d09fba1",
+  "settings": {
+    "duration_ms": 1000,
+    "fly_radius": 0.5,
+    "camera_width": 256,
+    "camera_height": 256,
+    "camera_fps": 60,
+    "camera_center_px": [
+      128.0,
+      128.0
+    ],
+    "camera_focal_px": 160.0,
+    "camera_near_depth": 0.1,
+    "background_uint8": 128,
+    "object_uint8": 64,
+    "actuation_delay_ms": 20,
+    "escape_speed_max": 20.0,
+    "escape_acceleration_max": 400.0,
+    "success_final_clearance_min": 1.0,
+    "dimensions": 3,
+    "bounds": [
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ],
+      [
+        -50.0,
+        50.0
+      ]
+    ],
+    "object_radius_prior": 1.5,
+    "min_contrast_uint8": 4,
+    "prediction_horizon_ms": 1000,
+    "candidate_directions": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "association_gate_px": 24.0,
+    "association_ambiguity_px": 2.0,
+    "max_radius_fraction_change": 0.5,
+    "max_shape_error_fraction": 0.25,
+    "clearance_margin": 1.0,
+    "max_observation_age_ms": 17
+  },
+  "models": [
+    "no_action",
+    "simple_trigger",
+    "frozen_latched",
+    "planner_only",
+    "circuit_planner"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "horizontal_pair",
+      "fly_position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fly_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "left",
+          "position": [
+            -6.0,
+            20.0,
+            0.0
+          ],
+          "velocity": [
+            7.5,
+            -25.0,
+            0.0
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        },
+        {
+          "id": "right",
+          "position": [
+            6.0,
+            20.0,
+            0.0
+          ],
+          "velocity": [
+            -7.5,
+            -25.0,
+            0.0
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        }
+      ]
+    },
+    {
+      "scenario_id": "vertical_pair",
+      "fly_position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fly_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "above",
+          "position": [
+            0.0,
+            20.0,
+            6.0
+          ],
+          "velocity": [
+            0.0,
+            -25.0,
+            -7.5
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        },
+        {
+          "id": "below",
+          "position": [
+            0.0,
+            20.0,
+            -6.0
+          ],
+          "velocity": [
+            0.0,
+            -25.0,
+            7.5
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        }
+      ]
+    },
+    {
+      "scenario_id": "mixed_three",
+      "fly_position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fly_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "left",
+          "position": [
+            -6.0,
+            20.0,
+            0.0
+          ],
+          "velocity": [
+            7.5,
+            -25.0,
+            0.0
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        },
+        {
+          "id": "above",
+          "position": [
+            0.0,
+            20.0,
+            6.0
+          ],
+          "velocity": [
+            0.0,
+            -25.0,
+            -7.5
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        },
+        {
+          "id": "near_miss",
+          "position": [
+            0.0,
+            20.0,
+            0.0
+          ],
+          "velocity": [
+            6.25,
+            -25.0,
+            0.0
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        }
+      ]
+    },
+    {
+      "scenario_id": "harmless_pair",
+      "fly_position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fly_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "obstacles": [
+        {
+          "id": "static",
+          "position": [
+            -6.0,
+            20.0,
+            0.0
+          ],
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        },
+        {
+          "id": "near_miss",
+          "position": [
+            0.0,
+            20.0,
+            0.0
+          ],
+          "velocity": [
+            6.25,
+            -25.0,
+            0.0
+          ],
+          "radius": 1.5,
+          "onset_ms": 200
+        }
+      ]
+    }
+  ],
+  "max_stage_seconds": 1800,
+  "max_output_bytes": 1073741824,
+  "execution_authorized": false,
+  "interpretation": "Initial development smoke run, not independent evaluation or sustained-navigation validation. Merging/occlusion can cause unknown perception and collisions; report every failure."
+}

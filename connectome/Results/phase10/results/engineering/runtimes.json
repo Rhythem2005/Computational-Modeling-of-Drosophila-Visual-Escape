@@ -1,0 +1,538 @@
+[
+  {
+    "model_id": "circuit_native",
+    "runtime_s": 0.011504792000778252
+  },
+  {
+    "model_id": "circuit_stability_matched",
+    "runtime_s": 0.010905208000622224
+  },
+  {
+    "model_id": "population_average_native",
+    "runtime_s": 0.010705415999836987
+  },
+  {
+    "model_id": "population_average_stability_matched",
+    "runtime_s": 0.010780332999274833
+  },
+  {
+    "model_id": "weight_shuffle_00_native",
+    "runtime_s": 0.010715416003222344
+  },
+  {
+    "model_id": "weight_shuffle_00_stability_matched",
+    "runtime_s": 0.010714792002545437
+  },
+  {
+    "model_id": "weight_shuffle_01_native",
+    "runtime_s": 0.010659457999281585
+  },
+  {
+    "model_id": "weight_shuffle_01_stability_matched",
+    "runtime_s": 0.010665374997188337
+  },
+  {
+    "model_id": "weight_shuffle_02_native",
+    "runtime_s": 0.01070337499913876
+  },
+  {
+    "model_id": "weight_shuffle_02_stability_matched",
+    "runtime_s": 0.010631250002916204
+  },
+  {
+    "model_id": "weight_shuffle_03_native",
+    "runtime_s": 0.01072508399738581
+  },
+  {
+    "model_id": "weight_shuffle_03_stability_matched",
+    "runtime_s": 0.010646708000422223
+  },
+  {
+    "model_id": "weight_shuffle_04_native",
+    "runtime_s": 0.010658582999894861
+  },
+  {
+    "model_id": "weight_shuffle_04_stability_matched",
+    "runtime_s": 0.010689083999750437
+  },
+  {
+    "model_id": "weight_shuffle_05_native",
+    "runtime_s": 0.010652332999598002
+  },
+  {
+    "model_id": "weight_shuffle_05_stability_matched",
+    "runtime_s": 0.01066112499756855
+  },
+  {
+    "model_id": "weight_shuffle_06_native",
+    "runtime_s": 0.010551583996857516
+  },
+  {
+    "model_id": "weight_shuffle_06_stability_matched",
+    "runtime_s": 0.010732915998232784
+  },
+  {
+    "model_id": "weight_shuffle_07_native",
+    "runtime_s": 0.010590541001874954
+  },
+  {
+    "model_id": "weight_shuffle_07_stability_matched",
+    "runtime_s": 0.010642458000802435
+  },
+  {
+    "model_id": "weight_shuffle_08_native",
+    "runtime_s": 0.01064675000088755
+  },
+  {
+    "model_id": "weight_shuffle_08_stability_matched",
+    "runtime_s": 0.01060574999792152
+  },
+  {
+    "model_id": "weight_shuffle_09_native",
+    "runtime_s": 0.010623292000673246
+  },
+  {
+    "model_id": "weight_shuffle_09_stability_matched",
+    "runtime_s": 0.01060154200240504
+  },
+  {
+    "model_id": "weight_shuffle_10_native",
+    "runtime_s": 0.010549458002060419
+  },
+  {
+    "model_id": "weight_shuffle_10_stability_matched",
+    "runtime_s": 0.010538291000557365
+  },
+  {
+    "model_id": "weight_shuffle_11_native",
+    "runtime_s": 0.010573209001449868
+  },
+  {
+    "model_id": "weight_shuffle_11_stability_matched",
+    "runtime_s": 0.010544875000050524
+  },
+  {
+    "model_id": "weight_shuffle_12_native",
+    "runtime_s": 0.010527708000154234
+  },
+  {
+    "model_id": "weight_shuffle_12_stability_matched",
+    "runtime_s": 0.010572457998932805
+  },
+  {
+    "model_id": "weight_shuffle_13_native",
+    "runtime_s": 0.010596041996905115
+  },
+  {
+    "model_id": "weight_shuffle_13_stability_matched",
+    "runtime_s": 0.010544666998612229
+  },
+  {
+    "model_id": "weight_shuffle_14_native",
+    "runtime_s": 0.010516083999391412
+  },
+  {
+    "model_id": "weight_shuffle_14_stability_matched",
+    "runtime_s": 0.010534207998716738
+  },
+  {
+    "model_id": "weight_shuffle_15_native",
+    "runtime_s": 0.010459749999427004
+  },
+  {
+    "model_id": "weight_shuffle_15_stability_matched",
+    "runtime_s": 0.010478249998413958
+  },
+  {
+    "model_id": "weight_shuffle_16_native",
+    "runtime_s": 0.010534541997913038
+  },
+  {
+    "model_id": "weight_shuffle_16_stability_matched",
+    "runtime_s": 0.010568749999947613
+  },
+  {
+    "model_id": "weight_shuffle_17_native",
+    "runtime_s": 0.010564042000623886
+  },
+  {
+    "model_id": "weight_shuffle_17_stability_matched",
+    "runtime_s": 0.010540499999478925
+  },
+  {
+    "model_id": "weight_shuffle_18_native",
+    "runtime_s": 0.010571208000328625
+  },
+  {
+    "model_id": "weight_shuffle_18_stability_matched",
+    "runtime_s": 0.010517709000851028
+  },
+  {
+    "model_id": "weight_shuffle_19_native",
+    "runtime_s": 0.010595208001177525
+  },
+  {
+    "model_id": "weight_shuffle_19_stability_matched",
+    "runtime_s": 0.010520374999032356
+  },
+  {
+    "model_id": "weight_shuffle_20_native",
+    "runtime_s": 0.010553290998359444
+  },
+  {
+    "model_id": "weight_shuffle_20_stability_matched",
+    "runtime_s": 0.010572292001597816
+  },
+  {
+    "model_id": "weight_shuffle_21_native",
+    "runtime_s": 0.010569957998086466
+  },
+  {
+    "model_id": "weight_shuffle_21_stability_matched",
+    "runtime_s": 0.010548499998549232
+  },
+  {
+    "model_id": "weight_shuffle_22_native",
+    "runtime_s": 0.010725708998506889
+  },
+  {
+    "model_id": "weight_shuffle_22_stability_matched",
+    "runtime_s": 0.01060062499891501
+  },
+  {
+    "model_id": "weight_shuffle_23_native",
+    "runtime_s": 0.010606416999507928
+  },
+  {
+    "model_id": "weight_shuffle_23_stability_matched",
+    "runtime_s": 0.01057845799732604
+  },
+  {
+    "model_id": "weight_shuffle_24_native",
+    "runtime_s": 0.010721000002376968
+  },
+  {
+    "model_id": "weight_shuffle_24_stability_matched",
+    "runtime_s": 0.010807916998601286
+  },
+  {
+    "model_id": "weight_shuffle_25_native",
+    "runtime_s": 0.010700791997805936
+  },
+  {
+    "model_id": "weight_shuffle_25_stability_matched",
+    "runtime_s": 0.010545500001171604
+  },
+  {
+    "model_id": "weight_shuffle_26_native",
+    "runtime_s": 0.010601458998280577
+  },
+  {
+    "model_id": "weight_shuffle_26_stability_matched",
+    "runtime_s": 0.010524332999921171
+  },
+  {
+    "model_id": "weight_shuffle_27_native",
+    "runtime_s": 0.010549541999353096
+  },
+  {
+    "model_id": "weight_shuffle_27_stability_matched",
+    "runtime_s": 0.010538624999753665
+  },
+  {
+    "model_id": "weight_shuffle_28_native",
+    "runtime_s": 0.010625499999150634
+  },
+  {
+    "model_id": "weight_shuffle_28_stability_matched",
+    "runtime_s": 0.010574624997389037
+  },
+  {
+    "model_id": "weight_shuffle_29_native",
+    "runtime_s": 0.010599041001114529
+  },
+  {
+    "model_id": "weight_shuffle_29_stability_matched",
+    "runtime_s": 0.010532500000408618
+  },
+  {
+    "model_id": "degree_rewire_00_native",
+    "runtime_s": 0.010599790999549441
+  },
+  {
+    "model_id": "degree_rewire_00_stability_matched",
+    "runtime_s": 0.010630125001625856
+  },
+  {
+    "model_id": "degree_rewire_01_native",
+    "runtime_s": 0.010612416997901164
+  },
+  {
+    "model_id": "degree_rewire_01_stability_matched",
+    "runtime_s": 0.010608291002426995
+  },
+  {
+    "model_id": "degree_rewire_02_native",
+    "runtime_s": 0.010531208998145303
+  },
+  {
+    "model_id": "degree_rewire_02_stability_matched",
+    "runtime_s": 0.010590791996946791
+  },
+  {
+    "model_id": "degree_rewire_03_native",
+    "runtime_s": 0.010580917001789203
+  },
+  {
+    "model_id": "degree_rewire_03_stability_matched",
+    "runtime_s": 0.010569666999799665
+  },
+  {
+    "model_id": "degree_rewire_04_native",
+    "runtime_s": 0.010651832999428734
+  },
+  {
+    "model_id": "degree_rewire_04_stability_matched",
+    "runtime_s": 0.010538917002122616
+  },
+  {
+    "model_id": "degree_rewire_05_native",
+    "runtime_s": 0.010551750001468463
+  },
+  {
+    "model_id": "degree_rewire_05_stability_matched",
+    "runtime_s": 0.010527250000450294
+  },
+  {
+    "model_id": "degree_rewire_06_native",
+    "runtime_s": 0.010603332997561665
+  },
+  {
+    "model_id": "degree_rewire_06_stability_matched",
+    "runtime_s": 0.010578165998595068
+  },
+  {
+    "model_id": "degree_rewire_07_native",
+    "runtime_s": 0.010647874998539919
+  },
+  {
+    "model_id": "degree_rewire_07_stability_matched",
+    "runtime_s": 0.01059562500086031
+  },
+  {
+    "model_id": "degree_rewire_08_native",
+    "runtime_s": 0.010565791999397334
+  },
+  {
+    "model_id": "degree_rewire_08_stability_matched",
+    "runtime_s": 0.010545416000240948
+  },
+  {
+    "model_id": "degree_rewire_09_native",
+    "runtime_s": 0.010607333002553787
+  },
+  {
+    "model_id": "degree_rewire_09_stability_matched",
+    "runtime_s": 0.010533791999478126
+  },
+  {
+    "model_id": "degree_rewire_10_native",
+    "runtime_s": 0.011306666001473786
+  },
+  {
+    "model_id": "degree_rewire_10_stability_matched",
+    "runtime_s": 0.011517375001858454
+  },
+  {
+    "model_id": "degree_rewire_11_native",
+    "runtime_s": 0.010642582998116268
+  },
+  {
+    "model_id": "degree_rewire_11_stability_matched",
+    "runtime_s": 0.010603792001347756
+  },
+  {
+    "model_id": "degree_rewire_12_native",
+    "runtime_s": 0.010651374999724794
+  },
+  {
+    "model_id": "degree_rewire_12_stability_matched",
+    "runtime_s": 0.010624041999108158
+  },
+  {
+    "model_id": "degree_rewire_13_native",
+    "runtime_s": 0.010591083999315742
+  },
+  {
+    "model_id": "degree_rewire_13_stability_matched",
+    "runtime_s": 0.01048024999909103
+  },
+  {
+    "model_id": "degree_rewire_14_native",
+    "runtime_s": 0.010675499997887528
+  },
+  {
+    "model_id": "degree_rewire_14_stability_matched",
+    "runtime_s": 0.010597458000120241
+  },
+  {
+    "model_id": "degree_rewire_15_native",
+    "runtime_s": 0.01059687499946449
+  },
+  {
+    "model_id": "degree_rewire_15_stability_matched",
+    "runtime_s": 0.010572291997959837
+  },
+  {
+    "model_id": "degree_rewire_16_native",
+    "runtime_s": 0.010562542000116082
+  },
+  {
+    "model_id": "degree_rewire_16_stability_matched",
+    "runtime_s": 0.010566250002739253
+  },
+  {
+    "model_id": "degree_rewire_17_native",
+    "runtime_s": 0.010556834000453819
+  },
+  {
+    "model_id": "degree_rewire_17_stability_matched",
+    "runtime_s": 0.010654665999027202
+  },
+  {
+    "model_id": "degree_rewire_18_native",
+    "runtime_s": 0.010517874998186016
+  },
+  {
+    "model_id": "degree_rewire_18_stability_matched",
+    "runtime_s": 0.010503666999284178
+  },
+  {
+    "model_id": "degree_rewire_19_native",
+    "runtime_s": 0.010527082999033155
+  },
+  {
+    "model_id": "degree_rewire_19_stability_matched",
+    "runtime_s": 0.010450916997797322
+  },
+  {
+    "model_id": "degree_rewire_20_native",
+    "runtime_s": 0.010514457997487625
+  },
+  {
+    "model_id": "degree_rewire_20_stability_matched",
+    "runtime_s": 0.010501374999876134
+  },
+  {
+    "model_id": "degree_rewire_21_native",
+    "runtime_s": 0.010497166000277502
+  },
+  {
+    "model_id": "degree_rewire_21_stability_matched",
+    "runtime_s": 0.010478542000782909
+  },
+  {
+    "model_id": "degree_rewire_22_native",
+    "runtime_s": 0.010477542000444373
+  },
+  {
+    "model_id": "degree_rewire_22_stability_matched",
+    "runtime_s": 0.01047537500198814
+  },
+  {
+    "model_id": "degree_rewire_23_native",
+    "runtime_s": 0.010478958000021521
+  },
+  {
+    "model_id": "degree_rewire_23_stability_matched",
+    "runtime_s": 0.01049258399871178
+  },
+  {
+    "model_id": "degree_rewire_24_native",
+    "runtime_s": 0.010452749997057253
+  },
+  {
+    "model_id": "degree_rewire_24_stability_matched",
+    "runtime_s": 0.010431709000840783
+  },
+  {
+    "model_id": "degree_rewire_25_native",
+    "runtime_s": 0.010544832999585196
+  },
+  {
+    "model_id": "degree_rewire_25_stability_matched",
+    "runtime_s": 0.010506541999347974
+  },
+  {
+    "model_id": "degree_rewire_26_native",
+    "runtime_s": 0.010456083000462968
+  },
+  {
+    "model_id": "degree_rewire_26_stability_matched",
+    "runtime_s": 0.010446749998664018
+  },
+  {
+    "model_id": "degree_rewire_27_native",
+    "runtime_s": 0.010463749997143168
+  },
+  {
+    "model_id": "degree_rewire_27_stability_matched",
+    "runtime_s": 0.010547832996962825
+  },
+  {
+    "model_id": "degree_rewire_28_native",
+    "runtime_s": 0.010484500002348796
+  },
+  {
+    "model_id": "degree_rewire_28_stability_matched",
+    "runtime_s": 0.010469124998053303
+  },
+  {
+    "model_id": "degree_rewire_29_native",
+    "runtime_s": 0.010497499999473803
+  },
+  {
+    "model_id": "degree_rewire_29_stability_matched",
+    "runtime_s": 0.010432709001179319
+  },
+  {
+    "model_id": "gru_smoke_55100_both_rates",
+    "runtime_s": 0.0439775839986396
+  },
+  {
+    "model_id": "gru_smoke_55101_both_rates",
+    "runtime_s": 0.04371812499812222
+  },
+  {
+    "model_id": "gru_smoke_55102_both_rates",
+    "runtime_s": 0.04318191700076568
+  },
+  {
+    "model_id": "gru_smoke_55103_both_rates",
+    "runtime_s": 0.04340595799658331
+  },
+  {
+    "model_id": "gru_smoke_55104_both_rates",
+    "runtime_s": 0.04335654200258432
+  },
+  {
+    "model_id": "gru_smoke_55105_both_rates",
+    "runtime_s": 0.04309420800200314
+  },
+  {
+    "model_id": "gru_smoke_55106_both_rates",
+    "runtime_s": 0.04321579200041015
+  },
+  {
+    "model_id": "gru_smoke_55107_both_rates",
+    "runtime_s": 0.04355462499734131
+  },
+  {
+    "model_id": "gru_smoke_55108_both_rates",
+    "runtime_s": 0.043381250001402805
+  },
+  {
+    "model_id": "gru_smoke_55109_both_rates",
+    "runtime_s": 0.04326550000041607
+  }
+]

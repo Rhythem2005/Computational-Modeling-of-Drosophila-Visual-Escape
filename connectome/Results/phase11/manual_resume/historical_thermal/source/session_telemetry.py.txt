@@ -1,0 +1,135 @@
+"""Read-only macOS telemetry; unavailable pressure is never a temperature."""
+import ctypes
+from datetime import datetime, timezone
+import os
+import re
+import shlex
+import shutil
+import subprocess
+from .common import ROOT, OUT, read
+
+
+def utc(timestamp):
+    return datetime.fromtimestamp(timestamp, timezone.utc).isoformat()
+
+
+def power_parse(text):
+    match = re.search(r'(\d+)%;\s*([^;]+)', text)
+    return dict(raw=text.strip(), ac_connected="Now drawing from 'AC Power'" in text,
+                percent=int(match[1]) if match else None,
+                status=match[2].strip().lower() if match else 'unknown')
+
+
+def thermal_pressure():
+    try:
+        ctypes.CDLL('/System/Library/Frameworks/Foundation.framework/Foundation')
+        objc = ctypes.CDLL('/usr/lib/libobjc.A.dylib')
+        objc.objc_getClass.argtypes = [ctypes.c_char_p]
+        objc.objc_getClass.restype = ctypes.c_void_p
+        objc.sel_registerName.argtypes = [ctypes.c_char_p]
+        objc.sel_registerName.restype = ctypes.c_void_p
+        pointer = ctypes.CFUNCTYPE(ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p)(('objc_msgSend', objc))
+        integer = ctypes.CFUNCTYPE(ctypes.c_longlong, ctypes.c_void_p, ctypes.c_void_p)(('objc_msgSend', objc))
+        responds = ctypes.CFUNCTYPE(ctypes.c_bool, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p)(('objc_msgSend', objc))
+        info = pointer(objc.objc_getClass(b'NSProcessInfo'), objc.sel_registerName(b'processInfo'))
+        selector = objc.sel_registerName(b'thermalState')
+        if not info or not responds(info, objc.sel_registerName(b'respondsToSelector:'), selector):
+            raise RuntimeError('NSProcessInfo thermalState unavailable')
+        state = int(integer(info, selector))
+        if state not in (0, 1, 2, 3):
+            raise RuntimeError('Unknown OS thermal-pressure state')
+        return dict(available=True, state=state, name=['nominal', 'fair', 'serious', 'critical'][state],
+                    source='NSProcessInfo.thermalState', temperature_c=None)
+    except Exception as error:
+        return dict(available=False, state=None, name='unavailable', error=str(error), temperature_c=None)
+
+
+def process_inventory(text, owner_pid, owned=()):
+    rows = []
+    for line in text.splitlines():
+        bits = line.strip().split(None, 2)
+        if len(bits) == 3 and bits[0].isdigit() and bits[1].isdigit():
+            rows.append(dict(pid=int(bits[0]), ppid=int(bits[1]), command=bits[2]))
+    allowed = {owner_pid, *owned}
+    # Child launcher/worker processes belong to this lease, not competitors.
+    for _ in range(len(rows)+1):
+        expanded = allowed | {r['pid'] for r in rows if r['ppid'] in allowed}
+        if expanded == allowed:
+            break
+        allowed = expanded
+    competitors = []
+    for row in rows:
+        if row['pid'] in allowed:
+            continue
+        try:
+            args = shlex.split(row['command'])
+        except ValueError:
+            continue
+        if not args or 'python' not in os.path.basename(args[0]).lower():
+            continue
+        module = args[args.index('-m')+1] if '-m' in args and args.index('-m')+1 < len(args) else ''
+        if module.startswith('connectome.scripts.phase11.') and module.rsplit('.', 1)[-1] in ('launch', 'runner', 'session_launch', 'session_worker'):
+            competitors.append(row)
+        elif any('/phase11/' in a and a.endswith(('/launch.py', '/runner.py', '/session_launch.py', '/session_worker.py')) for a in args[1:]):
+            competitors.append(row)
+    return competitors
+
+
+class Probe:
+    def __init__(self, root=ROOT, owner_pid=None):
+        self.root = root
+        self.owner_pid = owner_pid or os.getpid()
+
+    def __call__(self, pid=None):
+        import time
+        def command(args):
+            try:
+                result = subprocess.run(args, capture_output=True, text=True, timeout=5)
+                return result.returncode, result.stdout, result.stderr
+            except (OSError, subprocess.TimeoutExpired) as error:
+                return -1, '', str(error)
+        power_code, power, power_error = command(['pmset', '-g', 'batt'])
+        code, processes, error = command(['/bin/ps', '-axo', 'pid=,ppid=,command='])
+        competitors = process_inventory(processes, self.owner_pid, [pid] if pid else []) if code == 0 else []
+        cpu = rss = None
+        if pid:
+            stat_code, stats, _ = command(['/bin/ps', '-p', str(pid), '-o', '%cpu=', '-o', 'rss='])
+            if stat_code == 0:
+                try:
+                    cpu_text, rss_text = stats.split()
+                    cpu, rss = float(cpu_text), int(rss_text)*1024
+                except ValueError:
+                    pass
+        return dict(timestamp_utc=utc(time.time()), timestamp=time.time(),
+                    disk_free_bytes=shutil.disk_usage(self.root).free, power=power_parse(power),
+                    power_query_ok=power_code == 0, power_error=power_error,
+                    thermal=thermal_pressure(), process_query_ok=code == 0, process_error=error,
+                    other_workers=competitors, worker_pid=pid, cpu_percent=cpu, rss_bytes=rss,
+                    cpu_semantics='ps process CPU percentage; not per-core frequency or temperature')
+
+
+def blockers(sample, minimum_disk_bytes, previous=None, physical_memory_bytes=16*1024**3):
+    failures = []
+    if sample['disk_free_bytes'] < minimum_disk_bytes:
+        failures.append('INSUFFICIENT_STORAGE')
+    power = sample['power']
+    if not sample['power_query_ok'] or not power['ac_connected']:
+        failures.append('AC_POWER_NOT_VERIFIED')
+    status = power['status']
+    stable = (previous is not None and previous['power']['percent'] is not None and power['percent'] is not None
+              and power['percent'] >= previous['power']['percent'])
+    if status == 'discharging':
+        failures.append('BATTERY_DISCHARGING')
+    elif status not in ('charging', 'charged', 'finishing charge') and not (status == 'not charging' and stable):
+        failures.append('BATTERY_CHARGING_OR_STABLE_NOT_VERIFIED')
+    if previous and previous['power']['percent'] is not None and power['percent'] is not None and power['percent'] < previous['power']['percent']:
+        failures.append('BATTERY_PERCENT_DECREASED')
+    if sample['thermal']['available'] and sample['thermal']['state'] >= 2:
+        failures.append('SERIOUS_OR_CRITICAL_THERMAL_PRESSURE')
+    if not sample['process_query_ok']:
+        failures.append('OTHER_WORKER_CHECK_UNAVAILABLE')
+    elif sample['other_workers']:
+        failures.append('ANOTHER_PHASE11_WORKER')
+    if sample.get('rss_bytes') is not None and sample['rss_bytes'] > .8*physical_memory_bytes:
+        failures.append('EXCESSIVE_WORKER_RSS')
+    return failures

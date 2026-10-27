@@ -1,0 +1,20 @@
+--- pre_manual/training.py
++++ manual/training.py
+@@ -110,6 +110,8 @@
+             s['training_wall_s'] += elapsed-started
+             started = elapsed
+             save_state(directory, net, adam, s)
++            from .manual_stop import boundary
++            boundary()
+             if pause_after_updates is not None and adam.t-initial_updates >= pause_after_updates:
+                 return None, dict(status='PAUSED_CHECKPOINT', updates=adam.t)
+         validation_loss = 0.
+@@ -136,6 +138,8 @@
+         s['training_wall_s'] += elapsed-started
+         started = elapsed
+         save_state(directory, net, adam, s)
++        from .manual_stop import boundary
++        boundary()
+         if not smoke:
+             print(f"GRU {input_identity['mapping']} s{seed} lr{rate}: epoch {s['epoch']-1}, best epoch {s['best_epoch']}", flush=True)
+     selected = GRU(321, 16, seed, s['_best'])

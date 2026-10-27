@@ -1,0 +1,49 @@
+{
+  "samples": [
+    {
+      "timestamp": 1793122779.216745,
+      "disk_free_bytes": 62692253696,
+      "ac_connected": false,
+      "power_status": "discharging",
+      "battery_percent": 42,
+      "power_query_ok": true,
+      "power_raw": "Now drawing from 'Battery Power'\n -InternalBattery-0 (id=22085731)\t42%; discharging; 3:59 remaining present: true",
+      "power_error": "",
+      "process_query_ok": true,
+      "other_workers": [],
+      "process_error": "",
+      "available_memory_estimate_bytes": 5309956096,
+      "memory_estimate": "vm_stat free + inactive + speculative pages; reclaimable estimate",
+      "memory_error": "",
+      "thermal": {
+        "available": true,
+        "state": 0,
+        "name": "nominal",
+        "temperature_c": null
+      }
+    },
+    {
+      "timestamp": 1793122781.262047,
+      "disk_free_bytes": 62692179968,
+      "ac_connected": false,
+      "power_status": "discharging",
+      "battery_percent": 42,
+      "power_query_ok": true,
+      "power_raw": "Now drawing from 'Battery Power'\n -InternalBattery-0 (id=22085731)\t42%; discharging; 3:59 remaining present: true",
+      "power_error": "",
+      "process_query_ok": true,
+      "other_workers": [],
+      "process_error": "",
+      "available_memory_estimate_bytes": 5641764864,
+      "memory_estimate": "vm_stat free + inactive + speculative pages; reclaimable estimate",
+      "memory_error": "",
+      "thermal": {
+        "available": true,
+        "state": 0,
+        "name": "nominal",
+        "temperature_c": null
+      }
+    }
+  ],
+  "blockers": []
+}

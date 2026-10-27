@@ -1,0 +1,9 @@
+{
+  "metal_device_available": true,
+  "probe": "Native Metal MTLCreateSystemDefaultDevice; no GPU workload",
+  "device_name": "Apple M4",
+  "hasUnifiedMemory": 1,
+  "isLowPower": 0,
+  "recommendedMaxWorkingSetSize": 12713115648,
+  "currentAllocatedSize": 81920
+}

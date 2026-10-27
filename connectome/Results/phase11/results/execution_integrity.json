@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "task": "integrity",
+  "command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "-m",
+    "connectome.scripts.phase11.runner",
+    "--task",
+    "integrity"
+  ],
+  "snapshot": "/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase11-execution-1r07ywef",
+  "frozen_workspace_files_unchanged": 2673,
+  "legacy_files_verified": 2295,
+  "pause_requested": false,
+  "final_publication_completed": true
+}

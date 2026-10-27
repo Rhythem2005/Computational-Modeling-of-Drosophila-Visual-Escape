@@ -1,0 +1,11 @@
+{
+  "status": "PASS_DISPOSABLE_FULL_PATH_REPLAY",
+  "condition": "cal_uniform_population_gru_55100",
+  "training_artifacts_unchanged": 100,
+  "retraining_calls": 0,
+  "new_neural_inference_calls": 0,
+  "ledger_registration_calls": 0,
+  "source_provenance_bridge_verified": true,
+  "freeze_verified": true,
+  "test_ids_used": []
+}

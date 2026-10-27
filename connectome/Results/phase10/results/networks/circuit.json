@@ -1,0 +1,47 @@
+{
+  "model_id": "circuit",
+  "kind": "circuit",
+  "seed": null,
+  "weights_sha256": "6392fe2545ee0a926259912ec56fc39228f13df8b5641966927edfa0b34a573a",
+  "path": "networks/circuit.npz",
+  "invariants": {
+    "no_self_loops": true,
+    "finite": true,
+    "same_block_totals": true,
+    "same_block_weight_multisets": true,
+    "same_topology": true,
+    "same_in_out_degrees": true,
+    "max_in_strength_change": 0.0,
+    "max_out_strength_change": 0.0
+  },
+  "mixing": null,
+  "conditions": {
+    "native": {
+      "condition": "native",
+      "gain": 0.5,
+      "unscaled_radius": 1.3916630828933294,
+      "effective_radius": 0.6958315414466647,
+      "continuous_max_real": -0.03041684585533353,
+      "discrete_radius": 0.9695831541446664,
+      "stable": true,
+      "zero_radius": false,
+      "target": null,
+      "recurrent_matrix_rescale": 1.0
+    },
+    "stability_matched": {
+      "condition": "stability_matched",
+      "gain": 0.5,
+      "unscaled_radius": 1.3916630828933294,
+      "effective_radius": 0.6958315414466647,
+      "continuous_max_real": -0.03041684585533353,
+      "discrete_radius": 0.9695831541446664,
+      "stable": true,
+      "zero_radius": false,
+      "target": 0.6958315414466647,
+      "recurrent_matrix_rescale": 1.0
+    }
+  },
+  "trainable_parameters": 0,
+  "threshold_parameters": 1,
+  "eligible_for_use": true
+}

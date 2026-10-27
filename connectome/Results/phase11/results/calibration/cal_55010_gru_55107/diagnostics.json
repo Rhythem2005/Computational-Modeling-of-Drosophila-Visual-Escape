@@ -1,0 +1,2306 @@
+[
+  {
+    "scenario_id": "train_f0000_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999109561970763
+  },
+  {
+    "scenario_id": "train_f0000_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0000_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0000_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0001_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999165670484979
+  },
+  {
+    "scenario_id": "train_f0001_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0001_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0001_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0002_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998280973989393
+  },
+  {
+    "scenario_id": "train_f0002_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0002_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0002_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0003_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999915614932826
+  },
+  {
+    "scenario_id": "train_f0003_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0003_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0003_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0004_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998825666565133
+  },
+  {
+    "scenario_id": "train_f0004_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0004_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0004_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0005_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999918253287208
+  },
+  {
+    "scenario_id": "train_f0005_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0005_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0005_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0006_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998819890828777
+  },
+  {
+    "scenario_id": "train_f0006_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0006_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0006_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0007_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998793498413194
+  },
+  {
+    "scenario_id": "train_f0007_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0007_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0007_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0008_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999114158367576
+  },
+  {
+    "scenario_id": "train_f0008_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0008_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0008_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0009_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9997010467186794
+  },
+  {
+    "scenario_id": "train_f0009_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0009_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0009_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0010_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999925081776987
+  },
+  {
+    "scenario_id": "train_f0010_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0010_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0010_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0011_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998118891877948
+  },
+  {
+    "scenario_id": "train_f0011_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0011_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0011_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0012_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999111838265905
+  },
+  {
+    "scenario_id": "train_f0012_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0012_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0012_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0013_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999248105365762
+  },
+  {
+    "scenario_id": "train_f0013_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0013_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0013_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0014_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998549589404089
+  },
+  {
+    "scenario_id": "train_f0014_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0014_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0014_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0015_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999242493857865
+  },
+  {
+    "scenario_id": "train_f0015_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0015_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0015_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0016_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998943460378381
+  },
+  {
+    "scenario_id": "train_f0016_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0016_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0016_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0017_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999122026873496
+  },
+  {
+    "scenario_id": "train_f0017_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0017_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0017_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0018_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9997802555409386
+  },
+  {
+    "scenario_id": "train_f0018_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0018_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0018_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0019_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999209178437514
+  },
+  {
+    "scenario_id": "train_f0019_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0019_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0019_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0020_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9997734212047446
+  },
+  {
+    "scenario_id": "train_f0020_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0020_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0020_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0021_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9997004771433871
+  },
+  {
+    "scenario_id": "train_f0021_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0021_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0021_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0022_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999092839451491
+  },
+  {
+    "scenario_id": "train_f0022_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0022_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0022_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0023_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998321660694793
+  },
+  {
+    "scenario_id": "train_f0023_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0023_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0023_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0024_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999175994626539
+  },
+  {
+    "scenario_id": "train_f0024_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0024_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0024_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0025_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998756593303286
+  },
+  {
+    "scenario_id": "train_f0025_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0025_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0025_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0026_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998769952316305
+  },
+  {
+    "scenario_id": "train_f0026_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0026_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0026_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0027_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999050307964876
+  },
+  {
+    "scenario_id": "train_f0027_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0027_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0027_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0028_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998812950822924
+  },
+  {
+    "scenario_id": "train_f0028_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0028_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0028_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0029_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999840202604013
+  },
+  {
+    "scenario_id": "train_f0029_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0029_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0029_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0030_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999214660976785
+  },
+  {
+    "scenario_id": "train_f0030_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0030_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0030_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0031_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9994445018946816
+  },
+  {
+    "scenario_id": "train_f0031_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0031_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0031_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0032_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999046880615486
+  },
+  {
+    "scenario_id": "train_f0032_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0032_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0032_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0033_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999895966377757
+  },
+  {
+    "scenario_id": "train_f0033_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0033_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0033_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0034_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998680951067569
+  },
+  {
+    "scenario_id": "train_f0034_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0034_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0034_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0035_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999080153785743
+  },
+  {
+    "scenario_id": "train_f0035_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0035_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0035_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0036_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999073835234253
+  },
+  {
+    "scenario_id": "train_f0036_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0036_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0036_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0037_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998865114776363
+  },
+  {
+    "scenario_id": "train_f0037_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0037_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0037_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0038_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998079432147593
+  },
+  {
+    "scenario_id": "train_f0038_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0038_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0038_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0039_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999143807102018
+  },
+  {
+    "scenario_id": "train_f0039_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0039_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0039_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0040_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999261344223352
+  },
+  {
+    "scenario_id": "train_f0040_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0040_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0040_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0041_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999107840827597
+  },
+  {
+    "scenario_id": "train_f0041_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0041_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0041_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0042_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998256570717365
+  },
+  {
+    "scenario_id": "train_f0042_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0042_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0042_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0043_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998817395020974
+  },
+  {
+    "scenario_id": "train_f0043_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0043_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0043_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0044_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999918440918553
+  },
+  {
+    "scenario_id": "train_f0044_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0044_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0044_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0045_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999181209689176
+  },
+  {
+    "scenario_id": "train_f0045_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0045_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0045_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0046_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998728485884405
+  },
+  {
+    "scenario_id": "train_f0046_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0046_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0046_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0047_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998060693445739
+  },
+  {
+    "scenario_id": "train_f0047_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0047_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0047_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0048_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998767631742999
+  },
+  {
+    "scenario_id": "train_f0048_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0048_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0048_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0049_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999582767300725
+  },
+  {
+    "scenario_id": "train_f0049_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0049_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0049_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0050_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999139555721042
+  },
+  {
+    "scenario_id": "train_f0050_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0050_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0050_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0051_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999186803112786
+  },
+  {
+    "scenario_id": "train_f0051_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0051_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0051_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0052_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998551292738508
+  },
+  {
+    "scenario_id": "train_f0052_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0052_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0052_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0053_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998773317702977
+  },
+  {
+    "scenario_id": "train_f0053_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0053_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0053_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0054_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9997383790099377
+  },
+  {
+    "scenario_id": "train_f0054_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0054_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0054_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0055_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998803993641339
+  },
+  {
+    "scenario_id": "train_f0055_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0055_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0055_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0056_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999246344824273
+  },
+  {
+    "scenario_id": "train_f0056_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0056_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0056_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0057_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999226574002871
+  },
+  {
+    "scenario_id": "train_f0057_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0057_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0057_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0058_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999903068131291
+  },
+  {
+    "scenario_id": "train_f0058_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0058_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0058_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0059_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999163684462892
+  },
+  {
+    "scenario_id": "train_f0059_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0059_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0059_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0060_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999228521715855
+  },
+  {
+    "scenario_id": "train_f0060_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0060_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0060_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0061_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998193800128575
+  },
+  {
+    "scenario_id": "train_f0061_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0061_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0061_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0062_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999263012161764
+  },
+  {
+    "scenario_id": "train_f0062_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0062_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0062_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0063_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998957815649675
+  },
+  {
+    "scenario_id": "train_f0063_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0063_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "train_f0063_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0000_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999922035558962
+  },
+  {
+    "scenario_id": "validation_f0000_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0000_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0000_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0001_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999891955525012
+  },
+  {
+    "scenario_id": "validation_f0001_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0001_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0001_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0002_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999228131039312
+  },
+  {
+    "scenario_id": "validation_f0002_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0002_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0002_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0003_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998766523791877
+  },
+  {
+    "scenario_id": "validation_f0003_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0003_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0003_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0004_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999231433491151
+  },
+  {
+    "scenario_id": "validation_f0004_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0004_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0004_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0005_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999147849800137
+  },
+  {
+    "scenario_id": "validation_f0005_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0005_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0005_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0006_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999095411447922
+  },
+  {
+    "scenario_id": "validation_f0006_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0006_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0006_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0007_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999236415966106
+  },
+  {
+    "scenario_id": "validation_f0007_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0007_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0007_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0008_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998013741395697
+  },
+  {
+    "scenario_id": "validation_f0008_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0008_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0008_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0009_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999031231121389
+  },
+  {
+    "scenario_id": "validation_f0009_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0009_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0009_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0010_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998923618313039
+  },
+  {
+    "scenario_id": "validation_f0010_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0010_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0010_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0011_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998965975003866
+  },
+  {
+    "scenario_id": "validation_f0011_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0011_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0011_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0012_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999159155883877
+  },
+  {
+    "scenario_id": "validation_f0012_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0012_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0012_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0013_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9997856000667185
+  },
+  {
+    "scenario_id": "validation_f0013_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0013_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0013_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0014_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999133511200021
+  },
+  {
+    "scenario_id": "validation_f0014_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0014_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0014_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0015_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998887953896594
+  },
+  {
+    "scenario_id": "validation_f0015_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0015_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0015_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0016_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999246434099314
+  },
+  {
+    "scenario_id": "validation_f0016_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0016_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0016_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0017_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998765847127222
+  },
+  {
+    "scenario_id": "validation_f0017_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0017_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0017_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0018_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998943374258753
+  },
+  {
+    "scenario_id": "validation_f0018_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0018_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0018_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0019_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998055579278282
+  },
+  {
+    "scenario_id": "validation_f0019_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0019_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0019_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0020_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999145786313912
+  },
+  {
+    "scenario_id": "validation_f0020_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0020_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0020_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0021_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998394529874219
+  },
+  {
+    "scenario_id": "validation_f0021_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0021_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0021_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0022_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999194135918419
+  },
+  {
+    "scenario_id": "validation_f0022_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0022_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0022_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0023_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999253116451315
+  },
+  {
+    "scenario_id": "validation_f0023_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0023_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0023_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0024_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999153076525452
+  },
+  {
+    "scenario_id": "validation_f0024_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0024_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0024_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0025_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998418209845638
+  },
+  {
+    "scenario_id": "validation_f0025_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0025_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0025_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0026_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9999040992087894
+  },
+  {
+    "scenario_id": "validation_f0026_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0026_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0026_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0027_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999899453551988
+  },
+  {
+    "scenario_id": "validation_f0027_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0027_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0027_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0028_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998365246928493
+  },
+  {
+    "scenario_id": "validation_f0028_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0028_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0028_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0029_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.999926140314152
+  },
+  {
+    "scenario_id": "validation_f0029_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0029_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0029_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0030_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998214548212018
+  },
+  {
+    "scenario_id": "validation_f0030_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0030_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0030_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0031_looming",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.9998603525030744
+  },
+  {
+    "scenario_id": "validation_f0031_static_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0031_static_terminal",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  },
+  {
+    "scenario_id": "validation_f0031_translating_initial",
+    "finite": true,
+    "score_min": 0.0001106211857532313,
+    "score_max": 0.47425653499854087
+  }
+]

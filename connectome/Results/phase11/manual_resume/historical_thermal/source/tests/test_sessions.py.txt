@@ -1,0 +1,270 @@
+"""Mock scheduling and synthetic-only mathematics; no registered trial executes."""
+from copy import deepcopy
+import os
+from pathlib import Path
+import uuid
+import numpy as np
+import pytest
+from connectome.scripts.phase11.common import OUT, read, write, sha
+from connectome.scripts.phase11.sessions import SessionController, Policy
+from connectome.scripts.phase11.session_telemetry import blockers, power_parse, process_inventory
+from connectome.scripts.phase11.worker_guard import worker_lease
+
+
+class Clock:
+    def __init__(self):
+        self.value = 1000.
+        self.sleeps = []
+        self.interrupt_at = None
+    def now(self):
+        return self.value
+    def sleep(self, seconds):
+        self.sleeps.append(seconds)
+        self.value += seconds
+        if self.interrupt_at is not None and self.value >= self.interrupt_at:
+            self.interrupt_at = None
+            raise KeyboardInterrupt()
+
+
+def safe_sample():
+    return dict(timestamp=1000., power_query_ok=True, disk_free_bytes=10**12,
+                power=dict(ac_connected=True, status='charging', percent=80),
+                thermal=dict(available=True,state=0,name='nominal',temperature_c=None),
+                process_query_ok=True, other_workers=[], cpu_percent=None, rss_bytes=None)
+
+
+class Backend:
+    def __init__(self, count=5):
+        self.records = [dict(definition=dict(job_id=f'mock_{i}',kind='gru_trial',mapping='uniform_population'),status='NOT_STARTED') for i in range(count)]
+        self.calls = []
+        self.registrations = []
+        self.interrupt = False
+        self.after = None
+    def rows(self):
+        return self.records
+    def verify_complete(self, job):
+        assert next(r for r in self.records if r['definition']==job)['status']=='COMPLETE'
+    def run(self, job, monitor):
+        self.calls.append(job['job_id'])
+        if self.interrupt:
+            self.interrupt = False
+            raise KeyboardInterrupt()
+        row = next(r for r in self.records if r['definition']==job)
+        row['status'] = 'COMPLETE'
+        self.registrations.append(job['job_id'])
+        if self.after:
+            self.after(monitor)
+        return dict(status='COMPLETE')
+
+
+def controller(backend, clock, directory=None, probe=safe_sample):
+    return SessionController(backend, probe, directory or OUT/'tests/sessions'/uuid.uuid4().hex, 10**9,
+         now=clock.now, sleep=clock.sleep)
+
+
+def test_two_jobs_per_session_order_and_no_final_sleep():
+    backend, clock = Backend(), Clock()
+    c = controller(backend,clock)
+    result = c.run(max_sessions=3)
+    assert backend.calls == [f'mock_{i}' for i in range(5)]
+    assert [len(r['completed']) for r in result['sessions']] == [2,2,1]
+    assert len(result['cooling_periods']) == 2
+    assert sum(p['observed_wait_seconds'] for p in result['cooling_periods']) == 360
+    assert max(clock.sleeps) <= 5
+
+
+def test_bounded_default_one_session_and_restart_keeps_completed_jobs():
+    backend, clock = Backend(4), Clock()
+    c = controller(backend,clock)
+    c.run()
+    assert backend.calls == ['mock_0','mock_1']
+    again = controller(backend,clock,c.directory)
+    result = again.run()
+    assert backend.calls == [f'mock_{i}' for i in range(4)]
+    assert len(backend.registrations) == len(set(backend.registrations)) == 4
+    assert result['cooling_periods'][0]['observed_wait_seconds'] == 180
+
+
+def test_cooling_interrupt_restart_keeps_original_deadline():
+    backend, clock = Backend(4), Clock()
+    c = controller(backend,clock)
+    c.run()
+    deadline = c.state['cooling_until']
+    clock.interrupt_at = clock.value+10
+    with pytest.raises(KeyboardInterrupt):
+        controller(backend,clock,c.directory).run()
+    assert read(c.path)['cooling_until']==deadline
+    restarted = controller(backend,clock,c.directory)
+    restarted.run()
+    assert sum(r['observed_wait_seconds'] for r in restarted.state['cooling_periods'])==180
+    assert backend.calls == ['mock_0','mock_1','mock_2','mock_3']
+
+
+def test_trial_interrupt_retains_same_identity_then_resumes():
+    backend, clock = Backend(2), Clock()
+    backend.interrupt=True
+    c=controller(backend,clock)
+    with pytest.raises(KeyboardInterrupt):c.run()
+    assert read(c.path)['active']['active_job']['job_id']=='mock_0'
+    controller(backend,clock,c.directory).run()
+    assert backend.calls == ['mock_0','mock_0','mock_1']
+    assert backend.registrations == ['mock_0','mock_1']
+
+
+def test_crash_after_registration_before_controller_commit_does_not_repeat():
+    backend,clock=Backend(2),Clock();c=controller(backend,clock)
+    c.state['active']=dict(scope='primary',start_utc='fixture',start_timestamp=clock.now(),
+                          completed=[],attempts=[],active_job=backend.records[0]['definition'])
+    backend.records[0]['status']='COMPLETE';backend.registrations.append('mock_0');c.save()
+    result=controller(backend,clock,c.directory).run()
+    assert backend.calls==['mock_1']
+    assert result['sessions'][0]['completed']==['mock_0','mock_1']
+
+
+@pytest.mark.parametrize('issue',['power','thermal','disk','workers','ps_unavailable','rss'])
+def test_unsafe_before_session_never_dispatches(issue):
+    sample=safe_sample()
+    if issue=='power':sample['power']['status']='discharging'
+    if issue=='thermal':sample['thermal']['state']=2
+    if issue=='disk':sample['disk_free_bytes']=0
+    if issue=='workers':sample['other_workers']=[dict(pid=999)]
+    if issue=='ps_unavailable':sample['process_query_ok']=False
+    if issue=='rss':sample['rss_bytes']=16*1024**3
+    backend,clock=Backend(),Clock()
+    result=controller(backend,clock,probe=lambda:deepcopy(sample)).run()
+    assert result['status']=='BLOCKED_RESOURCES' and not backend.calls
+
+
+def test_discharge_during_trial_allows_registration_but_no_next_trial():
+    backend,clock=Backend(3),Clock()
+    def after(monitor):
+        sample=safe_sample();sample['power']['status']='discharging';monitor(sample)
+    backend.after=after
+    result=controller(backend,clock).run(max_sessions=2)
+    assert backend.calls==['mock_0'] and backend.registrations==['mock_0']
+    assert result['status']=='STOPPED_RESOURCES'
+
+
+def test_missing_temperature_is_not_a_block_or_a_temperature_claim():
+    sample=safe_sample();sample['thermal']=dict(available=False,state=None,name='unavailable',temperature_c=None)
+    assert blockers(sample,10**9)==[]
+
+
+def test_power_parser_ac_label_alone_does_not_pass_discharge():
+    p=power_parse("Now drawing from 'AC Power'\n -InternalBattery-0 71%; discharging; 9:07 remaining present: true")
+    assert p['ac_connected'] and p['status']=='discharging' and p['percent']==71
+    sample=safe_sample();sample['power']=p
+    assert 'BATTERY_DISCHARGING' in blockers(sample,10**9)
+    sample['power']['status']='not charging'
+    assert 'BATTERY_CHARGING_OR_STABLE_NOT_VERIFIED' in blockers(sample,10**9)
+    assert blockers(sample,10**9,deepcopy(sample))==[]
+
+
+def test_process_inventory_excludes_owned_children_and_finds_other_worker():
+    text='10 1 /usr/bin/python3 -m connectome.scripts.phase11.session_launch --execute\n11 10 /usr/bin/python3 -m connectome.scripts.phase11.session_worker --job-id x\n20 1 /usr/bin/python3 -m connectome.scripts.phase11.runner --task primary\n21 1 /bin/zsh -c echo phase11'
+    assert [r['pid'] for r in process_inventory(text,10)]==[20]
+
+
+def test_worker_lease_rejects_concurrent_owner_and_recovers_after_release():
+    path=OUT/'tests/sessions'/uuid.uuid4().hex/'lease'
+    with worker_lease(path):
+        with pytest.raises(RuntimeError,match='Another'):
+            with worker_lease(path):pass
+    with worker_lease(path):pass
+
+
+def test_failed_jobs_block_order_without_seed_replacement():
+    backend,clock=Backend(2),Clock();backend.records[0]['status']='FAILED_NO_REPLACEMENT'
+    with pytest.raises(RuntimeError,match='cannot be retried'):
+        controller(backend,clock).run()
+    assert not backend.calls
+
+
+def test_state_rejects_changed_schedule():
+    backend,clock=Backend(2),Clock();c=controller(backend,clock);c.save()
+    backend.records[0]['definition']['job_id']='changed'
+    with pytest.raises(ValueError,match='schedule changed'):controller(backend,clock,c.directory)
+
+
+def test_report_written_before_registration_is_recovered_once(monkeypatch):
+    from connectome.scripts.phase11 import session_worker as worker, jobs, training
+    directory=OUT/'tests/sessions'/uuid.uuid4().hex
+    job=dict(job_id='unit_only',kind='gru_trial',mapping='uniform_population',seed=55100,rate=.0003)
+    rows=[dict(definition=job,status='RUNNING_OR_RESUMING')];updates=[]
+    write(directory/'training/unit_only/report.json',dict(parameters_sha256='unit_hash'))
+    monkeypatch.setattr(worker,'OUT',directory)
+    monkeypatch.setattr(jobs,'ledger',lambda:rows)
+    def update(items,job_id,status,**details):items[0].update(status=status,**details);updates.append(status)
+    monkeypatch.setattr(jobs,'update',update)
+    monkeypatch.setattr(worker,'verify_complete',lambda j:dict(parameters_sha256='unit_hash'))
+    monkeypatch.setattr(training,'train_trial',lambda *a,**k:pytest.fail('Unnecessary retraining'))
+    worker.run_one('unit_only');worker.run_one('unit_only')
+    assert updates==['COMPLETE']
+
+
+def test_persistent_working_copy_reused_and_tampering_rejected(monkeypatch):
+    from connectome.scripts.phase11 import session_launch as module
+    directory=OUT/'tests/sessions'/uuid.uuid4().hex
+    workspace=directory/'workspace'
+    source='connectome/scripts/phase11/example.py'
+    write(workspace/source,dict(unit_source=True))
+    write(workspace/'earlier.json',dict(frozen=True))
+    definitions={source:sha(workspace/source)}
+    monkeypatch.setattr(module,'DIRECTORY',directory/'mode')
+    monkeypatch.setattr(module,'sources',lambda:definitions)
+    monkeypatch.setattr(module,'snapshot',lambda:(workspace,1))
+    assert module.working_copy()==workspace
+    monkeypatch.setattr(module,'snapshot',lambda:pytest.fail('Unnecessary execution copy reset'))
+    assert module.working_copy()==workspace
+    write(workspace/'earlier.json',dict(frozen=False))
+    with pytest.raises(ValueError,match='bytes changed'):module.working_copy()
+
+
+def test_backend_publishes_checkpoint_inputs_then_registration(monkeypatch):
+    from connectome.scripts.phase11 import session_launch as module
+    directory=OUT/'tests/sessions'/uuid.uuid4().hex
+    backend=module.Backend(directory/'workspace',lambda:None)
+    for name in ('training','inputs'):(backend.child_out/name).mkdir(parents=True,exist_ok=True)
+    write(backend.child_out/'job_ledger.json',dict(unit_only=True))
+    calls=[]
+    monkeypatch.setattr(module,'OUT',directory/'published')
+    monkeypatch.setattr(module,'publish',lambda src,dst:calls.append(src.name))
+    monkeypatch.setattr(module,'atomic',lambda path,data:calls.append(path.name))
+    backend.sync()
+    assert calls==['training','inputs','job_ledger.json']
+
+
+def test_controlled_batched_and_interrupted_training_matches_uninterrupted():
+    from connectome.scripts.phase11.training import train_trial
+    from connectome.scripts.phase10.gru import train_run
+    from connectome.scripts.phase6.encoder import load_mapping
+    rng=np.random.default_rng(812);dn=np.array(load_mapping()['channel_index'])<0;sets=[]
+    for split in ('train','validation'):
+        records=[]
+        for k in range(20):
+            x=rng.uniform(0,.2,(24,321))
+            x[:,dn]=0.
+            records.append(dict(scenario_id=f'fixture_{split}_{k}',group_id=f'fixture_{split}_{k}',split=split,cohort=split,
+                                label=k%2,role='looming' if k%2 else 'static_initial',inputs=x))
+        sets.append(records)
+    root=OUT/'tests/sessions'/uuid.uuid4().hex
+    class MathBackend(Backend):
+        def __init__(self):
+            super().__init__(2);self.results={};self.pause=True
+            for row,rate in zip(self.records,(.0003,.001)):row['definition'].update(seed=55100,rate=rate)
+        def run(self,job,monitor):
+            net,report=train_trial(*sets,55100,job['rate'],root/job['job_id'],dict(mapping='synthetic_fixture'),
+                                   smoke=True,smoke_epochs=3,pause_after_updates=1 if self.pause else None)
+            self.pause=False
+            if net is None:return dict(status='INTERRUPTED_CHECKPOINT_RESUMABLE')
+            self.results[job['job_id']]=(net,report)
+            return super().run(job,monitor)
+    backend,clock=MathBackend(),Clock();c=controller(backend,clock,root/'journal')
+    assert c.run()['status']=='INTERRUPTED_CHECKPOINT_RESUMABLE'
+    controller(backend,clock,c.directory).run()
+    for row in backend.records:
+        job=row['definition'];expected,proof=train_run(*sets,55100,job['rate'],smoke=True,smoke_epochs=3,smoke_start=8)
+        actual,report=backend.results[job['job_id']]
+        assert report['history']==proof['history']
+        for key in expected.p:np.testing.assert_array_equal(actual.p[key],expected.p[key])
+    assert len(backend.registrations)==2

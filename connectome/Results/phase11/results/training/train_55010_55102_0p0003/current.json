@@ -1,0 +1,4392 @@
+{
+  "contract": {
+    "seed": 55102,
+    "rate": 0.0003,
+    "config": {
+      "version": "1.0.0",
+      "protocol_id": "fly_fair_controls_v1",
+      "design_seed": 55001,
+      "null_count": 30,
+      "mapping_seeds": [
+        55010,
+        55011,
+        55012,
+        55013,
+        55014
+      ],
+      "gain": 0.5,
+      "tau_ms": 10.0,
+      "input_scale": 0.4,
+      "dt_ms": 1,
+      "duration_ms": 1000,
+      "persistence_ms": 20,
+      "input_dimension": 321,
+      "target_radius": 0.6958315414466647,
+      "rewiring_swaps_per_edge": 20,
+      "rewiring_attempts_per_edge": 400,
+      "rewiring_checkpoints": 20,
+      "hidden_units": 16,
+      "training_seeds": [
+        55100,
+        55101,
+        55102,
+        55103,
+        55104,
+        55105,
+        55106,
+        55107,
+        55108,
+        55109
+      ],
+      "learning_rates": [
+        0.0003,
+        0.001
+      ],
+      "max_epochs": 200,
+      "patience": 20,
+      "batch_size": 16,
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.999,
+      "adam_epsilon": 1e-08,
+      "gradient_norm_limit": 5.0,
+      "checkpoint_selection": "minimum_validation_episode_BCE_then_earliest_epoch",
+      "rate_selection": "minimum_validation_episode_BCE_then_smaller_rate",
+      "threshold_policy": "next_float_above_training_negative_quantile"
+    },
+    "sources_sha256": {
+      "connectome/Results/phase11/README.md": "a79927aa6a3284e2917d76cd0c42c2b10543b78991d7c7263a53232ac255f3f3",
+      "connectome/Results/phase11/training_plan.md": "b36ee54d40d85fe61f3f68e92f62f232b3ff7cd579f5e7b6bf5d7a878cd9ed89",
+      "connectome/scripts/phase11/assessment.py": "b40ad5f323202630fcf8528d07dae949e3097b69d760af456e72290c6f1e5fae",
+      "connectome/scripts/phase11/common.py": "72cbc548279b15e03f6f7681b9eecf5fe87b2f0193f7cb01ba922abae7ca68ec",
+      "connectome/scripts/phase11/dataset.py": "19d07776af29c0739f8f0a60e1c0f2497472396548f1d8e6bbbe6e00300fc926",
+      "connectome/scripts/phase11/engineering.py": "d1241e8c227042d481a55ecadc7cf51d5f465da18909ae7a1981560a133f5033",
+      "connectome/scripts/phase11/integrity.py": "97ec3337727d690bc04a59d8871456253b720a06a402c72a4ad6927ed636cf8c",
+      "connectome/scripts/phase11/jobs.py": "25be78ab0ef3c49694a79f1840c22f59ba2d45a907f62f7a24af9379278ac21f",
+      "connectome/scripts/phase11/launch.py": "124874c4ff270826384535987d1ef9987c2d887bfac6e68635fe6eeb06331f97",
+      "connectome/scripts/phase11/manual_stop.py": "c017188ad89e46843f213cde9ebb15a8ff70bbbe73122da53734ed6af7afd9b4",
+      "connectome/scripts/phase11/repair_provenance.py": "db7001f7bed40cc6ffa65342bbc56ea1580c9aa1a974fef5cfa2d61b31a824f1",
+      "connectome/scripts/phase11/resources.py": "1b2c9ba8744f3f08b3117a173649b1b0c90379458a3b4efb1a0f00a1be51544d",
+      "connectome/scripts/phase11/runner.py": "705a06eeca7a9a35ef040da153ab856d2f43e7d2a8b57f561062afc488589b20",
+      "connectome/scripts/phase11/runtime.py": "700221efd36096b63b13b62a4f635a520f92a2773719f9d1b0d9330506b4f861",
+      "connectome/scripts/phase11/tests/launcher_fixture.py": "b95a2655dc251abb61f774866047c9864f27d462b50d60185709d543e8e3c185",
+      "connectome/scripts/phase11/tests/manual_fixture.py": "faf19c64758726437c3be9c8f12d80ada96d015c99038842a762f2d1ae437ba0",
+      "connectome/scripts/phase11/tests/test_calibration_repair.py": "7c27b3b49cb5bd2e18390d4a1f75f4782e7af891c4e7287c82fc0058fa56b3d1",
+      "connectome/scripts/phase11/tests/test_manual_resume.py": "4e54aa1ebad97dc2ef911d0b3c35a37136a019e25ba42766ecc2ad57354d4410",
+      "connectome/scripts/phase11/tests/test_orchestration.py": "e402ff25f5d122682c52b7f3ad188416243fdaf113d1e3a1c65f638eae48569d",
+      "connectome/scripts/phase11/training.py": "e2d497db3b959930f402e7612f102c6d4a52721f7dde5feb89ad9787a5f402dd"
+    },
+    "input_identity": {
+      "mapping": 55010,
+      "mapping_sha256": "dbc676bcb9d0c809238f3b072c19b2e3115d25f77bfc358fdc87b6c420e7c989",
+      "manifest_sha256": "2dd0df51d8d404c5b8b6d1b86432fee4e13d588a58f0ff8e82fdee7aaf389f82",
+      "encoder_lock_sha256": "b5ed876d897dcbd94bf6d616bd9abab0f1eba6b449b143ed9d20f30307e9b8b2",
+      "cache_sha256": "7113c11262125d63d06b5e4caa93a7d3f524a77d2316a62b49b61a0be208dc5e",
+      "clips": 384
+    },
+    "training": [
+      {
+        "scenario_id": "train_f0000_looming",
+        "group_id": "train_f0000",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0000_static_initial",
+        "group_id": "train_f0000",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0000_static_terminal",
+        "group_id": "train_f0000",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0000_translating_initial",
+        "group_id": "train_f0000",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0001_looming",
+        "group_id": "train_f0001",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0001_static_initial",
+        "group_id": "train_f0001",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0001_static_terminal",
+        "group_id": "train_f0001",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0001_translating_initial",
+        "group_id": "train_f0001",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0002_looming",
+        "group_id": "train_f0002",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0002_static_initial",
+        "group_id": "train_f0002",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0002_static_terminal",
+        "group_id": "train_f0002",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0002_translating_initial",
+        "group_id": "train_f0002",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0003_looming",
+        "group_id": "train_f0003",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0003_static_initial",
+        "group_id": "train_f0003",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0003_static_terminal",
+        "group_id": "train_f0003",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0003_translating_initial",
+        "group_id": "train_f0003",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0004_looming",
+        "group_id": "train_f0004",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0004_static_initial",
+        "group_id": "train_f0004",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0004_static_terminal",
+        "group_id": "train_f0004",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0004_translating_initial",
+        "group_id": "train_f0004",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0005_looming",
+        "group_id": "train_f0005",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0005_static_initial",
+        "group_id": "train_f0005",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0005_static_terminal",
+        "group_id": "train_f0005",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0005_translating_initial",
+        "group_id": "train_f0005",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0006_looming",
+        "group_id": "train_f0006",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0006_static_initial",
+        "group_id": "train_f0006",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0006_static_terminal",
+        "group_id": "train_f0006",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0006_translating_initial",
+        "group_id": "train_f0006",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0007_looming",
+        "group_id": "train_f0007",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0007_static_initial",
+        "group_id": "train_f0007",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0007_static_terminal",
+        "group_id": "train_f0007",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0007_translating_initial",
+        "group_id": "train_f0007",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0008_looming",
+        "group_id": "train_f0008",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0008_static_initial",
+        "group_id": "train_f0008",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0008_static_terminal",
+        "group_id": "train_f0008",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0008_translating_initial",
+        "group_id": "train_f0008",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0009_looming",
+        "group_id": "train_f0009",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0009_static_initial",
+        "group_id": "train_f0009",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0009_static_terminal",
+        "group_id": "train_f0009",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0009_translating_initial",
+        "group_id": "train_f0009",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0010_looming",
+        "group_id": "train_f0010",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0010_static_initial",
+        "group_id": "train_f0010",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0010_static_terminal",
+        "group_id": "train_f0010",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0010_translating_initial",
+        "group_id": "train_f0010",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0011_looming",
+        "group_id": "train_f0011",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0011_static_initial",
+        "group_id": "train_f0011",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0011_static_terminal",
+        "group_id": "train_f0011",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0011_translating_initial",
+        "group_id": "train_f0011",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0012_looming",
+        "group_id": "train_f0012",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0012_static_initial",
+        "group_id": "train_f0012",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0012_static_terminal",
+        "group_id": "train_f0012",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0012_translating_initial",
+        "group_id": "train_f0012",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0013_looming",
+        "group_id": "train_f0013",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0013_static_initial",
+        "group_id": "train_f0013",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0013_static_terminal",
+        "group_id": "train_f0013",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0013_translating_initial",
+        "group_id": "train_f0013",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0014_looming",
+        "group_id": "train_f0014",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0014_static_initial",
+        "group_id": "train_f0014",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0014_static_terminal",
+        "group_id": "train_f0014",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0014_translating_initial",
+        "group_id": "train_f0014",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0015_looming",
+        "group_id": "train_f0015",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0015_static_initial",
+        "group_id": "train_f0015",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0015_static_terminal",
+        "group_id": "train_f0015",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0015_translating_initial",
+        "group_id": "train_f0015",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0016_looming",
+        "group_id": "train_f0016",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0016_static_initial",
+        "group_id": "train_f0016",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0016_static_terminal",
+        "group_id": "train_f0016",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0016_translating_initial",
+        "group_id": "train_f0016",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0017_looming",
+        "group_id": "train_f0017",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0017_static_initial",
+        "group_id": "train_f0017",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0017_static_terminal",
+        "group_id": "train_f0017",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0017_translating_initial",
+        "group_id": "train_f0017",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0018_looming",
+        "group_id": "train_f0018",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0018_static_initial",
+        "group_id": "train_f0018",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0018_static_terminal",
+        "group_id": "train_f0018",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0018_translating_initial",
+        "group_id": "train_f0018",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0019_looming",
+        "group_id": "train_f0019",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0019_static_initial",
+        "group_id": "train_f0019",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0019_static_terminal",
+        "group_id": "train_f0019",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0019_translating_initial",
+        "group_id": "train_f0019",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0020_looming",
+        "group_id": "train_f0020",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0020_static_initial",
+        "group_id": "train_f0020",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0020_static_terminal",
+        "group_id": "train_f0020",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0020_translating_initial",
+        "group_id": "train_f0020",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0021_looming",
+        "group_id": "train_f0021",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0021_static_initial",
+        "group_id": "train_f0021",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0021_static_terminal",
+        "group_id": "train_f0021",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0021_translating_initial",
+        "group_id": "train_f0021",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0022_looming",
+        "group_id": "train_f0022",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0022_static_initial",
+        "group_id": "train_f0022",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0022_static_terminal",
+        "group_id": "train_f0022",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0022_translating_initial",
+        "group_id": "train_f0022",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0023_looming",
+        "group_id": "train_f0023",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0023_static_initial",
+        "group_id": "train_f0023",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0023_static_terminal",
+        "group_id": "train_f0023",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0023_translating_initial",
+        "group_id": "train_f0023",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0024_looming",
+        "group_id": "train_f0024",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0024_static_initial",
+        "group_id": "train_f0024",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0024_static_terminal",
+        "group_id": "train_f0024",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0024_translating_initial",
+        "group_id": "train_f0024",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0025_looming",
+        "group_id": "train_f0025",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0025_static_initial",
+        "group_id": "train_f0025",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0025_static_terminal",
+        "group_id": "train_f0025",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0025_translating_initial",
+        "group_id": "train_f0025",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0026_looming",
+        "group_id": "train_f0026",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0026_static_initial",
+        "group_id": "train_f0026",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0026_static_terminal",
+        "group_id": "train_f0026",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0026_translating_initial",
+        "group_id": "train_f0026",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0027_looming",
+        "group_id": "train_f0027",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0027_static_initial",
+        "group_id": "train_f0027",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0027_static_terminal",
+        "group_id": "train_f0027",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0027_translating_initial",
+        "group_id": "train_f0027",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0028_looming",
+        "group_id": "train_f0028",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0028_static_initial",
+        "group_id": "train_f0028",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0028_static_terminal",
+        "group_id": "train_f0028",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0028_translating_initial",
+        "group_id": "train_f0028",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0029_looming",
+        "group_id": "train_f0029",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0029_static_initial",
+        "group_id": "train_f0029",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0029_static_terminal",
+        "group_id": "train_f0029",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0029_translating_initial",
+        "group_id": "train_f0029",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0030_looming",
+        "group_id": "train_f0030",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0030_static_initial",
+        "group_id": "train_f0030",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0030_static_terminal",
+        "group_id": "train_f0030",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0030_translating_initial",
+        "group_id": "train_f0030",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0031_looming",
+        "group_id": "train_f0031",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0031_static_initial",
+        "group_id": "train_f0031",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0031_static_terminal",
+        "group_id": "train_f0031",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0031_translating_initial",
+        "group_id": "train_f0031",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0032_looming",
+        "group_id": "train_f0032",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0032_static_initial",
+        "group_id": "train_f0032",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0032_static_terminal",
+        "group_id": "train_f0032",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0032_translating_initial",
+        "group_id": "train_f0032",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0033_looming",
+        "group_id": "train_f0033",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0033_static_initial",
+        "group_id": "train_f0033",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0033_static_terminal",
+        "group_id": "train_f0033",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0033_translating_initial",
+        "group_id": "train_f0033",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0034_looming",
+        "group_id": "train_f0034",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0034_static_initial",
+        "group_id": "train_f0034",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0034_static_terminal",
+        "group_id": "train_f0034",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0034_translating_initial",
+        "group_id": "train_f0034",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0035_looming",
+        "group_id": "train_f0035",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0035_static_initial",
+        "group_id": "train_f0035",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0035_static_terminal",
+        "group_id": "train_f0035",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0035_translating_initial",
+        "group_id": "train_f0035",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0036_looming",
+        "group_id": "train_f0036",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0036_static_initial",
+        "group_id": "train_f0036",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0036_static_terminal",
+        "group_id": "train_f0036",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0036_translating_initial",
+        "group_id": "train_f0036",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0037_looming",
+        "group_id": "train_f0037",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0037_static_initial",
+        "group_id": "train_f0037",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0037_static_terminal",
+        "group_id": "train_f0037",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0037_translating_initial",
+        "group_id": "train_f0037",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0038_looming",
+        "group_id": "train_f0038",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0038_static_initial",
+        "group_id": "train_f0038",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0038_static_terminal",
+        "group_id": "train_f0038",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0038_translating_initial",
+        "group_id": "train_f0038",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0039_looming",
+        "group_id": "train_f0039",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0039_static_initial",
+        "group_id": "train_f0039",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0039_static_terminal",
+        "group_id": "train_f0039",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0039_translating_initial",
+        "group_id": "train_f0039",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0040_looming",
+        "group_id": "train_f0040",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0040_static_initial",
+        "group_id": "train_f0040",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0040_static_terminal",
+        "group_id": "train_f0040",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0040_translating_initial",
+        "group_id": "train_f0040",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0041_looming",
+        "group_id": "train_f0041",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0041_static_initial",
+        "group_id": "train_f0041",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0041_static_terminal",
+        "group_id": "train_f0041",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0041_translating_initial",
+        "group_id": "train_f0041",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0042_looming",
+        "group_id": "train_f0042",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0042_static_initial",
+        "group_id": "train_f0042",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0042_static_terminal",
+        "group_id": "train_f0042",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0042_translating_initial",
+        "group_id": "train_f0042",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0043_looming",
+        "group_id": "train_f0043",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0043_static_initial",
+        "group_id": "train_f0043",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0043_static_terminal",
+        "group_id": "train_f0043",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0043_translating_initial",
+        "group_id": "train_f0043",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0044_looming",
+        "group_id": "train_f0044",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0044_static_initial",
+        "group_id": "train_f0044",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0044_static_terminal",
+        "group_id": "train_f0044",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0044_translating_initial",
+        "group_id": "train_f0044",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0045_looming",
+        "group_id": "train_f0045",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0045_static_initial",
+        "group_id": "train_f0045",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0045_static_terminal",
+        "group_id": "train_f0045",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0045_translating_initial",
+        "group_id": "train_f0045",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0046_looming",
+        "group_id": "train_f0046",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0046_static_initial",
+        "group_id": "train_f0046",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0046_static_terminal",
+        "group_id": "train_f0046",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0046_translating_initial",
+        "group_id": "train_f0046",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0047_looming",
+        "group_id": "train_f0047",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0047_static_initial",
+        "group_id": "train_f0047",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0047_static_terminal",
+        "group_id": "train_f0047",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0047_translating_initial",
+        "group_id": "train_f0047",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0048_looming",
+        "group_id": "train_f0048",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0048_static_initial",
+        "group_id": "train_f0048",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0048_static_terminal",
+        "group_id": "train_f0048",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0048_translating_initial",
+        "group_id": "train_f0048",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0049_looming",
+        "group_id": "train_f0049",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0049_static_initial",
+        "group_id": "train_f0049",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0049_static_terminal",
+        "group_id": "train_f0049",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0049_translating_initial",
+        "group_id": "train_f0049",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0050_looming",
+        "group_id": "train_f0050",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0050_static_initial",
+        "group_id": "train_f0050",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0050_static_terminal",
+        "group_id": "train_f0050",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0050_translating_initial",
+        "group_id": "train_f0050",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0051_looming",
+        "group_id": "train_f0051",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0051_static_initial",
+        "group_id": "train_f0051",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0051_static_terminal",
+        "group_id": "train_f0051",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0051_translating_initial",
+        "group_id": "train_f0051",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0052_looming",
+        "group_id": "train_f0052",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0052_static_initial",
+        "group_id": "train_f0052",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0052_static_terminal",
+        "group_id": "train_f0052",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0052_translating_initial",
+        "group_id": "train_f0052",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0053_looming",
+        "group_id": "train_f0053",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0053_static_initial",
+        "group_id": "train_f0053",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0053_static_terminal",
+        "group_id": "train_f0053",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0053_translating_initial",
+        "group_id": "train_f0053",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0054_looming",
+        "group_id": "train_f0054",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0054_static_initial",
+        "group_id": "train_f0054",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0054_static_terminal",
+        "group_id": "train_f0054",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0054_translating_initial",
+        "group_id": "train_f0054",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0055_looming",
+        "group_id": "train_f0055",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0055_static_initial",
+        "group_id": "train_f0055",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0055_static_terminal",
+        "group_id": "train_f0055",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0055_translating_initial",
+        "group_id": "train_f0055",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0056_looming",
+        "group_id": "train_f0056",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0056_static_initial",
+        "group_id": "train_f0056",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0056_static_terminal",
+        "group_id": "train_f0056",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0056_translating_initial",
+        "group_id": "train_f0056",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0057_looming",
+        "group_id": "train_f0057",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0057_static_initial",
+        "group_id": "train_f0057",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0057_static_terminal",
+        "group_id": "train_f0057",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0057_translating_initial",
+        "group_id": "train_f0057",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0058_looming",
+        "group_id": "train_f0058",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0058_static_initial",
+        "group_id": "train_f0058",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0058_static_terminal",
+        "group_id": "train_f0058",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0058_translating_initial",
+        "group_id": "train_f0058",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0059_looming",
+        "group_id": "train_f0059",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0059_static_initial",
+        "group_id": "train_f0059",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0059_static_terminal",
+        "group_id": "train_f0059",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0059_translating_initial",
+        "group_id": "train_f0059",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0060_looming",
+        "group_id": "train_f0060",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0060_static_initial",
+        "group_id": "train_f0060",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0060_static_terminal",
+        "group_id": "train_f0060",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0060_translating_initial",
+        "group_id": "train_f0060",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0061_looming",
+        "group_id": "train_f0061",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0061_static_initial",
+        "group_id": "train_f0061",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0061_static_terminal",
+        "group_id": "train_f0061",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0061_translating_initial",
+        "group_id": "train_f0061",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0062_looming",
+        "group_id": "train_f0062",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0062_static_initial",
+        "group_id": "train_f0062",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0062_static_terminal",
+        "group_id": "train_f0062",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0062_translating_initial",
+        "group_id": "train_f0062",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "train_f0063_looming",
+        "group_id": "train_f0063",
+        "split": "train",
+        "cohort": "train",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "train_f0063_static_initial",
+        "group_id": "train_f0063",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "train_f0063_static_terminal",
+        "group_id": "train_f0063",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "train_f0063_translating_initial",
+        "group_id": "train_f0063",
+        "split": "train",
+        "cohort": "train",
+        "label": 0,
+        "role": "translating_initial"
+      }
+    ],
+    "validation": [
+      {
+        "scenario_id": "validation_f0000_looming",
+        "group_id": "validation_f0000",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0000_static_initial",
+        "group_id": "validation_f0000",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0000_static_terminal",
+        "group_id": "validation_f0000",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0000_translating_initial",
+        "group_id": "validation_f0000",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0001_looming",
+        "group_id": "validation_f0001",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0001_static_initial",
+        "group_id": "validation_f0001",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0001_static_terminal",
+        "group_id": "validation_f0001",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0001_translating_initial",
+        "group_id": "validation_f0001",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0002_looming",
+        "group_id": "validation_f0002",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0002_static_initial",
+        "group_id": "validation_f0002",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0002_static_terminal",
+        "group_id": "validation_f0002",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0002_translating_initial",
+        "group_id": "validation_f0002",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0003_looming",
+        "group_id": "validation_f0003",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0003_static_initial",
+        "group_id": "validation_f0003",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0003_static_terminal",
+        "group_id": "validation_f0003",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0003_translating_initial",
+        "group_id": "validation_f0003",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0004_looming",
+        "group_id": "validation_f0004",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0004_static_initial",
+        "group_id": "validation_f0004",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0004_static_terminal",
+        "group_id": "validation_f0004",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0004_translating_initial",
+        "group_id": "validation_f0004",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0005_looming",
+        "group_id": "validation_f0005",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0005_static_initial",
+        "group_id": "validation_f0005",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0005_static_terminal",
+        "group_id": "validation_f0005",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0005_translating_initial",
+        "group_id": "validation_f0005",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0006_looming",
+        "group_id": "validation_f0006",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0006_static_initial",
+        "group_id": "validation_f0006",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0006_static_terminal",
+        "group_id": "validation_f0006",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0006_translating_initial",
+        "group_id": "validation_f0006",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0007_looming",
+        "group_id": "validation_f0007",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0007_static_initial",
+        "group_id": "validation_f0007",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0007_static_terminal",
+        "group_id": "validation_f0007",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0007_translating_initial",
+        "group_id": "validation_f0007",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0008_looming",
+        "group_id": "validation_f0008",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0008_static_initial",
+        "group_id": "validation_f0008",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0008_static_terminal",
+        "group_id": "validation_f0008",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0008_translating_initial",
+        "group_id": "validation_f0008",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0009_looming",
+        "group_id": "validation_f0009",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0009_static_initial",
+        "group_id": "validation_f0009",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0009_static_terminal",
+        "group_id": "validation_f0009",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0009_translating_initial",
+        "group_id": "validation_f0009",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0010_looming",
+        "group_id": "validation_f0010",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0010_static_initial",
+        "group_id": "validation_f0010",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0010_static_terminal",
+        "group_id": "validation_f0010",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0010_translating_initial",
+        "group_id": "validation_f0010",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0011_looming",
+        "group_id": "validation_f0011",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0011_static_initial",
+        "group_id": "validation_f0011",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0011_static_terminal",
+        "group_id": "validation_f0011",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0011_translating_initial",
+        "group_id": "validation_f0011",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0012_looming",
+        "group_id": "validation_f0012",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0012_static_initial",
+        "group_id": "validation_f0012",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0012_static_terminal",
+        "group_id": "validation_f0012",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0012_translating_initial",
+        "group_id": "validation_f0012",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0013_looming",
+        "group_id": "validation_f0013",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0013_static_initial",
+        "group_id": "validation_f0013",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0013_static_terminal",
+        "group_id": "validation_f0013",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0013_translating_initial",
+        "group_id": "validation_f0013",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0014_looming",
+        "group_id": "validation_f0014",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0014_static_initial",
+        "group_id": "validation_f0014",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0014_static_terminal",
+        "group_id": "validation_f0014",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0014_translating_initial",
+        "group_id": "validation_f0014",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0015_looming",
+        "group_id": "validation_f0015",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0015_static_initial",
+        "group_id": "validation_f0015",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0015_static_terminal",
+        "group_id": "validation_f0015",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0015_translating_initial",
+        "group_id": "validation_f0015",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0016_looming",
+        "group_id": "validation_f0016",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0016_static_initial",
+        "group_id": "validation_f0016",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0016_static_terminal",
+        "group_id": "validation_f0016",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0016_translating_initial",
+        "group_id": "validation_f0016",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0017_looming",
+        "group_id": "validation_f0017",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0017_static_initial",
+        "group_id": "validation_f0017",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0017_static_terminal",
+        "group_id": "validation_f0017",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0017_translating_initial",
+        "group_id": "validation_f0017",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0018_looming",
+        "group_id": "validation_f0018",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0018_static_initial",
+        "group_id": "validation_f0018",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0018_static_terminal",
+        "group_id": "validation_f0018",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0018_translating_initial",
+        "group_id": "validation_f0018",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0019_looming",
+        "group_id": "validation_f0019",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0019_static_initial",
+        "group_id": "validation_f0019",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0019_static_terminal",
+        "group_id": "validation_f0019",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0019_translating_initial",
+        "group_id": "validation_f0019",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0020_looming",
+        "group_id": "validation_f0020",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0020_static_initial",
+        "group_id": "validation_f0020",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0020_static_terminal",
+        "group_id": "validation_f0020",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0020_translating_initial",
+        "group_id": "validation_f0020",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0021_looming",
+        "group_id": "validation_f0021",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0021_static_initial",
+        "group_id": "validation_f0021",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0021_static_terminal",
+        "group_id": "validation_f0021",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0021_translating_initial",
+        "group_id": "validation_f0021",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0022_looming",
+        "group_id": "validation_f0022",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0022_static_initial",
+        "group_id": "validation_f0022",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0022_static_terminal",
+        "group_id": "validation_f0022",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0022_translating_initial",
+        "group_id": "validation_f0022",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0023_looming",
+        "group_id": "validation_f0023",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0023_static_initial",
+        "group_id": "validation_f0023",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0023_static_terminal",
+        "group_id": "validation_f0023",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0023_translating_initial",
+        "group_id": "validation_f0023",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0024_looming",
+        "group_id": "validation_f0024",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0024_static_initial",
+        "group_id": "validation_f0024",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0024_static_terminal",
+        "group_id": "validation_f0024",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0024_translating_initial",
+        "group_id": "validation_f0024",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0025_looming",
+        "group_id": "validation_f0025",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0025_static_initial",
+        "group_id": "validation_f0025",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0025_static_terminal",
+        "group_id": "validation_f0025",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0025_translating_initial",
+        "group_id": "validation_f0025",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0026_looming",
+        "group_id": "validation_f0026",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0026_static_initial",
+        "group_id": "validation_f0026",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0026_static_terminal",
+        "group_id": "validation_f0026",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0026_translating_initial",
+        "group_id": "validation_f0026",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0027_looming",
+        "group_id": "validation_f0027",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0027_static_initial",
+        "group_id": "validation_f0027",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0027_static_terminal",
+        "group_id": "validation_f0027",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0027_translating_initial",
+        "group_id": "validation_f0027",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0028_looming",
+        "group_id": "validation_f0028",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0028_static_initial",
+        "group_id": "validation_f0028",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0028_static_terminal",
+        "group_id": "validation_f0028",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0028_translating_initial",
+        "group_id": "validation_f0028",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0029_looming",
+        "group_id": "validation_f0029",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0029_static_initial",
+        "group_id": "validation_f0029",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0029_static_terminal",
+        "group_id": "validation_f0029",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0029_translating_initial",
+        "group_id": "validation_f0029",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0030_looming",
+        "group_id": "validation_f0030",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0030_static_initial",
+        "group_id": "validation_f0030",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0030_static_terminal",
+        "group_id": "validation_f0030",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0030_translating_initial",
+        "group_id": "validation_f0030",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      },
+      {
+        "scenario_id": "validation_f0031_looming",
+        "group_id": "validation_f0031",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 1,
+        "role": "looming"
+      },
+      {
+        "scenario_id": "validation_f0031_static_initial",
+        "group_id": "validation_f0031",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_initial"
+      },
+      {
+        "scenario_id": "validation_f0031_static_terminal",
+        "group_id": "validation_f0031",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "static_terminal"
+      },
+      {
+        "scenario_id": "validation_f0031_translating_initial",
+        "group_id": "validation_f0031",
+        "split": "validation",
+        "cohort": "validation",
+        "label": 0,
+        "role": "translating_initial"
+      }
+    ],
+    "smoke_only": false,
+    "epochs": 200,
+    "window_start": 200
+  },
+  "epoch": 201,
+  "offset": 0,
+  "order": null,
+  "rng_state": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 316772402308446566004816727856312498664,
+      "inc": 30843022481923022877288451955718832919
+    },
+    "has_uint32": 0,
+    "uinteger": 3083532028
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "training_bce": 0.6806873752155864,
+      "validation_bce": 0.6668974677888724,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 2,
+      "training_bce": 0.653155222309917,
+      "validation_bce": 0.6357636644955609,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 3,
+      "training_bce": 0.6232205555750726,
+      "validation_bce": 0.6028846756285877,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 4,
+      "training_bce": 0.5905565833726506,
+      "validation_bce": 0.5702084416182059,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 5,
+      "training_bce": 0.5590306415307179,
+      "validation_bce": 0.5355460344704301,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 6,
+      "training_bce": 0.5244243719716254,
+      "validation_bce": 0.5013514213480732,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 7,
+      "training_bce": 0.48920190207005565,
+      "validation_bce": 0.4654021775529173,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 8,
+      "training_bce": 0.451089928096312,
+      "validation_bce": 0.42648031290215677,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 9,
+      "training_bce": 0.4088886238000227,
+      "validation_bce": 0.38203944915642185,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 10,
+      "training_bce": 0.3598529667910816,
+      "validation_bce": 0.3274412532837536,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 11,
+      "training_bce": 0.2986828169597634,
+      "validation_bce": 0.25880377748188627,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 12,
+      "training_bce": 0.2242960959421651,
+      "validation_bce": 0.18213484901961333,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 13,
+      "training_bce": 0.1512303334453255,
+      "validation_bce": 0.12002388066948594,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 14,
+      "training_bce": 0.10148352632743887,
+      "validation_bce": 0.08329815434069249,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 15,
+      "training_bce": 0.08043738366545448,
+      "validation_bce": 0.07000245786340323,
+      "gradient_clipped_batches": 1
+    },
+    {
+      "epoch": 16,
+      "training_bce": 0.06640518964748138,
+      "validation_bce": 0.0605559306738768,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 17,
+      "training_bce": 0.057001872636338144,
+      "validation_bce": 0.051721612653672325,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 18,
+      "training_bce": 0.049886111300737404,
+      "validation_bce": 0.0462449486917286,
+      "gradient_clipped_batches": 1
+    },
+    {
+      "epoch": 19,
+      "training_bce": 0.04604725779718928,
+      "validation_bce": 0.043593294372958946,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 20,
+      "training_bce": 0.042166567408384155,
+      "validation_bce": 0.039233839995083834,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 21,
+      "training_bce": 0.037890086942061564,
+      "validation_bce": 0.03519362258002388,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 22,
+      "training_bce": 0.03413857449253485,
+      "validation_bce": 0.03177317716830657,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 23,
+      "training_bce": 0.030949240751591774,
+      "validation_bce": 0.028920438100538105,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 24,
+      "training_bce": 0.03699673487913697,
+      "validation_bce": 0.026720245618146985,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 25,
+      "training_bce": 0.027282968798249027,
+      "validation_bce": 0.0264168708884265,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 26,
+      "training_bce": 0.02612905543972415,
+      "validation_bce": 0.024692930500089246,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 27,
+      "training_bce": 0.02430334041037514,
+      "validation_bce": 0.0229081971259777,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 28,
+      "training_bce": 0.02256492178075995,
+      "validation_bce": 0.021287664746461474,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 29,
+      "training_bce": 0.02101408557499318,
+      "validation_bce": 0.019843036145643988,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 30,
+      "training_bce": 0.019631135163141935,
+      "validation_bce": 0.018570395895460758,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 31,
+      "training_bce": 0.01882538725536491,
+      "validation_bce": 0.018356360657330838,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 32,
+      "training_bce": 0.018583899133106208,
+      "validation_bce": 0.01787721683887218,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 33,
+      "training_bce": 0.017789769233540906,
+      "validation_bce": 0.016925697555945956,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 34,
+      "training_bce": 0.016809830319686265,
+      "validation_bce": 0.01597272440355265,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 35,
+      "training_bce": 0.015884123439253946,
+      "validation_bce": 0.015087633399223437,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 36,
+      "training_bce": 0.015031408520957345,
+      "validation_bce": 0.014290653143031214,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 37,
+      "training_bce": 0.014261810214764572,
+      "validation_bce": 0.013566580491911324,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 38,
+      "training_bce": 0.013559521417649446,
+      "validation_bce": 0.012909544510684023,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 39,
+      "training_bce": 0.012918972697010901,
+      "validation_bce": 0.012309789798331604,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 40,
+      "training_bce": 0.012334109892210923,
+      "validation_bce": 0.011757168797003198,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 41,
+      "training_bce": 0.011797563420399804,
+      "validation_bce": 0.011250578798896677,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 42,
+      "training_bce": 0.011778715721052015,
+      "validation_bce": 0.010893215713087242,
+      "gradient_clipped_batches": 1
+    },
+    {
+      "epoch": 43,
+      "training_bce": 0.011517424396438982,
+      "validation_bce": 0.011396054840209524,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 44,
+      "training_bce": 0.01154197039529449,
+      "validation_bce": 0.01111421152153478,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 45,
+      "training_bce": 0.011160082592663247,
+      "validation_bce": 0.010684071854905462,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 46,
+      "training_bce": 0.010720640562869345,
+      "validation_bce": 0.010254238605627318,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 47,
+      "training_bce": 0.010294726227754144,
+      "validation_bce": 0.009852745360959288,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 48,
+      "training_bce": 0.009901019083370816,
+      "validation_bce": 0.009473879247248308,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 49,
+      "training_bce": 0.009529777726704882,
+      "validation_bce": 0.009122409280642244,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 50,
+      "training_bce": 0.00918422298528868,
+      "validation_bce": 0.008793992298446227,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 51,
+      "training_bce": 0.008860380167427953,
+      "validation_bce": 0.008487185773729719,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 52,
+      "training_bce": 0.008558391435103336,
+      "validation_bce": 0.008197398805355137,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 53,
+      "training_bce": 0.008270809436952494,
+      "validation_bce": 0.007928487711972349,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 54,
+      "training_bce": 0.008005559684229866,
+      "validation_bce": 0.007670334018503838,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 55,
+      "training_bce": 0.007751738715381564,
+      "validation_bce": 0.007427593198965569,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 56,
+      "training_bce": 0.007511180119555256,
+      "validation_bce": 0.007199524500942683,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 57,
+      "training_bce": 0.007283619381650439,
+      "validation_bce": 0.006984947056941386,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 58,
+      "training_bce": 0.007070837495843894,
+      "validation_bce": 0.006778308625347783,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 59,
+      "training_bce": 0.006866042752158085,
+      "validation_bce": 0.00658315584150281,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 60,
+      "training_bce": 0.006671355897404917,
+      "validation_bce": 0.006398549402939704,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 61,
+      "training_bce": 0.0064869841044398885,
+      "validation_bce": 0.006222440070641219,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 62,
+      "training_bce": 0.006312118665127422,
+      "validation_bce": 0.006052993706578461,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 63,
+      "training_bce": 0.006144471855869538,
+      "validation_bce": 0.005893557278235608,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 64,
+      "training_bce": 0.005987242553201358,
+      "validation_bce": 0.0057407769619236765,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 65,
+      "training_bce": 0.0058402474405243035,
+      "validation_bce": 0.0055993522507858315,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 66,
+      "training_bce": 0.005708030679311651,
+      "validation_bce": 0.005477058976488102,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 67,
+      "training_bce": 0.005578679424734964,
+      "validation_bce": 0.005350740782706655,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 68,
+      "training_bce": 0.005479843408154829,
+      "validation_bce": 0.005267046538138434,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 69,
+      "training_bce": 0.00537087189224677,
+      "validation_bce": 0.005161472712582066,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 70,
+      "training_bce": 0.005251615569129794,
+      "validation_bce": 0.005040253138034894,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 71,
+      "training_bce": 0.0051280573017412935,
+      "validation_bce": 0.004921172526763682,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 72,
+      "training_bce": 0.0050119062297316625,
+      "validation_bce": 0.004808390344477144,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 73,
+      "training_bce": 0.004927747645214195,
+      "validation_bce": 0.004724781445428531,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 74,
+      "training_bce": 0.004840519370403307,
+      "validation_bce": 0.004671623625085031,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 75,
+      "training_bce": 0.004758017755149552,
+      "validation_bce": 0.0045742583367917875,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 76,
+      "training_bce": 0.004654608210698882,
+      "validation_bce": 0.004470938809091489,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 77,
+      "training_bce": 0.004550265766697801,
+      "validation_bce": 0.004370209080873102,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 78,
+      "training_bce": 0.004450593602696664,
+      "validation_bce": 0.004273169176278211,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 79,
+      "training_bce": 0.004353785647731023,
+      "validation_bce": 0.004179830071459777,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 80,
+      "training_bce": 0.004281098983612974,
+      "validation_bce": 0.004095357168265781,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 81,
+      "training_bce": 0.004199668666298474,
+      "validation_bce": 0.004051944214195146,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 82,
+      "training_bce": 0.004132668278897826,
+      "validation_bce": 0.0039743070959236855,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 83,
+      "training_bce": 0.004050693921820717,
+      "validation_bce": 0.0038918445044405637,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 84,
+      "training_bce": 0.00396762737121465,
+      "validation_bce": 0.0038108947388059474,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 85,
+      "training_bce": 0.003887406825956903,
+      "validation_bce": 0.0037329426980337002,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 86,
+      "training_bce": 0.003818152015993048,
+      "validation_bce": 0.003663085925286692,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 87,
+      "training_bce": 0.0037475985331905724,
+      "validation_bce": 0.003603548914834598,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 88,
+      "training_bce": 0.003679912548665486,
+      "validation_bce": 0.003535460167609708,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 89,
+      "training_bce": 0.0036164398640618632,
+      "validation_bce": 0.003473333337195558,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 90,
+      "training_bce": 0.003551228799898927,
+      "validation_bce": 0.0034134545426134743,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 91,
+      "training_bce": 0.003489710960958844,
+      "validation_bce": 0.003357146973224482,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 92,
+      "training_bce": 0.003431975120376238,
+      "validation_bce": 0.0032982928039307882,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 93,
+      "training_bce": 0.003374432416951484,
+      "validation_bce": 0.0032446695454145347,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 94,
+      "training_bce": 0.0033156135541057455,
+      "validation_bce": 0.003188874840813652,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 95,
+      "training_bce": 0.0032578812347259854,
+      "validation_bce": 0.015520289438273126,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 96,
+      "training_bce": 0.003220871090421766,
+      "validation_bce": 0.0030799660745731874,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 97,
+      "training_bce": 0.003172588602299269,
+      "validation_bce": 0.0030696325892920276,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 98,
+      "training_bce": 0.003137107392854349,
+      "validation_bce": 0.0030204999836869386,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 99,
+      "training_bce": 0.0030823178125367204,
+      "validation_bce": 0.0029652999939690917,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 100,
+      "training_bce": 0.0030257731326799064,
+      "validation_bce": 0.0029099814020094148,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 101,
+      "training_bce": 0.002970202768216442,
+      "validation_bce": 0.002855880587862992,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 102,
+      "training_bce": 0.0029170666976796413,
+      "validation_bce": 0.0028035481456553965,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 103,
+      "training_bce": 0.002864603570742865,
+      "validation_bce": 0.0027531056958335497,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 104,
+      "training_bce": 0.002814294921149196,
+      "validation_bce": 0.003376304602603829,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 105,
+      "training_bce": 0.0027679124265788764,
+      "validation_bce": 0.02747968436298584,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 106,
+      "training_bce": 0.0027257910145277,
+      "validation_bce": 0.002670382632111733,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 107,
+      "training_bce": 0.002683364283599444,
+      "validation_bce": 0.0025835823195977884,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 108,
+      "training_bce": 0.0026421708689281422,
+      "validation_bce": 0.002574569608020397,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 109,
+      "training_bce": 0.0026058983277343645,
+      "validation_bce": 0.0025037043215583375,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 110,
+      "training_bce": 0.002565161024029653,
+      "validation_bce": 0.0024682838159561914,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 111,
+      "training_bce": 0.002526082199531726,
+      "validation_bce": 0.00242837340061574,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 112,
+      "training_bce": 0.002487205793844684,
+      "validation_bce": 0.002391220789239607,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 113,
+      "training_bce": 0.0024515593498514714,
+      "validation_bce": 0.0023562472627675153,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 114,
+      "training_bce": 0.0024146258563167962,
+      "validation_bce": 0.0023224558878705242,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 115,
+      "training_bce": 0.0023788997612713652,
+      "validation_bce": 0.0022888981341067584,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 116,
+      "training_bce": 0.002344549980449743,
+      "validation_bce": 0.0022557129358181795,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 117,
+      "training_bce": 0.002311524451781178,
+      "validation_bce": 0.0022221837178981216,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 118,
+      "training_bce": 0.0022797670957259305,
+      "validation_bce": 0.002192386191852504,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 119,
+      "training_bce": 0.002245287640702827,
+      "validation_bce": 0.00215912540815856,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 120,
+      "training_bce": 0.0022126134239744974,
+      "validation_bce": 0.0021398161835256622,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 121,
+      "training_bce": 0.002187665545157346,
+      "validation_bce": 0.0021126992317939183,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 122,
+      "training_bce": 0.0021555128723272105,
+      "validation_bce": 0.0020795621911063444,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 123,
+      "training_bce": 0.002129889290384157,
+      "validation_bce": 0.0020495820600804873,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 124,
+      "training_bce": 0.0020977858211110962,
+      "validation_bce": 0.002017610691036273,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 125,
+      "training_bce": 0.0020654841155451817,
+      "validation_bce": 0.001986439941203667,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 126,
+      "training_bce": 0.002035248772943121,
+      "validation_bce": 0.0019559350355660963,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 127,
+      "training_bce": 0.002006184945271207,
+      "validation_bce": 0.0019293457460544741,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 128,
+      "training_bce": 0.001980816487354306,
+      "validation_bce": 0.0019014490693700541,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 129,
+      "training_bce": 0.0019556701704509204,
+      "validation_bce": 0.0018823430553623294,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 130,
+      "training_bce": 0.0019286537306337623,
+      "validation_bce": 0.001855699600589265,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 131,
+      "training_bce": 0.001901354294765173,
+      "validation_bce": 0.001828113878203643,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 132,
+      "training_bce": 0.0018745089712036828,
+      "validation_bce": 0.0018024026557154906,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 133,
+      "training_bce": 0.0018506657031029953,
+      "validation_bce": 0.0017789993488176383,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 134,
+      "training_bce": 0.0018258989465844886,
+      "validation_bce": 0.0017563856796121594,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 135,
+      "training_bce": 0.0018013636691901651,
+      "validation_bce": 0.0017322886087732872,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 136,
+      "training_bce": 0.0017778079706819517,
+      "validation_bce": 0.0017096250205434417,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 137,
+      "training_bce": 0.001754744521997651,
+      "validation_bce": 0.001687238102604124,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 138,
+      "training_bce": 0.0017330279237343636,
+      "validation_bce": 0.0016652490942639581,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 139,
+      "training_bce": 0.0017095438197260778,
+      "validation_bce": 0.0016454121072971113,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 140,
+      "training_bce": 0.001687775960486959,
+      "validation_bce": 0.001623441443846151,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 141,
+      "training_bce": 0.0016661495301982857,
+      "validation_bce": 0.0016022756804103604,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 142,
+      "training_bce": 0.0016447584773214938,
+      "validation_bce": 0.0015822432266250767,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 143,
+      "training_bce": 0.001624803051489996,
+      "validation_bce": 0.0015658375756877599,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 144,
+      "training_bce": 0.0016044876783496507,
+      "validation_bce": 0.0015440543846772842,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 145,
+      "training_bce": 0.0015837478421632384,
+      "validation_bce": 0.0015237396909396018,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 146,
+      "training_bce": 0.0015635419759621033,
+      "validation_bce": 0.0015041269526138634,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 147,
+      "training_bce": 0.0015441697897570718,
+      "validation_bce": 0.0014851975400838975,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 148,
+      "training_bce": 0.0015248150099515388,
+      "validation_bce": 0.001466935967797227,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 149,
+      "training_bce": 0.001506409844899837,
+      "validation_bce": 0.0014488249335304346,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 150,
+      "training_bce": 0.0014874072197410596,
+      "validation_bce": 0.0014310441183648052,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 151,
+      "training_bce": 0.001469387042644686,
+      "validation_bce": 0.0014133589085723107,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 152,
+      "training_bce": 0.0014513291756799009,
+      "validation_bce": 0.0013964102331122852,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 153,
+      "training_bce": 0.0014336121007102907,
+      "validation_bce": 0.0013793869927859346,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 154,
+      "training_bce": 0.0014168773160352847,
+      "validation_bce": 0.0013631224499308734,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 155,
+      "training_bce": 0.0013991930132249998,
+      "validation_bce": 0.001346656588507335,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 156,
+      "training_bce": 0.0013823987997019429,
+      "validation_bce": 0.0013300994229894553,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 157,
+      "training_bce": 0.0013659830694876414,
+      "validation_bce": 0.0013141609934863403,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 158,
+      "training_bce": 0.0013499316346131576,
+      "validation_bce": 0.0012992862574444668,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 159,
+      "training_bce": 0.001333919743293895,
+      "validation_bce": 0.0012837989966002182,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 160,
+      "training_bce": 0.0013178269354421396,
+      "validation_bce": 0.0012681451906509684,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 161,
+      "training_bce": 0.001302168334032168,
+      "validation_bce": 0.0012539781716908326,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 162,
+      "training_bce": 0.001288054073067937,
+      "validation_bce": 0.0018705029046847418,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 163,
+      "training_bce": 0.0012714654266255748,
+      "validation_bce": 0.0012247661769951453,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 164,
+      "training_bce": 0.0012573559310423718,
+      "validation_bce": 0.0012099281684207067,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 165,
+      "training_bce": 0.0012421705021960618,
+      "validation_bce": 0.0011964216832190781,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 166,
+      "training_bce": 0.0012284768592680092,
+      "validation_bce": 0.0011816567358893819,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 167,
+      "training_bce": 0.0012137222584853594,
+      "validation_bce": 0.001167897907518006,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 168,
+      "training_bce": 0.001199781063026996,
+      "validation_bce": 0.0011545076077012185,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 169,
+      "training_bce": 0.0011862868733728503,
+      "validation_bce": 0.0011413409246585071,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 170,
+      "training_bce": 0.0011725296374286928,
+      "validation_bce": 0.00112821597590901,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 171,
+      "training_bce": 0.0011591963895068755,
+      "validation_bce": 0.0011152985253929841,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 172,
+      "training_bce": 0.0011462136112766377,
+      "validation_bce": 0.0011029797621813463,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 173,
+      "training_bce": 0.0011328393111701923,
+      "validation_bce": 0.0010903439443691798,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 174,
+      "training_bce": 0.0011204068329271537,
+      "validation_bce": 0.001078045286730259,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 175,
+      "training_bce": 0.0011076358460403066,
+      "validation_bce": 0.0010658677963660218,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 176,
+      "training_bce": 0.0010951721136385725,
+      "validation_bce": 0.001054134655979524,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 177,
+      "training_bce": 0.0010829785040684962,
+      "validation_bce": 0.0010430284198382999,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 178,
+      "training_bce": 0.0010707390981403518,
+      "validation_bce": 0.0010305434620230093,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 179,
+      "training_bce": 0.0010587699695075886,
+      "validation_bce": 0.0010189732441611898,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 180,
+      "training_bce": 0.0010476690548233913,
+      "validation_bce": 0.0010076831732584715,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 181,
+      "training_bce": 0.001035528687571143,
+      "validation_bce": 0.000996794406587521,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 182,
+      "training_bce": 0.0010241515324948625,
+      "validation_bce": 0.0009854472633870363,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 183,
+      "training_bce": 0.0010127978314081992,
+      "validation_bce": 0.0009745717114795294,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 184,
+      "training_bce": 0.0010023938652158327,
+      "validation_bce": 0.0009639289826887212,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 185,
+      "training_bce": 0.0009908004369731066,
+      "validation_bce": 0.0009539590506349102,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 186,
+      "training_bce": 0.0009801435814908931,
+      "validation_bce": 0.0009431930088086867,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 187,
+      "training_bce": 0.0009693260108058259,
+      "validation_bce": 0.0009329371061945156,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 188,
+      "training_bce": 0.0009588084767595958,
+      "validation_bce": 0.000924152678936224,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 189,
+      "training_bce": 0.0009490808880439254,
+      "validation_bce": 0.0009127616666582319,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 190,
+      "training_bce": 0.0009382818405198341,
+      "validation_bce": 0.0009030922853403187,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 191,
+      "training_bce": 0.0009282139926059382,
+      "validation_bce": 0.0008933228073170581,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 192,
+      "training_bce": 0.0009183423301389686,
+      "validation_bce": 0.0008836507408543855,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 193,
+      "training_bce": 0.0009084765826113514,
+      "validation_bce": 0.000874218078883703,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 194,
+      "training_bce": 0.0008989739975905206,
+      "validation_bce": 0.0008648040757279555,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 195,
+      "training_bce": 0.0008891584199826959,
+      "validation_bce": 0.0008558140361846022,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 196,
+      "training_bce": 0.0008798683846490492,
+      "validation_bce": 0.0008466646805626354,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 197,
+      "training_bce": 0.0008704077282080984,
+      "validation_bce": 0.0008376392115045972,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 198,
+      "training_bce": 0.0008620269002441346,
+      "validation_bce": 0.000830285245317067,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 199,
+      "training_bce": 0.0008528345024148202,
+      "validation_bce": 0.000821174895210921,
+      "gradient_clipped_batches": 0
+    },
+    {
+      "epoch": 200,
+      "training_bce": 0.0008437126279683744,
+      "validation_bce": 0.0008120004708819082,
+      "gradient_clipped_batches": 0
+    }
+  ],
+  "best_bce": 0.0008120004708819082,
+  "best_epoch": 200,
+  "stale": 0,
+  "train_sum": 0.0,
+  "clipped": 0,
+  "generation": 3400,
+  "adam_updates": 3200,
+  "finished": true,
+  "training_wall_s": 340.0518560420023,
+  "arrays_file": "state_003400.npz",
+  "arrays_sha256": "42e869160211c6c1b86a759d4b4f9bf4bbbdaae9b25edc33602183573689556d",
+  "payload_sha256": "aa33db78020fa6775acbc772d6f7f2dd8960e519a678b65a6aacc12234c6c89c"
+}

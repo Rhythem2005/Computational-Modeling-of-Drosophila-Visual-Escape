@@ -1,0 +1,1417 @@
+{
+  "model_id": "degree_rewire_24",
+  "kind": "degree_rewire",
+  "seed": 3439009857,
+  "weights_sha256": "3c82dd1464dfba40ca57e36208536d162e15663706d64ad2bcba7011167559f9",
+  "path": "networks/degree_rewire_24.npz",
+  "invariants": {
+    "no_self_loops": true,
+    "finite": true,
+    "same_block_totals": true,
+    "same_block_weight_multisets": true,
+    "same_topology": false,
+    "same_in_out_degrees": true,
+    "max_in_strength_change": 0.5872093023255822,
+    "max_out_strength_change": 1.1104651162790733
+  },
+  "mixing": {
+    "status": "PASS",
+    "blocks": [
+      {
+        "block": "DNp06:left->DNp01:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp11:left->DNp01:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp11:right->DNp01:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:left->DNp01:left",
+        "edges": 71,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:left->DNp01:left",
+        "edges": 93,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp11:right->DNp01:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:right->DNp01:right",
+        "edges": 55,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:right->DNp01:right",
+        "edges": 89,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp04:left->DNp02:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp06:left->DNp02:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:left->DNp02:left",
+        "edges": 71,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:right->DNp02:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp04:right->DNp02:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp06:right->DNp02:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:right->DNp02:right",
+        "edges": 54,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:left->DNp04:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp02:left->DNp04:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp06:left->DNp04:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:left->DNp04:left",
+        "edges": 71,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:left->DNp04:left",
+        "edges": 94,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp02:right->DNp04:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp06:right->DNp04:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:right->DNp04:right",
+        "edges": 55,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:right->DNp04:right",
+        "edges": 84,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:left->DNp06:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp04:left->DNp06:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:left->DNp06:left",
+        "edges": 67,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:left->DNp06:left",
+        "edges": 80,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:right->DNp06:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp02:right->DNp06:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp04:right->DNp06:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:right->DNp06:right",
+        "edges": 52,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:right->DNp06:right",
+        "edges": 80,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:left->DNp11:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp02:left->DNp11:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp06:right->DNp11:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp11:right->DNp11:left",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:left->DNp11:left",
+        "edges": 65,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:left->DNp11:left",
+        "edges": 9,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:left->DNp11:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:right->DNp11:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp06:left->DNp11:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp11:left->DNp11:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:right->DNp11:right",
+        "edges": 51,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp01:left->LC4:left",
+        "edges": 4,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:left->LC4:left",
+        "edges": 1724,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 34480,
+        "accepted": 34480,
+        "attempted": 88808,
+        "acceptance_rate": 0.38825331051256645,
+        "final_original_edge_overlap": 0.382830626450116,
+        "checkpoints": [
+          {
+            "accepted": 1724,
+            "original_edge_overlap": 0.40835266821345706
+          },
+          {
+            "accepted": 3448,
+            "original_edge_overlap": 0.3857308584686775
+          },
+          {
+            "accepted": 5172,
+            "original_edge_overlap": 0.39733178654292345
+          },
+          {
+            "accepted": 6896,
+            "original_edge_overlap": 0.36832946635730857
+          },
+          {
+            "accepted": 8620,
+            "original_edge_overlap": 0.3863109048723898
+          },
+          {
+            "accepted": 10344,
+            "original_edge_overlap": 0.3799303944315545
+          },
+          {
+            "accepted": 12068,
+            "original_edge_overlap": 0.3677494199535963
+          },
+          {
+            "accepted": 13792,
+            "original_edge_overlap": 0.37296983758700697
+          },
+          {
+            "accepted": 15516,
+            "original_edge_overlap": 0.37587006960556846
+          },
+          {
+            "accepted": 17240,
+            "original_edge_overlap": 0.37645011600928074
+          },
+          {
+            "accepted": 18964,
+            "original_edge_overlap": 0.39327146171693733
+          },
+          {
+            "accepted": 20688,
+            "original_edge_overlap": 0.367169373549884
+          },
+          {
+            "accepted": 22412,
+            "original_edge_overlap": 0.37470997679814383
+          },
+          {
+            "accepted": 24136,
+            "original_edge_overlap": 0.3810904872389791
+          },
+          {
+            "accepted": 25860,
+            "original_edge_overlap": 0.3590487238979118
+          },
+          {
+            "accepted": 27584,
+            "original_edge_overlap": 0.38979118329466356
+          },
+          {
+            "accepted": 29308,
+            "original_edge_overlap": 0.3845707656612529
+          },
+          {
+            "accepted": 31032,
+            "original_edge_overlap": 0.3805104408352668
+          },
+          {
+            "accepted": 32756,
+            "original_edge_overlap": 0.3625290023201856
+          },
+          {
+            "accepted": 34480,
+            "original_edge_overlap": 0.382830626450116
+          }
+        ],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:left->LC4:left",
+        "edges": 174,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 3480,
+        "accepted": 3480,
+        "attempted": 4070,
+        "acceptance_rate": 0.855036855036855,
+        "final_original_edge_overlap": 0.08045977011494253,
+        "checkpoints": [
+          {
+            "accepted": 174,
+            "original_edge_overlap": 0.19540229885057472
+          },
+          {
+            "accepted": 348,
+            "original_edge_overlap": 0.10919540229885058
+          },
+          {
+            "accepted": 522,
+            "original_edge_overlap": 0.09770114942528736
+          },
+          {
+            "accepted": 696,
+            "original_edge_overlap": 0.1206896551724138
+          },
+          {
+            "accepted": 870,
+            "original_edge_overlap": 0.11494252873563218
+          },
+          {
+            "accepted": 1044,
+            "original_edge_overlap": 0.14942528735632185
+          },
+          {
+            "accepted": 1218,
+            "original_edge_overlap": 0.11494252873563218
+          },
+          {
+            "accepted": 1392,
+            "original_edge_overlap": 0.06896551724137931
+          },
+          {
+            "accepted": 1566,
+            "original_edge_overlap": 0.06896551724137931
+          },
+          {
+            "accepted": 1740,
+            "original_edge_overlap": 0.08620689655172414
+          },
+          {
+            "accepted": 1914,
+            "original_edge_overlap": 0.09195402298850575
+          },
+          {
+            "accepted": 2088,
+            "original_edge_overlap": 0.13218390804597702
+          },
+          {
+            "accepted": 2262,
+            "original_edge_overlap": 0.09770114942528736
+          },
+          {
+            "accepted": 2436,
+            "original_edge_overlap": 0.08045977011494253
+          },
+          {
+            "accepted": 2610,
+            "original_edge_overlap": 0.08620689655172414
+          },
+          {
+            "accepted": 2784,
+            "original_edge_overlap": 0.09195402298850575
+          },
+          {
+            "accepted": 2958,
+            "original_edge_overlap": 0.11494252873563218
+          },
+          {
+            "accepted": 3132,
+            "original_edge_overlap": 0.09195402298850575
+          },
+          {
+            "accepted": 3306,
+            "original_edge_overlap": 0.08620689655172414
+          },
+          {
+            "accepted": 3480,
+            "original_edge_overlap": 0.08045977011494253
+          }
+        ],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp04:right->LC4:right",
+        "edges": 1,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "DNp11:right->LC4:right",
+        "edges": 2,
+        "rigid": true,
+        "rigidity_reason": "single endpoint / complete eligible block / fewer than two edges",
+        "target_swaps": 0,
+        "accepted": 0,
+        "attempted": 0,
+        "acceptance_rate": null,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:right->LC4:right",
+        "edges": 1121,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 22420,
+        "accepted": 22420,
+        "attempted": 64896,
+        "acceptance_rate": 0.3454758382642998,
+        "final_original_edge_overlap": 0.39964317573595004,
+        "checkpoints": [
+          {
+            "accepted": 1121,
+            "original_edge_overlap": 0.4451382694023194
+          },
+          {
+            "accepted": 2242,
+            "original_edge_overlap": 0.41570026761819806
+          },
+          {
+            "accepted": 3363,
+            "original_edge_overlap": 0.42194469223907227
+          },
+          {
+            "accepted": 4484,
+            "original_edge_overlap": 0.4023193577163247
+          },
+          {
+            "accepted": 5605,
+            "original_edge_overlap": 0.39785905441570024
+          },
+          {
+            "accepted": 6726,
+            "original_edge_overlap": 0.4103479036574487
+          },
+          {
+            "accepted": 7847,
+            "original_edge_overlap": 0.38447814451382695
+          },
+          {
+            "accepted": 8968,
+            "original_edge_overlap": 0.4032114183764496
+          },
+          {
+            "accepted": 10089,
+            "original_edge_overlap": 0.41480820695807313
+          },
+          {
+            "accepted": 11210,
+            "original_edge_overlap": 0.42105263157894735
+          },
+          {
+            "accepted": 12331,
+            "original_edge_overlap": 0.4130240856378234
+          },
+          {
+            "accepted": 13452,
+            "original_edge_overlap": 0.4094558429973238
+          },
+          {
+            "accepted": 14573,
+            "original_edge_overlap": 0.41659232827832293
+          },
+          {
+            "accepted": 15694,
+            "original_edge_overlap": 0.43532560214094557
+          },
+          {
+            "accepted": 16815,
+            "original_edge_overlap": 0.41837644959857273
+          },
+          {
+            "accepted": 17936,
+            "original_edge_overlap": 0.40767172167707405
+          },
+          {
+            "accepted": 19057,
+            "original_edge_overlap": 0.42194469223907227
+          },
+          {
+            "accepted": 20178,
+            "original_edge_overlap": 0.40588760035682425
+          },
+          {
+            "accepted": 21299,
+            "original_edge_overlap": 0.4362176628010705
+          },
+          {
+            "accepted": 22420,
+            "original_edge_overlap": 0.39964317573595004
+          }
+        ],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:right->LC4:right",
+        "edges": 206,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 4120,
+        "accepted": 4120,
+        "attempted": 4811,
+        "acceptance_rate": 0.856370816877988,
+        "final_original_edge_overlap": 0.10194174757281553,
+        "checkpoints": [
+          {
+            "accepted": 206,
+            "original_edge_overlap": 0.19902912621359223
+          },
+          {
+            "accepted": 412,
+            "original_edge_overlap": 0.13106796116504854
+          },
+          {
+            "accepted": 618,
+            "original_edge_overlap": 0.07766990291262135
+          },
+          {
+            "accepted": 824,
+            "original_edge_overlap": 0.08737864077669903
+          },
+          {
+            "accepted": 1030,
+            "original_edge_overlap": 0.09223300970873786
+          },
+          {
+            "accepted": 1236,
+            "original_edge_overlap": 0.06796116504854369
+          },
+          {
+            "accepted": 1442,
+            "original_edge_overlap": 0.09223300970873786
+          },
+          {
+            "accepted": 1648,
+            "original_edge_overlap": 0.0970873786407767
+          },
+          {
+            "accepted": 1854,
+            "original_edge_overlap": 0.11650485436893204
+          },
+          {
+            "accepted": 2060,
+            "original_edge_overlap": 0.09223300970873786
+          },
+          {
+            "accepted": 2266,
+            "original_edge_overlap": 0.0970873786407767
+          },
+          {
+            "accepted": 2472,
+            "original_edge_overlap": 0.07281553398058252
+          },
+          {
+            "accepted": 2678,
+            "original_edge_overlap": 0.06796116504854369
+          },
+          {
+            "accepted": 2884,
+            "original_edge_overlap": 0.06796116504854369
+          },
+          {
+            "accepted": 3090,
+            "original_edge_overlap": 0.0970873786407767
+          },
+          {
+            "accepted": 3296,
+            "original_edge_overlap": 0.10194174757281553
+          },
+          {
+            "accepted": 3502,
+            "original_edge_overlap": 0.10679611650485436
+          },
+          {
+            "accepted": 3708,
+            "original_edge_overlap": 0.06310679611650485
+          },
+          {
+            "accepted": 3914,
+            "original_edge_overlap": 0.1262135922330097
+          },
+          {
+            "accepted": 4120,
+            "original_edge_overlap": 0.10194174757281553
+          }
+        ],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:left->LPLC2:left",
+        "edges": 3,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 60,
+        "accepted": 60,
+        "attempted": 90,
+        "acceptance_rate": 0.6666666666666666,
+        "final_original_edge_overlap": 1.0,
+        "checkpoints": [
+          {
+            "accepted": 3,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 6,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 9,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 12,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 15,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 18,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 21,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 24,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 27,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 30,
+            "original_edge_overlap": 1.0
+          },
+          {
+            "accepted": 33,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 36,
+            "original_edge_overlap": 1.0
+          },
+          {
+            "accepted": 39,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 42,
+            "original_edge_overlap": 1.0
+          },
+          {
+            "accepted": 45,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 48,
+            "original_edge_overlap": 1.0
+          },
+          {
+            "accepted": 51,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 54,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 57,
+            "original_edge_overlap": 0.3333333333333333
+          },
+          {
+            "accepted": 60,
+            "original_edge_overlap": 1.0
+          }
+        ],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:left->LPLC2:left",
+        "edges": 3761,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 75220,
+        "accepted": 75220,
+        "attempted": 279525,
+        "acceptance_rate": 0.2690993649941866,
+        "final_original_edge_overlap": 0.4828503057697421,
+        "checkpoints": [
+          {
+            "accepted": 3761,
+            "original_edge_overlap": 0.4969423025791013
+          },
+          {
+            "accepted": 7522,
+            "original_edge_overlap": 0.48045732517947354
+          },
+          {
+            "accepted": 11283,
+            "original_edge_overlap": 0.48152087210848177
+          },
+          {
+            "accepted": 15044,
+            "original_edge_overlap": 0.47567136399893645
+          },
+          {
+            "accepted": 18805,
+            "original_edge_overlap": 0.48125498537622974
+          },
+          {
+            "accepted": 22566,
+            "original_edge_overlap": 0.4894974740760436
+          },
+          {
+            "accepted": 26327,
+            "original_edge_overlap": 0.47513959053443233
+          },
+          {
+            "accepted": 30088,
+            "original_edge_overlap": 0.49189045466631215
+          },
+          {
+            "accepted": 33849,
+            "original_edge_overlap": 0.4847115128955065
+          },
+          {
+            "accepted": 37610,
+            "original_edge_overlap": 0.47620313746344056
+          },
+          {
+            "accepted": 41371,
+            "original_edge_overlap": 0.4785961180537091
+          },
+          {
+            "accepted": 45132,
+            "original_edge_overlap": 0.49800584950810955
+          },
+          {
+            "accepted": 48893,
+            "original_edge_overlap": 0.4889657006115395
+          },
+          {
+            "accepted": 52654,
+            "original_edge_overlap": 0.48710449348577506
+          },
+          {
+            "accepted": 56415,
+            "original_edge_overlap": 0.48657272002127094
+          },
+          {
+            "accepted": 60176,
+            "original_edge_overlap": 0.4839138526987503
+          },
+          {
+            "accepted": 63937,
+            "original_edge_overlap": 0.48231853230523797
+          },
+          {
+            "accepted": 67698,
+            "original_edge_overlap": 0.48444562616325443
+          },
+          {
+            "accepted": 71459,
+            "original_edge_overlap": 0.48098909864397765
+          },
+          {
+            "accepted": 75220,
+            "original_edge_overlap": 0.4828503057697421
+          }
+        ],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LC4:right->LPLC2:right",
+        "edges": 5,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 100,
+        "accepted": 100,
+        "attempted": 137,
+        "acceptance_rate": 0.7299270072992701,
+        "final_original_edge_overlap": 0.6,
+        "checkpoints": [
+          {
+            "accepted": 5,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 10,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 15,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 20,
+            "original_edge_overlap": 1.0
+          },
+          {
+            "accepted": 25,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 30,
+            "original_edge_overlap": 0.4
+          },
+          {
+            "accepted": 35,
+            "original_edge_overlap": 0.6
+          },
+          {
+            "accepted": 40,
+            "original_edge_overlap": 0.2
+          },
+          {
+            "accepted": 45,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 50,
+            "original_edge_overlap": 0.2
+          },
+          {
+            "accepted": 55,
+            "original_edge_overlap": 0.4
+          },
+          {
+            "accepted": 60,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 65,
+            "original_edge_overlap": 0.2
+          },
+          {
+            "accepted": 70,
+            "original_edge_overlap": 0.2
+          },
+          {
+            "accepted": 75,
+            "original_edge_overlap": 0.4
+          },
+          {
+            "accepted": 80,
+            "original_edge_overlap": 0.6
+          },
+          {
+            "accepted": 85,
+            "original_edge_overlap": 0.2
+          },
+          {
+            "accepted": 90,
+            "original_edge_overlap": 0.0
+          },
+          {
+            "accepted": 95,
+            "original_edge_overlap": 0.2
+          },
+          {
+            "accepted": 100,
+            "original_edge_overlap": 0.6
+          }
+        ],
+        "mixing_gate_pass": true
+      },
+      {
+        "block": "LPLC2:right->LPLC2:right",
+        "edges": 3388,
+        "rigid": false,
+        "rigidity_reason": null,
+        "target_swaps": 67760,
+        "accepted": 67760,
+        "attempted": 236790,
+        "acceptance_rate": 0.28616073313906837,
+        "final_original_edge_overlap": 0.4563164108618654,
+        "checkpoints": [
+          {
+            "accepted": 3388,
+            "original_edge_overlap": 0.4716646989374262
+          },
+          {
+            "accepted": 6776,
+            "original_edge_overlap": 0.4734356552538371
+          },
+          {
+            "accepted": 10164,
+            "original_edge_overlap": 0.467827626918536
+          },
+          {
+            "accepted": 13552,
+            "original_edge_overlap": 0.4625147579693034
+          },
+          {
+            "accepted": 16940,
+            "original_edge_overlap": 0.4707792207792208
+          },
+          {
+            "accepted": 20328,
+            "original_edge_overlap": 0.4512987012987013
+          },
+          {
+            "accepted": 23716,
+            "original_edge_overlap": 0.4657615112160567
+          },
+          {
+            "accepted": 27104,
+            "original_edge_overlap": 0.46812278630460447
+          },
+          {
+            "accepted": 30492,
+            "original_edge_overlap": 0.4604486422668241
+          },
+          {
+            "accepted": 33880,
+            "original_edge_overlap": 0.45218417945690675
+          },
+          {
+            "accepted": 37268,
+            "original_edge_overlap": 0.46310507674144036
+          },
+          {
+            "accepted": 40656,
+            "original_edge_overlap": 0.4592680047225502
+          },
+          {
+            "accepted": 44044,
+            "original_edge_overlap": 0.4743211334120425
+          },
+          {
+            "accepted": 47432,
+            "original_edge_overlap": 0.467827626918536
+          },
+          {
+            "accepted": 50820,
+            "original_edge_overlap": 0.47107438016528924
+          },
+          {
+            "accepted": 54208,
+            "original_edge_overlap": 0.4734356552538371
+          },
+          {
+            "accepted": 57596,
+            "original_edge_overlap": 0.46871310507674147
+          },
+          {
+            "accepted": 60984,
+            "original_edge_overlap": 0.45041322314049587
+          },
+          {
+            "accepted": 64372,
+            "original_edge_overlap": 0.45867768595041325
+          },
+          {
+            "accepted": 67760,
+            "original_edge_overlap": 0.4563164108618654
+          }
+        ],
+        "mixing_gate_pass": true
+      }
+    ],
+    "accepted": 207640,
+    "attempted": 679127,
+    "caveat": "Finite swap/turnover diagnostics are not a proof of independent uniform graph sampling; rigid blocks cannot randomize."
+  },
+  "conditions": {
+    "native": {
+      "condition": "native",
+      "gain": 0.5,
+      "unscaled_radius": 1.2880955478167673,
+      "effective_radius": 0.6440477739083836,
+      "continuous_max_real": -0.03559522260916164,
+      "discrete_radius": 0.9644047773908384,
+      "stable": true,
+      "zero_radius": false,
+      "target": null,
+      "recurrent_matrix_rescale": 1.0
+    },
+    "stability_matched": {
+      "condition": "stability_matched",
+      "gain": 0.5402018061672916,
+      "unscaled_radius": 1.2880955478167673,
+      "effective_radius": 0.6958315414466646,
+      "continuous_max_real": -0.03041684585533354,
+      "discrete_radius": 0.9695831541446664,
+      "stable": true,
+      "zero_radius": false,
+      "target": 0.6958315414466647,
+      "recurrent_matrix_rescale": 1.0804036123345833
+    }
+  },
+  "trainable_parameters": 0,
+  "threshold_parameters": 1,
+  "eligible_for_use": true
+}

@@ -1,0 +1,38 @@
+--- before/jobs.py
++++ repaired/jobs.py
+@@ -61,7 +61,7 @@
+         raise ValueError('Model identity is not bound to files')
+     if calibration['identity']['model_id'] == 'gru':
+         proofs = [read(p) for p in artifacts if str(p).endswith('.json')]
+-        selected = [r for r in proofs if r.get('status') == 'TRAIN_VALIDATION_SELECTED' and r.get('parameters_sha256') == model_hash]
++        selected = [r for r in proofs if isinstance(r,dict) and r.get('status') == 'TRAIN_VALIDATION_SELECTED' and r.get('parameters_sha256') == model_hash]
+         if len(selected) != 1:
+             raise ValueError('Selected real benchmark training proof required')
+         trial = selected[0]['training']['selected']
+@@ -104,6 +104,11 @@
+     ids = lambda rows: [{k:r[k] for k in ('scenario_id','group_id','split','cohort','label','role')} for r in rows]
+     expected = dict(contract, seed=seed, rate=rate, config=config(), sources_sha256=sources(),
+                     input_identity=inputs, training=ids(training), validation=ids(validation), smoke_only=smoke)
++    if contract['sources_sha256'] != expected['sources_sha256']:
++        from .repair_provenance import require_compatible_sources
++        require_compatible_sources(contract['sources_sha256'], directory/'current.json',directory/'report.json',
++                                   directory/'selected.npz',directory/current['arrays_file'])
++        expected['sources_sha256']=contract['sources_sha256']
+     net, _, state = restore(directory, expected)
+     if (not state['finished'] or report['smoke_only'] != smoke or report['seed'] != seed or report['learning_rate'] != rate
+             or report['history'] != state['history'] or report['best_epoch'] != state['best_epoch']
+@@ -182,7 +187,13 @@
+             contract = dict(identity=identity, input_sha256=dataset.index[sid]['sha256'], phase11_sources_sha256=sources())
+             if meta_path.exists():
+                 meta = read(meta_path)
+-                if meta['contract'] != contract or sha(path) != meta['sha256']:
++                saved_contract=meta['contract']
++                if saved_contract != contract:
++                    from .repair_provenance import require_compatible_sources
++                    if {k:v for k,v in saved_contract.items() if k!='phase11_sources_sha256'} != {k:v for k,v in contract.items() if k!='phase11_sources_sha256'}:
++                        raise ValueError('Score cache identity mismatch')
++                    require_compatible_sources(saved_contract.get('phase11_sources_sha256'),meta_path,path)
++                if sha(path) != meta['sha256']:
+                     raise ValueError('Score cache identity mismatch')
+                 with np.load(path, allow_pickle=False) as f:
+                     score = f['score'].copy()

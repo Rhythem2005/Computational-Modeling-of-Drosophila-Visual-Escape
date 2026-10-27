@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "completion_status": "COMPLETE_ENGINEERING",
+  "phase": 10,
+  "version": "1.0.0",
+  "time_utc": "2026-10-24T19:12:33.260377+00:00",
+  "tests": {
+    "tests": 89,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "regression_before": {
+    "status": "PASS",
+    "tests": {
+      "tests": 410,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "phase4_assertions": {
+      "total": 159,
+      "passed": 159,
+      "failed": 0
+    },
+    "command": [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "-m",
+      "pytest",
+      "connectome/scripts/phase4/tests",
+      "connectome/phase5/tests",
+      "connectome/phase5_5/tests",
+      "connectome/phase6/tests",
+      "connectome/phase7/tests",
+      "connectome/phase8/tests",
+      "connectome/phase8/completion/tests",
+      "connectome/phase9/tests",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase10-regression-tqxsev_6/repo/connectome/Results/phase10/results/regression/before/tests.xml"
+    ],
+    "exit_code": 0,
+    "integration_exit_code": 0,
+    "isolation": "Disposable copy; all original and main-execution earlier artifacts preserved"
+  },
+  "regression_after": {
+    "status": "PASS",
+    "tests": {
+      "tests": 410,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "phase4_assertions": {
+      "total": 159,
+      "passed": 159,
+      "failed": 0
+    },
+    "command": [
+      "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+      "-m",
+      "pytest",
+      "connectome/scripts/phase4/tests",
+      "connectome/phase5/tests",
+      "connectome/phase5_5/tests",
+      "connectome/phase6/tests",
+      "connectome/phase7/tests",
+      "connectome/phase8/tests",
+      "connectome/phase8/completion/tests",
+      "connectome/phase9/tests",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase10-regression-_gx3k089/repo/connectome/Results/phase10/results/regression/after/tests.xml"
+    ],
+    "exit_code": 0,
+    "integration_exit_code": 0,
+    "isolation": "Disposable copy; all original and main-execution earlier artifacts preserved"
+  },
+  "unique_tests": 499,
+  "phase4_assertions": {
+    "total": 159,
+    "passed": 159,
+    "failed": 0
+  },
+  "networks": 62,
+  "primary_weight_nulls": 30,
+  "secondary_degree_nulls": 30,
+  "rate_conditions": 124,
+  "failed_conditions": [],
+  "gru_seeds": 10,
+  "synthetic_training_trials": 20,
+  "exact_numerical_rerun": "All existing bank arrays/JSON and synthetic outputs must match on each invocation",
+  "benchmark_gru_training_runs": 0,
+  "benchmark_control_comparison_runs": 0,
+  "held_out_inference_runs": 0,
+  "earlier_execution_files_preserved": 2295,
+  "definition_sha256": "af8802f69309fda3470abc7a51617271bf339d314ac77ab0c07a311247afeedf",
+  "sources_checked": 17,
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "platform": "macOS-26.1-arm64-arm-64bit-Mach-O"
+  },
+  "command": [
+    "/Users/rhythemsabharwalgmail.com/Desktop/FLY/venv/bin/python",
+    "/private/var/folders/ny/1v8103651lxbgv3ms88n0yyw0000gn/T/fly-phase10-execution-6dqaqlji/connectome/scripts/phase10/validate.py",
+    "--task",
+    "validate"
+  ],
+  "limitations": [
+    "No benchmark training/calibration or scientific model freezes yet; Phase 11 must execute the saved plan.",
+    "Finite rewiring diagnostics do not prove independent uniform graph sampling; rigid blocks remain fixed.",
+    "GRU has 16,241 fitted parameters versus zero learned anatomical weights; fitting opportunities differ.",
+    "Synthetic receptive fields, world-domain calibration, noise robustness and encoder clipping limits remain.",
+    "No H1/H2/H3, biological fidelity or wiring-advantage conclusion."
+  ]
+}

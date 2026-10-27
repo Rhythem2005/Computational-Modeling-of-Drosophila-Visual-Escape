@@ -1,0 +1,47 @@
+{
+  "model_id": "weight_shuffle_12",
+  "kind": "weight_shuffle",
+  "seed": 2027214706,
+  "weights_sha256": "42cd30832ba94bc8d1bd876fcc38cb71a92b1eb62171b48687310d62feb5ba17",
+  "path": "networks/weight_shuffle_12.npz",
+  "invariants": {
+    "no_self_loops": true,
+    "finite": true,
+    "same_block_totals": true,
+    "same_block_weight_multisets": true,
+    "same_topology": true,
+    "same_in_out_degrees": true,
+    "max_in_strength_change": 0.5523255813953494,
+    "max_out_strength_change": 1.2383720930232587
+  },
+  "mixing": null,
+  "conditions": {
+    "native": {
+      "condition": "native",
+      "gain": 0.5,
+      "unscaled_radius": 1.2989811338565702,
+      "effective_radius": 0.6494905669282851,
+      "continuous_max_real": -0.03505094330717149,
+      "discrete_radius": 0.9649490566928285,
+      "stable": true,
+      "zero_radius": false,
+      "target": null,
+      "recurrent_matrix_rescale": 1.0
+    },
+    "stability_matched": {
+      "condition": "stability_matched",
+      "gain": 0.5356748634068279,
+      "unscaled_radius": 1.2989811338565702,
+      "effective_radius": 0.6958315414466647,
+      "continuous_max_real": -0.03041684585533353,
+      "discrete_radius": 0.9695831541446664,
+      "stable": true,
+      "zero_radius": false,
+      "target": 0.6958315414466647,
+      "recurrent_matrix_rescale": 1.0713497268136558
+    }
+  },
+  "trainable_parameters": 0,
+  "threshold_parameters": 1,
+  "eligible_for_use": true
+}

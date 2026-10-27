@@ -1,0 +1,43 @@
+{
+  "status": "IMPLEMENTED_CONTRACT_TESTED_RESEARCH_PROTOCOL_PENDING",
+  "scientific_source_fingerprints_compared": 11,
+  "scientific_sources_match": true,
+  "production_pointers_match": true,
+  "checkpoint_payloads_match": {
+    "connectome/Results/phase11/results/training/train_55011_55102_0p001/current.json": true
+  },
+  "new_scientific_simulation_runs": 0,
+  "trained_model_inference_runs": 0,
+  "training_runs": 0,
+  "held_out_evaluations": 0,
+  "synthetic_algorithm_tests": 23,
+  "backend_tests": 10,
+  "frontend_tests": 7,
+  "ui_layout_and_styles_preserved": true,
+  "speed_changes": false,
+  "limitations": [
+    "New exact physical conditions and observer/planner choices require the separately retained protocol review",
+    "Test-double and algorithm checks are not scientific performance evidence",
+    "3D kinematics and billboards, not aerodynamic biological flight"
+  ],
+  "new_sources_sha256": {
+    "dashboard/simulation/avoidance/__init__.py": "26aa6c0196de783ce484bfd92fee8eac4cf89d9db866d001eaaf79bef13802f9",
+    "dashboard/simulation/avoidance/circuit.py": "84eabd658d95c7b36632500f3709ed878ff62d3610864f3b09341efa2902ab81",
+    "dashboard/simulation/avoidance/cli.py": "6fead9e0459d927751c882b233183b6f51b79e71757fb5b6b78983ac3d9eb372",
+    "dashboard/simulation/avoidance/contracts.py": "f2d41de1853901e8f0f475d49e83e36affb07ec50fc164365274f51ec8a34282",
+    "dashboard/simulation/avoidance/controller.py": "c3334312c137b4c8bddee22d125564a05a7a1ebc1da49b3e40ac93984a19817e",
+    "dashboard/simulation/avoidance/perception.py": "99b57ccb053d5040e06a8762fe42ec947301af3db35a4446779210e051c20520",
+    "dashboard/simulation/avoidance/planning.py": "20b702b66fa40e9fed65cb94af703ac53745e01824d8d99cb66276408dc84c92",
+    "dashboard/simulation/avoidance/recording.py": "5a5653de97650f98aee901224cc919a0d8d77fdf0737072a4a35a02a280e2873",
+    "dashboard/simulation/avoidance/runner.py": "f041481db9808d620d459ddc021c18d10520d7b4b056fcf9c6ebd3a5a7e92ab6",
+    "dashboard/simulation/avoidance/telemetry.py": "41418647886246e91d53977ba0fb5a57ed8d5acfccbe757df608e766fec356f7",
+    "dashboard/simulation/avoidance/tests/conftest.py": "3c0e4fdd4abd7dd78b1c51b34f365a680ece3749b374085407133c4b3601b699",
+    "dashboard/simulation/avoidance/tests/test_controller.py": "f2df26b7e0f67c3bc9cdd50f3422818bbdf73f242a0a1a957b53a4ef9b3a2a2b",
+    "dashboard/simulation/avoidance/tests/test_evidence.py": "eb4d21cc510275ebec8cb5ee7703f7b81896de017d7e7751419fb5cce5d94176",
+    "dashboard/simulation/avoidance/tests/test_geometry.py": "a087e8a24fe8883f6c9d351de196c350cdfa8e0bb63f01d2bc50116da66b8d28",
+    "dashboard/simulation/avoidance/tests/test_perception.py": "f6472ba6fec05726d06d0114167062aa1e7440ee26f68651b952e1709c63c124",
+    "dashboard/simulation/avoidance/tests/test_runner.py": "d04e501b31487d9db218c4a69a134b4b91f4b9041026aa060551dfb36c8b78d5",
+    "dashboard/simulation/avoidance/tests/test_telemetry.py": "410070677a559ea29bf83713ef861cd9d9d047d983a05020cba1fe7763c28242",
+    "dashboard/simulation/avoidance/world.py": "a18f776ad5f3d52630bfc320eefe11ac4de1f1be85c2c5e0d1d853cc96e3676b"
+  }
+}

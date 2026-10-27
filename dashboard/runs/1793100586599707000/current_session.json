@@ -1,0 +1,10 @@
+{
+  "id": "35d1329c53fb436cb2872c1b0fb0d11d",
+  "job": {
+    "kind": "phase9",
+    "scenario": "world_left",
+    "model": "circuit",
+    "seed": 55010
+  },
+  "url": "http://127.0.0.1:8001/?live=follow"
+}

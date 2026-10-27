@@ -1,0 +1,160 @@
+"""Resumable schedule around the unchanged Phase 10 GRU, loss and Adam."""
+from copy import deepcopy
+from pathlib import Path
+import time
+import numpy as np
+from connectome.scripts.phase10.gru import GRU, Adam, _validate_sets
+from connectome.scripts.phase10.common import config
+from connectome.scripts.phase10.data import array_digest
+from .common import OUT, arrays, write, read, sha, digest, sources
+
+
+def batch_inputs(rows, dn, smoke=False):
+    raw = np.stack([r['inputs']() if callable(r['inputs']) else r['inputs'] for r in rows])
+    if raw.ndim != 3 or raw.shape[2] != 321 or raw.dtype != np.float64 or not np.isfinite(raw).all() or np.any(raw < 0) or np.any(raw > 1):
+        raise ValueError('Invalid frozen encoder input')
+    if np.any(raw[:, :, dn]) or (not smoke and raw.shape[1] != 1000):
+        raise ValueError('Direct DN input or benchmark clock violation')
+    return config()['input_scale'] * raw
+
+
+def save_state(directory, net, adam, state):
+    directory = Path(directory)
+    generation = state['generation'] + 1
+    payload = directory/f'state_{generation:06d}.npz'
+    values = {f'p_{k}': v for k, v in net.p.items()}
+    values.update({f'm_{k}': v for k, v in adam.m.items()})
+    values.update({f'v_{k}': v for k, v in adam.v.items()})
+    values.update({f'best_{k}': v for k, v in state.pop('_best', {}).items()})
+    arrays(payload, **values)
+    state['generation'] = generation
+    state['adam_updates'] = adam.t
+    metadata = dict(state, arrays_file=payload.name, arrays_sha256=sha(payload))
+    metadata['payload_sha256'] = digest(metadata)
+    # The JSON pointer is committed only after the immutable array generation.
+    write(directory/'current.json', metadata)
+    with np.load(payload, allow_pickle=False) as saved:
+        state['_best'] = {k[5:]: saved[k].copy() for k in saved.files if k.startswith('best_')}
+    # Keep current and previous generation; interrupted uncommitted generations
+    # are harmless. No production parameters are lost on an interrupted write.
+    for old in directory.glob('state_*.npz'):
+        if int(old.stem.split('_')[1]) < generation - 1:
+            old.unlink()
+
+
+def restore(directory, contract):
+    record = read(Path(directory)/'current.json')
+    payload_hash = record.pop('payload_sha256')
+    if digest(record) != payload_hash or record['contract'] != contract:
+        raise ValueError('Checkpoint identity/source/config/input contract mismatch')
+    path = Path(directory)/record.pop('arrays_file')
+    if sha(path) != record.pop('arrays_sha256'):
+        raise ValueError('Checkpoint array hash mismatch')
+    c = config()
+    with np.load(path, allow_pickle=False) as saved:
+        net = GRU(321, 16, contract['seed'], {k[2:]: saved[k].copy() for k in saved.files if k.startswith('p_')})
+        adam = Adam(net.p, contract['rate'], c['adam_beta1'], c['adam_beta2'], c['adam_epsilon'], c['gradient_norm_limit'])
+        for prefix, dest in (('m_', adam.m), ('v_', adam.v)):
+            for k in dest:
+                value = saved[prefix+k]
+                if value.shape != dest[k].shape or value.dtype != np.float64 or not np.isfinite(value).all():
+                    raise ValueError('Malformed optimizer state')
+                dest[k] = value.copy()
+        record['_best'] = {k[5:]: saved[k].copy() for k in saved.files if k.startswith('best_')}
+    adam.t = record['adam_updates']
+    return net, adam, record
+
+
+def train_trial(training, validation, seed, rate, directory, input_identity, *, smoke=False,
+                smoke_epochs=2, smoke_start=8, pause_after_updates=None):
+    _validate_sets(training, validation, smoke)
+    c = config()
+    if seed not in c['training_seeds'] or rate not in c['learning_rates']:
+        raise ValueError('Unregistered training seed/rate')
+    from connectome.scripts.phase6.encoder import load_mapping
+    dn = np.array(load_mapping()['channel_index']) < 0
+    epochs = min(smoke_epochs, c['max_epochs']) if smoke else c['max_epochs']
+    start = smoke_start if smoke else 200
+    if type(epochs) is not int or not 1 <= epochs <= c['max_epochs']:
+        raise ValueError('Invalid epoch budget')
+    ids = lambda rows: [{k: r[k] for k in ('scenario_id', 'group_id', 'split', 'cohort', 'label', 'role')} for r in rows]
+    contract = dict(seed=seed, rate=rate, config=c, sources_sha256=sources(), input_identity=input_identity,
+                    training=ids(training), validation=ids(validation), smoke_only=smoke, epochs=epochs, window_start=start)
+    directory = Path(directory)
+    if (directory/'current.json').exists():
+        net, adam, s = restore(directory, contract)
+    else:
+        net = GRU(321, 16, seed)
+        adam = Adam(net.p, rate, c['adam_beta1'], c['adam_beta2'], c['adam_epsilon'], c['gradient_norm_limit'])
+        rng = np.random.default_rng(np.random.SeedSequence([seed, 77]))
+        s = dict(contract=contract, epoch=1, offset=0, order=None, rng_state=rng.bit_generator.state,
+                 history=[], best_bce=None, best_epoch=0, stale=0, train_sum=0., clipped=0,
+                 generation=0, adam_updates=0, finished=False, _best={}, training_wall_s=0.)
+    started = time.perf_counter()
+    initial_updates = adam.t
+    rng = np.random.default_rng()
+    rng.bit_generator.state = s['rng_state']
+    while not s['finished']:
+        if s['order'] is None:
+            s['order'] = rng.permutation(len(training)).tolist()
+            s['rng_state'] = rng.bit_generator.state
+        while s['offset'] < len(training):
+            chosen = s['order'][s['offset']:s['offset']+c['batch_size']]
+            rows = [training[i] for i in chosen]
+            loss, grad = net.loss(batch_inputs(rows, dn, smoke), [r['label'] for r in rows], start, True)
+            update = adam.step(net.p, grad)
+            s['train_sum'] += loss*len(rows)
+            s['clipped'] += int(update['applied_scale'] < 1)
+            s['offset'] += len(rows)
+            elapsed = time.perf_counter()
+            s['training_wall_s'] += elapsed-started
+            started = elapsed
+            save_state(directory, net, adam, s)
+            from .manual_stop import boundary
+            boundary()
+            if pause_after_updates is not None and adam.t-initial_updates >= pause_after_updates:
+                return None, dict(status='PAUSED_CHECKPOINT', updates=adam.t)
+        validation_loss = 0.
+        for offset in range(0, len(validation), c['batch_size']):
+            rows = validation[offset:offset+c['batch_size']]
+            validation_loss += net.loss(batch_inputs(rows, dn, smoke), [r['label'] for r in rows], start)*len(rows)
+        validation_loss /= len(validation)
+        s['history'].append(dict(epoch=s['epoch'], training_bce=s['train_sum']/len(training),
+                                 validation_bce=validation_loss, gradient_clipped_batches=s['clipped']))
+        if s['best_bce'] is None or validation_loss < s['best_bce']:
+            s['best_bce'] = validation_loss
+            s['best_epoch'] = s['epoch']
+            s['_best'] = deepcopy(net.p)
+            s['stale'] = 0
+        else:
+            s['stale'] += 1
+        s['finished'] = s['epoch'] >= epochs or s['stale'] >= c['patience']
+        s['epoch'] += 1
+        s['offset'] = 0
+        s['order'] = None
+        s['train_sum'] = 0.
+        s['clipped'] = 0
+        elapsed = time.perf_counter()
+        s['training_wall_s'] += elapsed-started
+        started = elapsed
+        save_state(directory, net, adam, s)
+        from .manual_stop import boundary
+        boundary()
+        if not smoke:
+            print(f"GRU {input_identity['mapping']} s{seed} lr{rate}: epoch {s['epoch']-1}, best epoch {s['best_epoch']}", flush=True)
+    selected = GRU(321, 16, seed, s['_best'])
+    report = dict(seed=seed, learning_rate=rate, best_epoch=s['best_epoch'], validation_bce=s['best_bce'],
+                  epochs_run=len(s['history']), history=s['history'], trainable_parameters=selected.parameter_count,
+                  training_ids=[r['scenario_id'] for r in training], validation_ids=[r['scenario_id'] for r in validation],
+                  smoke_only=smoke, status='SYNTHETIC_SMOKE_ONLY' if smoke else 'TRAIN_VALIDATION_CHECKPOINT_NOT_TESTED',
+                  updates=adam.t, training_wall_s=s['training_wall_s'])
+    arrays(directory/'selected.npz', **selected.p)
+    report['parameters_sha256'] = sha(directory/'selected.npz')
+    write(directory/'report.json', report)
+    # Reload independently and verify inference on an allowed input.
+    with np.load(directory/'selected.npz', allow_pickle=False) as saved:
+        restored = GRU(321, 16, seed, {k: saved[k].copy() for k in saved.files})
+    sample = batch_inputs(training[:1], dn, smoke)
+    if not np.array_equal(selected.forward(sample), restored.forward(sample)):
+        raise ValueError('Reloaded inference differs')
+    return selected, report

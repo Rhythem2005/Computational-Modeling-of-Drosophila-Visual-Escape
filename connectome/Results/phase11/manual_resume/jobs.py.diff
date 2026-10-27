@@ -1,0 +1,108 @@
+--- pre_manual/jobs.py
++++ manual/jobs.py
+@@ -95,7 +95,32 @@
+     return saved
+ 
+ 
++def completed_trial(directory, training, validation, seed, rate, inputs, *, smoke=False):
++    """Read a completed trial without training or registering it again."""
++    from .training import restore
++    report = read(directory/'report.json')
++    current = read(directory/'current.json')
++    contract = current['contract']
++    ids = lambda rows: [{k:r[k] for k in ('scenario_id','group_id','split','cohort','label','role')} for r in rows]
++    expected = dict(contract, seed=seed, rate=rate, config=config(), sources_sha256=sources(),
++                    input_identity=inputs, training=ids(training), validation=ids(validation), smoke_only=smoke)
++    net, _, state = restore(directory, expected)
++    if (not state['finished'] or report['smoke_only'] != smoke or report['seed'] != seed or report['learning_rate'] != rate
++            or report['history'] != state['history'] or report['best_epoch'] != state['best_epoch']
++            or report['validation_bce'] != state['best_bce'] or report['updates'] != state['adam_updates']
++            or report['parameters_sha256'] != sha(directory/'selected.npz')
++            or report['training_ids'] != [r['scenario_id'] for r in training]
++            or report['validation_ids'] != [r['scenario_id'] for r in validation]):
++        raise ValueError('Completed trial proof differs from its checkpoint')
++    with np.load(directory/'selected.npz', allow_pickle=False) as saved:
++        if set(saved.files) != set(net.p) or any(not np.array_equal(saved[k], state['_best'][k]) for k in saved.files):
++            raise ValueError('Completed selected parameters differ')
++        selected = {k:saved[k].copy() for k in saved.files}
++    return GRU(321,16,seed,selected), report
++
++
+ def selected_gru(mapping, seed, training, validation, inputs, jobs):
++    from .manual_stop import boundary
+     candidates = []
+     for rate in config()['learning_rates']:
+         job = next(r['definition'] for r in jobs if r['definition']['kind'] == 'gru_trial' and r['definition']['mapping'] == mapping
+@@ -104,11 +129,17 @@
+         status = next(r['status'] for r in jobs if r['definition']['job_id'] == job['job_id'])
+         if status == 'FAILED_NO_REPLACEMENT':
+             raise ValueError('Recorded failed trial cannot be silently retried')
+-        update(jobs, job['job_id'], 'RUNNING_OR_RESUMING')
+-        net, report = train_trial(training, validation, seed, rate, directory, inputs)
++        boundary()
++        if status == 'COMPLETE' or (directory/'report.json').exists():
++            net, report = completed_trial(directory, training, validation, seed, rate, inputs)
++        else:
++            update(jobs, job['job_id'], 'RUNNING_OR_RESUMING')
++            net, report = train_trial(training, validation, seed, rate, directory, inputs)
+         candidates.append((net, report))
+-        update(jobs, job['job_id'], 'COMPLETE', report=str((directory/'report.json').relative_to(ROOT)),
+-               parameters_sha256=report['parameters_sha256'])
++        if status != 'COMPLETE':
++            update(jobs, job['job_id'], 'COMPLETE', report=str((directory/'report.json').relative_to(ROOT)),
++                   parameters_sha256=report['parameters_sha256'])
++        boundary()
+     net, report = min(candidates, key=lambda pair: (pair[1]['validation_bce'], pair[1]['learning_rate']))
+     folder = OUT/'selected'/str(mapping)
+     path = folder/f'gru_{seed}.npz'
+@@ -120,6 +151,7 @@
+ 
+ 
+ def calibrate_job(job, dataset, training, validation, inputs, net=None, model_artifacts=None, linear=None):
++    from .manual_stop import boundary
+     key = job['job_id']
+     folder = OUT/'calibration'/key
+     proof = folder/'freeze.json'
+@@ -170,6 +202,7 @@
+             scored.append(dict(**{k: row[k] for k in ('scenario_id', 'group_id', 'split', 'cohort', 'label', 'role')},
+                                identity=identity, score=score))
+             diagnostics.append(dict(scenario_id=sid, **diagnostic))
++            boundary()
+         sets.append(scored)
+     calibration = assess(*sets, identity)
+     write(folder/'assessments.json', calibration, immutable=True)
+@@ -190,13 +223,16 @@
+ 
+ 
+ def execute(primary):
++    from .manual_stop import boundary
+     from connectome.scripts.phase7.pipeline import FrozenPipeline
+     rows = ledger()
+     mappings = ['uniform_population'] if primary else config()['mapping_seeds']
+     for mapping in mappings:
++        boundary()
+         dataset = Dataset(FrozenPipeline(), mapping)
+         inputs = dataset.prepare()
+         training, validation = dataset.records('train'), dataset.records('validation')
++        boundary()
+         validate_coverage(training, 'train')
+         validate_coverage(validation, 'validation')
+         linear_rows = [dict(**{k: r[k] for k in ('scenario_id', 'group_id', 'split', 'cohort', 'label', 'role')},
+@@ -221,12 +257,17 @@
+                 continue
+             if row['status'] == 'FAILED_NO_REPLACEMENT':
+                 raise ValueError('Recorded failed calibration cannot be silently retried')
++            boundary()
++            if row['status'] == 'COMPLETE':
++                verify_freeze(OUT/'calibration'/job['job_id']/'freeze.json')
++                continue
+             update(rows, job['job_id'], 'RUNNING_OR_RESUMING')
+             try:
+                 net, artifacts = selected[job['seed']] if job['model_id'] == 'gru' else (None, None)
+                 calibrate_job(job, dataset, training, validation, inputs, net, artifacts,
+                               linear=linear if job['model_id'] == 'linear_temporal' else None)
+                 update(rows, job['job_id'], 'COMPLETE', freeze=str((OUT/'calibration'/job['job_id']/'freeze.json').relative_to(ROOT)))
++                boundary()
+             except Exception as error:
+                 update(rows, job['job_id'], 'FAILED_NO_REPLACEMENT', error=str(error), traceback=traceback.format_exc())
+                 raise
