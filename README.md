@@ -13,7 +13,7 @@ Connectome analysis, literature evidence, modeling assumptions, and experimental
 
 ---
 
-## Research Basis
+## Research 
 
 **Dataset:** Berg et al. (2026), *Sexual dimorphism in the complete Drosophila male central nervous system connectome*, Cell 189(18), 5504–5526.e15 [[1]](#references) — the source connectome (MaleCNS v1.0).
 
