@@ -1,0 +1,13 @@
+{
+  "scientific_files_checked": 215022,
+  "changed": [],
+  "ledger_counts": {
+    "('gru_trial', 'COMPLETE')": 45,
+    "('calibration', 'COMPLETE')": 272,
+    "('calibration', 'BLOCKED_GATE_C')": 544,
+    "('gru_trial', 'RUNNING_OR_RESUMING')": 1,
+    "('gru_trial', 'BLOCKED_GATE_C')": 74
+  },
+  "software_tests": "64 passed; room_flight and avoidance; no trained model inference",
+  "research_runs_executed": 0
+}

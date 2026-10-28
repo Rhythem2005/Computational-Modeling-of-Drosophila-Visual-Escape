@@ -1,0 +1,1196 @@
+{
+  "schema": "room_flight_protocol_1.0",
+  "protocol_id": "room_six_axis_initial_v1",
+  "status": "PROPOSED_EXACT_SETTINGS_NOT_AUTHORIZED",
+  "partition": "engineering_development",
+  "neural_diagnostic": true,
+  "settings": {
+    "motion": {
+      "duration_ms": 1500,
+      "fly_radius": 0.5,
+      "camera_width": 256,
+      "camera_height": 256,
+      "camera_fps": 60,
+      "camera_center_px": [
+        128.0,
+        128.0
+      ],
+      "camera_focal_px": 160.0,
+      "camera_near_depth": 0.1,
+      "background_uint8": 128,
+      "object_uint8": 64,
+      "actuation_delay_ms": 20,
+      "escape_speed_max": 20.0,
+      "escape_acceleration_max": 400.0,
+      "success_final_clearance_min": 1.0,
+      "dimensions": 3,
+      "bounds": [
+        [
+          -50.0,
+          50.0
+        ],
+        [
+          -50.0,
+          50.0
+        ],
+        [
+          -50.0,
+          50.0
+        ]
+      ],
+      "object_radius_prior": 1.5,
+      "min_contrast_uint8": 4,
+      "prediction_horizon_ms": 1000,
+      "candidate_directions": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "association_gate_px": 24.0,
+      "association_ambiguity_px": 2.0,
+      "max_radius_fraction_change": 0.5,
+      "max_shape_error_fraction": 0.25,
+      "clearance_margin": 1.0,
+      "max_observation_age_ms": 17
+    },
+    "views": [
+      {
+        "id": "front",
+        "quaternion": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "width": 256,
+        "height": 256,
+        "focal_px": 120
+      },
+      {
+        "id": "rear",
+        "quaternion": [
+          0.0,
+          0.0,
+          1.0,
+          6.123233995736766e-17
+        ],
+        "width": 256,
+        "height": 256,
+        "focal_px": 120
+      },
+      {
+        "id": "left",
+        "quaternion": [
+          0.0,
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ],
+        "width": 256,
+        "height": 256,
+        "focal_px": 120
+      },
+      {
+        "id": "right",
+        "quaternion": [
+          -0.0,
+          -0.0,
+          -0.7071067811865475,
+          0.7071067811865476
+        ],
+        "width": 256,
+        "height": 256,
+        "focal_px": 120
+      },
+      {
+        "id": "above",
+        "quaternion": [
+          0.7071067811865475,
+          0.0,
+          0.0,
+          0.7071067811865476
+        ],
+        "width": 256,
+        "height": 256,
+        "focal_px": 120
+      },
+      {
+        "id": "below",
+        "quaternion": [
+          -0.7071067811865475,
+          -0.0,
+          -0.0,
+          0.7071067811865476
+        ],
+        "width": 256,
+        "height": 256,
+        "focal_px": 120
+      }
+    ],
+    "vision": {
+      "target_rgb": [
+        220,
+        60,
+        90
+      ],
+      "color_distance": 8,
+      "min_component_pixels": 4,
+      "range_pixel_uncertainty": 1.0,
+      "max_cone_error_rad": 0.1,
+      "seam_merge_angle_rad": 0.1,
+      "association_distance": 3.0,
+      "association_ambiguity": 0.5,
+      "max_gap_ms": 34.0
+    },
+    "cruise_body_velocity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_heading_rate_rad_s": 3.141592653589793,
+    "recovery_ms": 100,
+    "known_static_map": true,
+    "allow_cruise_when_no_target_visible": true,
+    "room_color": [
+      28,
+      42,
+      38
+    ]
+  },
+  "models": [
+    "ordinary_motion",
+    "approach_trigger",
+    "surround_avoidance"
+  ],
+  "scenes": [
+    {
+      "scenario_id": "room_front",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                0,
+                20,
+                0
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                0,
+                20,
+                0
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                0.0,
+                -12.5,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "room_rear",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                0,
+                -20,
+                0
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                0,
+                -20,
+                0
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                0.0,
+                12.5,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "room_left",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                -20,
+                0,
+                0
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                -20,
+                0,
+                0
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                12.5,
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "room_right",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                20,
+                0,
+                0
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                20,
+                0,
+                0
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                -12.5,
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "room_above",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                0,
+                0,
+                20
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                0,
+                0,
+                20
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                0.0,
+                0.0,
+                -12.5
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "room_below",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                0,
+                0,
+                -20
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                0,
+                0,
+                -20
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                0.0,
+                0.0,
+                12.5
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "room_static",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                0,
+                20,
+                0
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                0,
+                20,
+                0
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                0.0,
+                20.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "room_flank_near_miss",
+      "fly_position": [
+        0,
+        0,
+        0
+      ],
+      "fly_velocity": [
+        0,
+        0,
+        0
+      ],
+      "fly_quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "static_solids": [
+        {
+          "id": "table_volume",
+          "parts": [
+            {
+              "shape": "box",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                55,
+                72,
+                62
+              ],
+              "radius": null,
+              "half_extents": [
+                6,
+                6,
+                4
+              ]
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                12,
+                12,
+                -45
+              ]
+            }
+          ]
+        }
+      ],
+      "dynamic_solids": [
+        {
+          "id": "approaching_object",
+          "parts": [
+            {
+              "shape": "sphere",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "quaternion": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "color": [
+                220,
+                60,
+                90
+              ],
+              "radius": 1.5,
+              "half_extents": null
+            }
+          ],
+          "keyframes": [
+            {
+              "time_ms": 0,
+              "position": [
+                -20,
+                6,
+                0
+              ]
+            },
+            {
+              "time_ms": 200,
+              "position": [
+                -20,
+                6,
+                0
+              ]
+            },
+            {
+              "time_ms": 1500,
+              "position": [
+                12.5,
+                6.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "encounters": [
+        {
+          "id": "declared_approach_window",
+          "start_ms": 0,
+          "end_ms": 1500,
+          "object_ids": [
+            "approaching_object"
+          ]
+        }
+      ]
+    }
+  ],
+  "max_stage_seconds": 1800,
+  "max_output_bytes": 1073741824
+}

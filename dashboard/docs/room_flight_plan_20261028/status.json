@@ -1,0 +1,16 @@
+{
+  "status": "PLAN_PREPARED_NOT_IMPLEMENTED",
+  "date_local": "2026-10-28",
+  "objective": "Body-relative all-direction avoidance and repeated locomotion in a 3D room",
+  "implementation_changes": 0,
+  "simulations_executed": 0,
+  "tests_executed": 0,
+  "training_runs": 0,
+  "held_out_evaluations": 0,
+  "dependency_installations": 0,
+  "ui_style_changes": false,
+  "speed_optimization_in_scope": false,
+  "proposed_first_run_attempt_cap": 24,
+  "proposed_second_run_attempt_cap": 18,
+  "new_exact_protocol_review_required": true
+}

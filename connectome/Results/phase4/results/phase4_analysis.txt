@@ -1,3 +1,0 @@
-Analysis written to /Users/rhythemsabharwalgmail.com/Desktop/FLY/connectome/phase4/results/analysis_data.json
-Connectivity-response Spearman rho: LC4=0.8545, LPLC2=0.8651
-Maximum superposition error: 7.105e-15

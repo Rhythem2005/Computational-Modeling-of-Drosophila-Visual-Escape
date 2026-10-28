@@ -20,10 +20,17 @@ def create_app(settings: Settings | None = None):
         await run_in_threadpool(repo.refresh)
         yield
         # Only in-memory caches exist; no scientific files to publish on exit.
-    app=FastAPI(title='FLY Observatory',version='1.1.0',lifespan=lifespan)
+    app=FastAPI(title='FLY Observatory',version='1.2.0',lifespan=lifespan)
     app.state.repository=repo;app.state.hub=hub
     app.add_middleware(CORSMiddleware,allow_origins=list(settings.origins),allow_methods=['GET','POST','DELETE'],allow_headers=['Content-Type','X-Fly-Ingest-Token'])
     app.add_middleware(GZipMiddleware,minimum_size=1024)
+
+    @app.middleware('http')
+    async def revalidate_dashboard(request,call_next):
+        response=await call_next(request)
+        if request.url.path in ('/','/index.html'):
+            response.headers['Cache-Control']='no-store'
+        return response
 
     def require_producer(x_fly_ingest_token: str = Header(default='')):
         if not settings.ingest_token or not secrets.compare_digest(x_fly_ingest_token,settings.ingest_token):
@@ -36,7 +43,7 @@ def create_app(settings: Settings | None = None):
 
     @app.get('/api/v1/health')
     def health():
-        return dict(status='ok',api_version='1.1.0',telemetry_schema='live_telemetry_1.1',world_dimensions=[2,3],separate_signal_timestamps=True,frontend_ready=(settings.project_root/'dashboard/frontend/dist/index.html').is_file(),scientific_access='read_only',experiment_execution=False,
+        return dict(status='ok',api_version='1.2.0',telemetry_schema='live_telemetry_1.2',body_orientation=True,surround_rgb=True,world_dimensions=[2,3],separate_signal_timestamps=True,frontend_ready=(settings.project_root/'dashboard/frontend/dist/index.html').is_file(),scientific_access='read_only',experiment_execution=False,
                     producer_ingestion=bool(settings.ingest_token),supported_modes=['verified_replay','live_artifact_discovery','external_live_telemetry'])
 
     @app.get('/api/v1/catalog')
@@ -55,6 +62,12 @@ def create_app(settings: Settings | None = None):
     def camera(ident: str):
         value=load(ident)
         return Response(value['camera_png'],media_type='image/png',headers={'Cache-Control':'private, max-age=3600','ETag':value['payload']['integrity']['sha256']})
+
+    @app.post('/api/v1/producer/check',dependencies=[Depends(require_producer)])
+    async def producer_check(spec: LiveSpec):
+        sessions=await hub.catalog()
+        return dict(authenticated=True,schema_valid=True,world_dimension=spec.world_config.get('world_dimension',2),
+                    available_sessions=max(0,4-len(sessions)),max_sensor_views=6,creates_session=False,experiment_execution=False)
 
     @app.get('/api/v1/live')
     async def live_catalog():return dict(sessions=await hub.catalog(),ingestion_enabled=bool(settings.ingest_token))

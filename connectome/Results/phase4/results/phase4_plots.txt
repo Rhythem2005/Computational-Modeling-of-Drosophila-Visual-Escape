@@ -1,8 +1,0 @@
-Matplotlib is building the font cache; this may take a moment.
-Generating Phase 4 diagnostic plots...
-  Saved: plot1_lc4_to_dn.png
-  Saved: plot2_lplc2_to_dn.png
-  Saved: plot3_both_to_dn.png
-  Saved: plot4_lr_asymmetry.png
-  Saved: plot5_pulse_comparison.png
-All 5 diagnostic plots generated.

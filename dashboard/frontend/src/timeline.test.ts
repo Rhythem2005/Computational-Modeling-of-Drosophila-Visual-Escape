@@ -27,3 +27,16 @@ it('preserves physical altitude and separately held live decision timestamps',()
  expect(replay.world.fly[0]).toEqual([1,2,3]);
  expect(replay.decision.times_ms).toEqual([29]);
 });
+
+import {mixQuaternion} from './timeline';
+it('interpolates body orientation on the shortest normalized arc',()=>{
+ const a:[number,number,number,number]=[0,0,0,1],b:[number,number,number,number]=[0,0,1,0];
+ const q=mixQuaternion(a,b,.5);expect(Math.hypot(...q)).toBeCloseTo(1);expect(q[2]).toBeCloseTo(Math.SQRT1_2);
+ expect(mixQuaternion(a,[0,0,0,-1],.5)).toEqual(a);
+});
+
+it('keeps room body pose and sensor calibration in live observation',()=>{
+ const spec:LiveSpec={id:'room-unit',name:'Unit room schema',protocol:'unit',controller:'unit',source_note:'Unit inputs only',world_config:{fly_radius:.5,world_dimension:3,room_flight:true,camera_rig:[{id:'rear',quaternion:[0,0,1,0],width:4,height:4,focal_px:2}]},active:true};
+ const frame:LiveFrame={time_ms:0,fly:[0,0,0],fly_quaternion_xyzw:[0,0,1,0],obstacles:[],speed:0,score:null,sustained_score:null,gate_state:'cruise',rule_state:'unknown',encoder_channels:null,encoder_drive:null,encoder_body_ids:[],encoder_valid:null,neural_kind:'unavailable',neural_ids:[],neural_values:[],camera_timestamp_ms:null,camera_png_base64:null,events:[]};
+ const r=liveReplay(spec,[frame])!;expect(r.world.quaternion_xyzw?.[0]).toEqual([0,0,1,0]);expect(r.camera.view_ids).toEqual(['rear']);
+});

@@ -1,0 +1,31 @@
+{
+  "status": "FRONTEND_UX_UPDATED_SERVERS_LEFT_STOPPED",
+  "date_local": "2026-10-28",
+  "frontend_checks_passed": 18,
+  "typescript_and_vite_build": "PASS",
+  "browser_visual_check": "NOT_RUN_SERVERS_REMAIN_STOPPED",
+  "behavior_changes": false,
+  "new_simulations": 0,
+  "training_runs": 0,
+  "scientific_reference_count": 134,
+  "scientific_references_changed": [],
+  "table_visibility": "Hidden by default; recorded physics and RGB unchanged; optional furniture visibility toggle",
+  "source_sha256": {
+    "dashboard/frontend/src/App.tsx": "42f821413b7d9605c8b9c39d53c247cd9a360ff623f5a7616647984c1ace33eb",
+    "dashboard/frontend/src/main.tsx": "6531bcb6e7b4290d3307cf51dff9a0ae1ece9c9802a4e48fb0e8c13841b13a9d",
+    "dashboard/frontend/src/styles.css": "d15bbd0f3b00c58ad0db28f0f3c087d8c8fd1562cb8f012049d83f02180fa19d",
+    "dashboard/frontend/src/NeuronExplorer.tsx": "76bac08ff8353d294b691cc12d79e4656bff14732b4c53e5c376a2f261cb3c84",
+    "dashboard/frontend/src/Panels.tsx": "e24f3b893cc297e525d70834aad633aa7525d377c885949a8a4edeb6b4c4ee4f",
+    "dashboard/frontend/src/RoomEnvironment.tsx": "ef32168eee5c83e09ce85b074c419f49e39372374af521c52d54424a31219ae8",
+    "dashboard/frontend/src/api.ts": "8f4cb23ff566edc0a1fdc24d7f2594547ddfc2884ec12d3ca30bcecd372004da",
+    "dashboard/frontend/src/presentation.ts": "907c5cd15b13a4fca0b4707f4a4c429ba794f81cbf3af3d39b0ce3675c726f86",
+    "dashboard/frontend/src/types.ts": "7fdb6177b1b5ce7faf5ad1443f3273f4fae1a879ca6155440f151c3488bd2231",
+    "dashboard/frontend/src/presentation.test.ts": "e927c5c45153cea74c80af49f9fba81165f35764720ee01428977c25023edb31",
+    "dashboard/frontend/src/roomDesign.test.ts": "0213b99f637c49c3672ca7eeffb1078d0401133c147b3c32bc28ef151d4c1480",
+    "dashboard/frontend/src/timeline.test.ts": "58ff2041ff86a5f5f00bf2989ed089ac69f72934a52feebf07d4a8dae620bf7a",
+    "dashboard/frontend/src/roomDesign.ts": "ba485ede5637fb82608d1eb1747048df268bad1d9162a473b18345cc7b70a2d0",
+    "dashboard/frontend/src/timeline.ts": "0bb9c6d4e0221a87187a49b9a48ec5797e3366df325aefd41cc7a5c21998fcdd",
+    "dashboard/frontend/src/Scene.tsx": "8897c73fc8ec61455468d72ce6d90a2f1b4adc8f77bb0f8503e03f2ea8260ba5",
+    "dashboard/frontend/src/hooks.ts": "14c82e4bf92ef228d83320258781cd2c623f88f07fa5e71bafc23794319667be"
+  }
+}

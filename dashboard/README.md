@@ -1,10 +1,28 @@
-Backend startup now provisions/reuses a private local ingestion token. API 1.1.0 supports 2D/3D multi-object telemetry and separate signal timestamps. The authenticated HTTP-to-WebSocket contract test passes; startup does not launch simulations.
+Current status (28 October 2026): **server stopped at the user's request**.
+The room implementation and final software checks are documented in the
+[final audit](docs/room_flight_final_audit_20261028/README.md) and
+[room capabilities and limits](simulation/room_flight/README.md).
 
-Multi-object/3D controller implementation: [details and execution limits](simulation/avoidance/README.md). New research scenes remain pending the separate exact-protocol review; no speed changes were made.
+The built React frontend and FastAPI backend support room schema 1.0 and live
+telemetry 1.2: canonical 3D solids, body quaternion, synchronized surrounding RGB,
+recorded decisions/trajectories and separate front neural diagnostics. A labeled
+geometry-only room design opens without selecting an archive. Explicit episode
+links still open their original recording; click FLY to return to the room.
+No experiment starts on page load.
+
+The exact 24-attempt directional pilot is approved but **has not run**. Its earlier
+startup was blocked at 18% battery, before reserving any attempt. Realistic generic
+hand sensing, aerodynamic flight, a causal panoramic neural adapter and independent
+behavioral validation remain separate work. Existing multi-object demonstrations
+are development evidence only.
 
 # Running dashboard
 
-Launch the built app and API together with `bash dashboard/start.sh`, then open http://127.0.0.1:8001. Dependencies are installed in dashboard/.venv and dashboard/frontend/node_modules. The production build and 13 dashboard checks passed on 2026-10-27. No scientific simulations or training were run. Ports 5173/8000 were occupied by older services from a folder in Trash; this launcher avoids them.
+When the user requests a restart, use `bash dashboard/start.sh` from the repository
+root, then open http://127.0.0.1:8001/?view=room. It serves the built frontend and
+backend together, reusing dashboard-local installed dependencies and a private
+producer token. This command does not launch simulations or training. The server
+is deliberately left stopped after this audit.
 
 The preparation-only status below is historical.
 

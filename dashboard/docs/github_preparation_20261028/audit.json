@@ -1,0 +1,65 @@
+{
+  "untracked_from_index": 1835,
+  "local_files_changed": [],
+  "remaining_tracked": 759,
+  "new_nonignored_files": 43,
+  "candidate_bytes": 30103983,
+  "largest_candidates": [
+    {
+      "path": "connectome/Results/phase3/circuit_v2.json",
+      "bytes": 3750536
+    },
+    {
+      "path": "connectome/Results/phase3/circuit_v1.json",
+      "bytes": 3669300
+    },
+    {
+      "path": "connectome/Results/phase5_5/results/benchmark_manifest.json",
+      "bytes": 1083970
+    },
+    {
+      "path": "connectome/Results/phase3/circuit_v2_edges.csv",
+      "bytes": 1011550
+    },
+    {
+      "path": "connectome/Results/phase3/circuit_v1_edges.csv",
+      "bytes": 987882
+    },
+    {
+      "path": "connectome/Results/phase8/phase1/raw_edges.csv",
+      "bytes": 797247
+    },
+    {
+      "path": "connectome/Results/phase11/repairs/calibration_freeze_v1/before_inventory.json",
+      "bytes": 650867
+    },
+    {
+      "path": "connectome/Results/phase11/repairs/completion_publication_v1/job_ledger.json",
+      "bytes": 606257
+    },
+    {
+      "path": "connectome/Results/phase11/repairs/calibration_freeze_v1/before_job_ledger.json",
+      "bytes": 585677
+    },
+    {
+      "path": "connectome/Results/phase8/results/training_negative_records.json",
+      "bytes": 508337
+    }
+  ],
+  "candidate_secret_findings": [],
+  "local_files_at_least_50_MiB": [
+    {
+      "path": "connectome/data/raw/connectivity/connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "bytes": 1051241946
+    }
+  ],
+  "historical_large_blobs": [],
+  "limitations": "Signature scan and exact local-secret matching are not proof that every possible secret is absent. History unchanged.",
+  "candidate_count": 806,
+  "ignore_policy_checks_passed": 18,
+  "historical_secret_check": {
+    "sensitive_filename_history_matches": [],
+    "selected_signature_history_matches": [],
+    "scope": "All refs; sensitive filenames plus GitHub/AWS/private-key text-diff signatures. Not an exhaustive secret audit."
+  }
+}

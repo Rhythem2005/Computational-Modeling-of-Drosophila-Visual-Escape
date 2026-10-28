@@ -1,0 +1,51 @@
+{
+  "status": "ROOM_IMPLEMENTATION_CONTRACT_TESTED_EXACT_PROTOCOL_PENDING",
+  "date_local": "2026-10-28",
+  "frozen_scientific_sources_match": true,
+  "production_pointers_match": true,
+  "partial_checkpoint_payloads_match": {
+    "connectome/Results/phase11/results/training/train_55011_55102_0p001/current.json": true
+  },
+  "unit_and_contract_checks": {
+    "room_and_previous_avoidance": 44,
+    "backend": 14,
+    "frontend": 9
+  },
+  "frontend_production_build": "PASS",
+  "new_research_episodes": 0,
+  "trained_model_inference_runs": 0,
+  "training_runs": 0,
+  "held_out_evaluations": 0,
+  "dependency_installations": 0,
+  "ui_style_files_changed": false,
+  "speed_optimization": false,
+  "first_directional_protocol": "PROPOSED_24_ATTEMPTS_NOT_AUTHORIZED_OR_RUN",
+  "limitations": [
+    "Known target color/shared sphere size and ideal own-pose priors",
+    "Known static map is explicitly declared",
+    "Yaw-only kinematic model, no aerodynamic flight",
+    "Front anatomical diagnostic is not the surround controller",
+    "No new biological validity or generalization evidence"
+  ],
+  "source_sha256": {
+    "dashboard/simulation/room_flight/__init__.py": "6964b765c2d3482432272606101a67e2f816b3237cf2cd65880e131bb40a2269",
+    "dashboard/simulation/room_flight/contracts.py": "f31563c4d8ffa3293245759c00c0a226c3ed5afd388d580f2af18130d8c6c004",
+    "dashboard/simulation/room_flight/execution.py": "7290de8dc16624f30f82507e29e860d1baa6de9dd98b45569e4569f05ba90080",
+    "dashboard/simulation/room_flight/geometry.py": "f51fbf57606fbce5b83445308e59bf000269b1eb31833dfaf7f33ae3a99e5b85",
+    "dashboard/simulation/room_flight/launch.py": "21565b1bd59fab5eb224478084dc09638f1aa9f4e87c57c2f5db241b99f1a6b6",
+    "dashboard/simulation/room_flight/locomotion.py": "38249b71d2b820ebc2790d234828ee8095d1fc898f13d904cb1239e98477cac7",
+    "dashboard/simulation/room_flight/neural_adapter.py": "8d821d72023d30a7eb9db17d1f66f07d8a022aa6a3c538e6bc781afb360d8952",
+    "dashboard/simulation/room_flight/perception.py": "4026174e141cee5b361950330cf8c28c9cd7cbe3ebdb12440d25d743cd53c28c",
+    "dashboard/simulation/room_flight/pose.py": "6ef9b33ed36cb28b413ccca78caf815ec624648f612226eda6e1a87d8a19cbd5",
+    "dashboard/simulation/room_flight/recording.py": "089eeeaa8759cd5eb74b2b269216e2b266a18f3348f04702bc0e38ab46e14113",
+    "dashboard/simulation/room_flight/runner.py": "c6b41cfde7efbed09871caaf59e6bfb626dfb830630126724e89f3aee50db5b8",
+    "dashboard/simulation/room_flight/sensors.py": "449ce07cf9fdd0932fb2793c5f2c2a51d14f3e313e25d7f5c677eeae7248a50f",
+    "dashboard/simulation/room_flight/tests/conftest.py": "e439dd8461acb80498cecbcb01b688d32b5a9027a4c380cd9e1e9e24d79187ea",
+    "dashboard/simulation/room_flight/tests/test_execution.py": "d588c509e0e7b723788f765d14d1f763699123b9d95735d45f49c4ba39e75bd0",
+    "dashboard/simulation/room_flight/tests/test_pose_geometry.py": "60c41610be73c3cf4586b22a362dc4f4458270e97a8cccbc4207769cbe6d4d85",
+    "dashboard/simulation/room_flight/tests/test_runner_policy.py": "e322608211f7e518ccd77f8f9b192e003535ee7f95c9191937c37b3701cfce6a",
+    "dashboard/simulation/room_flight/tests/test_sensors.py": "64ca797685347ec56377c636e474be10da96d6a24669a2cfd0a92596de06d068",
+    "dashboard/simulation/room_flight/world.py": "23b902045517ad08ef90dac475833654cb0cf5a28c33f9690ccc3514a2b9ff01"
+  },
+  "web_backend_reloaded": true
+}

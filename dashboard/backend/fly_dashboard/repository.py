@@ -13,7 +13,7 @@ import zlib
 import numpy as np
 from .config import Settings
 
-SUPPORTED = {'1.0', 'behavior_1.0', 'collision_threat_1.0', 'collision_threat_2.0', 'multi_object_1.0'}
+SUPPORTED = {'1.0', 'behavior_1.0', 'collision_threat_1.0', 'collision_threat_2.0', 'multi_object_1.0', 'room_flight_1.0'}
 TRACE_KEYS = ('score', 'sustained_score', 'eligible', 'escape_event', 'escape_requested', 'legacy_score',
               'legacy_sustained_score', 'legacy_escape_event', 'legacy_escape_requested', 'rule_state',
               'rule_reason', 'gate_state', 'candidate_epoch', 'retirement_event', 'rearm_event',
@@ -41,11 +41,13 @@ def safe_json(value):
 
 def png_gray(pixels):
     pixels = np.ascontiguousarray(pixels, dtype=np.uint8)
-    height, width = pixels.shape
+    if pixels.ndim not in (2,3) or (pixels.ndim==3 and pixels.shape[2]!=3):raise ValueError('Expected grayscale or RGB pixels')
+    height, width = pixels.shape[:2]
+    color_type=0 if pixels.ndim==2 else 2
     def chunk(kind, data):
         return struct.pack('!I', len(data)) + kind + data + struct.pack('!I', zlib.crc32(kind + data) & 0xffffffff)
     rows = b''.join(b'\x00' + row.tobytes() for row in pixels)
-    return b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('!2I5B', width, height, 8, 0, 0, 0, 0)) + chunk(b'IDAT', zlib.compress(rows, 5)) + chunk(b'IEND', b'')
+    return b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('!2I5B', width, height, 8, color_type, 0, 0, 0)) + chunk(b'IDAT', zlib.compress(rows, 5)) + chunk(b'IEND', b'')
 
 @dataclass
 class Episode:
@@ -208,9 +210,9 @@ class Repository:
         if kind == 'anatomical' and set(ids.tolist()) != {n['id'] for n in self.graph()['nodes']}:
             raise ValueError('Neural identities differ from the connectome')
         frames = a['frames']
-        if frames.dtype != np.uint8 or frames.ndim != 3 or len(frames) != len(ft): raise ValueError('Unsupported camera frame schema')
-        h, w = frames.shape[1:]; columns = min(10, len(frames)); rows = math.ceil(len(frames)/columns)
-        atlas = np.full((rows*h, columns*w), 128, dtype=np.uint8)
+        if frames.dtype != np.uint8 or frames.ndim not in (3,4) or (frames.ndim==4 and frames.shape[-1]!=3) or len(frames) != len(ft): raise ValueError('Unsupported camera frame schema')
+        h, w = frames.shape[1:3]; columns = min(10, len(frames)); rows = math.ceil(len(frames)/columns)
+        atlas = np.full((rows*h, columns*w,*frames.shape[3:]), 128, dtype=np.uint8)
         for i, frame in enumerate(frames): atlas[(i//columns)*h:(i//columns+1)*h, (i%columns)*w:(i%columns+1)*w] = frame
         metrics = episode.metadata['metrics']; events = []
         def event(time, kind, label):
@@ -229,7 +231,7 @@ class Repository:
         payload = safe_json(dict(episode=episode.public, config=episode.metadata['config'], scenario=episode.metadata['scenario'],
             metrics=metrics, threshold=episode.metadata.get('threshold'), assumptions=episode.metadata.get('assumptions'),
             integrity=dict(status='sha256_verified', sha256=episode.metadata['arrays_sha256'], schema=str(a['schema_version'].item())),
-            world=dict(times_ms=wt, fly=a['fly_position'], obstacles=a['obstacle_positions'], speed=a.get('speed', [])),
+            world=dict(times_ms=wt, fly=a['fly_position'], quaternion_xyzw=a.get('fly_quaternion_xyzw',[]), obstacles=a['obstacle_positions'], speed=a.get('speed', [])),
             neural=dict(kind=kind, times_ms=nt if kind != 'unavailable' else [], values=states if kind != 'unavailable' else [],
                         ids=ids if kind == 'anatomical' else [f'H{i:02}' for i in range(width)] if kind == 'gru_hidden' else []),
             decision=dict(times_ms=dt, traces=traces),
@@ -238,7 +240,7 @@ class Repository:
             measurements=dict(times_ms=a.get('measurement_timestamps_s', np.empty(0))*1000,
                 values={k:a[k] for k in a if k.startswith(('measurement_', 'estimate_')) and k != 'measurement_timestamps_s'}),
             camera=dict(times_ms=ft*1000, width=w, height=h, columns=columns, count=len(frames),
-                        atlas_url=f'/api/v1/episodes/{identifier}/camera.png'), events=events,
+                        atlas_url=f'/api/v1/episodes/{identifier}/camera.png',view_ids=[v['id'] for v in episode.metadata['config'].get('camera_rig',[])],mosaic_columns=3 if episode.metadata['config'].get('room_flight') else 1), events=events,
             duration_ms=float(wt[-1]), source_mode='verified_replay'))
         value = dict(payload=payload, camera_png=png_gray(atlas))
         with self.lock:

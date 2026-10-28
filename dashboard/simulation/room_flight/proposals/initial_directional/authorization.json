@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED_EXACT_ROOM_PROTOCOL",
+  "protocol_sha256": "0da8016f12627dbc25eef8ca262cabe2245fb0c6a9f0128890f664b7807809fa",
+  "episode_cap": 24,
+  "training_authorized": false,
+  "held_out_authorized": false,
+  "date_local": "2026-10-28",
+  "user_instruction": "approved, remember to also start the frontend and backend so that i can see in real time the simulation",
+  "scope": "Exact initial directional room pilot: eight scenes, three conditions, 1500 ms, six engineered RGB views; no automatic retries"
+}

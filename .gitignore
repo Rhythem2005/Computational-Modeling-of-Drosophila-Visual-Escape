@@ -1,84 +1,110 @@
-# Environments and Secrets
+# Local credentials (keep sanitized examples)
 .env
+.env.*
 !.env.example
+!**/.env.example
 *.pem
 *.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+.aws/
+.ssh/
+.runtime/
+
+# Environments, dependencies and build products
 .venv/
-.venv
-env/
 venv/
+env/
 ENV/
 env.bak/
 venv.bak/
 node_modules/
 dist/
 build/
-.runtime/
-frontend/.env.local
+*.egg-info/
+.eggs/
 
-# Python, TypeScript, and Caches
+# Python, test, notebook and compiler caches
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
 .coverage
+.coverage.*
 htmlcov/
+coverage/
 *.tsbuildinfo
 playwright-report/
 test-results/
+.ipynb_checkpoints/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# OS, Editors, Temporary Files, and Locks
+# Editors, OS files and transient process files
 .DS_Store
-**/.DS_Store
-*.swp
-*.swo
+._*
+Thumbs.db
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 *.log
-*.lock
-*.lock.txt
 *.tmp
+*.temp
+*.pid
+*.pid.lock
+# Dependency locks and scientific freeze locks must remain versioned.
 
-# Large Raw Datasets (MaleCNS v1.0 feather files)
+# Raw data and bulk connectome exports; retain acquisition code and provenance.
 *.feather
-connectome/data/raw/annotations/
-connectome/data/raw/connectivity/
-connectome/data/raw/neurotransmitters/
+*.parquet
+*.h5
+*.hdf5
+connectome/data/raw/
+connectome/data/discovery/*.csv
+connectome/Results/phase1/*.csv
+connectome/Results/phase2/two_step_paths.csv
+# Frozen Phase 3 circuit CSV/JSON stays versioned: runtime dependency, not raw data.
 
-# Generated Phase 4 Text Logs & Data
-connectome/phase4/results/*.txt
-connectome/phase4/results/analysis_data.json
-connectome/phase4/results/validation_manifest.json
-
-# Generated Simulation Outputs and Experiment Runs
-connectome/Results/phase10/results/
-!connectome/Results/phase10/results/validation_report.md
-connectome/Results/phase11/results/
-!connectome/Results/phase11/results/validation_report.md
-connectome/Results/behavior_validation/[0-9]*/
-connectome/Results/collision_threat_v1/prototype/
-connectome/Results/collision_threat_v1/[0-9]*/
-connectome/Results/collision_threat_v2/runs/
-dashboard/runs/*/
-!dashboard/runs/README.md
-!dashboard/runs/live_demo_20261027_summary.json
-
-# Simulation Data Arrays, Checkpoints, and Weights
+# Generated arrays, recordings and trained parameters (no historical exceptions)
 *.npz
 *.npy
 *.ckpt
 *.pt
 *.pth
+*.onnx
+*.safetensors
+*.pkl
+*.pickle
 checkpoints/
 checkpoint_*/
-state_*.npz
-selected.npz
+dashboard/runs/*
+!dashboard/runs/README.md
+!dashboard/runs/live_demo_20261027_summary.json
 
-# Preserve Essential Historical Reproducibility Assets (Phases 1-9)
-!connectome/Results/phase[1-9]/**/*.npz
-!connectome/Results/phase[1-9]/**/*.npy
+# Training/calibration products; preserve human-readable validation reports.
+connectome/Results/phase10/results/*
+!connectome/Results/phase10/results/validation_report.md
+connectome/Results/phase11/results/*
+!connectome/Results/phase11/results/validation_report.md
+connectome/Results/behavior_validation/[0-9]*/
+connectome/Results/collision_threat_v1/prototype/
+connectome/Results/collision_threat_v1/[0-9]*/
+connectome/Results/collision_threat_v2/runs/
 
+# Generated per-episode bundles, scratch regressions and duplicate CLI outputs.
+connectome/Results/**/results/episodes/
+connectome/Results/**/results/cli_episodes/
+connectome/Results/**/results/test_roundtrip/
+connectome/Results/**/results/cli_activity/
+connectome/Results/**/results/cli_decoded/
+connectome/Results/**/results/regression/
+connectome/Results/phase6/results/episode_metrics.json
+connectome/Results/phase4/results/analysis_data.json
+connectome/Results/phase4/results/validation_manifest.json
+connectome/Results/phase4/results/*.txt

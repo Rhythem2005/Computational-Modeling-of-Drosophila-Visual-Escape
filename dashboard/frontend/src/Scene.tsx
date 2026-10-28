@@ -3,44 +3,55 @@ import type {ComponentRef,ErrorInfo,ReactNode} from 'react';
 import {Canvas,useFrame,useThree} from '@react-three/fiber';
 import {Grid,Html,Line,OrbitControls} from '@react-three/drei';
 import * as THREE from 'three';
-import type {Graph,Node,Replay,Sample,Position} from './types';
+import type {Graph,Node,Replay,Sample,Position,WorldConfig} from './types';
 import {label,number} from './timeline';
+import {roomDesign,roomDimensions,worldToDisplay as xyz,displayQuaternion} from './roomDesign';
+import {RoomEnvironment,SolidParts} from './RoomEnvironment';
 
 export type CameraMode='overview'|'follow'|'top'|'circuit';
 export type Inspection={kind:'fly'|'obstacle'|'neuron';index?:number;node?:Node}|null;
 const COLORS:Record<string,string>={LC4:'#80d5d3',LPLC2:'#a6f1b3',DNp01:'#ffc07a',DNp02:'#cdb1ff',DNp04:'#cdb1ff',DNp06:'#f69ba6',DNp11:'#f69ba6'};
-const xyz=(p:Position,height=0):[number,number,number]=>[p[0],(p.length===3?p[2]:0)+height,-p[1]];
-
 class SceneBoundary extends Component<{children:ReactNode},{failed:boolean}>{
  state={failed:false};static getDerivedStateFromError(){return {failed:true}}
  componentDidCatch(error:Error,info:ErrorInfo){console.error('3D observation layer unavailable',error,info.componentStack)}
  render(){return this.state.failed?<div className="canvas-fallback"><span>3D VIEW UNAVAILABLE</span><p>WebGL could not initialize. The recorded data, camera feed and timeline remain available.</p></div>:this.props.children}
 }
 
-function CameraRig({mode,sample,reset}:{mode:CameraMode;sample:Sample|null;reset:number}){
- const controls=useRef<ComponentRef<typeof OrbitControls>|null>(null);const {camera}=useThree();
- useEffect(()=>{if(!controls.current)return;camera.up.set(0,1,0);if(mode==='top'){camera.position.set(0,49,1);controls.current.target.set(0,0,-3)}else if(mode==='circuit'){camera.position.set(29,14,17);controls.current.target.set(15,7,0)}else{camera.position.set(27,22,34);controls.current.target.set(0,0,-4)}controls.current.update()},[mode,reset,camera]);
- useFrame((_,delta)=>{if(mode==='follow'&&sample&&controls.current){const p=new THREE.Vector3(...xyz(sample.fly));controls.current.target.lerp(p,Math.min(1,delta*5));camera.position.lerp(p.clone().add(new THREE.Vector3(9,7,12)),Math.min(1,delta*2));controls.current.update()}});
- return <OrbitControls ref={controls} makeDefault enableDamping dampingFactor={.08} minDistance={3} maxDistance={130} maxPolarAngle={Math.PI*.84} enablePan={mode!=='follow'} enableRotate={mode!=='follow'}/>;
+function CameraRig({mode,sample,reset,config}:{mode:CameraMode;sample:Sample|null;reset:number;config:WorldConfig|null}){
+ const controls=useRef<ComponentRef<typeof OrbitControls>|null>(null);const {camera,size}=useThree();
+ const room=!!config?.room_flight,boundsKey=JSON.stringify(config?.bounds);
+ useEffect(()=>{if(!controls.current)return;camera.up.set(0,1,0);
+  if(mode==='circuit'){camera.position.set(29,14,17);controls.current.target.set(15,7,0)}else if(room&&config){
+   const {center,size:dimensions}=roomDimensions(config);const target=new THREE.Vector3(...center);
+   const vertical=(camera as THREE.PerspectiveCamera).fov*Math.PI/360;
+   const halfAngle=Math.min(vertical,Math.atan(Math.tan(vertical)*size.width/size.height));
+   const distance=Math.hypot(...dimensions)/2/Math.sin(halfAngle)*1.08;
+   camera.position.copy(target).add(new THREE.Vector3(...(mode==='top'?[0,1,.001]:[1,.7,1.2])).normalize().multiplyScalar(distance));
+   controls.current.target.copy(target);
+  }else if(mode==='top'){camera.position.set(0,49,1);controls.current.target.set(0,0,-3)}else{camera.position.set(27,22,34);controls.current.target.set(0,0,-4)}
+  controls.current.update();
+ },[mode,reset,camera,room,boundsKey,size.width,size.height]);
+ useFrame((_,delta)=>{const fly=sample?.fly??(room?roomDesign.fly:null);if(mode==='follow'&&fly&&controls.current){const p=new THREE.Vector3(...xyz(fly));controls.current.target.lerp(p,Math.min(1,delta*5));camera.position.lerp(p.clone().add(new THREE.Vector3(9,7,12)),Math.min(1,delta*2));controls.current.update()}});
+ return <OrbitControls ref={controls} makeDefault enableDamping dampingFactor={.08} minDistance={1} maxDistance={room?600:130} maxPolarAngle={Math.PI*.95} enablePan={mode!=='follow'} enableRotate={mode!=='follow'}/>;
 }
 
 function Arena({data}:{data:Replay|null}){
  const offset=data?.config.world_dimension===3&&data.config.bounds?.[2]?data.config.bounds[2][0]+1.84:0;
  return <group position={[0,offset,0]}>
-  <mesh rotation={[-Math.PI/2,0,0]} position={[0,-1.84,0]}><planeGeometry args={[220,220]}/><meshStandardMaterial color="#071415" roughness={.94} metalness={.15}/></mesh>
-  <Grid position={[0,-1.8,0]} args={[120,120]} cellSize={2} sectionSize={10} cellThickness={.45} sectionThickness={.8} cellColor="#16413d" sectionColor="#2c6256" fadeDistance={80} fadeStrength={1.7} infiniteGrid/>
+  <mesh rotation={[-Math.PI/2,0,0]} position={[0,-1.84,0]}><planeGeometry args={[220,220]}/><meshStandardMaterial color="#101114" roughness={.94} metalness={.15}/></mesh>
+  <Grid position={[0,-1.8,0]} args={[120,120]} cellSize={2} sectionSize={10} cellThickness={.45} sectionThickness={.8} cellColor="#202329" sectionColor="#353b3d" fadeDistance={80} fadeStrength={1.7} infiniteGrid/>
   {[5,10,20].map(r=><mesh key={r} rotation={[-Math.PI/2,0,0]} position={[0,-1.77,0]}><ringGeometry args={[r-.012,r,128]}/><meshBasicMaterial color="#6caa8b" transparent opacity={.18}/></mesh>)}
   <Line points={[[-35,-1.75,0],[35,-1.75,0]]} color="#549f82" transparent opacity={.18}/>
   <Line points={[[0,-1.75,-40],[0,-1.75,35]]} color="#549f82" transparent opacity={.18}/>
-  <Html position={[0,-1.7,-22]} center distanceFactor={35}><span className="world-coordinate">+Y / APPROACH CORRIDOR</span></Html>
+  <Html position={[0,-1.7,-22]} center distanceFactor={35}><span className="world-coordinate">{data?.config.room_flight?'ROOM / WORLD +Y':' +Y / APPROACH CORRIDOR'}</span></Html>
  </group>;
 }
 
-function FruitFly({data,sample,inspect}:{data:Replay;sample:Sample;inspect:(v:Inspection)=>void}){
- const collision=data.metrics.failure?.kind==='collision'&&sample.worldIndex===data.world.times_ms.length-1;
+function FruitFly({radius,sample,inspect,collision=false,design=false,room=false}:{radius:number;sample:Pick<Sample,'fly'|'flyQuaternion'|'speed'>;inspect:(v:Inspection)=>void;collision?:boolean;design?:boolean;room?:boolean}){
  const color=collision?'#ff7c6c':'#b9f6cd';
  const legs=useMemo(()=>[-1,1].flatMap(side=>[-.12,.08,.28].map((z,i)=>[[side*.15,-.08,z],[side*(.35+i*.04),-.3,z+.12],[side*.49,-.4,z+.24]] as [number,number,number][])),[]);
  return <group position={xyz(sample.fly)} onClick={e=>{e.stopPropagation();inspect({kind:'fly'})}}>
+  <group quaternion={displayQuaternion(sample.flyQuaternion)}>
   <group scale={[.23,.21,.42]} position={[0,0,.13]}><mesh><sphereGeometry args={[1,24,16]}/><meshStandardMaterial color="#496852" metalness={.65} roughness={.3}/></mesh></group>
   <mesh position={[0,.04,-.28]} scale={[.22,.2,.19]}><sphereGeometry args={[1,24,16]}/><meshStandardMaterial color="#6b846c" roughness={.35} metalness={.4}/></mesh>
   {[-1,1].map(side=><group key={side}>
@@ -49,13 +60,14 @@ function FruitFly({data,sample,inspect}:{data:Replay;sample:Sample;inspect:(v:In
    <Line points={[[side*.07,.14,-.41],[side*.13,.23,-.58]]} color="#8dba9a" lineWidth={1}/>
   </group>)}
   {legs.map((points,i)=><Line key={i} points={points} color="#81a88d" lineWidth={1.1}/>)}
-  <mesh><sphereGeometry args={[data.config.fly_radius,24,16]}/><meshBasicMaterial color={color} wireframe transparent opacity={collision?.55:.08}/></mesh>
-  <mesh rotation={[-Math.PI/2,0,0]} position={[0,-.55,0]}><ringGeometry args={[data.config.fly_radius*1.3,data.config.fly_radius*1.3+.025,64]}/><meshBasicMaterial color={color} transparent opacity={.8}/></mesh>
-  <Html position={[0,1.05,0]} center distanceFactor={25}><div className="object-label fly-label"><span className="status-dot"/>D. MELANOGASTER<span className="object-value">{number(sample.speed)} u/s</span></div></Html>
+  </group>
+  <mesh><sphereGeometry args={[radius,24,16]}/><meshBasicMaterial color={color} wireframe transparent opacity={collision?.55:.08}/></mesh>
+  <mesh rotation={[-Math.PI/2,0,0]} position={[0,-.55,0]}><ringGeometry args={[radius*1.3,radius*1.3+.025,64]}/><meshBasicMaterial color={color} transparent opacity={.8}/></mesh>
+  <Html position={[0,1.05,0]} center distanceFactor={room?undefined:25}><div className="object-label fly-label"><span className="status-dot"/>D. MELANOGASTER<span className="object-value">{design?'INITIAL DESIGN POSE':`${number(sample.speed)} u/s`}</span></div></Html>
  </group>;
 }
 
-function World({data,sample,time,trails,fov,inspect}:{data:Replay;sample:Sample;time:number;trails:boolean;fov:boolean;inspect:(v:Inspection)=>void}){
+function World({data,sample,time,trails,fov,furniture,inspect}:{data:Replay;sample:Sample;time:number;trails:boolean;fov:boolean;furniture:boolean;inspect:(v:Inspection)=>void}){
  const dimension=data.config.world_dimension??2;
  const collided=data.metrics.failure?.kind==='collision'&&time>=data.metrics.failure.time_ms;
  const color=collided?'#ff7469':sample.rule==='threat'?'#ffb176':'#a3a9e3';
@@ -63,20 +75,23 @@ function World({data,sample,time,trails,fov,inspect}:{data:Replay;sample:Sample;
  const outline=useMemo(()=>{const x=data.config.bounds_xy?.[0]??[-50,50],y=data.config.bounds_xy?.[1]??[-50,50],z=data.config.world_dimension===3&&data.config.bounds?.[2]?data.config.bounds[2][0]:-1.72;return [[x[0],z,-y[0]],[x[1],z,-y[0]],[x[1],z,-y[1]],[x[0],z,-y[1]],[x[0],z,-y[0]]] as [number,number,number][]},[data]);
  const tangent=(data.config.camera_width??256)/(2*(data.config.camera_focal_px??160));
  return <group>
+  {data.config.room_flight&&<RoomEnvironment config={data.config} furniture={furniture}/>}
   <Line points={outline} color="#7aa28a" transparent opacity={.2}/>
   {dimension===3&&data.config.bounds?.length===3&&<group>{data.config.bounds[2].map((z,i)=><Line key={i} points={[[data.config.bounds![0][0],z,-data.config.bounds![1][0]],[data.config.bounds![0][1],z,-data.config.bounds![1][0]],[data.config.bounds![0][1],z,-data.config.bounds![1][1]],[data.config.bounds![0][0],z,-data.config.bounds![1][1]],[data.config.bounds![0][0],z,-data.config.bounds![1][0]]]} color="#7aa28a" transparent opacity={.2}/>)}</group>}
   {trails&&flyTrail.length>1&&<Line points={flyTrail} color="#b4efca" lineWidth={1.7} transparent opacity={.75}/>}
   {sample.obstacles.map((p,i)=>{const radius=data.scenario.obstacles[i]?.radius;if(!radius)return null;const track=data.world.obstacles.slice(0,sample.worldIndex+1).map(v=>xyz(v[i],.01));return <group key={data.scenario.obstacles[i].id}>
    {trails&&track.length>1&&<Line points={track} color="#9b9bc5" lineWidth={1} transparent opacity={.35}/>}
    <group position={xyz(p)} onClick={e=>{e.stopPropagation();inspect({kind:'obstacle',index:i})}}>
+    {data.config.room_flight&&data.scenario.obstacles[i].parts?<SolidParts parts={data.scenario.obstacles[i].parts!}/>:<group>
     <mesh><sphereGeometry args={[radius,40,28]}/><meshPhysicalMaterial color={color} roughness={.23} metalness={.2} transparent opacity={.12} emissive={color} emissiveIntensity={.2} depthWrite={false}/></mesh>
     <mesh><sphereGeometry args={[radius,24,12]}/><meshBasicMaterial color={color} wireframe transparent opacity={.35}/></mesh>
     <mesh rotation={[Math.PI/2,0,0]}><torusGeometry args={[radius,.012,6,72]}/><meshBasicMaterial color={color}/></mesh>
-    <Html position={[0,radius+.9,0]} center distanceFactor={30}><div className="object-label"><span className="target-square"/>OBJECT {String(i+1).padStart(2,'0')}<span className="object-value">{number(p[0],1)}, {number(p[1],1)}</span></div></Html>
+    </group>}
+    <Html position={[0,radius+.9,0]} center distanceFactor={30}><div className="object-label"><span className="target-square"/>OBJECT {String(i+1).padStart(2,'0')}<span className="object-value">{number(p[0],1)}, {number(p[1],1)}{p.length===3?`, ${number(p[2],1)}`:''}</span></div></Html>
    </group>
   </group>})}
-  {fov&&<group position={xyz(sample.fly)}><Line points={[[0,0,0],[-12*tangent,0,-12],[12*tangent,0,-12],[0,0,0]]} color="#79c3aa" transparent opacity={.16} dashed dashSize={.3} gapSize={.2}/></group>}
-  <FruitFly data={data} sample={sample} inspect={inspect}/>
+  {fov&&<group position={xyz(sample.fly)} quaternion={displayQuaternion(sample.flyQuaternion)}>{data.config.room_flight?data.config.camera_rig?.map(v=><group key={v.id} quaternion={displayQuaternion(v.quaternion)}><Line points={[[0,0,0],[-6*v.width/v.focal_px,-6*v.height/v.focal_px,-12],[6*v.width/v.focal_px,-6*v.height/v.focal_px,-12],[0,0,0],[6*v.width/v.focal_px,6*v.height/v.focal_px,-12],[-6*v.width/v.focal_px,6*v.height/v.focal_px,-12],[0,0,0],[-6*v.width/v.focal_px,-6*v.height/v.focal_px,-12],[-6*v.width/v.focal_px,6*v.height/v.focal_px,-12],[6*v.width/v.focal_px,6*v.height/v.focal_px,-12],[6*v.width/v.focal_px,-6*v.height/v.focal_px,-12]]} color="#79c3aa" transparent opacity={.16} dashed dashSize={.3} gapSize={.2}/></group>):<Line points={[[0,0,0],[-12*tangent,0,-12],[12*tangent,0,-12],[0,0,0]]} color="#79c3aa" transparent opacity={.16} dashed dashSize={.3} gapSize={.2}/>}</group>}
+  <FruitFly radius={data.config.fly_radius} sample={sample} inspect={inspect} room={!!data.config.room_flight} collision={!!collided}/>
  </group>;
 }
 
@@ -106,11 +121,13 @@ function NeuralGraph({graph,data,sample,edgeCutoff,signal,selected,inspect}:{gra
  </group>;
 }
 
-export function Scene({data,sample,graph,time,mode,reset,trails,fov,neurons,edgeCutoff,signal,inspection,inspect}:{data:Replay|null;sample:Sample|null;graph:Graph|null;time:number;mode:CameraMode;reset:number;trails:boolean;fov:boolean;neurons:boolean;edgeCutoff:number;signal:'activity'|'input';inspection:Inspection;inspect:(v:Inspection)=>void}){
- return <SceneBoundary><Canvas camera={{position:[27,22,34],fov:43,near:.05,far:220}} dpr={[1,1.7]} gl={{antialias:true,alpha:false,powerPreference:'high-performance'}} onPointerMissed={()=>inspect(null)}>
-  <color attach="background" args={['#071011']}/><fog attach="fog" args={['#071011',38,125]}/>
+export function Scene({data,sample,graph,time,mode,reset,trails,fov,furniture,neurons,edgeCutoff,signal,inspection,inspect}:{data:Replay|null;sample:Sample|null;graph:Graph|null;time:number;mode:CameraMode;reset:number;trails:boolean;fov:boolean;furniture:boolean;neurons:boolean;edgeCutoff:number;signal:'activity'|'input';inspection:Inspection;inspect:(v:Inspection)=>void}){
+ const config=data?.config??roomDesign.config,room=!!config.room_flight;
+ return <SceneBoundary><Canvas camera={{position:[27,22,34],fov:43,near:.05,far:1200}} dpr={[1,1.7]} gl={{antialias:true,alpha:false,powerPreference:'high-performance'}} onPointerMissed={()=>inspect(null)}>
+  <color attach="background" args={['#060608']}/><fog attach="fog" args={['#060608',room?250:38,room?900:125]}/>
   <ambientLight intensity={1.2}/><directionalLight position={[8,20,7]} intensity={2.2} color="#d3f5dd"/><pointLight position={[-8,8,-16]} intensity={25} color="#7795cf" distance={45}/>
-  <Suspense fallback={null}><Arena data={data}/>{data&&sample&&<World data={data} sample={sample} time={time} trails={trails} fov={fov} inspect={inspect}/>} {data&&sample&&graph&&neurons&&<NeuralGraph graph={graph} data={data} sample={sample} edgeCutoff={edgeCutoff} signal={signal} selected={inspection?.kind==='neuron'?inspection.node?.id??null:null} inspect={inspect}/>}</Suspense>
-  <CameraRig mode={mode} sample={sample} reset={reset}/>
+  <Suspense fallback={null}>{!room&&<Arena data={data}/>}
+  {!data&&<><RoomEnvironment config={roomDesign.config} furniture={furniture}/><FruitFly radius={roomDesign.config.fly_radius} sample={{fly:roomDesign.fly,flyQuaternion:roomDesign.quaternion,speed:null}} inspect={()=>{}} design room/></>}{data&&sample&&<World data={data} sample={sample} time={time} trails={trails} fov={fov} furniture={furniture} inspect={inspect}/>} {data&&sample&&graph&&neurons&&<NeuralGraph graph={graph} data={data} sample={sample} edgeCutoff={edgeCutoff} signal={signal} selected={inspection?.kind==='neuron'?inspection.node?.id??null:null} inspect={inspect}/>}</Suspense>
+  <CameraRig mode={mode} sample={sample} reset={reset} config={config}/>
  </Canvas></SceneBoundary>;
 }
